@@ -18,6 +18,7 @@ Quy tắc vận hành và governance: [WIKI_RULES.md](./WIKI_RULES.md)
 
 ```text
 LLM_Wiki/
+├─ .agents/skills/       # Agent Skills cho workflow QA wiki
 ├─ wiki/                 # Nội dung wiki theo project
 │  ├─ project_demo/
 │  └─ project_orange/
@@ -49,7 +50,7 @@ cd llm-wiki
 
 ## Skills trong vault
 
-Thư mục `.agent/` chứa các Agent Skills hỗ trợ workflow QA wiki. Mỗi skill dùng cấu trúc chuẩn: `.agent/<skill-name>/SKILL.md` và metadata UI tại `.agent/<skill-name>/agents/openai.yaml`.
+Thư mục `.agents/skills/` chứa các Agent Skills hỗ trợ workflow QA wiki. Mỗi skill dùng cấu trúc chuẩn: `.agents/skills/<skill-name>/SKILL.md` và metadata UI tại `.agents/skills/<skill-name>/agents/openai.yaml`.
 - `wiki-sync-helper`: hỗ trợ đồng bộ trạng thái/task trong wiki.
 - `wiki-requirement-analyzer`: phân tích requirement theo ISTQB Test Analysis để tạo/cập nhật feature spec.
 - `wiki-test-designer`: thiết kế test case/test suite theo ISTQB Test Design.

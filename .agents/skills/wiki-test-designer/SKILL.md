@@ -12,12 +12,12 @@ Use for ISTQB Test Design: decide **how to test** an approved or draft feature s
 ## Required inputs
 
 Read these before writing test cases:
-- `../../WIKI_RULES.md`
-- `../../templates/tpl_test_suite.md`
-- `../../wiki/[project]/features/[feature_name].md`
-- `../../wiki/[project]/operations/environments.md`
-- `../../wiki/[project]/operations/test_data.md`
-- related files in `../../wiki/[project]/bugs_knowledge/` when regression risk exists
+- `../../../WIKI_RULES.md`
+- `../../../templates/tpl_test_suite.md`
+- `../../../wiki/[project]/features/[feature_name].md`
+- `../../../wiki/[project]/operations/environments.md`
+- `../../../wiki/[project]/operations/test_data.md`
+- related files in `../../../wiki/[project]/bugs_knowledge/` when regression risk exists
 
 ## Workflow
 
@@ -32,9 +32,9 @@ Read these before writing test cases:
    - `Error Guessing`
    - `Security`
    - `Regression`
-4. Create or update `../../wiki/[project]/test_suites/test_[feature_name].md`.
-5. Update `../../index.md`, `../../KANBAN.md`, and `../../log.md` according to `WIKI_RULES.md`.
-6. Run `python ../../scripts/verify_wiki.py` when the suite update is complete.
+4. Create or update `../../../wiki/[project]/test_suites/test_[feature_name].md`.
+5. Update `../../../index.md`, `../../../KANBAN.md`, and `../../../log.md` according to `WIKI_RULES.md`.
+6. From the vault root, run `python scripts/verify_wiki.py` when the suite update is complete.
 
 ## Test case row rules
 

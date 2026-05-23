@@ -9,6 +9,8 @@ metadata:
 
 Use for deterministic wiki maintenance. Prefer scripts over manual markdown edits when a supported command exists.
 
+The canonical CLI scripts stay at the vault root in `../../../scripts/` because they are also user-facing commands documented in `../../../USER_COMMANDS.md`. Do not duplicate them inside the skill folder.
+
 ## Commands
 
 Run from the vault root.
@@ -30,7 +32,7 @@ python scripts/verify_wiki.py
 
 ## Workflow
 
-1. Read `../../WIKI_RULES.md` and the relevant files (`../../KANBAN.md`, `../../log.md`, target daily note or test suite).
+1. Read `../../../WIKI_RULES.md` and the relevant files (`../../../KANBAN.md`, `../../../log.md`, target daily note or test suite).
 2. Run the appropriate command from the vault root.
 3. Report the command outcome, files affected, and any unresolved audit errors.
 4. Do not mark tests as passed unless the user has confirmed real execution results.
