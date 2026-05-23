@@ -4,60 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "fff7cb4e46a29d37",
+        "id": "fd616eff67b1a9d7",
         "type": "tabs",
-        "dimension": 24.294670846394983,
         "children": [
           {
-            "id": "4d7128dfd68b5d73",
+            "id": "bc94037ed2bd312a",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "WIKI_RULES.md",
+                "file": "wiki/project_hasaki/test_suites/test_hasaki_receiving_inbound_shipment.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "WIKI_RULES"
-            }
-          },
-          {
-            "id": "5433e80727697290",
-            "type": "leaf",
-            "state": {
-              "type": "smart-release-notes-view",
-              "state": {},
-              "icon": "file-text",
-              "title": "Release Notes"
-            }
-          }
-        ],
-        "currentTab": 1
-      },
-      {
-        "id": "7177e4d189124f20",
-        "type": "tabs",
-        "dimension": 75.70532915360502,
-        "children": [
-          {
-            "id": "dc3bdf33deb20d40",
-            "type": "leaf",
-            "state": {
-              "type": "kanban",
-              "state": {
-                "file": "KANBAN.md",
-                "kanbanViewState": {
-                  "kanban-plugin": "board",
-                  "list-collapse": [
-                    false,
-                    false,
-                    false
-                  ]
-                }
-              },
-              "icon": "lucide-trello",
-              "title": "KANBAN"
+              "title": "test_hasaki_receiving_inbound_shipment"
             }
           }
         ]
@@ -92,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "tag:#qa/feature-group/receiving-po",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -117,7 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 200
   },
   "right": {
     "id": "9e23b97de0c3c6b2",
@@ -127,6 +88,16 @@
         "id": "25e71fc321c0d573",
         "type": "tabs",
         "children": [
+          {
+            "id": "1aa8813eb3db6bba",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "Graph view"
+            }
+          },
           {
             "id": "a0cdb4a386e57bf5",
             "type": "leaf",
@@ -210,8 +181,8 @@
             "state": {
               "type": "smart-connections-view",
               "state": {},
-              "icon": "smart-connections",
-              "title": "Connections"
+              "icon": "lucide-ghost",
+              "title": "smart-connections-view"
             }
           },
           {
@@ -220,8 +191,8 @@
             "state": {
               "type": "smart-connections-visualizer",
               "state": {},
-              "icon": "git-fork",
-              "title": "Smart connections visualizer"
+              "icon": "lucide-ghost",
+              "title": "smart-connections-visualizer"
             }
           },
           {
@@ -234,12 +205,11 @@
               "title": "Lookup"
             }
           }
-        ],
-        "currentTab": 7
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 210.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -260,43 +230,46 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "dc3bdf33deb20d40",
+  "active": "bc94037ed2bd312a",
   "lastOpenFiles": [
-    "log.md",
-    "wiki/project_orange/bugs_knowledge/bug_loi_nut_dang_nhap_khong_click_duoc.md",
-    "wiki/project_orange/operations/daily_notes/2026-05-24.md",
-    "KANBAN.md",
-    "WIKI_RULES.md",
+    "README.md",
     "OBSIDIAN_GUIDE.md",
-    "scripts/wiki_manager.py",
-    "wiki/project_orange/test_suites/test_orangehrm_auth.md",
-    "wiki/project_orange/test_plans/testplan_cr_orange_200.md",
+    "log.md",
     "index.md",
-    "wiki/operations/test_data.md",
-    "wiki/project_demo/operations/team_contacts.md",
-    "wiki/project_demo/operations/test_data.md",
-    "wiki/project_demo/operations/environments.md",
-    "wiki/project_orange/operations/team_contacts.md",
-    "wiki/project_orange/operations/test_data.md",
-    "wiki/project_orange/operations/environments.md",
-    "wiki/project_orange/operations/daily_notes",
-    "wiki/project_orange/operations",
-    "wiki/project_orange/bugs_knowledge",
-    "wiki/project_demo/operations/daily_notes",
-    "wiki/project_demo/operations",
-    "wiki/project_demo/bugs_knowledge",
-    "wiki/operations/team_contacts.md",
-    "wiki/project_orange/releases/cr_orangehrm_golive_30052026.md",
-    "scripts/verify_wiki.py",
-    "scripts",
-    "raw_sources/assets/orangehrm_api_logs.json",
-    "wiki/project_orange/features/orangehrm_auth.md",
-    "wiki/project_demo/features/auth_login.md",
-    "Untitled Kanban.md",
-    "2026-05-23.md",
-    "wiki/project_demo/test_suites/test_auth_login.md",
-    "wiki/project_demo/test_plans/testplan_cr_101.md",
-    "wiki/project_demo/releases/cr_CR101_golive_23052026.md",
-    "templates/tpl_test_plan.md"
+    "wiki/project_hasaki/operations/progress_dashboard.md",
+    "Untitled.canvas",
+    "wiki/project_hasaki/features/hasaki_receiving_vas.md",
+    "Untitled 2.canvas",
+    "USER_COMMANDS.md",
+    "log.md.tmp.696.d836e829244b",
+    "wiki/project_hasaki/operations/progress_dashboard.md.tmp.696.6d6f3d8a2f0c",
+    "Untitled 1.canvas",
+    "wiki/project_hasaki/test_suites/test_hasaki_qc_evaluation.md",
+    "log.md.tmp.696.a82a0a720e5e",
+    "templates/tpl_test_suite.md.tmp.696.3f4a4f81ec7a",
+    "WIKI_RULES.md.tmp.696.504bd5f2aa37",
+    "wiki/project_hasaki/test_suites/test_hasaki_receiving_po_app.md.tmp.696.3f5a5e138044",
+    "wiki/project_hasaki/features/hasaki_receiving_po_app.md.tmp.696.fd02270083cb",
+    "wiki/project_hasaki/features/hasaki_receiving_inbound_shipment.md.tmp.696.8dea1ac8cd1d",
+    "templates/tpl_requirement.md.tmp.696.e17db9e564e5",
+    "wiki/project_hasaki/test_suites/test_hasaki_qc_evaluation.md.tmp.696.2ee0da72732c",
+    "KANBAN.md",
+    "wiki/project_hasaki/test_suites/test_hasaki_receiving_po_app.md",
+    "wiki/project_hasaki/test_suites/test_hasaki_qc_setup.md",
+    "wiki/project_hasaki/test_suites/test_hasaki_receiving_vas.md",
+    "wiki/project_hasaki/features/hasaki_qc_evaluation.md",
+    "wiki/project_hasaki/test_suites/test_hasaki_receiving_packing_list.md",
+    "wiki/project_hasaki/features/hasaki_qc_setup.md",
+    "wiki/project_hasaki/features/hasaki_receiving_po_app.md",
+    "wiki/project_hasaki/features/hasaki_receiving_packing_list.md",
+    "wiki/project_hasaki/features/hasaki_receiving_inbound_shipment.md",
+    "wiki/project_hasaki/test_plans/testplan_hasaki_2026_05.md",
+    "wiki/project_hasaki/test_suites/test_hasaki_receiving_inbound_shipment.md",
+    "raw_sources/project_orange/tasks/orangehrm_forgot_password.md",
+    "raw_sources/project_orange/tasks/orangehrm_auth.md",
+    "wiki/project_hasaki/operations/environments.md",
+    "CLAUDE.md",
+    "wiki/project_hasaki/operations/team_contacts.md",
+    "wiki/project_hasaki/operations/test_data.md"
   ]
 }

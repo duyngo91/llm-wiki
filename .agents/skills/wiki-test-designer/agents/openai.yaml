@@ -1,6 +1,0 @@
-interface:
-  display_name: "Wiki Test Designer"
-  short_description: "Design traceable test suites"
-  default_prompt: "Use $wiki-test-designer to generate positive and negative test cases with AC coverage and inference labels."
-policy:
-  allow_implicit_invocation: true

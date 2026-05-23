@@ -1,6 +1,6 @@
 ---
 aliases: [Mã-Test-Suite, Tên viết tắt]
-tags: [qa/test-suite]
+tags: [qa/test-suite, qa/feature-group/{{feature-group}}]
 status: Draft
 feature: 
 requirement: 

@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(Remove-Item \"C:\\\\project\\\\QA-Vault\\\\QA\\\\.claude\\\\commands\\\\get-hasaki-task.md\" -Force)",
+      "Bash(Remove-Item \"C:\\\\project\\\\QA-Vault\\\\QA\\\\.claude\\\\commands\\\\import-hasaki-task.md\" -Force)",
+      "Bash(Write-Output \"Deleted source files\")",
+      "Bash(Remove-Item *)",
+      "Skill(wiki-requirement-analyzer)",
+      "mcp__markitdown__convert_to_markdown",
+      "Skill(wiki-test-designer)"
+    ]
+  },
+  "enabledMcpjsonServers": [
+    "obsidian",
+    "markitdown"
+  ]
+}

@@ -1,6 +1,6 @@
 ---
 aliases: [Mã-Task, Tên đồng nghĩa]
-tags: [qa/requirement]
+tags: [qa/requirement, qa/feature-group/{{feature-group}}]
 status: Draft
 created: {{date:YYYY-MM-DD}}
 updated: {{date:YYYY-MM-DD}}
@@ -21,6 +21,9 @@ approval_note:
 - **Source chính:** (ghi rõ dùng PDF/Link nào, version nào)
 - **Đối tượng sử dụng (Actors):** 
 - **Test Suite tương ứng:** [[test_...]]
+- **Mối quan hệ:** *(Điền nếu feature này có liên kết với feature khác trong cùng project)*
+  - ➡️ [[feature_B]] — *(mô tả quan hệ)*
+  - ⬅️ [[feature_A]] — *(mô tả quan hệ)*
 
 ## Nguồn tài liệu
 | # | Loại | Tên / Link | Version | Status |

@@ -1,6 +1,0 @@
-interface:
-  display_name: "Wiki Requirement Analyzer"
-  short_description: "Analyze requirements into feature specs"
-  default_prompt: "Use $wiki-requirement-analyzer to analyze the new requirement source and create a traceable feature spec."
-policy:
-  allow_implicit_invocation: true

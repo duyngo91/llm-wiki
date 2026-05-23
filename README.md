@@ -48,17 +48,21 @@ cd llm-wiki
 - Kanban
 - Omnisearch / Smart Connections (nếu cần tìm kiếm nâng cao)
 
-## Skills trong vault
+## Skills trong vault (Claude Code Slash Commands)
 
-Thư mục `.agents/skills/` chứa các Agent Skills hỗ trợ workflow QA wiki. Mỗi skill dùng cấu trúc chuẩn: `.agents/skills/<skill-name>/SKILL.md` và metadata UI tại `.agents/skills/<skill-name>/agents/openai.yaml`.
-- `wiki-sync-helper`: hỗ trợ đồng bộ trạng thái/task trong wiki.
-- `wiki-requirement-analyzer`: phân tích requirement theo ISTQB Test Analysis để tạo/cập nhật feature spec.
-- `wiki-test-designer`: thiết kế test case/test suite theo ISTQB Test Design.
+Các skill được tổ chức thành **Claude Code slash commands** tại `.claude/commands/`. Gọi trực tiếp bằng `/` trong Claude Code:
 
-Quy ước script:
+| Slash Command | Mô tả |
+|:--------------|:------|
+| `/wiki-requirement-analyzer` | ISTQB Test Analysis — phân tích requirement, tạo/cập nhật Feature Spec |
+| `/wiki-test-designer` | ISTQB Test Design — thiết kế test cases/test suite có traceable |
+| `/wiki-sync-helper` | Bảo trì wiki — daily sync, Kanban sync, audit broken links |
+
+Logic nghiệp vụ và script python vẫn nằm tại:
 - `.agents/shared/`: thư viện dùng chung cho nhiều skill.
-- `.agents/skills/<skill-name>/scripts/`: entrypoint/helper phục vụ riêng skill đó, có thể import từ `.agents/shared/`.
-- `scripts/`: shim tương thích để người dùng vẫn chạy command ngắn từ root vault.
+- `.agents/skills/<skill-name>/SKILL.md`: tài liệu kỹ thuật chi tiết của skill.
+- `.agents/skills/<skill-name>/scripts/`: entrypoint python phục vụ riêng skill đó.
+- `scripts/`: shim tương thích để chạy lệnh ngắn từ root vault.
 
 ## Quy ước làm việc
 

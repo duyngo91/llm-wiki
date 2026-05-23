@@ -52,12 +52,21 @@ LLM_Wiki/
 ├── WIKI_RULES.md         ← File này — Bộ quy tắc vận hành chung
 │
 ├── raw_sources/          ← Tài liệu gốc thô (CHỈ ĐỌC, KHÔNG CHỈNH SỬA)
-│   ├── project_demo/     ← Chứa tasks, specs gốc của dự án mẫu
-│   │   └── tasks/
-│   ├── project_orange/   ← Chứa tasks, specs gốc của dự án OrangeHRM
-│   │   └── tasks/
-│   ├── issues/           ← Log lỗi thô, crash logs chung
-│   └── assets/           ← Ảnh chụp/video lỗi đính kèm
+│   ├── project_demo/     ← Chứa tài liệu gốc của dự án Demo Email
+│   │   ├── tasks/        ← Task/Jira ticket gốc
+│   │   ├── requirements/ ← PDF/FSD/BRD/Baseline của dự án
+│   │   ├── issues/       ← Log lỗi thô, crash logs
+│   │   └── assets/       ← Ảnh chụp/video bằng chứng lỗi
+│   ├── project_orange/   ← Chứa tài liệu gốc của dự án OrangeHRM
+│   │   ├── tasks/
+│   │   ├── requirements/
+│   │   ├── issues/
+│   │   └── assets/
+│   └── project_hasaki/   ← Chứa tài liệu gốc của dự án Hasaki
+│       ├── tasks/
+│       ├── requirements/
+│       ├── issues/
+│       └── assets/
 │
 ├── templates/            ← Mẫu tài liệu (cho Obsidian Insert Template)
 │
@@ -96,6 +105,11 @@ LLM_Wiki/
 ### 1.3. Quy tắc liên kết & Định dạng (Tối ưu hóa Tìm kiếm & Obsidian Graph)
 
 - **Liên kết 2 chiều (Double-Linking):** Sử dụng cú pháp liên kết Obsidian `[[Tên Trang]]` để kết nối tất cả các trang liên quan. Mọi Feature đều phải dẫn đến Test Suite tương ứng và ngược lại. Khi viết Daily Notes, phải dẫn link đến Feature/Bug được xử lý.
+- **Liên kết Feature ↔ Feature (Inter-Feature Relationship):** Khi nhiều feature trong cùng một project có quan hệ phụ thuộc hoặc kích hoạt lẫn nhau (ví dụ: Feature A sinh ra đầu vào cho Feature B), AI **BẮT BUỘC** thêm mục `Mối quan hệ` vào phần `## Tổng quan` của mỗi feature spec liên quan. Dùng ký hiệu chuẩn:
+  - `➡️ [[feature_B|#N Tên]]` — feature này output/kích hoạt feature B
+  - `⬅️ [[feature_A|#N Tên]]` — feature này phụ thuộc/nhận đầu vào từ feature A
+  - `ℹ️ [[feature_C|#N Tên]]` — liên quan gián tiếp, ảnh hưởng một phần
+  - Mỗi link phải kèm 1 dòng mô tả ngắn giải thích bản chất quan hệ (không chỉ đặt link trống).
 - **Bí danh (Aliases):** Mọi file wiki khi khởi tạo (trừ daily notes) đều phải có phần YAML frontmatter chứa `aliases: [Mã-Task, Tên đồng nghĩa, Tên ngắn]`. Điều này giúp thanh tìm kiếm của cả con người và AI hoạt động cực kỳ hiệu quả mà không sợ lỗi lệch tên.
 - **Thẻ phân cấp (Nested Tags):** Tuyệt đối tuân thủ hệ thống tag phân cấp để lọc dữ liệu:
   - `#qa/requirement` cho file nghiệp vụ (`wiki/[project]/features/`).
@@ -105,6 +119,7 @@ LLM_Wiki/
   - `#qa/bug/open` cho bug chưa fix, `#qa/bug/fixed` cho bug đã giải quyết (`wiki/[project]/bugs_knowledge/`).
   - `#qa/daily` cho ghi chú daily notes (`wiki/[project]/operations/daily_notes/`).
   - `#qa/operations` cho tài liệu môi trường/test data (`wiki/[project]/operations/`).
+  - `#qa/feature-group/[tên-nhóm]` — **Tag nhóm tính năng (Feature Group):** Dùng khi nhiều Feature Specs và Test Suites trong cùng project cùng thuộc một phạm vi nghiệp vụ lớn (VD: `#qa/feature-group/receiving-po`). **Bắt buộc thêm đồng thời** vào cả Feature Spec và Test Suite tương ứng. Khi tạo group tag mới phải cập nhật cả `templates/tpl_requirement.md` và `tpl_test_suite.md`.
 - Mọi file feature và test suite **BẮT BUỘC** có mục `## 📅 Changelog` ở cuối file.
 - Ghi nhận mọi hoạt động vào `log.md`.
 
@@ -117,11 +132,11 @@ LLM_Wiki/
 ### 1.5. User Intake Protocol (Người dùng chỉ cần bỏ file)
 
 - **Nguyên tắc vận hành cho người dùng cuối:** Người dùng chỉ cần đặt file vào `raw_sources/...` và yêu cầu AI xử lý. Người dùng không cần tự sửa `wiki/`, `KANBAN.md`, `log.md`.
-- **Quy tắc phân loại file đầu vào:**
-  - PDF/FSD/BRD/Baseline: `raw_sources/requirements/`
+- **Quy tắc phân loại file đầu vào (tất cả theo project):**
+  - PDF/FSD/BRD/Baseline: `raw_sources/[project]/requirements/`
   - Task/Jira theo dự án: `raw_sources/[project]/tasks/`
-  - Lỗi thô/log: `raw_sources/issues/`
-  - Ảnh/video bằng chứng: `raw_sources/assets/`
+  - Lỗi thô/log: `raw_sources/[project]/issues/`
+  - Ảnh/video bằng chứng: `raw_sources/[project]/assets/`
 - **Thiếu thông tin project:** Nếu AI không xác định được project từ tên file/nội dung, AI phải hỏi người dùng xác nhận project trước khi tạo tài liệu trong `wiki/`.
 
 ---
@@ -135,6 +150,10 @@ LLM_Wiki/
 **Các bước thực hiện:**
 
 1. **Tạo cấu trúc chuẩn:**
+   - `raw_sources/[project]/tasks/`
+   - `raw_sources/[project]/requirements/`
+   - `raw_sources/[project]/issues/`
+   - `raw_sources/[project]/assets/`
    - `wiki/[project]/features/`
    - `wiki/[project]/test_suites/`
    - `wiki/[project]/test_plans/`
@@ -154,7 +173,7 @@ LLM_Wiki/
 
 ### Quy trình 2.1: Nạp Tài Liệu PDF Lớn (Ingest Baseline PDF)
 
-> **Kích hoạt:** Người dùng thêm file PDF mới vào `raw_sources/requirements/` và yêu cầu nạp.
+> **Kích hoạt:** Người dùng thêm file PDF mới vào `raw_sources/[project]/requirements/` và yêu cầu nạp.
 > 
 > **⚠️ QUY TRÌNH 2 BƯỚC CHUẨN ISTQB:** AI **BẮT BUỘC** tách biệt quy trình nạp tài liệu thành 2 bước độc lập thông qua hai Custom Skills:
 > 1.  **Bước A: Phân tích Nghiệp vụ (Test Analysis - Custom Skill `wiki-requirement-analyzer`)**
@@ -168,7 +187,7 @@ LLM_Wiki/
 2. **Phân tích & Tách file (Split):**
    - Đọc chi tiết nội dung đã convert.
    - Tách tài liệu thành các phần nhỏ riêng biệt theo tính năng/module.
-   - Lưu file đã convert vào `raw_sources/requirements/` (giữ nguyên file gốc PDF bên cạnh).
+   - Lưu file đã convert vào `raw_sources/[project]/requirements/` (giữ nguyên file gốc PDF bên cạnh).
 
 3. **Kiểm tra trùng lặp & Xử lý từng phần đã tách (Thực thi 2 Bước ISTQB có HITL):**
 
@@ -218,7 +237,7 @@ LLM_Wiki/
 > **Kích hoạt:** Người dùng yêu cầu đồng bộ Daily Note hoặc Meeting Note.
 > 
 > **⚠️ PHƯƠNG THỨC THỰC THI CHUẨN:** AI **BẮT BUỘC** sử dụng Custom Skill `wiki-sync-helper` để chạy lệnh:
-> `python scripts/wiki_manager.py daily-sync --project <project_name> --date <YYYY-MM-DD>`
+> `python .claude/scripts/wiki_sync.py daily-sync --project <project_name> --date <YYYY-MM-DD>`
 > Việc chạy script tự động hóa này đảm bảo tốc độ tối đa, tiết kiệm token và tránh sai sót trong quá trình cập nhật Kanban và sinh Bug.
 
 **Các bước thực hiện:**
@@ -256,7 +275,7 @@ LLM_Wiki/
 2. **Đồng bộ trạng thái Go-Live:** AI quét file `cr_...md` (releases/), đối chiếu Test Plans, nếu test hoàn tất (`Passed`), AI cập nhật Release sang `Testing` và thông báo cho QA Lead.
 3. **Kiểm định & Sửa lỗi Tag (Tag Audit):** Quét toàn bộ `wiki/` để đảm bảo sử dụng tag phân cấp chuẩn (`#qa/requirement`, `#qa/test-suite`, v.v.). AI tự động sửa sai sót.
 4. **Kiểm tra Link & Độ phủ:** Quét broken links, orphan notes, và xác nhận mỗi Feature đều có Test Suite tương ứng.
-5. **Validation Guardrail:** AI BẮT BUỘC chạy `python scripts/verify_wiki.py` để quét lỗi đứt gãy link/sai status. Kết quả báo cáo phải đính kèm vào phản hồi người dùng.
+5. **Validation Guardrail:** AI BẮT BUỘC chạy `python .claude/scripts/wiki_sync.py verify` để quét lỗi đứt gãy link/sai status. Kết quả báo cáo phải đính kèm vào phản hồi người dùng.
 6. **Ghi nhật ký:** Ghi nhận vào `log.md` prefix `[lint-sync]`.
 
 ---
