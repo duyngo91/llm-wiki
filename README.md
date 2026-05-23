@@ -42,17 +42,12 @@ cd llm-wiki
 - Kanban
 - Omnisearch / Smart Connections (nếu cần tìm kiếm nâng cao)
 
-## Script hữu ích
+## Skills trong vault
 
-- Kiểm tra tính toàn vẹn wiki (broken links, orphan pages, status frontmatter):
-```bash
-python scripts/verify_wiki.py
-```
-
-- Đồng bộ task hoàn thành từ Kanban sang wiki (status/cập nhật liên quan):
-```bash
-python scripts/wiki_manager.py
-```
+Thư mục `.agent/` đang chứa các skill hỗ trợ workflow QA wiki:
+- `wiki-sync-helper`: hỗ trợ đồng bộ trạng thái/task trong wiki.
+- `wiki-requirement-analyzer` (mới): phân tích requirement theo ISTQB Test Analysis để tạo/cập nhật feature spec.
+- `wiki-test-designer` (mới): thiết kế test case/test suite theo ISTQB Test Design.
 
 ## Quy ước làm việc
 
@@ -66,4 +61,3 @@ git add .
 git commit -m "docs: update test suite and release notes"
 git push
 ```
-
