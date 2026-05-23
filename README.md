@@ -56,7 +56,8 @@ Thư mục `.agents/skills/` chứa các Agent Skills hỗ trợ workflow QA wik
 - `wiki-test-designer`: thiết kế test case/test suite theo ISTQB Test Design.
 
 Quy ước script:
-- `.agents/skills/<skill-name>/scripts/`: logic độc lập phục vụ riêng skill đó.
+- `.agents/shared/`: thư viện dùng chung cho nhiều skill.
+- `.agents/skills/<skill-name>/scripts/`: entrypoint/helper phục vụ riêng skill đó, có thể import từ `.agents/shared/`.
 - `scripts/`: shim tương thích để người dùng vẫn chạy command ngắn từ root vault.
 
 ## Quy ước làm việc

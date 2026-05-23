@@ -9,7 +9,7 @@ metadata:
 
 Use for deterministic wiki maintenance. Prefer scripts over manual markdown edits when a supported command exists.
 
-The canonical sync/audit logic lives inside this skill at `scripts/wiki_sync.py`. Root-level files in `../../../scripts/` are compatibility shims for user-facing commands documented in `../../../USER_COMMANDS.md`.
+Shared sync/audit logic lives at `../../../shared/python/wiki_sync_core.py`. This skill owns the entrypoint `scripts/wiki_sync.py`, which imports the shared core. Root-level files in `../../../scripts/` are compatibility shims for user-facing commands documented in `../../../USER_COMMANDS.md`.
 
 ## Commands
 
