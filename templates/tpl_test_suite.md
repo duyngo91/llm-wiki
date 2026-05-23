@@ -8,6 +8,9 @@ dev:
 qa: 
 created: {{date:YYYY-MM-DD}}
 updated: {{date:YYYY-MM-DD}}
+approved_by:
+approved_at:
+approval_note:
 ---
 
 # 🧪 Test Suite: {{title}}
@@ -30,11 +33,11 @@ updated: {{date:YYYY-MM-DD}}
 
 ## ✅ Test Cases
 
-| Test ID | Tiêu đề | Điều kiện tiên quyết | Các bước thực hiện | Kết quả mong đợi | Loại Test | Status |
-|:--------|:--------|:--------------------|:-------------------|:-----------------|:----------|:-------|
-| TC-001 | | | 1. ...  2. ... | | Happy Path | ⏳ |
-| TC-002 | | | 1. ...  2. ... | | Negative | ⏳ |
-| TC-003 | | | 1. ...  2. ... | | Boundary | ⏳ |
+| Test ID | Tiêu đề | AC/Req Cover | Loại case | Kỹ thuật test | Điều kiện tiên quyết | Các bước thực hiện | Kết quả mong đợi | Nguồn / Suy diễn | Status |
+|:--------|:--------|:-------------|:----------|:--------------|:--------------------|:-------------------|:-----------------|:-----------------|:-------|
+| TC-001 | | AC-01 / R1 | Positive | Happy Path | | 1. ...  2. ... | | Explicit từ Feature Spec | ⏳ |
+| TC-002 | | AC-02 / R2 | Negative | Equivalence Partitioning | | 1. ...  2. ... | | Explicit từ Business Rule | ⏳ |
+| TC-003 | | AC-03 / R3 | Negative | Boundary Value Analysis | | 1. ...  2. ... | | AI-Inferred từ validation rule | ⏳ |
 
 ## 🚫 Test Cases Lỗi Thời (Deprecated)
 *Các test case không còn áp dụng do thay đổi requirement. Lưu lại để tham khảo.*

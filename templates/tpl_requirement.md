@@ -7,6 +7,9 @@ updated: {{date:YYYY-MM-DD}}
 feature: 
 project: 
 source_version: 
+approved_by:
+approved_at:
+approval_note:
 ---
 
 # 📋 REQ: {{title}}

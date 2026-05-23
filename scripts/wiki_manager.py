@@ -115,22 +115,38 @@ def sync_completed_task(test_suite_link):
     blocked_cases = 0
     untested_cases = 0
     total_cases = 0
+
+    def parse_test_case_row(line):
+        if "TC-" not in line or "|" not in line:
+            return None
+
+        cells = [p.strip() for p in line.strip().strip("|").split("|")]
+        if not cells or not cells[0].startswith("TC-"):
+            return None
+
+        status = cells[-1]
+        if len(cells) >= 10:
+            category = cells[4] or cells[3] or "Unknown"
+        elif len(cells) >= 7:
+            category = cells[5] or "Unknown"
+        else:
+            category = "Unknown"
+        return category, status
     
     # Parse actual test cases
     for line in lines:
-        if "TC-" in line and "|" in line:
-            parts = [p.strip() for p in line.split("|")]
-            if len(parts) >= 8:
-                total_cases += 1
-                status = parts[7]
-                if "✅ Pass" in status or "Pass" in status:
-                    passed_cases += 1
-                elif "❌ Fail" in status or "Fail" in status:
-                    failed_cases += 1
-                elif "🚫 Blocked" in status or "Blocked" in status:
-                    blocked_cases += 1
-                else:
-                    untested_cases += 1
+        parsed_row = parse_test_case_row(line)
+        if parsed_row:
+            _, status = parsed_row
+            total_cases += 1
+            if "✅ Pass" in status or "Pass" in status:
+                passed_cases += 1
+            elif "❌ Fail" in status or "Fail" in status:
+                failed_cases += 1
+            elif "🚫 Blocked" in status or "Blocked" in status:
+                blocked_cases += 1
+            else:
+                untested_cases += 1
                     
     # Rebuild Test Coverage Summary Table
     # Identify type of tests from actual parsed lines or simply rewrite the totals row
@@ -142,7 +158,7 @@ def sync_completed_task(test_suite_link):
             summary_started = True
             continue
         if summary_started:
-            if line.startswith("|") and ("Loại Test" in line or "Happy Path" in line or "Negative" in line or "Security" in line or "Tổng" in line or "---" in line):
+            if line.startswith("|"):
                 summary_lines_range.append(idx)
             elif line.strip() == "" and len(summary_lines_range) > 0:
                 break
@@ -157,22 +173,20 @@ def sync_completed_task(test_suite_link):
         # Parse test categories and count them
         categories = {}
         for line in lines:
-            if "TC-" in line and "|" in line:
-                parts = [p.strip() for p in line.split("|")]
-                if len(parts) >= 8:
-                    cat = parts[6]
-                    status = parts[7]
-                    if cat not in categories:
-                        categories[cat] = {"total": 0, "pass": 0, "fail": 0, "blocked": 0, "untested": 0}
-                    categories[cat]["total"] += 1
-                    if "✅ Pass" in status or "Pass" in status:
-                        categories[cat]["pass"] += 1
-                    elif "❌ Fail" in status or "Fail" in status:
-                        categories[cat]["fail"] += 1
-                    elif "🚫 Blocked" in status or "Blocked" in status:
-                        categories[cat]["blocked"] += 1
-                    else:
-                        categories[cat]["untested"] += 1
+            parsed_row = parse_test_case_row(line)
+            if parsed_row:
+                cat, status = parsed_row
+                if cat not in categories:
+                    categories[cat] = {"total": 0, "pass": 0, "fail": 0, "blocked": 0, "untested": 0}
+                categories[cat]["total"] += 1
+                if "✅ Pass" in status or "Pass" in status:
+                    categories[cat]["pass"] += 1
+                elif "❌ Fail" in status or "Fail" in status:
+                    categories[cat]["fail"] += 1
+                elif "🚫 Blocked" in status or "Blocked" in status:
+                    categories[cat]["blocked"] += 1
+                else:
+                    categories[cat]["untested"] += 1
                         
         for cat, stats in categories.items():
             new_summary_table.append(f"| {cat} | {stats['total']} | {stats['pass']} | {stats['fail']} | {stats['blocked']} | {stats['untested']} |")
