@@ -9,6 +9,8 @@ Kho tri thức QA/Test theo mô hình wiki (Obsidian-first), dùng để quản 
 
 Repo: [duyngo91/llm-wiki](https://github.com/duyngo91/llm-wiki)
 
+Hướng dẫn lệnh cho người dùng: [USER_COMMANDS.md](./USER_COMMANDS.md)
+
 ## Cấu trúc chính
 
 ```text
