@@ -1,0 +1,6 @@
+interface:
+  display_name: "Wiki Sync Helper"
+  short_description: "Sync and audit the wiki vault"
+  default_prompt: "Use $wiki-sync-helper to sync Kanban, update test coverage, and run the wiki audit."
+policy:
+  allow_implicit_invocation: true

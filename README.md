@@ -49,10 +49,10 @@ cd llm-wiki
 
 ## Skills trong vault
 
-Thư mục `.agent/` đang chứa các skill hỗ trợ workflow QA wiki:
+Thư mục `.agent/` chứa các Agent Skills hỗ trợ workflow QA wiki. Mỗi skill dùng cấu trúc chuẩn: `.agent/<skill-name>/SKILL.md` và metadata UI tại `.agent/<skill-name>/agents/openai.yaml`.
 - `wiki-sync-helper`: hỗ trợ đồng bộ trạng thái/task trong wiki.
-- `wiki-requirement-analyzer` (mới): phân tích requirement theo ISTQB Test Analysis để tạo/cập nhật feature spec.
-- `wiki-test-designer` (mới): thiết kế test case/test suite theo ISTQB Test Design.
+- `wiki-requirement-analyzer`: phân tích requirement theo ISTQB Test Analysis để tạo/cập nhật feature spec.
+- `wiki-test-designer`: thiết kế test case/test suite theo ISTQB Test Design.
 
 ## Quy ước làm việc
 
