@@ -1,0 +1,302 @@
+{
+  "main": {
+    "id": "04a8051d409f0e92",
+    "type": "split",
+    "children": [
+      {
+        "id": "fff7cb4e46a29d37",
+        "type": "tabs",
+        "dimension": 24.294670846394983,
+        "children": [
+          {
+            "id": "4d7128dfd68b5d73",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "WIKI_RULES.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "WIKI_RULES"
+            }
+          },
+          {
+            "id": "5433e80727697290",
+            "type": "leaf",
+            "state": {
+              "type": "smart-release-notes-view",
+              "state": {},
+              "icon": "file-text",
+              "title": "Release Notes"
+            }
+          }
+        ],
+        "currentTab": 1
+      },
+      {
+        "id": "7177e4d189124f20",
+        "type": "tabs",
+        "dimension": 75.70532915360502,
+        "children": [
+          {
+            "id": "dc3bdf33deb20d40",
+            "type": "leaf",
+            "state": {
+              "type": "kanban",
+              "state": {
+                "file": "KANBAN.md",
+                "kanbanViewState": {
+                  "kanban-plugin": "board",
+                  "list-collapse": [
+                    false,
+                    false,
+                    false
+                  ]
+                }
+              },
+              "icon": "lucide-trello",
+              "title": "KANBAN"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "743214224f5ce4ef",
+    "type": "split",
+    "children": [
+      {
+        "id": "07265d933ec5bfa1",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "f02ffbfd2710aa17",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "5d8f6fcc85b1f41e",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "060812efd7301ad3",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "9e23b97de0c3c6b2",
+    "type": "split",
+    "children": [
+      {
+        "id": "25e71fc321c0d573",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "a0cdb4a386e57bf5",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "KANBAN.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for KANBAN"
+            }
+          },
+          {
+            "id": "3ae7a33297079aff",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "KANBAN.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from KANBAN"
+            }
+          },
+          {
+            "id": "dbcd8916c6d8b0d4",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "33db8bf835c40e57",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "a155e9647ea5c443",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "KANBAN.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of KANBAN"
+            }
+          },
+          {
+            "id": "3b6ab327af6c4cde",
+            "type": "leaf",
+            "state": {
+              "type": "smart-connections-view",
+              "state": {},
+              "icon": "smart-connections",
+              "title": "Connections"
+            }
+          },
+          {
+            "id": "8c6e2fadc6f7efdf",
+            "type": "leaf",
+            "state": {
+              "type": "smart-connections-visualizer",
+              "state": {},
+              "icon": "git-fork",
+              "title": "Smart connections visualizer"
+            }
+          },
+          {
+            "id": "39a9b9ac2b2b0959",
+            "type": "leaf",
+            "state": {
+              "type": "smart-lookup-view-connections",
+              "state": {},
+              "icon": "smart-lookup",
+              "title": "Lookup"
+            }
+          }
+        ],
+        "currentTab": 7
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false,
+      "obsidian-kanban:Create new board": false,
+      "omnisearch:Omnisearch": false,
+      "smart-connections:Smart Connections: Open connections view": false,
+      "smart-connections:Toggle Footer Connections": false,
+      "smart-connections:Smart Connections: Open random connection": false,
+      "smart-connections:Smart Lookup: Open lookup view": false,
+      "smart-connections-visualizer:Open smart connections visualizer": false,
+      "templater-obsidian:Templater": false
+    }
+  },
+  "active": "dc3bdf33deb20d40",
+  "lastOpenFiles": [
+    "log.md",
+    "wiki/project_orange/bugs_knowledge/bug_loi_nut_dang_nhap_khong_click_duoc.md",
+    "wiki/project_orange/operations/daily_notes/2026-05-24.md",
+    "KANBAN.md",
+    "WIKI_RULES.md",
+    "OBSIDIAN_GUIDE.md",
+    "scripts/wiki_manager.py",
+    "wiki/project_orange/test_suites/test_orangehrm_auth.md",
+    "wiki/project_orange/test_plans/testplan_cr_orange_200.md",
+    "index.md",
+    "wiki/operations/test_data.md",
+    "wiki/project_demo/operations/team_contacts.md",
+    "wiki/project_demo/operations/test_data.md",
+    "wiki/project_demo/operations/environments.md",
+    "wiki/project_orange/operations/team_contacts.md",
+    "wiki/project_orange/operations/test_data.md",
+    "wiki/project_orange/operations/environments.md",
+    "wiki/project_orange/operations/daily_notes",
+    "wiki/project_orange/operations",
+    "wiki/project_orange/bugs_knowledge",
+    "wiki/project_demo/operations/daily_notes",
+    "wiki/project_demo/operations",
+    "wiki/project_demo/bugs_knowledge",
+    "wiki/operations/team_contacts.md",
+    "wiki/project_orange/releases/cr_orangehrm_golive_30052026.md",
+    "scripts/verify_wiki.py",
+    "scripts",
+    "raw_sources/assets/orangehrm_api_logs.json",
+    "wiki/project_orange/features/orangehrm_auth.md",
+    "wiki/project_demo/features/auth_login.md",
+    "Untitled Kanban.md",
+    "2026-05-23.md",
+    "wiki/project_demo/test_suites/test_auth_login.md",
+    "wiki/project_demo/test_plans/testplan_cr_101.md",
+    "wiki/project_demo/releases/cr_CR101_golive_23052026.md",
+    "templates/tpl_test_plan.md"
+  ]
+}
