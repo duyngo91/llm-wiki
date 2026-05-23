@@ -13,28 +13,28 @@ updated: 2026-05-23
 
 ## 🚀 COMMAND CHO NGƯỜI DÙNG (ĐỌC TRƯỚC)
 
-- **Nạp requirement mới từ PDF/Markdown trong `raw_sources/requirements/`:**
+- **Bước 1 - Khởi tạo project mới (nếu chưa có):**
+  - Nhắn AI: `tạo project mới tên project_xxx theo chuẩn wiki rules`
+- **Bước 2 - Nạp requirement mới từ PDF/Markdown trong `raw_sources/requirements/`:**
   - Nhắn AI: `ingest file mới trong raw_sources/requirements`
-- **Xử lý task Jira mới trong `raw_sources/[project]/tasks/`:**
+- **Bước 3 - Phân tích task Jira mới trong `raw_sources/[project]/tasks/`:**
   - Nhắn AI: `phân tích task mới và tạo specs + test suite`
-- **Tạo Test Plan cho CR (staging test strategy):**
+- **Bước 4 - Tạo Test Plan cho CR (staging test strategy):**
   - Nhắn AI: `tạo test plan cho CR-ORANGE-200 thuộc project_orange`
-- **Đồng bộ daily note theo ngày:**
+- **Bước 5 - Đồng bộ daily note theo ngày (trong lúc test):**
   - Nhắn AI: `daily sync project_orange ngày 2026-05-23`
   - Hoặc chạy tay: `python scripts/wiki_manager.py daily-sync --project project_orange --date 2026-05-23`
-- **Chạy dọn dẹp + kiểm định toàn wiki:**
+- **Bước 6 - Khi task đã test xong và cần chốt trạng thái:**
+  - Nhắn AI: `chuyển task [MÃ-TASK] sang Done và cập nhật suite/feature/plan`
+- **Bước 7 - Khởi tạo CR Go-Live (biên bản deploy + smoke test prod):**
+  - Nhắn AI: `tạo CR golive cho CR-ORANGE-200 ngày 2026-05-30 thuộc project_orange`
+- **Bước 8 - Khi đã smoke test production xong và cần đóng CR:**
+  - Nhắn AI: `cập nhật kết quả smoke test và chốt CR [MÃ-CR] sang Done`
+- **Tác vụ kiểm định bất kỳ lúc nào:**
   - Nhắn AI: `lint và sync toàn bộ wiki`
   - Hoặc chạy tay: `python scripts/wiki_manager.py sync`
 - **Chỉ kiểm tra lỗi link/status (không sync):**
   - Chạy tay: `python scripts/verify_wiki.py`
-- **Khi task đã test xong và cần chốt trạng thái:**
-  - Nhắn AI: `chuyển task [MÃ-TASK] sang Done và cập nhật suite/feature/plan`
-- **Khởi tạo CR Go-Live (biên bản deploy + smoke test prod):**
-  - Nhắn AI: `tạo CR golive cho CR-ORANGE-200 ngày 2026-05-30 thuộc project_orange`
-- **Khi đã smoke test production xong và cần đóng CR:**
-  - Nhắn AI: `cập nhật kết quả smoke test và chốt CR [MÃ-CR] sang Done`
-- **Khởi tạo project mới:**
-  - Nhắn AI: `tạo project mới tên project_xxx theo chuẩn wiki rules`
 
 ---
 
