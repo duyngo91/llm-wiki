@@ -27,21 +27,20 @@ approval_note:
 |:----------|:-----------|:-----|:-----|:--------|:----------|
 | Happy Path | 12 | | | | 12 |
 | Negative | 10 | | | | 10 |
-| Boundary | 4 | | | | 4 |
+| Boundary | 3 | | | | 3 |
 | State Transition | 5 | | | | 5 |
-| Error Guessing | 3 | | | | 3 |
-| **Tổng** | **34** | | | | **34** |
+| Error Guessing | 2 | | | | 2 |
+| **Tổng** | **32** | | | | **32** |
 
 ## ✅ Test Cases
 
-| Test ID | Tiêu đề | AC/Req Cover | Loại case | Kỹ thuật test | Điều kiện tiên quyết | Các bước thực hiện | Kết quả mong đợi | Nguồn / Suy diễn | Status |
+| Test ID | Tiêu đề | AC/Req Cover | Loại case | Kỹ thuật test | Điều kiện tiên quyết | Các bước thực hiện | Kết quả mong đợi | Nguồn | Status |
 |:--------|:--------|:-------------|:----------|:--------------|:--------------------|:-------------------|:-----------------|:-----------------|:-------|
 | TC-QCE-001 | App — Đánh giá sản phẩm thường tất cả tiêu chí Đạt | AC-01 / R11 R12 | Positive | Happy Path | VAS type Quality Control status Open; SKU có thiết lập Approved | 1. Vào App QC → chọn kho → chọn VAS 2. Chọn sản phẩm 3. Đánh giá tất cả tiêu chí = Đạt 4. Nhấn Hoàn thành | Kết quả = Đạt; màu sản phẩm chuyển xanh lá; VAS cập nhật trạng thái phù hợp | Explicit từ PDF v1.5 AC-01 | ⏳ |
 | TC-QCE-002 | App — Tiêu chí Fail yêu cầu chụp hình và ghi chú | AC-02 / R11 | Negative | Happy Path | Đang đánh giá tiêu chí; chọn Không đạt | 1. Chọn tiêu chí = Không đạt 2. Thử nhấn Hoàn thành tiêu chí khi chưa chụp hình | Không cho nhấn Hoàn thành; hệ thống yêu cầu chụp ≤5 hình và nhập ghi chú | Explicit từ PDF v1.5 AC-02 | ⏳ |
 | TC-QCE-003 | App — Chụp hình tem QC bắt buộc sau Hoàn thành | AC-03 / R13 | Positive | Happy Path | Đã đánh giá xong tất cả tiêu chí của SKU | 1. Nhấn "Hoàn thành" 2. App hiển thị màn hình chụp tem QC | App yêu cầu chụp 1 hình tem QC Pass/Fail; không thể skip để ghi nhận lên hệ thống | Explicit từ PDF v1.5 AC-03 | ⏳ |
 | TC-QCE-004 | App — Màu sắc trạng thái sản phẩm trong VAS | R10 | Positive | Happy Path | VAS có 3 SKU: chưa đánh giá, đang đánh giá, đã đánh giá | 1. Xem danh sách sản phẩm trong VAS | SKU chưa đánh giá = xám nhạt; đang đánh giá = xanh dương nhạt; đã đánh giá = xanh lá nhạt | Explicit từ PDF v1.5 R10 | ⏳ |
 | TC-QCE-005 | App QC vải — 10% sampling ceiling | AC-04 / R14 | Positive | Boundary Value Analysis | SKU vải nhận 25 Group UID trong VAS | 1. Vào App QC → chọn VAS vải 2. Xem số dòng cần đánh giá | Hiển thị 3 dòng cần đánh giá = ceil(25 × 10%) = ceil(2.5) = 3 | Explicit từ PDF v1.5 AC-04 | ⏳ |
-| TC-QCE-006 | App QC vải — 10% sampling khi N=10 (boundary exact) | R14 | Positive | Boundary Value Analysis | SKU vải nhận 10 Group UID | 1. Xem số dòng cần đánh giá | Sinh 1 dòng = ceil(10 × 10%) = ceil(1) = 1 | AI-Inferred từ R14 (boundary: N=10 → ceil(1.0) = 1) | ⏳ |
 | TC-QCE-007 | App QC vải — Scan UID group hợp lệ | R15 | Positive | Happy Path | Đang ở màn hình đánh giá vải; UID group thuộc PO và lô | 1. Scan UID group đúng PO/lô 2. Xác nhận | UID group được chấp nhận; màn hình khai báo số lượng xuất hiện | Explicit từ PDF v1.5 R15 | ⏳ |
 | TC-QCE-008 | App QC vải — Scan UID group không thuộc PO/lô | R15 / ERR-QCE-02 | Negative | Equivalence Partitioning | UID group không thuộc PO đang đánh giá | 1. Scan UID group của PO khác | Thông báo "Nhóm UID không tồn tại hoặc không thuộc PO và số lô được yêu cầu đánh giá" | Explicit từ PDF v1.5 ERR-QCE-02 | ⏳ |
 | TC-QCE-009 | App QC vải — Khai báo SL cần đánh giá > SL trong UID group | R16 / ERR-QCE-03 | Negative | Boundary Value Analysis | UID group có 10 sản phẩm | 1. Khai báo SL cần đánh giá = 11 2. Xác nhận | Thông báo "Số lượng trong UID group không đủ số lượng yêu cầu." | Explicit từ PDF v1.5 ERR-QCE-03 | ⏳ |
@@ -69,7 +68,6 @@ approval_note:
 | TC-QCE-031 | UID group chưa đánh giá (Đánh giá đạt = No) — không thể IT | R24 | Negative | State Transition | UID group vải Đánh giá đạt = No | 1. Thử thực hiện IT UID group này | Hệ thống block IT; thông báo chưa đánh giá xã vải | Explicit từ PDF v1.5 R24 (block IT nếu chưa đánh giá) | ⏳ |
 | TC-QCE-032 | App — Tiêu chí Theo điều kiện — nhập giá trị ≤0 không được chấp nhận | R11 / Exc-Flow 4 | Negative | Boundary Value Analysis | Tiêu chí Theo điều kiện đang trong màn hình đánh giá | 1. Nhập giá trị = 0 2. Enter | Giá trị không được chấp nhận; thông báo lỗi | Explicit từ PDF v1.5 Exc-Flow 4 | ⏳ |
 | TC-QCE-033 | App — Tìm kiếm VAS theo mã PO | R9 | Positive | Happy Path | Có nhiều VAS trong danh sách | 1. Nhập mã PO vào ô tìm kiếm 2. Xem kết quả | Chỉ hiển thị VAS liên quan đến mã PO đó | Explicit từ PDF v1.5 R9 | ⏳ |
-| TC-QCE-034 | Web — Link VAS trong cột listing dẫn đến chi tiết VAS | R2 | Positive | Error Guessing | Có assessment trong listing | 1. Nhấn hyperlink VAS trong cột listing 2. Xem trang đích | Trang chuyển đến trang chi tiết VAS tương ứng | AI-Inferred từ R2 (VAS là hyperlink) | ⏳ |
 
 ## 🚫 Test Cases Lỗi Thời (Deprecated)
 
@@ -81,4 +79,5 @@ approval_note:
 
 | Thời gian | Version | Nội dung thay đổi | Nguồn |
 |:----------|:--------|:-----------------|:------|
+| 2026-05-23 21:49:34 | v1.1 | Loại TC-QCE-006/034 vì suy diễn; chuyển câu hỏi về Feature questions; đổi cột nguồn về `Nguồn` | [[WIKI_RULES]] |
 | 2026-05-23 00:30:00 | v1.0 | Khởi tạo Test Suite từ Feature Spec v1.0 — 34 test cases | [[wiki/project_hasaki/features/hasaki_qc_evaluation\|hasaki_qc_evaluation]] |

@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "wiki/project_hasaki/test_suites/test_hasaki_receiving_inbound_shipment.md",
+                "file": "WIKI_RULES.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "test_hasaki_receiving_inbound_shipment"
+              "title": "WIKI_RULES"
             }
           }
         ]
@@ -89,22 +89,12 @@
         "type": "tabs",
         "children": [
           {
-            "id": "1aa8813eb3db6bba",
-            "type": "leaf",
-            "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Graph view"
-            }
-          },
-          {
             "id": "a0cdb4a386e57bf5",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
-                "file": "KANBAN.md",
+                "file": "WIKI_RULES.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -114,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for KANBAN"
+              "title": "Backlinks for WIKI_RULES"
             }
           },
           {
@@ -201,8 +191,8 @@
             "state": {
               "type": "smart-lookup-view-connections",
               "state": {},
-              "icon": "smart-lookup",
-              "title": "Lookup"
+              "icon": "lucide-ghost",
+              "title": "smart-lookup-view-connections"
             }
           }
         ]
@@ -232,28 +222,35 @@
   },
   "active": "bc94037ed2bd312a",
   "lastOpenFiles": [
-    "README.md",
     "OBSIDIAN_GUIDE.md",
+    "raw_sources/project_orange/assets/orangehrm_api_logs.json",
+    "raw_sources/project_orange/tasks/orangehrm_forgot_password.md",
+    "raw_sources/project_orange/tasks/orangehrm_auth.md",
+    "raw_sources/project_orange/assets/orangehrm_login.png",
+    "raw_sources/project_orange/tasks",
+    "raw_sources/project_orange/requirements",
+    "raw_sources/project_orange/issues",
+    "raw_sources/project_orange/assets",
+    "raw_sources/project_orange",
+    "WIKI_RULES.md",
+    "USER_COMMANDS.md",
+    "CLAUDE.md",
+    "AGENTS.md",
+    "README.md",
     "log.md",
     "index.md",
+    "KANBAN.md",
+    "wiki/project_hasaki/test_suites/test_hasaki_receiving_inbound_shipment.md",
     "wiki/project_hasaki/operations/progress_dashboard.md",
     "Untitled.canvas",
     "wiki/project_hasaki/features/hasaki_receiving_vas.md",
     "Untitled 2.canvas",
-    "USER_COMMANDS.md",
     "log.md.tmp.696.d836e829244b",
     "wiki/project_hasaki/operations/progress_dashboard.md.tmp.696.6d6f3d8a2f0c",
     "Untitled 1.canvas",
     "wiki/project_hasaki/test_suites/test_hasaki_qc_evaluation.md",
     "log.md.tmp.696.a82a0a720e5e",
     "templates/tpl_test_suite.md.tmp.696.3f4a4f81ec7a",
-    "WIKI_RULES.md.tmp.696.504bd5f2aa37",
-    "wiki/project_hasaki/test_suites/test_hasaki_receiving_po_app.md.tmp.696.3f5a5e138044",
-    "wiki/project_hasaki/features/hasaki_receiving_po_app.md.tmp.696.fd02270083cb",
-    "wiki/project_hasaki/features/hasaki_receiving_inbound_shipment.md.tmp.696.8dea1ac8cd1d",
-    "templates/tpl_requirement.md.tmp.696.e17db9e564e5",
-    "wiki/project_hasaki/test_suites/test_hasaki_qc_evaluation.md.tmp.696.2ee0da72732c",
-    "KANBAN.md",
     "wiki/project_hasaki/test_suites/test_hasaki_receiving_po_app.md",
     "wiki/project_hasaki/test_suites/test_hasaki_qc_setup.md",
     "wiki/project_hasaki/test_suites/test_hasaki_receiving_vas.md",
@@ -263,13 +260,6 @@
     "wiki/project_hasaki/features/hasaki_receiving_po_app.md",
     "wiki/project_hasaki/features/hasaki_receiving_packing_list.md",
     "wiki/project_hasaki/features/hasaki_receiving_inbound_shipment.md",
-    "wiki/project_hasaki/test_plans/testplan_hasaki_2026_05.md",
-    "wiki/project_hasaki/test_suites/test_hasaki_receiving_inbound_shipment.md",
-    "raw_sources/project_orange/tasks/orangehrm_forgot_password.md",
-    "raw_sources/project_orange/tasks/orangehrm_auth.md",
-    "wiki/project_hasaki/operations/environments.md",
-    "CLAUDE.md",
-    "wiki/project_hasaki/operations/team_contacts.md",
-    "wiki/project_hasaki/operations/test_data.md"
+    "wiki/project_hasaki/test_plans/testplan_hasaki_2026_05.md"
   ]
 }

@@ -17,6 +17,25 @@ updated: 2026-05-23
 - Khi cần thao tác theo SDLC, ưu tiên đọc và dùng đúng thứ tự command trong `USER_COMMANDS.md`.
 - `WIKI_RULES.md` giữ vai trò quy tắc/quy trình, không lặp chi tiết command để tránh lệch phiên bản.
 
+## 🌐 QUY TẮC MÚI GIỜ (BẮT BUỘC)
+
+- Tất cả timestamp trong wiki (log, changelog, approved_at, daily note) dùng múi giờ Việt Nam: `UTC+07:00` (`Asia/Ho_Chi_Minh`).
+- Không dùng timestamp theo timezone máy chủ nếu khác `UTC+07:00`.
+- Khi ghi rõ ngày giờ, ưu tiên format: `YYYY-MM-DD HH:mm:ss`.
+
+## 🔤 QUY TẮC FONT/ENCODING (BẮT BUỘC)
+
+- Tất cả file Markdown phải được đọc/ghi bằng `UTF-8`.
+- Không ghi file tiếng Việt bằng cách có thể gây lỗi codepage (ví dụ `echo`/redirect mặc định của terminal Windows).
+- Khi chạy script Python trên Windows, set rõ:
+
+```powershell
+$env:PYTHONUTF8 = "1"
+$env:PYTHONIOENCODING = "utf-8"
+```
+
+- Nếu phát hiện dấu hiệu lỗi font (mojibake), dừng ghi tiếp và sửa theo chuẩn UTF-8 trước khi đồng bộ.
+
 ---
 
 ## 🤝 0. NGUYÊN TẮC HUMAN-IN-THE-LOOP (HITL) - CON NGƯỜI LÀM TRỌNG TÂM
@@ -372,7 +391,7 @@ Mọi file test suite PHẢI chứa (theo template `tpl_test_suite.md`):
 1. **Metadata (YAML Frontmatter)**
 2. **Thông tin liên kết:** Feature, Requirement, Dev/QA phụ trách
 3. **Tổng quan Test Coverage:** Bảng thống kê số TC theo loại test
-4. **Bảng Test Cases:** `Test ID | Tiêu đề | AC/Req Cover | Loại case | Kỹ thuật test | Điều kiện tiên quyết | Các bước | Kết quả mong đợi | Nguồn / Suy diễn | Status`
+4. **Bảng Test Cases:** `Test ID | Tiêu đề | AC/Req Cover | Loại case | Kỹ thuật test | Điều kiện tiên quyết | Các bước | Kết quả mong đợi | Nguồn | Status`
 5. **Test Cases Lỗi Thời (Deprecated):** Lưu trữ case cũ, KHÔNG xóa
 6. **📅 Changelog:** Bảng lịch sử thay đổi
 
@@ -392,8 +411,9 @@ Mỗi Test Case BẮT BUỘC ghi rõ:
 - **AC/Req Cover:** Requirement ID (`R1`, `R2`...) và/hoặc Acceptance Criteria/BDD Scenario được cover (`AC-01`, `Scenario 1`...).
 - **Loại case:** `Positive` hoặc `Negative`. Nếu là regression/security/performance thì vẫn phải nêu rõ positive/negative theo kỳ vọng hành vi.
 - **Kỹ thuật test:** Ví dụ `Happy Path`, `Equivalence Partitioning`, `Boundary Value Analysis`, `Decision Table`, `State Transition`, `Error Guessing`, `Security`, `Regression`.
-- **Nguồn / Suy diễn:** Ghi `Explicit từ [nguồn]` nếu test case bám trực tiếp theo specs; ghi `AI-Inferred từ [nguồn/logic]` nếu AI tự suy diễn từ business rule, validation, bug history hoặc chuẩn kiểm thử.
-- **Traceability:** Không tạo test case không có nguồn. Nếu không tìm được nguồn hoặc AC/Req tương ứng, AI phải đưa vào mục câu hỏi cần làm rõ thay vì tự chốt.
+- **Nguồn:** Chỉ ghi `Explicit từ [nguồn]` cho test case bám trực tiếp từ Requirement/AC đã mô tả rõ.
+- **Không suy diễn:** Không tạo test case từ giả định hoặc suy luận. Mọi điểm chưa rõ phải đưa về `## ❓ Câu hỏi chưa rõ` của Feature Spec.
+- **Traceability:** Không tạo test case nếu không truy ngược được về Requirement/AC rõ ràng.
 
 ---
 

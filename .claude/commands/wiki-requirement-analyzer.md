@@ -27,6 +27,7 @@ Bạn đang thực hiện **ISTQB Test Analysis**: quyết định **WHAT to tes
 
 - **KHÔNG viết test case** trong skill này. Chỉ viết Feature Spec. Chuyển sang `wiki-test-designer` SAU khi Spec được duyệt.
 - **KHÔNG tự chốt nghiệp vụ** khi còn điểm mập mờ — ghi vào mục "Câu hỏi chưa rõ".
+- **KHÔNG suy diễn requirement/AC** nếu nguồn chưa mô tả rõ. Chỉ ghi thông tin explicit từ tài liệu gốc.
 - **KHÔNG sửa file trong `raw_sources/`** — chỉ đọc.
 - Mọi Requirement ID phải truy ngược về tài liệu nguồn hoặc ghi rõ là assumption.
 - Tuân thủ **HITL Gate 1**: sau khi tạo Spec, dừng lại và trình bày cho PO/QA Lead duyệt. Không tiếp tục sang thiết kế test nếu chưa có approval.

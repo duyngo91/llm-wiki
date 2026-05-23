@@ -228,6 +228,8 @@ approval_note:
 - [ ] ❓ **R12 — Giải trình:** Button "Thêm" luôn hiển thị ở "bất kỳ status nào" — kể cả khi PO đã Canceled? Có cần restrict không?
 - [ ] ❓ **Inbound Shipment Detail — Qty received:** Tổng theo tất cả ASN hay theo từng ASN của PO? (Spec ghi "tổng số lượng đã scan nhận theo ASN" — cần làm rõ nếu PO có nhiều ASN)
 - [ ] ❓ **ASN Listing — Action button xem biên bản giao hàng:** Điều kiện hiển thị là gì? (Spec chỉ nói "xem biên bản giao hàng mà user upload lên khi nhận hàng cho PO")
+- [ ] ❓ **R11 — Boundary Qty missing khi nhận đủ:** Trường hợp nhận đủ thì `Qty missing = 0` đã được hệ thống xác nhận chính thức chưa, hay chỉ là cách hiểu theo công thức?
+- [ ] ❓ **R11/R18 — Qty missing khi nhận dư:** Nếu PO vải cho phép nhận dư, `Qty missing` có thể âm hay bị chặn ở 0? Cần rule hiển thị chính thức.
 
 ---
 
@@ -272,4 +274,5 @@ approval_note:
 ## 📅 Changelog
 | Thời gian | Version | Nội dung thay đổi | Nguồn |
 |:----------|:--------|:-----------------|:------|
+| 2026-05-23 21:49:34 | v1.1 | Bổ sung câu hỏi boundary Qty missing sau khi loại test case suy diễn khỏi Test Suite | [[wiki/project_hasaki/test_suites/test_hasaki_receiving_inbound_shipment\|test_hasaki_receiving_inbound_shipment]] |
 | 2026-05-23 00:00:00 | v1.0 | Khởi tạo Feature Spec từ PDF v2.17 — Inbound Shipment & ASN Web | `07062_Receiving_PO_Docs_ver2.17.pdf` |

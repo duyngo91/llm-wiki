@@ -27,14 +27,14 @@ approval_note:
 |:----------|:-----------|:-----|:-----|:--------|:----------|
 | Happy Path | 8 | | | | 8 |
 | Negative | 9 | | | | 9 |
-| Boundary | 3 | | | | 3 |
+| Boundary | 1 | | | | 1 |
 | State Transition | 3 | | | | 3 |
 | Error Guessing | 2 | | | | 2 |
-| **Tổng** | **25** | | | | **25** |
+| **Tổng** | **23** | | | | **23** |
 
 ## ✅ Test Cases
 
-| Test ID | Tiêu đề | AC/Req Cover | Loại case | Kỹ thuật test | Điều kiện tiên quyết | Các bước thực hiện | Kết quả mong đợi | Nguồn / Suy diễn | Status |
+| Test ID | Tiêu đề | AC/Req Cover | Loại case | Kỹ thuật test | Điều kiện tiên quyết | Các bước thực hiện | Kết quả mong đợi | Nguồn | Status |
 |:--------|:--------|:-------------|:----------|:--------------|:--------------------|:-------------------|:-----------------|:-----------------|:-------|
 | TC-INB-001 | Filter WMS Status hiển thị đúng 5 giá trị | AC-01 / R3 | Positive | Happy Path | User đã login WMS, có PO type=PO | 1. Vào Inbound / Inbound Shipment 2. Mở More Filter 3. Tìm filter "WMS Status" | Filter hiển thị đúng 5 giá trị: Open, Receiving, Received, Completed, Canceled; hỗ trợ chọn nhiều | Explicit từ PDF v2.17 R3 | ⏳ |
 | TC-INB-002 | Filter WMS Status chỉ áp dụng cho Type=PO | AC-01 / R3 | Negative | Equivalence Partitioning | Có Inbound Shipment loại Transfer | 1. Filter WMS Status = "Receiving" 2. Xem kết quả listing | Chỉ hiển thị các PO có type=PO; các type khác (Transfer...) không xuất hiện trong kết quả | Explicit từ PDF v2.17 R3 | ⏳ |
@@ -45,8 +45,6 @@ approval_note:
 | TC-INB-007 | Filter "Check of goods" = Yes lọc đúng PO | R1 / R4 | Positive | Equivalence Partitioning | Có PO đồng kiểm và PO không đồng kiểm | 1. More Filter → Check of goods = Yes 2. Xem kết quả | Chỉ hiển thị PO có cột Check of goods=Yes | Explicit từ PDF v2.17 R1 R4 | ⏳ |
 | TC-INB-008 | Filter "Eligible to receive" = No lọc đúng | R2 | Positive | Equivalence Partitioning | Có PO không đủ điều kiện và đủ điều kiện | 1. More Filter → Eligible to receive = No 2. Xem kết quả | Chỉ hiển thị PO Eligible=No | Explicit từ PDF v2.17 R2 | ⏳ |
 | TC-INB-009 | Inbound Detail hiển thị đúng Qty confirm / received / missing | AC-04 / R11 | Positive | Happy Path | PO có 10 SKU A, đã nhận 7 | 1. Click vào PO để xem detail 2. Xem cột Qty | Qty confirm=10, Qty received=7, Qty missing=3; missing=confirm−received | Explicit từ PDF v2.17 AC-04 | ⏳ |
-| TC-INB-010 | Qty missing = 0 khi nhận đủ | R11 | Positive | Boundary Value Analysis | PO đã nhận đủ toàn bộ SL | 1. Mở detail PO đã nhận đủ | Qty missing=0 cho tất cả SKU | AI-Inferred từ R11 (boundary: received = confirm) | ⏳ |
-| TC-INB-011 | Qty missing không hiển thị số âm | R11 | Negative | Boundary Value Analysis | *(Cần xác nhận: nếu hệ thống cho nhận dư vải)* | 1. Mở detail PO vải đã nhận dư | Qty missing không âm; hiển thị 0 nếu received > confirm | AI-Inferred từ R11 + R18 Packing List | ⏳ |
 | TC-INB-012 | Giải trình PO: thêm comment thành công | AC-05 / R12 | Positive | Happy Path | PO đang ở bất kỳ status nào, user có quyền | 1. Mở Inbound Detail 2. Nhập nội dung vào ô Comment 3. Nhấn "Thêm" | Comment lưu thành công với email Hasaki + thời gian; hiển thị đầu bảng (mới nhất trước) | Explicit từ PDF v2.17 AC-05 | ⏳ |
 | TC-INB-013 | Giải trình PO: nhiều comment sắp xếp mới nhất lên đầu | R12 | Positive | State Transition | Đã có sẵn 1 comment trong PO | 1. Thêm 1 comment mới 2. Xem bảng comment | Comment mới hiển thị ở hàng đầu tiên; comment cũ bên dưới | Explicit từ PDF v2.17 R12 | ⏳ |
 | TC-INB-014 | ASN ReOpen thành công khi chưa scan item | AC-06 / R16 | Positive | Happy Path | ASN Status=Receiving, chưa scan item nào | 1. Vào ASN Listing 2. Click ReOpen 3. Xác nhận "Yes" | ASN chuyển Status=Open; nhân viên bị xóa khỏi ASN | Explicit từ PDF v2.17 AC-06 | ⏳ |
@@ -72,4 +70,5 @@ approval_note:
 
 | Thời gian | Version | Nội dung thay đổi | Nguồn |
 |:----------|:--------|:-----------------|:------|
+| 2026-05-23 21:49:34 | v1.1 | Loại TC-INB-010/011 vì boundary suy diễn; chuyển câu hỏi về Feature questions; đổi cột nguồn về `Nguồn` | [[WIKI_RULES]] |
 | 2026-05-23 00:10:00 | v1.0 | Khởi tạo Test Suite từ Feature Spec v1.0 — 25 test cases | [[wiki/project_hasaki/features/hasaki_receiving_inbound_shipment\|hasaki_receiving_inbound_shipment]] |

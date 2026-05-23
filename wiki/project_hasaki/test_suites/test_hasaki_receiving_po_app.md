@@ -27,15 +27,15 @@ approval_note:
 |:----------|:-----------|:-----|:-----|:--------|:----------|
 | Happy Path | 10 | | | | 10 |
 | Negative | 16 | | | | 16 |
-| Boundary | 6 | | | | 6 |
+| Boundary | 3 | | | | 3 |
 | Decision Table | 4 | | | | 4 |
 | State Transition | 3 | | | | 3 |
 | Error Guessing | 3 | | | | 3 |
-| **Tổng** | **42** | | | | **42** |
+| **Tổng** | **39** | | | | **39** |
 
 ## ✅ Test Cases
 
-| Test ID | Tiêu đề | AC/Req Cover | Loại case | Kỹ thuật test | Điều kiện tiên quyết | Các bước thực hiện | Kết quả mong đợi | Nguồn / Suy diễn | Status |
+| Test ID | Tiêu đề | AC/Req Cover | Loại case | Kỹ thuật test | Điều kiện tiên quyết | Các bước thực hiện | Kết quả mong đợi | Nguồn | Status |
 |:--------|:--------|:-------------|:----------|:--------------|:--------------------|:-------------------|:-----------------|:-----------------|:-------|
 | TC-PO-001 | Scan PO không thuộc kho — báo lỗi | AC-01 / R1 | Negative | Happy Path | PO tạo cho kho A, user đang ở kho B | 1. Vào App → PO / Receiving PO 2. Scan mã PO của kho A | Hệ thống hiển thị thông báo lỗi PO không thuộc kho, không cho chuyển bước | Explicit từ PDF v2.17 AC-01 | ⏳ |
 | TC-PO-002 | Scan PO hợp lệ — tạo ASN và hiển thị thông tin | R1 | Positive | Happy Path | PO hợp lệ, thuộc kho, đã được xác nhận | 1. Scan mã PO hợp lệ | Hệ thống hiển thị thông tin PO (vendor, SKU list, SL); ASN được tạo với status=Receiving | Explicit từ PDF v2.17 R1 | ⏳ |
@@ -48,7 +48,6 @@ approval_note:
 | TC-PO-009 | Scan SKU không có trong PO | R5 | Negative | Equivalence Partitioning | PO đang Receiving, scan SKU không thuộc PO | 1. Scan barcode SKU lạ | Thông báo "SKU [X] is not in PO" | Explicit từ PDF v2.17 Error Map | ⏳ |
 | TC-PO-010 | Scan SKU vượt SL confirm | R5 | Negative | Boundary Value Analysis | PO có SKU A SL confirm=10, đã nhận 10 | 1. Scan thêm 1 SKU A | Thông báo "The quantity of SKU [X] is greater than the quantity required in the PO" | Explicit từ PDF v2.17 Error Map | ⏳ |
 | TC-PO-011 | HSD thấp hơn tối thiểu — báo lỗi với ngày cụ thể | AC-03 / R6 | Negative | Boundary Value Analysis | SKU có Shelf Life 12 tháng, Allowed 80% → HSD tối thiểu=9.6 tháng | 1. Scan SKU 2. Nhập HSD thấp hơn mức tối thiểu | Thông báo "Expiration date is less than the PO permission request ([ngày tối thiểu])" | Explicit từ PDF v2.17 AC-03 | ⏳ |
-| TC-PO-012 | HSD đúng bằng mức tối thiểu — cho nhận | R6 | Positive | Boundary Value Analysis | SKU HSD tối thiểu = ngày hôm nay + 9.6 tháng | 1. Nhập HSD đúng bằng ngày tối thiểu | Hệ thống chấp nhận, không báo lỗi | AI-Inferred từ R6 (boundary: HSD = tối thiểu) | ⏳ |
 | TC-PO-013 | HSD vượt vòng đời sản phẩm — báo lỗi | R6 | Negative | Boundary Value Analysis | SKU có Shelf Life 24 tháng | 1. Nhập HSD = ngày hôm nay + 25 tháng | Thông báo "Expiration date is greater than the product shelf life (24 months)" | Explicit từ PDF v2.17 Error Map | ⏳ |
 | TC-PO-014 | Số lô trùng hệ thống — báo lỗi | R7 | Negative | Error Guessing | Số lô "LOT2024" đã tồn tại trong hệ thống | 1. Scan SKU 2. Nhập số lô "LOT2024" | Thông báo "Batch code of product already exists in the system" | Explicit từ PDF v2.17 Error Map | ⏳ |
 | TC-PO-015 | Serial/IMEI trùng hệ thống — báo lỗi | R8 | Negative | Error Guessing | Serial "SN12345678" đã tồn tại | 1. Scan SKU CCDC 2. Nhập Serial "SN12345678" | Thông báo "Serial/Imei of product already exists in the system" | Explicit từ PDF v2.17 Error Map | ⏳ |
@@ -58,9 +57,7 @@ approval_note:
 | TC-PO-019 | SPKPH thiếu ảnh — không cho hoàn thành | R13 | Negative | Happy Path | User khai báo SPKPH nhưng không upload ảnh | 1. Chọn lý do "Sản phẩm không phù hợp" 2. Không chụp ảnh 3. Submit | Hệ thống không cho lưu; yêu cầu bắt buộc upload ảnh cho SPKPH | Explicit từ PDF v2.17 R13 | ⏳ |
 | TC-PO-020 | Cập nhật biên bản — chưa upload ảnh → không Hoàn thành | R17 | Negative | State Transition | Đang ở bước cập nhật biên bản | 1. Không chụp ảnh 2. Chọn Hoàn thành PO | Thông báo "Please update the delivery document image" | Explicit từ PDF v2.17 Error Map | ⏳ |
 | TC-PO-021 | Thêm hoá đơn — Tax code vượt 8 ký tự | AC-06 / R19 | Negative | Boundary Value Analysis | Đang ở màn hình thêm hoá đơn | 1. Nhập Tax code 9 ký tự số | Thông báo lỗi Tax code phải từ 1–8 chữ số | Explicit từ PDF v2.17 AC-06 | ⏳ |
-| TC-PO-022 | Thêm hoá đơn — Tax code đúng 1 ký tự (boundary min) | R19 | Positive | Boundary Value Analysis | Đang ở màn hình thêm hoá đơn | 1. Nhập Tax code 1 ký tự số | Hệ thống chấp nhận | AI-Inferred từ R19 (boundary: 1≤Tax code≤8) | ⏳ |
 | TC-PO-023 | Tổng hoá đơn lệch > 1000đ so với PO | AC-07 / R19 | Negative | Boundary Value Analysis | PO tổng tiền 1.000.000đ | 1. Nhập hoá đơn Total = 998.000đ (lệch 2.000đ) | Thông báo "Tổng số tiền trên hoá đơn không hợp lệ" | Explicit từ PDF v2.17 AC-07 | ⏳ |
-| TC-PO-024 | Tổng hoá đơn lệch đúng 1000đ — cho nhận | R19 | Positive | Boundary Value Analysis | PO tổng tiền 1.000.000đ | 1. Nhập hoá đơn Total = 999.000đ (lệch đúng 1.000đ) | Hệ thống chấp nhận | AI-Inferred từ R19 (boundary: chênh lệch ≤1000đ) | ⏳ |
 | TC-PO-025 | SKU không barcode — SL thực < SL PO → cảnh báo xác nhận | AC-08 / R12 | Positive | Happy Path | SKU không barcode trong PO, SL PO=400 | 1. Chọn SKU không barcode từ danh sách 2. Nhập SL thực=300 3. Submit | Cảnh báo "Số lượng thực nhận nhỏ hơn số lượng của PO (300/400). Bạn có muốn xác nhận không?" | Explicit từ PDF v2.17 AC-08 | ⏳ |
 | TC-PO-026 | PO vải — validate Packing list Waiting Approval | AC-10 / R24 | Negative | Decision Table | PO vải, Packing list status=Waiting Approval | 1. Scan PO vải | Thông báo "PO chưa được duyệt Packing list nên không thể nhận hàng" | Explicit từ PDF v2.17 AC-10 | ⏳ |
 | TC-PO-027 | PO vải — validate Packing list chưa import | R24 | Negative | Decision Table | PO vải chưa import Packing list | 1. Scan PO vải | Thông báo "PO chưa import Packing list nên không thể nhận hàng" | Explicit từ PDF v2.17 R24 | ⏳ |
@@ -90,4 +87,5 @@ approval_note:
 
 | Thời gian | Version | Nội dung thay đổi | Nguồn |
 |:----------|:--------|:-----------------|:------|
+| 2026-05-23 21:49:34 | v1.1 | Loại TC-PO-012/022/024 vì boundary suy diễn; chuyển câu hỏi về Feature questions; đổi cột nguồn về `Nguồn` | [[WIKI_RULES]] |
 | 2026-05-23 00:11:00 | v1.0 | Khởi tạo Test Suite từ Feature Spec v1.0 — 42 test cases | [[wiki/project_hasaki/features/hasaki_receiving_po_app\|hasaki_receiving_po_app]] |

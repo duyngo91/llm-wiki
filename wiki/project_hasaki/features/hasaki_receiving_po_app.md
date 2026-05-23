@@ -223,6 +223,9 @@ approval_note:
 - [ ] ❓ **R23 — 30% làm tròn:** 30% của 18 cây = 5.4 cây → làm tròn lên 6. Nhưng nếu khai báo theo Kg thì 30% tính theo Kg hay theo số cuộn?
 - [ ] ❓ **R19 — Nhiều hoá đơn:** Khi PO có PO Gift + PO gốc đều yêu cầu VAT, mỗi PO có hoá đơn riêng? Tổng tiền validate per PO hay cộng tổng 2 PO?
 - [ ] ❓ **R22 — Nhiều user cùng nhận:** Cờ "Cho phép nhiều người cùng nhận" chỉ set được trên Web (Inbound detail) hay app cũng có?
+- [ ] ❓ **R6 — Boundary HSD tối thiểu:** Khi HSD đúng bằng ngưỡng tối thiểu theo công thức shelf-life thì hệ thống cho nhận hay từ chối? Cần expected result chính thức.
+- [ ] ❓ **R19 — Boundary Tax code:** Rule chỉ nêu độ dài 1–8 ký tự, nhưng chưa nêu rõ case đúng bằng 1 ký tự có luôn hợp lệ không.
+- [ ] ❓ **R19 — Boundary lệch tổng hoá đơn 1000đ:** Rule nêu điều kiện chênh lệch cho phép, nhưng chưa nêu rõ trường hợp chênh đúng 1000đ là pass hay fail.
 
 ---
 
@@ -247,4 +250,5 @@ approval_note:
 ## 📅 Changelog
 | Thời gian | Version | Nội dung thay đổi | Nguồn |
 |:----------|:--------|:-----------------|:------|
+| 2026-05-23 21:49:34 | v1.1 | Bổ sung 3 câu hỏi boundary R6/R19 sau khi loại test case suy diễn khỏi Test Suite | [[wiki/project_hasaki/test_suites/test_hasaki_receiving_po_app\|test_hasaki_receiving_po_app]] |
 | 2026-05-23 00:00:00 | v1.0 | Khởi tạo Feature Spec từ PDF v2.17 — App Receiving PO | `07062_Receiving_PO_Docs_ver2.17.pdf` |

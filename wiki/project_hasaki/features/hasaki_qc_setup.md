@@ -215,6 +215,7 @@ approval_note:
 - [ ] ❓ **R18 — Bulk Approve/Reject:** Spec ghi hỗ trợ chọn nhiều dòng "Chờ duyệt". Số lượng dòng tối đa có thể chọn là bao nhiêu? Có phân trang không? *(Hỏi Dev Lead)*
 
 - [ ] ❓ **R24 — Update 10-05-2026 kế thừa thiết lập:** Khi tiêu chí "Lỗi 4 điểm" / "Theo từng bước" đã cấu hình nội dung tại màn hình Tiêu chí, nhưng khi add vào SKU thì nội dung được kế thừa hoàn toàn hay QC Staff vẫn có thể chỉnh sửa thêm? *(Hỏi Dev Lead)*
+- [ ] ❓ **R12 — Boundary giá trị điều kiện:** Với loại "Theo điều kiện", hệ thống có chặn giá trị 0 hoặc âm không? Nếu chặn, thông báo lỗi chính xác là gì?
 
 ## 📝 Thay đổi so với version cũ
 
@@ -242,4 +243,5 @@ approval_note:
 
 | Thời gian | Version | Nội dung thay đổi | Nguồn |
 |:----------|:--------|:-----------------|:------|
+| 2026-05-23 21:49:34 | v1.1 | Bổ sung câu hỏi boundary R12 sau khi loại test case suy diễn khỏi Test Suite | [[wiki/project_hasaki/test_suites/test_hasaki_qc_setup\|test_hasaki_qc_setup]] |
 | 2026-05-23 00:05:00 | v1.0 | Khởi tạo Feature Spec từ PDF v1.5 | [[raw_sources/project_hasaki/requirements/07105_Quality_Control_Docs_ver1.5.pdf\|PDF QC v1.5]] |

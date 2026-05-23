@@ -193,6 +193,7 @@ approval_note:
 - [ ] ❓ **R20 — VAS Manual update Qty received:** Chỉ Web hay App cũng cho update? Có cần approval không?
 - [ ] ❓ **R8 — 10% Group UID làm tròn lên:** Nếu VAS sinh ra số lẻ (ví dụ 2.5 → 3), khi user đánh giá chỉ 2 group thì có cho Completed không?
 - [ ] ❓ **R1 — VAS sinh cho TSCĐ:** TSCĐ (Tài sản cố định) khi ASN Received → VAS Open. Spec ghi cả TSCĐ, CCDC, CCDC PB — vậy điều kiện là "có quản lý Serial/IMEI/Label code" đúng không?
+- [ ] ❓ **R10 — Boundary Serial 16 ký tự:** Spec có nêu lỗi khi Serial < 16 ký tự, nhưng chưa nêu rõ trường hợp Serial đúng 16 ký tự có luôn được chấp nhận không. Cần xác nhận expected result chính thức.
 
 ---
 
@@ -217,4 +218,5 @@ approval_note:
 ## 📅 Changelog
 | Thời gian | Version | Nội dung thay đổi | Nguồn |
 |:----------|:--------|:-----------------|:------|
+| 2026-05-23 21:49:34 | v1.1 | Bổ sung câu hỏi boundary Serial 16 ký tự sau khi loại test case suy diễn khỏi Test Suite | [[wiki/project_hasaki/test_suites/test_hasaki_receiving_vas\|test_hasaki_receiving_vas]] |
 | 2026-05-23 00:00:00 | v1.0 | Khởi tạo Feature Spec từ PDF v2.17 + v1.5 — VAS Web & App | `07062_Receiving_PO_Docs_ver2.17.pdf`, `07105_Quality_Control_Docs_ver1.5.pdf` |

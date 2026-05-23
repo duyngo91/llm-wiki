@@ -27,14 +27,14 @@ approval_note:
 |:----------|:-----------|:-----|:-----|:--------|:----------|
 | Happy Path | 10 | | | | 10 |
 | Negative | 11 | | | | 11 |
-| Boundary | 3 | | | | 3 |
+| Boundary | 2 | | | | 2 |
 | State Transition | 5 | | | | 5 |
 | Error Guessing | 3 | | | | 3 |
-| **Tổng** | **32** | | | | **32** |
+| **Tổng** | **31** | | | | **31** |
 
 ## ✅ Test Cases
 
-| Test ID | Tiêu đề | AC/Req Cover | Loại case | Kỹ thuật test | Điều kiện tiên quyết | Các bước thực hiện | Kết quả mong đợi | Nguồn / Suy diễn | Status |
+| Test ID | Tiêu đề | AC/Req Cover | Loại case | Kỹ thuật test | Điều kiện tiên quyết | Các bước thực hiện | Kết quả mong đợi | Nguồn | Status |
 |:--------|:--------|:-------------|:----------|:--------------|:--------------------|:-------------------|:-----------------|:-----------------|:-------|
 | TC-QCS-001 | Tạo tiêu chí mới hợp lệ — Mã và Tên unique | AC-01 / R4 | Positive | Happy Path | User đã login với quyền QC; Tab Thiết lập tiêu chí | 1. Nhấn Tạo mới 2. Nhập Mã tiêu chí unique, Tên unique 3. Nhấn "Lưu và đóng" | Tiêu chí được tạo, status Active, hiển thị trong danh sách | Explicit từ PDF v1.5 AC-01 | ⏳ |
 | TC-QCS-002 | Tạo tiêu chí trùng Mã — báo lỗi | AC-02 / R4 | Negative | Equivalence Partitioning | Đã có tiêu chí mã "TC001" | 1. Tạo mới với mã "TC001" 2. Submit | Thông báo "Mã tiêu chí đã tồn tại."; không tạo mới | Explicit từ PDF v1.5 AC-02 | ⏳ |
@@ -64,7 +64,6 @@ approval_note:
 | TC-QCS-026 | Cột QC xã vải bổ sung vào thiết lập tiêu chí | R23 | Positive | Happy Path | Tab Thiết lập tiêu chí | 1. Xem listing tiêu chí 2. Tạo tiêu chí mới 3. Kiểm tra cột QC xã vải | Cột "QC xã vải" hiển thị; có thể bật/tắt per tiêu chí | Explicit từ PDF v1.5 R23 | ⏳ |
 | TC-QCS-027 | Button Edit/Delete chỉ hiện với status Open | R19 | Positive | State Transition | Có thiết lập SKU status Open và status Chờ duyệt | 1. Xem cột Thao tác của từng trạng thái | Status Open: hiện Edit và Delete; Status Chờ duyệt: chỉ hiện Xem chi tiết và Duyệt | Explicit từ PDF v1.5 R19 | ⏳ |
 | TC-QCS-028 | Loại đánh giá Theo điều kiện — cấu hình phép so sánh between | R12 | Positive | Equivalence Partitioning | Thiết lập SKU đang Open | 1. Thêm tiêu chí Loại đánh giá = Theo điều kiện 2. Chọn phép so sánh = between 3. Nhập Giá trị min và max | Form hiển thị 2 ô nhập giá trị; có Đơn vị tính và Sai số cho phép | Explicit từ PDF v1.5 R12 | ⏳ |
-| TC-QCS-029 | Loại điều kiện — Giá trị ≤ 0 không được chấp nhận | R12 | Negative | Boundary Value Analysis | Thiết lập tiêu chí Theo điều kiện | 1. Nhập Giá trị = 0 2. Submit | Thông báo "Thông tin này là bắt buộc" hoặc lỗi giá trị không hợp lệ | AI-Inferred từ R12 (Giá trị phải > 0) | ⏳ |
 | TC-QCS-030 | Update 10-05-2026 — Tạo tiêu chí Lỗi 4 điểm ngay tại màn hình Tiêu chí | R24 | Positive | Happy Path | User ở Tab Thiết lập tiêu chí | 1. Tạo mới tiêu chí với Phân loại = Lỗi 4 điểm 2. Modal thiết lập mở ngay tại màn hình Tiêu chí 3. Lưu | Nội dung Lỗi 4 điểm được lưu vào tiêu chí; khi add vào SKU hệ thống kế thừa thiết lập này | Explicit từ PDF v1.5 R24 update 10-05-2026 | ⏳ |
 | TC-QCS-031 | Update 10-05-2026 — Kế thừa thiết lập khi add tiêu chí vào SKU | R24 | Positive | Happy Path | Tiêu chí "Lỗi 4 điểm" đã có nội dung được thiết lập sẵn tại màn hình Tiêu chí | 1. Thêm tiêu chí đó vào SKU 2. Kiểm tra modal thiết lập | Modal hiển thị nội dung đã kế thừa từ thiết lập tiêu chí; không phải nhập lại từ đầu | Explicit từ PDF v1.5 R24 | ⏳ |
 | TC-QCS-032 | Từ khoá trong thiết lập bước — tự động IN HOA, không khoảng trắng | R15 | Positive | Error Guessing | Modal thiết lập bước | 1. Nhập từ khoá "ket qua" (chữ thường, có khoảng trắng) 2. Blur khỏi ô | Từ khoá chuyển thành "KET_QUA" hoặc báo lỗi không cho khoảng trắng; chỉ chấp nhận `_`, `-`, `.` | Explicit từ PDF v1.5 R15 (Từ khoá tự động IN HOA, không khoảng trắng) | ⏳ |
@@ -79,4 +78,5 @@ approval_note:
 
 | Thời gian | Version | Nội dung thay đổi | Nguồn |
 |:----------|:--------|:-----------------|:------|
+| 2026-05-23 21:49:34 | v1.1 | Loại TC-QCS-029 vì boundary suy diễn; chuyển câu hỏi về Feature questions; đổi cột nguồn về `Nguồn` | [[WIKI_RULES]] |
 | 2026-05-23 00:25:00 | v1.0 | Khởi tạo Test Suite từ Feature Spec v1.0 — 32 test cases | [[wiki/project_hasaki/features/hasaki_qc_setup\|hasaki_qc_setup]] |

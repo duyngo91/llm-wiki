@@ -194,6 +194,8 @@ approval_note:
 - [ ] ❓ **R13 — Edit số lượng tạm ẩn:** "Tạm thời ẩn tính năng edit số lượng trên giao diện" — đây có phải là tính năng đã build nhưng ẩn, hay chưa build? Ảnh hưởng test case UI.
 - [ ] ❓ **R4 vs R5 — Delivery method Partial:** Khi PO đã chọn Partial rồi import lại theo Full PO thì có báo lỗi không, hay cứ theo lần import mới nhất?
 - [ ] ❓ **R17 — Đơn vị tính lấy từ đâu:** "Đơn vị tính của SKU lấy từ Attributes của Inside". Màn hình App có hiển thị đơn vị tính để user biết không?
+- [ ] ❓ **R2 — Boundary Qty request:** Rule chưa nêu rõ Qty request = 0 có luôn bị từ chối hay không. Cần thông báo lỗi chính thức nếu có validate này.
+- [ ] ❓ **R19 — Threshold cảnh báo 10% khi nhận dư:** Trường hợp SL thực nhận lệch đúng 10% so với packing list thì có cảnh báo không? Cần xác nhận toán tử `>` hay `>=`.
 
 ---
 
@@ -218,4 +220,5 @@ approval_note:
 ## 📅 Changelog
 | Thời gian | Version | Nội dung thay đổi | Nguồn |
 |:----------|:--------|:-----------------|:------|
+| 2026-05-23 21:49:34 | v1.1 | Bổ sung câu hỏi boundary R2/R19 sau khi loại test case suy diễn khỏi Test Suite | [[wiki/project_hasaki/test_suites/test_hasaki_receiving_packing_list\|test_hasaki_receiving_packing_list]] |
 | 2026-05-23 00:00:00 | v1.0 | Khởi tạo Feature Spec từ PDF v2.17 — Import Packing List | `07062_Receiving_PO_Docs_ver2.17.pdf` |

@@ -42,7 +42,8 @@ Mỗi test case **BẮT BUỘC** có đủ các cột:
 - **AC/Req Cover:** Requirement ID (`R1`, `R2`...) và/hoặc AC/BDD Scenario (`AC-01`, `Scenario 1`).
 - **Loại case:** `Positive` hoặc `Negative`. Regression/security/performance vẫn phải ghi rõ.
 - **Kỹ thuật test:** kỹ thuật ISTQB đã dùng.
-- **Nguồn / Suy diễn:** `Explicit từ [nguồn]` hoặc `AI-Inferred từ [nguồn/logic]`.
+- **Nguồn:** Chỉ dùng `Explicit từ [nguồn]`.
+- Không ghi `AI-Inferred` trong test suite.
 - **Status:** mặc định `⏳` cho test case mới.
 
 **KHÔNG tạo test case không có nguồn.** Nếu thiếu nguồn → ghi vào câu hỏi cần làm rõ.
@@ -59,5 +60,5 @@ Sau khi hoàn thành, báo cáo:
 - Tổng số test case (Positive / Negative)
 - Kỹ thuật test đã dùng
 - Coverage Requirement/AC
-- Số lượng `AI-Inferred` cases và lý do cần review
+- Danh sách điểm chưa rõ đã chuyển về mục `## ❓ Câu hỏi chưa rõ` của Feature
 - Kết quả `verify_wiki.py`

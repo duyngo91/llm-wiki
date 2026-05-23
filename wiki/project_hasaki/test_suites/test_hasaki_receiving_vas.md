@@ -27,14 +27,14 @@ approval_note:
 |:----------|:-----------|:-----|:-----|:--------|:----------|
 | Happy Path | 9 | | | | 9 |
 | Negative | 10 | | | | 10 |
-| Boundary | 3 | | | | 3 |
+| Boundary | 2 | | | | 2 |
 | State Transition | 3 | | | | 3 |
 | Error Guessing | 2 | | | | 2 |
-| **Tổng** | **27** | | | | **27** |
+| **Tổng** | **26** | | | | **26** |
 
 ## ✅ Test Cases
 
-| Test ID | Tiêu đề | AC/Req Cover | Loại case | Kỹ thuật test | Điều kiện tiên quyết | Các bước thực hiện | Kết quả mong đợi | Nguồn / Suy diễn | Status |
+| Test ID | Tiêu đề | AC/Req Cover | Loại case | Kỹ thuật test | Điều kiện tiên quyết | Các bước thực hiện | Kết quả mong đợi | Nguồn | Status |
 |:--------|:--------|:-------------|:----------|:--------------|:--------------------|:-------------------|:-----------------|:-----------------|:-------|
 | TC-VAS-001 | VAS tự động sinh Open cho SKU CCDC sau ASN Received | AC-01 / R1 | Positive | Happy Path | ASN chứa SKU CCDC có config serial; ASN chuyển Received | 1. Hoàn thành phiên nhận hàng ASN với SKU CCDC 2. Vào menu VAS Listing trên Web | 1 VAS được sinh với status Open; SKU CCDC hiện trong danh sách VAS | Explicit từ PDF v2.17 AC-01 | ⏳ |
 | TC-VAS-002 | VAS auto Completed cho SKU Sức khoẻ Làm đẹp | AC-02 / R1 | Positive | Happy Path | ASN có SKU Sức khoẻ Làm đẹp có config serial; ASN chuyển Received | 1. Hoàn thành phiên nhận hàng ASN 2. Vào VAS Listing | VAS sinh ra và có status Completed ngay; không cần thao tác dán ID | Explicit từ PDF v2.17 AC-02 | ⏳ |
@@ -44,7 +44,6 @@ approval_note:
 | TC-VAS-006 | Button cập nhật Serial/IMEI/Label ẩn khi VAS Completed | R4 | Negative | State Transition | VAS có status Completed | 1. Tìm VAS status Completed trong Listing 2. Kiểm tra cột Action | Button "Cập nhật Serial/IMEI/Label" không hiển thị; chỉ có button Xem chi tiết | Explicit từ PDF v2.17 R4 | ⏳ |
 | TC-VAS-007 | Button cập nhật Serial/IMEI/Label hiển thị khi VAS Open | R4 | Positive | State Transition | VAS có status Open | 1. Tìm VAS status Open trong Listing 2. Kiểm tra cột Action | Button "Cập nhật Serial/IMEI/Label" hiển thị | Explicit từ PDF v2.17 R4 | ⏳ |
 | TC-VAS-008 | Validation Serial < 16 ký tự bị từ chối | AC-04 / R10 | Negative | Boundary Value Analysis | VAS status Open/In-Progress trên Web | 1. Mở màn hình cập nhật Serial 2. Nhập Serial 15 ký tự 3. Submit | Thông báo "Serial [X] không hợp lệ (phải từ 16 ký tự)"; không lưu | Explicit từ PDF v2.17 AC-04 | ⏳ |
-| TC-VAS-009 | Validation Serial = 16 ký tự được chấp nhận | R10 | Positive | Boundary Value Analysis | VAS status Open/In-Progress | 1. Nhập Serial đúng 16 ký tự chưa tồn tại hệ thống 2. Submit | Serial được thêm vào danh sách thành công | AI-Inferred từ R10 (boundary: min = 16) | ⏳ |
 | TC-VAS-010 | Validation Serial trùng trong danh sách | R10 | Negative | Error Guessing | VAS đã có Serial "ABC123456789012345" trong danh sách | 1. Nhập Serial "ABC123456789012345" lần 2 2. Submit | Thông báo "Serial [ABC123456789012345] đã tồn tại trong danh sách"; không thêm | Explicit từ PDF v2.17 R10 | ⏳ |
 | TC-VAS-011 | Validation Serial trùng hệ thống | R10 | Negative | Equivalence Partitioning | Serial đã tồn tại trên hệ thống | 1. Nhập Serial đã có trên hệ thống 2. Submit | Thông báo "Serial [X] đã tồn tại trên hệ thống" | Explicit từ PDF v2.17 R10 | ⏳ |
 | TC-VAS-012 | Validation QRCode không tồn tại trên hệ thống HR | R10 | Negative | Equivalence Partitioning | QRCode nhập không có trong HR system | 1. Nhập QRCode không tồn tại HR 2. Submit | Thông báo "QRCode [X] không tồn tại trên hệ thống HR" | Explicit từ PDF v2.17 R10 | ⏳ |
@@ -74,4 +73,5 @@ approval_note:
 
 | Thời gian | Version | Nội dung thay đổi | Nguồn |
 |:----------|:--------|:-----------------|:------|
+| 2026-05-23 21:49:34 | v1.1 | Loại TC-VAS-009 vì là boundary suy diễn; chuyển câu hỏi boundary Serial về Feature questions; đổi cột nguồn về `Nguồn` | [[WIKI_RULES]] |
 | 2026-05-23 00:15:00 | v1.0 | Khởi tạo Test Suite từ Feature Spec v1.0 — 27 test cases | [[wiki/project_hasaki/features/hasaki_receiving_vas\|hasaki_receiving_vas]] |

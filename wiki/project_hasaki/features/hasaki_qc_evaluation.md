@@ -208,6 +208,8 @@ approval_note:
 - [ ] ❓ **R13 — Tem QC:** Tem QC Pass/Fail là tem vật lý được in ra và dán lên sản phẩm, sau đó chụp lại? Hay là chụp màn hình kết quả App? Và hình này được lưu ở đâu trong hệ thống? *(Hỏi PO + Vận hành)*
 
 - [ ] ❓ **R23 — Scope Blocked UID group:** Khi vải Failed, spec ghi "block tất cả UID group của SKU nhận trong cùng PO và cùng LOT". Nếu cùng PO nhưng khác LOT thì có bị block không? Nếu block 1 group thì các group còn lại của VAS chưa đánh giá có cần đánh giá tiếp không? *(Hỏi Dev Lead + QA Lead)*
+- [ ] ❓ **R14 — Boundary sampling 10%:** Với N=10 (hoặc các giá trị biên khác), quy tắc làm tròn lên `ceil(N x 10%)` có được áp dụng chính thức không?
+- [ ] ❓ **R2 — VAS hyperlink trên listing:** Cột VAS ở listing có click sang chi tiết không, và sang màn hình nào?
 
 ## 📝 Thay đổi so với version cũ
 
@@ -239,4 +241,5 @@ approval_note:
 
 | Thời gian | Version | Nội dung thay đổi | Nguồn |
 |:----------|:--------|:-----------------|:------|
+| 2026-05-23 21:49:34 | v1.1 | Bổ sung câu hỏi R14/R2 sau khi loại test case suy diễn khỏi Test Suite | [[wiki/project_hasaki/test_suites/test_hasaki_qc_evaluation\|test_hasaki_qc_evaluation]] |
 | 2026-05-23 00:06:00 | v1.0 | Khởi tạo Feature Spec từ PDF v1.5 | [[raw_sources/project_hasaki/requirements/07105_Quality_Control_Docs_ver1.5.pdf\|PDF QC v1.5]] |

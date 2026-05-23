@@ -5,7 +5,7 @@ allowed-tools: Read, Write, Edit, Glob, Grep, Bash
 
 # Skill: Import Hasaki Task
 
-Fetch task từ Hasaki Workplace, extract AC list (phân biệt tường minh vs suy diễn), lưu vào `raw_sources/project_hasaki/tasks/`. Output là raw source — bước tiếp theo là `/wiki-requirement-analyzer` để tạo Feature Spec.
+Fetch task từ Hasaki Workplace, extract AC tường minh, lưu vào `raw_sources/project_hasaki/tasks/`. Output là raw source — bước tiếp theo là `/wiki-requirement-analyzer` để tạo Feature Spec.
 
 ## Trigger
 
@@ -70,29 +70,26 @@ Trích từng hành vi hệ thống được BA ghi tường minh:
 
 Nếu `task.note` trống → ghi rõ "Không có AC tường minh".
 
-#### 4b. AC Suy diễn (từ Feature Spec / logic)
+#### 4b. Điểm chưa rõ / thiếu thông tin
 
-Bổ sung từ:
-- Feature Spec: behavior ghi trong spec nhưng không nhắc trong task note
-- Negative condition: suy ra từ điều kiện hợp lệ của AC tường minh
-- ISTQB coverage: boundary values, state transitions từ rule trong task
+Không tạo AC suy diễn.
 
-Mỗi AC suy diễn:
-- Ghi rõ **Nguồn**: `Feature-Spec [mục]: "[quote]"` hoặc `Logic từ AC-XX`
-- Status: `⏳ Pending` — phải có câu hỏi tương ứng ở 4c
-- **Không tự confirm AC suy diễn**
+Nếu có behavior tiềm năng nhưng task chưa mô tả rõ:
+- Không ghi thành AC.
+- Đưa vào phần câu hỏi làm rõ ở bước 4c.
+- Chờ BA/PO/Dev xác nhận rồi mới cập nhật AC chính thức.
 
-#### 4c. Sinh Questions cho AC Pending
+#### 4c. Sinh Questions cho điểm chưa rõ
 
-Với mỗi AC `⏳ Pending` → tạo câu hỏi:
-- Format: "Khi [điều kiện], hệ thống có [behavior suy diễn] không?"
+Với mỗi điểm chưa rõ → tạo câu hỏi:
+- Format: "Khi [điều kiện], hệ thống cần xử lý như thế nào?"
 - Câu hỏi kỹ thuật → gắn nhãn Dev Question
 
 #### 4d. Trình bày và chờ confirm
 
 > "AC List đã extract:
 > - **Tường minh (✅):** [N]
-> - **Suy diễn (⏳ Pending):** [M] — cần BA confirm
+> - **Chưa rõ (❓):** [M] — cần BA/PO/Dev confirm
 >
 > Bạn có muốn thêm/bỏ AC nào không?"
 
@@ -118,7 +115,7 @@ status: <task.status>
 priority: <task.piority>
 deadline: <task.date_end>
 imported-date: <YYYY-MM-DD>
-qa-status: <Ready for Analysis | Questions Pending>
+qa-status: <Ready for Analysis | Questions Open>
 related-features: []
 ---
 
@@ -131,12 +128,12 @@ related-features: []
 | AC ID | Mô tả | Nguồn | Status |
 |-------|-------|-------|--------|
 | AC-01 | ... | Explicit từ task.note | ✅ Confirmed |
-| AC-02 | ... | Feature-Spec [mục] | ⏳ Pending |
+| AC-02 | ... | Feature-Spec [mục] | ❓ Cần làm rõ |
 
 ## Questions
 
 ### BA Questions
-- [AC-02] Khi ..., hệ thống có ... không?
+- [AC-02] Khi ..., hệ thống cần xử lý như thế nào?
 
 ### Dev Questions
 - ...
@@ -159,7 +156,7 @@ Thêm thẻ vào cột `## TODO` trong `KANBAN.md`:
 
 Ghi `log.md` với prefix `[ingest]`:
 ```
-- [YYYY-MM-DD HH:mm:ss] [ingest] | Import task <task-code>: <task.name>. AC: X confirmed, Y pending.
+- [YYYY-MM-DD HH:mm:ss] [ingest] | Import task <task-code>: <task.name>. AC: X confirmed, Y questions open.
 ```
 
 ---
@@ -171,14 +168,14 @@ Ghi `log.md` với prefix `[ingest]`:
 > **QA Status: [trạng thái]**
 >
 > Bước tiếp theo:
-> - **Nếu còn AC Pending**: Gửi câu hỏi cho BA, cập nhật Task Note khi có trả lời
+> - **Nếu còn Questions Open**: Gửi câu hỏi cho BA/PO/Dev, cập nhật Task Note khi có trả lời
 > - **Nếu tất cả AC Confirmed**: `/wiki-requirement-analyzer` để tạo/cập nhật Feature Spec từ task này"
 
 ---
 
 ## Guardrails
 
-- **Không tự confirm AC suy diễn** — phải có BA xác nhận
+- **Không tự tạo AC suy diễn** — điểm chưa rõ phải đưa vào Questions để xác nhận
 - **Không tự quyết định Feature Spec** khi ambiguous — hỏi user (Bước 2)
 - Section Task Data là **read-only** — không chỉnh sửa `task.note` nguyên văn
 - Ảnh download vào `raw_sources/project_hasaki/assets/`
@@ -189,6 +186,6 @@ Ghi `log.md` với prefix `[ingest]`:
 |-----------|-------|
 | Token hết hạn | Hướng dẫn lấy token mới, dừng |
 | Task không tìm thấy | Thử numeric ID; nếu vẫn không có → báo user |
-| task.note trống | Ghi rõ "Không có AC tường minh"; qa-status = Questions Pending |
+| task.note trống | Ghi rõ "Không có AC tường minh"; qa-status = Questions Open |
 | Chưa có Feature Spec | Thông báo, gợi ý `/wiki-requirement-analyzer` trước |
 | Task đã import rồi | Hỏi: cập nhật hay bỏ qua? |

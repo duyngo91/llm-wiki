@@ -38,6 +38,11 @@ python .claude/scripts/wiki_sync.py verify
 - **KHÔNG đánh Pass test case** nếu người dùng chưa xác nhận chạy test thực tế (HITL Gate 4).
 - **KHÔNG tự di chuyển task sang Done** trên Kanban mà không có bằng chứng thực thi.
 - Khi daily sync tạo Bug RCA mới → phải thông báo cho QA Lead & Tech Lead để thực hiện Bug Triage (Gate 3).
+- Tất cả timestamp khi sync/log/changelog phải dùng `UTC+07:00` (`Asia/Ho_Chi_Minh`).
+- Mọi file markdown phải ghi `UTF-8`; khi chạy Python trên Windows phải set:
+  - `$env:PYTHONUTF8 = "1"`
+  - `$env:PYTHONIOENCODING = "utf-8"`
+- Nếu thấy dấu hiệu lỗi font, dừng sync và sửa encoding trước khi chạy tiếp.
 - Mọi thay đổi phải được ghi vào `log.md` với đúng prefix action-type.
 
 ## Output tóm tắt
