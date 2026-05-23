@@ -40,6 +40,7 @@ Bạn đang thực hiện **ISTQB Test Design**: quyết định **HOW to test**
 Mỗi test case **BẮT BUỘC** có đủ các cột:
 
 - **AC/Req Cover:** Requirement ID (`R1`, `R2`...) và/hoặc AC/BDD Scenario (`AC-01`, `Scenario 1`).
+- **Phạm vi:** `UI`, `Functional`, hoặc `UI+Functional`.
 - **Loại case:** `Positive` hoặc `Negative`. Regression/security/performance vẫn phải ghi rõ.
 - **Kỹ thuật test:** kỹ thuật ISTQB đã dùng.
 - **Nguồn:** Chỉ dùng `Explicit từ [nguồn]`.
@@ -58,6 +59,7 @@ Mỗi test case **BẮT BUỘC** có đủ các cột:
 Sau khi hoàn thành, báo cáo:
 - Đường dẫn Test Suite và trạng thái
 - Tổng số test case (Positive / Negative)
+- Phân bố test theo phạm vi (`UI` / `Functional` / `UI+Functional`)
 - Kỹ thuật test đã dùng
 - Coverage Requirement/AC
 - Danh sách điểm chưa rõ đã chuyển về mục `## ❓ Câu hỏi chưa rõ` của Feature

@@ -33,11 +33,11 @@ approval_note:
 
 ## ✅ Test Cases
 
-| Test ID | Tiêu đề | AC/Req Cover | Loại case | Kỹ thuật test | Điều kiện tiên quyết | Các bước thực hiện | Kết quả mong đợi | Nguồn / Suy diễn | Status |
-|:--------|:--------|:-------------|:----------|:--------------|:--------------------|:-------------------|:-----------------|:-----------------|:-------|
-| TC-001 | | AC-01 / R1 | Positive | Happy Path | | 1. ...  2. ... | | Explicit từ Feature Spec | ⏳ |
-| TC-002 | | AC-02 / R2 | Negative | Equivalence Partitioning | | 1. ...  2. ... | | Explicit từ Business Rule | ⏳ |
-| TC-003 | | AC-03 / R3 | Negative | Boundary Value Analysis | | 1. ...  2. ... | | AI-Inferred từ validation rule | ⏳ |
+| Test ID | Tiêu đề | AC/Req Cover | Phạm vi | Loại case | Kỹ thuật test | Điều kiện tiên quyết | Các bước thực hiện | Kết quả mong đợi | Nguồn | Status |
+|:--------|:--------|:-------------|:--------|:----------|:--------------|:--------------------|:-------------------|:-----------------|:------|:-------|
+| TC-001 | | AC-01 / R1 | Functional | Positive | Happy Path | | 1. ...  2. ... | | Explicit từ Feature Spec | ⏳ |
+| TC-002 | | AC-02 / R2 | UI | Negative | Equivalence Partitioning | | 1. ...  2. ... | | Explicit từ Business Rule | ⏳ |
+| TC-003 | | AC-03 / R3 | UI+Functional | Negative | Boundary Value Analysis | | 1. ...  2. ... | | Explicit từ Requirement R3 | ⏳ |
 
 ## 🚫 Test Cases Lỗi Thời (Deprecated)
 *Các test case không còn áp dụng do thay đổi requirement. Lưu lại để tham khảo.*

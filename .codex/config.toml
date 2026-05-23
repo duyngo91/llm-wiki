@@ -4,9 +4,3 @@ args = [
     "markitdown_mcp",
 ]
 command = 'C:\Users\HASAKI\AppData\Local\Python\pythoncore-3.14-64\python.exe'
-
-[mcp_servers.obsidian]
-url = "http://127.0.0.1:27123/mcp"
-
-[mcp_servers.obsidian.http_headers]
-Authorization = "Bearer 37c272f3010c10904eaa5f700ca534a24ce089d3b7206482dd24523ff02aebc6"
