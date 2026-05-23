@@ -55,6 +55,10 @@ Thư mục `.agents/skills/` chứa các Agent Skills hỗ trợ workflow QA wik
 - `wiki-requirement-analyzer`: phân tích requirement theo ISTQB Test Analysis để tạo/cập nhật feature spec.
 - `wiki-test-designer`: thiết kế test case/test suite theo ISTQB Test Design.
 
+Quy ước script:
+- `scripts/`: CLI engine dùng chung cho toàn vault và người dùng.
+- `.agents/skills/<skill-name>/scripts/`: wrapper hoặc helper chỉ phục vụ riêng skill đó.
+
 ## Quy ước làm việc
 
 - Tạo/sửa nội dung theo chuẩn trong `WIKI_RULES.md`.
