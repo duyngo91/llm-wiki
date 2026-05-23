@@ -9,7 +9,7 @@ metadata:
 
 Use for deterministic wiki maintenance. Prefer scripts over manual markdown edits when a supported command exists.
 
-The canonical CLI scripts stay at the vault root in `../../../scripts/` because they are also user-facing commands documented in `../../../USER_COMMANDS.md`. This skill bundles a thin wrapper at `scripts/wiki_sync.py` so skill-specific invocation remains portable without duplicating the vault engine logic.
+The canonical sync/audit logic lives inside this skill at `scripts/wiki_sync.py`. Root-level files in `../../../scripts/` are compatibility shims for user-facing commands documented in `../../../USER_COMMANDS.md`.
 
 ## Commands
 
@@ -19,7 +19,7 @@ Daily note sync:
 ```powershell
 python scripts/wiki_manager.py daily-sync --project <project_name> --date <YYYY-MM-DD>
 ```
-Skill wrapper:
+Skill script:
 ```powershell
 python .agents/skills/wiki-sync-helper/scripts/wiki_sync.py daily-sync --project <project_name> --date <YYYY-MM-DD>
 ```
@@ -28,7 +28,7 @@ Kanban + coverage sync:
 ```powershell
 python scripts/wiki_manager.py sync
 ```
-Skill wrapper:
+Skill script:
 ```powershell
 python .agents/skills/wiki-sync-helper/scripts/wiki_sync.py sync
 ```
@@ -37,7 +37,7 @@ Audit only:
 ```powershell
 python scripts/verify_wiki.py
 ```
-Skill wrapper:
+Skill script:
 ```powershell
 python .agents/skills/wiki-sync-helper/scripts/wiki_sync.py verify
 ```
