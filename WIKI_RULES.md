@@ -17,6 +17,8 @@ updated: 2026-05-23
   - Nhắn AI: `ingest file mới trong raw_sources/requirements`
 - **Xử lý task Jira mới trong `raw_sources/[project]/tasks/`:**
   - Nhắn AI: `phân tích task mới và tạo specs + test suite`
+- **Tạo Test Plan cho CR (staging test strategy):**
+  - Nhắn AI: `tạo test plan cho CR-ORANGE-200 thuộc project_orange`
 - **Đồng bộ daily note theo ngày:**
   - Nhắn AI: `daily sync project_orange ngày 2026-05-23`
   - Hoặc chạy tay: `python scripts/wiki_manager.py daily-sync --project project_orange --date 2026-05-23`
@@ -27,6 +29,10 @@ updated: 2026-05-23
   - Chạy tay: `python scripts/verify_wiki.py`
 - **Khi task đã test xong và cần chốt trạng thái:**
   - Nhắn AI: `chuyển task [MÃ-TASK] sang Done và cập nhật suite/feature/plan`
+- **Khởi tạo CR Go-Live (biên bản deploy + smoke test prod):**
+  - Nhắn AI: `tạo CR golive cho CR-ORANGE-200 ngày 2026-05-30 thuộc project_orange`
+- **Khi đã smoke test production xong và cần đóng CR:**
+  - Nhắn AI: `cập nhật kết quả smoke test và chốt CR [MÃ-CR] sang Done`
 - **Khởi tạo project mới:**
   - Nhắn AI: `tạo project mới tên project_xxx theo chuẩn wiki rules`
 

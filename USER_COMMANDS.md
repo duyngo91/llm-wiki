@@ -8,12 +8,18 @@ Trang này dành cho người dùng cuối. Chỉ cần bỏ file vào đúng th
   - `ingest file mới trong raw_sources/requirements`
 - Xử lý task Jira mới:
   - `phân tích task mới và tạo specs + test suite`
+- Tạo Test Plan cho CR:
+  - `tạo test plan cho CR-ORANGE-200 thuộc project_orange`
 - Đồng bộ daily note:
   - `daily sync project_orange ngày 2026-05-23`
 - Dọn dẹp và kiểm định toàn wiki:
   - `lint và sync toàn bộ wiki`
 - Chốt task đã test xong:
   - `chuyển task [MÃ-TASK] sang Done và cập nhật suite/feature/plan`
+- Khởi tạo CR Go-Live:
+  - `tạo CR golive cho CR-ORANGE-200 ngày 2026-05-30 thuộc project_orange`
+- Chốt CR sau smoke test production:
+  - `cập nhật kết quả smoke test và chốt CR [MÃ-CR] sang Done`
 - Tạo project mới:
   - `tạo project mới tên project_xxx theo chuẩn wiki rules`
 
