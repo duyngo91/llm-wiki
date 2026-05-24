@@ -9,7 +9,7 @@ Bạn đang thực hiện **ISTQB Test Analysis**: quyết định **WHAT to tes
 
 ## Workflow bắt buộc
 
-1. Đọc `.claude/skills/hasaki-wiki/references/wiki_rules.md`, `USER_COMMANDS.md`, và raw source liên quan trong `raw_sources/`.
+1. Đọc `.claude/skills/hasaki-wiki/references/wiki_rules.md` và `.claude/skills/hasaki-wiki/references/doc_standards.md`, sau đó đọc raw source liên quan trong `raw_sources/`.
 2. Xác định project đích. Nếu không rõ project → hỏi người dùng trước khi tạo file.
 3. Đọc `templates/tpl_requirement.md`; nếu raw source có API/interface explicit thì đọc thêm `templates/tpl_api_spec.md`.
 4. Tạo hoặc cập nhật `wiki/[project]/features/[feature_name].md`.

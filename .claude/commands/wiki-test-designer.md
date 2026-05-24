@@ -11,7 +11,8 @@ Bạn đang thực hiện **ISTQB Test Design**: quyết định **HOW to test**
 
 | File cần đọc | Mục đích |
 |:-------------|:---------|
-| `.claude/skills/hasaki-wiki/references/wiki_rules.md` | Tuân thủ format và quy tắc đặt tên |
+| `.claude/skills/hasaki-wiki/references/wiki_rules.md` | HITL gates, naming, traceability policy |
+| `.claude/skills/hasaki-wiki/references/doc_standards.md` | Chuẩn viết Test Suite, Test Case (§3.3–3.5) |
 | `templates/tpl_test_suite.md` | Giữ nguyên cấu trúc template |
 | `wiki/[project]/features/[feature_name].md` | Lấy logic nghiệp vụ, luồng, ràng buộc dữ liệu |
 | `wiki/[project]/api_specs/api_[feature_name].md` | Lấy method, endpoint, payload, response, error contract khi suite có phạm vi API |

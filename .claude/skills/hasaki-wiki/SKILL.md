@@ -2,7 +2,7 @@
 name: hasaki-wiki
 description: QA wiki orchestrator for project_hasaki — manages the full SDLC documentation cycle: requirement ingestion → Feature Spec → Test Suite → Kanban sync → CR go-live. Enforces HITL gates, no-inference policy, and traceability chain (TBB2 → HSK → Task Spec → Feature → R/AC → Testcase). Use when ingesting PDFs or Hasaki tasks (HSK/TBB2), creating or updating Feature Specs or API Specs, designing test suites from approved specs, running daily sync or lint/verify, managing bugs, or packaging CR go-live docs. Trigger phrases: "ingest file", "phân tích task", "import task HSK-", "tạo test suite", "lint và sync", "daily sync", "tạo CR golive", "chốt task", "chuyển sang Done", "sync my open tasks", "get my tasks".
 metadata:
-  author: Duy Ngo
+  author: Yen Ngo
   version: "2.0"
 allowed-tools:
   - Read
@@ -57,7 +57,11 @@ TBB2 task: resolve HSK cha qua `parent_id`. Raw file lưu theo HSK code (`HSK-xx
 
 ## Reference Docs
 
-- Rules: `.claude/rules/*.md` — normative policy source
-- Wiki rules (full): `.claude/skills/hasaki-wiki/references/wiki_rules.md`
-- Workflows detail: `.claude/skills/hasaki-wiki/references/workflows_detail.md`
-- Status reference: `.claude/skills/hasaki-wiki/references/status_reference.md`
+| File | Dùng khi | Command |
+|:-----|:---------|:--------|
+| `references/wiki_rules.md` | Foundation: HITL gates, structure, naming, traceability, workflows | tất cả |
+| `references/doc_standards.md` | Chuẩn viết Feature Spec, API Spec, Test Suite, TC | analyzer, designer |
+| `references/control_files.md` | KANBAN syntax, log format, propagation checklist | sync-helper |
+| `references/workflows_detail.md` | Chi tiết từng bước workflow 2.0–2.7 | khi cần tra cứu sâu |
+| `references/status_reference.md` | Bảng status hợp lệ theo từng loại file | khi cần validate status |
+| `.claude/rules/*.md` | Normative policy (luôn active) | — |
