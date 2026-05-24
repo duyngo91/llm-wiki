@@ -109,6 +109,72 @@ class HasakiClient:
         r.raise_for_status()
         return r.json().get("data", {})
 
+    # ── Task List (non-user-filtered) ────────────────────────────────────
+
+    def list_tasks_by_status(self, status: list[int] = None, limit: int = 200) -> list:
+        """List tasks by raw status codes (0=Todo, 1=Processing, 2=Done).
+        Uses list-task-input-es which is not filtered by current user.
+        """
+        params: dict = {"limit": limit}
+        if status:
+            for s in status:
+                params.setdefault("status[]", []).append(s)
+        r = self.session.get(f"{self.BASE}/hr/projects/list-task-input-es", params=params)
+        r.raise_for_status()
+        return r.json().get("data", {}).get("rows", [])
+
+    # ── Aggregations ──────────────────────────────────────────────────────
+
+    def get_aggregations(self, option: str = "my-task", to_date: str = None) -> dict:
+        """Task count aggregations (by status, priority, etc.)."""
+        params: dict = {"option": option}
+        if to_date:
+            params["to_date"] = to_date
+        r = self.session.get(f"{self.BASE}/hr/projects/aggregations", params=params)
+        r.raise_for_status()
+        return r.json().get("data", {})
+
+    def get_time_aggregations(self, option: str = "my-task", status: str = None, to_date: str = None) -> dict:
+        """Time-based task aggregations (planned vs actual hours)."""
+        params: dict = {"option": option}
+        if status:
+            params["status"] = status
+        if to_date:
+            params["to_date"] = to_date
+        r = self.session.get(f"{self.BASE}/hr/projects/time-aggregations", params=params)
+        r.raise_for_status()
+        return r.json().get("data", {})
+
+    # ── Workflow ──────────────────────────────────────────────────────────
+
+    def get_workflows(self) -> list:
+        """Public workflow definitions (task status flow, approval stages)."""
+        r = self.session.get(f"{self.BASE}/hr/workflows/public")
+        r.raise_for_status()
+        return r.json().get("data", [])
+
+    # ── Task Management Objects ───────────────────────────────────────────
+
+    def get_task_management_objects(self, status: int = None, limit: int = 50) -> list:
+        """Task management objects (checklists, linked objects on tasks)."""
+        params: dict = {"limit": limit}
+        if status is not None:
+            params["status"] = status
+        r = self.session.get(f"{self.BASE}/v2/task/task-management-object", params=params)
+        r.raise_for_status()
+        return r.json().get("data", [])
+
+    # ── Staff ─────────────────────────────────────────────────────────────
+
+    def search_staff(self, query: str = "", limit: int = 20) -> list:
+        """Search staff by name/email for dropdowns and assignment."""
+        params: dict = {"limit": limit, "sort": "asc"}
+        if query:
+            params["keyword"] = query
+        r = self.session.get(f"{self.BASE}/news/staff/search-for-dropdown", params=params)
+        r.raise_for_status()
+        return r.json().get("data", [])
+
     # ── Notifications ─────────────────────────────────────────────────────
 
     def get_notifications(self, limit: int = 20) -> list:

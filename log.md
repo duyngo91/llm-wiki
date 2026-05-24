@@ -4,6 +4,7 @@ status: Done
 created: 2026-05-23
 ---
 
+- [2026-05-24 14:30:00] [create] | Add hasaki_my_tasks.py script (4-phase: scan/diff/download/impact) and get-my-tasks skill. Extends hasaki_client.py with 6 new API endpoints from HAR analysis (list-task-input-es, aggregations, time-aggregations, workflows, task-management-object, search-staff). Register /get-my-tasks in CLAUDE.md.
 - [2026-05-24 12:00:00] [lint-sync] | Enhance verify debug output: TC/API errors now include line number, cell count, section context, actual cell values; KANBAN mismatch shows per-section breakdown; duplicate TC ID detection added; API row open-ref check added.
 - [2026-05-24 11:30:00] [lint-sync] | Fix verify: is_test_case_row now requires ≥9 pipes to exclude Blocked Coverage table rows; fix fix_test_suites.py to clear cells[2] when marking 🚫 Blocked and check Phạm vi in header line only; fix TC-VAS-019 swapped Loại case/Kỹ thuật test; 0 governance errors remain.
 - [2026-05-24 11:30:00] [lint-sync] | Add Unreadable Source Rule to WIKI_RULES.md §1.6 and wiki-requirement-analyzer guardrails: any inaccessible link in raw source must be logged as ❓ Chưa đọc được in Nguồn tài liệu + Open question in Câu hỏi chưa rõ.

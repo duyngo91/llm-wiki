@@ -17,7 +17,14 @@ Trang này dành cho người dùng cuối. Chỉ cần bỏ file vào đúng th
   - `phân tích task [tên file] thuộc [project] và tạo specs + test suite`
   - Nếu task nhắc API nhưng thiếu endpoint/method/payload/status rõ ràng, AI chỉ ghi question, chưa sinh API test case.
 
-- **Bước 3b** — Import task từ Hasaki Workplace:
+- **Bước 3b** — Scan tất cả tasks được assign (phát hiện NEW/UPDATED tự động):
+  - `scan tasks của tôi`
+  - `get my tasks`
+  - `/get-my-tasks`
+  - AI sẽ hiển thị nhóm 🆕 NEW / 🔄 UPDATED (kèm wiki impact) / ✅ CURRENT, hỏi trước khi download.
+  - Sau download → chạy `/wiki-requirement-analyzer` để cập nhật Feature Spec (cần Gate 1).
+
+- **Bước 3c** — Import một task cụ thể từ Hasaki Workplace:
   - `import task HSK-XXXXX`
   - `tôi cần test task HSK-XXXXX`
   - paste URL: `https://work.hasaki.vn/tasks?...&task_id=...`
@@ -44,9 +51,14 @@ Trang này dành cho người dùng cuối. Chỉ cần bỏ file vào đúng th
 
 ---
 
-## 🔍 Tra cứu task Hasaki (không lưu vault)
+## 🔍 Tra cứu & Sync task Hasaki
 
-Chỉ xem thông tin, không phân tích:
+**Scan tất cả tasks được assign (NEW / UPDATED / CURRENT):**
+- `scan tasks của tôi`
+- `get my tasks`
+- Thêm `--status done` để kiểm tra task Done, `--limit 50` để giới hạn số lượng.
+
+**Chỉ xem thông tin một task, không lưu vault:**
 - `lấy task HSK-XXXXX`
 - `đọc task 12032444 và tải hình về`
 
@@ -68,12 +80,25 @@ python .claude/scripts/wiki_sync.py sync
 python .claude/scripts/wiki_sync.py verify
 
 # Fetch task Hasaki (chỉ xem)
-$env:PYTHONUTF8 = "1"
 python .claude/scripts/hasaki_task.py HSK-XXXXX
 
 # Fetch task Hasaki kèm tải ảnh
-$env:PYTHONUTF8 = "1"
 python .claude/scripts/hasaki_task.py HSK-XXXXX --images --output raw_sources/project_hasaki/assets
+
+# Scan tất cả tasks được assign (dry-run, không download)
+python .claude/scripts/hasaki_my_tasks.py
+
+# Scan + download tất cả new/updated tasks
+python .claude/scripts/hasaki_my_tasks.py --download
+
+# Scan + download một task cụ thể
+python .claude/scripts/hasaki_my_tasks.py --download HSK-XXXXX
+
+# Kiểm tra nhanh: bao nhiêu new/updated (không hiện detail)
+python .claude/scripts/hasaki_my_tasks.py --check-updates
+
+# JSON output (dùng cho xử lý tiếp)
+python .claude/scripts/hasaki_my_tasks.py --json
 ```
 
 ---
@@ -88,7 +113,9 @@ python .claude/scripts/hasaki_task.py HSK-XXXXX --images --output raw_sources/pr
 | Log lỗi thô / crash log | `raw_sources/[project]/issues/` |
 | Ảnh / video bằng chứng | `raw_sources/[project]/assets/` |
 
-> **Hasaki Workplace tasks** không cần bỏ file thủ công — dùng `/import-hasaki-task` để AI tự fetch qua API.
+> **Hasaki Workplace tasks** không cần bỏ file thủ công:
+> - `/get-my-tasks` — scan tất cả tasks được assign, phát hiện NEW/UPDATED tự động
+> - `/import-hasaki-task` — import chi tiết một task cụ thể + extract AC list
 
 ---
 

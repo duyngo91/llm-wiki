@@ -19,6 +19,7 @@
 - `/wiki-sync-helper` — Sync Kanban, daily note, audit broken links
 - `/get-hasaki-task` — Lấy task từ Hasaki Workplace
 - `/import-hasaki-task` — Import task + extract AC list
+- `/get-my-tasks` — Scan tất cả tasks được assign, phát hiện NEW/UPDATED, download raw files
 
 ## Projects đang hoạt động
 
