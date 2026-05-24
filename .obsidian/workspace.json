@@ -1,24 +1,20 @@
 {
   "main": {
-    "id": "04a8051d409f0e92",
+    "id": "22c4e411d43e4a5a",
     "type": "split",
     "children": [
       {
-        "id": "7256b1d49f7ef0db",
+        "id": "1b2ab08f188ccf59",
         "type": "tabs",
         "children": [
           {
-            "id": "35970e6b1e4e62f1",
+            "id": "d5be916a7f343930",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "USER_COMMANDS.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "USER_COMMANDS"
+              "title": "New tab"
             }
           }
         ]
@@ -27,15 +23,15 @@
     "direction": "vertical"
   },
   "left": {
-    "id": "743214224f5ce4ef",
+    "id": "0f502b8d78776033",
     "type": "split",
     "children": [
       {
-        "id": "07265d933ec5bfa1",
+        "id": "96250100cf8b48bc",
         "type": "tabs",
         "children": [
           {
-            "id": "f02ffbfd2710aa17",
+            "id": "ea3b882e15c336bf",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -48,12 +44,12 @@
             }
           },
           {
-            "id": "5d8f6fcc85b1f41e",
+            "id": "166f1a0940a7fca9",
             "type": "leaf",
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:#qa/feature-group/receiving-po",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -65,7 +61,7 @@
             }
           },
           {
-            "id": "060812efd7301ad3",
+            "id": "eb39007f92d00fd6",
             "type": "leaf",
             "state": {
               "type": "bookmarks",
@@ -78,23 +74,22 @@
       }
     ],
     "direction": "horizontal",
-    "width": 452.5
+    "width": 300
   },
   "right": {
-    "id": "9e23b97de0c3c6b2",
+    "id": "d8592a41ce3f3b8b",
     "type": "split",
     "children": [
       {
-        "id": "25e71fc321c0d573",
+        "id": "9a7e98616351e19b",
         "type": "tabs",
         "children": [
           {
-            "id": "a0cdb4a386e57bf5",
+            "id": "edd404f4ca3a1d76",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
-                "file": "USER_COMMANDS.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,25 +99,24 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for USER_COMMANDS"
+              "title": "Backlinks"
             }
           },
           {
-            "id": "3ae7a33297079aff",
+            "id": "8390dd30aa41c706",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "USER_COMMANDS.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from USER_COMMANDS"
+              "title": "Outgoing links"
             }
           },
           {
-            "id": "dbcd8916c6d8b0d4",
+            "id": "a7708d21c17cc823",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -137,7 +131,7 @@
             }
           },
           {
-            "id": "33db8bf835c40e57",
+            "id": "93007c551ea118be",
             "type": "leaf",
             "state": {
               "type": "all-properties",
@@ -151,56 +145,25 @@
             }
           },
           {
-            "id": "a155e9647ea5c443",
+            "id": "949bf982cf45912c",
             "type": "leaf",
             "state": {
               "type": "outline",
               "state": {
-                "file": "USER_COMMANDS.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of USER_COMMANDS"
-            }
-          },
-          {
-            "id": "3b6ab327af6c4cde",
-            "type": "leaf",
-            "state": {
-              "type": "smart-connections-view",
-              "state": {},
-              "icon": "smart-connections",
-              "title": "Connections"
-            }
-          },
-          {
-            "id": "39a9b9ac2b2b0959",
-            "type": "leaf",
-            "state": {
-              "type": "smart-lookup-view-connections",
-              "state": {},
-              "icon": "smart-lookup",
-              "title": "Lookup"
-            }
-          },
-          {
-            "id": "7baed47b0700bf64",
-            "type": "leaf",
-            "state": {
-              "type": "git-view",
-              "state": {},
-              "icon": "git-pull-request",
-              "title": "Source Control"
+              "title": "Outline"
             }
           }
-        ],
-        "currentTab": 7
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 650.5
+    "width": 300,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -222,47 +185,38 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "35970e6b1e4e62f1",
+  "active": "d5be916a7f343930",
   "lastOpenFiles": [
-    "README.md",
-    "WIKI_RULES.md",
-    "USER_COMMANDS.md",
-    "log.md",
-    "Untitled.canvas",
-    "wiki/project_hasaki/test_suites/test_hasaki_qc_evaluation.md",
-    "wiki/project_hasaki/feature_groups/receiving_po.md",
-    "KANBAN.md",
-    "wiki/project_hasaki/api_specs",
-    "templates/tpl_api_spec.md",
     "wiki/project_hasaki/test_plans/testplan_hasaki_2026_05.md",
-    "wiki/project_hasaki/feature_groups",
-    "templates/tpl_feature_group.md",
-    "raw_sources/assets/orangehrm_login.png",
-    "raw_sources/project_hasaki/requirements/07062_Receiving_PO_Docs_ver2.17.pdf",
-    "raw_sources/project_hasaki/requirements/07105_Quality_Control_Docs_ver1.5.pdf",
-    "wiki/project_hasaki/features/hasaki_receiving_inbound_shipment.md",
-    "wiki/project_hasaki/features/hasaki_qc_evaluation.md",
-    "wiki/project_hasaki/features/hasaki_qc_setup.md",
-    "wiki/project_hasaki/features/hasaki_receiving_packing_list.md",
-    "wiki/project_hasaki/features/hasaki_receiving_po_app.md",
-    "wiki/project_hasaki/features/hasaki_receiving_vas.md",
-    "wiki/project_hasaki/test_suites/test_hasaki_receiving_po_app.md",
     "wiki/project_hasaki/test_suites/test_hasaki_receiving_vas.md",
+    "wiki/project_hasaki/test_suites/test_hasaki_receiving_po_app.md",
+    "wiki/project_hasaki/test_suites/test_hasaki_receiving_packing_list.md",
     "wiki/project_hasaki/test_suites/test_hasaki_receiving_inbound_shipment.md",
     "wiki/project_hasaki/test_suites/test_hasaki_qc_setup.md",
-    "OBSIDIAN_GUIDE.md",
-    "raw_sources/project_orange/assets/orangehrm_api_logs.json",
-    "raw_sources/project_orange/tasks/orangehrm_forgot_password.md",
-    "raw_sources/project_orange/tasks/orangehrm_auth.md",
-    "raw_sources/project_orange/assets/orangehrm_login.png",
-    "raw_sources/project_orange/tasks",
-    "raw_sources/project_orange/requirements",
-    "raw_sources/project_orange/issues",
-    "raw_sources/project_orange/assets",
-    "raw_sources/project_orange",
-    "CLAUDE.md",
-    "AGENTS.md",
-    "Untitled 2.canvas",
-    "Untitled 1.canvas"
+    "wiki/project_hasaki/test_suites/test_hasaki_qc_evaluation.md",
+    "wiki/project_hasaki/feature_groups/receiving_po.md",
+    "wiki/project_hasaki/operations/test_data.md",
+    "wiki/project_hasaki/operations/team_contacts.md",
+    "wiki/project_hasaki/operations/environments.md",
+    "wiki/project_hasaki/operations/daily_notes",
+    "wiki/project_hasaki/features/hasaki_receiving_vas.md",
+    "wiki/project_hasaki/features/hasaki_receiving_po_app.md",
+    "wiki/project_hasaki/features/hasaki_receiving_packing_list.md",
+    "wiki/project_hasaki/features/hasaki_receiving_inbound_shipment.md",
+    "wiki/project_hasaki/features/hasaki_qc_setup.md",
+    "wiki/project_hasaki/features/hasaki_qc_evaluation.md",
+    "wiki/project_hasaki/test_plans",
+    "wiki/project_hasaki/test_suites",
+    "wiki/project_hasaki/feature_groups",
+    "wiki/project_hasaki/traceability.json",
+    "wiki/project_hasaki/bugs_knowledge",
+    "wiki/project_hasaki/releases",
+    "wiki/project_hasaki/project_registry.json",
+    "wiki/project_hasaki/operations",
+    "wiki/project_hasaki/features",
+    "raw_sources/project_hasaki/assets/orangehrm_login.png",
+    "log.md",
+    "index.md",
+    "KANBAN.md"
   ]
 }
