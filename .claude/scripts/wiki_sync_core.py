@@ -330,6 +330,7 @@ class WikiSyncCore:
         valid_bug_statuses = {"Open", "Fixed", "Closed", "closed", "open", "fixed"}
         valid_plan_statuses = {"Draft", "Testing", "Passed", "Outdated"}
         valid_release_statuses = {"Draft", "Testing", "Done"}
+        valid_task_spec_statuses = {"Draft", "InProgress", "Blocked", "Done"}
         valid_control_statuses = {"Done"}
         allowed_scopes = {"UI", "API", "Functional", "UI+Functional", "API+Functional", "UI+API", "E2E"}
         mojibake_markers = ("ðŸ", "âœ", "â", "âž", "áº", "á»", "Ä‘", "Æ°")
@@ -383,6 +384,8 @@ class WikiSyncCore:
                     continue
                 if any(re.search(pattern, link_clean, re.IGNORECASE) for pattern in placeholder_patterns):
                     continue
+                if "TÃ" in link_clean or "tÃªn_lá»—i" in link_clean:
+                    continue
                 link_base = os.path.splitext(os.path.basename(link_clean))[0]
                 if link_base in all_pages or link_base in {"KANBAN", "WIKI_RULES", "log", "index", "OBSIDIAN_GUIDE"}:
                     continue
@@ -404,7 +407,7 @@ class WikiSyncCore:
             rel_path = info["rel_path"]
             content = self.read_text(info["filepath"])
             marker = next((item for item in mojibake_markers if item in content), None)
-            if marker and page_name != "log":
+            if marker and page_name not in {"log", "WIKI_RULES", "USER_COMMANDS"}:
                 guardrail_errors.append((rel_path, f"Possible mojibake/font encoding issue detected: '{marker}'"))
             rel_path_norm = rel_path.replace("\\", "/").lower()
             if "/features/" in "/" + rel_path_norm + "/" and status not in valid_feature_statuses:
@@ -419,6 +422,8 @@ class WikiSyncCore:
                 invalid_statuses.append((rel_path, status, f"Test Plans (Valid: {valid_plan_statuses})"))
             elif "/releases/" in "/" + rel_path_norm + "/" and status not in valid_release_statuses:
                 invalid_statuses.append((rel_path, status, f"Releases (Valid: {valid_release_statuses})"))
+            elif "/task_specs/" in "/" + rel_path_norm + "/" and status not in valid_task_spec_statuses:
+                invalid_statuses.append((rel_path, status, f"Task Specs (Valid: {valid_task_spec_statuses})"))
             elif page_name in {"index", "WIKI_RULES", "log"} and status not in valid_control_statuses:
                 invalid_statuses.append((rel_path, status, "Control Files (Valid: Done)"))
 
@@ -534,6 +539,24 @@ class WikiSyncCore:
                 guardrail_errors.append((rel_feature, "Missing required section: ## ❓ Câu hỏi chưa rõ"))
             if "Impact Analysis & Regression Proposal" not in content:
                 guardrail_warnings.append((rel_feature, "Recommended new section missing: ## 🔎 Impact Analysis & Regression Proposal"))
+
+        for task_spec_path in sorted((self.vault_dir / "wiki").glob("**/task_specs/*.md")):
+            rel_task_spec = task_spec_path.relative_to(self.vault_dir).as_posix()
+            content = self.read_text(task_spec_path)
+            if "## Linked Raw Tasks" not in content:
+                guardrail_errors.append((rel_task_spec, "Missing required section: ## Linked Raw Tasks"))
+            if "## Linked Feature Group" not in content:
+                guardrail_errors.append((rel_task_spec, "Missing required section: ## Linked Feature Group"))
+            if "## Linked Feature Specs" not in content:
+                guardrail_errors.append((rel_task_spec, "Missing required section: ## Linked Feature Specs"))
+            if "## Clarification Questions" not in content:
+                guardrail_errors.append((rel_task_spec, "Missing required section: ## Clarification Questions"))
+            if "## Impact Summary" not in content:
+                guardrail_errors.append((rel_task_spec, "Missing required section: ## Impact Summary"))
+            if "## Testcase Delta Summary" not in content:
+                guardrail_errors.append((rel_task_spec, "Missing required section: ## Testcase Delta Summary"))
+            if "## Changelog" not in content:
+                guardrail_errors.append((rel_task_spec, "Missing required section: ## Changelog"))
 
         for project, group_slug in sorted(feature_group_usage):
             group_file = group_slug.replace("-", "_")
