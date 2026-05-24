@@ -4,6 +4,8 @@ status: Done
 created: 2026-05-23
 ---
 
+- [2026-05-24 15:30:00] [create] | Create references/status_reference.md: consolidated status lifecycle for all 12 document types (Feature Spec, API Spec, Test Suite, Test Plan, CR/Release, Bug, Feature Group, TC icon, Question, KANBAN, Approval Evidence, Hasaki raw task). Link từ WIKI_RULES.md Navigation.
+- [2026-05-24 15:00:00] [lint-sync] | Update WIKI_RULES.md: §1.5 add HSK/TBB2 distinction + /get-my-tasks intake rule; §2.2 add UPDATED trigger from get-my-tasks; add §2.7 Hasaki Task Sync workflow. Update USER_COMMANDS.md with /get-my-tasks flow.
 - [2026-05-24 14:30:00] [create] | Add hasaki_my_tasks.py script (4-phase: scan/diff/download/impact) and get-my-tasks skill. Extends hasaki_client.py with 6 new API endpoints from HAR analysis (list-task-input-es, aggregations, time-aggregations, workflows, task-management-object, search-staff). Register /get-my-tasks in CLAUDE.md.
 - [2026-05-24 12:00:00] [lint-sync] | Enhance verify debug output: TC/API errors now include line number, cell count, section context, actual cell values; KANBAN mismatch shows per-section breakdown; duplicate TC ID detection added; API row open-ref check added.
 - [2026-05-24 11:30:00] [lint-sync] | Fix verify: is_test_case_row now requires ≥9 pipes to exclude Blocked Coverage table rows; fix fix_test_suites.py to clear cells[2] when marking 🚫 Blocked and check Phạm vi in header line only; fix TC-VAS-019 swapped Loại case/Kỹ thuật test; 0 governance errors remain.
