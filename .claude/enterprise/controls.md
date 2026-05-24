@@ -2,7 +2,7 @@
 
 ## Baseline
 - Active project: `project_hasaki`
-- Governance source: `WIKI_RULES.md` and `.claude/rules/*.md`
+- Governance source: `.claude/skills/hasaki-wiki/references/wiki_rules.md` and `.claude/rules/*.md`
 - Verify command: `python .claude/scripts/wiki_sync.py verify`
 
 ## Approval Expectations

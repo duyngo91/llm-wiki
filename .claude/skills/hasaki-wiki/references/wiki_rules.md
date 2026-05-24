@@ -13,8 +13,8 @@ updated: 2026-05-24
 
 - Commands người dùng: `USER_COMMANDS.md` — đọc trước khi thao tác SDLC
 - Bản đồ nội dung: `index.md` — đọc đầu tiên khi cần định vị file
-- Chi tiết từng quy trình: `references/workflows_detail.md`
-- Trạng thái hợp lệ theo từng loại: `references/status_reference.md`
+- Chi tiết từng quy trình: `workflows_detail.md` (cùng thư mục)
+- Trạng thái hợp lệ theo từng loại: `status_reference.md` (cùng thư mục)
 
 ## 🌐 Timezone — Encoding — Secret (BẮT BUỘC)
 
@@ -53,7 +53,7 @@ Claude là AI Co-pilot: tự động hóa, soạn thảo, đề xuất. Con ngư
 
 ```
 llm-wiki/
-├── index.md · KANBAN.md · log.md · WIKI_RULES.md
+├── index.md · KANBAN.md · log.md
 ├── raw_sources/[project]/{tasks, requirements, issues, assets}/   ← CHỈ ĐỌC
 ├── templates/
 └── wiki/[project]/
@@ -154,7 +154,7 @@ Khi chuyển đổi raw source sang Feature Spec, nếu có bất kỳ link/tài
 
 ## 🔄 2. QUY TRÌNH VẬN HÀNH (TÓM TẮT)
 
-> Chi tiết đầy đủ từng bước: `references/workflows_detail.md`.
+> Chi tiết đầy đủ từng bước: `workflows_detail.md` (cùng thư mục).
 
 ### 2.0 Khởi tạo dự án mới
 **Trigger:** Project chưa tồn tại hoặc user yêu cầu.

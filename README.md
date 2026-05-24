@@ -22,7 +22,7 @@ Kho tri thuc QA/Test theo mo hinh Obsidian-first cho du an Hasaki.
 - Rule: AI khong duoc suy dien requirement/test case tu du lieu ngoai allowed scope.
 
 ## Core docs
-- `WIKI_RULES.md`
+- `.claude/skills/hasaki-wiki/references/wiki_rules.md`
 - `USER_COMMANDS.md`
 - `index.md`
 - `KANBAN.md`

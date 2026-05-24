@@ -11,7 +11,7 @@ Bạn đang thực hiện **ISTQB Test Design**: quyết định **HOW to test**
 
 | File cần đọc | Mục đích |
 |:-------------|:---------|
-| `WIKI_RULES.md` | Tuân thủ format và quy tắc đặt tên |
+| `.claude/skills/hasaki-wiki/references/wiki_rules.md` | Tuân thủ format và quy tắc đặt tên |
 | `templates/tpl_test_suite.md` | Giữ nguyên cấu trúc template |
 | `wiki/[project]/features/[feature_name].md` | Lấy logic nghiệp vụ, luồng, ràng buộc dữ liệu |
 | `wiki/[project]/api_specs/api_[feature_name].md` | Lấy method, endpoint, payload, response, error contract khi suite có phạm vi API |
@@ -37,7 +37,7 @@ Bạn đang thực hiện **ISTQB Test Design**: quyết định **HOW to test**
 6. Tạo hoặc cập nhật `wiki/[project]/test_suites/test_[feature_name].md`. Nếu chỉ cover API contract hoặc muốn tách rõ API suite, dùng `wiki/[project]/test_suites/test_[feature_name]_api.md`.
 7. Khi update test suite, không xóa TC cũ; chuyển TC không còn áp dụng vào `Test Cases Lỗi Thời (Deprecated)`.
 8. Nếu Test Suite có tag `qa/feature-group/...`, cập nhật `wiki/[project]/feature_groups/[feature_group].md` để group page phản ánh API Spec nếu có, số TC, blocked coverage và status mới.
-9. Cập nhật `Regression Impact`, `index.md`, `KANBAN.md`, `log.md`, Test Plan liên quan theo `WIKI_RULES.md`.
+9. Cập nhật `Regression Impact`, `index.md`, `KANBAN.md`, `log.md`, Test Plan liên quan theo `.claude/skills/hasaki-wiki/references/wiki_rules.md`.
 10. Chạy validation: `python .claude/scripts/wiki_sync.py verify`.
 
 ## Quy tắc bắt buộc cho mỗi dòng test case

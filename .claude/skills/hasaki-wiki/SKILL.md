@@ -58,6 +58,6 @@ TBB2 task: resolve HSK cha qua `parent_id`. Raw file lưu theo HSK code (`HSK-xx
 ## Reference Docs
 
 - Rules: `.claude/rules/*.md` — normative policy source
-- Workflows detail: `references/workflows_detail.md`
-- Status reference: `references/status_reference.md`
-- WIKI_RULES: `WIKI_RULES.md` — detailed process reference
+- Wiki rules (full): `.claude/skills/hasaki-wiki/references/wiki_rules.md`
+- Workflows detail: `.claude/skills/hasaki-wiki/references/workflows_detail.md`
+- Status reference: `.claude/skills/hasaki-wiki/references/status_reference.md`

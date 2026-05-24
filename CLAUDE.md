@@ -1,6 +1,6 @@
 # QA LLM Wiki - Claude Instructions
 
-Doc bat buoc: @WIKI_RULES.md
+Doc bat buoc: @.claude/skills/hasaki-wiki/references/wiki_rules.md
 
 ## Active project
 - Hasaki: `wiki/project_hasaki/`, `raw_sources/project_hasaki/`

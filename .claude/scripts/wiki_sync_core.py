@@ -387,7 +387,7 @@ class WikiSyncCore:
                 if "TÃ" in link_clean or "tÃªn_lá»—i" in link_clean:
                     continue
                 link_base = os.path.splitext(os.path.basename(link_clean))[0]
-                if link_base in all_pages or link_base in {"KANBAN", "WIKI_RULES", "log", "index", "OBSIDIAN_GUIDE"}:
+                if link_base in all_pages or link_base in {"KANBAN", "log", "index", "OBSIDIAN_GUIDE"}:
                     continue
                 normalized_link = link_clean.replace("\\", "/").strip("/")
                 possible_paths = [self.vault_dir / normalized_link, self.vault_dir / f"{normalized_link}.md"]
@@ -395,7 +395,7 @@ class WikiSyncCore:
                     broken_links.append((info["rel_path"], link))
 
         for page_name, info in all_pages.items():
-            if page_name in {"index", "WIKI_RULES", "log", "KANBAN", "OBSIDIAN_GUIDE"}:
+            if page_name in {"index", "log", "KANBAN", "OBSIDIAN_GUIDE"}:
                 continue
             if "daily_notes" in info["rel_path"]:
                 continue
@@ -407,7 +407,7 @@ class WikiSyncCore:
             rel_path = info["rel_path"]
             content = self.read_text(info["filepath"])
             marker = next((item for item in mojibake_markers if item in content), None)
-            if marker and page_name not in {"log", "WIKI_RULES", "USER_COMMANDS"}:
+            if marker and page_name not in {"log", "USER_COMMANDS"}:
                 guardrail_errors.append((rel_path, f"Possible mojibake/font encoding issue detected: '{marker}'"))
             rel_path_norm = rel_path.replace("\\", "/").lower()
             if "/features/" in "/" + rel_path_norm + "/" and status not in valid_feature_statuses:
@@ -424,7 +424,7 @@ class WikiSyncCore:
                 invalid_statuses.append((rel_path, status, f"Releases (Valid: {valid_release_statuses})"))
             elif "/task_specs/" in "/" + rel_path_norm + "/" and status not in valid_task_spec_statuses:
                 invalid_statuses.append((rel_path, status, f"Task Specs (Valid: {valid_task_spec_statuses})"))
-            elif page_name in {"index", "WIKI_RULES", "log"} and status not in valid_control_statuses:
+            elif page_name in {"index", "log"} and status not in valid_control_statuses:
                 invalid_statuses.append((rel_path, status, "Control Files (Valid: Done)"))
 
         feature_open_questions = self.collect_open_question_refs()

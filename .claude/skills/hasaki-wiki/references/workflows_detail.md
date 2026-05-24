@@ -6,7 +6,7 @@ created: 2026-05-24
 
 # 📋 Chi Tiết Quy Trình Vận Hành — QA LLM Wiki
 
-> File tham khảo chi tiết cho Section 2 của `WIKI_RULES.md`. Claude đọc file này khi cần tra cứu đầy đủ các bước của từng quy trình.
+> File tham khảo chi tiết cho Section 2 của `wiki_rules.md`. Claude đọc file này khi cần tra cứu đầy đủ các bước của từng quy trình.
 
 ---
 
@@ -29,7 +29,7 @@ created: 2026-05-24
 3. **Đăng ký điều hướng:**
    - Cập nhật `index.md` thêm khu vực project mới.
    - Tạo ít nhất một Feature Group page nếu project có nhiều feature cùng domain.
-   - Tạo Kanban cards khởi tạo Sprint theo quy tắc §4.2 trong WIKI_RULES.md.
+   - Tạo Kanban cards khởi tạo Sprint theo quy tắc §4.2 trong `wiki_rules.md`.
    - Ghi log `[create]`.
 
 ---

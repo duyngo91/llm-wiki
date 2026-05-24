@@ -21,7 +21,11 @@
       "Bash(git checkout *)",
       "Bash(python3 -c ' *)",
       "Bash(git add *)",
-      "Bash(git commit -m ' *)"
+      "Bash(git commit -m ' *)",
+      "Bash(git ls-tree *)",
+      "Bash(git push *)",
+      "Bash(Get-ChildItem C:\\\\project\\\\NB_Hasaki\\\\llm-wiki\\\\references\\\\ *)",
+      "Bash(git mv *)"
     ]
   },
   "enabledMcpjsonServers": [

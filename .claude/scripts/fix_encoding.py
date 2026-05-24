@@ -12,7 +12,7 @@ import sys
 from pathlib import Path
 
 SCAN_DIRS = ["wiki", "raw_sources", "templates"]
-SCAN_ROOT_FILES = ["CLAUDE.md", "USER_COMMANDS.md", "WIKI_RULES.md", "KANBAN.md", "log.md", "index.md", "README.md"]
+SCAN_ROOT_FILES = ["CLAUDE.md", "USER_COMMANDS.md", "KANBAN.md", "log.md", "index.md", "README.md"]
 SCAN_EXT = {".md", ".json", ".yaml", ".yml", ".txt"}
 
 

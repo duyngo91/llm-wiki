@@ -6,7 +6,8 @@
 - `templates/`
 - `.claude/commands/`
 - `.claude/scripts/`
-- Root control docs (`WIKI_RULES.md`, `USER_COMMANDS.md`, `KANBAN.md`, `index.md`, `log.md`, `README.md`, `CLAUDE.md`)
+- Root control docs (`USER_COMMANDS.md`, `KANBAN.md`, `index.md`, `log.md`, `README.md`, `CLAUDE.md`)
+- Skill references (`.claude/skills/hasaki-wiki/references/`)
 
 ## Excluded By Default
 - `.obsidian/`
