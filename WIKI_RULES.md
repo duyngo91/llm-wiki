@@ -59,11 +59,12 @@ llm-wiki/
 └── wiki/[project]/
     ├── features/ · api_specs/ · feature_groups/
     ├── test_suites/ · test_plans/ · releases/
+    ├── task_specs/
     ├── bugs_knowledge/
     └── operations/{environments.md · test_data.md · team_contacts.md · daily_notes/}
 ```
 
-Projects hiện có: `project_demo`, `project_orange`, `project_hasaki`.
+Project đang hoạt động: `project_hasaki`. (Các project cũ `project_demo`, `project_orange` đã archive.)
 
 ### 1.2. Quy tắc đặt tên file
 
@@ -79,6 +80,7 @@ Tên file viết **thường, không dấu**, nối bằng `_`.
 | `releases/` | `cr_[cr_id]_golive_[ddMMyyyy].md` | `cr_orangehrm_golive_30052026.md` |
 | `bugs_knowledge/` | `bug_[mota_ngan].md` | `bug_otp_timeout.md` |
 | `operations/daily_notes/` | `YYYY-MM-DD.md` | `2026-05-23.md` |
+| `task_specs/` | `task_[tbb2_code].md` | `task_TBB2-12345.md` |
 
 Mỗi `features/` file **phải có** test suite tương ứng trong `test_suites/`. Nếu có API explicit → tạo thêm `api_specs/` và link 2 chiều.
 
@@ -313,6 +315,7 @@ Khi có thay đổi requirement/task/TC, cập nhật đủ các nơi:
 - `features/` — R/AC, Questions, Impact, Regression, Coverage, Changelog
 - `api_specs/` — API contract, Questions, Coverage, Changelog (nếu API thay đổi)
 - `feature_groups/` — nếu feature/spec/suite trong group bị ảnh hưởng
+- `task_specs/` — cập nhật Task Spec khi TBB2 thay đổi hoặc Feature Spec/test suite liên quan được cập nhật
 - `test_suites/` — add/update/deprecate TC, Blocked Coverage, Regression Impact, TC count, Changelog
 - `test_plans/` — In-Scope, Regression Scope, Coverage nếu phạm vi thay đổi
 - `KANBAN.md` — card + TC count
