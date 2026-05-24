@@ -5,7 +5,7 @@ allowed-tools: Read, Write, Edit, Glob, Grep, Bash
 
 # Skill: Import Hasaki Task
 
-Fetch task từ Hasaki Workplace, extract AC tường minh, lưu vào `raw_sources/project_hasaki/tasks/`. Output là raw source — bước tiếp theo là `/wiki-requirement-analyzer` để tạo Feature Spec.
+Fetch task từ Hasaki Workplace, extract AC/API information tường minh, lưu vào `raw_sources/project_hasaki/tasks/`. Output là raw source — bước tiếp theo là `/wiki-requirement-analyzer` để tạo Feature Spec và API Spec nếu task có API/interface explicit.
 
 ## Trigger
 
@@ -82,8 +82,18 @@ Nếu có behavior tiềm năng nhưng task chưa mô tả rõ:
 #### 4c. Sinh Questions cho điểm chưa rõ
 
 Với mỗi điểm chưa rõ → tạo câu hỏi:
+- Gán `Q-ID` ổn định (`Q-001`, `Q-002`...)
+- Link tới AC/Requirement liên quan nếu có
 - Format: "Khi [điều kiện], hệ thống cần xử lý như thế nào?"
 - Câu hỏi kỹ thuật → gắn nhãn Dev Question
+- Status mặc định: `Open`; không được sinh AC/test case từ question này cho tới khi có câu trả lời chính thức.
+
+#### 4e. API / Interface explicit nếu có
+
+Nếu task note có mô tả API rõ ràng:
+- Ghi method, endpoint, payload, response/status/error đúng theo task note.
+- Không tự đoán endpoint/status/payload theo convention REST.
+- Nếu API behavior có nhắc nhưng thiếu contract, đưa vào Questions để `/wiki-requirement-analyzer` tạo hoặc cập nhật API Spec sau khi có câu trả lời.
 
 #### 4d. Trình bày và chờ confirm
 
@@ -132,15 +142,18 @@ related-features: []
 
 ## Questions
 
-### BA Questions
-- [AC-02] Khi ..., hệ thống cần xử lý như thế nào?
-
-### Dev Questions
-- ...
+| Q-ID | Liên kết AC/R | Câu hỏi | Hỏi ai | Trạng thái | Câu trả lời | Nguồn trả lời | Ngày trả lời |
+|------|---------------|---------|--------|------------|-------------|---------------|--------------|
+| Q-001 | AC-02 | Khi ..., hệ thống cần xử lý như thế nào? | BA/PO | Open | | | |
+| Q-002 | | ... | Dev | Open | | | |
 
 ## QA Notes
 
 Rủi ro, dependencies, edge case cần lưu ý.
+
+## API / Interface Notes
+
+Chỉ ghi API/interface explicit từ task.note/subtasks. Nếu chưa rõ, link tới Questions.
 ```
 
 Dùng `Write` để lưu file.
@@ -176,6 +189,8 @@ Ghi `log.md` với prefix `[ingest]`:
 ## Guardrails
 
 - **Không tự tạo AC suy diễn** — điểm chưa rõ phải đưa vào Questions để xác nhận
+- **Không tự tạo API contract suy diễn** — endpoint/method/payload/status/error chưa rõ phải đưa vào Questions
+- **Không sinh test case từ question Open** — sau khi question được trả lời, cập nhật Task Note/Feature Spec trước rồi mới thiết kế test case
 - **Không tự quyết định Feature Spec** khi ambiguous — hỏi user (Bước 2)
 - Section Task Data là **read-only** — không chỉnh sửa `task.note` nguyên văn
 - Ảnh download vào `raw_sources/project_hasaki/assets/`

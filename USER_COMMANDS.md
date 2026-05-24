@@ -11,9 +11,11 @@ Trang này dành cho người dùng cuối. Chỉ cần bỏ file vào đúng th
 
 - **Bước 2** — Nạp requirement mới (bỏ PDF vào `raw_sources/[project]/requirements/` trước):
   - `ingest file [tên file] trong raw_sources/[project]/requirements`
+  - Nếu PDF có API/interface explicit, AI tạo thêm API Spec riêng trong `wiki/[project]/api_specs/`.
 
 - **Bước 3a** — Phân tích task từ file Jira/ticket (bỏ file vào `raw_sources/[project]/tasks/` trước):
   - `phân tích task [tên file] thuộc [project] và tạo specs + test suite`
+  - Nếu task nhắc API nhưng thiếu endpoint/method/payload/status rõ ràng, AI chỉ ghi question, chưa sinh API test case.
 
 - **Bước 3b** — Import task từ Hasaki Workplace:
   - `import task HSK-XXXXX`
@@ -37,6 +39,8 @@ Trang này dành cho người dùng cuối. Chỉ cần bỏ file vào đúng th
 
 - **Bất kỳ lúc nào** — Kiểm định toàn bộ wiki:
   - `lint và sync toàn bộ wiki`
+  - Mặc định chạy audit-only (`verify`) nếu bạn chưa xác nhận đã test thực tế thành công.
+  - Chỉ sync trạng thái `Done/Passed` khi có xác nhận Gate 4 rõ ràng.
 
 ---
 
@@ -51,6 +55,9 @@ Chỉ xem thông tin, không phân tích:
 ## 💻 Chạy lệnh tay (terminal)
 
 ```powershell
+$env:PYTHONUTF8 = "1"
+$env:PYTHONIOENCODING = "utf-8"
+
 # Đồng bộ daily note
 python .claude/scripts/wiki_sync.py daily-sync --project project_hasaki --date 2026-05-23
 
@@ -77,6 +84,7 @@ python .claude/scripts/hasaki_task.py HSK-XXXXX --images --output raw_sources/pr
 |-----------|---------|
 | Requirement / PDF / FSD / BRD | `raw_sources/[project]/requirements/` |
 | Task / Jira ticket | `raw_sources/[project]/tasks/` |
+| API document / interface contract | `raw_sources/[project]/requirements/` hoặc link trong task |
 | Log lỗi thô / crash log | `raw_sources/[project]/issues/` |
 | Ảnh / video bằng chứng | `raw_sources/[project]/assets/` |
 

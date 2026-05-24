@@ -3,6 +3,10 @@ import re
 import sys
 from datetime import datetime
 from pathlib import Path
+from zoneinfo import ZoneInfo
+
+
+WIKI_TZ = ZoneInfo("Asia/Ho_Chi_Minh")
 
 
 if sys.platform.startswith("win"):
@@ -42,7 +46,7 @@ class WikiSyncCore:
         self.templates_dir = self.vault_dir / "templates"
 
     def log_activity(self, action_type, message):
-        timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        timestamp = datetime.now(WIKI_TZ).strftime("%Y-%m-%d %H:%M:%S")
         log_entry = f"- [{timestamp}] [{action_type}] | {message}\n"
 
         if not self.log_path.exists():
@@ -222,7 +226,7 @@ class WikiSyncCore:
                 if not desc or desc.lower() == "n/a" or desc == "[-]":
                     continue
 
-                bug_id = bid if bid else f"BUG-{project.split('_')[-1].upper()}-{datetime.now().strftime('%f')[:3]}"
+                bug_id = bid if bid else f"BUG-{project.split('_')[-1].upper()}-{datetime.now(WIKI_TZ).strftime('%f')[:3]}"
                 bug_filename = f"bug_{safe_filename(desc)}.md"
                 bug_rel_path = f"wiki/{project}/bugs_knowledge/{bug_filename}"
                 bug_full_path = self.vault_dir / bug_rel_path
@@ -304,12 +308,17 @@ class WikiSyncCore:
         broken_links = []
         orphan_pages = []
         invalid_statuses = []
+        guardrail_errors = []
+        guardrail_warnings = []
         valid_feature_statuses = {"Draft", "Done", "Outdated"}
+        valid_api_statuses = {"Draft", "Done", "Outdated"}
         valid_suite_statuses = {"Draft", "Testing", "Passed", "Failed", "Outdated"}
         valid_bug_statuses = {"Open", "Fixed", "Closed", "closed", "open", "fixed"}
         valid_plan_statuses = {"Draft", "Testing", "Passed", "Outdated"}
         valid_release_statuses = {"Draft", "Testing", "Done"}
         valid_control_statuses = {"Done"}
+        allowed_scopes = {"UI", "API", "Functional", "UI+Functional", "API+Functional", "UI+API", "E2E"}
+        mojibake_markers = ("ðŸ", "âœ", "â", "âž", "áº", "á»", "Ä‘", "Æ°")
         exclude_dirs = {".obsidian", ".smart-env", "templates", "raw_sources", "scripts", ".claude", ".agents"}
 
         print(f"Starting LLM Wiki Vault Audit in: {self.vault_dir}...")
@@ -379,9 +388,15 @@ class WikiSyncCore:
         for page_name, info in all_pages.items():
             status = info["status"]
             rel_path = info["rel_path"]
+            content = info["filepath"].read_text(encoding="utf-8", errors="ignore")
+            marker = next((item for item in mojibake_markers if item in content), None)
+            if marker:
+                guardrail_errors.append((rel_path, f"Possible mojibake/font encoding issue detected: '{marker}'"))
             rel_path_norm = rel_path.replace("\\", "/").lower()
             if "/features/" in "/" + rel_path_norm + "/" and status not in valid_feature_statuses:
                 invalid_statuses.append((rel_path, status, "Features (Valid: Draft, Done, Outdated)"))
+            elif "/api_specs/" in "/" + rel_path_norm + "/" and status not in valid_api_statuses:
+                invalid_statuses.append((rel_path, status, "API Specs (Valid: Draft, Done, Outdated)"))
             elif "/test_suites/" in "/" + rel_path_norm + "/" and status not in valid_suite_statuses:
                 invalid_statuses.append((rel_path, status, "Test Suites (Valid: Draft, Testing, Passed, Failed, Outdated)"))
             elif "/bugs_knowledge/" in "/" + rel_path_norm + "/" and status not in valid_bug_statuses:
@@ -392,6 +407,148 @@ class WikiSyncCore:
                 invalid_statuses.append((rel_path, status, f"Releases (Valid: {valid_release_statuses})"))
             elif page_name in {"index", "WIKI_RULES", "log"} and status not in valid_control_statuses:
                 invalid_statuses.append((rel_path, status, "Control Files (Valid: Done)"))
+
+        feature_open_questions = self.collect_open_question_refs()
+        api_open_questions = self.collect_open_api_question_refs()
+        suite_case_counts = {}
+        suite_to_feature = {}
+        feature_group_usage = set()
+        for suite_path in sorted((self.vault_dir / "wiki").glob("**/test_suites/*.md")):
+            rel_suite = suite_path.relative_to(self.vault_dir).as_posix()
+            content = suite_path.read_text(encoding="utf-8")
+            lines = content.splitlines()
+            rows = [line for line in lines if self.is_test_case_row(line)]
+            suite_case_counts[rel_suite[:-3]] = len(rows)
+            project = self.project_from_rel_path(rel_suite)
+            for group_slug in self.extract_feature_group_tags(content):
+                if project:
+                    feature_group_usage.add((project, group_slug))
+
+            if "## 📅 Changelog" not in content:
+                guardrail_errors.append((rel_suite, "Missing required section: ## 📅 Changelog"))
+            if "## 🚧 Blocked Coverage" not in content:
+                guardrail_errors.append((rel_suite, "Missing required section: ## 🚧 Blocked Coverage"))
+            if "## 🔁 Regression Impact" not in content:
+                guardrail_errors.append((rel_suite, "Missing required section: ## 🔁 Regression Impact"))
+
+            header = next((line for line in lines if line.startswith("| Test ID")), "")
+            if header and "Phạm vi" not in header:
+                guardrail_errors.append((rel_suite, "Test case table is missing required column: Phạm vi"))
+
+            feature_key = self.extract_linked_feature_key(content)
+            if feature_key:
+                suite_to_feature[rel_suite] = feature_key
+            api_key = self.extract_linked_api_spec_key(content)
+            has_api_reference = bool(api_key)
+            open_refs = set()
+            if feature_key:
+                open_refs.update(feature_open_questions.get(feature_key, set()))
+            if api_key:
+                open_refs.update(api_open_questions.get(api_key, set()))
+
+            for row in rows:
+                cells = self.split_table_row(row)
+                tc_id = cells[0] if cells else "UNKNOWN"
+                source = cells[-2] if len(cells) >= 2 else ""
+                cover = cells[2] if len(cells) >= 3 else ""
+                scope = cells[3] if len(cells) >= 4 else ""
+                row_lower = row.lower()
+
+                if re.search(r"\bAPI-\d+\b", cover) or scope in {"API", "API+Functional", "UI+API"} or "api spec" in source.lower():
+                    has_api_reference = True
+
+                if "AI-Inferred" in row or "suy diễn" in row_lower or "suy luận" in row_lower or "assumption" in row_lower:
+                    guardrail_errors.append((rel_suite, f"{tc_id}: contains inferred/assumption marker"))
+                if source and "Explicit từ" not in source:
+                    guardrail_errors.append((rel_suite, f"{tc_id}: source must start with or contain 'Explicit từ'"))
+                if header and "Phạm vi" in header and len(cells) >= 11:
+                    case_type = cells[4]
+                    technique = cells[5]
+                    if scope not in allowed_scopes:
+                        guardrail_errors.append((rel_suite, f"{tc_id}: invalid Phạm vi '{scope}'"))
+                    if case_type not in {"Positive", "Negative"}:
+                        guardrail_errors.append((rel_suite, f"{tc_id}: invalid Loại case '{case_type}'"))
+                    if technique in {"Positive", "Negative"}:
+                        guardrail_errors.append((rel_suite, f"{tc_id}: Kỹ thuật test appears swapped with Loại case"))
+
+                covered_refs = set(re.findall(r"\bR\d+\b|\bAC-\d+\b|\bAPI-\d+\b", cover))
+                blocked_refs = covered_refs & open_refs
+                if blocked_refs:
+                    guardrail_errors.append((rel_suite, f"{tc_id}: covers refs with Open questions: {', '.join(sorted(blocked_refs))}"))
+
+            if has_api_reference and not api_key:
+                guardrail_errors.append((rel_suite, "API test case/scope detected but Test Suite does not link an API Spec in wiki/[project]/api_specs/"))
+
+        for api_path in sorted((self.vault_dir / "wiki").glob("**/api_specs/*.md")):
+            rel_api = api_path.relative_to(self.vault_dir).as_posix()
+            content = api_path.read_text(encoding="utf-8")
+            project = self.project_from_rel_path(rel_api)
+            for group_slug in self.extract_feature_group_tags(content):
+                if project:
+                    feature_group_usage.add((project, group_slug))
+            if "qa/api-spec" not in content:
+                guardrail_errors.append((rel_api, "Missing required tag: qa/api-spec"))
+            if "## 📅 Changelog" not in content:
+                guardrail_errors.append((rel_api, "Missing required section: ## 📅 Changelog"))
+            for section in ("## API / Interface List", "## API Detail", "## ❓ Câu hỏi API chưa rõ", "## API Test Coverage"):
+                if section not in content:
+                    guardrail_errors.append((rel_api, f"Missing required section: {section}"))
+            if not self.extract_linked_feature_key(content):
+                guardrail_errors.append((rel_api, "API Spec must link back to a Feature Spec in wiki/[project]/features/"))
+            if "AI-Inferred" in content or "suy diễn" in content.lower() or "suy luận" in content.lower() or "assumption" in content.lower():
+                guardrail_errors.append((rel_api, "API Spec contains inferred/assumption marker"))
+            for line in content.splitlines():
+                if not line.startswith("| API-"):
+                    continue
+                cells = self.split_table_row(line)
+                if len(cells) < 7:
+                    continue
+                api_id, source, status = cells[0], cells[5], cells[6]
+                if status != "Blocked" and source and "Explicit từ" not in source:
+                    guardrail_errors.append((rel_api, f"{api_id}: source must be explicit unless Status is Blocked"))
+
+        for feature_path in sorted((self.vault_dir / "wiki").glob("**/features/*.md")):
+            rel_feature = feature_path.relative_to(self.vault_dir).as_posix()
+            content = feature_path.read_text(encoding="utf-8")
+            project = self.project_from_rel_path(rel_feature)
+            for group_slug in self.extract_feature_group_tags(content):
+                if project:
+                    feature_group_usage.add((project, group_slug))
+            if "## 📅 Changelog" not in content:
+                guardrail_errors.append((rel_feature, "Missing required section: ## 📅 Changelog"))
+            if "## ❓ Câu hỏi chưa rõ" not in content:
+                guardrail_errors.append((rel_feature, "Missing required section: ## ❓ Câu hỏi chưa rõ"))
+            if "## 🔎 Impact Analysis & Regression Proposal" not in content:
+                guardrail_warnings.append((rel_feature, "Recommended new section missing: ## 🔎 Impact Analysis & Regression Proposal"))
+
+        for project, group_slug in sorted(feature_group_usage):
+            group_file = group_slug.replace("-", "_")
+            expected_path = self.vault_dir / "wiki" / project / "feature_groups" / f"{group_file}.md"
+            if not expected_path.exists():
+                guardrail_errors.append((
+                    f"wiki/{project}/feature_groups/{group_file}.md",
+                    f"Missing Feature Group page for tag qa/feature-group/{group_slug}",
+                ))
+
+        if self.kanban_path.exists():
+            kanban_content = self.kanban_path.read_text(encoding="utf-8")
+            for line in kanban_content.splitlines():
+                if "test_suites/" not in line:
+                    continue
+                links = re.findall(r"\[\[([^\]|]+)(?:\|[^\]]+)?\]\]", line)
+                suite_link = next((clean_link_path(link) for link in links if "test_suites/" in clean_link_path(link)), None)
+                count_match = re.search(r"\((\d+)\s*TC\)", line)
+                if suite_link and count_match and suite_link in suite_case_counts:
+                    expected = int(count_match.group(1))
+                    actual = suite_case_counts[suite_link]
+                    if expected != actual:
+                        guardrail_errors.append(("KANBAN.md", f"{suite_link}: Kanban TC count {expected} != actual {actual}"))
+
+        mcp_path = self.vault_dir / ".mcp.json"
+        if mcp_path.exists():
+            mcp_content = mcp_path.read_text(encoding="utf-8", errors="ignore")
+            if re.search(r"Bearer\s+[A-Za-z0-9._-]{16,}", mcp_content):
+                guardrail_errors.append((".mcp.json", "Tracked/local MCP config appears to contain a Bearer token"))
 
         if broken_links:
             print(f"\n[ERROR] BROKEN LINKS FOUND ({len(broken_links)}):")
@@ -414,5 +571,87 @@ class WikiSyncCore:
         else:
             print("\n[SUCCESS] All frontmatter statuses are 100% compliant!")
 
+        if guardrail_errors:
+            print(f"\n[ERROR] GOVERNANCE GUARDRAIL ERRORS ({len(guardrail_errors)}):")
+            for source, message in guardrail_errors:
+                print(f"  - In '{source}': {message}")
+        else:
+            print("\n[SUCCESS] Governance guardrails are compliant!")
+
+        if guardrail_warnings:
+            print(f"\n[WARNING] GOVERNANCE GUARDRAIL WARNINGS ({len(guardrail_warnings)}):")
+            for source, message in guardrail_warnings:
+                print(f"  - In '{source}': {message}")
+
         print("\nAudit complete.")
-        return 1 if broken_links or invalid_statuses else 0
+        return 1 if broken_links or invalid_statuses or guardrail_errors else 0
+
+    def is_test_case_row(self, line):
+        return bool(re.match(r"^\|\s*\*?\*?TC-", line))
+
+    def split_table_row(self, line):
+        return [part.strip().strip("*") for part in line.strip().strip("|").split("|")]
+
+    def extract_linked_feature_key(self, content):
+        links = re.findall(r"\[\[([^\]|]+)(?:\|[^\]]+)?\]\]", content)
+        feature_link = next((link for link in links if "/features/" in clean_link_path(link)), None)
+        if not feature_link:
+            return None
+        clean = clean_link_path(feature_link)
+        return clean[:-3] if clean.endswith(".md") else clean
+
+    def extract_linked_api_spec_key(self, content):
+        links = re.findall(r"\[\[([^\]|]+)(?:\|[^\]]+)?\]\]", content)
+        api_link = next((link for link in links if "/api_specs/" in clean_link_path(link)), None)
+        if not api_link:
+            return None
+        clean = clean_link_path(api_link)
+        return clean[:-3] if clean.endswith(".md") else clean
+
+    def collect_open_question_refs(self):
+        refs_by_feature = {}
+        for feature_path in sorted((self.vault_dir / "wiki").glob("**/features/*.md")):
+            rel_feature = feature_path.relative_to(self.vault_dir).as_posix()
+            key = rel_feature[:-3]
+            text = feature_path.read_text(encoding="utf-8")
+            section = self.extract_section(text, "Câu hỏi chưa rõ")
+            refs = set()
+            for line in section.splitlines():
+                is_open = "[ ]" in line or re.search(r"\|\s*Open\s*\|", line) or "❓" in line
+                if not is_open:
+                    continue
+                refs.update(re.findall(r"\bR\d+\b|\bAC-\d+\b", line))
+            refs_by_feature[key] = refs
+            refs_by_feature[feature_path.stem] = refs
+        return refs_by_feature
+
+    def collect_open_api_question_refs(self):
+        refs_by_api = {}
+        for api_path in sorted((self.vault_dir / "wiki").glob("**/api_specs/*.md")):
+            rel_api = api_path.relative_to(self.vault_dir).as_posix()
+            key = rel_api[:-3]
+            text = api_path.read_text(encoding="utf-8")
+            section = self.extract_section(text, "Câu hỏi API chưa rõ")
+            refs = set()
+            for line in section.splitlines():
+                is_open = "[ ]" in line or re.search(r"\|\s*Open\s*\|", line) or "❓" in line
+                if not is_open:
+                    continue
+                refs.update(re.findall(r"\bR\d+\b|\bAC-\d+\b|\bAPI-\d+\b", line))
+            refs_by_api[key] = refs
+            refs_by_api[api_path.stem] = refs
+        return refs_by_api
+
+    def extract_section(self, text, heading_text):
+        pattern = re.compile(rf"^## .*{re.escape(heading_text)}.*?\n(.*?)(?=^## |\Z)", re.MULTILINE | re.DOTALL)
+        match = pattern.search(text)
+        return match.group(1) if match else ""
+
+    def extract_feature_group_tags(self, content):
+        return set(re.findall(r"qa/feature-group/([A-Za-z0-9_-]+)", content))
+
+    def project_from_rel_path(self, rel_path):
+        parts = rel_path.replace("\\", "/").split("/")
+        if len(parts) >= 2 and parts[0] == "wiki":
+            return parts[1]
+        return None

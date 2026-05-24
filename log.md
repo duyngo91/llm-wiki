@@ -3,6 +3,13 @@ tags: [log, system]
 status: Done
 created: 2026-05-23
 ---
+
+- [2026-05-24 10:29:12] [lint-sync] | Tighten lint-and-sync command: safe verify-first behavior, Gate 4 sync rule, API Spec section checks, API suite link checks, and mojibake guardrail.
+
+- [2026-05-24 10:17:55] [lint-sync] | Add API Spec artifact model: separate api_specs docs, API test scopes, no-inference API TC guardrails, and verify support for API scopes.
+
+- [2026-05-24 09:55:56] [lint-sync] | Add Feature Group MOC structure for Hasaki receiving-po and update rules/templates/verify to require group pages for qa/feature-group tags.
+- [2026-05-24 09:49:16] [lint-sync] | Update governance guardrails: question lifecycle, no-inference testcase policy, impact/regression matrix, UTF-8/timezone verify, and expanded wiki_sync verify.
 - [2026-05-23 00:40:00] [create] | Tạo Dashboard tiến độ [[wiki/project_hasaki/operations/progress_dashboard|progress_dashboard]] — tự động hiển thị Feature/Test Suite còn chờ Gate 1/Gate 2 qua Obsidian Dataview theo tag #qa/feature-group/receiving-po.
 - [2026-05-23 00:35:00] [lint-sync] | Bổ sung tag nhóm tính năng `#qa/feature-group/receiving-po` vào 6 Feature Specs và 6 Test Suites project_hasaki. Cập nhật WIKI_RULES.md §1.3 (quy tắc Feature Group Tag) + templates/tpl_requirement.md + tpl_test_suite.md.
 - [2026-05-23 00:30:00] [ingest] | Khởi tạo Test Suite #6/6: [[wiki/project_hasaki/test_suites/test_hasaki_qc_evaluation|test_hasaki_qc_evaluation]] — 34 test cases (TC-QCE-001–TC-QCE-034). Coverage: R1–R25, AC-01–AC-10. Status: Draft — chờ Gate 2.

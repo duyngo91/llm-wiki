@@ -2,7 +2,7 @@
 tags: [moc, index]
 status: Done
 created: 2026-05-23
-updated: 2026-05-23
+updated: 2026-05-24
 ---
 
 # 🗺️ Mục Lục QA LLM Wiki — Multi-Project Portfolio
@@ -105,6 +105,16 @@ SORT file.ctime DESC
 ---
 
 ## 📂 DỰ ÁN 3: HASAKI (`project_hasaki`)
+
+### 🧩 Feature Groups
+- [[wiki/project_hasaki/feature_groups/receiving_po|Receiving PO]] — Luồng nhận hàng PO, VAS, Packing List và Quality Control.
+
+### 🔌 API Specs
+```dataview
+TABLE status AS "Trạng thái", feature AS "Feature", updated AS "Ngày cập nhật"
+FROM "wiki/project_hasaki/api_specs"
+SORT file.name ASC
+```
 
 ### 📋 Nghiệp vụ & Kịch bản Test
 ```dataview

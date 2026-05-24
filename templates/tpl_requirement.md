@@ -20,10 +20,12 @@ approval_note:
 - **Mô tả ngắn:** 
 - **Source chính:** (ghi rõ dùng PDF/Link nào, version nào)
 - **Đối tượng sử dụng (Actors):** 
+- **Feature Group:** [[wiki/{{project}}/feature_groups/{{feature-group-file}}|{{feature-group}}]]
 - **Test Suite tương ứng:** [[test_...]]
+- **API Spec liên quan:** N/A *(chỉ tạo/link `[[wiki/{{project}}/api_specs/api_{{feature-file}}|api_{{feature-file}}]]` nếu source có API/interface explicit)*
 - **Mối quan hệ:** *(Điền nếu feature này có liên kết với feature khác trong cùng project)*
-  - ➡️ [[feature_B]] — *(mô tả quan hệ)*
-  - ⬅️ [[feature_A]] — *(mô tả quan hệ)*
+  - ➡️ feature_b — *(mô tả quan hệ và link thật nếu đã có file)*
+  - ⬅️ feature_a — *(mô tả quan hệ và link thật nếu đã có file)*
 
 ## Nguồn tài liệu
 | # | Loại | Tên / Link | Version | Status |
@@ -31,6 +33,13 @@ approval_note:
 | 1 | PDF | | v1.0 | ⚠️ Outdated |
 | 2 | PDF | | v2.1 | ✅ Hiện hành |
 | 3 | Link | [tên](url) | | ✅ Hiện hành |
+
+## API / Interface liên quan
+*Feature Spec chỉ tham chiếu API/interface. Contract chi tiết phải nằm ở `wiki/[project]/api_specs/`; nếu endpoint/method/payload/status chưa rõ thì ghi vào câu hỏi thay vì mô tả suy diễn.*
+
+| API Spec | API/Interface | Requirement/AC liên quan | Source | Trạng thái |
+|:---------|:--------------|:-------------------------|:-------|:-----------|
+| N/A | | | Không có API/interface explicit | N/A |
 
 ## Phân rã Requirement
 | ID | Requirement | Loại | Priority | Testable? | Source |
@@ -79,19 +88,27 @@ approval_note:
   - **Then:** 
 
 ## ❓ Câu hỏi chưa rõ
-- [ ] ❓ 
-- [ ] ❓ 
+| Q-ID | Liên kết R/AC | Câu hỏi | Hỏi ai | Trạng thái | Câu trả lời | Nguồn trả lời | Ngày trả lời |
+|:-----|:--------------|:--------|:-------|:-----------|:------------|:--------------|:-------------|
+| Q-001 | R1 / AC-01 | | PO/BA/Dev | Open | | | |
+| Q-002 | R2 | | PO/BA/Dev | Open | | | |
 
 ## 📝 Thay đổi so với version cũ
-| # | Nội dung thay đổi | Version cũ | Version mới | Ảnh hưởng TC |
-|:--|:------------------|:----------|:-----------|:-------------|
-| 1 | | | | |
+| Change ID | Loại thay đổi | Nội dung thay đổi | Version cũ | Version mới | Requirement/AC ảnh hưởng | Trạng thái |
+|:----------|:--------------|:------------------|:-----------|:------------|:--------------------------|:-----------|
+| CHG-001 | Add/Update/Remove/Clarify | | | | R1 / AC-01 | Draft |
+
+## 🔎 Impact Analysis & Regression Proposal
+
+| Change ID | Affected Feature(s) | Affected Test Suite(s) | Test Case action | Regression candidates | Open questions / Gate |
+|:----------|:--------------------|:-----------------------|:-----------------|:----------------------|:----------------------|
+| CHG-001 | | | Add/Update/Deprecate/No change/Blocked by question | | |
 
 ## Test Coverage
-| Requirement | Test Case(s) | Status |
-|:-----------|:------------|:-------|
-| R1 | [[TC-001]] | ⏳ |
-| R2 | | ❌ Chưa có |
+| Requirement/AC | Test Case(s) | Status | Ghi chú |
+|:---------------|:-------------|:-------|:-------|
+| R1 / AC-01 | [[TC-001]] | ⏳ | Explicit |
+| R2 | | ❌ Blocked | Chờ Q-002 answered |
 
 ## 📅 Changelog
 | Thời gian | Version | Nội dung thay đổi | Nguồn |

@@ -18,8 +18,16 @@ updated: {{date:YYYY-MM-DD}}
 ### 1.1. Trong phạm vi kiểm thử (In-Scope)
 - **Các tính năng kiểm thử mới / thay đổi:**
   - [[wiki/features/feature_name|Feature Name]] — Mô tả nghiệp vụ thay đổi.
+- **API Specs liên quan nếu có:**
+  - [[wiki/api_specs/api_feature_name|API Feature Name]] — Chỉ đưa vào scope khi API contract có nguồn explicit.
 - **Phạm vi kiểm thử hồi quy (Regression Scope):**
   - [[wiki/features/related_feature|Related Feature]] — Module bị ảnh hưởng cần test lại.
+
+### 1.1.1. Change Impact & Regression Matrix
+
+| Change ID / Source | Feature | API Spec | Test Suite | Added TC | Updated TC | Deprecated TC | Regression TC | Open questions |
+|:-------------------|:--------|:---------|:-----------|:---------|:-----------|:--------------|:--------------|:---------------|
+| | | | | | | | | |
 
 ### 1.2. Ngoài phạm vi kiểm thử (Out-of-Scope)
 - **Những phần tạm thời không kiểm thử (và lý do):**
@@ -43,9 +51,9 @@ updated: {{date:YYYY-MM-DD}}
 ---
 
 ## 📈 3. Test Coverage & Độ phủ kịch bản
-| Module / Yêu cầu | Test Suite tương ứng | Số kịch bản | Trạng thái kịch bản |
-|:-----------------|:---------------------|:------------|:-------------------|
-| | [[wiki/test_suites/test_xxx|Test Suite XXX]] | | ⏳ |
+| Module / Yêu cầu / API | API Spec | Test Suite tương ứng | Số kịch bản | Blocked coverage | Trạng thái kịch bản |
+|:-----------------------|:---------|:---------------------|:------------|:-----------------|:-------------------|
+| | [[wiki/api_specs/api_xxx|API XXX]] | [[wiki/test_suites/test_xxx|Test Suite XXX]] | | | ⏳ |
 
 ---
 
