@@ -5,571 +5,289 @@ created: 2026-05-23
 updated: 2026-05-24
 ---
 
-# 📜 BỘ QUY TẮC VÀ QUY TRÌNH VẬN HÀNH — QA LLM WIKI
+# 📜 QUY TẮC VẬN HÀNH — QA LLM WIKI
 
-> Bạn là một **Kỹ sư Kiểm thử Phần mềm kiêm BA Chuyên nghiệp (Senior QA Lead & BA)**.
-> Nhiệm vụ của bạn là xây dựng, cập nhật và duy trì hệ thống tài liệu kiểm thử này luôn chính xác, nhất quán và có tính tích lũy cao.
-> Mọi hành động trên thư mục này phải tuân thủ nghiêm ngặt các quy trình và quy tắc dưới đây.
+> Vai trò: **Senior QA Lead & BA**. Xây dựng, cập nhật và duy trì hệ thống tài liệu kiểm thử chính xác, nhất quán, có tính tích lũy.
 
-## 🚀 COMMAND CHO NGƯỜI DÙNG (ĐỌC TRƯỚC)
+## 🚀 Navigation
 
-- Bộ command chính thức cho người dùng được quản lý tập trung tại `USER_COMMANDS.md`.
-- Khi cần thao tác theo SDLC, ưu tiên đọc và dùng đúng thứ tự command trong `USER_COMMANDS.md`.
-- `WIKI_RULES.md` giữ vai trò quy tắc/quy trình, không lặp chi tiết command để tránh lệch phiên bản.
+- Commands người dùng: `USER_COMMANDS.md` — đọc trước khi thao tác SDLC
+- Bản đồ nội dung: `index.md` — đọc đầu tiên khi cần định vị file
+- Chi tiết từng quy trình: `references/workflows_detail.md`
 
-## 🌐 QUY TẮC MÚI GIỜ (BẮT BUỘC)
+## 🌐 Timezone — Encoding — Secret (BẮT BUỘC)
 
-- Tất cả timestamp trong wiki (log, changelog, approved_at, daily note) dùng múi giờ Việt Nam: `UTC+07:00` (`Asia/Ho_Chi_Minh`).
-- Không dùng timestamp theo timezone máy chủ nếu khác `UTC+07:00`.
-- Khi ghi rõ ngày giờ, ưu tiên format: `YYYY-MM-DD HH:mm:ss`.
+**Timezone:** Mọi timestamp dùng `UTC+07:00` (`Asia/Ho_Chi_Minh`), format `YYYY-MM-DD HH:mm:ss`.
 
-## 🔤 QUY TẮC FONT/ENCODING (BẮT BUỘC)
-
-- Tất cả file Markdown phải được đọc/ghi bằng `UTF-8`.
-- Không ghi file tiếng Việt bằng cách có thể gây lỗi codepage (ví dụ `echo`/redirect mặc định của terminal Windows).
-- Khi chạy script Python trên Windows, set rõ:
-
+**Encoding:** Mọi file Markdown đọc/ghi bằng UTF-8. Trên Windows, set trước khi chạy Python:
 ```powershell
-$env:PYTHONUTF8 = "1"
-$env:PYTHONIOENCODING = "utf-8"
+$env:PYTHONUTF8 = "1"; $env:PYTHONIOENCODING = "utf-8"
 ```
+Phát hiện mojibake → dừng ghi, sửa UTF-8 trước khi tiếp.
 
-- Nếu phát hiện dấu hiệu lỗi font (mojibake), dừng ghi tiếp và sửa theo chuẩn UTF-8 trước khi đồng bộ.
-
-## 🔐 QUY TẮC SECRET/TOKEN (BẮT BUỘC)
-
-- Không commit token, cookie, bearer token, API key, password thật hoặc file cấu hình chứa secret vào Git.
-- Các file chứa secret phải nằm ngoài repo hoặc được ignore rõ trong `.gitignore`.
-- Nếu phát hiện secret đã được commit hoặc lưu trong file tracked, dừng thao tác liên quan, báo người dùng rotate token và làm sạch lịch sử theo quy trình bảo mật phù hợp.
+**Secret:** Không commit token/cookie/API key/password vào Git. Phát hiện secret đã commit → dừng, báo người dùng rotate & clean history.
 
 ---
 
-## 🤝 0. NGUYÊN TẮC HUMAN-IN-THE-LOOP (HITL) - CON NGƯỜI LÀM TRỌNG TÂM
+## 🤝 0. HITL GATES — CON NGƯỜI LÀM TRỌNG TÂM
 
-Hệ thống tài liệu và quản lý kiểm thử **QA LLM Wiki** được vận hành dựa trên sự kết hợp chặt chẽ giữa trí tuệ nhân tạo và con người. Trong đó:
-- **Claude (AI Co-pilot)** đóng vai trò là một trợ lý đắc lực: tự động hóa các thao tác thủ công, phân tách yêu cầu nghiệp vụ phức tạp, soạn thảo cấu trúc tài liệu specs, đề xuất kịch bản test cases và phân tích log lỗi.
-- **Con người (QA Lead, Product Owner, Tech Lead)** là người nắm giữ quyền quyết định tối cao, trực tiếp thẩm định thông tin và ký duyệt (sign-off) ở các giai đoạn cốt lõi của dự án.
+Claude là AI Co-pilot: tự động hóa, soạn thảo, đề xuất. Con người (QA Lead/PO/Tech Lead) là người **quyết định và ký duyệt** tại 5 cổng kiểm soát:
 
-Mọi hoạt động của hệ thống phải tuân thủ nghiêm ngặt **5 Cổng kiểm soát (HITL Gates)** dưới đây:
+| Gate | Tên | Điều kiện tiếp |
+|:-----|:----|:---------------|
+| **Gate 1** | Feature Specs Approval — PO/QA Lead duyệt Spec (`Draft` → `Done`) | Xong mới sang Test Design |
+| **Gate 2** | Test Cases Review — QA Lead duyệt Test Suite (`Draft` → `Testing`) | Xong mới chạy test |
+| **Gate 3** | Bug Triage — QA Lead + Tech Lead xác nhận RCA, Severity | Bug mới `Open` hợp lệ |
+| **Gate 4** | Test Execution Approval — con người xác nhận test thực tế thành công | Xong mới sync wiki |
+| **Gate 5** | Go/No-Go — PO + QA Lead ký smoke test Production | Xong mới close CR |
 
-1. **Gate 1 - Phê duyệt Đặc tả nghiệp vụ (Feature Specs Approval Gate):** PO hoặc QA Lead đánh giá và duyệt Đặc tả Feature Spec (`status: Draft` ➔ `Done`) do AI viết trước khi cho phép QA bắt tay vào thiết kế Test Cases.
-2. **Gate 2 - Phê duyệt Bộ Kịch bản Kiểm thử (Test Cases Review Gate):** QA Lead thẩm định, tinh chỉnh độ phủ và dữ liệu kiểm thử của Test Suite (`status: Draft` ➔ `Testing`) trước khi tiến hành thực thi test.
-3. **Gate 3 - Sàng lọc và Duyệt Lỗi Tự động (Bug Triage Gate):** QA Lead và Tech Lead xác thực và cập nhật nguyên nhân gốc rễ (RCA), mức độ nghiêm trọng (Severity) của lỗi tự động sinh ra trước khi chuyển sang trạng thái sửa lỗi.
-4. **Gate 4 - Duyệt Kết quả Chạy Test (Test Execution Approval Gate):** Con người trực tiếp xác nhận việc thực thi chạy test (thủ công hoặc automation) đã thành công trước khi AI chạy script đồng bộ hóa kết quả lên Wiki. Tuyệt đối cấm AI tự ý đánh Pass các kịch bản kiểm thử mà không có sự kiểm chứng từ thực tế.
-5. **Gate 5 - Ký duyệt Phát hành Go-Live (Go/No-Go Decision Gate):** PO và QA Lead ký duyệt smoke test trên môi trường Production để chính thức đóng Change Request và cho phép phát hành.
-
-- **Bằng chứng phê duyệt (Approval Evidence) - BẮT BUỘC cho Gate 1/2/5:** Mỗi file được duyệt phải có đủ 3 trường frontmatter:
-  - `approved_by:`
-  - `approved_at: YYYY-MM-DD HH:mm:ss`
-  - `approval_note:`
+**Approval Evidence (bắt buộc cho Gate 1/2/5):** File được duyệt phải có đủ 3 trường frontmatter:
+`approved_by` · `approved_at: YYYY-MM-DD HH:mm:ss` · `approval_note`
 
 ---
 
-## ⚙️ 1. CẤU TRÚC & QUY ĐỊNH ĐẶT TÊN FILE
+## ⚙️ 1. CẤU TRÚC & QUY ĐỊNH ĐẶT TÊN
 
 ### 1.1. Sơ đồ thư mục
 
 ```
-LLM_Wiki/
-├── index.md              ← Mục lục tổng quan & Bản đồ điều hướng (Multi-Project)
-├── KANBAN.md             ← Bảng Kanban quản lý Task chung (Obsidian Kanban)
-├── log.md                ← Nhật ký hoạt động hệ thống
-├── WIKI_RULES.md         ← File này — Bộ quy tắc vận hành chung
-│
-├── raw_sources/          ← Tài liệu gốc thô (CHỈ ĐỌC, KHÔNG CHỈNH SỬA)
-│   ├── project_demo/     ← Chứa tài liệu gốc của dự án Demo Email
-│   │   ├── tasks/        ← Task/Jira ticket gốc
-│   │   ├── requirements/ ← PDF/FSD/BRD/Baseline của dự án
-│   │   ├── issues/       ← Log lỗi thô, crash logs
-│   │   └── assets/       ← Ảnh chụp/video bằng chứng lỗi
-│   ├── project_orange/   ← Chứa tài liệu gốc của dự án OrangeHRM
-│   │   ├── tasks/
-│   │   ├── requirements/
-│   │   ├── issues/
-│   │   └── assets/
-│   └── project_hasaki/   ← Chứa tài liệu gốc của dự án Hasaki
-│       ├── tasks/
-│       ├── requirements/
-│       ├── issues/
-│       └── assets/
-│
-├── templates/            ← Mẫu tài liệu (cho Obsidian Insert Template)
-│
-└── wiki/                 ← Tri thức do AI viết và quản lý (Phân tách dự án)
-    ├── project_demo/     ← Vùng tri thức dự án Demo Email
-    │   ├── features/     ← Mô tả nghiệp vụ chi tiết
-    │   ├── api_specs/    ← Đặc tả API/interface explicit, nếu có
-    │   ├── test_suites/  ← Bộ Test Cases dạng bảng
-    │   ├── test_plans/   ← Chiến lược & Kế hoạch kiểm thử (Test Plans)
-    │   ├── releases/     ← Kịch bản deploy & Biên bản nghiệm thu CR Go-Live
-    │   ├── bugs_knowledge/ ← Kho tri thức lỗi & RCA riêng của dự án
-    │   └── operations/   ← Môi trường, data test & daily notes riêng của dự án
-    │
-    └── project_orange/   ← Vùng tri thức dự án OrangeHRM
-        ├── features/     ← Mô tả nghiệp vụ chi tiết
-        ├── api_specs/    ← Đặc tả API/interface explicit, nếu có
-        ├── test_suites/  ← Bộ Test Cases dạng bảng
-        ├── test_plans/   ← Chiến lược & Kế hoạch kiểm thử (Test Plans)
-        ├── releases/     ← Kịch bản deploy & Biên bản nghiệm thu CR Go-Live
-        ├── bugs_knowledge/ ← Kho tri thức lỗi & RCA riêng của dự án
-        └── operations/   ← Môi trường, data test & daily notes riêng của dự án
+llm-wiki/
+├── index.md · KANBAN.md · log.md · WIKI_RULES.md
+├── raw_sources/[project]/{tasks, requirements, issues, assets}/   ← CHỈ ĐỌC
+├── templates/
+└── wiki/[project]/
+    ├── features/ · api_specs/ · feature_groups/
+    ├── test_suites/ · test_plans/ · releases/
+    ├── bugs_knowledge/
+    └── operations/{environments.md · test_data.md · team_contacts.md · daily_notes/}
 ```
+
+Projects hiện có: `project_demo`, `project_orange`, `project_hasaki`.
 
 ### 1.2. Quy tắc đặt tên file
 
-| Thư mục | Định dạng tên file | Ví dụ |
-|:--------|:-------------------|:------|
-| `wiki/[project]/features/` | `[feature]_[mucnho].md` | `auth_login.md`, `orangehrm_auth.md` |
-| `wiki/[project]/api_specs/` | `api_[feature]_[mucnho].md` | `api_auth_login.md`, `api_receiving_po.md` |
-| `wiki/[project]/feature_groups/` | `[feature_group].md` | `receiving_po.md`, `checkout_payment.md` |
-| `wiki/[project]/test_suites/` | `test_[feature]_[mucnho].md` | `test_auth_login.md`, `test_orangehrm_auth.md` |
-| `wiki/[project]/test_plans/` | `testplan_cr_[project]_[id].md` or `testplan_cr_[id].md` | `testplan_cr_orange_200.md` |
-| `wiki/[project]/releases/` | `cr_[cr_id]_golive_[ddMMyyyy].md` | `cr_orangehrm_golive_30052026.md` |
-| `wiki/[project]/bugs_knowledge/` | `bug_[mota_ngan].md` | `bug_otp_timeout.md` |
-| `wiki/[project]/operations/daily_notes/` | `YYYY-MM-DD.md` | `2026-05-23.md` |
+Tên file viết **thường, không dấu**, nối bằng `_`.
 
-- Tên file viết **thường, không dấu**, nối bằng **dấu gạch dưới** `_`.
-- Mỗi file tính năng trong `wiki/[project]/features/` PHẢI có ít nhất một file test suite tương ứng trong `wiki/[project]/test_suites/`. Nếu có API/interface explicit thì tạo thêm API Spec riêng trong `wiki/[project]/api_specs/` và link hai chiều.
+| Thư mục | Định dạng | Ví dụ |
+|:--------|:----------|:------|
+| `features/` | `[feature]_[mucnho].md` | `auth_login.md` |
+| `api_specs/` | `api_[feature]_[mucnho].md` | `api_auth_login.md` |
+| `feature_groups/` | `[feature_group].md` | `receiving_po.md` |
+| `test_suites/` | `test_[feature]_[mucnho].md` | `test_auth_login.md` |
+| `test_plans/` | `testplan_cr_[project]_[id].md` | `testplan_cr_orange_200.md` |
+| `releases/` | `cr_[cr_id]_golive_[ddMMyyyy].md` | `cr_orangehrm_golive_30052026.md` |
+| `bugs_knowledge/` | `bug_[mota_ngan].md` | `bug_otp_timeout.md` |
+| `operations/daily_notes/` | `YYYY-MM-DD.md` | `2026-05-23.md` |
 
-### 1.3. Quy tắc liên kết & Định dạng (Tối ưu hóa Tìm kiếm & Obsidian Graph)
+Mỗi `features/` file **phải có** test suite tương ứng trong `test_suites/`. Nếu có API explicit → tạo thêm `api_specs/` và link 2 chiều.
 
-- **Liên kết 2 chiều (Double-Linking):** Sử dụng cú pháp liên kết Obsidian `[[Tên Trang]]` để kết nối tất cả các trang liên quan. Mọi Feature đều phải dẫn đến Test Suite tương ứng và ngược lại. Khi viết Daily Notes, phải dẫn link đến Feature/Bug được xử lý.
-- **Liên kết Feature ↔ Feature (Inter-Feature Relationship):** Khi nhiều feature trong cùng một project có quan hệ phụ thuộc hoặc kích hoạt lẫn nhau (ví dụ: Feature A sinh ra đầu vào cho Feature B), AI **BẮT BUỘC** thêm mục `Mối quan hệ` vào phần `## Tổng quan` của mỗi feature spec liên quan. Dùng ký hiệu chuẩn:
-  - `➡️ feature_b — #N Tên` — feature này output/kích hoạt feature B
-  - `⬅️ feature_a — #N Tên` — feature này phụ thuộc/nhận đầu vào từ feature A
-  - `ℹ️ feature_c — #N Tên` — liên quan gián tiếp, ảnh hưởng một phần
-  - Mỗi link phải kèm 1 dòng mô tả ngắn giải thích bản chất quan hệ (không chỉ đặt link trống).
-- **Bí danh (Aliases):** Mọi file wiki khi khởi tạo (trừ daily notes) đều phải có phần YAML frontmatter chứa `aliases: [Mã-Task, Tên đồng nghĩa, Tên ngắn]`. Điều này giúp thanh tìm kiếm của cả con người và AI hoạt động cực kỳ hiệu quả mà không sợ lỗi lệch tên.
-- **Thẻ phân cấp (Nested Tags):** Tuyệt đối tuân thủ hệ thống tag phân cấp để lọc dữ liệu:
-  - `#qa/requirement` cho file nghiệp vụ (`wiki/[project]/features/`).
-  - `#qa/api-spec` cho đặc tả API/interface (`wiki/[project]/api_specs/`).
-  - `#qa/test-suite` cho các test case (`wiki/[project]/test_suites/`).
-  - `#qa/test-plan` cho chiến lược kiểm thử (`wiki/[project]/test_plans/`).
-  - `#qa/release` cho kịch bản triển khai & smoke test (`wiki/[project]/releases/`).
-  - `#qa/bug/open` cho bug chưa fix, `#qa/bug/fixed` cho bug đã giải quyết (`wiki/[project]/bugs_knowledge/`).
-  - `#qa/daily` cho ghi chú daily notes (`wiki/[project]/operations/daily_notes/`).
-  - `#qa/operations` cho tài liệu môi trường/test data (`wiki/[project]/operations/`).
-  - `#qa/feature-group/[tên-nhóm]` — **Tag nhóm tính năng (Feature Group):** Dùng khi nhiều Feature Specs và Test Suites trong cùng project cùng thuộc một phạm vi nghiệp vụ lớn (VD: `#qa/feature-group/receiving-po`). **Bắt buộc thêm đồng thời** vào cả Feature Spec và Test Suite tương ứng.
-  - `#qa/feature-group-index` — dùng cho trang MOC của group trong `wiki/[project]/feature_groups/`.
-- **Feature Group Page:** Mỗi tag `#qa/feature-group/[tên-nhóm]` đang dùng trong Feature/API Spec/Test Suite phải có một trang group tương ứng tại `wiki/[project]/feature_groups/[tên_nhóm].md`.
-  - Tag slug dùng dấu gạch ngang, ví dụ `receiving-po`.
-  - File group dùng dấu gạch dưới, ví dụ `receiving_po.md`.
-  - Trang group phải link tới tất cả Feature Specs, API Specs, Test Suites, Test Plan, raw source chính và câu hỏi/blocked coverage liên quan nếu có.
-  - Khi tạo group tag mới phải cập nhật `templates/tpl_requirement.md`, `templates/tpl_api_spec.md`, `templates/tpl_test_suite.md`, `templates/tpl_feature_group.md`, `index.md` và chạy `python .claude/scripts/wiki_sync.py verify`.
-- Mọi file feature, API Spec và test suite **BẮT BUỘC** có mục `## 📅 Changelog` ở cuối file.
-- Ghi nhận mọi hoạt động vào `log.md`.
+### 1.3. Liên kết, Tags & Feature Groups
 
-### 1.4. Nguyên tắc Nguồn Thật Duy Nhất (Single Source of Truth — SSOT)
+**Double-linking:** Dùng `[[Tên Trang]]` kết nối Feature ↔ Test Suite ↔ Daily Note. Feature có quan hệ phụ thuộc nhau → thêm mục `Mối quan hệ` trong Tổng quan, dùng ký hiệu `➡️` (output), `⬅️` (input), `ℹ️` (gián tiếp), kèm 1 dòng mô tả quan hệ.
 
-- **Nguyên tắc cốt lõi:** Ký ức hoặc lịch sử hội thoại của AI có thể bị lệch (drift) so với tệp tin thực tế do người dùng sửa đổi bất đồng bộ trên Obsidian. Do đó, **tất cả tệp tin trên ổ cứng là Nguồn Thật Duy Nhất và có độ ưu tiên cao nhất.**
-- **Bắt buộc Scan Live:** Trước khi thực hiện bất kỳ quy trình tự động hóa hay đồng bộ nào (Ingest, Task Update, Daily Sync, Lint & Sync), AI **BẮT BUỘC** phải gọi công cụ đọc trực tiếp các tệp tin liên quan (đặc biệt là `KANBAN.md`, `log.md` và các ghi chú nghiệp vụ), tuyệt đối không được suy đoán hay giả định dựa trên ngữ cảnh hội thoại cũ.
-- **Giải quyết mâu thuẫn:** Nếu có mâu thuẫn giữa "Ký ức AI" và "Dữ liệu tệp tin trên đĩa", AI phải lập tức tuân theo dữ liệu trên đĩa và cập nhật lại bộ nhớ của mình.
+**Aliases:** Mọi file wiki (trừ daily notes) có `aliases: [Mã-Task, tên ngắn]` trong frontmatter.
 
-### 1.5. User Intake Protocol (Người dùng chỉ cần bỏ file)
+**Tags chuẩn:**
 
-- **Nguyên tắc vận hành cho người dùng cuối:** Người dùng chỉ cần đặt file vào `raw_sources/...` và yêu cầu AI xử lý. Người dùng không cần tự sửa `wiki/`, `KANBAN.md`, `log.md`.
-- **Quy tắc phân loại file đầu vào (tất cả theo project):**
-  - PDF/FSD/BRD/Baseline: `raw_sources/[project]/requirements/`
-  - Task/Jira theo dự án: `raw_sources/[project]/tasks/`
-  - Lỗi thô/log: `raw_sources/[project]/issues/`
-  - Ảnh/video bằng chứng: `raw_sources/[project]/assets/`
-- **Thiếu thông tin project:** Nếu AI không xác định được project từ tên file/nội dung, AI phải hỏi người dùng xác nhận project trước khi tạo tài liệu trong `wiki/`.
+| Tag | Dùng cho |
+|:----|:---------|
+| `#qa/requirement` | `features/` |
+| `#qa/api-spec` | `api_specs/` |
+| `#qa/test-suite` | `test_suites/` |
+| `#qa/test-plan` | `test_plans/` |
+| `#qa/release` | `releases/` |
+| `#qa/bug/open` · `#qa/bug/fixed` | `bugs_knowledge/` |
+| `#qa/daily` | `daily_notes/` |
+| `#qa/operations` | `operations/` (non-daily) |
+| `#qa/feature-group/[slug]` | feature/api spec/test suite thuộc group |
+| `#qa/feature-group-index` | trang group MOC (`feature_groups/`) |
 
-### 1.6. Traceability, Question Lifecycle & No-Inference
+**Feature Group:** Mỗi tag `#qa/feature-group/[slug]` phải có trang `feature_groups/[slug].md` (slug dùng `-`, file dùng `_`). Trang group link đến tất cả Feature Specs, API Specs, Test Suites, Test Plan, raw source liên quan. Khi tạo group mới: cập nhật templates (tpl_requirement, tpl_api_spec, tpl_test_suite, tpl_feature_group), `index.md`, rồi chạy `python .claude/scripts/wiki_sync.py verify`.
 
-- Mọi thông tin nghiệp vụ hoặc API contract đi vào Feature Spec/API Spec phải thuộc một trong hai trạng thái:
-  - `Explicit`: được nêu rõ trong raw source, Feature Spec đã duyệt, task note, meeting note hoặc câu trả lời chính thức.
-  - `Question`: chưa rõ, chưa đủ nguồn hoặc cần xác nhận từ PO/BA/Dev.
-- Tuyệt đối không ghi requirement, AC, API contract hoặc test case bằng giả định. Không dùng các nhãn như `AI-Inferred`, `Assumption`, `Suy diễn` để hợp thức hóa nội dung chưa rõ.
-- Mục `## ❓ Câu hỏi chưa rõ` của Feature Spec phải dùng bảng có lifecycle rõ: `Q-ID | Liên kết R/AC | Câu hỏi | Hỏi ai | Trạng thái | Câu trả lời | Nguồn trả lời | Ngày trả lời`.
-- Trạng thái câu hỏi hợp lệ: `Open`, `Answered`, `Deferred`.
-- Chỉ được cập nhật Requirement/AC/API Spec/Test Case từ câu hỏi khi câu hỏi đã `Answered` và có `Nguồn trả lời` rõ ràng.
-- Nếu một Requirement/AC còn câu hỏi `Open` liên quan trực tiếp đến behavior cần test, phần đó bị chặn sinh test case. Ghi vào `Blocked Coverage` hoặc `Questions` thay vì tự tạo test case.
-- Mọi Test Case phải trace được chuỗi: `Raw Source / Answered Question -> Feature Requirement/AC -> API Spec (nếu là API) -> Test Case -> Test Plan/Regression`.
+Mọi feature/API Spec/test suite **phải có** mục `## 📅 Changelog` ở cuối. Mọi action ghi vào `log.md`.
 
----
+### 1.4. Single Source of Truth (SSOT)
 
-## 🔄 2. CÁC QUY TRÌNH VẬN HÀNH CỐT LÕI
+File trên ổ cứng là nguồn thật duy nhất, ưu tiên cao hơn ký ức AI. Trước bất kỳ quy trình tự động nào (ingest/sync/lint), **bắt buộc đọc trực tiếp** `KANBAN.md`, `log.md`, và file liên quan — không suy đoán từ hội thoại cũ. Khi có mâu thuẫn giữa AI memory và file trên đĩa → tuân theo file, cập nhật lại memory.
 
-### Quy trình 2.0: Khởi tạo dự án mới (New Project Setup)
+### 1.5. User Intake
 
-> **Kích hoạt:** Khi xuất hiện dự án chưa tồn tại trong `wiki/` hoặc người dùng yêu cầu tạo project mới.
+Người dùng chỉ cần đặt file vào `raw_sources/[project]/...` và yêu cầu AI xử lý. Phân loại:
+- PDF/FSD/BRD → `requirements/` · Task/Jira → `tasks/` · Log lỗi → `issues/` · Ảnh/video → `assets/`
 
-**Các bước thực hiện:**
+Nếu không xác định được project → hỏi người dùng trước khi tạo wiki.
 
-1. **Tạo cấu trúc chuẩn:**
-   - `raw_sources/[project]/tasks/`
-   - `raw_sources/[project]/requirements/`
-   - `raw_sources/[project]/issues/`
-   - `raw_sources/[project]/assets/`
-   - `wiki/[project]/features/`
-   - `wiki/[project]/api_specs/`
-   - `wiki/[project]/feature_groups/`
-   - `wiki/[project]/test_suites/`
-   - `wiki/[project]/test_plans/`
-   - `wiki/[project]/releases/`
-   - `wiki/[project]/bugs_knowledge/`
-   - `wiki/[project]/operations/` và `wiki/[project]/operations/daily_notes/`
+### 1.6. Traceability & No-Inference
 
-2. **Khởi tạo file operations tối thiểu:**
-   - `wiki/[project]/operations/environments.md`
-   - `wiki/[project]/operations/test_data.md`
-   - `wiki/[project]/operations/team_contacts.md`
+Mọi thông tin vào Feature/API Spec chỉ được ở 2 trạng thái: **Explicit** (có nguồn rõ) hoặc **Question** (chưa rõ). **Tuyệt đối không ghi bằng giả định** — không dùng nhãn `AI-Inferred`, `Assumption`, `Suy diễn`.
 
-3. **Đăng ký điều hướng và vận hành:**
-   - Cập nhật `index.md` để thêm khu vực project mới.
-   - Tạo ít nhất một Feature Group page nếu project có nhiều feature liên quan cùng domain.
-   - Tạo các thẻ Kanban khởi tạo Sprint theo quy tắc tại mục `4.2`.
-   - Ghi log với prefix `[create]`.
+Lifecycle câu hỏi (trong `## ❓ Câu hỏi chưa rõ`):
+`Q-ID | R/AC liên quan | Câu hỏi | Hỏi ai | Trạng thái | Câu trả lời | Nguồn | Ngày`
+Trạng thái hợp lệ: `Open` / `Answered` / `Deferred`.
 
-### Quy trình 2.1: Nạp Tài Liệu PDF Lớn (Ingest Baseline PDF)
+- Chỉ cập nhật Spec/Test Case từ câu hỏi khi đã `Answered` + có nguồn rõ.
+- R/AC còn câu hỏi `Open` liên quan trực tiếp → **chặn sinh test case** → ghi vào `Blocked Coverage`.
+- Traceability chain: `Raw Source / Answered Question → Feature R/AC → API Spec (nếu có) → Test Case → Test Plan/Regression`.
 
-> **Kích hoạt:** Người dùng thêm file PDF mới vào `raw_sources/[project]/requirements/` và yêu cầu nạp.
-> 
-> **⚠️ QUY TRÌNH 2 BƯỚC CHUẨN ISTQB:** AI **BẮT BUỘC** tách biệt quy trình nạp tài liệu thành 2 bước độc lập thông qua hai Custom Skills:
-> 1.  **Bước A: Phân tích Nghiệp vụ (Test Analysis - Custom Skill `wiki-requirement-analyzer`)**
-> 2.  **Bước B: Thiết kế Kịch bản (Test Design - Custom Skill `wiki-test-designer`)**
+**Quy tắc Link/Tài nguyên không đọc được (Unreadable Source Rule):**
+Khi chuyển đổi raw source sang Feature Spec, nếu có bất kỳ link/tài nguyên nào được đề cập (Figma link, URL, file PDF phụ, v.v.) mà **không thể truy cập hoặc đọc được**, AI **BẮT BUỘC** phải:
+1. Ghi vào bảng `## Nguồn tài liệu` với Status = `❓ Chưa đọc được`.
+2. Tạo một câu hỏi Open trong `## ❓ Câu hỏi chưa rõ` với nội dung: `"Link/file [tên hoặc URL] được đề cập trong nguồn nhưng chưa đọc được — cần cung cấp [file/quyền truy cập]"`.
+3. Không suy diễn nội dung từ link chưa đọc.
 
-**Các bước thực hiện:**
-
-1. **Convert PDF → Markdown:**
-   - Sử dụng công cụ MCP `markitdown/convert_to_markdown` để chuyển đổi file PDF thành dữ liệu Markdown thô tạm thời.
-   - Lưu bản Markdown đã convert vào `raw_sources/[project]/requirements/` cạnh file PDF gốc, đặt tên cùng base name và hậu tố `_converted.md` hoặc `_ai_readable.md`.
-   - Không sửa nội dung raw PDF và không viết đè file raw source đã lưu. Nếu convert lại, tạo version mới hoặc ghi rõ trong changelog/log.
-
-2. **Phân tích & Tách file (Split):**
-   - Đọc chi tiết nội dung đã convert.
-   - Tách tài liệu thành các phần nhỏ riêng biệt theo tính năng/module.
-   - Mỗi Feature Spec phải tham chiếu rõ file PDF gốc và file Markdown AI-readable đã dùng.
-
-3. **Kiểm tra trùng lặp & Xử lý từng phần đã tách (Thực thi 2 Bước ISTQB có HITL):**
-
-   - **BƯỚC A: Phân tích Nghiệp vụ (ISTQB Test Analysis - Gọi `wiki-requirement-analyzer`):**
-     - **Nếu trùng cũ:** AI phân tích đối chiếu thay đổi (Diff), cập nhật Feature Specs hiện tại và ghi nhận Changelog.
-     - **Nếu mới:** AI khởi tạo file Đặc tả Feature Spec `[feature]_[mucnho].md` trong `wiki/[project]/features/` theo đúng `tpl_requirement.md`, phân rã mã Requirement IDs (`R1`, `R2`...) và vạch các flows đa chiều ở trạng thái `status: Draft`. Nếu raw source có API/interface explicit, tạo thêm `wiki/[project]/api_specs/api_[feature]_[mucnho].md` theo `tpl_api_spec.md`; nếu endpoint/method/payload/status chưa rõ thì ghi câu hỏi, không suy diễn.
-     - **🤝 CỔNG KIỂM SOÁT GATE 1 (Duyệt Specs):** AI dừng lại trình bày đặc tả cho PO hoặc QA Lead. Con người đánh giá sự chính xác của nghiệp vụ, trả lời các câu hỏi làm rõ ở mục `## ❓ Câu hỏi chưa rõ` và ký duyệt bằng cách chuyển trạng thái Feature sang `Done`. **AI chỉ được đi tiếp sang Bước B khi đã có sự phê duyệt này.**
-
-   - **BƯỚC B: Thiết kế Kịch bản (ISTQB Test Design - Gọi `wiki-test-designer`):**
-     - AI đọc Feature Spec đã được duyệt ở Bước A, kết hợp dữ liệu test thật từ `test_data.md` & `environments.md`.
-     - AI tạo mới / cập nhật Test Suite tương ứng `test_[feature]_[mucnho].md` ở trạng thái `status: Draft` với các kịch bản test mang ký hiệu chờ test `⏳`.
-     - **🤝 CỔNG KIỂM SOÁT GATE 2 (Duyệt Test Cases):** AI dừng lại trình bày bộ Test Cases cho QA Lead. QA Lead review kỹ thuật (EP, BVA, Error Guessing), kiểm tra ma trận ánh xạ RTM và chuyển trạng thái Test Suite sang `status: Testing` để cho phép đưa vào hàng đợi kiểm thử.
-
-4. **Ghi nhật ký & Kanban:** Đăng ký thẻ task kiểm thử vào cột `## TODO` của `KANBAN.md` ở trạng thái chờ duyệt và ghi nhận hoạt động vào `log.md` với prefix `[ingest]`.
+Áp dụng khi: ingest PDF (2.1), task change (2.2), bất kỳ thao tác nào tạo/cập nhật Feature Spec.
 
 ---
 
-### Quy trình 2.2: Xử Lý Task Thay Đổi Từ Jira/Slack (Task Change Workflow)
+## 🔄 2. QUY TRÌNH VẬN HÀNH (TÓM TẮT)
 
-> **Kích hoạt:** Người dùng cung cấp mô tả của một Task/Jira Ticket chứa yêu cầu thay đổi.
-> 
-> **⚠️ THỰC THI CHUẨN ISTQB:** AI **BẮT BUỘC** áp dụng quy trình 2 bước: Phân tích thay đổi vào Đặc tả Features trước (Bước A - gọi `wiki-requirement-analyzer`), sau đó mới cập nhật/bổ sung kịch bản Test Cases tương ứng (Bước B - gọi `wiki-test-designer`).
+> Chi tiết đầy đủ từng bước: `references/workflows_detail.md`.
 
-**Các bước thực hiện:**
+### 2.0 Khởi tạo dự án mới
+**Trigger:** Project chưa tồn tại hoặc user yêu cầu.
+Tạo đủ cấu trúc thư mục (§1.1), 3 file operations, cập nhật `index.md`, tạo Kanban cards, ghi log `[create]`.
 
-1. **Phân tích ảnh hưởng (Impact Analysis):**
-   - Đọc `index.md` để định vị các file liên quan.
-    - Quét các file trong `wiki/[project]/features/`, `wiki/[project]/api_specs/` và `wiki/[project]/test_suites/` để xác định vùng bị ảnh hưởng.
-   - Bắt buộc ghi bảng Impact Analysis trước khi sửa nội dung:
-     - `Change ID / Source`
-     - `Change type`: `Add`, `Update`, `Remove`, `Clarify`
-     - `Affected Requirement/AC`
-     - `Affected Feature(s)`
-      - `Affected API Spec(s)`
-      - `Affected Test Suite(s)`
-     - `Test Case action`: `Add`, `Update`, `Deprecate`, `No change`, `Blocked by question`
-     - `Regression candidates`
-     - `Open questions / Gate`
+### 2.1 Ingest PDF
+**Trigger:** File PDF mới trong `raw_sources/[project]/requirements/`.
+1. Convert PDF → `*_converted.md` (dùng MCP `markitdown/convert_to_markdown`).
+2. Gọi `/wiki-requirement-analyzer` → Feature Spec `Draft` → **Gate 1**.
+3. Gọi `/wiki-test-designer` → Test Suite `Draft` → **Gate 2**.
+4. Thêm card Kanban `## TODO`, ghi log `[ingest]`.
 
-2. **Đề xuất Câu hỏi Làm rõ (Clarification Questions - Bước A - HITL Gate):**
-   - Sử dụng skill `wiki-requirement-analyzer` phân tích yêu cầu thay đổi để phát hiện các kẽ hở hoặc điểm mập mờ.
-   - Soạn sẵn danh sách câu hỏi sắc sảo phân loại theo đối tượng (Hỏi PO về nghiệp vụ, hỏi Dev Lead về giải pháp kỹ thuật) và trình bày cho người dùng.
-   - **🤝 CỔNG KIỂM SOÁT:** AI dừng lại chờ con người phản hồi các câu trả lời từ PO/Dev. Không được tự ý phỏng đoán nghiệp vụ khi chưa có thông tin xác thực.
+### 2.2 Task Change (Jira/Slack)
+**Trigger:** User cung cấp Task/Jira ticket có thay đổi requirement.
+1. Lập Impact Analysis (Change ID, type, affected features/API specs/test suites, TC action, regression).
+2. Gọi `/wiki-requirement-analyzer` → clarification questions → **HITL Gate** (chờ PO/Dev).
+3. Cập nhật Feature Spec + API Spec → **Gate 1**. Gọi `/wiki-test-designer` → cập nhật Test Suite + Regression Proposal. Di chuyển card → `InProgress`. Ghi log `[task-update]`.
 
-3. **Cập nhật & Nghiệm thu thay đổi (Bước A & B có HITL):**
-    - **Bước A (Cập nhật Specs):** Sau khi nhận câu trả lời từ người dùng, AI cập nhật file Đặc tả Feature Spec và API Spec liên quan nếu có, đổi trạng thái về `Draft` (chờ duyệt lại), cập nhật bảng Changelog của các file bị ảnh hưởng tham chiếu rõ tới mã Task (Ví dụ: `[Jira-102]`). Người dùng ký duyệt Đặc tả Specs (Gate 1).
-   - **Bước B (Cập nhật Test Suite):** Gọi skill `wiki-test-designer` thiết kế các Test Cases bổ sung hoặc thay đổi dựa trên Specs đã duyệt. Chỉ sinh test case cho Requirement/AC đã rõ và không còn câu hỏi `Open` liên quan trực tiếp. Test case cũ không còn áp dụng phải chuyển vào `Test Cases Lỗi Thời (Deprecated)`, không xóa hẳn.
-   - **Bước C (Regression Proposal):** Cập nhật `Regression Impact` trong Feature/Test Suite/Test Plan: liệt kê test case cũ cần chạy lại, lý do chọn, và phần không cần regression kèm lý do.
-   - Cập nhật Kanban di chuyển task vào cột `## InProgress`.
+### 2.3 Daily Sync
+**Trigger:** User yêu cầu sync daily/meeting note.
+Gọi `/wiki-sync-helper` → `python .claude/scripts/wiki_sync.py daily-sync --project X --date YYYY-MM-DD`.
+Script cập nhật Kanban, sinh bug note nếu có blocked → **Gate 3**. Thay đổi requirement → Impact Analysis → **HITL Gate** trước khi sửa. Ghi log `[sync-daily]`.
 
-4. **Ghi nhật ký:** Ghi nhận hoạt động vào `log.md` với prefix `[task-update]`.
+### 2.4 Lint & Sync
+**Trigger:** User yêu cầu "lint & sync".
+Mặc định `verify` (audit-only). Chỉ chạy `sync` khi đã có **Gate 4**. Kiểm tra: Kanban, tags, broken links, orphan notes, TC sources, governance (changelog, blocked coverage, regression impact, secret, UTF-8). Ghi log `[lint-sync]`.
 
----
+### 2.5 Task State Transition
+**Trigger:** User báo kết quả test hoặc di chuyển Kanban card.
+- `InProgress`: Cập nhật Kanban, chuẩn bị TC nếu chưa có. Log `[test-progress]`.
+- `Done`: Test Suite ⏳→✅/❌, Feature → `Done`, Test Plan → `Passed`. Log format: `[YYYY-MM-DD] [test-run] | [MÃ-TASK]. Kết quả: X/Y PASS.`
+- `Blocked`: Tạo bug RCA, gắn `🔴` link vào card. Log `[test-blocked]`. Bug lifecycle: `Open → Fixed → Retest → Closed`.
 
-### Quy trình 2.3: Đồng Bộ Ghi Chú Hàng Ngày (Daily Sync Workflow)
-
-> **Kích hoạt:** Người dùng yêu cầu đồng bộ Daily Note hoặc Meeting Note.
-> 
-> **⚠️ PHƯƠNG THỨC THỰC THI CHUẨN:** AI **BẮT BUỘC** sử dụng Custom Skill `wiki-sync-helper` để chạy lệnh:
-> `python .claude/scripts/wiki_sync.py daily-sync --project <project_name> --date <YYYY-MM-DD>`
-> Việc chạy script tự động hóa này đảm bảo tốc độ tối đa, tiết kiệm token và tránh sai sót trong quá trình cập nhật Kanban và sinh Bug.
-
-**Các bước thực hiện:**
-
-1. **Đọc file Daily Note** (`wiki/[project]/operations/daily_notes/YYYY-MM-DD.md`):
-
-2. **Xử lý mục "Daily Standup" & Tự động hóa xử lý Bug (Có HITL Gate):**
-   - Cập nhật trạng thái các task trong `KANBAN.md` thông qua lệnh thực thi tự động.
-   - **Tự động tạo Note lỗi từ Standup (Thực hiện bởi script):**
-     - Nếu phần "Khó khăn / Blocked" của Daily Note ghi nhận lỗi cụ thể, script tự động trích xuất và khởi tạo file RCA lỗi mới `bug_[mota_ngan].md` trong `wiki/[project]/bugs_knowledge/` theo mẫu `tpl_bug_rca.md` (trạng thái: `Open`).
-     - Tự động cập nhật thẻ công việc bị nghẽn tương ứng trên Kanban và đính kèm link lỗi màu đỏ ở cuối thẻ: `(🔴 [[wiki/[project]/bugs_knowledge/bug_tên_lỗi|BUG-xxx]])`.
-   - **🤝 CỔNG KIỂM SOÁT GATE 3 (Bug Triage Gate):** AI sau khi tạo bug tự động phải gửi thông báo cho QA Lead và Tech Lead. Hai bên thực hiện họp sàng lọc lỗi (Bug Triage): xác thực lỗi có tái hiện được không, điền chính xác nguyên nhân gốc rễ (Root Cause Analysis), xác định độ nghiêm trọng (Severity: Blocker/Critical/Major/Minor) và chuyển trạng thái file Bug thành `Open` (đã duyệt) hoặc `Closed` (nếu lỗi rác/không tái hiện).
-   - **Đánh dấu đã đồng bộ (Sync Tracking):** Đổi status của Daily Note thành `status: Synced` (hoặc gắn tag `#qa/daily/synced`).
-
-3. **Xử lý mục "Quyết Định Phát Sinh & Thay Đổi Requirement" (Sửa thủ công dưới sự giám sát):**
-   - Với mỗi quyết định thay đổi nghiệp vụ ghi nhận trong ngày:
-     - AI đề xuất các thay đổi và vị trí tệp tin Features & Test Suites bị ảnh hưởng.
-     - AI phải lập Impact Analysis và Regression Proposal giống Quy trình 2.2 trước khi sửa.
-     - **🤝 CỔNG KIỂM SOÁT:** QA Lead và PO phải xác nhận sự thay đổi trước khi AI sửa đổi thủ công các tệp tin này, ghi nhận Changelog với nguồn tham chiếu: `Theo Daily Note [[YYYY-MM-DD]]`.
-
-4. **Ghi nhật ký:** Ghi nhận hoạt động vào `log.md` với prefix `[sync-daily]`.
-
----
-
-### Quy trình 2.4: Dọn Dẹp, Kiểm Định & Đồng Bộ Tự Động (Lint & Auto-Sync Workflow)
-
-> **Kích hoạt:** Người dùng yêu cầu chạy "Lint & Sync".
-> 
-> **⚠️ PHƯƠNG THỨC THỰC THI CHUẨN:** AI **BẮT BUỘC** sử dụng `.claude/scripts/wiki_sync.py`. Với yêu cầu chung như `lint và sync toàn bộ wiki`, mặc định chạy audit-only (`verify`) trước; chỉ chạy `sync` khi người dùng đã xác nhận Gate 4 cho các task đã test xong.
-> 
-> **🤝 CỔNG KIỂM SOÁT GATE 4 (Duyệt kết quả chạy test thực tế):** AI TUYỆT ĐỐI không tự ý chạy sync nếu con người chưa xác nhận chạy test thực tế thành công.
-
-**Các bước thực hiện:**
-
-1. **Chọn chế độ chạy an toàn:** Nếu chưa có xác nhận Gate 4 rõ ràng, chạy `python .claude/scripts/wiki_sync.py verify`. Nếu đã có xác nhận Gate 4, chạy `python .claude/scripts/wiki_sync.py sync` rồi chạy/đính kèm kết quả audit.
-2. **Đồng bộ trạng thái Kanban:** Quét `KANBAN.md`. Đối với các task `## Done` (có xác nhận Gate 4), AI định vị Feature/Test Suite, đổi `status` thành `Done`/`Passed`, cập nhật bảng thống kê test coverage. Đối với các task `## InProgress`/`## TODO`, AI đảm bảo trạng thái phản ánh đúng thực tế.
-3. **Đồng bộ trạng thái Go-Live:** AI quét file `cr_...md` (releases/), đối chiếu Test Plans, nếu test hoàn tất (`Passed`) và có xác nhận Gate 4/5, AI cập nhật Release sang `Testing` và thông báo cho QA Lead.
-4. **Kiểm định Tag & Cấu trúc:** Quét toàn bộ `wiki/` để đảm bảo sử dụng tag phân cấp chuẩn (`#qa/requirement`, `#qa/api-spec`, `#qa/test-suite`, `#qa/feature-group/...`, v.v.) và có Feature Group page tương ứng.
-5. **Kiểm tra Link & Độ phủ:** Quét broken links, orphan notes, mỗi Feature có Test Suite tương ứng, API Spec có tag/section bắt buộc nếu tồn tại, API test suite phải link API Spec, Test Suite có cột `Phạm vi`, mọi TC có nguồn explicit, và không có TC nào cover trực tiếp Requirement/AC/API còn câu hỏi `Open`.
-6. **Kiểm tra governance bổ sung:** Kiểm Kanban TC count, Changelog, Blocked Coverage, Regression Impact, secret/token, UTF-8/mojibake, status frontmatter, và các link `index.md`/`log.md`/`KANBAN.md`.
-7. **Validation Guardrail:** AI BẮT BUỘC chạy `python .claude/scripts/wiki_sync.py verify` để quét lỗi đứt gãy link/sai status. Kết quả báo cáo phải đính kèm vào phản hồi người dùng.
-8. **Ghi nhật ký:** Ghi nhận vào `log.md` prefix `[lint-sync]`.
-
----
-
-### Quy trình 2.5: Quy trình Xử lý Vòng đời Trạng thái Task (Task State Transition Workflow)
-
-> **Kích hoạt:** Người dùng báo cáo đã di chuyển trạng thái task trên Kanban (hoặc yêu cầu AI cập nhật trạng thái kiểm thử).
-
-**Các bước thực hiện của AI:**
-
-1. **NẾU CHUYỂN SANG `InProgress` (Đang kiểm thử):**
-   - Đảm bảo thẻ task đã nằm dưới mục `## InProgress` trong `KANBAN.md`.
-   - Nếu kịch bản kiểm thử chưa sẵn sàng, AI nhắc nhở hoặc hỗ trợ sinh các Test Case nháp để chuẩn bị.
-   - Ghi nhận hoạt động vào `log.md` với prefix `[test-progress]`.
-
-2. **NẾU CHUYỂN SANG `Done` (Kiểm thử hoàn tất):**
-   - **Cập nhật Test Suite (`wiki/[project]/test_suites/`):**
-     - Sửa trạng thái tất cả Test Cases từ đang chờ `⏳` thành đạt `✅ Pass` (hoặc cập nhật theo kết quả người dùng cung cấp).
-     - Đổi `status` trong YAML Frontmatter từ `Draft` hoặc `Testing` thành `Passed` (nếu kiểm thử thành công hoàn toàn).
-     - Cập nhật bảng thống kê số lượng Test Case (Pass/Fail/Blocked) ở đầu file.
-   - **Cập nhật Feature (`wiki/[project]/features/`):**
-     - Đổi `status` trong YAML Frontmatter thành `status: Done` để xác nhận nghiệp vụ đã được kiểm thử ổn định.
-   - **Cập nhật Test Plan (`wiki/[project]/test_plans/`):**
-     - Đổi `status` trong YAML Frontmatter thành `status: Passed`.
-   - **Ghi nhật ký:** Ghi nhận vào `log.md` với prefix `[test-run]` lưu vết:
-     - Format: `- [YYYY-MM-DD] [test-run] | Hoàn thành chạy test [MÃ-TASK]. Kết quả: [X]/[Y] cases PASS.`
-
-3. **NẾU CHUYỂN SANG `Blocked` (Bị nghẽn):**
-   - AI hướng dẫn hoặc hỗ trợ tạo note ghi nhận lỗi RCA (`tpl_bug_rca.md`) trong thư mục `wiki/[project]/bugs_knowledge/`.
-   - Cập nhật thẻ trên Kanban, đính kèm mã lỗi dạng link ở cuối thẻ: `(🔴 [[wiki/[project]/bugs_knowledge/bug_tên_lỗi|BUG-xxx]])`.
-   - Ghi nhận hoạt động vào `log.md` với prefix `[test-blocked]`.
-
-4. **Vòng đời bug sau khi Dev fix (Bug Lifecycle chuẩn):**
-   - Trạng thái chuẩn: `Open` ➔ `Fixed` ➔ `Retest` ➔ `Closed`.
-   - Khi Dev báo fix: cập nhật file bug sang `status: Fixed`, ghi bằng chứng build/PR.
-   - Khi QA retest: ghi kết quả vào bug note và test suite regression.
-   - Nếu retest pass: chuyển `Closed`; nếu fail: quay lại `Open` và cập nhật RCA/changelog.
-
-### Quy trình 2.6: Quy trình Đóng gói và Nghiệm thu CR Go-Live (Hybrid Model)
-
-> **Kích hoạt:** Khi kết thúc Sprint hoặc khi có lịch deploy chính thức lên Production dưới mã Change Request (CR) cụ thể.
-
-**Các bước thực hiện của AI & Bạn:**
-
-1. **Khởi tạo kế hoạch (Phần A - Test Plan):**
-   - AI hoặc Bạn tạo mới **Test Plan** `testplan_cr_[ID].md` trong `wiki/[project]/test_plans/` sử dụng template `tpl_test_plan.md` (status: `Draft` hoặc `Testing`).
-   - AI tự động khởi tạo biên bản đóng gói **CR Go-Live** `cr_[MÃ_CR]_golive_[ddMMyyyy].md` trong `wiki/[project]/releases/` sử dụng template `tpl_cr_golive.md` (ở trạng thái `status: Draft`).
-   - Bạn và AI xác định phạm vi kiểm thử (Scope), liên kết link Specs (`wiki/[project]/features/`), API Specs (`wiki/[project]/api_specs/`, nếu có) và Test Suite (`wiki/[project]/test_suites/`) tương ứng.
-   - Định nghĩa Exit Criteria trên Staging (100% Passed, không còn bug nghiêm trọng).
-
-2. **Đóng gói kỹ thuật (Phần B - Go-Live Plan):**
-   - Khi tất cả kịch bản test trên Staging đã PASS (`status: Passed`), AI sẽ hỗ trợ Bạn & Dev/DevOps soạn thảo kịch bản triển khai từng bước (Deploy Steps) và kịch bản khôi phục (Rollback Steps) đề phòng sự cố.
-   - Thiết lập danh sách các kịch bản kiểm thử nhanh (Smoke Test) trực tiếp trên môi trường Production bằng tài khoản thật.
-
-3. **Nghiệm thu thực tế (Production Smoke Test):**
-   - Sau khi deploy thành công, Bạn chạy Smoke Test trên Production.
-   - Cập nhật kết quả đạt (`✅ Pass`) hoặc lỗi (`❌ Fail`) vào bảng Smoke Test của file CR.
-   - Nếu Smoke Test thành công hoàn toàn ➔ Đổi trạng thái file CR sang `status: Done`.
-   - Nếu Smoke Test thất bại nghiêm trọng ➔ Kích hoạt ngay Rollback Steps để đưa hệ thống về trạng thái ổn định cũ.
-
-4. **Dọn dẹp & Lưu trữ:**
-   - Khi CR đã `Done`, Bạn thực hiện **Archive** các thẻ tương ứng trên bảng Kanban.
-   - AI ghi nhận hoạt động nghiệm thu vào `log.md` với prefix `[test-run]`.
+### 2.6 CR Go-Live
+**Trigger:** Kết thúc Sprint hoặc có lịch deploy Production.
+1. Tạo Test Plan + CR Go-Live doc (status `Draft`), xác định Scope + Exit Criteria.
+2. Khi Staging PASS: soạn Deploy Steps + Rollback Steps + Smoke Test list.
+3. User chạy Smoke Test Production → cập nhật kết quả → **Gate 5**. Pass → CR `Done`. Fail → Rollback.
+4. Archive Kanban cards. Ghi log `[test-run]`.
 
 ---
 
 ## 📋 3. QUY CHUẨN VIẾT TÀI LIỆU
 
-### 3.1. File Feature (`wiki/[project]/features/`) — Chuẩn BA
+### 3.1 Feature Spec (`features/`) — Chuẩn BA
 
-Mọi file feature PHẢI chứa đầy đủ các mục sau (theo template `tpl_requirement.md`):
+Dùng `tpl_requirement.md`. File phải có đủ 14 mục:
+1. YAML Frontmatter (tags, status, feature, project, source_version)
+2. Tổng quan (Feature, Mô tả, Source, Actors, Mối quan hệ nếu có)
+3. Nguồn tài liệu (bảng PDF/Link + version + status)
+4. API/Interface liên quan (chỉ link → API Spec, không nhúng contract)
+5. Phân rã Requirement (bảng ID, loại, priority, testable, source)
+6. User Flows (Pre-conditions, Happy Path, Alt-Flows, Exc-Flows)
+7. Business Rules & Data Constraints (bảng validation)
+8. Error Messages Map
+9. Acceptance Criteria — BDD (Given-When-Then)
+10. `## ❓ Câu hỏi chưa rõ` (bảng lifecycle)
+11. Thay đổi vs version cũ (bảng Add/Update/Remove/Clarify)
+12. Impact Analysis & Regression Proposal
+13. Test Coverage (R → TC mapping, gồm blocked)
+14. `## 📅 Changelog`
 
-1. **Metadata (YAML Frontmatter):** tags, status, feature, project, source_version
-2. **Tổng quan:** Feature, Mô tả ngắn, Source chính, Đối tượng sử dụng (Actors)
-3. **Nguồn tài liệu:** Bảng liệt kê PDF/Link kèm version và status
-4. **API / Interface liên quan:** Chỉ link tới API Spec; không nhúng full API contract vào Feature Spec
-5. **Phân rã Requirement:** Bảng liệt kê từng yêu cầu với ID, loại, priority, testable, source
-6. **Luồng Nghiệp Vụ Chi Tiết (User Flows):**
-   - Điều kiện tiên quyết (Pre-conditions)
-   - Luồng chuẩn (Happy Path) — dạng bước đánh số
-   - Luồng rẽ nhánh (Alternative Paths) — dạng Alt-Flow
-   - Luồng ngoại lệ (Exception Paths) — dạng Exc-Flow
-7. **Quy Tắc Nghiệp Vụ & Ràng Buộc Dữ Liệu:** Bảng validation chi tiết
-8. **Đặc Tả Thông Điệp Báo Lỗi:** Error Messages Map
-9. **Tiêu Chí Nghiệm Thu:** Acceptance Criteria dạng BDD (Given-When-Then)
-10. **Câu hỏi chưa rõ:** Bảng lifecycle câu hỏi (`Q-ID`, R/AC liên quan, trạng thái, nguồn trả lời)
-11. **Thay đổi so với version cũ:** Bảng diff có phân loại Add/Update/Remove/Clarify
-12. **Impact Analysis & Regression Proposal:** Bảng tác động và đề xuất regression
-13. **Test Coverage:** Bảng mapping Requirement → Test Cases, gồm coverage bị blocked do question
-14. **📅 Changelog:** Bảng lịch sử thay đổi (Ngày | Version | Nội dung | Nguồn)
+### 3.2 API Spec (`api_specs/`) — Chuẩn Interface Contract
 
-### 3.2. File API Spec (`wiki/[project]/api_specs/`) — Chuẩn Interface Contract
+Dùng `tpl_api_spec.md`. File phải có: Frontmatter (`tags: [qa/api-spec]`, project, feature, feature_group), Tổng quan, API List (`API ID | Method | Endpoint | Mục đích | R/AC | Source | Status`), API Detail (auth, headers, params, request body, success/error response, side effects), `## ❓ Câu hỏi API chưa rõ`, API Test Coverage, `## 📅 Changelog`.
 
-Mỗi API Spec PHẢI chứa (theo template `tpl_api_spec.md`):
+**Nguyên tắc:** Feature Spec = WHAT/WHY; API Spec = HOW contract. Source không đề cập API → không tạo API Spec. Không suy diễn endpoint/payload/status code/error message/side effect.
 
-1. **Metadata (YAML Frontmatter):** `tags: [qa/api-spec]`, `status`, `project`, `feature`, `feature_group`.
-2. **Tổng quan:** Feature liên quan, Feature Group, source chính, Test Suite API tương ứng.
-3. **API / Interface List:** `API ID | Method | Endpoint | Mục đích | Feature R/AC | Source | Status`.
-4. **API Detail:** Auth, headers, path/query params, request body, success response, error response, validation/business side effects.
-5. **Câu hỏi API chưa rõ:** Dùng lifecycle giống Feature questions; không suy diễn endpoint, payload, status code, error message hoặc side effect.
-6. **API Test Coverage:** Mapping API/R/AC -> Test Case hoặc Blocked Coverage.
-7. **📅 Changelog:** Bảng lịch sử thay đổi.
+### 3.3 Test Suite (`test_suites/`) — Chuẩn QA
 
-Feature Spec là nơi mô tả WHAT/WHY nghiệp vụ; API Spec là nơi mô tả HOW interface contract. Khi source chỉ nói nghiệp vụ mà không nói API, không tạo API Spec giả định.
+Dùng `tpl_test_suite.md`. File phải có: Frontmatter, Thông tin liên kết, Tổng quan coverage (bảng thống kê TC), Bảng Test Cases, Blocked Coverage, Regression Impact, Deprecated TC (không xóa), `## 📅 Changelog`.
 
-### 3.3. File Test Suite (`wiki/[project]/test_suites/`) — Chuẩn QA
+**Cột bảng Test Cases:** `Test ID | Tiêu đề | AC/Req Cover | Phạm vi | Loại case | Kỹ thuật | Pre-conditions | Các bước | Kết quả mong đợi | Nguồn | Status`
 
-Mọi file test suite PHẢI chứa (theo template `tpl_test_suite.md`):
+### 3.4 Quy tắc viết Test Case
 
-1. **Metadata (YAML Frontmatter)**
-2. **Thông tin liên kết:** Feature, Requirement, Dev/QA phụ trách
-3. **Tổng quan Test Coverage:** Bảng thống kê số TC theo loại test
-4. **Bảng Test Cases:** `Test ID | Tiêu đề | AC/Req Cover | Phạm vi | Loại case | Kỹ thuật test | Điều kiện tiên quyết | Các bước | Kết quả mong đợi | Nguồn | Status`
-5. **Blocked Coverage:** Requirement/AC chưa được sinh TC vì còn câu hỏi `Open`
-6. **Regression Impact:** Test case cũ cần chạy lại khi requirement/task thay đổi
-7. **Test Cases Lỗi Thời (Deprecated):** Lưu trữ case cũ, KHÔNG xóa
-8. **📅 Changelog:** Bảng lịch sử thay đổi
+Đọc trước: Feature Spec, API Spec (nếu có), `environments.md`, `test_data.md`, bugs liên quan.
 
-### 3.4. Quy tắc viết Test Case
+Mỗi TC bắt buộc ghi rõ:
+- **AC/Req Cover:** R-ID và/hoặc AC/BDD Scenario
+- **Phạm vi:** `UI` / `API` / `Functional` / `UI+Functional` / `API+Functional` / `UI+API` / `E2E`
+- **Loại case:** `Positive` hoặc `Negative`
+- **Kỹ thuật:** Happy Path / EP / BVA / Decision Table / State Transition / Error Guessing / Security / Regression
+- **Nguồn:** `Explicit từ [nguồn]` — chỉ khi bám trực tiếp vào R/AC/API Spec đã rõ
 
-Khi thiết kế Test Cases, AI PHẢI đọc các file sau để có đủ ngữ cảnh:
+**Không sinh TC từ:** giả định, suy diễn, hoặc R/AC còn câu hỏi `Open`. API TC phải trace về API ID trong API Spec. Không tạo TC nếu không trace được về R/AC rõ ràng.
 
-| File cần đọc | Mục đích |
-|:-------------|:---------|
-| File Feature tương ứng (`wiki/[project]/features/`) | Lấy logic nghiệp vụ, luồng đi, ràng buộc dữ liệu |
-| API Spec liên quan (`wiki/[project]/api_specs/`) | Lấy method, endpoint, payload, response, error contract cho test API nếu có |
-| `wiki/[project]/operations/environments.md` | Lấy URL, tài khoản test mẫu thực tế |
-| `wiki/[project]/operations/test_data.md` | Lấy dữ liệu test mẫu (SĐT, thẻ, payload) |
-| Các file bug liên quan (`wiki/[project]/bugs_knowledge/`) | Bổ sung Regression Test Cases từ lỗi cũ |
-| `WIKI_RULES.md` (file này) | Tuân thủ định dạng và quy tắc đặt tên |
+### 3.5 Feature Group Page (`feature_groups/`)
 
-Mỗi Test Case BẮT BUỘC ghi rõ:
-- **AC/Req Cover:** Requirement ID (`R1`, `R2`...) và/hoặc Acceptance Criteria/BDD Scenario được cover (`AC-01`, `Scenario 1`...).
-- **Phạm vi:** `UI`, `API`, `Functional`, `UI+Functional`, `API+Functional`, `UI+API`, hoặc `E2E`.
-- **Loại case:** `Positive` hoặc `Negative`. Nếu là regression/security/performance thì vẫn phải nêu rõ positive/negative theo kỳ vọng hành vi.
-- **Kỹ thuật test:** Ví dụ `Happy Path`, `Equivalence Partitioning`, `Boundary Value Analysis`, `Decision Table`, `State Transition`, `Error Guessing`, `Security`, `Regression`.
-- **Nguồn:** Chỉ ghi `Explicit từ [nguồn]` cho test case bám trực tiếp từ Requirement/AC/API Spec đã mô tả rõ.
-- **Không suy diễn:** Không tạo test case từ giả định hoặc suy luận. Mọi điểm chưa rõ phải đưa về `## ❓ Câu hỏi chưa rõ` của Feature Spec hoặc `## ❓ Câu hỏi API chưa rõ` của API Spec.
-- **Không sinh TC từ câu hỏi mở:** Nếu TC phụ thuộc vào câu hỏi chưa trả lời, không ghi vào bảng Test Cases; ghi vào `Blocked Coverage`, Feature Questions hoặc API Spec Questions. Khi câu hỏi được trả lời, cập nhật Feature Spec/API Spec trước rồi mới sinh TC.
-- **API TC:** Chỉ tạo khi có API Spec explicit hoặc câu trả lời `Answered` nêu rõ method/endpoint/auth/header/request/response/status/error. Nếu thiếu status code, payload, error response hoặc side effect thì ghi question/blocked coverage, không tự đoán theo convention REST.
-- **Traceability:** Không tạo test case nếu không truy ngược được về Requirement/AC rõ ràng; test API phải truy ngược thêm về API ID trong API Spec.
-
-### 3.5. File Feature Group (`wiki/[project]/feature_groups/`) — Group MOC
-
-Mỗi Feature Group page PHẢI chứa:
-1. **Metadata:** `tags: [qa/feature-group-index, qa/feature-group/[slug]]`, `status`, `project`, `feature_group`.
-2. **Tổng quan:** mục đích group, phạm vi nghiệp vụ, raw source chính.
-3. **Feature Specs trong group:** bảng link Feature, vai trò, status, Gate.
-4. **API Specs trong group:** bảng link API Spec, feature cover, API/interface cover, open questions, status.
-5. **Test Suites trong group:** bảng link Test Suite, số TC, blocked coverage, status.
-6. **Test Plan / Release liên quan:** link tới plan/release nếu có.
-7. **Open Questions & Blocked Coverage:** tổng hợp link tới các feature/API Spec/test suite còn question/blocker.
-8. **Impact & Regression Notes:** nơi tổng hợp change impact cấp group.
-9. **Changelog:** mọi cập nhật group page.
+Dùng `tpl_feature_group.md`. File phải có: Frontmatter (`tags: [qa/feature-group-index, qa/feature-group/slug]`), Tổng quan group, bảng Feature Specs, bảng API Specs, bảng Test Suites, Test Plan/Release liên quan, Open Questions & Blocked Coverage tổng hợp, Impact & Regression Notes, `## 📅 Changelog`.
 
 ---
 
-## 📄 4. QUY TẮC CÁC FILE ĐIỀU KHIỂN
+## 📄 4. CÁC FILE ĐIỀU KHIỂN
 
-### 4.1. `index.md` — Bản đồ điều hướng
-- Liệt kê TẤT CẢ các trang trong wiki kèm link `[[...]]` và mô tả 1 dòng.
-- Phân loại theo: Feature Groups, Features, API Specs, Test Suites, Bugs, Operations.
-- AI đọc file này ĐẦU TIÊN khi xử lý bất kỳ câu hỏi nào.
-- Cập nhật ngay khi có trang mới được tạo.
+### 4.1 `index.md` — Bản đồ điều hướng
 
-### 4.2. `KANBAN.md` — Bảng Kanban & Quy trình Quản lý Task
-- **Sự đồng bộ 2 chiều (Markdown ➔ Kanban UI):** File `KANBAN.md` được lưu dưới dạng danh sách gạch đầu dòng Markdown nhưng hiển thị dưới dạng bảng Kanban kéo thả trên Obsidian. AI cập nhật file bằng cách chỉnh sửa danh sách text, con người tương tác qua giao diện kéo thả.
-- **Cấu trúc cột chuẩn:** Bảng gồm 3 cột tương ứng với các tiêu đề Markdown của plugin Kanban:
-  - `## TODO`: Hàng đợi kiểm thử.
-  - `## InProgress`: Các task đang thực hiện hoặc bị nghẽn.
-  - `## Done`: Các task đã pass test hoàn toàn.
-- **Quy tắc ghi Task & Quản lý ID (AI & Con người):**
-  - **Task từ dự án (Specs/Tickets - active testing):** Bắt buộc thừa hưởng nguyên vẹn ID gốc của dự án (ví dụ: `JIRA-xxx`, `TICKET-xxx`) để đồng bộ với Dev/PO.
-    - Cú pháp: `- [ ] [[raw_sources/[project]/tasks/MÃ-TASK|MÃ-TASK]] ➔ [[wiki/[project]/test_suites/test_tên_feature|Test Suite Tên Tính Năng]] [Độ_ưu_tiên]`.
-    - *Ví dụ:* `- [ ] <raw_sources/[project]/tasks/[task-code]> ➔ <wiki/[project]/test_suites/test_[feature]> [High]`.
-  - **Task Kế hoạch kiểm thử (Test Plans):** Dành cho việc chuẩn bị và duyệt chiến lược test.
-    - Cú pháp: `- [ ] [QA Internal] [[wiki/[project]/test_plans/testplan_xxx|Test Plan Mã]] ➔ Mô tả công việc`.
-    - *Ví dụ:* `- [ ] [QA Internal] <wiki/[project]/test_plans/testplan_cr_[id]> ➔ Review chiến lược & chuẩn bị data test Staging`.
-  - **Task đợt triển khai Go-Live (Releases/Deploy):** Dành cho quy trình deploy và nghiệm thu Production.
-    - Cú pháp: `- [ ] [Release] [[wiki/[project]/releases/cr_xxx|Mã-CR]] ➔ Phối hợp deploy & chạy Smoke Test Prod [Ngày]`.
-    - *Ví dụ:* `- [ ] [Release] <wiki/[project]/releases/cr_[id]_golive_[ddMMyyyy]> ➔ Phối hợp deploy & chạy Smoke Test Production [30/05/2026]`.
-  - **Task sửa lỗi (Bug Reports):** Sử dụng trực tiếp mã lỗi của dự án.
-    - Cú pháp: `- [ ] [[wiki/bugs_knowledge/bug_tên_lỗi|BUG-xxx]] ➔ Kiểm thử lại lỗi [Độ_ưu_tiên]`.
-  - **Task bị nghẽn (Blocked):** Nếu task đang test bị nghẽn do phát sinh bug, bắt buộc ghi kèm mã bug dạng link ở cuối thẻ để dễ truy vết: `... ➔ Test Suite [High] (🔴 [[wiki/bugs_knowledge/bug_tên_lỗi|BUG-xxx]])`.
-- **Luồng cập nhật tự động của AI:**
-  - **Khi Khởi tạo Sprint (Sprint planning & Setup):** AI tự động tạo 3 loại thẻ công việc liên quan và phân bổ vào đúng cột trạng thái:
-    - **Thẻ Kế hoạch kiểm thử (`[QA Internal] testplan_...`)**: Đặt dưới cột `## InProgress` (vì QA Lead sẽ triển khai viết chiến lược và chuẩn bị dữ liệu test ngay lập tức ở đầu Sprint).
-    - **Thẻ kịch bản chạy test (`[Mã-Task] ➔ Test Suite...`)**: Đặt dưới cột `## TODO` (chờ Dev code xong và bàn giao bản build trên Staging).
-    - **Thẻ đợt triển khai Go-Live (`[Release] cr_...`)**: Đặt dưới cột `## TODO` (đóng vai trò cột mốc Milestone theo dõi thời hạn phát hành cuối Sprint).
-  - **Khi nạp Specs mới lẻ (Ingest):** AI tự động chèn một dòng check-list chạy test mới vào dưới cột `## TODO` trong `KANBAN.md`.
-  - **Khi đồng bộ Daily Note (Daily Sync):** AI đọc Daily Note của ngày hôm đó, nếu thấy task được báo đã hoàn thành hoặc bị nghẽn, AI phải chủ động di chuyển dòng check-list tương ứng sang cột `## Done` hoặc `## InProgress` trong `KANBAN.md`.
-- KHÔNG ghi Changelog trong file này để giữ bảng Kanban luôn sạch đẹp. Mọi thay đổi trạng thái được ghi nhận tại `log.md`.
+Liệt kê tất cả trang wiki + link `[[...]]` + mô tả 1 dòng, phân loại theo Feature Groups / Features / API Specs / Test Suites / Bugs / Operations. Đọc đầu tiên khi xử lý bất kỳ request nào. Cập nhật ngay khi có trang mới.
 
-### 4.3. `log.md` — Nhật ký hệ thống
-- Ghi chép TOÀN BỘ hành động AI thực hiện theo thời gian thực để đảm bảo tính truy vết (Audit Trail).
-- **Quy tắc sắp xếp:** Bắt buộc xếp dòng nhật ký **Mới nhất lên đầu tiên** (ngay dưới dòng tiêu đề `---` ở phần nội dung) để dễ theo dõi tức thì mà không cần cuộn chuột xuống đáy file.
-- Format bắt buộc: `- [YYYY-MM-DD HH:mm:ss] [action-type] | Mô tả ngắn gọn`
-  - *Ví dụ:* `- [2026-05-23 10:25:20] [lint-sync] | Hoàn thành quét hệ thống...`
-- Các action-type: `[ingest]`, `[task-update]`, `[sync-daily]`, `[lint]`, `[lint-sync]`, `[test-progress]`, `[test-run]`, `[test-blocked]`, `[create]`
+### 4.2 `KANBAN.md` — Kanban Task Board
 
-### 4.5. Quy tắc Git vận hành
+3 cột: `## TODO` · `## InProgress` · `## Done`. Không ghi Changelog — mọi change → `log.md`.
 
-- Sau mỗi batch xử lý (ingest/task-update/daily-sync/lint-sync), AI bắt buộc chạy kiểm tra thay đổi bằng `git status`.
-- Commit theo lô nhỏ, message rõ nghiệp vụ, ví dụ:
-  - `docs: update feature spec for CR-ORANGE-200`
-  - `test: add regression cases for BUG-123`
-- Không sửa hoặc revert các thay đổi ngoài phạm vi yêu cầu hiện tại.
-- Chỉ push khi người dùng yêu cầu hoặc khi quy trình kết thúc và đã được xác nhận.
+**Cú pháp card theo loại:**
 
+| Loại | Cú pháp |
+|:-----|:--------|
+| Task test | `- [ ] [[raw_sources/[p]/tasks/MÃ\|MÃ]] ➔ [[wiki/[p]/test_suites/test_X\|Test X]] [Priority]` |
+| QA Internal | `- [ ] [QA Internal] [[wiki/[p]/test_plans/testplan_X\|Test Plan X]] ➔ Mô tả` |
+| Release | `- [ ] [Release] [[wiki/[p]/releases/cr_X\|CR-X]] ➔ Smoke Test Prod [DD/MM/YYYY]` |
+| Bug retest | `- [ ] [[wiki/[p]/bugs_knowledge/bug_X\|BUG-xxx]] ➔ Retest [Priority]` |
+| Blocked | thêm `(🔴 [[wiki/[p]/bugs_knowledge/bug_X\|BUG-xxx]])` vào cuối card |
 
-### 4.4. Changelog (trong từng file feature, API spec & test suite)
-- BẮT BUỘC ghi nhận MỌI thay đổi nội dung của tài liệu nghiệp vụ và kịch bản test.
-- **Quy tắc sắp xếp:** Bắt buộc xếp dòng thay đổi **Mới nhất lên đầu tiên** của bảng Changelog (dưới dòng tiêu đề cột `|:---|...`).
-- Format bảng tiêu chuẩn: `| Thời gian | Version | Nội dung thay đổi | Nguồn |`
-  - Trường **Thời gian** phải ghi đầy đủ: `YYYY-MM-DD HH:mm:ss` để phục vụ cho các phiên bản thay đổi nhanh trong ngày.
-  - *Ví dụ:* `| 2026-05-23 10:10:29 | v1.0 | Khởi tạo Specs | <raw_sources/[project]/tasks/[task-code]> |`
-- Nguồn phải tham chiếu rõ ràng bằng link liên kết: Mã Task Jira, Daily Note, hoặc tên file PDF gốc.
+**Khi Sprint planning:** `testplan` → `InProgress`; task test + `Release` → `TODO`.
+**Khi ingest Specs:** chèn card task test mới vào `## TODO`.
+**Khi Daily Sync:** di chuyển card theo kết quả báo cáo.
 
-### 4.6. Update Propagation Checklist
+### 4.3 `log.md` — Audit Trail
 
-Khi có thay đổi requirement/task/test case, AI phải kiểm tra và cập nhật đủ các nơi liên quan:
-- `raw_sources/[project]/...`: lưu raw task/PDF/converted markdown nếu có nguồn mới.
-- `wiki/[project]/features/`: cập nhật Requirement/AC, Questions, Impact Analysis, Regression Proposal, Test Coverage, Changelog.
-- `wiki/[project]/api_specs/`: cập nhật API contract explicit, API Questions, API Test Coverage, Changelog và link Feature/Test Suite nếu API/interface thay đổi.
-- `wiki/[project]/feature_groups/`: cập nhật group page nếu feature/API Spec/test suite thuộc group được thêm, đổi tên, deprecated hoặc thay đổi trạng thái.
-- `wiki/[project]/test_suites/`: add/update/deprecate TC theo Feature/API Spec đã duyệt, cập nhật Blocked Coverage, Regression Impact, tổng số TC, Changelog.
-- `wiki/[project]/test_plans/`: cập nhật In-Scope, Regression Scope, Coverage và Entry/Exit Criteria nếu phạm vi test thay đổi.
-- `KANBAN.md`: cập nhật thẻ, trạng thái và số lượng TC nếu có thay đổi số TC.
-- `index.md`: thêm/xóa link khi có page mới hoặc archive.
-- `log.md`: ghi một dòng audit cho batch thay đổi với timestamp `UTC+07:00`.
-- `git status`: kiểm tra thay đổi cuối batch, không revert file ngoài phạm vi.
+Format (mới nhất lên đầu): `- [YYYY-MM-DD HH:mm:ss] [action-type] | Mô tả ngắn`
+
+Action types: `[ingest]` `[task-update]` `[sync-daily]` `[lint-sync]` `[test-progress]` `[test-run]` `[test-blocked]` `[create]`
+
+### 4.4 Changelog (trong feature/API Spec/test suite)
+
+Format bảng (mới nhất lên đầu): `| YYYY-MM-DD HH:mm:ss | vX.X | Nội dung | Nguồn-link |`
+Nguồn phải là link rõ: Task ID, Daily Note, hoặc tên file PDF.
+
+### 4.5 Git
+
+Sau mỗi batch xử lý: chạy `git status`. Commit nhỏ, message rõ nghiệp vụ:
+- `docs: update feature spec for CR-X`
+- `test: add regression cases for BUG-X`
+
+Không sửa file ngoài phạm vi yêu cầu. Chỉ push khi người dùng yêu cầu.
+
+### 4.6 Update Propagation Checklist
+
+Khi có thay đổi requirement/task/TC, cập nhật đủ các nơi:
+- `raw_sources/[p]/...` — lưu raw mới nếu có
+- `features/` — R/AC, Questions, Impact, Regression, Coverage, Changelog
+- `api_specs/` — API contract, Questions, Coverage, Changelog (nếu API thay đổi)
+- `feature_groups/` — nếu feature/spec/suite trong group bị ảnh hưởng
+- `test_suites/` — add/update/deprecate TC, Blocked Coverage, Regression Impact, TC count, Changelog
+- `test_plans/` — In-Scope, Regression Scope, Coverage nếu phạm vi thay đổi
+- `KANBAN.md` — card + TC count
+- `index.md` — thêm/xóa link
+- `log.md` — 1 dòng audit với timestamp UTC+07
+- `git status` — kiểm tra cuối batch, không revert file ngoài phạm vi

@@ -35,6 +35,7 @@ Bạn đang thực hiện **ISTQB Test Analysis**: quyết định **WHAT to tes
 - **KHÔNG viết test case** trong skill này. Chỉ viết Feature Spec. Chuyển sang `wiki-test-designer` SAU khi Spec được duyệt.
 - **KHÔNG tự chốt nghiệp vụ** khi còn điểm mập mờ — ghi vào mục "Câu hỏi chưa rõ".
 - **KHÔNG suy diễn requirement/AC** nếu nguồn chưa mô tả rõ. Chỉ ghi thông tin explicit từ tài liệu gốc.
+- **Link/tài nguyên không đọc được:** Khi raw source đề cập link (Figma, URL, PDF phụ) mà không truy cập được, phải ghi vào bảng `## Nguồn tài liệu` với Status = `❓ Chưa đọc được` VÀ tạo câu hỏi Open: `"Link [X] chưa đọc được — cần cung cấp file/quyền truy cập"`. Không suy diễn nội dung từ link chưa đọc.
 - **KHÔNG suy diễn API contract** nếu nguồn chưa mô tả rõ method/endpoint/payload/status/error. Chỉ tạo câu hỏi API.
 - **KHÔNG sửa file trong `raw_sources/`** — chỉ đọc.
 - Mọi Requirement ID phải truy ngược về tài liệu nguồn hoặc câu trả lời chính thức đã `Answered`. Không ghi `assumption`.

@@ -26,6 +26,7 @@ approval_note:
   - ➡️ [[wiki/project_hasaki/features/hasaki_receiving_vas|#3 VAS]] — Kết thúc phiên nhận hàng → hệ thống tự sinh VAS cho SKU có yêu cầu
   - ⬅️ [[wiki/project_hasaki/features/hasaki_receiving_packing_list|#4 Packing List]] — App gợi ý Roll code từ Packing List khi nhận SKU vải; UID group và quy đổi đơn vị theo packing list
   - ➡️ [[wiki/project_hasaki/features/hasaki_qc_evaluation|#6 QC Evaluation]] — PO Sample: nhận max 30% phiên đầu, QC phải pass trước khi nhận tiếp; PO Gốc cần check QC pass
+  - ℹ️ [[wiki/project_hasaki/features/hasaki_qc_setup|#5 QC Setup]] — Cấu hình tần suất đánh giá "Tất cả PO" trong QC Setup điều khiển việc sinh VAS QC sau phiên nhận; tiêu chí QC Setup xác định kết quả PO Sample
 
 ---
 

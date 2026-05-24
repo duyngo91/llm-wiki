@@ -411,14 +411,32 @@ class WikiSyncCore:
         feature_open_questions = self.collect_open_question_refs()
         api_open_questions = self.collect_open_api_question_refs()
         suite_case_counts = {}
+        suite_case_section_breakdown = {}  # suite_link -> {section_label: count}
         suite_to_feature = {}
         feature_group_usage = set()
         for suite_path in sorted((self.vault_dir / "wiki").glob("**/test_suites/*.md")):
             rel_suite = suite_path.relative_to(self.vault_dir).as_posix()
             content = suite_path.read_text(encoding="utf-8")
             lines = content.splitlines()
-            rows = [line for line in lines if self.is_test_case_row(line)]
-            suite_case_counts[rel_suite[:-3]] = len(rows)
+
+            # Track TC rows with line number + section context
+            rows_with_meta = []  # (line_num_1based, section_label, line)
+            cur_section = "(top)"
+            for i, line in enumerate(lines):
+                if line.startswith("## "):
+                    cur_section = self._section_label(line)
+                if self.is_test_case_row(line):
+                    rows_with_meta.append((i + 1, cur_section, line))
+
+            suite_key = rel_suite[:-3]
+            suite_case_counts[suite_key] = len(rows_with_meta)
+
+            # Section breakdown for KANBAN mismatch diagnosis
+            breakdown = {}
+            for _, sec, _ in rows_with_meta:
+                breakdown[sec] = breakdown.get(sec, 0) + 1
+            suite_case_section_breakdown[suite_key] = breakdown
+
             project = self.project_from_rel_path(rel_suite)
             for group_slug in self.extract_feature_group_tags(content):
                 if project:
@@ -432,8 +450,9 @@ class WikiSyncCore:
                 guardrail_errors.append((rel_suite, "Missing required section: ## 🔁 Regression Impact"))
 
             header = next((line for line in lines if line.startswith("| Test ID")), "")
+            header_line_num = next((i + 1 for i, line in enumerate(lines) if line.startswith("| Test ID")), None)
             if header and "Phạm vi" not in header:
-                guardrail_errors.append((rel_suite, "Test case table is missing required column: Phạm vi"))
+                guardrail_errors.append((rel_suite, f"TC table header (line {header_line_num}) missing required column 'Phạm vi': {header[:80]}"))
 
             feature_key = self.extract_linked_feature_key(content)
             if feature_key:
@@ -446,35 +465,48 @@ class WikiSyncCore:
             if api_key:
                 open_refs.update(api_open_questions.get(api_key, set()))
 
-            for row in rows:
+            # Detect duplicate TC IDs across sections
+            tc_occurrences = {}
+            for ln, sec, row in rows_with_meta:
                 cells = self.split_table_row(row)
                 tc_id = cells[0] if cells else "UNKNOWN"
-                source = cells[-2] if len(cells) >= 2 else ""
-                cover = cells[2] if len(cells) >= 3 else ""
-                scope = cells[3] if len(cells) >= 4 else ""
+                tc_occurrences.setdefault(tc_id, []).append((ln, sec))
+            for tc_id, occurrences in tc_occurrences.items():
+                if len(occurrences) > 1:
+                    locs = ", ".join(f"line {ln} ({sec})" for ln, sec in occurrences)
+                    guardrail_warnings.append((rel_suite, f"{tc_id}: found {len(occurrences)}x — {locs}"))
+
+            for line_num, section, row in rows_with_meta:
+                cells = self.split_table_row(row)
+                n = len(cells)
+                tc_id = cells[0] if cells else "UNKNOWN"
+                source = cells[-2] if n >= 2 else ""
+                cover = cells[2] if n >= 3 else ""
+                scope = cells[3] if n >= 4 else ""
                 row_lower = row.lower()
+                loc = f"line {line_num}, {n} cells, section='{section}'"
 
                 if re.search(r"\bAPI-\d+\b", cover) or scope in {"API", "API+Functional", "UI+API"} or "api spec" in source.lower():
                     has_api_reference = True
 
                 if "AI-Inferred" in row or "suy diễn" in row_lower or "suy luận" in row_lower or "assumption" in row_lower:
-                    guardrail_errors.append((rel_suite, f"{tc_id}: contains inferred/assumption marker"))
+                    guardrail_errors.append((rel_suite, f"{tc_id} ({loc}): contains inferred/assumption marker"))
                 if source and "Explicit từ" not in source:
-                    guardrail_errors.append((rel_suite, f"{tc_id}: source must start with or contain 'Explicit từ'"))
-                if header and "Phạm vi" in header and len(cells) >= 11:
+                    guardrail_errors.append((rel_suite, f"{tc_id} ({loc}): source={self._cell_short(source)!r} — must contain 'Explicit từ'"))
+                if header and "Phạm vi" in header and n >= 11:
                     case_type = cells[4]
                     technique = cells[5]
                     if scope not in allowed_scopes:
-                        guardrail_errors.append((rel_suite, f"{tc_id}: invalid Phạm vi '{scope}'"))
+                        guardrail_errors.append((rel_suite, f"{tc_id} ({loc}): invalid Phạm vi={scope!r}"))
                     if case_type not in {"Positive", "Negative"}:
-                        guardrail_errors.append((rel_suite, f"{tc_id}: invalid Loại case '{case_type}'"))
+                        guardrail_errors.append((rel_suite, f"{tc_id} ({loc}): invalid Loại case={case_type!r}"))
                     if technique in {"Positive", "Negative"}:
-                        guardrail_errors.append((rel_suite, f"{tc_id}: Kỹ thuật test appears swapped with Loại case"))
+                        guardrail_errors.append((rel_suite, f"{tc_id} ({loc}): Kỹ thuật test={technique!r} appears swapped with Loại case={case_type!r}"))
 
                 covered_refs = set(re.findall(r"\bR\d+\b|\bAC-\d+\b|\bAPI-\d+\b", cover))
                 blocked_refs = covered_refs & open_refs
                 if blocked_refs:
-                    guardrail_errors.append((rel_suite, f"{tc_id}: covers refs with Open questions: {', '.join(sorted(blocked_refs))}"))
+                    guardrail_errors.append((rel_suite, f"{tc_id} ({loc}): cover={self._cell_short(cover)!r} — covers Open refs: {', '.join(sorted(blocked_refs))}"))
 
             if has_api_reference and not api_key:
                 guardrail_errors.append((rel_suite, "API test case/scope detected but Test Suite does not link an API Spec in wiki/[project]/api_specs/"))
@@ -482,6 +514,7 @@ class WikiSyncCore:
         for api_path in sorted((self.vault_dir / "wiki").glob("**/api_specs/*.md")):
             rel_api = api_path.relative_to(self.vault_dir).as_posix()
             content = api_path.read_text(encoding="utf-8")
+            api_lines = content.splitlines()
             project = self.project_from_rel_path(rel_api)
             for group_slug in self.extract_feature_group_tags(content):
                 if project:
@@ -497,15 +530,27 @@ class WikiSyncCore:
                 guardrail_errors.append((rel_api, "API Spec must link back to a Feature Spec in wiki/[project]/features/"))
             if "AI-Inferred" in content or "suy diễn" in content.lower() or "suy luận" in content.lower() or "assumption" in content.lower():
                 guardrail_errors.append((rel_api, "API Spec contains inferred/assumption marker"))
-            for line in content.splitlines():
+
+            api_open_refs = api_open_questions.get(rel_api[:-3], set())
+            cur_api_section = "(top)"
+            for i, line in enumerate(api_lines):
+                if line.startswith("## "):
+                    cur_api_section = self._section_label(line)
                 if not line.startswith("| API-"):
                     continue
                 cells = self.split_table_row(line)
-                if len(cells) < 7:
+                n = len(cells)
+                if n < 7:
+                    guardrail_warnings.append((rel_api, f"line {i+1} (section='{cur_api_section}'): API row has only {n} cells (expected ≥7): {line[:80]}"))
                     continue
-                api_id, source, status = cells[0], cells[5], cells[6]
+                api_id, cover, source, status = cells[0], cells[4] if n > 4 else "", cells[5], cells[6]
+                loc = f"line {i+1}, {n} cells, section='{cur_api_section}'"
                 if status != "Blocked" and source and "Explicit từ" not in source:
-                    guardrail_errors.append((rel_api, f"{api_id}: source must be explicit unless Status is Blocked"))
+                    guardrail_errors.append((rel_api, f"{api_id} ({loc}): source={self._cell_short(source)!r} — must contain 'Explicit từ' unless Blocked"))
+                covered_refs = set(re.findall(r"\bR\d+\b|\bAC-\d+\b", cover))
+                blocked_refs = covered_refs & api_open_refs
+                if blocked_refs:
+                    guardrail_errors.append((rel_api, f"{api_id} ({loc}): cover={self._cell_short(cover)!r} — covers Open refs: {', '.join(sorted(blocked_refs))}"))
 
         for feature_path in sorted((self.vault_dir / "wiki").glob("**/features/*.md")):
             rel_feature = feature_path.relative_to(self.vault_dir).as_posix()
@@ -542,7 +587,9 @@ class WikiSyncCore:
                     expected = int(count_match.group(1))
                     actual = suite_case_counts[suite_link]
                     if expected != actual:
-                        guardrail_errors.append(("KANBAN.md", f"{suite_link}: Kanban TC count {expected} != actual {actual}"))
+                        breakdown = suite_case_section_breakdown.get(suite_link, {})
+                        bd_str = ", ".join(f"{cnt} in '{sec}'" for sec, cnt in sorted(breakdown.items()))
+                        guardrail_errors.append(("KANBAN.md", f"{suite_link}: Kanban says {expected} TC, found {actual} TC-matching rows — {bd_str}"))
 
         mcp_path = self.vault_dir / ".mcp.json"
         if mcp_path.exists():
@@ -586,8 +633,23 @@ class WikiSyncCore:
         print("\nAudit complete.")
         return 1 if broken_links or invalid_statuses or guardrail_errors else 0
 
+    def _section_label(self, heading_line):
+        """Return short human-readable section label from a '## ...' heading line."""
+        label = re.sub(r"^##\s*", "", heading_line).strip()
+        # Strip leading emoji (broad unicode ranges)
+        label = re.sub(r"^[\U0001F300-\U0001FFFF☀-➿\U00002702-\U000027B0]+\s*", "", label)
+        return label[:40]
+
+    def _cell_short(self, val, max_len=35):
+        """Truncate a cell value for display in error messages."""
+        val = val.strip()
+        return val if len(val) <= max_len else val[:max_len] + "…"
+
     def is_test_case_row(self, line):
-        return bool(re.match(r"^\|\s*\*?\*?TC-", line))
+        if not re.match(r"^\|\s*\*?\*?TC-", line):
+            return False
+        # Blocked Coverage table rows have only 3 cells; real TC rows have >= 10
+        return line.count("|") >= 9
 
     def split_table_row(self, line):
         return [part.strip().strip("*") for part in line.strip().strip("|").split("|")]

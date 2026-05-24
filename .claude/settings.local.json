@@ -7,7 +7,12 @@
       "Bash(Remove-Item *)",
       "Skill(wiki-requirement-analyzer)",
       "mcp__markitdown__convert_to_markdown",
-      "Skill(wiki-test-designer)"
+      "Skill(wiki-test-designer)",
+      "Skill(wiki-sync-helper)",
+      "PowerShell(cd \"C:\\\\project\\\\NB_Hasaki\\\\llm-wiki\"; $env:PYTHONUTF8 = \"1\"; $env:PYTHONIOENCODING = \"utf-8\"; python3 .claude/scripts/wiki_sync.py verify 2>&1)",
+      "PowerShell(py *)",
+      "Bash(py .claude/scripts/wiki_sync.py verify)",
+      "Bash(py -c ' *)"
     ]
   },
   "enabledMcpjsonServers": [

@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "WIKI_RULES.md",
+                "file": "wiki/project_hasaki/features/hasaki_qc_setup.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "WIKI_RULES"
+              "title": "hasaki_qc_setup"
             }
           }
         ]
@@ -78,7 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 323.5
   },
   "right": {
     "id": "9e23b97de0c3c6b2",
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "WIKI_RULES.md",
+                "file": "wiki/project_hasaki/features/hasaki_qc_setup.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for WIKI_RULES"
+              "title": "Backlinks for hasaki_qc_setup"
             }
           },
           {
@@ -220,19 +220,28 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "bc94037ed2bd312a",
+  "active": "f02ffbfd2710aa17",
   "lastOpenFiles": [
+    "log.md.tmp.7316.463a0caa5425",
+    "log.md.tmp.7316.11550061c4d4",
+    "WIKI_RULES.md.tmp.7316.0daea16da878",
+    "wiki/project_hasaki/features/hasaki_receiving_po_app.md.tmp.7316.00a39ce1a73d",
+    "wiki/project_hasaki/test_suites/test_hasaki_receiving_vas.md.tmp.7316.16133b74235f",
+    "wiki/project_hasaki/test_suites/test_hasaki_receiving_po_app.md.tmp.7316.76aa6732c537",
+    "log.md.tmp.7316.0a9ec19db6e0",
+    "log.md.tmp.7316.194df5b536f4",
+    "log.md.tmp.7316.143cce9099c6",
+    "log.md.tmp.7316.985b66c7930c",
+    "log.md.tmp.7316.5f9672dbd745",
+    "wiki/project_hasaki/features/hasaki_qc_evaluation.md",
+    "wiki/project_hasaki/features/hasaki_qc_setup.md",
+    "WIKI_RULES.md",
+    "wiki/project_demo/features/auth_login.md",
+    "references/workflows_detail.md",
     "OBSIDIAN_GUIDE.md",
-    "raw_sources/project_orange/assets/orangehrm_api_logs.json",
     "raw_sources/project_orange/tasks/orangehrm_forgot_password.md",
     "raw_sources/project_orange/tasks/orangehrm_auth.md",
     "raw_sources/project_orange/assets/orangehrm_login.png",
-    "raw_sources/project_orange/tasks",
-    "raw_sources/project_orange/requirements",
-    "raw_sources/project_orange/issues",
-    "raw_sources/project_orange/assets",
-    "raw_sources/project_orange",
-    "WIKI_RULES.md",
     "USER_COMMANDS.md",
     "CLAUDE.md",
     "AGENTS.md",
@@ -245,21 +254,13 @@
     "Untitled.canvas",
     "wiki/project_hasaki/features/hasaki_receiving_vas.md",
     "Untitled 2.canvas",
-    "log.md.tmp.696.d836e829244b",
-    "wiki/project_hasaki/operations/progress_dashboard.md.tmp.696.6d6f3d8a2f0c",
     "Untitled 1.canvas",
     "wiki/project_hasaki/test_suites/test_hasaki_qc_evaluation.md",
-    "log.md.tmp.696.a82a0a720e5e",
-    "templates/tpl_test_suite.md.tmp.696.3f4a4f81ec7a",
     "wiki/project_hasaki/test_suites/test_hasaki_receiving_po_app.md",
     "wiki/project_hasaki/test_suites/test_hasaki_qc_setup.md",
     "wiki/project_hasaki/test_suites/test_hasaki_receiving_vas.md",
-    "wiki/project_hasaki/features/hasaki_qc_evaluation.md",
     "wiki/project_hasaki/test_suites/test_hasaki_receiving_packing_list.md",
-    "wiki/project_hasaki/features/hasaki_qc_setup.md",
     "wiki/project_hasaki/features/hasaki_receiving_po_app.md",
-    "wiki/project_hasaki/features/hasaki_receiving_packing_list.md",
-    "wiki/project_hasaki/features/hasaki_receiving_inbound_shipment.md",
-    "wiki/project_hasaki/test_plans/testplan_hasaki_2026_05.md"
+    "wiki/project_hasaki/features/hasaki_receiving_packing_list.md"
   ]
 }
