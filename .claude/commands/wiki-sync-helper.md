@@ -30,6 +30,11 @@ python .claude/scripts/wiki_sync.py sync
 python .claude/scripts/wiki_sync.py verify
 ```
 
+**Repair + Verify (recommended when gặp lỗi BOM/TC count drift):**
+```powershell
+python .claude/scripts/wiki_sync.py repair
+```
+
 ## Workflow bắt buộc
 
 1. Đọc `WIKI_RULES.md` và các file liên quan (`KANBAN.md`, `log.md`, daily note hoặc test suite đích).
@@ -65,3 +70,10 @@ Sau khi hoàn thành, báo cáo:
 - Bugs đã tạo hoặc đã link
 - Kết quả audit từ `python .claude/scripts/wiki_sync.py verify`
 - Human gate tiếp theo (nếu có)
+
+## Batch Open Tasks
+
+For Hasaki open-task orchestration, use:
+python .claude/scripts/wiki_sync.py sync-my-open-tasks --limit 20 --dry-run`r
+python .claude/scripts/wiki_sync.py sync-my-open-tasks --limit 20 --images
+

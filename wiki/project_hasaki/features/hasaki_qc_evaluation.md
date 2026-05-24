@@ -243,3 +243,11 @@ approval_note:
 |:----------|:--------|:-----------------|:------|
 | 2026-05-23 21:49:34 | v1.1 | Bổ sung câu hỏi R14/R2 sau khi loại test case suy diễn khỏi Test Suite | [[wiki/project_hasaki/test_suites/test_hasaki_qc_evaluation\|test_hasaki_qc_evaluation]] |
 | 2026-05-23 00:06:00 | v1.0 | Khởi tạo Feature Spec từ PDF v1.5 | [[raw_sources/project_hasaki/requirements/07105_Quality_Control_Docs_ver1.5.pdf\|PDF QC v1.5]] |
+
+## ?? Impact Analysis & Regression Proposal
+
+| Th?nh ph?n b? ?nh h??ng | M?c ?? | H?nh ??ng ?? xu?t |
+|:------------------------|:-------|:------------------|
+| Test Suites li?n quan | High | Khi requirement/answer thay ??i, c?p nh?t traceability tr??c r?i sinh/ch?y l?i test cases li?n quan |
+| KANBAN TC count | Medium | ??ng b? l?i s? TC active sau m?i l?n th?m/x?a test case |
+| Test Plan | Medium | R? l?i scope regression n?u c? thay ??i AC/lu?ng nghi?p v? |

@@ -220,3 +220,11 @@ approval_note:
 |:----------|:--------|:-----------------|:------|
 | 2026-05-23 21:49:34 | v1.1 | Bổ sung câu hỏi boundary Serial 16 ký tự sau khi loại test case suy diễn khỏi Test Suite | [[wiki/project_hasaki/test_suites/test_hasaki_receiving_vas\|test_hasaki_receiving_vas]] |
 | 2026-05-23 00:00:00 | v1.0 | Khởi tạo Feature Spec từ PDF v2.17 + v1.5 — VAS Web & App | `07062_Receiving_PO_Docs_ver2.17.pdf`, `07105_Quality_Control_Docs_ver1.5.pdf` |
+
+## ?? Impact Analysis & Regression Proposal
+
+| Th?nh ph?n b? ?nh h??ng | M?c ?? | H?nh ??ng ?? xu?t |
+|:------------------------|:-------|:------------------|
+| Test Suites li?n quan | High | Khi requirement/answer thay ??i, c?p nh?t traceability tr??c r?i sinh/ch?y l?i test cases li?n quan |
+| KANBAN TC count | Medium | ??ng b? l?i s? TC active sau m?i l?n th?m/x?a test case |
+| Test Plan | Medium | R? l?i scope regression n?u c? thay ??i AC/lu?ng nghi?p v? |

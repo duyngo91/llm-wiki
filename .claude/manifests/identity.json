@@ -1,0 +1,12 @@
+﻿{
+  "version": "1.0",
+  "technicalLevel": "technical",
+  "preferredStyle": {
+    "verbosity": "minimal",
+    "codeComments": true,
+    "explanations": true
+  },
+  "domain": "qa-wiki",
+  "project": "project_hasaki",
+  "createdAt": "2026-05-24T21:30:00+07:00"
+}

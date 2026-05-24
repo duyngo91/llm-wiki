@@ -1,0 +1,2033 @@
+{
+  "project_id": "project_hasaki",
+  "generated_at": "2026-05-24T21:15:00+07:00",
+  "test_cases": [
+    {
+      "test_case_id": "TC-INB-001",
+      "suite": "test_hasaki_receiving_inbound_shipment",
+      "feature": "hasaki_receiving_inbound_shipment",
+      "scope": "Functional",
+      "requirement_refs": [
+        "AC-01",
+        "R3"
+      ],
+      "source": "Explicit từ PDF v2.17 R3",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-INB-002",
+      "suite": "test_hasaki_receiving_inbound_shipment",
+      "feature": "hasaki_receiving_inbound_shipment",
+      "scope": "Functional",
+      "requirement_refs": [
+        "AC-01",
+        "R3"
+      ],
+      "source": "Explicit từ PDF v2.17 R3",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-INB-003",
+      "suite": "test_hasaki_receiving_inbound_shipment",
+      "feature": "hasaki_receiving_inbound_shipment",
+      "scope": "Functional",
+      "requirement_refs": [
+        "AC-02",
+        "R9"
+      ],
+      "source": "Explicit từ PDF v2.17 R9",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-INB-004",
+      "suite": "test_hasaki_receiving_inbound_shipment",
+      "feature": "hasaki_receiving_inbound_shipment",
+      "scope": "Functional",
+      "requirement_refs": [
+        "AC-03",
+        "R2",
+        "R5",
+        "R6"
+      ],
+      "source": "Explicit từ PDF v2.17 AC-03",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-INB-005",
+      "suite": "test_hasaki_receiving_inbound_shipment",
+      "feature": "hasaki_receiving_inbound_shipment",
+      "scope": "Functional",
+      "requirement_refs": [
+        "R2",
+        "R5",
+        "R6"
+      ],
+      "source": "Explicit từ PDF v2.17 Error Map",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-INB-006",
+      "suite": "test_hasaki_receiving_inbound_shipment",
+      "feature": "hasaki_receiving_inbound_shipment",
+      "scope": "Functional",
+      "requirement_refs": [
+        "R2",
+        "R5",
+        "R6"
+      ],
+      "source": "Explicit từ PDF v2.17 Error Map",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-INB-007",
+      "suite": "test_hasaki_receiving_inbound_shipment",
+      "feature": "hasaki_receiving_inbound_shipment",
+      "scope": "Functional",
+      "requirement_refs": [
+        "R1",
+        "R4"
+      ],
+      "source": "Explicit từ PDF v2.17 R1 R4",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-INB-008",
+      "suite": "test_hasaki_receiving_inbound_shipment",
+      "feature": "hasaki_receiving_inbound_shipment",
+      "scope": "Functional",
+      "requirement_refs": [
+        "R2"
+      ],
+      "source": "Explicit từ PDF v2.17 R2",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-INB-009",
+      "suite": "test_hasaki_receiving_inbound_shipment",
+      "feature": "hasaki_receiving_inbound_shipment",
+      "scope": "Functional",
+      "requirement_refs": [
+        "AC-04",
+        "R11"
+      ],
+      "source": "Explicit từ PDF v2.17 AC-04",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-INB-012",
+      "suite": "test_hasaki_receiving_inbound_shipment",
+      "feature": "hasaki_receiving_inbound_shipment",
+      "scope": "Functional",
+      "requirement_refs": [
+        "AC-05",
+        "R12"
+      ],
+      "source": "Explicit từ PDF v2.17 AC-05",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-INB-013",
+      "suite": "test_hasaki_receiving_inbound_shipment",
+      "feature": "hasaki_receiving_inbound_shipment",
+      "scope": "Functional",
+      "requirement_refs": [
+        "R12"
+      ],
+      "source": "Explicit từ PDF v2.17 R12",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-INB-014",
+      "suite": "test_hasaki_receiving_inbound_shipment",
+      "feature": "hasaki_receiving_inbound_shipment",
+      "scope": "Functional",
+      "requirement_refs": [
+        "AC-06",
+        "R16"
+      ],
+      "source": "Explicit từ PDF v2.17 AC-06",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-INB-015",
+      "suite": "test_hasaki_receiving_inbound_shipment",
+      "feature": "hasaki_receiving_inbound_shipment",
+      "scope": "Functional",
+      "requirement_refs": [
+        "AC-07",
+        "R16"
+      ],
+      "source": "Explicit từ PDF v2.17 AC-07",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-INB-016",
+      "suite": "test_hasaki_receiving_inbound_shipment",
+      "feature": "hasaki_receiving_inbound_shipment",
+      "scope": "Functional",
+      "requirement_refs": [
+        "R16"
+      ],
+      "source": "Explicit từ PDF v2.17 R16",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-INB-017",
+      "suite": "test_hasaki_receiving_inbound_shipment",
+      "feature": "hasaki_receiving_inbound_shipment",
+      "scope": "Functional",
+      "requirement_refs": [
+        "AC-08",
+        "R17"
+      ],
+      "source": "Explicit từ PDF v2.17 R17",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-INB-018",
+      "suite": "test_hasaki_receiving_inbound_shipment",
+      "feature": "hasaki_receiving_inbound_shipment",
+      "scope": "Functional",
+      "requirement_refs": [
+        "R17"
+      ],
+      "source": "Explicit từ PDF v2.17 R17",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-INB-019",
+      "suite": "test_hasaki_receiving_inbound_shipment",
+      "feature": "hasaki_receiving_inbound_shipment",
+      "scope": "Functional",
+      "requirement_refs": [
+        "AC-08",
+        "R14"
+      ],
+      "source": "Explicit từ PDF v2.17 R14",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-INB-020",
+      "suite": "test_hasaki_receiving_inbound_shipment",
+      "feature": "hasaki_receiving_inbound_shipment",
+      "scope": "Functional",
+      "requirement_refs": [
+        "R14"
+      ],
+      "source": "Explicit từ PDF v2.17 R14",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-INB-021",
+      "suite": "test_hasaki_receiving_inbound_shipment",
+      "feature": "hasaki_receiving_inbound_shipment",
+      "scope": "Functional",
+      "requirement_refs": [
+        "R19"
+      ],
+      "source": "Explicit từ PDF v2.17 R19",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-INB-022",
+      "suite": "test_hasaki_receiving_inbound_shipment",
+      "feature": "hasaki_receiving_inbound_shipment",
+      "scope": "Functional",
+      "requirement_refs": [
+        "AC-09",
+        "R20"
+      ],
+      "source": "Explicit từ PDF v2.17 AC-09",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-INB-023",
+      "suite": "test_hasaki_receiving_inbound_shipment",
+      "feature": "hasaki_receiving_inbound_shipment",
+      "scope": "Functional",
+      "requirement_refs": [
+        "AC-10",
+        "R13"
+      ],
+      "source": "Explicit từ PDF v2.17 AC-10",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-INB-024",
+      "suite": "test_hasaki_receiving_inbound_shipment",
+      "feature": "hasaki_receiving_inbound_shipment",
+      "scope": "Functional",
+      "requirement_refs": [
+        "R7"
+      ],
+      "source": "Explicit từ PDF v2.17 R7",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-INB-025",
+      "suite": "test_hasaki_receiving_inbound_shipment",
+      "feature": "hasaki_receiving_inbound_shipment",
+      "scope": "Functional",
+      "requirement_refs": [
+        "R15"
+      ],
+      "source": "Explicit từ PDF v2.17 R15",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-PO-001",
+      "suite": "test_hasaki_receiving_po_app",
+      "feature": "hasaki_receiving_po_app",
+      "scope": "Functional",
+      "requirement_refs": [
+        "AC-01",
+        "R1"
+      ],
+      "source": "Explicit từ PDF v2.17 AC-01",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-PO-002",
+      "suite": "test_hasaki_receiving_po_app",
+      "feature": "hasaki_receiving_po_app",
+      "scope": "Functional",
+      "requirement_refs": [
+        "R1"
+      ],
+      "source": "Explicit từ PDF v2.17 R1",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-PO-003",
+      "suite": "test_hasaki_receiving_po_app",
+      "feature": "hasaki_receiving_po_app",
+      "scope": "Functional",
+      "requirement_refs": [
+        "R1"
+      ],
+      "source": "Explicit từ PDF v2.17 R1",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-PO-004",
+      "suite": "test_hasaki_receiving_po_app",
+      "feature": "hasaki_receiving_po_app",
+      "scope": "Functional",
+      "requirement_refs": [
+        "AC-02",
+        "R2",
+        "R3"
+      ],
+      "source": "Explicit từ PDF v2.17 AC-02",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-PO-005",
+      "suite": "test_hasaki_receiving_po_app",
+      "feature": "hasaki_receiving_po_app",
+      "scope": "Functional",
+      "requirement_refs": [
+        "R3"
+      ],
+      "source": "Explicit từ PDF v2.17 Error Map",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-PO-006",
+      "suite": "test_hasaki_receiving_po_app",
+      "feature": "hasaki_receiving_po_app",
+      "scope": "Functional",
+      "requirement_refs": [
+        "R2"
+      ],
+      "source": "Explicit từ PDF v2.17 R2",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-PO-007",
+      "suite": "test_hasaki_receiving_po_app",
+      "feature": "hasaki_receiving_po_app",
+      "scope": "Functional",
+      "requirement_refs": [
+        "R4"
+      ],
+      "source": "Explicit từ PDF v2.17 R4",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-PO-008",
+      "suite": "test_hasaki_receiving_po_app",
+      "feature": "hasaki_receiving_po_app",
+      "scope": "Functional",
+      "requirement_refs": [
+        "R4"
+      ],
+      "source": "Explicit từ PDF v2.17 R4",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-PO-009",
+      "suite": "test_hasaki_receiving_po_app",
+      "feature": "hasaki_receiving_po_app",
+      "scope": "Functional",
+      "requirement_refs": [
+        "R5"
+      ],
+      "source": "Explicit từ PDF v2.17 Error Map",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-PO-010",
+      "suite": "test_hasaki_receiving_po_app",
+      "feature": "hasaki_receiving_po_app",
+      "scope": "Functional",
+      "requirement_refs": [
+        "R5"
+      ],
+      "source": "Explicit từ PDF v2.17 Error Map",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-PO-011",
+      "suite": "test_hasaki_receiving_po_app",
+      "feature": "hasaki_receiving_po_app",
+      "scope": "Functional",
+      "requirement_refs": [
+        "AC-03",
+        "R6"
+      ],
+      "source": "Explicit từ PDF v2.17 AC-03",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-PO-013",
+      "suite": "test_hasaki_receiving_po_app",
+      "feature": "hasaki_receiving_po_app",
+      "scope": "Functional",
+      "requirement_refs": [
+        "R6"
+      ],
+      "source": "Explicit từ PDF v2.17 Error Map",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-PO-014",
+      "suite": "test_hasaki_receiving_po_app",
+      "feature": "hasaki_receiving_po_app",
+      "scope": "Functional",
+      "requirement_refs": [
+        "R7"
+      ],
+      "source": "Explicit từ PDF v2.17 Error Map",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-PO-015",
+      "suite": "test_hasaki_receiving_po_app",
+      "feature": "hasaki_receiving_po_app",
+      "scope": "Functional",
+      "requirement_refs": [
+        "R8"
+      ],
+      "source": "Explicit từ PDF v2.17 Error Map",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-PO-016",
+      "suite": "test_hasaki_receiving_po_app",
+      "feature": "hasaki_receiving_po_app",
+      "scope": "Functional",
+      "requirement_refs": [
+        "R8"
+      ],
+      "source": "Explicit từ PDF v2.17 R8",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-PO-017",
+      "suite": "test_hasaki_receiving_po_app",
+      "feature": "hasaki_receiving_po_app",
+      "scope": "Functional",
+      "requirement_refs": [
+        "AC-04",
+        "R10"
+      ],
+      "source": "Explicit từ PDF v2.17 AC-04",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-PO-018",
+      "suite": "test_hasaki_receiving_po_app",
+      "feature": "hasaki_receiving_po_app",
+      "scope": "Functional",
+      "requirement_refs": [
+        "AC-05",
+        "R13",
+        "R18"
+      ],
+      "source": "Explicit từ PDF v2.17 AC-05",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-PO-019",
+      "suite": "test_hasaki_receiving_po_app",
+      "feature": "hasaki_receiving_po_app",
+      "scope": "Functional",
+      "requirement_refs": [
+        "R13"
+      ],
+      "source": "Explicit từ PDF v2.17 R13",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-PO-020",
+      "suite": "test_hasaki_receiving_po_app",
+      "feature": "hasaki_receiving_po_app",
+      "scope": "Functional",
+      "requirement_refs": [
+        "R17"
+      ],
+      "source": "Explicit từ PDF v2.17 Error Map",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-PO-021",
+      "suite": "test_hasaki_receiving_po_app",
+      "feature": "hasaki_receiving_po_app",
+      "scope": "Functional",
+      "requirement_refs": [
+        "AC-06",
+        "R19"
+      ],
+      "source": "Explicit từ PDF v2.17 AC-06",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-PO-023",
+      "suite": "test_hasaki_receiving_po_app",
+      "feature": "hasaki_receiving_po_app",
+      "scope": "Functional",
+      "requirement_refs": [
+        "AC-07",
+        "R19"
+      ],
+      "source": "Explicit từ PDF v2.17 AC-07",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-PO-025",
+      "suite": "test_hasaki_receiving_po_app",
+      "feature": "hasaki_receiving_po_app",
+      "scope": "Functional",
+      "requirement_refs": [
+        "AC-08",
+        "R12"
+      ],
+      "source": "Explicit từ PDF v2.17 AC-08",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-PO-026",
+      "suite": "test_hasaki_receiving_po_app",
+      "feature": "hasaki_receiving_po_app",
+      "scope": "Functional",
+      "requirement_refs": [
+        "AC-10",
+        "R24"
+      ],
+      "source": "Explicit từ PDF v2.17 AC-10",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-PO-027",
+      "suite": "test_hasaki_receiving_po_app",
+      "feature": "hasaki_receiving_po_app",
+      "scope": "Functional",
+      "requirement_refs": [
+        "R24"
+      ],
+      "source": "Explicit từ PDF v2.17 R24",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-PO-028",
+      "suite": "test_hasaki_receiving_po_app",
+      "feature": "hasaki_receiving_po_app",
+      "scope": "Functional",
+      "requirement_refs": [
+        "AC-09",
+        "R23"
+      ],
+      "source": "Explicit từ PDF v2.17 AC-09",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-PO-029",
+      "suite": "test_hasaki_receiving_po_app",
+      "feature": "hasaki_receiving_po_app",
+      "scope": "Functional",
+      "requirement_refs": [
+        "R23"
+      ],
+      "source": "Explicit từ PDF v2.17 R23",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-PO-030",
+      "suite": "test_hasaki_receiving_po_app",
+      "feature": "hasaki_receiving_po_app",
+      "scope": "Functional",
+      "requirement_refs": [
+        "R23"
+      ],
+      "source": "Explicit từ PDF v2.17 R23 Error Map",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-PO-031",
+      "suite": "test_hasaki_receiving_po_app",
+      "feature": "hasaki_receiving_po_app",
+      "scope": "Functional",
+      "requirement_refs": [
+        "R20"
+      ],
+      "source": "Explicit từ PDF v2.17 R20",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-PO-032",
+      "suite": "test_hasaki_receiving_po_app",
+      "feature": "hasaki_receiving_po_app",
+      "scope": "Functional",
+      "requirement_refs": [
+        "R20",
+        "R21"
+      ],
+      "source": "Explicit từ PDF v2.17 Error Map",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-PO-033",
+      "suite": "test_hasaki_receiving_po_app",
+      "feature": "hasaki_receiving_po_app",
+      "scope": "Functional",
+      "requirement_refs": [
+        "R11"
+      ],
+      "source": "Explicit từ PDF v2.17 R11",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-PO-034",
+      "suite": "test_hasaki_receiving_po_app",
+      "feature": "hasaki_receiving_po_app",
+      "scope": "Functional",
+      "requirement_refs": [
+        "R11"
+      ],
+      "source": "Explicit từ PDF v2.17 R11",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-PO-035",
+      "suite": "test_hasaki_receiving_po_app",
+      "feature": "hasaki_receiving_po_app",
+      "scope": "Functional",
+      "requirement_refs": [
+        "R22"
+      ],
+      "source": "Explicit từ PDF v2.17 R22",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-PO-036",
+      "suite": "test_hasaki_receiving_po_app",
+      "feature": "hasaki_receiving_po_app",
+      "scope": "Functional",
+      "requirement_refs": [
+        "R22"
+      ],
+      "source": "Explicit từ PDF v2.17 R22",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-PO-037",
+      "suite": "test_hasaki_receiving_po_app",
+      "feature": "hasaki_receiving_po_app",
+      "scope": "Functional",
+      "requirement_refs": [
+        "R16"
+      ],
+      "source": "Explicit từ PDF v2.17 R16",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-PO-038",
+      "suite": "test_hasaki_receiving_po_app",
+      "feature": "hasaki_receiving_po_app",
+      "scope": "Functional",
+      "requirement_refs": [
+        "R18"
+      ],
+      "source": "Explicit từ PDF v2.17 R18 Error Map",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-PO-039",
+      "suite": "test_hasaki_receiving_po_app",
+      "feature": "hasaki_receiving_po_app",
+      "scope": "Functional",
+      "requirement_refs": [
+        "R18"
+      ],
+      "source": "Explicit từ PDF v2.17 R18",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-PO-040",
+      "suite": "test_hasaki_receiving_po_app",
+      "feature": "hasaki_receiving_po_app",
+      "scope": "Functional",
+      "requirement_refs": [
+        "R17"
+      ],
+      "source": "Explicit từ PDF v2.17 R17",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-PO-041",
+      "suite": "test_hasaki_receiving_po_app",
+      "feature": "hasaki_receiving_po_app",
+      "scope": "Functional",
+      "requirement_refs": [
+        "R19"
+      ],
+      "source": "Explicit từ PDF v2.17 R19",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-PO-042",
+      "suite": "test_hasaki_receiving_po_app",
+      "feature": "hasaki_receiving_po_app",
+      "scope": "Functional",
+      "requirement_refs": [
+        "R15"
+      ],
+      "source": "Explicit từ PDF v2.17 R15",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-VAS-001",
+      "suite": "test_hasaki_receiving_vas",
+      "feature": "hasaki_receiving_vas",
+      "scope": "Functional",
+      "requirement_refs": [
+        "AC-01",
+        "R1"
+      ],
+      "source": "Explicit từ PDF v2.17 AC-01",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-VAS-002",
+      "suite": "test_hasaki_receiving_vas",
+      "feature": "hasaki_receiving_vas",
+      "scope": "Functional",
+      "requirement_refs": [
+        "AC-02",
+        "R1"
+      ],
+      "source": "Explicit từ PDF v2.17 AC-02",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-VAS-003",
+      "suite": "test_hasaki_receiving_vas",
+      "feature": "hasaki_receiving_vas",
+      "scope": "Functional",
+      "requirement_refs": [
+        "AC-03",
+        "R5"
+      ],
+      "source": "Explicit từ PDF v2.17 AC-03",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-VAS-004",
+      "suite": "test_hasaki_receiving_vas",
+      "feature": "hasaki_receiving_vas",
+      "scope": "Functional",
+      "requirement_refs": [
+        "R3"
+      ],
+      "source": "Explicit từ PDF v2.17 R3",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-VAS-005",
+      "suite": "test_hasaki_receiving_vas",
+      "feature": "hasaki_receiving_vas",
+      "scope": "Functional",
+      "requirement_refs": [
+        "R2"
+      ],
+      "source": "Explicit từ PDF v2.17 R2",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-VAS-006",
+      "suite": "test_hasaki_receiving_vas",
+      "feature": "hasaki_receiving_vas",
+      "scope": "Functional",
+      "requirement_refs": [
+        "R4"
+      ],
+      "source": "Explicit từ PDF v2.17 R4",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-VAS-007",
+      "suite": "test_hasaki_receiving_vas",
+      "feature": "hasaki_receiving_vas",
+      "scope": "Functional",
+      "requirement_refs": [
+        "R4"
+      ],
+      "source": "Explicit từ PDF v2.17 R4",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-VAS-008",
+      "suite": "test_hasaki_receiving_vas",
+      "feature": "hasaki_receiving_vas",
+      "scope": "Functional",
+      "requirement_refs": [
+        "AC-04",
+        "R10"
+      ],
+      "source": "Explicit từ PDF v2.17 AC-04",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-VAS-010",
+      "suite": "test_hasaki_receiving_vas",
+      "feature": "hasaki_receiving_vas",
+      "scope": "Functional",
+      "requirement_refs": [
+        "R10"
+      ],
+      "source": "Explicit từ PDF v2.17 R10",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-VAS-011",
+      "suite": "test_hasaki_receiving_vas",
+      "feature": "hasaki_receiving_vas",
+      "scope": "Functional",
+      "requirement_refs": [
+        "R10"
+      ],
+      "source": "Explicit từ PDF v2.17 R10",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-VAS-012",
+      "suite": "test_hasaki_receiving_vas",
+      "feature": "hasaki_receiving_vas",
+      "scope": "Functional",
+      "requirement_refs": [
+        "R10"
+      ],
+      "source": "Explicit từ PDF v2.17 R10",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-VAS-013",
+      "suite": "test_hasaki_receiving_vas",
+      "feature": "hasaki_receiving_vas",
+      "scope": "Functional",
+      "requirement_refs": [
+        "AC-05",
+        "R11"
+      ],
+      "source": "Explicit từ PDF v2.17 AC-05",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-VAS-014",
+      "suite": "test_hasaki_receiving_vas",
+      "feature": "hasaki_receiving_vas",
+      "scope": "Functional",
+      "requirement_refs": [
+        "R11"
+      ],
+      "source": "Explicit từ PDF v2.17 R11",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-VAS-015",
+      "suite": "test_hasaki_receiving_vas",
+      "feature": "hasaki_receiving_vas",
+      "scope": "Functional",
+      "requirement_refs": [
+        "AC-05",
+        "R11"
+      ],
+      "source": "Explicit từ PDF v2.17 AC-05",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-VAS-016",
+      "suite": "test_hasaki_receiving_vas",
+      "feature": "hasaki_receiving_vas",
+      "scope": "Functional",
+      "requirement_refs": [
+        "R12"
+      ],
+      "source": "Explicit từ PDF v2.17 Exc-Flow 1",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-VAS-017",
+      "suite": "test_hasaki_receiving_vas",
+      "feature": "hasaki_receiving_vas",
+      "scope": "Functional",
+      "requirement_refs": [
+        "R12"
+      ],
+      "source": "Explicit từ PDF v2.17 Exc-Flow 2",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-VAS-018",
+      "suite": "test_hasaki_receiving_vas",
+      "feature": "hasaki_receiving_vas",
+      "scope": "Functional",
+      "requirement_refs": [
+        "AC-06",
+        "R13"
+      ],
+      "source": "Explicit từ PDF v2.17 AC-06",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-VAS-019",
+      "suite": "test_hasaki_receiving_vas",
+      "feature": "hasaki_receiving_vas",
+      "scope": "Functional",
+      "requirement_refs": [
+        "R14"
+      ],
+      "source": "Explicit từ PDF v2.17 R14",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-VAS-020",
+      "suite": "test_hasaki_receiving_vas",
+      "feature": "hasaki_receiving_vas",
+      "scope": "Functional",
+      "requirement_refs": [
+        "R14"
+      ],
+      "source": "Explicit từ PDF v2.17 R14",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-VAS-021",
+      "suite": "test_hasaki_receiving_vas",
+      "feature": "hasaki_receiving_vas",
+      "scope": "Functional",
+      "requirement_refs": [
+        "AC-08",
+        "R16"
+      ],
+      "source": "Explicit từ PDF v2.17 AC-08",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-VAS-022",
+      "suite": "test_hasaki_receiving_vas",
+      "feature": "hasaki_receiving_vas",
+      "scope": "Functional",
+      "requirement_refs": [
+        "R16"
+      ],
+      "source": "Explicit từ PDF v2.17 R16",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-VAS-023",
+      "suite": "test_hasaki_receiving_vas",
+      "feature": "hasaki_receiving_vas",
+      "scope": "Functional",
+      "requirement_refs": [
+        "AC-07",
+        "R19"
+      ],
+      "source": "Explicit từ PDF v2.17 AC-07",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-VAS-024",
+      "suite": "test_hasaki_receiving_vas",
+      "feature": "hasaki_receiving_vas",
+      "scope": "Functional",
+      "requirement_refs": [
+        "R19"
+      ],
+      "source": "Explicit từ PDF v2.17 R19",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-VAS-025",
+      "suite": "test_hasaki_receiving_vas",
+      "feature": "hasaki_receiving_vas",
+      "scope": "Functional",
+      "requirement_refs": [
+        "R20"
+      ],
+      "source": "Explicit từ PDF v2.17 R20",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-VAS-026",
+      "suite": "test_hasaki_receiving_vas",
+      "feature": "hasaki_receiving_vas",
+      "scope": "Functional",
+      "requirement_refs": [
+        "R21"
+      ],
+      "source": "Explicit từ PDF v2.17 R21",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-VAS-027",
+      "suite": "test_hasaki_receiving_vas",
+      "feature": "hasaki_receiving_vas",
+      "scope": "Functional",
+      "requirement_refs": [
+        "R15",
+        "R9"
+      ],
+      "source": "Explicit từ PDF v2.17 R9",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-PL-001",
+      "suite": "test_hasaki_receiving_packing_list",
+      "feature": "hasaki_receiving_packing_list",
+      "scope": "Functional",
+      "requirement_refs": [
+        "AC-01",
+        "R1",
+        "R7"
+      ],
+      "source": "Explicit từ PDF v2.17 AC-01",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-PL-002",
+      "suite": "test_hasaki_receiving_packing_list",
+      "feature": "hasaki_receiving_packing_list",
+      "scope": "Functional",
+      "requirement_refs": [
+        "AC-02",
+        "R4",
+        "R7"
+      ],
+      "source": "Explicit từ PDF v2.17 AC-02",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-PL-003",
+      "suite": "test_hasaki_receiving_packing_list",
+      "feature": "hasaki_receiving_packing_list",
+      "scope": "Functional",
+      "requirement_refs": [
+        "R4"
+      ],
+      "source": "Explicit từ PDF v2.17 R4",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-PL-004",
+      "suite": "test_hasaki_receiving_packing_list",
+      "feature": "hasaki_receiving_packing_list",
+      "scope": "Functional",
+      "requirement_refs": [
+        "AC-03",
+        "R9"
+      ],
+      "source": "Explicit từ PDF v2.17 AC-03",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-PL-005",
+      "suite": "test_hasaki_receiving_packing_list",
+      "feature": "hasaki_receiving_packing_list",
+      "scope": "Functional",
+      "requirement_refs": [
+        "R11"
+      ],
+      "source": "Explicit từ PDF v2.17 R11",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-PL-006",
+      "suite": "test_hasaki_receiving_packing_list",
+      "feature": "hasaki_receiving_packing_list",
+      "scope": "Functional",
+      "requirement_refs": [
+        "R2"
+      ],
+      "source": "Explicit từ PDF v2.17 R2",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-PL-007",
+      "suite": "test_hasaki_receiving_packing_list",
+      "feature": "hasaki_receiving_packing_list",
+      "scope": "Functional",
+      "requirement_refs": [
+        "R2"
+      ],
+      "source": "Explicit từ PDF v2.17 R2",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-PL-008",
+      "suite": "test_hasaki_receiving_packing_list",
+      "feature": "hasaki_receiving_packing_list",
+      "scope": "Functional",
+      "requirement_refs": [
+        "R2"
+      ],
+      "source": "Explicit từ PDF v2.17 R2",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-PL-009",
+      "suite": "test_hasaki_receiving_packing_list",
+      "feature": "hasaki_receiving_packing_list",
+      "scope": "Functional",
+      "requirement_refs": [
+        "R2"
+      ],
+      "source": "Explicit từ PDF v2.17 R2",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-PL-011",
+      "suite": "test_hasaki_receiving_packing_list",
+      "feature": "hasaki_receiving_packing_list",
+      "scope": "Functional",
+      "requirement_refs": [
+        "R2"
+      ],
+      "source": "Explicit từ PDF v2.17 R2",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-PL-012",
+      "suite": "test_hasaki_receiving_packing_list",
+      "feature": "hasaki_receiving_packing_list",
+      "scope": "Functional",
+      "requirement_refs": [
+        "R3"
+      ],
+      "source": "Explicit từ PDF v2.17 R3",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-PL-013",
+      "suite": "test_hasaki_receiving_packing_list",
+      "feature": "hasaki_receiving_packing_list",
+      "scope": "Functional",
+      "requirement_refs": [
+        "R5"
+      ],
+      "source": "Explicit từ PDF v2.17 R5",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-PL-014",
+      "suite": "test_hasaki_receiving_packing_list",
+      "feature": "hasaki_receiving_packing_list",
+      "scope": "Functional",
+      "requirement_refs": [
+        "AC-07",
+        "R12"
+      ],
+      "source": "Explicit từ PDF v2.17 AC-07",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-PL-015",
+      "suite": "test_hasaki_receiving_packing_list",
+      "feature": "hasaki_receiving_packing_list",
+      "scope": "Functional",
+      "requirement_refs": [
+        "R10"
+      ],
+      "source": "Explicit từ PDF v2.17 R10",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-PL-016",
+      "suite": "test_hasaki_receiving_packing_list",
+      "feature": "hasaki_receiving_packing_list",
+      "scope": "Functional",
+      "requirement_refs": [
+        "R14"
+      ],
+      "source": "Explicit từ PDF v2.17 R14",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-PL-017",
+      "suite": "test_hasaki_receiving_packing_list",
+      "feature": "hasaki_receiving_packing_list",
+      "scope": "Functional",
+      "requirement_refs": [
+        "AC-04",
+        "R17"
+      ],
+      "source": "Explicit từ PDF v2.17 AC-04",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-PL-018",
+      "suite": "test_hasaki_receiving_packing_list",
+      "feature": "hasaki_receiving_packing_list",
+      "scope": "Functional",
+      "requirement_refs": [
+        "AC-05",
+        "R16"
+      ],
+      "source": "Explicit từ PDF v2.17 AC-05",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-PL-019",
+      "suite": "test_hasaki_receiving_packing_list",
+      "feature": "hasaki_receiving_packing_list",
+      "scope": "Functional",
+      "requirement_refs": [
+        "AC-06",
+        "R19"
+      ],
+      "source": "Explicit từ PDF v2.17 AC-06",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-PL-021",
+      "suite": "test_hasaki_receiving_packing_list",
+      "feature": "hasaki_receiving_packing_list",
+      "scope": "Functional",
+      "requirement_refs": [
+        "R18"
+      ],
+      "source": "Explicit từ PDF v2.17 R18",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-PL-022",
+      "suite": "test_hasaki_receiving_packing_list",
+      "feature": "hasaki_receiving_packing_list",
+      "scope": "Functional",
+      "requirement_refs": [
+        "R18"
+      ],
+      "source": "Explicit từ PDF v2.17 R18",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-PL-023",
+      "suite": "test_hasaki_receiving_packing_list",
+      "feature": "hasaki_receiving_packing_list",
+      "scope": "Functional",
+      "requirement_refs": [
+        "R13"
+      ],
+      "source": "Explicit từ PDF v2.17 R13",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-PL-024",
+      "suite": "test_hasaki_receiving_packing_list",
+      "feature": "hasaki_receiving_packing_list",
+      "scope": "Functional",
+      "requirement_refs": [
+        "R13"
+      ],
+      "source": "Explicit từ PDF v2.17 R13",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-PL-025",
+      "suite": "test_hasaki_receiving_packing_list",
+      "feature": "hasaki_receiving_packing_list",
+      "scope": "Functional",
+      "requirement_refs": [
+        "R20"
+      ],
+      "source": "Explicit từ PDF v2.17 R20",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-PL-026",
+      "suite": "test_hasaki_receiving_packing_list",
+      "feature": "hasaki_receiving_packing_list",
+      "scope": "Functional",
+      "requirement_refs": [
+        "R8"
+      ],
+      "source": "Explicit từ PDF v2.17 R8",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-PL-027",
+      "suite": "test_hasaki_receiving_packing_list",
+      "feature": "hasaki_receiving_packing_list",
+      "scope": "Functional",
+      "requirement_refs": [
+        "R2"
+      ],
+      "source": "Explicit từ PDF v2.17 R2",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-QCS-001",
+      "suite": "test_hasaki_qc_setup",
+      "feature": "hasaki_qc_setup",
+      "scope": "Functional",
+      "requirement_refs": [
+        "AC-01",
+        "R4"
+      ],
+      "source": "Explicit từ PDF v1.5 AC-01",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-QCS-002",
+      "suite": "test_hasaki_qc_setup",
+      "feature": "hasaki_qc_setup",
+      "scope": "Functional",
+      "requirement_refs": [
+        "AC-02",
+        "R4"
+      ],
+      "source": "Explicit từ PDF v1.5 AC-02",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-QCS-003",
+      "suite": "test_hasaki_qc_setup",
+      "feature": "hasaki_qc_setup",
+      "scope": "Functional",
+      "requirement_refs": [
+        "R4"
+      ],
+      "source": "Explicit từ PDF v1.5 ERR-QCS-02",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-QCS-004",
+      "suite": "test_hasaki_qc_setup",
+      "feature": "hasaki_qc_setup",
+      "scope": "Functional",
+      "requirement_refs": [
+        "AC-03",
+        "R3"
+      ],
+      "source": "Explicit từ PDF v1.5 AC-03",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-QCS-005",
+      "suite": "test_hasaki_qc_setup",
+      "feature": "hasaki_qc_setup",
+      "scope": "Functional",
+      "requirement_refs": [
+        "R3"
+      ],
+      "source": "Explicit từ PDF v1.5 R3",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-QCS-006",
+      "suite": "test_hasaki_qc_setup",
+      "feature": "hasaki_qc_setup",
+      "scope": "Functional",
+      "requirement_refs": [
+        "R1"
+      ],
+      "source": "Explicit từ PDF v1.5 R1",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-QCS-007",
+      "suite": "test_hasaki_qc_setup",
+      "feature": "hasaki_qc_setup",
+      "scope": "Functional",
+      "requirement_refs": [
+        "R5"
+      ],
+      "source": "Explicit từ PDF v1.5 R5",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-QCS-008",
+      "suite": "test_hasaki_qc_setup",
+      "feature": "hasaki_qc_setup",
+      "scope": "Functional",
+      "requirement_refs": [
+        "R5"
+      ],
+      "source": "Explicit từ PDF v1.5 R5",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-QCS-009",
+      "suite": "test_hasaki_qc_setup",
+      "feature": "hasaki_qc_setup",
+      "scope": "Functional",
+      "requirement_refs": [
+        "AC-04",
+        "R9"
+      ],
+      "source": "Explicit từ PDF v1.5 AC-04",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-QCS-010",
+      "suite": "test_hasaki_qc_setup",
+      "feature": "hasaki_qc_setup",
+      "scope": "Functional",
+      "requirement_refs": [
+        "R8"
+      ],
+      "source": "Explicit từ PDF v1.5 ERR-QCS-06",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-QCS-011",
+      "suite": "test_hasaki_qc_setup",
+      "feature": "hasaki_qc_setup",
+      "scope": "Functional",
+      "requirement_refs": [
+        "AC-05",
+        "R18"
+      ],
+      "source": "Explicit từ PDF v1.5 AC-05",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-QCS-012",
+      "suite": "test_hasaki_qc_setup",
+      "feature": "hasaki_qc_setup",
+      "scope": "Functional",
+      "requirement_refs": [
+        "AC-06",
+        "R18"
+      ],
+      "source": "Explicit từ PDF v1.5 AC-06",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-QCS-013",
+      "suite": "test_hasaki_qc_setup",
+      "feature": "hasaki_qc_setup",
+      "scope": "Functional",
+      "requirement_refs": [
+        "R18"
+      ],
+      "source": "Explicit từ PDF v1.5 R18",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-QCS-014",
+      "suite": "test_hasaki_qc_setup",
+      "feature": "hasaki_qc_setup",
+      "scope": "Functional",
+      "requirement_refs": [
+        "R10",
+        "R11",
+        "R13"
+      ],
+      "source": "Explicit từ PDF v1.5 R11",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-QCS-015",
+      "suite": "test_hasaki_qc_setup",
+      "feature": "hasaki_qc_setup",
+      "scope": "Functional",
+      "requirement_refs": [
+        "R14"
+      ],
+      "source": "Explicit từ PDF v1.5 R14",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-QCS-016",
+      "suite": "test_hasaki_qc_setup",
+      "feature": "hasaki_qc_setup",
+      "scope": "Functional",
+      "requirement_refs": [
+        "AC-07",
+        "R15"
+      ],
+      "source": "Explicit từ PDF v1.5 AC-07",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-QCS-017",
+      "suite": "test_hasaki_qc_setup",
+      "feature": "hasaki_qc_setup",
+      "scope": "Functional",
+      "requirement_refs": [
+        "R16"
+      ],
+      "source": "Explicit từ PDF v1.5 R16",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-QCS-018",
+      "suite": "test_hasaki_qc_setup",
+      "feature": "hasaki_qc_setup",
+      "scope": "Functional",
+      "requirement_refs": [
+        "R15"
+      ],
+      "source": "Explicit từ PDF v1.5 R15",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-QCS-019",
+      "suite": "test_hasaki_qc_setup",
+      "feature": "hasaki_qc_setup",
+      "scope": "Functional",
+      "requirement_refs": [
+        "AC-10",
+        "R17"
+      ],
+      "source": "Explicit từ PDF v1.5 AC-10",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-QCS-020",
+      "suite": "test_hasaki_qc_setup",
+      "feature": "hasaki_qc_setup",
+      "scope": "Functional",
+      "requirement_refs": [
+        "R17"
+      ],
+      "source": "Explicit từ PDF v1.5 R17",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-QCS-021",
+      "suite": "test_hasaki_qc_setup",
+      "feature": "hasaki_qc_setup",
+      "scope": "Functional",
+      "requirement_refs": [
+        "R10"
+      ],
+      "source": "Explicit từ PDF v1.5 ERR-QCS-07",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-QCS-022",
+      "suite": "test_hasaki_qc_setup",
+      "feature": "hasaki_qc_setup",
+      "scope": "Functional",
+      "requirement_refs": [
+        "AC-09",
+        "R20"
+      ],
+      "source": "Explicit từ PDF v1.5 AC-09",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-QCS-023",
+      "suite": "test_hasaki_qc_setup",
+      "feature": "hasaki_qc_setup",
+      "scope": "Functional",
+      "requirement_refs": [
+        "R20"
+      ],
+      "source": "Explicit từ PDF v1.5 R20",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-QCS-024",
+      "suite": "test_hasaki_qc_setup",
+      "feature": "hasaki_qc_setup",
+      "scope": "Functional",
+      "requirement_refs": [
+        "R22"
+      ],
+      "source": "Explicit từ PDF v1.5 R22",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-QCS-025",
+      "suite": "test_hasaki_qc_setup",
+      "feature": "hasaki_qc_setup",
+      "scope": "Functional",
+      "requirement_refs": [
+        "R22"
+      ],
+      "source": "Explicit từ PDF v1.5 R22",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-QCS-026",
+      "suite": "test_hasaki_qc_setup",
+      "feature": "hasaki_qc_setup",
+      "scope": "Functional",
+      "requirement_refs": [
+        "R23"
+      ],
+      "source": "Explicit từ PDF v1.5 R23",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-QCS-027",
+      "suite": "test_hasaki_qc_setup",
+      "feature": "hasaki_qc_setup",
+      "scope": "Functional",
+      "requirement_refs": [
+        "R19"
+      ],
+      "source": "Explicit từ PDF v1.5 R19",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-QCS-028",
+      "suite": "test_hasaki_qc_setup",
+      "feature": "hasaki_qc_setup",
+      "scope": "Functional",
+      "requirement_refs": [
+        "R12"
+      ],
+      "source": "Explicit từ PDF v1.5 R12",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-QCS-030",
+      "suite": "test_hasaki_qc_setup",
+      "feature": "hasaki_qc_setup",
+      "scope": "Functional",
+      "requirement_refs": [
+        "R24"
+      ],
+      "source": "Explicit từ PDF v1.5 R24 update 10-05-2026",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-QCS-031",
+      "suite": "test_hasaki_qc_setup",
+      "feature": "hasaki_qc_setup",
+      "scope": "Functional",
+      "requirement_refs": [
+        "R24"
+      ],
+      "source": "Explicit từ PDF v1.5 R24",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-QCS-032",
+      "suite": "test_hasaki_qc_setup",
+      "feature": "hasaki_qc_setup",
+      "scope": "Functional",
+      "requirement_refs": [
+        "R15"
+      ],
+      "source": "Explicit từ PDF v1.5 R15 (Từ khoá tự động IN HOA, không khoảng trắng)",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-QCE-001",
+      "suite": "test_hasaki_qc_evaluation",
+      "feature": "hasaki_qc_evaluation",
+      "scope": "Functional",
+      "requirement_refs": [
+        "AC-01",
+        "R11",
+        "R12"
+      ],
+      "source": "Explicit từ PDF v1.5 AC-01",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-QCE-002",
+      "suite": "test_hasaki_qc_evaluation",
+      "feature": "hasaki_qc_evaluation",
+      "scope": "Functional",
+      "requirement_refs": [
+        "AC-02",
+        "R11"
+      ],
+      "source": "Explicit từ PDF v1.5 AC-02",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-QCE-003",
+      "suite": "test_hasaki_qc_evaluation",
+      "feature": "hasaki_qc_evaluation",
+      "scope": "Functional",
+      "requirement_refs": [
+        "AC-03",
+        "R13"
+      ],
+      "source": "Explicit từ PDF v1.5 AC-03",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-QCE-004",
+      "suite": "test_hasaki_qc_evaluation",
+      "feature": "hasaki_qc_evaluation",
+      "scope": "Functional",
+      "requirement_refs": [
+        "R10"
+      ],
+      "source": "Explicit từ PDF v1.5 R10",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-QCE-005",
+      "suite": "test_hasaki_qc_evaluation",
+      "feature": "hasaki_qc_evaluation",
+      "scope": "Functional",
+      "requirement_refs": [
+        "AC-04",
+        "R14"
+      ],
+      "source": "Explicit từ PDF v1.5 AC-04",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-QCE-007",
+      "suite": "test_hasaki_qc_evaluation",
+      "feature": "hasaki_qc_evaluation",
+      "scope": "Functional",
+      "requirement_refs": [
+        "R15"
+      ],
+      "source": "Explicit từ PDF v1.5 R15",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-QCE-008",
+      "suite": "test_hasaki_qc_evaluation",
+      "feature": "hasaki_qc_evaluation",
+      "scope": "Functional",
+      "requirement_refs": [
+        "R15"
+      ],
+      "source": "Explicit từ PDF v1.5 ERR-QCE-02",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-QCE-009",
+      "suite": "test_hasaki_qc_evaluation",
+      "feature": "hasaki_qc_evaluation",
+      "scope": "Functional",
+      "requirement_refs": [
+        "R16"
+      ],
+      "source": "Explicit từ PDF v1.5 ERR-QCE-03",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-QCE-010",
+      "suite": "test_hasaki_qc_evaluation",
+      "feature": "hasaki_qc_evaluation",
+      "scope": "Functional",
+      "requirement_refs": [
+        "R16"
+      ],
+      "source": "Explicit từ PDF v1.5 R16",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-QCE-011",
+      "suite": "test_hasaki_qc_evaluation",
+      "feature": "hasaki_qc_evaluation",
+      "scope": "Functional",
+      "requirement_refs": [
+        "R17",
+        "R18"
+      ],
+      "source": "Explicit từ PDF v1.5 R18",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-QCE-012",
+      "suite": "test_hasaki_qc_evaluation",
+      "feature": "hasaki_qc_evaluation",
+      "scope": "Functional",
+      "requirement_refs": [
+        "R18"
+      ],
+      "source": "Explicit từ PDF v1.5 R18 (hình bắt buộc)",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-QCE-013",
+      "suite": "test_hasaki_qc_evaluation",
+      "feature": "hasaki_qc_evaluation",
+      "scope": "Functional",
+      "requirement_refs": [
+        "R19"
+      ],
+      "source": "Explicit từ PDF v1.5 R19",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-QCE-014",
+      "suite": "test_hasaki_qc_evaluation",
+      "feature": "hasaki_qc_evaluation",
+      "scope": "Functional",
+      "requirement_refs": [
+        "AC-05",
+        "R23"
+      ],
+      "source": "Explicit từ PDF v1.5 AC-05",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-QCE-015",
+      "suite": "test_hasaki_qc_evaluation",
+      "feature": "hasaki_qc_evaluation",
+      "scope": "Functional",
+      "requirement_refs": [
+        "AC-06",
+        "R23"
+      ],
+      "source": "Explicit từ PDF v1.5 AC-06",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-QCE-016",
+      "suite": "test_hasaki_qc_evaluation",
+      "feature": "hasaki_qc_evaluation",
+      "scope": "Functional",
+      "requirement_refs": [
+        "AC-07",
+        "R22"
+      ],
+      "source": "Explicit từ PDF v1.5 AC-07",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-QCE-017",
+      "suite": "test_hasaki_qc_evaluation",
+      "feature": "hasaki_qc_evaluation",
+      "scope": "Functional",
+      "requirement_refs": [
+        "R22"
+      ],
+      "source": "Explicit từ PDF v1.5 R22 + Exc-Flow 5",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-QCE-018",
+      "suite": "test_hasaki_qc_evaluation",
+      "feature": "hasaki_qc_evaluation",
+      "scope": "Functional",
+      "requirement_refs": [
+        "AC-08",
+        "R20"
+      ],
+      "source": "Explicit từ PDF v1.5 AC-08",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-QCE-019",
+      "suite": "test_hasaki_qc_evaluation",
+      "feature": "hasaki_qc_evaluation",
+      "scope": "Functional",
+      "requirement_refs": [
+        "R21"
+      ],
+      "source": "Explicit từ PDF v1.5 R21",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-QCE-020",
+      "suite": "test_hasaki_qc_evaluation",
+      "feature": "hasaki_qc_evaluation",
+      "scope": "Functional",
+      "requirement_refs": [
+        "R21"
+      ],
+      "source": "Explicit từ PDF v1.5 ERR-QCE-01",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-QCE-021",
+      "suite": "test_hasaki_qc_evaluation",
+      "feature": "hasaki_qc_evaluation",
+      "scope": "Functional",
+      "requirement_refs": [
+        "R1"
+      ],
+      "source": "Explicit từ PDF v1.5 R1",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-QCE-022",
+      "suite": "test_hasaki_qc_evaluation",
+      "feature": "hasaki_qc_evaluation",
+      "scope": "Functional",
+      "requirement_refs": [
+        "R1",
+        "R8"
+      ],
+      "source": "Explicit từ PDF v1.5 R8",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-QCE-023",
+      "suite": "test_hasaki_qc_evaluation",
+      "feature": "hasaki_qc_evaluation",
+      "scope": "Functional",
+      "requirement_refs": [
+        "R2"
+      ],
+      "source": "Explicit từ PDF v1.5 R2",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-QCE-024",
+      "suite": "test_hasaki_qc_evaluation",
+      "feature": "hasaki_qc_evaluation",
+      "scope": "Functional",
+      "requirement_refs": [
+        "AC-09",
+        "R5"
+      ],
+      "source": "Explicit từ PDF v1.5 AC-09",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-QCE-025",
+      "suite": "test_hasaki_qc_evaluation",
+      "feature": "hasaki_qc_evaluation",
+      "scope": "Functional",
+      "requirement_refs": [
+        "R4"
+      ],
+      "source": "Explicit từ PDF v1.5 R4",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-QCE-026",
+      "suite": "test_hasaki_qc_evaluation",
+      "feature": "hasaki_qc_evaluation",
+      "scope": "Functional",
+      "requirement_refs": [
+        "R6"
+      ],
+      "source": "Explicit từ PDF v1.5 R6",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-QCE-027",
+      "suite": "test_hasaki_qc_evaluation",
+      "feature": "hasaki_qc_evaluation",
+      "scope": "Functional",
+      "requirement_refs": [
+        "R7"
+      ],
+      "source": "Explicit từ PDF v1.5 R7",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-QCE-028",
+      "suite": "test_hasaki_qc_evaluation",
+      "feature": "hasaki_qc_evaluation",
+      "scope": "Functional",
+      "requirement_refs": [
+        "AC-10",
+        "R24"
+      ],
+      "source": "Explicit từ PDF v1.5 AC-10",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-QCE-029",
+      "suite": "test_hasaki_qc_evaluation",
+      "feature": "hasaki_qc_evaluation",
+      "scope": "Functional",
+      "requirement_refs": [
+        "R24"
+      ],
+      "source": "Explicit từ PDF v1.5 R24",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-QCE-030",
+      "suite": "test_hasaki_qc_evaluation",
+      "feature": "hasaki_qc_evaluation",
+      "scope": "Functional",
+      "requirement_refs": [
+        "R24"
+      ],
+      "source": "Explicit từ PDF v1.5 R24",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-QCE-031",
+      "suite": "test_hasaki_qc_evaluation",
+      "feature": "hasaki_qc_evaluation",
+      "scope": "Functional",
+      "requirement_refs": [
+        "R24"
+      ],
+      "source": "Explicit từ PDF v1.5 R24 (block IT nếu chưa đánh giá)",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-QCE-032",
+      "suite": "test_hasaki_qc_evaluation",
+      "feature": "hasaki_qc_evaluation",
+      "scope": "Functional",
+      "requirement_refs": [
+        "R11"
+      ],
+      "source": "Explicit từ PDF v1.5 Exc-Flow 4",
+      "status": "⏳"
+    },
+    {
+      "test_case_id": "TC-QCE-033",
+      "suite": "test_hasaki_qc_evaluation",
+      "feature": "hasaki_qc_evaluation",
+      "scope": "Functional",
+      "requirement_refs": [
+        "R9"
+      ],
+      "source": "Explicit từ PDF v1.5 R9",
+      "status": "⏳"
+    }
+  ],
+  "blocked_coverage": [],
+  "task_spec_links": [],
+  "task_spec_schema": {
+    "fields": [
+      "tbb2",
+      "hsk",
+      "task_spec",
+      "feature_group",
+      "feature",
+      "requirement_ac",
+      "testcase",
+      "source",
+      "question_status"
+    ],
+    "chain": "TBB2 -> HSK -> Task Spec -> Feature Group -> Feature -> Requirement/AC -> Testcase"
+  }
+}
