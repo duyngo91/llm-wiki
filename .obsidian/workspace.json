@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "fd616eff67b1a9d7",
+        "id": "7256b1d49f7ef0db",
         "type": "tabs",
         "children": [
           {
-            "id": "bc94037ed2bd312a",
+            "id": "35970e6b1e4e62f1",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "WIKI_RULES.md",
+                "file": "USER_COMMANDS.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "WIKI_RULES"
+              "title": "USER_COMMANDS"
             }
           }
         ]
@@ -78,7 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 452.5
   },
   "right": {
     "id": "9e23b97de0c3c6b2",
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "WIKI_RULES.md",
+                "file": "USER_COMMANDS.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for WIKI_RULES"
+              "title": "Backlinks for USER_COMMANDS"
             }
           },
           {
@@ -113,12 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "KANBAN.md",
+                "file": "USER_COMMANDS.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from KANBAN"
+              "title": "Outgoing links from USER_COMMANDS"
             }
           },
           {
@@ -156,13 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "KANBAN.md",
+                "file": "USER_COMMANDS.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of KANBAN"
+              "title": "Outline of USER_COMMANDS"
             }
           },
           {
@@ -171,18 +171,8 @@
             "state": {
               "type": "smart-connections-view",
               "state": {},
-              "icon": "lucide-ghost",
-              "title": "smart-connections-view"
-            }
-          },
-          {
-            "id": "8c6e2fadc6f7efdf",
-            "type": "leaf",
-            "state": {
-              "type": "smart-connections-visualizer",
-              "state": {},
-              "icon": "lucide-ghost",
-              "title": "smart-connections-visualizer"
+              "icon": "smart-connections",
+              "title": "Connections"
             }
           },
           {
@@ -191,15 +181,26 @@
             "state": {
               "type": "smart-lookup-view-connections",
               "state": {},
-              "icon": "lucide-ghost",
-              "title": "smart-lookup-view-connections"
+              "icon": "smart-lookup",
+              "title": "Lookup"
+            }
+          },
+          {
+            "id": "7baed47b0700bf64",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {},
+              "icon": "git-pull-request",
+              "title": "Source Control"
             }
           }
-        ]
+        ],
+        "currentTab": 7
       }
     ],
     "direction": "horizontal",
-    "width": 210.5
+    "width": 650.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -217,11 +218,38 @@
       "smart-connections:Smart Connections: Open random connection": false,
       "smart-connections:Smart Lookup: Open lookup view": false,
       "smart-connections-visualizer:Open smart connections visualizer": false,
-      "templater-obsidian:Templater": false
+      "templater-obsidian:Templater": false,
+      "obsidian-git:Open Git source control": false
     }
   },
-  "active": "bc94037ed2bd312a",
+  "active": "35970e6b1e4e62f1",
   "lastOpenFiles": [
+    "README.md",
+    "WIKI_RULES.md",
+    "USER_COMMANDS.md",
+    "log.md",
+    "Untitled.canvas",
+    "wiki/project_hasaki/test_suites/test_hasaki_qc_evaluation.md",
+    "wiki/project_hasaki/feature_groups/receiving_po.md",
+    "KANBAN.md",
+    "wiki/project_hasaki/api_specs",
+    "templates/tpl_api_spec.md",
+    "wiki/project_hasaki/test_plans/testplan_hasaki_2026_05.md",
+    "wiki/project_hasaki/feature_groups",
+    "templates/tpl_feature_group.md",
+    "raw_sources/assets/orangehrm_login.png",
+    "raw_sources/project_hasaki/requirements/07062_Receiving_PO_Docs_ver2.17.pdf",
+    "raw_sources/project_hasaki/requirements/07105_Quality_Control_Docs_ver1.5.pdf",
+    "wiki/project_hasaki/features/hasaki_receiving_inbound_shipment.md",
+    "wiki/project_hasaki/features/hasaki_qc_evaluation.md",
+    "wiki/project_hasaki/features/hasaki_qc_setup.md",
+    "wiki/project_hasaki/features/hasaki_receiving_packing_list.md",
+    "wiki/project_hasaki/features/hasaki_receiving_po_app.md",
+    "wiki/project_hasaki/features/hasaki_receiving_vas.md",
+    "wiki/project_hasaki/test_suites/test_hasaki_receiving_po_app.md",
+    "wiki/project_hasaki/test_suites/test_hasaki_receiving_vas.md",
+    "wiki/project_hasaki/test_suites/test_hasaki_receiving_inbound_shipment.md",
+    "wiki/project_hasaki/test_suites/test_hasaki_qc_setup.md",
     "OBSIDIAN_GUIDE.md",
     "raw_sources/project_orange/assets/orangehrm_api_logs.json",
     "raw_sources/project_orange/tasks/orangehrm_forgot_password.md",
@@ -232,34 +260,9 @@
     "raw_sources/project_orange/issues",
     "raw_sources/project_orange/assets",
     "raw_sources/project_orange",
-    "WIKI_RULES.md",
-    "USER_COMMANDS.md",
     "CLAUDE.md",
     "AGENTS.md",
-    "README.md",
-    "log.md",
-    "index.md",
-    "KANBAN.md",
-    "wiki/project_hasaki/test_suites/test_hasaki_receiving_inbound_shipment.md",
-    "wiki/project_hasaki/operations/progress_dashboard.md",
-    "Untitled.canvas",
-    "wiki/project_hasaki/features/hasaki_receiving_vas.md",
     "Untitled 2.canvas",
-    "log.md.tmp.696.d836e829244b",
-    "wiki/project_hasaki/operations/progress_dashboard.md.tmp.696.6d6f3d8a2f0c",
-    "Untitled 1.canvas",
-    "wiki/project_hasaki/test_suites/test_hasaki_qc_evaluation.md",
-    "log.md.tmp.696.a82a0a720e5e",
-    "templates/tpl_test_suite.md.tmp.696.3f4a4f81ec7a",
-    "wiki/project_hasaki/test_suites/test_hasaki_receiving_po_app.md",
-    "wiki/project_hasaki/test_suites/test_hasaki_qc_setup.md",
-    "wiki/project_hasaki/test_suites/test_hasaki_receiving_vas.md",
-    "wiki/project_hasaki/features/hasaki_qc_evaluation.md",
-    "wiki/project_hasaki/test_suites/test_hasaki_receiving_packing_list.md",
-    "wiki/project_hasaki/features/hasaki_qc_setup.md",
-    "wiki/project_hasaki/features/hasaki_receiving_po_app.md",
-    "wiki/project_hasaki/features/hasaki_receiving_packing_list.md",
-    "wiki/project_hasaki/features/hasaki_receiving_inbound_shipment.md",
-    "wiki/project_hasaki/test_plans/testplan_hasaki_2026_05.md"
+    "Untitled 1.canvas"
   ]
 }

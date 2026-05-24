@@ -101,3 +101,13 @@ Cách lấy token mới:
 2. F12 → Application → Cookies → `work.hasaki.vn`
 3. Copy giá trị cookie `wshr-token`
 4. Paste vào `token.txt` (xoá nội dung cũ)
+
+
+## AI Knowledge Scope
+
+- Allowed scope: `wiki/`, `raw_sources/`, `templates/`, `.claude/commands/`, `.claude/scripts/`, va cac file control root.
+- Excluded by default: `.obsidian/`, `.smart-env/`, `.karate_cache/`, `.git/`, plugin/cache/db.
+- Khong suy dien requirement/AC/API/test case tu du lieu nam ngoai allowed scope.
+- Neu thong tin chua ro thi dua vao Question va Blocked Coverage.
+- Timezone chuan: `Asia/Saigon` (`UTC+07:00`).
+- Encoding chuan: UTF-8, khong mojibake.

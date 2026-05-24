@@ -1,8 +1,3 @@
 {
-  "mcpServers": {
-    "markitdown": {
-      "command": "C:\\Users\\HASAKI\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
-      "args": ["-m", "markitdown_mcp"]
-    }
-  }
+  "mcpServers": {}
 }

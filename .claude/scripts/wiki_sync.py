@@ -16,7 +16,7 @@ def load_core():
 
 def main() -> int:
     if len(sys.argv) < 2:
-        print("Usage: python .claude/scripts/wiki_sync.py [sync | daily-sync | verify]")
+        print("Usage: python .claude/scripts/wiki_sync.py [sync | daily-sync | verify | repair]")
         print("For daily-sync: python .claude/scripts/wiki_sync.py daily-sync --project <project_name> --date <YYYY-MM-DD>")
         return 1
 
@@ -26,6 +26,8 @@ def main() -> int:
         return core.run_sync()
     if command == "verify":
         return core.run_verify()
+    if command == "repair":
+        return core.run_repair()
     if command == "daily-sync":
         project = None
         date_str = None

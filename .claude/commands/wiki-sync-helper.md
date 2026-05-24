@@ -30,6 +30,11 @@ python .claude/scripts/wiki_sync.py sync
 python .claude/scripts/wiki_sync.py verify
 ```
 
+**Repair + Verify (recommended when gặp lỗi BOM/TC count drift):**
+```powershell
+python .claude/scripts/wiki_sync.py repair
+```
+
 ## Workflow bắt buộc
 
 1. Đọc `WIKI_RULES.md` và các file liên quan (`KANBAN.md`, `log.md`, daily note hoặc test suite đích).

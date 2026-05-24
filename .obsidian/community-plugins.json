@@ -5,5 +5,8 @@
   "dataview",
   "smart-connections",
   "smart-connections-visualizer",
-  "templater-obsidian"
+  "templater-obsidian",
+  "obsidian-local-rest-api",
+  "obsidian-git",
+  "mcp-tools-istefox"
 ]

@@ -1,0 +1,15 @@
+﻿{
+  "version": "1.0",
+  "profile": "hasaki-wiki",
+  "sharedSkills": [
+    ".claude/skills/hasaki-wiki/SKILL.md"
+  ],
+  "commandFiles": [
+    ".claude/commands/wiki-requirement-analyzer.md",
+    ".claude/commands/wiki-test-designer.md",
+    ".claude/commands/wiki-sync-helper.md",
+    ".claude/commands/get-hasaki-task.md",
+    ".claude/commands/import-hasaki-task.md"
+  ],
+  "updatedAt": "2026-05-24T21:30:00+07:00"
+}

@@ -1,0 +1,32 @@
+﻿{
+  "version": "1.0",
+  "schemaVersion": "1.0",
+  "generatedBy": "manual-refactor",
+  "generatedAt": "2026-05-24T21:30:00+07:00",
+  "profile": "hasaki-wiki",
+  "managedFiles": [
+    ".claude/skills/hasaki-wiki/SKILL.md",
+    ".claude/rules/00-core.md",
+    ".claude/rules/10-ai-knowledge-scope.md",
+    ".claude/rules/20-no-inference.md",
+    ".claude/rules/30-testcase-policy.md",
+    ".claude/rules/40-sync-governance.md",
+    ".claude/research/hasaki-research-playbook.md",
+    ".claude/team/hasaki-team-config.json",
+    ".claude/enterprise/controls.md",
+    ".claude/manifests/identity.json",
+    ".claude/manifests/package-manager.json"
+  ],
+  "adapters": {
+    "claudeCode": {
+      "skillPath": ".claude/skills/hasaki-wiki/SKILL.md",
+      "commandPaths": [
+        ".claude/commands/wiki-requirement-analyzer.md",
+        ".claude/commands/wiki-test-designer.md",
+        ".claude/commands/wiki-sync-helper.md",
+        ".claude/commands/get-hasaki-task.md",
+        ".claude/commands/import-hasaki-task.md"
+      ]
+    }
+  }
+}

@@ -573,3 +573,13 @@ Khi có thay đổi requirement/task/test case, AI phải kiểm tra và cập n
 - `index.md`: thêm/xóa link khi có page mới hoặc archive.
 - `log.md`: ghi một dòng audit cho batch thay đổi với timestamp `UTC+07:00`.
 - `git status`: kiểm tra thay đổi cuối batch, không revert file ngoài phạm vi.
+
+
+## AI Knowledge Scope
+
+- Allowed scope: `wiki/`, `raw_sources/`, `templates/`, `.claude/commands/`, `.claude/scripts/`, va cac file control root.
+- Excluded by default: `.obsidian/`, `.smart-env/`, `.karate_cache/`, `.git/`, plugin/cache/db.
+- Khong suy dien requirement/AC/API/test case tu du lieu nam ngoai allowed scope.
+- Neu thong tin chua ro thi dua vao Question va Blocked Coverage.
+- Timezone chuan: `Asia/Saigon` (`UTC+07:00`).
+- Encoding chuan: UTF-8, khong mojibake.
