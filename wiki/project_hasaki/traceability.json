@@ -2014,5 +2014,20 @@
       "status": "⏳"
     }
   ],
-  "blocked_coverage": []
+  "blocked_coverage": [],
+  "task_spec_links": [],
+  "task_spec_schema": {
+    "fields": [
+      "tbb2",
+      "hsk",
+      "task_spec",
+      "feature_group",
+      "feature",
+      "requirement_ac",
+      "testcase",
+      "source",
+      "question_status"
+    ],
+    "chain": "TBB2 -> HSK -> Task Spec -> Feature Group -> Feature -> Requirement/AC -> Testcase"
+  }
 }

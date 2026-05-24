@@ -39,5 +39,18 @@
       "id": "qc_pdf_v1_5",
       "path": "raw_sources/project_hasaki/requirements/07105_Quality_Control_Docs_ver1.5.pdf"
     }
-  ]
+  ],
+  "task_spec_registry": [],
+  "task_spec_registry_schema": {
+    "fields": [
+      "tbb2",
+      "hsk",
+      "task_spec",
+      "feature_group",
+      "feature",
+      "question_status",
+      "last_synced_at"
+    ],
+    "note": "Execution-layer index for task-driven updates and impact/regression routing"
+  }
 }
