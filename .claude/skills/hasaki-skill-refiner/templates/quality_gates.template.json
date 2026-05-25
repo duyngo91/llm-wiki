@@ -1,0 +1,30 @@
+﻿{
+  "run_id": "",
+  "timestamp_asia_saigon": "",
+  "project": "project_hasaki",
+  "gates": {
+    "NO_INFERENCE_PASS": false,
+    "QUESTION_ROUTING_PASS": false,
+    "BLOCKED_COVERAGE_PASS": false,
+    "TRACEABILITY_PASS": false,
+    "UTF8_PASS": false,
+    "VERIFY_PASS": false
+  },
+  "metrics": {
+    "total_claims": 0,
+    "supported_claims": 0,
+    "unclear_claims": 0,
+    "inferred_claims": 0,
+    "explicit_ac_mapped_testcases": 0,
+    "total_testcases": 0
+  },
+  "score": {
+    "value": 0,
+    "max": 100,
+    "status": "fail"
+  },
+  "decision": {
+    "keep_changes": false,
+    "reason": ""
+  }
+}
