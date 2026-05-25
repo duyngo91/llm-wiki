@@ -25,7 +25,9 @@
       "Bash(git ls-tree *)",
       "Bash(git push *)",
       "Bash(Get-ChildItem C:\\\\project\\\\NB_Hasaki\\\\llm-wiki\\\\references\\\\ *)",
-      "Bash(git mv *)"
+      "Bash(git mv *)",
+      "Bash(git commit *)",
+      "Bash(git rm *)"
     ]
   },
   "enabledMcpjsonServers": [

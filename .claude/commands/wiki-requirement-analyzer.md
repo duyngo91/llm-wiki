@@ -9,7 +9,7 @@ Bạn đang thực hiện **ISTQB Test Analysis**: quyết định **WHAT to tes
 
 ## Workflow bắt buộc
 
-1. Đọc `.claude/skills/hasaki-wiki/references/wiki_rules.md` và `.claude/skills/hasaki-wiki/references/doc_standards.md`, sau đó đọc raw source liên quan trong `raw_sources/`.
+1. Đọc `.claude/skills/hasaki-wiki/references/phase_ingest.md`, sau đó đọc raw source liên quan trong `raw_sources/`.
 2. Xác định project đích. Nếu không rõ project → hỏi người dùng trước khi tạo file.
 3. Đọc `templates/tpl_requirement.md`; nếu raw source có API/interface explicit thì đọc thêm `templates/tpl_api_spec.md`.
 4. Tạo hoặc cập nhật `wiki/[project]/features/[feature_name].md`.
@@ -28,7 +28,7 @@ Bạn đang thực hiện **ISTQB Test Analysis**: quyết định **WHAT to tes
    - Link API Spec từ Feature Spec và link ngược về Feature/Feature Group.
 7. Nếu raw source là PDF đã convert, lưu/tham chiếu bản AI-readable markdown trong `raw_sources/[project]/requirements/`.
 8. Nếu Feature có tag `qa/feature-group/...`, cập nhật hoặc tạo `wiki/[project]/feature_groups/[feature_group].md` để group page link tới Feature Spec, API Spec nếu có, và Test Suite liên quan.
-9. Cập nhật `index.md`, `KANBAN.md`, `log.md`, Test Plan liên quan theo đúng Update Propagation Checklist trong `.claude/skills/hasaki-wiki/references/wiki_rules.md`.
+9. Cập nhật `index.md`, `KANBAN.md`, `log.md`, Test Plan liên quan theo đúng Update Propagation Checklist trong `.claude/skills/hasaki-wiki/references/phase_sync.md`.
 
 ## Guardrails
 

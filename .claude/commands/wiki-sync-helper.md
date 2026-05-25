@@ -37,7 +37,7 @@ python .claude/scripts/wiki_sync.py repair
 
 ## Workflow bắt buộc
 
-1. Đọc `.claude/skills/hasaki-wiki/references/wiki_rules.md` và `.claude/skills/hasaki-wiki/references/control_files.md`, sau đó đọc các file liên quan (`KANBAN.md`, `log.md`, daily note hoặc test suite đích).
+1. Đọc `.claude/skills/hasaki-wiki/references/phase_sync.md`, sau đó đọc các file liên quan (`KANBAN.md`, `log.md`, daily note hoặc test suite đích).
 2. Tuân thủ nguyên tắc **Scan Live trước**: đọc file trực tiếp từ đĩa, không dựa vào ngữ cảnh hội thoại cũ.
 3. Với yêu cầu lint chung, chạy `verify` trước. Chỉ chạy `sync` nếu có xác nhận Gate 4 rõ ràng.
 4. Báo cáo kết quả lệnh, file bị ảnh hưởng, và lỗi audit chưa giải quyết.
