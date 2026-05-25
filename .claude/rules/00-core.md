@@ -8,4 +8,4 @@
 - Rule precedence:
   - `.claude/rules/*.md` are normative policy.
   - `USER_COMMANDS.md` is user-facing usage guide.
-  - `WIKI_RULES.md` is detailed process reference and must not contradict `.claude/rules`.
+  - `.claude/skills/hasaki-wiki/references/phase_*.md` are phase-specific process references and must not contradict `.claude/rules`.

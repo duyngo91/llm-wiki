@@ -1,7 +1,5 @@
 # QA LLM Wiki - Claude Instructions
 
-Doc bat buoc: @WIKI_RULES.md
-
 ## Active project
 - Hasaki: `wiki/project_hasaki/`, `raw_sources/project_hasaki/`
 
@@ -23,9 +21,11 @@ Doc bat buoc: @WIKI_RULES.md
 - Manifests: `.claude/manifests/*.json`
 
 ## Slash commands
-- `/wiki-requirement-analyzer`
-- `/wiki-test-designer`
-- `/wiki-sync-helper`
-- `/get-hasaki-task`
-- `/import-hasaki-task`
-- `/mcp-health-check`
+- `/wiki-requirement-analyzer` — phân tích requirement → Feature Spec
+- `/wiki-test-designer` — thiết kế test suite từ Spec đã duyệt
+- `/wiki-sync-helper` — daily sync, lint, Kanban, verify
+- `/get-hasaki-task` — lấy thông tin task Hasaki (xem)
+- `/import-hasaki-task` — import task + extract AC list vào vault
+- `/get-my-tasks` — scan tất cả tasks được assign, phát hiện NEW/UPDATED
+- `/sync-my-open-tasks` — sync open tasks từ Hasaki Workplace
+- `/mcp-health-check` — kiểm tra MCP health

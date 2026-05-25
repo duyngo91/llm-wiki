@@ -8,7 +8,6 @@ CORE_KEEP_HINT = [
     ".claude/skills",
     ".claude/commands",
     ".claude/manifests",
-    "WIKI_RULES.md",
     "CLAUDE.md",
     "README.md",
     ".mcp.json",

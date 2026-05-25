@@ -9,7 +9,7 @@ Bạn đang thực hiện **ISTQB Test Analysis**: quyết định **WHAT to tes
 
 ## Workflow bắt buộc
 
-1. Đọc `WIKI_RULES.md`, `USER_COMMANDS.md`, và raw source liên quan trong `raw_sources/`.
+1. Đọc `.claude/skills/hasaki-wiki/references/phase_ingest.md`, sau đó đọc raw source liên quan trong `raw_sources/`.
 2. Xác định project đích. Nếu không rõ project → hỏi người dùng trước khi tạo file.
 3. Đọc `templates/tpl_requirement.md`; nếu raw source có API/interface explicit thì đọc thêm `templates/tpl_api_spec.md`.
 4. Tạo hoặc cập nhật `wiki/[project]/features/[feature_name].md`.
@@ -28,13 +28,14 @@ Bạn đang thực hiện **ISTQB Test Analysis**: quyết định **WHAT to tes
    - Link API Spec từ Feature Spec và link ngược về Feature/Feature Group.
 7. Nếu raw source là PDF đã convert, lưu/tham chiếu bản AI-readable markdown trong `raw_sources/[project]/requirements/`.
 8. Nếu Feature có tag `qa/feature-group/...`, cập nhật hoặc tạo `wiki/[project]/feature_groups/[feature_group].md` để group page link tới Feature Spec, API Spec nếu có, và Test Suite liên quan.
-9. Cập nhật `index.md`, `KANBAN.md`, `log.md`, Test Plan liên quan theo đúng Update Propagation Checklist trong `WIKI_RULES.md`.
+9. Cập nhật `index.md`, `KANBAN.md`, `log.md`, Test Plan liên quan theo đúng Update Propagation Checklist trong `.claude/skills/hasaki-wiki/references/phase_sync.md`.
 
 ## Guardrails
 
 - **KHÔNG viết test case** trong skill này. Chỉ viết Feature Spec. Chuyển sang `wiki-test-designer` SAU khi Spec được duyệt.
 - **KHÔNG tự chốt nghiệp vụ** khi còn điểm mập mờ — ghi vào mục "Câu hỏi chưa rõ".
 - **KHÔNG suy diễn requirement/AC** nếu nguồn chưa mô tả rõ. Chỉ ghi thông tin explicit từ tài liệu gốc.
+- **Link/tài nguyên không đọc được:** Khi raw source đề cập link (Figma, URL, PDF phụ) mà không truy cập được, phải ghi vào bảng `## Nguồn tài liệu` với Status = `❓ Chưa đọc được` VÀ tạo câu hỏi Open: `"Link [X] chưa đọc được — cần cung cấp file/quyền truy cập"`. Không suy diễn nội dung từ link chưa đọc.
 - **KHÔNG suy diễn API contract** nếu nguồn chưa mô tả rõ method/endpoint/payload/status/error. Chỉ tạo câu hỏi API.
 - **KHÔNG sửa file trong `raw_sources/`** — chỉ đọc.
 - Mọi Requirement ID phải truy ngược về tài liệu nguồn hoặc câu trả lời chính thức đã `Answered`. Không ghi `assumption`.

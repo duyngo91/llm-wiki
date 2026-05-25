@@ -7,7 +7,27 @@
       "Bash(Remove-Item *)",
       "Skill(wiki-requirement-analyzer)",
       "mcp__markitdown__convert_to_markdown",
-      "Skill(wiki-test-designer)"
+      "Skill(wiki-test-designer)",
+      "Skill(wiki-sync-helper)",
+      "PowerShell(cd \"C:\\\\project\\\\NB_Hasaki\\\\llm-wiki\"; $env:PYTHONUTF8 = \"1\"; $env:PYTHONIOENCODING = \"utf-8\"; python3 .claude/scripts/wiki_sync.py verify 2>&1)",
+      "PowerShell(py *)",
+      "Bash(py .claude/scripts/wiki_sync.py verify)",
+      "Bash(py -c ' *)",
+      "WebFetch(domain:work.hasaki.vn)",
+      "Bash(py .claude/scripts/hasaki_task.py 12032444)",
+      "PowerShell(cd \"C:\\\\project\\\\NB_Hasaki\\\\llm-wiki\"; $env:PYTHONUTF8 = \"1\"; python -c \"import ast; ast.parse\\(open\\('.claude/scripts/hasaki_my_tasks.py'\\).read\\(\\)\\); print\\('Syntax OK'\\)\")",
+      "Skill(get-my-tasks)",
+      "PowerShell(cd \"C:\\\\project\\\\NB_Hasaki\\\\llm-wiki\"; $env:PYTHONUTF8 = \"1\"; $env:PYTHONIOENCODING = \"utf-8\"; py \"$env:TEMP\\\\analyze_tasks.py\" \"$env:TEMP\\\\mytasks.json\")",
+      "Bash(git checkout *)",
+      "Bash(python3 -c ' *)",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(git ls-tree *)",
+      "Bash(git push *)",
+      "Bash(Get-ChildItem C:\\\\project\\\\NB_Hasaki\\\\llm-wiki\\\\references\\\\ *)",
+      "Bash(git mv *)",
+      "Bash(git commit *)",
+      "Bash(git rm *)"
     ]
   },
   "enabledMcpjsonServers": [
