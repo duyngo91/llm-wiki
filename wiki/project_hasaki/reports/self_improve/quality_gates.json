@@ -1,0 +1,63 @@
+{
+  "run_at": "2026-05-25 00:00:00",
+  "session": "ingest-07062-07105",
+  "gates": {
+    "NO_INFERENCE_PASS": {
+      "status": "FAIL",
+      "score": 0,
+      "violations": [
+        {
+          "file": "wiki/project_hasaki/features/receiving_po_inbound_shipment.md",
+          "claim": "R3 — 'giá trị: Open/Receiving/Received/Canceled' (4 values)",
+          "evidence": "Raw line 234-239 có 5 values: Open, Receiving, Received, Completed, Canceled",
+          "type": "MISSED_VALUE",
+          "action": "Update R3 to include Hoàn thành / Completed"
+        },
+        {
+          "file": "wiki/project_hasaki/features/receiving_po_inbound_shipment.md",
+          "claim": "R1 — Đồng kiểm trong More filter — không ghi chú 'Move qua trang ASN'",
+          "evidence": "Raw line 231: '- Move qua trang ASN'",
+          "type": "MISSING_DETAIL",
+          "action": "Add note vào R1 hoặc Business Rules"
+        }
+      ]
+    },
+    "QUESTION_ROUTING_PASS": {
+      "status": "PASS",
+      "score": 100,
+      "notes": "Tất cả unclear items đều được routing đúng vào section Câu hỏi chưa rõ. Stub files ghi rõ Blocked Coverage."
+    },
+    "BLOCKED_COVERAGE_PASS": {
+      "status": "PASS",
+      "score": 100,
+      "notes": "Các stub files có Blocked Coverage section. Không có testcase nào được tạo từ unclear items."
+    },
+    "TRACEABILITY_PASS": {
+      "status": "PASS",
+      "score": 100,
+      "notes": "Không có TBB2/HSK task trong batch này (ingest từ PDF/doc trực tiếp). Traceability chain: Raw Source → Feature Spec → R/AC là đủ cho giai đoạn này."
+    },
+    "UTF8_PASS": {
+      "status": "PASS",
+      "score": 100,
+      "notes": "Tất cả files UTF-8, không mojibake."
+    },
+    "VERIFY_PASS": {
+      "status": "PASS",
+      "score": 100,
+      "notes": "wiki_sync.py verify pass — 0 broken links, 0 invalid status, 0 governance errors."
+    }
+  },
+  "mandatory_gates": ["NO_INFERENCE_PASS", "TRACEABILITY_PASS", "VERIFY_PASS"],
+  "mandatory_pass": false,
+  "total_score": 83,
+  "score_breakdown": {
+    "NO_INFERENCE_PASS": 0,
+    "QUESTION_ROUTING_PASS": 20,
+    "BLOCKED_COVERAGE_PASS": 20,
+    "TRACEABILITY_PASS": 20,
+    "UTF8_PASS": 10,
+    "VERIFY_PASS": 30
+  },
+  "verdict": "CONDITIONAL — Fix R3 missed value trước khi Gate 1 approval"
+}

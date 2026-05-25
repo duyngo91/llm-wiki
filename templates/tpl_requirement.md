@@ -7,6 +7,8 @@ updated: {{date:YYYY-MM-DD}}
 feature: 
 project: 
 source_version: 
+partial_read: false
+partial_read_note: ""
 approved_by:
 approved_at:
 approval_note:

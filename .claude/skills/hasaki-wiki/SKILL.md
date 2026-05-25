@@ -45,6 +45,8 @@ allowed-tools:
 - **Timezone:** `UTC+07:00` (`Asia/Ho_Chi_Minh`), format `YYYY-MM-DD HH:mm:ss` cho mọi timestamp.
 - **Encoding:** UTF-8 cho mọi file Markdown. Windows: `$env:PYTHONUTF8 = "1"` trước khi chạy Python.
 - **No-Inference:** Requirement/AC/API/testcase phải explicit từ nguồn đã duyệt. Chưa rõ → ghi `## ❓ Câu hỏi chưa rõ` + `Blocked Coverage`. Không dùng `AI-Inferred`, `Assumption`, `Suy diễn`.
+- **Large doc strategy:** Doc >50 trang → đọc TOC trước, lập danh sách sections, đọc hết từng section trước khi viết spec. Không viết spec khi chưa đọc xong section. Feature chưa đọc đủ → set `partial_read: true`, tạo stub, ghi Blocked Coverage.
+- **Enum verify:** Mọi claim về list values (status, dropdown, giá trị hợp lệ) → grep raw đếm đủ + ghi `#line` reference. Filter table và mapping table cùng feature có thể khác nhau — verify riêng.
 - **SSOT:** File trên đĩa là nguồn thật. Đọc trực tiếp trước mỗi thao tác — không suy đoán từ hội thoại cũ.
 - **Secret:** Không commit token/cookie/API key/password. Phát hiện → dừng, báo user rotate & clean history.
 - **Test Case:** Chỉ tạo từ R/AC explicit đã duyệt (Gate 1). R/AC có question `Open` → `Blocked Coverage`, không sinh TC.

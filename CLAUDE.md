@@ -14,6 +14,7 @@
 
 ## Claude structure map
 - Skill: `.claude/skills/hasaki-wiki/SKILL.md`
+- Skill search: `.claude/skills/obsidian-search/SKILL.md`
 - Rules: `.claude/rules/*.md`
 - Research: `.claude/research/hasaki-research-playbook.md`
 - Team config: `.claude/team/hasaki-team-config.json`
@@ -29,3 +30,4 @@
 - `/get-my-tasks` — scan tất cả tasks được assign, phát hiện NEW/UPDATED
 - `/sync-my-open-tasks` — sync open tasks từ Hasaki Workplace
 - `/mcp-health-check` — kiểm tra MCP health
+- `/obsidian-search` — tìm kiếm note trong vault (Omnisearch MCP → HTTP API → Grep)

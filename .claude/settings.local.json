@@ -27,7 +27,25 @@
       "Bash(Get-ChildItem C:\\\\project\\\\NB_Hasaki\\\\llm-wiki\\\\references\\\\ *)",
       "Bash(git mv *)",
       "Bash(git commit *)",
-      "Bash(git rm *)"
+      "Bash(git rm *)",
+      "Bash(git pull *)",
+      "Bash(markitdown --version)",
+      "Bash(python -m markitdown --version)",
+      "PowerShell(pip show *)",
+      "Skill(mcp-health-check)",
+      "PowerShell($env:PYTHONUTF8 = \"1\"; & \"C:\\\\Users\\\\HASAKI\\\\AppData\\\\Local\\\\Python\\\\bin\\\\python.exe\" \"C:\\\\project\\\\NB_Hasaki\\\\llm-wiki\\\\.claude\\\\scripts\\\\mcp_health_check.py\")",
+      "Bash(gh api *)",
+      "Bash(curl -s https://raw.githubusercontent.com/anpigon/mcp-server-obsidian-omnisearch/main/README.md)",
+      "PowerShell(uvx *)",
+      "PowerShell(claude mcp *)",
+      "Bash(curl *)",
+      "PowerShell(Get-Content *)",
+      "Skill(obsidian:obsidian-cli)",
+      "Bash(obsidian help *)",
+      "PowerShell(obsidian help *)",
+      "PowerShell(uv run *)",
+      "WebFetch(domain:github.com)",
+      "Skill(obsidian-search)"
     ]
   },
   "enabledMcpjsonServers": [

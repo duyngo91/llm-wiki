@@ -88,9 +88,17 @@ Trạng thái: `Open` / `Answered` / `Deferred`.
 - Không sửa raw PDF, không ghi đè file raw đã lưu.
 
 **Bước 2 — Feature Spec (Bước A — ISTQB Test Analysis):**
-- Đọc Markdown đã convert, tách theo feature/module.
+
+**2a — Đọc raw (bắt buộc trước khi viết):**
+- Đọc TOC → lập danh sách sections cần cover → đọc hết từng section → mới viết spec cho section đó.
+- **Không viết spec khi chưa đọc xong section.** Doc >50 trang: đọc từng phần, set `partial_read: true` cho feature chưa đọc đủ.
+- Với mọi field có danh sách values ("Giá trị:", "Value:", enum): grep raw đếm đủ values, ghi `#line` reference trước khi claim SUPPORTED.
+- Đọc 2-3 dòng context sau mỗi field definition — notes nhỏ (navigation, business rule) thường nằm ở đây.
+
+**2b — Viết spec:**
 - Trùng cũ → Diff, cập nhật Spec, ghi Changelog.
 - Mới → Tạo `[feature]_[mucnho].md` trong `features/` dùng `tpl_requirement.md`, phân rã R-IDs, vạch flows, status `Draft`.
+- Source column trong bảng Requirement: dùng format `[doc_name]#[line]` (ví dụ: `07062#234-239`).
 - Nếu có API explicit → tạo `api_specs/api_[feature]_[mucnho].md` dùng `tpl_api_spec.md`; chưa rõ endpoint/payload → ghi câu hỏi, không suy diễn.
 - **🤝 Gate 1:** Dừng, trình bày Spec cho PO/QA Lead. Chờ duyệt trước khi sang Test Design.
 
@@ -123,11 +131,11 @@ Trạng thái: `Open` / `Answered` / `Deferred`.
 
 Dùng `tpl_requirement.md`. 14 mục bắt buộc:
 
-1. YAML Frontmatter (`tags`, `status`, `feature`, `project`, `source_version`)
+1. YAML Frontmatter (`tags`, `status`, `feature`, `project`, `source_version`, `partial_read`)
 2. Tổng quan (Feature, Mô tả, Source, Actors, Mối quan hệ nếu có)
 3. Nguồn tài liệu (bảng PDF/Link + version + status)
 4. API/Interface liên quan (chỉ link → API Spec, không nhúng contract)
-5. Phân rã Requirement (bảng R-ID, loại, priority, testable, source)
+5. Phân rã Requirement (bảng R-ID, loại, priority, testable, source với line reference `#line`)
 6. User Flows (Pre-conditions, Happy Path, Alt-Flows, Exc-Flows)
 7. Business Rules & Data Constraints (bảng validation)
 8. Error Messages Map
