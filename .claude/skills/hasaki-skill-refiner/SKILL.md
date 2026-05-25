@@ -1,136 +1,258 @@
-﻿---
+---
 name: hasaki-skill-refiner
-description: Vòng lặp tự cải tiến cho skill Hasaki bằng cách đối soát raw sources với spec/test đã tạo và chỉ giữ thay đổi khi vượt quality gates. Chạy sau mỗi batch import task hoặc khi muốn giảm lỗi lặp lại.
+description: Vòng lặp QA kiểm chứng ngược cho wiki Hasaki — đối soát wiki claims vs raw sources, chạy quality gates, và đề xuất patch skill/rule/template. Chạy sau mỗi batch import hoặc khi phát hiện lỗi lặp lại. Hai phase độc lập: Phase A (verify batch hiện tại) và Phase B (meta-improve khi có pattern lỗi).
 ---
 
 # Hasaki Skill Refiner
 
 ## Mục tiêu
-Tạo vòng lặp self-improve cho các skill Hasaki bằng cách đối soát `raw_sources` với nội dung đã tạo trong `wiki`, sau đó đề xuất sửa skill/rule/template có kiểm soát.
 
-## Dùng skill này khi nào
-- Muốn giảm lỗi lặp lại sau mỗi đợt chạy `/import-hasaki-task` -> `/wiki-requirement-analyzer` -> `/wiki-test-designer`.
-- Muốn nâng chất lượng theo metric thay vì đánh giá cảm tính.
-- Muốn cập nhật skill cũ nhưng vẫn giữ no-inference guardrails.
+Kiểm chứng ngược từng claim trong wiki so với raw source, phát hiện lỗi suy diễn (INFERRED) và thiếu chi tiết (MISSING_DETAIL), sau đó đề xuất patch có kiểm soát vào skills/rules/templates.
+
+---
+
+## Hai phase độc lập
+
+| Phase | Chạy khi nào | Thời gian ước tính |
+|:------|:-------------|:-------------------|
+| **Phase A — Verify** | Sau mỗi batch import/ingest | 20–40 phút |
+| **Phase B — Meta-improve** | Khi cùng một loại lỗi xuất hiện ≥ 2 lần | 30–60 phút |
+
+Có thể chạy Phase A đơn lẻ (verify nhanh). Phase B chỉ cần chạy khi Phase A liên tục báo cùng loại vấn đề — đây là dấu hiệu skill/rule cần sửa, không phải lỗi thực thi đơn lẻ.
+
+---
 
 ## Đầu vào bắt buộc
-- Raw source trong `raw_sources/project_hasaki/` — có thể là `tasks/` (HSK task export) hoặc `requirements/` (PDF converted).
-- File đã tạo/cập nhật trong `wiki/project_hasaki/` (Task Spec, Feature Spec, test suite, traceability).
-- Rule hiện hành: `.claude/rules/*.md` và các `SKILL.md` liên quan.
 
-## Vòng lặp cải tiến
+- Raw source trong `raw_sources/project_hasaki/` — `tasks/` (HSK export) hoặc `requirements/` (PDF converted).
+- File wiki đã tạo/cập nhật trong `wiki/project_hasaki/` (Feature Spec, Task Spec, test suite).
+- Rule hiện hành: `.claude/rules/*.md` và `SKILL.md` liên quan.
 
-### Bước 1 — Xác định phạm vi đối soát
+---
 
-**Với spec đầy đủ (`partial_read: false`):** Đối soát tất cả Requirement và AC.
+## Phase A — Verify
 
-**Với stub spec (`partial_read: true`):** Chỉ verify phần đã đọc — KHÔNG tạo claim cho phần chưa đọc. Ghi rõ trong evidence_matrix: `"[STUB — chưa verify phần chưa đọc]"`.
+### A1. Xác định phạm vi đối soát
 
-**Sampling cho doc lớn (>50 trang raw):** Ưu tiên verify:
-1. Mọi claim có enum/list values (rủi ro cao nhất).
-2. Mọi claim trong phần Business Rules & Validation.
-3. 20% ngẫu nhiên các claim còn lại.
+**Spec đầy đủ (`partial_read: false`):** Verify tất cả Requirement và AC.
 
-### Bước 2 — Thu thập cặp đối soát Raw Evidence → Wiki Claim
+**Stub spec (`partial_read: true`):** Chỉ verify phần đã đọc. Đánh dấu phần chưa đọc trong evidence_matrix:
+```
+| [STUB — section chưa đọc] | — | — | Không verify |
+```
 
-**Kỹ thuật thu thập:**
-- Với mọi claim có enum/list values: grep `Giá trị:` / `Value:` trong raw → so sánh count với claim. Nếu count khác → INFERRED.
-- Đọc 2-3 dòng context sau mỗi field definition trong raw để bắt notes nhỏ (navigation, business rule phụ).
-- Verify Source `#line` reference: nếu claim không có line → tìm lại raw, bổ sung. Không có anchor = không verify được.
+**Sampling cho doc lớn (raw source > 50 trang):** Verify theo thứ tự ưu tiên sau:
+1. **Toàn bộ** claim có enum/list values — đây là nguồn lỗi phổ biến nhất.
+2. **Toàn bộ** claim trong Business Rules & Validation.
+3. **Cứ mỗi 5 requirement, chọn 1** từ các claim còn lại (bắt đầu từ R1, lấy R1, R6, R11, ...) — quy tắc này tái lặp được.
+
+### A2. Thu thập cặp đối soát (đọc theo thứ tự này)
+
+**Bước 1 — Đọc Feature Spec trước:** Liệt kê tất cả claim cần verify (mỗi dòng trong bảng Requirement, mỗi Business Rule, mỗi AC, mỗi Error Message).
+
+**Bước 2 — Grep raw cho từng claim:**
+- Enum/list values: grep `Giá trị:` / `Value:` / `status:` trong raw → đếm values → so sánh với claim. Nếu count khác → `INFERRED`.
 - Filter table và mapping table của cùng feature có thể có số values khác nhau — verify riêng từng bảng.
+- Đọc 2–3 dòng context sau mỗi field definition — notes nhỏ (navigation, side effect) thường nằm ở đây.
+- Verify `#line` reference: không có anchor = không verify được → bổ sung line hoặc đánh dấu `UNCLEAR`.
 
-### Bước 3 — Đánh dấu từng claim
+**Không đọc raw trước rồi mới đọc spec** — hướng ngược lại dễ bỏ sót claim không có trong raw.
 
-- `SUPPORTED`: truy ngược được về bằng chứng explicit trong raw, có `#line`.
-- `UNCLEAR`: raw chưa rõ hoặc section boundary mơ hồ (PDF converted); phải đưa vào `Câu hỏi chưa rõ`.
-- `INFERRED`: không có bằng chứng hoặc enum thiếu values; không được để ở mô tả chính.
-- `MISSING_DETAIL`: claim đúng nhưng thiếu detail/note từ raw (navigation, side effect nhỏ).
+### A3. Đánh dấu từng claim
 
-### Bước 4 — Chạy quality gates
+| Label | Định nghĩa | Hành động |
+|:------|:-----------|:----------|
+| `SUPPORTED` | Có bằng chứng explicit trong raw, có `#line` | Keep |
+| `UNCLEAR` | Raw chưa rõ hoặc section boundary mơ hồ (PDF) | Move to Câu hỏi chưa rõ |
+| `INFERRED` | Không có bằng chứng hoặc enum thiếu values | Remove khỏi mô tả chính |
+| `MISSING_DETAIL` | Claim đúng nhưng thiếu note/side effect từ raw | Add detail |
 
-- `NO_INFERENCE_PASS`: không còn claim INFERRED trong phần chính.
-- `QUESTION_ROUTING_PASS`: tất cả UNCLEAR item nằm ở `Câu hỏi chưa rõ`.
-- `BLOCKED_COVERAGE_PASS`: nội dung dựa trên open question nằm trong `Blocked Coverage`.
-- `TRACEABILITY_PASS`: giữ đủ chuỗi `TBB2 -> HSK -> Task Spec -> Feature Spec -> Requirement/AC -> Testcase`.
-- `UTF8_PASS`: file Markdown/JSON UTF-8, không mojibake.
-- `VERIFY_PASS`: chạy `$env:PYTHONUTF8 = "1"; py .claude/scripts/wiki_sync.py verify` (Windows) — phải pass.
+### A4. Chạy quality gates
 
-Sau khi fix lỗi: tính lại score và ghi vào `quality_gates.json` với `score_before` / `score_after`.
+Chạy theo thứ tự — gate bắt buộc (🔴) fail → dừng, không tính score.
 
-### Bước 5 — Phân tích root cause theo nhóm
+| Gate | Bắt buộc | Kiểm tra |
+|:-----|:---------|:---------|
+| `NO_INFERENCE_PASS` | 🔴 | Không còn claim INFERRED trong phần mô tả chính |
+| `TRACEABILITY_PASS` | 🔴 | Xem bảng traceability theo giai đoạn bên dưới |
+| `VERIFY_PASS` | 🔴 | `$env:PYTHONUTF8 = "1"; py .claude/scripts/wiki_sync.py verify` pass |
+| `QUESTION_ROUTING_PASS` | 🟡 | Tất cả UNCLEAR nằm đúng section `## ❓ Câu hỏi chưa rõ` |
+| `BLOCKED_COVERAGE_PASS` | 🟡 | Nội dung dựa trên Open question nằm trong `Blocked Coverage` |
+| `UTF8_PASS` | 🟡 | File Markdown/JSON UTF-8, không mojibake |
 
-- Rule thiếu/chưa rõ → đề xuất patch `.claude/rules/*.md`.
-- Skill instruction chưa đầy đủ → đề xuất patch `SKILL.md`.
-- Template thiếu cột traceability/question → đề xuất patch `templates/`.
-- Command flow thiếu gate trước khi finalize.
+**Định nghĩa TRACEABILITY_PASS theo giai đoạn:**
 
-### Bước 6 — Đề xuất patch tối thiểu (minimal)
+| Giai đoạn | Chain tối thiểu để PASS |
+|:----------|:------------------------|
+| Chỉ ingest PDF (chưa có HSK task) | `Raw Source → Feature Spec (R/AC)` |
+| Có HSK task, chưa có test suite | `Raw Source → Feature Spec → Task Spec` |
+| Có test suite | `Raw Source → Feature Spec (R/AC) → Test Suite (TC)` |
+| Có TBB2 | `TBB2 → HSK → Task Spec → Feature → R/AC → TC` — đầy đủ |
 
-Mỗi patch ghi rõ: file cần sửa + nội dung thay đổi + lý do + expected impact.
+Chỉ yêu cầu chain đúng với giai đoạn hiện tại — không phạt vì chưa có test suite khi chưa đến giai đoạn test design.
 
-### Bước 7 — Keep/Discard
+### A5. Tính score
 
-- Chỉ giữ thay đổi khi tổng điểm tăng và không vi phạm gate bắt buộc.
-- Nếu fail gate bắt buộc, discard đề xuất và ghi bài học vào retrospective.
-- Sau khi apply patch: cập nhật trạng thái patch trong `improvement_patch_plan.md` từ `Pending` → `Done`.
+**Bảng trọng số cố định:**
 
-## Output chuẩn
-- `wiki/project_hasaki/reports/self_improve/retrospective.md`
-- `wiki/project_hasaki/reports/self_improve/improvement_patch_plan.md`
-- `wiki/project_hasaki/reports/self_improve/quality_gates.json`
-- `wiki/project_hasaki/reports/self_improve/evidence_matrix.md`
+| Gate | Điểm tối đa | Ghi chú |
+|:-----|:-----------|:--------|
+| `NO_INFERENCE_PASS` | 30 | Bắt buộc — fail = 0 điểm gate này |
+| `VERIFY_PASS` | 25 | Bắt buộc |
+| `TRACEABILITY_PASS` | 15 | Bắt buộc |
+| `QUESTION_ROUTING_PASS` | 15 | |
+| `BLOCKED_COVERAGE_PASS` | 10 | |
+| `UTF8_PASS` | 5 | |
+| **Tổng** | **100** | |
 
-## Format bảng Evidence Matrix
+**Điều chỉnh bonus/penalty (cộng/trừ vào tổng sau khi tính gates):**
+- Mỗi `INFERRED` violation còn sót: −5 điểm.
+- Tỷ lệ testcase map explicit AC ≥ 80%: +5 điểm.
+- Mỗi `MISSING_DETAIL` đã bổ sung: +1 điểm (tối đa +5).
+
+**Ghi score vào `quality_gates.json`** với cả `score_before` (trước fix) và `score_after` (sau fix).
+
+### A6. Output Phase A
+
+- `evidence_matrix.md` — cập nhật hoặc tạo mới.
+- `quality_gates.json` — append session mới (không ghi đè — xem format bên dưới).
+
+---
+
+## Phase B — Meta-improve
+
+Chỉ chạy khi Phase A báo cùng loại lỗi ≥ 2 lần liên tiếp. Mục tiêu: sửa skill/rule để lần sau không lặp lại.
+
+### B1. Phân tích root cause
+
+Phân loại lỗi theo nhóm:
+
+| Nhóm | Dấu hiệu | Patch target |
+|:-----|:---------|:-------------|
+| Rule thiếu | Gate fail vì không có rule tương ứng | `.claude/rules/*.md` |
+| Skill instruction chưa đủ | LLM bỏ qua bước do instruction mơ hồ | `SKILL.md` |
+| Template thiếu cột | Claim bị bỏ qua vì template không có chỗ ghi | `templates/` |
+| Command flow thiếu gate | Finalize xảy ra trước khi verify xong | `.claude/commands/` |
+
+### B2. Đề xuất patch tối thiểu
+
+Mỗi patch theo format:
 
 ```
+## PATCH-NNN: [Tên ngắn]
+- **File:** đường dẫn file cần sửa
+- **Loại thay đổi:** Add / Update / Remove
+- **Nội dung:** mô tả cụ thể sẽ thêm/sửa gì
+- **Lý do:** root cause dẫn đến lỗi
+- **Expected impact:** gate nào sẽ cải thiện
+- **Trạng thái:** Pending
+```
+
+### B3. Keep/Discard
+
+- Chỉ giữ patch khi `score_after > score_before` và không vi phạm gate bắt buộc.
+- Fail gate bắt buộc → discard, ghi bài học vào retrospective.
+- Sau khi apply: đổi `Trạng thái: Pending` → `Trạng thái: ✅ Done`.
+
+### B4. Output Phase B
+
+- `improvement_patch_plan.md` — danh sách PATCH-NNN theo format trên.
+- `retrospective.md` — bài học + patch tracking table.
+
+---
+
+## Format các file output
+
+### evidence_matrix.md
+
+```markdown
 | Raw Evidence (path#line) | Wiki Claim (path#line) | Status | Action |
 | --- | --- | --- | --- |
-| ... | ... | SUPPORTED/UNCLEAR/INFERRED/MISSING_DETAIL | Keep/Move to Question/Remove/Add detail |
+| raw/07062#234 "Giá trị: Open..." | features/receiving_po.md#R3 | SUPPORTED | Keep |
+| — | features/receiving_po.md#R3 "Completed" | INFERRED | Remove |
+| [STUB — section chưa đọc] | — | — | Không verify |
 ```
 
-Stub specs: thêm dòng `| [STUB] | [phần chưa đọc] | — | Không verify |` để đánh dấu vùng không thể kiểm.
+### quality_gates.json
 
-## Format quality_gates.json
+File này **append** — mỗi session thêm một entry vào array `sessions`, không ghi đè:
 
 ```json
 {
-  "session": "YYYY-MM-DD",
-  "score_before": 0,
-  "score_after": 0,
-  "gates": {
-    "NO_INFERENCE_PASS": true,
-    "QUESTION_ROUTING_PASS": true,
-    "BLOCKED_COVERAGE_PASS": true,
-    "TRACEABILITY_PASS": true,
-    "UTF8_PASS": true,
-    "VERIFY_PASS": true
-  },
-  "violations": [],
-  "notes": ""
+  "sessions": [
+    {
+      "session": "YYYY-MM-DD",
+      "batch": "tên batch (ví dụ: ingest-07062-07105)",
+      "score_before": 83,
+      "score_after": 85,
+      "gates": {
+        "NO_INFERENCE_PASS": true,
+        "QUESTION_ROUTING_PASS": true,
+        "BLOCKED_COVERAGE_PASS": true,
+        "TRACEABILITY_PASS": true,
+        "UTF8_PASS": true,
+        "VERIFY_PASS": true
+      },
+      "violations": [],
+      "traceability_phase": "Chỉ ingest PDF",
+      "verdict": "PASS / CONDITIONAL / FAIL"
+    }
+  ]
 }
 ```
 
-## Scoring
-- Bắt buộc: `NO_INFERENCE_PASS`, `TRACEABILITY_PASS`, `VERIFY_PASS`.
-- Điểm tổng: 100
-- Cộng điểm khi giảm `INFERRED`, tăng tỷ lệ testcase map explicit AC, giảm số blocked item bị đặt sai vị trí.
-- Trừ điểm mạnh nếu có vi phạm gate bắt buộc.
+Khi đọc file cũ để append: dùng Read tool đọc JSON hiện có, thêm entry mới vào array `sessions`, ghi lại toàn bộ.
 
-## Hard guardrails
-- Không suy diễn requirement, AC, API contract, testcase.
-- Không đưa thông tin chưa rõ vào mô tả chính; đưa vào `Câu hỏi chưa rõ`.
-- Testcase chỉ sinh từ requirement/AC explicit.
-- Nội dung dựa trên open question phải nằm ở `Blocked Coverage`.
-- Không auto-merge patch nếu chưa pass quality gates.
+### improvement_patch_plan.md (Phase B)
 
-## Tần suất chạy gợi ý
-- Chạy sau mỗi batch import task mới.
-- Chạy lại sau khi sửa skill/rule lớn.
-- Chạy regression hằng tuần cho 3-5 task đại diện.
+```markdown
+---
+status: Active
+updated: YYYY-MM-DD
+---
+
+# Improvement Patch Plan
+
+| Patch | File | Loại | Expected impact | Trạng thái |
+|:------|:-----|:-----|:----------------|:-----------|
+| PATCH-001 | ... | Add | ... | ✅ Done |
+| PATCH-002 | ... | Update | ... | Pending |
+
+## Chi tiết
+
+### PATCH-001: [Tên]
+...
+```
+
+---
 
 ## Done criteria
-- Có đủ 4 artifact output.
-- Tất cả gate bắt buộc pass.
-- `quality_gates.json` có cả `score_before` và `score_after`.
-- Patch plan rõ file cần sửa + lý do + expected impact, trạng thái cập nhật (Pending/Done).
-- Bài học được ghi để tái sử dụng ở lần chạy sau.
+
+**Phase A hoàn thành khi:**
+- `evidence_matrix.md` có đủ claims theo phạm vi đã xác định.
+- `quality_gates.json` được append session mới với `score_before` và `score_after`.
+- Mọi INFERRED đã được remove/fix; mọi UNCLEAR đã được routing đúng.
+- `VERIFY_PASS` xác nhận bằng output thực tế của script.
+
+**Phase B hoàn thành khi:**
+- `improvement_patch_plan.md` có đủ PATCH-NNN với format chuẩn.
+- `retrospective.md` ghi bài học có thể tái sử dụng lần sau.
+- Tất cả patch đã apply được đánh dấu `✅ Done`.
+
+---
+
+## Hard guardrails
+
+- Không suy diễn requirement, AC, API contract, testcase.
+- Không đưa thông tin chưa rõ vào mô tả chính; đưa vào `Câu hỏi chưa rõ`.
+- Testcase chỉ sinh từ R/AC explicit đã được Gate 1 duyệt.
+- Nội dung dựa trên Open question phải nằm ở `Blocked Coverage`.
+- Không auto-apply patch nếu chưa pass quality gates.
+
+---
+
+## Tần suất chạy
+
+- **Phase A:** Sau mỗi batch import/ingest.
+- **Phase B:** Khi lỗi lặp ≥ 2 lần, hoặc sau khi sửa skill/rule lớn.
+- **Regression:** Hằng tuần, chọn 3–5 Feature Spec đại diện (1 full + 2 stub + 1–2 có test suite).
