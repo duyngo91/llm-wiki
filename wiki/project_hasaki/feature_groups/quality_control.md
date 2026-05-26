@@ -1,59 +1,58 @@
 ---
 aliases: [Quality Control, Kiểm soát chất lượng, quality-control]
-tags: [qa/feature-group-index, qa/feature-group/quality-control]
+tags: [qa/feature-group-index, qa/feature-group/quality_control]
 status: Draft
 project: project_hasaki
 feature_group: quality_control
-created: 2026-05-25
-updated: 2026-05-25
+created: 2026-05-26
+updated: 2026-05-26
 ---
 
-# 🧩 Feature Group: Quality Control — Kiểm soát chất lượng
+# 🧩 Feature Group: Quality Control (Kiểm soát chất lượng)
 
 ## Tổng quan
 - **Feature group:** `quality_control`
-- **Mục đích:** Quản lý quy trình đánh giá chất lượng sản phẩm trong WMS — từ thiết lập tiêu chí đánh giá, gán tiêu chí cho SKU, phê duyệt, đến thực hiện đánh giá trên App và xem kết quả trên Web.
+- **Mục đích:** Gom toàn bộ Feature Specs và Test Suites liên quan đến module Quality Control trong WMS — thiết lập tiêu chí, đánh giá sản phẩm trên Web và App, quản lý kết quả đánh giá và tích hợp với VAS.
 - **Raw source chính:** `raw_sources/project_hasaki/requirements/07105_Quality_Control_Docs_ver1.5.md`
-- **Test Plan liên quan:** —
+- **Test Plan liên quan:** *(chưa có)*
 
 ## Feature Specs Trong Group
 | Feature | Vai trò trong group | Status | Gate | Ghi chú |
 |:--------|:--------------------|:-------|:-----|:-------|
-| [[wiki/project_hasaki/features/quality_control_setup_criteria\|Thiết lập tiêu chí (Web)]] | Tạo/Import/Quản lý tiêu chí | Draft | Gate 1 | |
-| [[wiki/project_hasaki/features/quality_control_setup_sku\|Thiết lập tiêu chí cho SKU (Web)]] | Gán tiêu chí cho SKU + approval flow | Draft | Gate 1 | |
-| [[wiki/project_hasaki/features/quality_control_approve\|Duyệt/Từ chối tiêu chí SKU (Web)]] | Review và phê duyệt thiết lập | Draft | Gate 1 | Chưa đọc đầy đủ phần Duyệt/Từ chối |
-| [[wiki/project_hasaki/features/quality_control_assessment_result\|Kết quả đánh giá (Web)]] | Xem kết quả đánh giá, chi tiết | Draft | Gate 1 | Chưa đọc đầy đủ |
-| [[wiki/project_hasaki/features/quality_control_mobile\|Đánh giá chất lượng (App)]] | Luồng đánh giá QC trên App | Draft | Gate 1 | Chưa đọc đầy đủ |
+| [[quality_control_criteria_setup]] | Thiết lập và quản lý tiêu chí đánh giá (Web) | Draft | Gate 1 | Đọc đủ |
+| [[quality_control_sku_setup]] | Thiết lập tiêu chí cho từng SKU (Web) | Draft | Gate 1 | Đọc đủ |
+| [[quality_control_approval]] | Duyệt/Từ chối thiết lập tiêu chí cho SKU | Draft | Gate 1 | Đọc đủ |
+| [[quality_control_assessment_result]] | Xem và quản lý kết quả đánh giá (Web) | Draft | Gate 1 | Đọc đủ |
+| [[quality_control_vas_update]] | Cập nhật trạng thái VAS liên quan đến QC | Draft | Gate 1 | Đọc đủ |
+| [[quality_control_mobile]] | Đánh giá chất lượng sản phẩm trên App | Draft | Gate 1 | Đọc đủ |
+| [[quality_control_fabric_mobile]] | Đánh giá chất lượng vải nguyên vật liệu trên App | Draft | Gate 1 | Đọc đủ |
+| [[quality_control_manual_assessment]] | Tạo mới đánh giá Manual trên App | Draft | Gate 1 | Đọc đủ |
 
 ## Test Suites Trong Group
 | Test Suite | Feature cover | Số TC | Blocked coverage | Status |
 |:-----------|:--------------|:------|:-----------------|:-------|
-| — | — | — | — | Chờ Gate 1 |
+| *(chưa tạo)* | | | | |
 
 ## API Specs Trong Group
 | API Spec | Feature cover | API/Interface cover | Open questions | Status |
 |:---------|:--------------|:--------------------|:---------------|:-------|
-| N/A | — | Không có API contract explicit trong source | — | N/A |
+| N/A | Không có API explicit trong source | — | — | — |
 
 ## Open Questions & Blocked Coverage
-| Feature | Question/Blocked item | Owner | Trạng thái |
-|:--------|:----------------------|:------|:-----------|
-| Setup Criteria | Thuật ngữ & viết tắt trong doc chưa được điền vào bảng (trống) | BA | Open |
-| Setup SKU | "Khi nhận PO" — chưa hỗ trợ ở phase này → scope phase này là gì? | PO | Open |
-| Setup SKU | "Ngẫu nhiên" — chưa hỗ trợ ở phase này → giữ lại UI hay ẩn? | PO | Open |
-| Setup SKU | "Công thức" trong Loại đánh giá → "sẽ bổ sung rules sau khi trao đổi với Dev" | Dev/BA | Open |
-| Duyệt/Từ chối | Chưa đọc đầy đủ section này trong doc | — | Open |
-| Assessment Result | Chưa đọc đầy đủ section này trong doc | — | Open |
-| Mobile (App) | Chưa đọc đầy đủ section này trong doc | — | Open |
-| Figma | Link Figma `CLtzJtUv6sA4rxyaBPnbz5` chưa truy cập được | Designer | Open |
-| Workflow | Link Drive `https://drive.hasaki.vn/d/d45615dafe0b441785ff/` chưa truy cập được | BA | Open |
+| Feature/Test Suite | Question/Blocked item | Owner | Trạng thái | Ghi chú |
+|:-------------------|:----------------------|:------|:-----------|:-------|
+| [[quality_control_sku_setup]] | Giá trị enum "Loại đánh giá" — "Công thức" chưa có rules đầy đủ ("sẽ bổ sung rules sau khi trao đổi với Dev") | BA/Dev | Open | 07105#408-409 |
+| [[quality_control_criteria_setup]] | Workflow & Figma links không truy cập được | BA | Open | 07105#113-118 |
+| [[quality_control_mobile]] | Điều kiện thiết lập PO sample map với PO chính chưa rõ ràng | BA | Open | 07105#1160-1168 |
 
 ## Impact & Regression Notes
 | Change ID / Source | Feature(s) ảnh hưởng | Regression candidate | Trạng thái |
 |:-------------------|:---------------------|:---------------------|:-----------|
-| Doc v1.5 (mới nhất) | Tất cả 5 features | Receiving PO (sinh VAS auto sau nhận hàng) | Chờ spec duyệt |
+| ver1.5 Update 20-04-2026 | SKU phụ liệu Failed → tạo Adjustment trả NCC | [[quality_control_mobile]], [[quality_control_assessment_result]] | Draft |
+| ver1.5 Update 20-04-2026 | Blocked UID group + chuyển Damaged cho SKU vải | [[quality_control_fabric_mobile]], [[quality_control_assessment_result]] | Draft |
+| ver1.5 Update 10-05-2026 | Thiết lập tiêu chí 4 điểm & từng bước từ màn hình tiêu chí | [[quality_control_criteria_setup]], [[quality_control_sku_setup]] | Draft |
 
 ## 📅 Changelog
 | Thời gian | Version | Nội dung thay đổi | Nguồn |
 |:----------|:--------|:------------------|:------|
-| 2026-05-25 00:00:00 | v1.0 | Khởi tạo Feature Group từ 07105_Quality_Control_Docs_ver1.5.md | Raw ingest |
+| 2026-05-26 09:00:00 | v1.0 | Khởi tạo Feature Group từ 07105_Quality_Control_Docs_ver1.5 | 07105#58-95 |

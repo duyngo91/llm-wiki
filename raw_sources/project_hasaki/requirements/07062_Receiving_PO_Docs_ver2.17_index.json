@@ -1,0 +1,530 @@
+{
+  "source_file": "07062_Receiving_PO_Docs_ver2.17.md",
+  "source_version": "ver2.17",
+  "last_full_index_version": "ver2.17",
+  "indexed_at": "2026-05-26T09:00:00+07:00",
+  "total_lines": 2667,
+  "note": "Line numbers verified by sampling. Lines marked with ~ are approximate (±10 lines).",
+  "sections": [
+    {
+      "id": "S-00",
+      "title": "Document Header & Revision History",
+      "start_line": 1,
+      "end_line": 136,
+      "depth": 1,
+      "parent_id": null,
+      "topic_types": [],
+      "flags": {
+        "has_enum": false,
+        "has_state_transition": false,
+        "has_formula": false,
+        "has_error_messages": false,
+        "has_validation_rule": false
+      },
+      "mapped_feature": null,
+      "coverage_status": "unmapped",
+      "last_verified_version": null,
+      "change_history": []
+    },
+    {
+      "id": "S-TOC",
+      "title": "Table of Contents (CONTENT)",
+      "start_line": 137,
+      "end_line": 186,
+      "depth": 1,
+      "parent_id": null,
+      "topic_types": [],
+      "flags": {
+        "has_enum": false,
+        "has_state_transition": false,
+        "has_formula": false,
+        "has_error_messages": false,
+        "has_validation_rule": false
+      },
+      "mapped_feature": null,
+      "coverage_status": "unmapped",
+      "last_verified_version": null,
+      "change_history": []
+    },
+    {
+      "id": "S-01",
+      "title": "Tổng quan",
+      "start_line": 187,
+      "end_line": 196,
+      "depth": 1,
+      "parent_id": null,
+      "topic_types": ["actor_flow"],
+      "flags": {
+        "has_enum": false,
+        "has_state_transition": false,
+        "has_formula": false,
+        "has_error_messages": false,
+        "has_validation_rule": false
+      },
+      "mapped_feature": "receiving_po_inbound_shipment.md",
+      "coverage_status": "full",
+      "last_verified_version": "ver2.17",
+      "change_history": []
+    },
+    {
+      "id": "S-02",
+      "title": "Thuật ngữ & Viết tắt / Workflow link / Wireframe link",
+      "start_line": 197,
+      "end_line": 221,
+      "depth": 1,
+      "parent_id": null,
+      "topic_types": [],
+      "flags": {
+        "has_enum": false,
+        "has_state_transition": false,
+        "has_formula": false,
+        "has_error_messages": false,
+        "has_validation_rule": false
+      },
+      "mapped_feature": null,
+      "coverage_status": "unmapped",
+      "last_verified_version": null,
+      "change_history": [],
+      "note": "Workflow và Figma links chưa đọc được — ghi câu hỏi trong feature spec"
+    },
+    {
+      "id": "S-03a",
+      "title": "Inbound Shipment – Filter & Listing (Web)",
+      "start_line": 222,
+      "end_line": 301,
+      "depth": 2,
+      "parent_id": "S-03",
+      "topic_types": ["ui_filter", "ui_listing", "enum_values"],
+      "flags": {
+        "has_enum": true,
+        "has_state_transition": false,
+        "has_formula": false,
+        "has_error_messages": false,
+        "has_validation_rule": false
+      },
+      "mapped_feature": "receiving_po_inbound_shipment.md",
+      "coverage_status": "full",
+      "last_verified_version": "ver2.17",
+      "change_history": []
+    },
+    {
+      "id": "S-03b",
+      "title": "Inbound Shipment Detail – Update",
+      "start_line": 302,
+      "end_line": 348,
+      "depth": 2,
+      "parent_id": "S-03",
+      "topic_types": ["ui_listing", "formula", "business_rule"],
+      "flags": {
+        "has_enum": false,
+        "has_state_transition": false,
+        "has_formula": true,
+        "has_error_messages": false,
+        "has_validation_rule": false
+      },
+      "mapped_feature": "receiving_po_inbound_shipment.md",
+      "coverage_status": "full",
+      "last_verified_version": "ver2.17",
+      "change_history": [],
+      "note": "Qty missing = Qty confirm – Qty received"
+    },
+    {
+      "id": "S-04a",
+      "title": "ASN – Filter & Listing (Web)",
+      "start_line": 349,
+      "end_line": 458,
+      "depth": 2,
+      "parent_id": "S-04",
+      "topic_types": ["ui_filter", "ui_listing", "enum_values", "business_rule"],
+      "flags": {
+        "has_enum": true,
+        "has_state_transition": false,
+        "has_formula": false,
+        "has_error_messages": false,
+        "has_validation_rule": true
+      },
+      "mapped_feature": "receiving_po_asn.md",
+      "coverage_status": "full",
+      "last_verified_version": "ver2.17",
+      "change_history": []
+    },
+    {
+      "id": "S-04b",
+      "title": "ASN Detail – Updated (print templates, ReOpen rule, Group UID)",
+      "start_line": 459,
+      "end_line": 521,
+      "depth": 2,
+      "parent_id": "S-04",
+      "topic_types": ["business_rule", "validation_rule", "actor_flow"],
+      "flags": {
+        "has_enum": false,
+        "has_state_transition": true,
+        "has_formula": false,
+        "has_error_messages": false,
+        "has_validation_rule": true
+      },
+      "mapped_feature": "receiving_po_asn.md",
+      "coverage_status": "full",
+      "last_verified_version": "ver2.17",
+      "change_history": [],
+      "note": "ReOpen chỉ khi status=Receiving AND chưa scan item. Print A5/In Bill lưu local per machine."
+    },
+    {
+      "id": "S-05a",
+      "title": "VAS – Auto-generation logic & Filter (Web)",
+      "start_line": 522,
+      "end_line": 619,
+      "depth": 2,
+      "parent_id": "S-05",
+      "topic_types": ["business_rule", "state_transition", "enum_values", "ui_filter"],
+      "flags": {
+        "has_enum": false,
+        "has_state_transition": true,
+        "has_formula": false,
+        "has_error_messages": false,
+        "has_validation_rule": false
+      },
+      "mapped_feature": "receiving_po_vas.md",
+      "coverage_status": "full",
+      "last_verified_version": "ver2.17",
+      "change_history": [],
+      "note": "Sức khoẻ → auto Complete. TSCĐ/CCDC → Open."
+    },
+    {
+      "id": "S-05b",
+      "title": "VAS Detail – Serial/QRCode validation & auto-gen format",
+      "start_line": 620,
+      "end_line": 749,
+      "depth": 2,
+      "parent_id": "S-05",
+      "topic_types": ["validation_rule", "formula", "error_messages", "business_rule"],
+      "flags": {
+        "has_enum": false,
+        "has_state_transition": false,
+        "has_formula": true,
+        "has_error_messages": true,
+        "has_validation_rule": true
+      },
+      "mapped_feature": "receiving_po_vas.md",
+      "coverage_status": "full",
+      "last_verified_version": "ver2.17",
+      "change_history": [],
+      "note": "Serial ≥16 chars, QRCode must exist in HR. Auto-gen: [1023][YYMMDD][6-digit]. VAS QC = ROUNDUP(group_uid × 10%)."
+    },
+    {
+      "id": "S-06",
+      "title": "SPKPH – Luồng nhận PO không đồng kiểm có khai báo SPKPH",
+      "start_line": 751,
+      "end_line": 833,
+      "depth": 1,
+      "parent_id": null,
+      "topic_types": ["actor_flow", "business_rule", "state_transition"],
+      "flags": {
+        "has_enum": false,
+        "has_state_transition": true,
+        "has_formula": false,
+        "has_error_messages": false,
+        "has_validation_rule": false
+      },
+      "mapped_feature": "receiving_po_inbound_shipment.md",
+      "coverage_status": "partial",
+      "last_verified_version": null,
+      "change_history": [],
+      "note": "Luồng xử lý tạm Off không sử dụng. Partially covered trong inbound_shipment."
+    },
+    {
+      "id": "S-07",
+      "title": "Receiving PO (App) – Entry & Scan PO",
+      "start_line": 834,
+      "end_line": 1057,
+      "depth": 1,
+      "parent_id": null,
+      "topic_types": ["actor_flow", "validation_rule", "error_messages"],
+      "flags": {
+        "has_enum": false,
+        "has_state_transition": false,
+        "has_formula": false,
+        "has_error_messages": true,
+        "has_validation_rule": true
+      },
+      "mapped_feature": "receiving_po_app.md",
+      "coverage_status": "partial",
+      "last_verified_version": null,
+      "change_history": [],
+      "note": "Chỉ đọc R-APP-01~03 (scan PO entry). Phần còn lại (location scan, SKU scan chi tiết) chưa cover."
+    },
+    {
+      "id": "S-08",
+      "title": "App Case 1 – Nhận PO thường (không có PO Gift)",
+      "start_line": 1058,
+      "end_line": 1489,
+      "depth": 2,
+      "parent_id": "S-07",
+      "topic_types": ["actor_flow", "validation_rule", "error_messages", "business_rule"],
+      "flags": {
+        "has_enum": false,
+        "has_state_transition": false,
+        "has_formula": false,
+        "has_error_messages": true,
+        "has_validation_rule": true
+      },
+      "mapped_feature": "receiving_po_app.md",
+      "coverage_status": "stub",
+      "last_verified_version": null,
+      "change_history": [],
+      "note": "STUB – chưa đọc. Trang 41-61 trong PDF."
+    },
+    {
+      "id": "S-09",
+      "title": "Thêm hoá đơn cho PO (App)",
+      "start_line": 1490,
+      "end_line": 1604,
+      "depth": 1,
+      "parent_id": null,
+      "topic_types": ["actor_flow", "validation_rule", "error_messages", "business_rule"],
+      "flags": {
+        "has_enum": false,
+        "has_state_transition": false,
+        "has_formula": false,
+        "has_error_messages": true,
+        "has_validation_rule": true
+      },
+      "mapped_feature": "receiving_po_app.md",
+      "coverage_status": "stub",
+      "last_verified_version": null,
+      "change_history": [],
+      "note": "STUB – chưa đọc. Trang 62-67 trong PDF."
+    },
+    {
+      "id": "S-10",
+      "title": "App Case 2 – Nhận PO Gift chung với PO thường",
+      "start_line": 1605,
+      "end_line": 1674,
+      "depth": 2,
+      "parent_id": "S-07",
+      "topic_types": ["actor_flow", "validation_rule", "error_messages", "business_rule"],
+      "flags": {
+        "has_enum": false,
+        "has_state_transition": false,
+        "has_formula": false,
+        "has_error_messages": true,
+        "has_validation_rule": true
+      },
+      "mapped_feature": "receiving_po_app.md",
+      "coverage_status": "stub",
+      "last_verified_version": null,
+      "change_history": [],
+      "note": "STUB – chưa đọc. Trang 68-73 trong PDF."
+    },
+    {
+      "id": "S-11",
+      "title": "Nhận hàng Vải – Khai báo Group UID",
+      "start_line": 1675,
+      "end_line": 1736,
+      "depth": 1,
+      "parent_id": null,
+      "topic_types": ["actor_flow", "business_rule", "validation_rule"],
+      "flags": {
+        "has_enum": false,
+        "has_state_transition": false,
+        "has_formula": true,
+        "has_error_messages": false,
+        "has_validation_rule": true
+      },
+      "mapped_feature": "receiving_po_fabric_uid_group.md",
+      "coverage_status": "partial",
+      "last_verified_version": null,
+      "change_history": [],
+      "note": "Trang 74-78. Đã cover R-FUG-01~03 (10% sampling, ROUNDUP). Chưa đọc đủ."
+    },
+    {
+      "id": "S-12",
+      "title": "Bổ sung rules nhận PO gift riêng",
+      "start_line": 1737,
+      "end_line": 1764,
+      "depth": 1,
+      "parent_id": null,
+      "topic_types": ["business_rule"],
+      "flags": {
+        "has_enum": false,
+        "has_state_transition": false,
+        "has_formula": false,
+        "has_error_messages": false,
+        "has_validation_rule": false
+      },
+      "mapped_feature": "receiving_po_app.md",
+      "coverage_status": "stub",
+      "last_verified_version": null,
+      "change_history": [],
+      "note": "STUB – trang 79."
+    },
+    {
+      "id": "S-13",
+      "title": "Nhận SKU không barcode (update 22-05-2025)",
+      "start_line": 1765,
+      "end_line": 1809,
+      "depth": 1,
+      "parent_id": null,
+      "topic_types": ["actor_flow", "validation_rule", "business_rule"],
+      "flags": {
+        "has_enum": false,
+        "has_state_transition": false,
+        "has_formula": false,
+        "has_error_messages": false,
+        "has_validation_rule": true
+      },
+      "mapped_feature": "receiving_po_app.md",
+      "coverage_status": "stub",
+      "last_verified_version": null,
+      "change_history": [],
+      "note": "STUB – trang 80-83."
+    },
+    {
+      "id": "S-14",
+      "title": "Confirm Paste ID (App)",
+      "start_line": 1810,
+      "end_line": 1938,
+      "depth": 1,
+      "parent_id": null,
+      "topic_types": ["actor_flow", "validation_rule", "error_messages", "business_rule"],
+      "flags": {
+        "has_enum": false,
+        "has_state_transition": false,
+        "has_formula": false,
+        "has_error_messages": true,
+        "has_validation_rule": true
+      },
+      "mapped_feature": "receiving_po_confirm_paste_id.md",
+      "coverage_status": "stub",
+      "last_verified_version": null,
+      "change_history": [],
+      "note": "STUB – trang 84-95."
+    },
+    {
+      "id": "S-15a",
+      "title": "VAS Manual – RFID ngoài vendor (Web)",
+      "start_line": 1939,
+      "end_line": 2074,
+      "depth": 2,
+      "parent_id": "S-15",
+      "topic_types": ["actor_flow", "validation_rule", "business_rule"],
+      "flags": {
+        "has_enum": false,
+        "has_state_transition": false,
+        "has_formula": false,
+        "has_error_messages": true,
+        "has_validation_rule": true
+      },
+      "mapped_feature": "receiving_po_vas_manual.md",
+      "coverage_status": "stub",
+      "last_verified_version": null,
+      "change_history": [],
+      "note": "STUB – trang 96-98."
+    },
+    {
+      "id": "S-15b",
+      "title": "Tạo thủ công VAS (VAS Manual creation)",
+      "start_line": 2075,
+      "end_line": 2174,
+      "depth": 2,
+      "parent_id": "S-15",
+      "topic_types": ["actor_flow", "validation_rule", "business_rule"],
+      "flags": {
+        "has_enum": false,
+        "has_state_transition": false,
+        "has_formula": false,
+        "has_error_messages": true,
+        "has_validation_rule": true
+      },
+      "mapped_feature": "receiving_po_vas_manual.md",
+      "coverage_status": "stub",
+      "last_verified_version": null,
+      "change_history": [],
+      "note": "STUB – trang 99-101."
+    },
+    {
+      "id": "S-16",
+      "title": "Import Packing List",
+      "start_line": 2175,
+      "end_line": 2382,
+      "depth": 1,
+      "parent_id": null,
+      "topic_types": ["validation_rule", "error_messages", "business_rule"],
+      "flags": {
+        "has_enum": false,
+        "has_state_transition": false,
+        "has_formula": false,
+        "has_error_messages": true,
+        "has_validation_rule": true
+      },
+      "mapped_feature": "receiving_po_packing_list.md",
+      "coverage_status": "stub",
+      "last_verified_version": null,
+      "change_history": [],
+      "note": "STUB – trang 102-105."
+    },
+    {
+      "id": "S-17",
+      "title": "02-04-2026: Bổ sung thông tin Trừ lõi (Tare weight)",
+      "start_line": 2383,
+      "end_line": 2424,
+      "depth": 1,
+      "parent_id": null,
+      "topic_types": ["formula", "business_rule", "validation_rule"],
+      "flags": {
+        "has_enum": false,
+        "has_state_transition": false,
+        "has_formula": true,
+        "has_error_messages": false,
+        "has_validation_rule": true
+      },
+      "mapped_feature": "receiving_po_fabric_uid_group.md",
+      "coverage_status": "stub",
+      "last_verified_version": null,
+      "change_history": ["ver2.15"],
+      "note": "STUB – trang 109-110."
+    },
+    {
+      "id": "S-18",
+      "title": "Update 16-04-2026 (Packing list + UID group + nhận dư)",
+      "start_line": 2425,
+      "end_line": 2579,
+      "depth": 1,
+      "parent_id": null,
+      "topic_types": ["business_rule", "validation_rule", "formula", "ui_listing"],
+      "flags": {
+        "has_enum": false,
+        "has_state_transition": false,
+        "has_formula": true,
+        "has_error_messages": false,
+        "has_validation_rule": true
+      },
+      "mapped_feature": "receiving_po_packing_list.md",
+      "coverage_status": "stub",
+      "last_verified_version": null,
+      "change_history": ["ver2.16"],
+      "note": "STUB – trang 111-117."
+    },
+    {
+      "id": "S-19",
+      "title": "Update 17-05-2026 (PO Sample & Multi-user receiving)",
+      "start_line": 2580,
+      "end_line": 2667,
+      "depth": 1,
+      "parent_id": null,
+      "topic_types": ["business_rule", "state_transition", "validation_rule"],
+      "flags": {
+        "has_enum": false,
+        "has_state_transition": true,
+        "has_formula": true,
+        "has_error_messages": true,
+        "has_validation_rule": true
+      },
+      "mapped_feature": null,
+      "coverage_status": "unmapped",
+      "last_verified_version": null,
+      "change_history": ["ver2.17"],
+      "note": "STUB – trang 118-119. PO sample type mới + multi-user receiving. Chưa có feature spec."
+    }
+  ]
+}

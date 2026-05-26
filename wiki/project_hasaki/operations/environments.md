@@ -1,13 +1,15 @@
 ---
 tags: [qa/operations]
 project: project_hasaki
-updated: 2026-05-25
+updated: 2026-05-26
 ---
 
 # Environments — project_hasaki
 
-| Env | URL | Ghi chú |
-|:----|:----|:--------|
-| Dev | — | Chưa có thông tin |
-| Staging | — | Chưa có thông tin |
-| Production | — | Chưa có thông tin |
+| Environment | URL/Endpoint | Note |
+|:-----------|:-------------|:-----|
+| DEV | *(chưa có thông tin)* | — |
+| UAT | *(chưa có thông tin)* | — |
+| Production | *(chưa có thông tin)* | — |
+
+> Cập nhật khi có thông tin từ team.

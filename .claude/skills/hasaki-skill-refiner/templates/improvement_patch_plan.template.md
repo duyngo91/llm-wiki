@@ -1,13 +1,28 @@
-﻿# Improvement Patch Plan
+---
+status: Active
+updated: YYYY-MM-DD
+---
 
-## Danh sách patch
-| Hạng mục | File | Lý do | Rủi ro | Cách xác thực |
-| --- | --- | --- | --- | --- |
+# Improvement Patch Plan
 
-## Checklist xác thực
-- [ ] NO_INFERENCE_PASS
-- [ ] QUESTION_ROUTING_PASS
-- [ ] BLOCKED_COVERAGE_PASS
-- [ ] TRACEABILITY_PASS
-- [ ] UTF8_PASS
-- [ ] VERIFY_PASS
+| Patch | File | Loại | Root cause nhóm | Expected impact | Trạng thái |
+|:------|:-----|:-----|:----------------|:----------------|:-----------|
+| PATCH-001 | ... | Add | Rule thiếu | L1_FORMAT_PASS | Pending |
+
+## Chi tiết
+
+### PATCH-001: [Tên ngắn]
+- **File:** đường dẫn file cần sửa
+- **Loại:** Add / Update / Remove
+- **Nội dung:** mô tả cụ thể sẽ thêm/sửa gì
+- **Lý do:** root cause dẫn đến lỗi
+- **Expected impact:** gate nào sẽ cải thiện
+- **Trạng thái:** Pending
+
+## Checklist gates sau khi apply
+- [ ] L1_FORMAT_PASS
+- [ ] L2_COVERAGE_PASS
+- [ ] L3_NO_INFERENCE_PASS
+- [ ] VERIFY_SCRIPT_PASS
+- [ ] L4_SUGGESTIONS_COMPLETE
+- [ ] L5_ROOT_CAUSE_COMPLETE

@@ -1,76 +1,45 @@
 ---
-tags: [qa/requirement, qa/feature-group/receiving-po]
+aliases: [Packing List, Import packing list]
+tags: [qa/requirement, qa/feature-group/receiving_po]
 status: Draft
-created: 2026-05-25
-updated: 2026-05-25
+created: 2026-05-26
+updated: 2026-05-26
 feature: receiving_po_packing_list
 project: project_hasaki
-source_version: v2.17
+source_version: "07062 ver2.17"
+partial_read: true
+partial_read_note: "Chưa đọc section 'Import packing list' (trang 102), 'Update 29-01-2026' (103–105), 'Update 16-04-2026 Import Packing list + Page quản lý' (111–115). Cần đọc thêm raw source."
 approved_by:
 approved_at:
 approval_note:
 ---
 
-# 📋 REQ: Import Packing List
+# 📋 REQ: Import và Quản lý Packing List
 
 ## Tổng quan
 - **Mã tính năng:** receiving_po_packing_list
-- **Feature:** Import và quản lý packing list cho PO nhận hàng
-- **Mô tả ngắn:** Chức năng import packing list từ file, validate, và quản lý page packing list. Áp dụng cho SKU vải và PO có packing list. Template import có 3 cột bổ sung (v2.16).
-- **Source chính:** `raw_sources/project_hasaki/requirements/07062_Receiving_PO_Docs_ver2.17.md` — mục "Import packing list", "Update 29-01-2026", "Update 16-04-2026"
-- **Đối tượng sử dụng (Actors):** Nhân viên kho, Quản lý kho
+- **Feature:** Import Packing List
+- **Mô tả ngắn:** Import packing list PO và quản lý danh sách packing list — bổ sung template import (3 cột mới), validate import và rules nhận 1 phần hay cả PO. **Spec này là STUB — chưa đọc đủ section.**
+- **Source chính:** `07062_Receiving_PO_Docs_ver2.17.md` – section "Import packing list" trang 102+, "Update 16-04-2026" trang 111–115
+- **Đối tượng sử dụng (Actors):** Warehouse staff, Warehouse manager
 - **Feature Group:** [[wiki/project_hasaki/feature_groups/receiving_po|receiving_po]]
-- **Test Suite tương ứng:** —
+- **Test Suite tương ứng:** *(chưa tạo)*
 - **API Spec liên quan:** N/A
 
 ## Nguồn tài liệu
 | # | Loại | Tên / Link | Version | Status |
 |:--|:-----|:-----------|:--------|:-------|
-| 1 | MD (converted from PDF) | `07062_Receiving_PO_Docs_ver2.17.md` | v2.17 | ✅ Hiện hành (chưa đọc đầy đủ) |
+| 1 | MD (converted) | 07062_Receiving_PO_Docs_ver2.17.md | ver2.17 | ✅ Hiện hành |
 
-## ⚠️ Trạng thái phân tích
-
-> **Lưu ý:** Phần Import Packing List chưa được đọc đầy đủ. Spec này là **stub** dựa trên revision history và TOC. Cần đọc thêm mục "Import packing list" (~trang 102+), "Update 29-01-2026", "Update 16-04-2026" trong raw source.
-
-## Requirement đã xác định từ Revision History
-
-| ID | Requirement | Loại | Priority | Testable? | Source |
-|:---|:-----------|:-----|:---------|:----------|:-------|
-| R1 | Validate import packing list | Functional | High | ✅ | v2.17, rev 2.12 |
-| R2 | Nhận hàng PO với SKU vải cho con lẻ và combo: update UI và rules | Functional | High | ✅ | v2.17, rev 2.13 |
-| R3 | Validate khi scan nhận PO liên quan đến Packing list PO | Functional | High | ✅ | v2.17, rev 2.14 |
-| R4 | Bổ sung thông tin "Trừ lõi" khi khai báo UID group khi nhận PO vải | Functional | Medium | ✅ | v2.17, rev 2.15 |
-| R5 | Template import: bổ sung 3 cột (chưa rõ tên cột) | Functional | High | ✅ | v2.17, rev 2.16 |
-| R6 | Rules validate khi import Packing list nhận 1 phần hay cả PO | Business Rule | High | ✅ | v2.17, rev 2.16 |
-| R7 | Page quản lý Packing list | Functional | High | ✅ | v2.17, rev 2.16 TOC |
-| R8 | Update UI nhận SKU có UID group | Functional | High | ✅ | v2.17, rev 2.16 |
-| R9–Rx | Chi tiết rules import, validate, page quản lý | Functional | — | ❓ | Chưa đọc |
-
-## ❓ Câu hỏi chưa rõ
-
-| Q-ID | Liên kết R/AC | Câu hỏi | Hỏi ai | Trạng thái |
-|:-----|:--------------|:--------|:-------|:-----------|
-| Q-001 | R5 | 3 cột bổ sung trong template import là gì? | BA | Open |
-| Q-002 | R4 | "Trừ lõi" là gì? Áp dụng cho loại vải nào? | BA | Open |
-| Q-003 | R6 | Sự khác biệt validate khi import 1 phần vs cả PO? | BA/Dev | Open |
-| Q-004 | R9+ | Toàn bộ phần chi tiết chưa đọc | — | Open |
-
-## 🔎 Impact Analysis & Regression Proposal
-
-| Change ID | Affected Feature(s) | Affected Test Suite(s) | TC action | Regression candidates | Open questions / Gate |
-|:----------|:--------------------|:-----------------------|:----------|:----------------------|:----------------------|
-| CHG-001~008 | receiving_po_packing_list | — | Add (mới) | — | Q-001~003 |
-
-## Blocked Coverage
-R9+ bị blocked — chưa đọc phần chi tiết trong raw source.
+## Phân rã Requirement
+> ⚠️ **STUB — partial_read: true.** Chưa đọc các section packing list.
 
 ## Test Coverage
 | Requirement/AC | Test Case(s) | Status | Ghi chú |
 |:---------------|:-------------|:-------|:-------|
-| R1–R8 | — | ❌ Blocked | Chờ Gate 1 + Q-001, Q-002, Q-003 |
-| R9+ | — | ❌ Blocked | Blocked Coverage |
+| Tất cả | | ❌ Blocked | partial_read — chưa đọc trang 102–115 |
 
 ## 📅 Changelog
-| Thời gian | Version | Nội dung | Nguồn |
-|:----------|:--------|:---------|:------|
-| 2026-05-25 00:00:00 | v1.0 | Khởi tạo stub | Raw ingest |
+| Thời gian | Version | Nội dung thay đổi | Nguồn |
+|:----------|:--------|:-----------------|:------|
+| 2026-05-26 09:00:00 | v1.0 | Tạo STUB — partial_read | 07062 TOC#167-178 |

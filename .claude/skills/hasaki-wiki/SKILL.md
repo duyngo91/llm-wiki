@@ -32,13 +32,15 @@ allowed-tools:
 
 | Gate | Điều kiện tiếp |
 |:-----|:---------------|
-| **Gate 1** — Feature Spec Approval (PO/QA Lead) | Spec `Draft` → `Done` · xong mới sang Test Design |
+| **Pre-Gate** — Refiner Verify | Chạy `hasaki-skill-refiner` sau ingest · verdict ≠ `FAIL` mới trình Gate 1 |
+| **Gate 1A** — Feature Spec Approval cho specs đầy đủ | Spec `partial_read: false`, `Draft` → `Done` · tiến sang Test Design không cần chờ STUB |
+| **Gate 1B** — Feature Spec Approval cho STUB | Từng STUB khi hoàn thiện → Gate riêng · không gộp với Gate 1A |
 | **Gate 2** — Test Cases Review (QA Lead) | Suite `Draft` → `Testing` · xong mới chạy test |
 | **Gate 3** — Bug Triage (QA Lead + Tech Lead) | Bug `Open` hợp lệ · xác nhận RCA + Severity |
 | **Gate 4** — Test Execution Approval (con người confirm) | Xong mới sync wiki status |
 | **Gate 5** — Go/No-Go (PO + QA Lead ký) | Xong mới close CR |
 
-**Approval Evidence (Gate 1/2/5):** 3 trường bắt buộc trong frontmatter: `approved_by` · `approved_at: YYYY-MM-DD HH:mm:ss` · `approval_note`
+**Approval Evidence (Gate 1A/1B/2/5):** 3 trường bắt buộc trong frontmatter: `approved_by` · `approved_at: YYYY-MM-DD HH:mm:ss` · `approval_note`
 
 ## Core Rules
 

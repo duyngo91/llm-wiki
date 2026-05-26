@@ -1,12 +1,16 @@
 ---
 tags: [qa/operations]
 project: project_hasaki
-updated: 2026-05-25
+updated: 2026-05-26
 ---
 
 # Team Contacts — project_hasaki
 
-| Role | Tên | Email | Ghi chú |
-|:-----|:----|:------|:--------|
-| BA/Author | Phù Minh Tú | — | Tác giả cả 2 tài liệu requirement |
-| QA | Yen Ngo | minhyen1311414@gmail.com | |
+| Role | Tên | Email | Note |
+|:-----|:----|:------|:-----|
+| PO/BA | Phù Minh Tú | *(chưa có email)* | Author của 07062 và 07105 |
+| QA Lead | *(chưa có)* | *(chưa có)* | — |
+| Dev Lead | *(chưa có)* | *(chưa có)* | — |
+| QA (Assignee) | yenngo | minhyen1311414@gmail.com | — |
+
+> Cập nhật khi có thông tin từ team.

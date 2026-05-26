@@ -1,30 +1,27 @@
-﻿{
-  "run_id": "",
-  "timestamp_asia_saigon": "",
-  "project": "project_hasaki",
-  "gates": {
-    "NO_INFERENCE_PASS": false,
-    "QUESTION_ROUTING_PASS": false,
-    "BLOCKED_COVERAGE_PASS": false,
-    "TRACEABILITY_PASS": false,
-    "UTF8_PASS": false,
-    "VERIFY_PASS": false
-  },
-  "metrics": {
-    "total_claims": 0,
-    "supported_claims": 0,
-    "unclear_claims": 0,
-    "inferred_claims": 0,
-    "explicit_ac_mapped_testcases": 0,
-    "total_testcases": 0
-  },
-  "score": {
-    "value": 0,
-    "max": 100,
-    "status": "fail"
-  },
-  "decision": {
-    "keep_changes": false,
-    "reason": ""
-  }
+{
+  "sessions": [
+    {
+      "session": "YYYY-MM-DD",
+      "batch": "ingest-XXXXX",
+      "score_before": 0,
+      "score_after": 0,
+      "gates": {
+        "L1_FORMAT_PASS": false,
+        "L2_COVERAGE_PASS": false,
+        "L3_NO_INFERENCE_PASS": false,
+        "VERIFY_SCRIPT_PASS": false,
+        "L4_SUGGESTIONS_COMPLETE": false,
+        "L5_ROOT_CAUSE_COMPLETE": false
+      },
+      "violations": {
+        "format": 0,
+        "coverage_gaps": 0,
+        "inferred": 0,
+        "logic_inferred": 0,
+        "missing_detail": 0
+      },
+      "traceability_phase": "Chỉ ingest PDF | Có HSK task | Có test suite | Có TBB2",
+      "verdict": "FAIL"
+    }
+  ]
 }

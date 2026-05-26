@@ -1,102 +1,119 @@
 ---
-tags: [qa/requirement, qa/feature-group/receiving-po]
+aliases: [Receiving PO App, Nhận hàng PO App]
+tags: [qa/requirement, qa/feature-group/receiving_po]
 status: Draft
-created: 2026-05-25
-updated: 2026-05-25
+created: 2026-05-26
+updated: 2026-05-26
 feature: receiving_po_app
 project: project_hasaki
-source_version: v2.17
+source_version: "07062 ver2.17"
+partial_read: true
+partial_read_note: "Đã đọc section 'Receiving PO (App)' đến đầu Case 1 (trang 32–41). Chưa đọc đủ: Case 1 chi tiết (trang 41–61), Thêm hoá đơn (62–67), Case 2 PO Gift (68–73), Nhận hàng vải Group UID (74–78), Nhận hàng SKU không barcode (80–83), Update 17-05-2026 PO sample & PO chính (118). Cần đọc tiếp raw source."
 approved_by:
 approved_at:
 approval_note:
 ---
 
-# 📋 REQ: Receiving PO App (Mobile)
+# 📋 REQ: Nhận hàng PO (App) — Luồng chính
 
 ## Tổng quan
 - **Mã tính năng:** receiving_po_app
-- **Feature:** Nhận hàng PO trên App HSK Work (Mobile) — scan PO, scan SKU, xử lý các case đặc biệt
-- **Mô tả ngắn:** Luồng nhận hàng chính trên App — chiếm phần lớn tài liệu (~70+ trang). Bao gồm: nhận PO thường, PO Gift, PO vải (Group UID), SKU không barcode, confirm unsuitable product, PO Sample, multi-user receiving.
-- **Source chính:** `raw_sources/project_hasaki/requirements/07062_Receiving_PO_Docs_ver2.17.md` — mục "Receiving PO (App)", "Case 1", "Case 2", "Nhận hàng Vải", "Nhận hàng SKU không barcode", "Confirm paste ID", "PO sample & PO chính", "Cho nhiều user cùng nhận"
-- **Đối tượng sử dụng (Actors):** Nhân viên kho (Mobile App)
+- **Feature:** Receiving PO (App)
+- **Mô tả ngắn:** Luồng nhận hàng PO trên App WMS — scan PO, scan sản phẩm, khai báo thiếu hàng/SPKPH, xác nhận nhận hàng. Gồm Case 1 (PO thường) và Case 2 (PO Gift). Spec hiện tại là STUB — chưa đọc đủ toàn bộ section.
+- **Source chính:** `07062_Receiving_PO_Docs_ver2.17.md` – section "Receiving PO (App)" từ trang 32
+- **Đối tượng sử dụng (Actors):** Warehouse staff (App user)
 - **Feature Group:** [[wiki/project_hasaki/feature_groups/receiving_po|receiving_po]]
-- **Test Suite tương ứng:** —
+- **Test Suite tương ứng:** *(chưa tạo)*
 - **API Spec liên quan:** N/A
+- **Mối quan hệ:**
+  - ➡️ [[receiving_po_asn]] — App scan PO tạo ASN
+  - ➡️ [[receiving_po_vas]] — ASN complete sinh VAS
+  - ➡️ [[receiving_po_confirm_paste_id]] — Sau nhận hàng xác nhận dán ID
 
 ## Nguồn tài liệu
 | # | Loại | Tên / Link | Version | Status |
 |:--|:-----|:-----------|:--------|:-------|
-| 1 | MD (converted from PDF) | `07062_Receiving_PO_Docs_ver2.17.md` | v2.17 | ✅ Hiện hành (chưa đọc đầy đủ) |
-| 2 | Figma | `https://www.figma.com/design/T103qrHGDj4oGCu88fCU2C/04.-Receiving-PO_Update` | — | ❓ Chưa đọc được |
+| 1 | MD (converted) | 07062_Receiving_PO_Docs_ver2.17.md | ver2.17 | ✅ Hiện hành |
+| 2 | Link | Figma: https://www.figma.com/design/T103qrHGDj4oGCu88fCU2C/04.-Receiving-PO_Update | — | ❓ Chưa đọc được |
 
-## ⚠️ Trạng thái phân tích
+## API / Interface liên quan
+| API Spec | API/Interface | Requirement/AC liên quan | Source | Trạng thái |
+|:---------|:--------------|:-------------------------|:-------|:-----------|
+| N/A | | | Không có API explicit | N/A |
 
-> **Lưu ý:** Đây là phần lớn nhất của tài liệu, chưa được đọc đầy đủ. Spec này là **stub** dựa trên TOC (trang 5-6) và revision history. Cần đọc toàn bộ các mục App trong raw source trước khi hoàn chỉnh.
+## Phân rã Requirement
 
-## Sub-features đã xác định từ TOC
+> ⚠️ **STUB — partial_read: true.** Chỉ ghi requirement từ phần đã đọc (trang 32–41). Các section chưa đọc sẽ được bổ sung sau khi đọc đủ raw source.
 
-| Sub-feature | Trang trong doc | Trạng thái phân tích |
-|:-----------|:----------------|:--------------------|
-| Case 1: Nhận PO thường (không có PO Gift) | ~41-62 | Chưa đọc |
-| Thêm hoá đơn cho PO | ~62-67 | Chưa đọc |
-| Case 2: Nhận PO Gift chung với PO thường | ~68-73 | Chưa đọc |
-| Nhận hàng Vải (Group UID) | ~74-78 | Chưa đọc |
-| Nhận PO gift riêng | ~79 | Chưa đọc |
-| Nhận SKU không barcode | ~80-83 | Chưa đọc |
-| Confirm paste ID (App) | ~84-95 | Chưa đọc |
-| Nhận PO SKU có RFID | ~97-98 | Chưa đọc |
-| Nhận PO SKU vải theo packing list | ~106-115 | Chưa đọc |
-| PO Sample & PO chính | ~118-119 | Chưa đọc |
-| Cho nhiều user cùng nhận cùng lúc | ~119 | Chưa đọc |
-
-## Requirement đã xác định từ Revision History
-
+### Bước đầu – Scan PO
 | ID | Requirement | Loại | Priority | Testable? | Source |
 |:---|:-----------|:-----|:---------|:----------|:-------|
-| R1 | Bỏ qua scan location nếu nhận PO zone ở kho 170 | Business Rule | High | ✅ | v2.17, rev 1.5 |
-| R2 | Hỗ trợ khai báo thiếu hàng cho tất cả SKU chưa nhận đủ SL theo PO | Functional | High | ✅ | v2.17, rev 1.6 |
-| R3 | Biên bản nhận hàng cho PO Gift kèm PO gốc | Functional | High | ✅ | v2.17, rev 1.6 |
-| R4 | Xác nhận dán ID cho SKU là Tài sản cố định có quản lý Serial/IMEI | Functional | High | ✅ | v2.17, rev 1.6 |
-| R5 | Nhận riêng PO gift — nếu PO gốc có nhiều PO gift: phải nhận hết PO gift trước khi nhận PO gốc | Business Rule | High | ✅ | v2.17, rev 1.7 |
-| R6 | Xoá sản phẩm đã scan nhận trước đó | Functional | Medium | ✅ | v2.17, rev 1.8 |
-| R7 | PO không đồng kiểm: bỏ qua scan camera nếu kho bật config "Required camera" | Business Rule | High | ✅ | v2.17, rev 2.4 18-02-2025 |
-| R8 | PO không đồng kiểm + khai báo SPKPH → sinh return vendor | Business Rule | High | ✅ | v2.17, rev 2.5 28-02-2025 |
-| R9 | Nhận SKU không barcode | Functional | High | ✅ | v2.17, rev 2.8 22-05-2025 |
-| R10 | Nhận SKU combo + con lẻ có required date | Functional | High | ✅ | v2.17, rev 2.9 |
-| R11 | Nhận SKU có RFID: scan RFID khi nhận PO, bỏ qua VAS auto (điều kiện: Category Thời trang, Brand Synctives) | Business Rule | High | ✅ | v2.17, rev 2.10 |
-| R12 | Nhận hàng khai báo Group UID cho sản phẩm Vải NVL | Functional | High | ✅ | v2.17, rev 2.11 |
-| R13 | Import packing list + validate | Functional | High | ✅ | v2.17, rev 2.12-2.16 |
-| R14 | PO Sample: cần ghi nhận thông tin PO "Sample" thuộc PO chính (mới nhất — rev 2.17) | Functional | High | ✅ | v2.17, rev 2.17 |
-| R15 | Cho nhiều user cùng nhận cùng lúc (mới nhất — rev 2.17) | Functional | High | ✅ | v2.17, rev 2.17 |
-| R16–Rx | Chi tiết flow App (screen-by-screen) | Functional | — | ❓ | v2.17 — chưa đọc |
+| R-APP-01 | User login app → vào tính năng "Receiving PO" | Functional | High | ✅ | 07062#836-838 |
+| R-APP-02 | Màn hình scan PO hiển thị hướng dẫn mặc định khi user mới vào | Functional | Low | ✅ | 07062#841-843 |
+| R-APP-03 | User scan PO cần nhận hàng; validation: nếu PO không yêu cầu VAT thì bỏ qua bước check | Functional | High | ✅ | 07062#846-848 |
+
+### Sections chưa đọc — Blocked Coverage
+| Section chưa đọc | Trang raw source | Ghi chú |
+|:-----------------|:-----------------|:--------|
+| Case 1: Chỉ nhận riêng PO thường (chi tiết luồng scan sản phẩm, khai báo thiếu, xác nhận) | 07062 trang 41–61 | partial_read |
+| Thêm hoá đơn cho PO | 07062 trang 62–67 | partial_read |
+| Case 2: Nhận PO Gift chung với PO thường | 07062 trang 68–73 | partial_read |
+| Nhận hàng SKU không barcode (update 22-05-2025) | 07062 trang 80–83 | partial_read |
+| Update 17-05-2026: PO sample & PO chính | 07062 trang 118 | partial_read |
+| Update 17-05-2026: Cho nhiều user cùng nhận cùng lúc | 07062 trang 119 | partial_read |
+
+## 🔄 Luồng Nghiệp Vụ Chi Tiết (User Flows)
+
+> Chỉ mô tả bước đầu đã đọc. Phần còn lại chờ đọc thêm.
+
+### Điều kiện tiên quyết (Pre-conditions)
+- User đã login App WMS.
+- PO đã được tạo và approved trên Inside.
+
+### Luồng chuẩn (Happy Path) — stub
+1. User vào tính năng "Receiving PO" trên App.
+2. Hệ thống hiển thị hướng dẫn.
+3. User scan mã PO.
+4. *(Phần tiếp theo chưa đọc đủ — xem Blocked Coverage)*
+
+### Luồng rẽ nhánh (Alternative Paths)
+- *(Chưa đủ dữ liệu — blocked)*
+
+### Luồng ngoại lệ (Exception Paths)
+- *(Chưa đủ dữ liệu — blocked)*
+
+## ⚙️ Quy Tắc Nghiệp Vụ & Ràng Buộc Dữ Liệu (Business Rules)
+> Chưa đủ dữ liệu — cần đọc thêm raw source.
+
+## 🚨 Đặc Tả Thông Điệp Báo Lỗi (Error Messages Map)
+> Chưa đủ dữ liệu — cần đọc thêm raw source.
+
+## 🏁 Tiêu Chí Nghiệm Thu (Acceptance Criteria — BDD)
+> Chưa đủ dữ liệu — blocked.
 
 ## ❓ Câu hỏi chưa rõ
+| Q-ID | Liên kết R/AC | Câu hỏi | Hỏi ai | Trạng thái | Câu trả lời | Nguồn trả lời | Ngày trả lời |
+|:-----|:--------------|:--------|:-------|:-----------|:------------|:--------------|:-------------|
+| Q-APP-01 | R-APP-03 | "PO không yêu cầu VAT thì bỏ qua bước check" — bước check là bước nào trong luồng? | BA | Open | | | |
+| Q-APP-02 | (chung) | PO sample & PO chính (Update 17-05-2026): điều kiện cụ thể và luồng xử lý là gì? | BA | Open | | | |
 
-| Q-ID | Liên kết R/AC | Câu hỏi | Hỏi ai | Trạng thái |
-|:-----|:--------------|:--------|:-------|:-----------|
-| Q-001 | R5 | "Nhiều PO gift" — nếu user cố nhận PO gốc trước: lỗi gì? Block hay cảnh báo? | PO/BA | Open |
-| Q-002 | R7 | Config "Required camera" ở đâu (Warehouse config)? Scope áp dụng của config này? | Dev/BA | Open |
-| Q-003 | R8 | SPKPH = gì? Return vendor flow cụ thể như thế nào? | BA | Open |
-| Q-004 | R14 | PO Sample: "cần ghi nhận thông tin PO Sample thuộc PO chính" — field nào, bắt buộc hay optional? | BA | Open |
-| Q-005 | R15 | Multi-user receiving: conflict resolution khi 2 user scan cùng SKU cùng lúc? | Dev | Open |
-| Q-006 | All R16+ | Toàn bộ flow App chi tiết chưa đọc | — | Open |
+## 📝 Thay đổi so với version cũ
+> Chưa đủ dữ liệu để lập bảng đầy đủ.
 
 ## 🔎 Impact Analysis & Regression Proposal
-
-| Change ID | Affected Feature(s) | Affected Test Suite(s) | TC action | Regression candidates | Open questions / Gate |
-|:----------|:--------------------|:-----------------------|:----------|:----------------------|:----------------------|
-| CHG-001~015 | receiving_po_app | — | Add (mới) | — | Q-001~006 |
-
-## Blocked Coverage
-R16 trở đi bị blocked — chưa đọc phần App chi tiết trong raw source. Cần đọc thêm ~70 trang trong doc.
+| Change ID | Affected Feature(s) | Affected Test Suite(s) | TC action | Regression candidates | Gate |
+|:----------|:--------------------|:-----------------------|:----------|:----------------------|:-----|
+| Update 17-05-2026 | receiving_po_app | — | Blocked | PO sample flow | Chờ đọc đủ source |
 
 ## Test Coverage
 | Requirement/AC | Test Case(s) | Status | Ghi chú |
 |:---------------|:-------------|:-------|:-------|
-| R1–R15 | — | ❌ Blocked | Chờ Gate 1 |
-| R16+ | — | ❌ Blocked | Blocked Coverage — chưa đọc source |
+| R-APP-01~03 | | ❌ Blocked | partial_read — cần đọc đủ raw source trước |
+| Case 1 (trang 41-61) | | ❌ Blocked | Chưa đọc |
+| Case 2 (trang 68-73) | | ❌ Blocked | Chưa đọc |
+| Update 17-05-2026 | | ❌ Blocked | Chưa đọc |
 
 ## 📅 Changelog
-| Thời gian | Version | Nội dung | Nguồn |
-|:----------|:--------|:---------|:------|
-| 2026-05-25 00:00:00 | v1.0 | Khởi tạo stub | Raw ingest |
+| Thời gian | Version | Nội dung thay đổi | Nguồn |
+|:----------|:--------|:-----------------|:------|
+| 2026-05-26 09:00:00 | v1.0 | Tạo STUB — partial_read. Đọc được trang 32–41 của 07062 ver2.17 | 07062#834-848 |
