@@ -1,2 +1,8 @@
 /.karate_cache/
 /.idea/
+
+
+
+
+# Ignore Smart Environment folder
+.smart-env

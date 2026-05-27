@@ -32,19 +32,23 @@ allowed-tools:
 
 | Gate | Điều kiện tiếp |
 |:-----|:---------------|
-| **Gate 1** — Feature Spec Approval (PO/QA Lead) | Spec `Draft` → `Done` · xong mới sang Test Design |
+| **Pre-Gate** — Refiner Verify | Chạy `hasaki-skill-refiner` sau ingest · verdict ≠ `FAIL` mới trình Gate 1 |
+| **Gate 1A** — Feature Spec Approval cho specs đầy đủ | Spec `partial_read: false`, `Draft` → `Done` · tiến sang Test Design không cần chờ STUB |
+| **Gate 1B** — Feature Spec Approval cho STUB | Từng STUB khi hoàn thiện → Gate riêng · không gộp với Gate 1A |
 | **Gate 2** — Test Cases Review (QA Lead) | Suite `Draft` → `Testing` · xong mới chạy test |
 | **Gate 3** — Bug Triage (QA Lead + Tech Lead) | Bug `Open` hợp lệ · xác nhận RCA + Severity |
 | **Gate 4** — Test Execution Approval (con người confirm) | Xong mới sync wiki status |
 | **Gate 5** — Go/No-Go (PO + QA Lead ký) | Xong mới close CR |
 
-**Approval Evidence (Gate 1/2/5):** 3 trường bắt buộc trong frontmatter: `approved_by` · `approved_at: YYYY-MM-DD HH:mm:ss` · `approval_note`
+**Approval Evidence (Gate 1A/1B/2/5):** 3 trường bắt buộc trong frontmatter: `approved_by` · `approved_at: YYYY-MM-DD HH:mm:ss` · `approval_note`
 
 ## Core Rules
 
 - **Timezone:** `UTC+07:00` (`Asia/Ho_Chi_Minh`), format `YYYY-MM-DD HH:mm:ss` cho mọi timestamp.
 - **Encoding:** UTF-8 cho mọi file Markdown. Windows: `$env:PYTHONUTF8 = "1"` trước khi chạy Python.
 - **No-Inference:** Requirement/AC/API/testcase phải explicit từ nguồn đã duyệt. Chưa rõ → ghi `## ❓ Câu hỏi chưa rõ` + `Blocked Coverage`. Không dùng `AI-Inferred`, `Assumption`, `Suy diễn`.
+- **Large doc strategy:** Doc >50 trang → đọc TOC trước, lập danh sách sections, đọc hết từng section trước khi viết spec. Không viết spec khi chưa đọc xong section. Feature chưa đọc đủ → set `partial_read: true`, tạo stub, ghi Blocked Coverage.
+- **Enum verify:** Mọi claim về list values (status, dropdown, giá trị hợp lệ) → grep raw đếm đủ + ghi `#line` reference. Filter table và mapping table cùng feature có thể khác nhau — verify riêng.
 - **SSOT:** File trên đĩa là nguồn thật. Đọc trực tiếp trước mỗi thao tác — không suy đoán từ hội thoại cũ.
 - **Secret:** Không commit token/cookie/API key/password. Phát hiện → dừng, báo user rotate & clean history.
 - **Test Case:** Chỉ tạo từ R/AC explicit đã duyệt (Gate 1). R/AC có question `Open` → `Blocked Coverage`, không sinh TC.

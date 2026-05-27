@@ -1,0 +1,364 @@
+{
+  "source_file": "07105_Quality_Control_Docs_ver1.5.md",
+  "source_version": "ver1.5",
+  "last_full_index_version": "ver1.5",
+  "indexed_at": "2026-05-26T09:00:00+07:00",
+  "total_lines": 1323,
+  "note": "File fully read. All section line numbers verified by direct sampling.",
+  "sections": [
+    {
+      "id": "S-00",
+      "title": "Document Header & Revision History",
+      "start_line": 1,
+      "end_line": 55,
+      "depth": 1,
+      "parent_id": null,
+      "topic_types": [],
+      "flags": {
+        "has_enum": false,
+        "has_state_transition": false,
+        "has_formula": false,
+        "has_error_messages": false,
+        "has_validation_rule": false
+      },
+      "mapped_feature": null,
+      "coverage_status": "unmapped",
+      "last_verified_version": null,
+      "change_history": []
+    },
+    {
+      "id": "S-TOC",
+      "title": "Table of Contents (CONTENT)",
+      "start_line": 56,
+      "end_line": 95,
+      "depth": 1,
+      "parent_id": null,
+      "topic_types": [],
+      "flags": {
+        "has_enum": false,
+        "has_state_transition": false,
+        "has_formula": false,
+        "has_error_messages": false,
+        "has_validation_rule": false
+      },
+      "mapped_feature": null,
+      "coverage_status": "unmapped",
+      "last_verified_version": null,
+      "change_history": []
+    },
+    {
+      "id": "S-01",
+      "title": "Tổng quan",
+      "start_line": 96,
+      "end_line": 101,
+      "depth": 1,
+      "parent_id": null,
+      "topic_types": [],
+      "flags": {
+        "has_enum": false,
+        "has_state_transition": false,
+        "has_formula": false,
+        "has_error_messages": false,
+        "has_validation_rule": false
+      },
+      "mapped_feature": "quality_control_criteria_setup.md",
+      "coverage_status": "full",
+      "last_verified_version": "ver1.5",
+      "change_history": []
+    },
+    {
+      "id": "S-02",
+      "title": "Thuật ngữ / Workflow link / Wireframe link",
+      "start_line": 102,
+      "end_line": 123,
+      "depth": 1,
+      "parent_id": null,
+      "topic_types": [],
+      "flags": {
+        "has_enum": false,
+        "has_state_transition": false,
+        "has_formula": false,
+        "has_error_messages": false,
+        "has_validation_rule": false
+      },
+      "mapped_feature": null,
+      "coverage_status": "unmapped",
+      "last_verified_version": null,
+      "change_history": [],
+      "note": "Workflow và Figma links chưa đọc được — ghi câu hỏi trong feature spec"
+    },
+    {
+      "id": "S-03",
+      "title": "Thiết lập tiêu chí – Filter & Listing & Tạo tiêu chí",
+      "start_line": 124,
+      "end_line": 198,
+      "depth": 2,
+      "parent_id": "S-CRITERIA",
+      "topic_types": ["ui_filter", "ui_listing", "validation_rule", "enum_values", "business_rule"],
+      "flags": {
+        "has_enum": true,
+        "has_state_transition": false,
+        "has_formula": false,
+        "has_error_messages": true,
+        "has_validation_rule": true
+      },
+      "mapped_feature": "quality_control_criteria_setup.md",
+      "coverage_status": "full",
+      "last_verified_version": "ver1.5",
+      "change_history": [],
+      "note": "Filter ≥3 chars. Listing Active default. Create: unique code/name, not editable after."
+    },
+    {
+      "id": "S-04",
+      "title": "Import tiêu chí",
+      "start_line": 199,
+      "end_line": 238,
+      "depth": 2,
+      "parent_id": "S-CRITERIA",
+      "topic_types": ["validation_rule", "error_messages"],
+      "flags": {
+        "has_enum": false,
+        "has_state_transition": false,
+        "has_formula": false,
+        "has_error_messages": true,
+        "has_validation_rule": true
+      },
+      "mapped_feature": "quality_control_criteria_setup.md",
+      "coverage_status": "full",
+      "last_verified_version": "ver1.5",
+      "change_history": [],
+      "note": "4 error messages (VN/EN) verified."
+    },
+    {
+      "id": "S-05",
+      "title": "Thiết lập tiêu chí cho SKU – Listing & Create Step 1",
+      "start_line": 239,
+      "end_line": 374,
+      "depth": 2,
+      "parent_id": "S-SKU",
+      "topic_types": ["ui_filter", "ui_listing", "business_rule", "validation_rule"],
+      "flags": {
+        "has_enum": true,
+        "has_state_transition": false,
+        "has_formula": false,
+        "has_error_messages": false,
+        "has_validation_rule": true
+      },
+      "mapped_feature": "quality_control_sku_setup.md",
+      "coverage_status": "full",
+      "last_verified_version": "ver1.5",
+      "change_history": [],
+      "note": "1 SKU chỉ 1 active setup. Assessment time: chỉ 'Sau khi nhận PO'. Frequency: chỉ 'Tất cả PO'."
+    },
+    {
+      "id": "S-06",
+      "title": "Thiết lập tiêu chí cho SKU – Create Step 2 (Criteria + Loại đánh giá)",
+      "start_line": 375,
+      "end_line": 529,
+      "depth": 2,
+      "parent_id": "S-SKU",
+      "topic_types": ["enum_values", "validation_rule", "business_rule"],
+      "flags": {
+        "has_enum": true,
+        "has_state_transition": false,
+        "has_formula": true,
+        "has_error_messages": false,
+        "has_validation_rule": true
+      },
+      "mapped_feature": "quality_control_sku_setup.md",
+      "coverage_status": "full",
+      "last_verified_version": "ver1.5",
+      "change_history": [],
+      "note": "Loại đánh giá: =, >, >=, <, <=, Between, Công thức (UNCLEAR). 3 Phân loại. Keywords: auto-uppercase, no spaces, allowed _ - ."
+    },
+    {
+      "id": "S-07",
+      "title": "Duyệt/Từ chối (Approval Web)",
+      "start_line": 533,
+      "end_line": 569,
+      "depth": 1,
+      "parent_id": null,
+      "topic_types": ["actor_flow", "business_rule", "error_messages"],
+      "flags": {
+        "has_enum": false,
+        "has_state_transition": true,
+        "has_formula": false,
+        "has_error_messages": true,
+        "has_validation_rule": false
+      },
+      "mapped_feature": "quality_control_approval.md",
+      "coverage_status": "full",
+      "last_verified_version": "ver1.5",
+      "change_history": [],
+      "note": "5 confirm messages (exact EN text). Bulk và individual approve/reject/reopen."
+    },
+    {
+      "id": "S-08",
+      "title": "Kết quả đánh giá (Assessment Result Web)",
+      "start_line": 570,
+      "end_line": 695,
+      "depth": 1,
+      "parent_id": null,
+      "topic_types": ["ui_filter", "ui_listing", "business_rule", "enum_values"],
+      "flags": {
+        "has_enum": true,
+        "has_state_transition": false,
+        "has_formula": false,
+        "has_error_messages": false,
+        "has_validation_rule": false
+      },
+      "mapped_feature": "quality_control_assessment_result.md",
+      "coverage_status": "full",
+      "last_verified_version": "ver1.5",
+      "change_history": [],
+      "note": "9 filters. 15 listing columns. Service architecture note. Detail by type: Bình thường/Nhóm UID/Lỗi 4 điểm/Theo từng bước."
+    },
+    {
+      "id": "S-09",
+      "title": "VAS Updated (QC VAS flow Web)",
+      "start_line": 696,
+      "end_line": 799,
+      "depth": 1,
+      "parent_id": null,
+      "topic_types": ["enum_values", "state_transition", "business_rule", "actor_flow"],
+      "flags": {
+        "has_enum": true,
+        "has_state_transition": true,
+        "has_formula": false,
+        "has_error_messages": false,
+        "has_validation_rule": false
+      },
+      "mapped_feature": "quality_control_vas_update.md",
+      "coverage_status": "full",
+      "last_verified_version": "ver1.5",
+      "change_history": [],
+      "note": "VAS Type: IMEI/RFID/Quality Control/Other. 9 VAS status values. Chờ duyệt flow. UNCLEAR: Dev cannot create Adjustment for Return to Vendor."
+    },
+    {
+      "id": "S-10",
+      "title": "Đánh giá chất lượng sản phẩm – Mobile (App normal SKU)",
+      "start_line": 800,
+      "end_line": 871,
+      "depth": 1,
+      "parent_id": null,
+      "topic_types": ["actor_flow", "enum_values", "validation_rule", "business_rule"],
+      "flags": {
+        "has_enum": true,
+        "has_state_transition": false,
+        "has_formula": false,
+        "has_error_messages": false,
+        "has_validation_rule": true
+      },
+      "mapped_feature": "quality_control_mobile.md",
+      "coverage_status": "full",
+      "last_verified_version": "ver1.5",
+      "change_history": [],
+      "note": "Color: gray/blue/green. Fail → photo (max 5) + note mandatory. QC stamp photo mandatory."
+    },
+    {
+      "id": "S-11",
+      "title": "Update 18-09-2025 – Đánh giá chất lượng vải (Fabric Mobile)",
+      "start_line": 872,
+      "end_line": 1034,
+      "depth": 1,
+      "parent_id": null,
+      "topic_types": ["actor_flow", "enum_values", "validation_rule", "business_rule", "formula"],
+      "flags": {
+        "has_enum": true,
+        "has_state_transition": true,
+        "has_formula": true,
+        "has_error_messages": false,
+        "has_validation_rule": true
+      },
+      "mapped_feature": "quality_control_fabric_mobile.md",
+      "coverage_status": "full",
+      "last_verified_version": "ver1.5",
+      "change_history": ["ver1.2"],
+      "note": "Color: gray/blue/green/orange. 19 fabric error types. 3 criteria. Hoàn thành: ≥1 fail → whole group = Không đạt."
+    },
+    {
+      "id": "S-12",
+      "title": "Tạo mới đánh giá – Manual Assessment (App)",
+      "start_line": 1035,
+      "end_line": 1113,
+      "depth": 1,
+      "parent_id": null,
+      "topic_types": ["actor_flow", "validation_rule", "error_messages", "business_rule"],
+      "flags": {
+        "has_enum": false,
+        "has_state_transition": false,
+        "has_formula": false,
+        "has_error_messages": true,
+        "has_validation_rule": true
+      },
+      "mapped_feature": "quality_control_manual_assessment.md",
+      "coverage_status": "full",
+      "last_verified_version": "ver1.5",
+      "change_history": [],
+      "note": "Load 10 recent POs. UID validation messages. Evaluation same as auto flow."
+    },
+    {
+      "id": "S-13",
+      "title": "Update 11-02-2026 (Đánh giá đạt column + Số lượng cần đánh giá + Hình ảnh tem QC + Type Xã vải)",
+      "start_line": 1114,
+      "end_line": 1259,
+      "depth": 1,
+      "parent_id": null,
+      "topic_types": ["enum_values", "business_rule", "ui_listing"],
+      "flags": {
+        "has_enum": true,
+        "has_state_transition": false,
+        "has_formula": false,
+        "has_error_messages": false,
+        "has_validation_rule": false
+      },
+      "mapped_feature": "quality_control_assessment_result.md",
+      "coverage_status": "full",
+      "last_verified_version": "ver1.5",
+      "change_history": ["ver1.4"],
+      "note": "Đánh giá đạt values: N/A / No / Yes. Xã vải column. Chụp hình tem QC step."
+    },
+    {
+      "id": "S-14",
+      "title": "Update 20-04-2026 – SKU thường Failed → ADJ + Blocked UID group",
+      "start_line": 1260,
+      "end_line": 1303,
+      "depth": 1,
+      "parent_id": null,
+      "topic_types": ["business_rule", "state_transition", "actor_flow", "enum_values"],
+      "flags": {
+        "has_enum": true,
+        "has_state_transition": true,
+        "has_formula": false,
+        "has_error_messages": false,
+        "has_validation_rule": false
+      },
+      "mapped_feature": "quality_control_mobile.md",
+      "coverage_status": "full",
+      "last_verified_version": "ver1.5",
+      "change_history": ["ver1.5"],
+      "note": "SKU thường Failed → ADJ (Require VAT: 3 options). SKU vải Failed → auto block UID groups same PO+LOT. Un-block → auto Normal."
+    },
+    {
+      "id": "S-15",
+      "title": "Update 10-05-2026 – Thiết lập tiêu chí 4 điểm & Từng bước tự động từ màn hình Criteria",
+      "start_line": 1304,
+      "end_line": 1323,
+      "depth": 1,
+      "parent_id": null,
+      "topic_types": ["business_rule", "actor_flow"],
+      "flags": {
+        "has_enum": false,
+        "has_state_transition": false,
+        "has_formula": false,
+        "has_error_messages": false,
+        "has_validation_rule": false
+      },
+      "mapped_feature": "quality_control_criteria_setup.md",
+      "coverage_status": "full",
+      "last_verified_version": "ver1.5",
+      "change_history": ["ver1.5"],
+      "note": "Lỗi 4 điểm và Theo từng bước tự động apply vào SKU setup khi tạo từ màn hình Criteria."
+    }
+  ]
+}

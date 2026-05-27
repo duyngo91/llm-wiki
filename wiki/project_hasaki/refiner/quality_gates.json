@@ -1,0 +1,39 @@
+{
+  "sessions": [
+    {
+      "session": "2026-05-26",
+      "batch": "ingest-07062-07105",
+      "score_before": 0,
+      "score_after": 10,
+      "gates": {
+        "L1_FORMAT_PASS": false,
+        "L2_COVERAGE_PASS": false,
+        "L3_NO_INFERENCE_PASS": false,
+        "VERIFY_SCRIPT_PASS": null,
+        "L4_SUGGESTIONS_COMPLETE": true,
+        "L5_ROOT_CAUSE_COMPLETE": true
+      },
+      "violations": {
+        "format": 32,
+        "coverage_gaps": 1,
+        "inferred": 1,
+        "logic_inferred": 0,
+        "stripped_condition": 0,
+        "negation_flip": 0,
+        "phantom_evidence": 0,
+        "potential_omission": 0,
+        "missing_detail": 0,
+        "unclear": 2
+      },
+      "penalties": {
+        "inferred_remaining": -5,
+        "stripped_condition_remaining": 0,
+        "negation_flip_remaining": 0,
+        "unmapped_no_note": 0
+      },
+      "traceability_phase": "Ingest PDF — Feature Spec only (no Task Spec, no Test Suite yet)",
+      "verdict": "FAIL",
+      "notes": "VERIFY_SCRIPT_PASS = null (not run this session). 4 stub specs missing mandatory section placeholders (FIX-002~005). S-19 unmapped (FIX-006). R-VAS-12 INFERRED threshold >0 vs >1 (FIX-001)."
+    }
+  ]
+}

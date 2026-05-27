@@ -1,0 +1,36 @@
+{
+  "sessions": [
+    {
+      "session": "2026-05-25",
+      "batch": "ingest-07062-07105",
+      "score_before": 83,
+      "score_after": 85,
+      "gates": {
+        "NO_INFERENCE_PASS": true,
+        "QUESTION_ROUTING_PASS": true,
+        "BLOCKED_COVERAGE_PASS": true,
+        "TRACEABILITY_PASS": true,
+        "UTF8_PASS": true,
+        "VERIFY_PASS": true
+      },
+      "traceability_phase": "Chỉ ingest PDF",
+      "violations_before_fix": [
+        {
+          "gate": "NO_INFERENCE_PASS",
+          "file": "wiki/project_hasaki/features/receiving_po_inbound_shipment.md",
+          "claim": "R3 — WMS Status filter chỉ ghi 4 values, raw có 5",
+          "type": "MISSED_ENUM_VALUE",
+          "action": "Updated R3 to include Hoàn thành / Completed"
+        },
+        {
+          "gate": "NO_INFERENCE_PASS",
+          "file": "wiki/project_hasaki/features/receiving_po_inbound_shipment.md",
+          "claim": "R1 — thiếu note 'Move qua trang ASN' sau Đồng kiểm filter",
+          "type": "MISSING_DETAIL",
+          "action": "Added note to R1"
+        }
+      ],
+      "verdict": "PASS after fix"
+    }
+  ]
+}
