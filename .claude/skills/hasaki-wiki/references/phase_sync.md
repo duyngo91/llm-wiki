@@ -155,3 +155,16 @@ Báo cáo kết quả. Ghi log `[lint-sync]`.
 | KANBAN | `## TODO` / `## InProgress` / `## Done` |
 
 **Không được dùng:** `Approved`, `Active`, `Review`, `Final` cho Feature/API Spec.
+
+---
+
+## Reset-Ready Sync Addendum (2026-05-27)
+
+- Baseline sau reset:
+  1. `verify`
+  2. `evidence-index`
+  3. `change-impact`
+- Nếu `change_impact_report.json` có feature `Stale` hoặc `has_open_question=true`:
+  - phải cập nhật Impact Analysis trước
+  - testcase liên quan phải giữ Blocked cho đến khi câu hỏi được đóng.
+- Mismatch giữa báo cáo retrospective và gate runtime: luôn theo gate runtime.

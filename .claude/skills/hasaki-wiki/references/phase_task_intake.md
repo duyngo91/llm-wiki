@@ -68,3 +68,14 @@ Thêm vào `## TODO`. Chờ user confirm trước khi chạy `/wiki-requirement-
 | `Done` | API status = 2 |
 
 Raw file chỉ đọc từ góc nhìn wiki. Cập nhật qua script `hasaki_my_tasks.py`, không sửa tay.
+
+## Task Spec Stub Rule (2026-05-27d)
+
+- Sau reset, cho phép tạo `task_spec` dạng stub để giữ traceability ngay lập tức.
+- Stub task_spec bắt buộc có tối thiểu:
+  - `tbb2_code`, `hsk_parent`
+  - link raw HSK source
+  - link feature specs liên quan (nếu đã có)
+  - trạng thái blocked rõ ràng nếu chưa đủ source
+- Stub task_spec không được coi là hoàn tất workflow task intake.
+- Trước khi đưa task vào execution-ready, phải refine task_spec thành bản đầy đủ theo rule no-inference.

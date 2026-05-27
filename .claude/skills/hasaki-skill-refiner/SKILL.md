@@ -413,3 +413,42 @@ Session hoàn thành khi:
 - Không tự apply patch vào skill/rule/template khi chưa pass quality gates.
 - Testcase chỉ sinh từ R/AC explicit đã được Gate 1 duyệt.
 - Nội dung dựa trên Open question phải nằm ở `Blocked Coverage`.
+
+---
+
+## Gate SSOT Addendum (2026-05-27)
+
+- Nguồn gate quyết định duy nhất: `wiki/project_hasaki/refiner/quality_gates.json`.
+- `wiki/project_hasaki/reports/self_improve/*` chỉ là retrospective/advisory, không override verdict.
+- Trong mỗi refiner session summary phải có:
+  - `Gate Decision Source: refiner/quality_gates.json`
+  - `Advisory Source: reports/self_improve/*`
+- Nếu có PASS/FAIL mismatch giữa 2 nguồn: follow refiner verdict và tạo action item trong `improvement_patch_plan.md`.
+
+## Reset-Ready Indexing Addendum (2026-05-27)
+
+- Refiner must read `{source}_index.json` using `source_ref` for raw range review.
+- Sections with `source_type: body_heading` are useful split hints but remain review-required until manually confirmed.
+- Gate checks should flag any Feature Spec claim that maps to a section with `range_status: needs_review` and no direct `doc#line-line` evidence.
+- If broad sections reappear after reset, first inspect `index_skeleton.py` page markers and TOC matching before editing Feature Specs.
+
+## Reset Baseline Gate Addendum (2026-05-27b)
+
+- For reset runs, add a mandatory baseline gate before normal L1-L5 scoring:
+  - `wiki/project_hasaki/features/*.md` exists
+  - `evidence_index.json.records > 0`
+  - at least one feature contains explicit `doc#line-line` source references
+- If any baseline check fails, verdict cannot be `PASS`; cap at `CONDITIONAL` and emit critical fixes first.
+- Report this state explicitly in `refiner_report.md` under `Scope session này` to avoid false confidence from clean indexes only.
+
+## Stub Handling Policy (2026-05-27c)
+
+- Refiner should classify stub-only specs as `bootstrap-ready` but not `release-ready`.
+- Passing baseline checks (`features exist`, `records > 0`) does not imply full semantic coverage.
+- For each stub, refiner must emit follow-up actions to convert section-title claims into business-meaning claims before final PASS.
+
+## Task Stub Evaluation Policy (2026-05-27d)
+
+- Refiner should classify stub task_specs as `trace-ready` only.
+- `trace-ready` is not equal to `execution-ready`.
+- If task_spec remains stub-only (missing feature requirement linkage or blocked rationale), refiner must emit follow-up fixes and keep verdict below final PASS for task-completion scope.

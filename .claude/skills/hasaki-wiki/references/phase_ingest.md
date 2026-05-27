@@ -213,3 +213,49 @@ Dùng `tpl_api_spec.md`. Các mục bắt buộc:
 - `## ❓ Câu hỏi API chưa rõ`, API Test Coverage, `## 📅 Changelog`
 
 **Nguyên tắc:** Feature Spec = WHAT/WHY; API Spec = HOW contract. Nguồn không đề cập API → không tạo API Spec. Không suy diễn endpoint/payload/status code/error message/side effect.
+
+---
+
+## Reset-Ready Ingest Addendum (2026-05-27)
+
+- Ngay sau khi ingest hoặc cập nhật feature spec, phải chạy `evidence-index` để đồng bộ machine-readable evidence.
+- Requirement source không có `doc#line` hoặc `doc#line-line` là invalid cho Gate 1.
+- Khi tạo mới feature spec, điền ngay các field:
+  - `source_doc`
+  - `source_range`
+  - `last_verified_at`
+  - `verification_status` (`Pending`/`Verified`/`Stale`)
+- Nếu source chưa đủ rõ: giữ `coverage_status` ở `partial` hoặc `stub`; không nâng `full` bằng suy diễn.
+
+## Reset-Ready Index Skeleton Notes (2026-05-27)
+
+- `index_skeleton.py` now uses TOC dotted entries as the primary split source for converted PDF markdown.
+- Footer/page-number handling must tolerate these cases:
+  - same-line footer page number (`... POS 10`)
+  - footer split across `Operation... Merchant,` and `POS 10`
+  - standalone page number after footer
+  - table-row page number after footer, but only as a low-confidence signal
+- Low-confidence page numbers are repaired to the expected sequence when OCR/table extraction returns an impossible page jump.
+- Body headings are intentionally narrow: `Update`, date update, `Case`, and `Web:` only. Generic bullets, table rows, OCR fragments, and uppercase table cells are not headings.
+- Generated sections include `source_type`, `source_page`, `source_ref`, and `range_status` for traceability.
+
+## Reset Baseline Notes (2026-05-27b)
+
+- If project has just been reset, treat re-index output as structural baseline only.
+- Before gate review, create minimum stub Feature Specs from TOC/index sections so evidence extraction can run.
+- `evidence_index.json` with `records = 0` means ingest is not complete yet.
+- Recommended immediate sequence after reset:
+  1. Recreate `wiki/project_hasaki` folders
+  2. Run `index_skeleton.py` for each requirement MD
+  3. Create stub features with source references
+  4. Run refiner
+
+## Stub -> Full Spec Rule (2026-05-27c)
+
+- After reset bootstrap, treat stubs as transition artifacts only.
+- Required transition path:
+  1. index from raw
+  2. stub feature specs with source references
+  3. refine stubs into full feature specs by domain
+  4. run refiner and proceed Gate 1
+- A batch with only stubs and no refinement log cannot be considered complete ingest.
