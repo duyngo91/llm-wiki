@@ -1,8 +1,8 @@
 {
   "source_file": "07105_Quality_Control_Docs_ver1.5.md",
-  "source_version": "ver1.5",
-  "last_full_index_version": "ver1.5",
-  "indexed_at": "2026-05-27T23:05:29+07:00",
+  "source_version": "1.5",
+  "last_full_index_version": "1.5",
+  "indexed_at": "2026-05-30T12:30:34+07:00",
   "total_lines": 1323,
   "line_numbering": "zero_based_internal; source_ref is one_based_display",
   "extraction_strategy": "toc_page_markers",
@@ -23,10 +23,16 @@
         "has_error_messages": false,
         "has_validation_rule": false
       },
-      "mapped_feature": null,
-      "coverage_status": "unmapped",
+      "mapped_feature": "stub_qc_overview.md",
+      "coverage_status": "stub",
       "last_verified_version": null,
       "change_history": [],
+      "read_log": {
+        "claims_extracted": 0,
+        "last_read_at": "2026-05-30 14:45:51",
+        "last_read_session": "split-stubs-2026-05-30",
+        "note": "Bootstrap stub from index, no raw content read yet"
+      },
       "_page_num": 5,
       "_source": "toc",
       "source_page": 5,
@@ -49,10 +55,16 @@
         "has_error_messages": false,
         "has_validation_rule": false
       },
-      "mapped_feature": null,
-      "coverage_status": "unmapped",
+      "mapped_feature": "stub_qc_overview.md",
+      "coverage_status": "stub",
       "last_verified_version": null,
       "change_history": [],
+      "read_log": {
+        "claims_extracted": 0,
+        "last_read_at": "2026-05-30 14:45:51",
+        "last_read_session": "split-stubs-2026-05-30",
+        "note": "Bootstrap stub from index, no raw content read yet"
+      },
       "_page_num": 5,
       "_source": "toc",
       "source_page": 5,
@@ -75,10 +87,16 @@
         "has_error_messages": false,
         "has_validation_rule": false
       },
-      "mapped_feature": null,
-      "coverage_status": "unmapped",
+      "mapped_feature": "stub_qc_overview.md",
+      "coverage_status": "stub",
       "last_verified_version": null,
       "change_history": [],
+      "read_log": {
+        "claims_extracted": 0,
+        "last_read_at": "2026-05-30 14:45:51",
+        "last_read_session": "split-stubs-2026-05-30",
+        "note": "Bootstrap stub from index, no raw content read yet"
+      },
       "_page_num": 5,
       "_source": "toc",
       "source_page": 5,
@@ -101,10 +119,16 @@
         "has_error_messages": false,
         "has_validation_rule": false
       },
-      "mapped_feature": null,
-      "coverage_status": "unmapped",
+      "mapped_feature": "stub_qc_overview.md",
+      "coverage_status": "stub",
       "last_verified_version": null,
       "change_history": [],
+      "read_log": {
+        "claims_extracted": 0,
+        "last_read_at": "2026-05-30 14:45:51",
+        "last_read_session": "split-stubs-2026-05-30",
+        "note": "Bootstrap stub from index, no raw content read yet"
+      },
       "_page_num": 6,
       "_source": "toc",
       "source_page": 6,
@@ -127,10 +151,16 @@
         "has_error_messages": false,
         "has_validation_rule": false
       },
-      "mapped_feature": null,
-      "coverage_status": "unmapped",
+      "mapped_feature": "stub_qc_criteria_setup.md",
+      "coverage_status": "stub",
       "last_verified_version": null,
       "change_history": [],
+      "read_log": {
+        "claims_extracted": 0,
+        "last_read_at": "2026-05-30 14:45:51",
+        "last_read_session": "split-stubs-2026-05-30",
+        "note": "Bootstrap stub from index, no raw content read yet"
+      },
       "_page_num": 6,
       "_source": "toc",
       "source_page": 6,
@@ -153,10 +183,16 @@
         "has_error_messages": false,
         "has_validation_rule": false
       },
-      "mapped_feature": null,
-      "coverage_status": "unmapped",
+      "mapped_feature": "stub_qc_criteria_setup.md",
+      "coverage_status": "stub",
       "last_verified_version": null,
       "change_history": [],
+      "read_log": {
+        "claims_extracted": 0,
+        "last_read_at": "2026-05-30 14:45:51",
+        "last_read_session": "split-stubs-2026-05-30",
+        "note": "Bootstrap stub from index, no raw content read yet"
+      },
       "_page_num": 7,
       "_source": "toc",
       "source_page": 7,
@@ -179,10 +215,16 @@
         "has_error_messages": false,
         "has_validation_rule": false
       },
-      "mapped_feature": null,
-      "coverage_status": "unmapped",
+      "mapped_feature": "stub_qc_criteria_setup.md",
+      "coverage_status": "stub",
       "last_verified_version": null,
       "change_history": [],
+      "read_log": {
+        "claims_extracted": 0,
+        "last_read_at": "2026-05-30 14:45:51",
+        "last_read_session": "split-stubs-2026-05-30",
+        "note": "Bootstrap stub from index, no raw content read yet"
+      },
       "_page_num": 8,
       "_source": "toc",
       "source_page": 8,
@@ -205,10 +247,16 @@
         "has_error_messages": false,
         "has_validation_rule": false
       },
-      "mapped_feature": null,
-      "coverage_status": "unmapped",
+      "mapped_feature": "stub_qc_criteria_sku.md",
+      "coverage_status": "full",
       "last_verified_version": null,
       "change_history": [],
+      "read_log": {
+        "claims_extracted": 18,
+        "last_read_at": "2026-05-30 15:16:12",
+        "last_read_session": "refine-batch-2-2026-05-30",
+        "note": "Refined stub → full spec (batch 2)"
+      },
       "_page_num": 9,
       "_source": "toc",
       "source_page": 9,
@@ -231,10 +279,16 @@
         "has_error_messages": false,
         "has_validation_rule": false
       },
-      "mapped_feature": null,
-      "coverage_status": "unmapped",
+      "mapped_feature": "stub_qc_criteria_sku.md",
+      "coverage_status": "full",
       "last_verified_version": null,
       "change_history": [],
+      "read_log": {
+        "claims_extracted": 18,
+        "last_read_at": "2026-05-30 15:16:12",
+        "last_read_session": "refine-batch-2-2026-05-30",
+        "note": "Refined stub → full spec (batch 2)"
+      },
       "_page_num": 10,
       "_source": "toc",
       "source_page": 10,
@@ -257,10 +311,16 @@
         "has_error_messages": false,
         "has_validation_rule": false
       },
-      "mapped_feature": null,
-      "coverage_status": "unmapped",
+      "mapped_feature": "stub_qc_criteria_setup.md",
+      "coverage_status": "stub",
       "last_verified_version": null,
       "change_history": [],
+      "read_log": {
+        "claims_extracted": 0,
+        "last_read_at": "2026-05-30 14:45:51",
+        "last_read_session": "split-stubs-2026-05-30",
+        "note": "Bootstrap stub from index, no raw content read yet"
+      },
       "_page_num": 15,
       "_source": "toc",
       "source_page": 15,
@@ -283,10 +343,16 @@
         "has_error_messages": false,
         "has_validation_rule": false
       },
-      "mapped_feature": null,
-      "coverage_status": "unmapped",
+      "mapped_feature": "stub_qc_criteria_setup.md",
+      "coverage_status": "stub",
       "last_verified_version": null,
       "change_history": [],
+      "read_log": {
+        "claims_extracted": 0,
+        "last_read_at": "2026-05-30 14:45:51",
+        "last_read_session": "split-stubs-2026-05-30",
+        "note": "Bootstrap stub from index, no raw content read yet"
+      },
       "_page_num": 15,
       "_source": "body_heading",
       "source_page": 15,
@@ -309,10 +375,16 @@
         "has_error_messages": false,
         "has_validation_rule": false
       },
-      "mapped_feature": null,
-      "coverage_status": "unmapped",
+      "mapped_feature": "stub_qc_criteria_setup.md",
+      "coverage_status": "stub",
       "last_verified_version": null,
       "change_history": [],
+      "read_log": {
+        "claims_extracted": 0,
+        "last_read_at": "2026-05-30 14:45:51",
+        "last_read_session": "split-stubs-2026-05-30",
+        "note": "Bootstrap stub from index, no raw content read yet"
+      },
       "_page_num": 16,
       "_source": "body_heading",
       "source_page": 16,
@@ -335,10 +407,16 @@
         "has_error_messages": false,
         "has_validation_rule": false
       },
-      "mapped_feature": null,
-      "coverage_status": "unmapped",
+      "mapped_feature": "stub_qc_criteria_setup.md",
+      "coverage_status": "stub",
       "last_verified_version": null,
       "change_history": [],
+      "read_log": {
+        "claims_extracted": 0,
+        "last_read_at": "2026-05-30 14:45:51",
+        "last_read_session": "split-stubs-2026-05-30",
+        "note": "Bootstrap stub from index, no raw content read yet"
+      },
       "_page_num": 17,
       "_source": "toc",
       "source_page": 17,
@@ -361,10 +439,16 @@
         "has_error_messages": false,
         "has_validation_rule": false
       },
-      "mapped_feature": null,
-      "coverage_status": "unmapped",
+      "mapped_feature": "stub_qc_criteria_approval.md",
+      "coverage_status": "full",
       "last_verified_version": null,
       "change_history": [],
+      "read_log": {
+        "claims_extracted": 7,
+        "last_read_at": "2026-05-30 15:00:31",
+        "last_read_session": "refine-batch-1-2026-05-30",
+        "note": "Refined stub → full spec"
+      },
       "_page_num": 19,
       "_source": "toc",
       "source_page": 19,
@@ -387,10 +471,16 @@
         "has_error_messages": false,
         "has_validation_rule": false
       },
-      "mapped_feature": null,
-      "coverage_status": "unmapped",
+      "mapped_feature": "stub_qc_evaluation_result.md",
+      "coverage_status": "stub",
       "last_verified_version": null,
       "change_history": [],
+      "read_log": {
+        "claims_extracted": 0,
+        "last_read_at": "2026-05-30 14:45:51",
+        "last_read_session": "split-stubs-2026-05-30",
+        "note": "Bootstrap stub from index, no raw content read yet"
+      },
       "_page_num": 22,
       "_source": "toc",
       "source_page": 22,
@@ -413,10 +503,16 @@
         "has_error_messages": false,
         "has_validation_rule": false
       },
-      "mapped_feature": null,
-      "coverage_status": "unmapped",
+      "mapped_feature": "stub_qc_evaluation_result.md",
+      "coverage_status": "stub",
       "last_verified_version": null,
       "change_history": [],
+      "read_log": {
+        "claims_extracted": 0,
+        "last_read_at": "2026-05-30 14:45:51",
+        "last_read_session": "split-stubs-2026-05-30",
+        "note": "Bootstrap stub from index, no raw content read yet"
+      },
       "_page_num": 23,
       "_source": "toc",
       "source_page": 23,
@@ -439,10 +535,16 @@
         "has_error_messages": false,
         "has_validation_rule": false
       },
-      "mapped_feature": null,
-      "coverage_status": "unmapped",
+      "mapped_feature": "stub_qc_evaluation_result.md",
+      "coverage_status": "stub",
       "last_verified_version": null,
       "change_history": [],
+      "read_log": {
+        "claims_extracted": 0,
+        "last_read_at": "2026-05-30 14:45:51",
+        "last_read_session": "split-stubs-2026-05-30",
+        "note": "Bootstrap stub from index, no raw content read yet"
+      },
       "_page_num": 24,
       "_source": "body_heading",
       "source_page": 24,
@@ -465,10 +567,16 @@
         "has_error_messages": false,
         "has_validation_rule": false
       },
-      "mapped_feature": null,
-      "coverage_status": "unmapped",
+      "mapped_feature": "stub_qc_vas.md",
+      "coverage_status": "full",
       "last_verified_version": null,
       "change_history": [],
+      "read_log": {
+        "claims_extracted": 14,
+        "last_read_at": "2026-05-30 15:22:24",
+        "last_read_session": "refine-batch-2-2026-05-30",
+        "note": "Refined stub → full spec (batch 2)"
+      },
       "_page_num": 27,
       "_source": "toc",
       "source_page": 27,
@@ -491,10 +599,16 @@
         "has_error_messages": false,
         "has_validation_rule": false
       },
-      "mapped_feature": null,
-      "coverage_status": "unmapped",
+      "mapped_feature": "stub_qc_vas.md",
+      "coverage_status": "full",
       "last_verified_version": null,
       "change_history": [],
+      "read_log": {
+        "claims_extracted": 4,
+        "last_read_at": "2026-05-30 15:22:24",
+        "last_read_session": "refine-batch-2-2026-05-30",
+        "note": "Refined stub → full spec (batch 2)"
+      },
       "_page_num": 30,
       "_source": "toc",
       "source_page": 30,
@@ -517,10 +631,16 @@
         "has_error_messages": false,
         "has_validation_rule": false
       },
-      "mapped_feature": null,
-      "coverage_status": "unmapped",
+      "mapped_feature": "stub_qc_evaluation_mobile.md",
+      "coverage_status": "full",
       "last_verified_version": null,
       "change_history": [],
+      "read_log": {
+        "claims_extracted": 14,
+        "last_read_at": "2026-05-30 15:30:22",
+        "last_read_session": "refine-batch-2-2026-05-30",
+        "note": "Refined stub → full spec (batch 2)"
+      },
       "_page_num": 31,
       "_source": "toc",
       "source_page": 31,
@@ -543,10 +663,16 @@
         "has_error_messages": false,
         "has_validation_rule": false
       },
-      "mapped_feature": null,
-      "coverage_status": "unmapped",
+      "mapped_feature": "stub_qc_evaluation_mobile.md",
+      "coverage_status": "full",
       "last_verified_version": null,
       "change_history": [],
+      "read_log": {
+        "claims_extracted": 19,
+        "last_read_at": "2026-05-30 15:30:22",
+        "last_read_session": "refine-batch-2-2026-05-30",
+        "note": "Refined stub → full spec (batch 2)"
+      },
       "_page_num": 34,
       "_source": "toc",
       "source_page": 34,
@@ -569,10 +695,16 @@
         "has_error_messages": false,
         "has_validation_rule": false
       },
-      "mapped_feature": null,
-      "coverage_status": "unmapped",
+      "mapped_feature": "stub_qc_evaluation_manual.md",
+      "coverage_status": "stub",
       "last_verified_version": null,
       "change_history": [],
+      "read_log": {
+        "claims_extracted": 0,
+        "last_read_at": "2026-05-30 14:45:51",
+        "last_read_session": "split-stubs-2026-05-30",
+        "note": "Bootstrap stub from index, no raw content read yet"
+      },
       "_page_num": 39,
       "_source": "toc",
       "source_page": 39,
@@ -595,10 +727,16 @@
         "has_error_messages": false,
         "has_validation_rule": false
       },
-      "mapped_feature": null,
-      "coverage_status": "unmapped",
+      "mapped_feature": "stub_qc_evaluation_manual.md",
+      "coverage_status": "stub",
       "last_verified_version": null,
       "change_history": [],
+      "read_log": {
+        "claims_extracted": 0,
+        "last_read_at": "2026-05-30 14:45:51",
+        "last_read_session": "split-stubs-2026-05-30",
+        "note": "Bootstrap stub from index, no raw content read yet"
+      },
       "_page_num": 42,
       "_source": "toc",
       "source_page": 42,
@@ -621,10 +759,16 @@
         "has_error_messages": false,
         "has_validation_rule": false
       },
-      "mapped_feature": null,
-      "coverage_status": "unmapped",
+      "mapped_feature": "stub_qc_criteria_setup.md",
+      "coverage_status": "stub",
       "last_verified_version": null,
       "change_history": [],
+      "read_log": {
+        "claims_extracted": 0,
+        "last_read_at": "2026-05-30 14:45:51",
+        "last_read_session": "split-stubs-2026-05-30",
+        "note": "Bootstrap stub from index, no raw content read yet"
+      },
       "_page_num": 42,
       "_source": "toc",
       "source_page": 42,
@@ -647,10 +791,16 @@
         "has_error_messages": false,
         "has_validation_rule": false
       },
-      "mapped_feature": null,
-      "coverage_status": "unmapped",
+      "mapped_feature": "stub_qc_uid_group.md",
+      "coverage_status": "stub",
       "last_verified_version": null,
       "change_history": [],
+      "read_log": {
+        "claims_extracted": 0,
+        "last_read_at": "2026-05-30 14:45:51",
+        "last_read_session": "split-stubs-2026-05-30",
+        "note": "Bootstrap stub from index, no raw content read yet"
+      },
       "_page_num": 43,
       "_source": "toc",
       "source_page": 43,
@@ -673,10 +823,16 @@
         "has_error_messages": false,
         "has_validation_rule": false
       },
-      "mapped_feature": null,
-      "coverage_status": "unmapped",
+      "mapped_feature": "stub_qc_evaluation_result.md",
+      "coverage_status": "stub",
       "last_verified_version": null,
       "change_history": [],
+      "read_log": {
+        "claims_extracted": 0,
+        "last_read_at": "2026-05-30 14:45:51",
+        "last_read_session": "split-stubs-2026-05-30",
+        "note": "Bootstrap stub from index, no raw content read yet"
+      },
       "_page_num": 43,
       "_source": "toc",
       "source_page": 43,
@@ -699,10 +855,16 @@
         "has_error_messages": false,
         "has_validation_rule": false
       },
-      "mapped_feature": null,
-      "coverage_status": "unmapped",
+      "mapped_feature": "stub_qc_uid_group.md",
+      "coverage_status": "stub",
       "last_verified_version": null,
       "change_history": [],
+      "read_log": {
+        "claims_extracted": 0,
+        "last_read_at": "2026-05-30 14:45:51",
+        "last_read_session": "split-stubs-2026-05-30",
+        "note": "Bootstrap stub from index, no raw content read yet"
+      },
       "_page_num": 44,
       "_source": "toc",
       "source_page": 44,
@@ -725,10 +887,16 @@
         "has_error_messages": false,
         "has_validation_rule": false
       },
-      "mapped_feature": null,
-      "coverage_status": "unmapped",
+      "mapped_feature": "stub_qc_uid_group.md",
+      "coverage_status": "stub",
       "last_verified_version": null,
       "change_history": [],
+      "read_log": {
+        "claims_extracted": 0,
+        "last_read_at": "2026-05-30 14:45:51",
+        "last_read_session": "split-stubs-2026-05-30",
+        "note": "Bootstrap stub from index, no raw content read yet"
+      },
       "_page_num": 44,
       "_source": "toc",
       "source_page": 44,
@@ -751,10 +919,16 @@
         "has_error_messages": false,
         "has_validation_rule": false
       },
-      "mapped_feature": null,
-      "coverage_status": "unmapped",
+      "mapped_feature": "stub_qc_uid_group.md",
+      "coverage_status": "stub",
       "last_verified_version": null,
       "change_history": [],
+      "read_log": {
+        "claims_extracted": 0,
+        "last_read_at": "2026-05-30 14:45:51",
+        "last_read_session": "split-stubs-2026-05-30",
+        "note": "Bootstrap stub from index, no raw content read yet"
+      },
       "_page_num": 45,
       "_source": "toc",
       "source_page": 45,
@@ -777,10 +951,16 @@
         "has_error_messages": false,
         "has_validation_rule": false
       },
-      "mapped_feature": null,
-      "coverage_status": "unmapped",
+      "mapped_feature": "stub_qc_evaluation_manual.md",
+      "coverage_status": "stub",
       "last_verified_version": null,
       "change_history": [],
+      "read_log": {
+        "claims_extracted": 0,
+        "last_read_at": "2026-05-30 14:45:51",
+        "last_read_session": "split-stubs-2026-05-30",
+        "note": "Bootstrap stub from index, no raw content read yet"
+      },
       "_page_num": 46,
       "_source": "toc",
       "source_page": 46,
@@ -803,10 +983,16 @@
         "has_error_messages": false,
         "has_validation_rule": false
       },
-      "mapped_feature": null,
-      "coverage_status": "unmapped",
+      "mapped_feature": "stub_qc_evaluation_manual.md",
+      "coverage_status": "stub",
       "last_verified_version": null,
       "change_history": [],
+      "read_log": {
+        "claims_extracted": 0,
+        "last_read_at": "2026-05-30 14:45:51",
+        "last_read_session": "split-stubs-2026-05-30",
+        "note": "Bootstrap stub from index, no raw content read yet"
+      },
       "_page_num": 50,
       "_source": "toc",
       "source_page": 50,
@@ -829,10 +1015,16 @@
         "has_error_messages": false,
         "has_validation_rule": false
       },
-      "mapped_feature": null,
-      "coverage_status": "unmapped",
+      "mapped_feature": "stub_qc_evaluation_manual.md",
+      "coverage_status": "stub",
       "last_verified_version": null,
       "change_history": [],
+      "read_log": {
+        "claims_extracted": 0,
+        "last_read_at": "2026-05-30 14:45:51",
+        "last_read_session": "split-stubs-2026-05-30",
+        "note": "Bootstrap stub from index, no raw content read yet"
+      },
       "_page_num": 50,
       "_source": "toc",
       "source_page": 50,
@@ -855,10 +1047,16 @@
         "has_error_messages": false,
         "has_validation_rule": false
       },
-      "mapped_feature": null,
-      "coverage_status": "unmapped",
+      "mapped_feature": "stub_qc_evaluation_manual.md",
+      "coverage_status": "stub",
       "last_verified_version": null,
       "change_history": [],
+      "read_log": {
+        "claims_extracted": 0,
+        "last_read_at": "2026-05-30 14:45:51",
+        "last_read_session": "split-stubs-2026-05-30",
+        "note": "Bootstrap stub from index, no raw content read yet"
+      },
       "_page_num": 51,
       "_source": "toc",
       "source_page": 51,
@@ -881,10 +1079,16 @@
         "has_error_messages": false,
         "has_validation_rule": false
       },
-      "mapped_feature": null,
-      "coverage_status": "unmapped",
+      "mapped_feature": "stub_qc_evaluation_manual.md",
+      "coverage_status": "stub",
       "last_verified_version": null,
       "change_history": [],
+      "read_log": {
+        "claims_extracted": 0,
+        "last_read_at": "2026-05-30 14:45:51",
+        "last_read_session": "split-stubs-2026-05-30",
+        "note": "Bootstrap stub from index, no raw content read yet"
+      },
       "_page_num": 52,
       "_source": "toc",
       "source_page": 52,
@@ -907,10 +1111,16 @@
         "has_error_messages": false,
         "has_validation_rule": false
       },
-      "mapped_feature": null,
-      "coverage_status": "unmapped",
+      "mapped_feature": "stub_qc_criteria_setup.md",
+      "coverage_status": "stub",
       "last_verified_version": null,
       "change_history": [],
+      "read_log": {
+        "claims_extracted": 0,
+        "last_read_at": "2026-05-30 14:45:51",
+        "last_read_session": "split-stubs-2026-05-30",
+        "note": "Bootstrap stub from index, no raw content read yet"
+      },
       "_page_num": 52,
       "_source": "toc",
       "source_page": 52,
@@ -933,10 +1143,16 @@
         "has_error_messages": false,
         "has_validation_rule": false
       },
-      "mapped_feature": null,
-      "coverage_status": "unmapped",
+      "mapped_feature": "stub_qc_criteria_setup.md",
+      "coverage_status": "stub",
       "last_verified_version": null,
       "change_history": [],
+      "read_log": {
+        "claims_extracted": 0,
+        "last_read_at": "2026-05-30 14:45:51",
+        "last_read_session": "split-stubs-2026-05-30",
+        "note": "Bootstrap stub from index, no raw content read yet"
+      },
       "_page_num": 52,
       "_source": "toc",
       "source_page": 52,

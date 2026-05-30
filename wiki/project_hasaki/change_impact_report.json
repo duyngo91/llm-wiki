@@ -1,0 +1,232 @@
+{
+  "project_id": "project_hasaki",
+  "generated_at": "2026-05-28T21:15:22+07:00",
+  "summary": {
+    "changed_features": 0,
+    "stale_features": 0,
+    "partial_read_features": 20,
+    "open_question_features": 20
+  },
+  "items": [
+    {
+      "feature": "qc_criteria_approval",
+      "feature_file": "wiki/project_hasaki/features/stub_qc_criteria_approval.md",
+      "source_doc": "07105_Quality_Control_Docs_ver1",
+      "feature_source_version": "1.5",
+      "latest_source_version": "",
+      "status": "Aligned",
+      "partial_read": true,
+      "has_open_question": true,
+      "recommended_action": "Re-verify + update Impact/Regression + keep testcase blocked if question open"
+    },
+    {
+      "feature": "qc_criteria_setup",
+      "feature_file": "wiki/project_hasaki/features/stub_qc_criteria_setup.md",
+      "source_doc": "07105_Quality_Control_Docs_ver1",
+      "feature_source_version": "1.5",
+      "latest_source_version": "",
+      "status": "Aligned",
+      "partial_read": true,
+      "has_open_question": true,
+      "recommended_action": "Re-verify + update Impact/Regression + keep testcase blocked if question open"
+    },
+    {
+      "feature": "qc_criteria_sku",
+      "feature_file": "wiki/project_hasaki/features/stub_qc_criteria_sku.md",
+      "source_doc": "07105_Quality_Control_Docs_ver1",
+      "feature_source_version": "1.5",
+      "latest_source_version": "",
+      "status": "Aligned",
+      "partial_read": true,
+      "has_open_question": true,
+      "recommended_action": "Re-verify + update Impact/Regression + keep testcase blocked if question open"
+    },
+    {
+      "feature": "qc_evaluation_manual",
+      "feature_file": "wiki/project_hasaki/features/stub_qc_evaluation_manual.md",
+      "source_doc": "07105_Quality_Control_Docs_ver1",
+      "feature_source_version": "1.5",
+      "latest_source_version": "",
+      "status": "Aligned",
+      "partial_read": true,
+      "has_open_question": true,
+      "recommended_action": "Re-verify + update Impact/Regression + keep testcase blocked if question open"
+    },
+    {
+      "feature": "qc_evaluation_mobile",
+      "feature_file": "wiki/project_hasaki/features/stub_qc_evaluation_mobile.md",
+      "source_doc": "07105_Quality_Control_Docs_ver1",
+      "feature_source_version": "1.5",
+      "latest_source_version": "",
+      "status": "Aligned",
+      "partial_read": true,
+      "has_open_question": true,
+      "recommended_action": "Re-verify + update Impact/Regression + keep testcase blocked if question open"
+    },
+    {
+      "feature": "qc_evaluation_result",
+      "feature_file": "wiki/project_hasaki/features/stub_qc_evaluation_result.md",
+      "source_doc": "07105_Quality_Control_Docs_ver1",
+      "feature_source_version": "1.5",
+      "latest_source_version": "",
+      "status": "Aligned",
+      "partial_read": true,
+      "has_open_question": true,
+      "recommended_action": "Re-verify + update Impact/Regression + keep testcase blocked if question open"
+    },
+    {
+      "feature": "qc_uid_group",
+      "feature_file": "wiki/project_hasaki/features/stub_qc_uid_group.md",
+      "source_doc": "07105_Quality_Control_Docs_ver1",
+      "feature_source_version": "1.5",
+      "latest_source_version": "",
+      "status": "Aligned",
+      "partial_read": true,
+      "has_open_question": true,
+      "recommended_action": "Re-verify + update Impact/Regression + keep testcase blocked if question open"
+    },
+    {
+      "feature": "qc_vas",
+      "feature_file": "wiki/project_hasaki/features/stub_qc_vas.md",
+      "source_doc": "07105_Quality_Control_Docs_ver1",
+      "feature_source_version": "1.5",
+      "latest_source_version": "",
+      "status": "Aligned",
+      "partial_read": true,
+      "has_open_question": true,
+      "recommended_action": "Re-verify + update Impact/Regression + keep testcase blocked if question open"
+    },
+    {
+      "feature": "receiving_po_app",
+      "feature_file": "wiki/project_hasaki/features/stub_receiving_po_app.md",
+      "source_doc": "07062_Receiving_PO_Docs_ver2",
+      "feature_source_version": "2.17",
+      "latest_source_version": "",
+      "status": "Aligned",
+      "partial_read": true,
+      "has_open_question": true,
+      "recommended_action": "Re-verify + update Impact/Regression + keep testcase blocked if question open"
+    },
+    {
+      "feature": "receiving_po_asn",
+      "feature_file": "wiki/project_hasaki/features/stub_receiving_po_asn.md",
+      "source_doc": "07062_Receiving_PO_Docs_ver2",
+      "feature_source_version": "2.17",
+      "latest_source_version": "",
+      "status": "Aligned",
+      "partial_read": true,
+      "has_open_question": true,
+      "recommended_action": "Re-verify + update Impact/Regression + keep testcase blocked if question open"
+    },
+    {
+      "feature": "receiving_po_concurrent",
+      "feature_file": "wiki/project_hasaki/features/stub_receiving_po_concurrent.md",
+      "source_doc": "07062_Receiving_PO_Docs_ver2",
+      "feature_source_version": "2.17",
+      "latest_source_version": "",
+      "status": "Aligned",
+      "partial_read": true,
+      "has_open_question": true,
+      "recommended_action": "Re-verify + update Impact/Regression + keep testcase blocked if question open"
+    },
+    {
+      "feature": "receiving_po_confirm_paste_id",
+      "feature_file": "wiki/project_hasaki/features/stub_receiving_po_confirm_paste_id.md",
+      "source_doc": "07062_Receiving_PO_Docs_ver2",
+      "feature_source_version": "2.17",
+      "latest_source_version": "",
+      "status": "Aligned",
+      "partial_read": true,
+      "has_open_question": true,
+      "recommended_action": "Re-verify + update Impact/Regression + keep testcase blocked if question open"
+    },
+    {
+      "feature": "receiving_po_fabric",
+      "feature_file": "wiki/project_hasaki/features/stub_receiving_po_fabric.md",
+      "source_doc": "07062_Receiving_PO_Docs_ver2",
+      "feature_source_version": "2.17",
+      "latest_source_version": "",
+      "status": "Aligned",
+      "partial_read": true,
+      "has_open_question": true,
+      "recommended_action": "Re-verify + update Impact/Regression + keep testcase blocked if question open"
+    },
+    {
+      "feature": "receiving_po_gift",
+      "feature_file": "wiki/project_hasaki/features/stub_receiving_po_gift.md",
+      "source_doc": "07062_Receiving_PO_Docs_ver2",
+      "feature_source_version": "2.17",
+      "latest_source_version": "",
+      "status": "Aligned",
+      "partial_read": true,
+      "has_open_question": true,
+      "recommended_action": "Re-verify + update Impact/Regression + keep testcase blocked if question open"
+    },
+    {
+      "feature": "receiving_po_inbound_shipment",
+      "feature_file": "wiki/project_hasaki/features/stub_receiving_po_inbound_shipment.md",
+      "source_doc": "07062_Receiving_PO_Docs_ver2",
+      "feature_source_version": "2.17",
+      "latest_source_version": "",
+      "status": "Aligned",
+      "partial_read": true,
+      "has_open_question": true,
+      "recommended_action": "Re-verify + update Impact/Regression + keep testcase blocked if question open"
+    },
+    {
+      "feature": "receiving_po_invoice",
+      "feature_file": "wiki/project_hasaki/features/stub_receiving_po_invoice.md",
+      "source_doc": "07062_Receiving_PO_Docs_ver2",
+      "feature_source_version": "2.17",
+      "latest_source_version": "",
+      "status": "Aligned",
+      "partial_read": true,
+      "has_open_question": true,
+      "recommended_action": "Re-verify + update Impact/Regression + keep testcase blocked if question open"
+    },
+    {
+      "feature": "receiving_po_no_barcode",
+      "feature_file": "wiki/project_hasaki/features/stub_receiving_po_no_barcode.md",
+      "source_doc": "07062_Receiving_PO_Docs_ver2",
+      "feature_source_version": "2.17",
+      "latest_source_version": "",
+      "status": "Aligned",
+      "partial_read": true,
+      "has_open_question": true,
+      "recommended_action": "Re-verify + update Impact/Regression + keep testcase blocked if question open"
+    },
+    {
+      "feature": "receiving_po_packing_list",
+      "feature_file": "wiki/project_hasaki/features/stub_receiving_po_packing_list.md",
+      "source_doc": "07062_Receiving_PO_Docs_ver2",
+      "feature_source_version": "2.17",
+      "latest_source_version": "",
+      "status": "Aligned",
+      "partial_read": true,
+      "has_open_question": true,
+      "recommended_action": "Re-verify + update Impact/Regression + keep testcase blocked if question open"
+    },
+    {
+      "feature": "receiving_po_po_sample",
+      "feature_file": "wiki/project_hasaki/features/stub_receiving_po_po_sample.md",
+      "source_doc": "07062_Receiving_PO_Docs_ver2",
+      "feature_source_version": "2.17",
+      "latest_source_version": "",
+      "status": "Aligned",
+      "partial_read": true,
+      "has_open_question": true,
+      "recommended_action": "Re-verify + update Impact/Regression + keep testcase blocked if question open"
+    },
+    {
+      "feature": "receiving_po_vas",
+      "feature_file": "wiki/project_hasaki/features/stub_receiving_po_vas.md",
+      "source_doc": "07062_Receiving_PO_Docs_ver2",
+      "feature_source_version": "2.17",
+      "latest_source_version": "",
+      "status": "Aligned",
+      "partial_read": true,
+      "has_open_question": true,
+      "recommended_action": "Re-verify + update Impact/Regression + keep testcase blocked if question open"
+    }
+  ]
+}

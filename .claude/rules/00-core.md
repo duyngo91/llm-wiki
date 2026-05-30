@@ -2,7 +2,7 @@
 
 - Project active: `project_hasaki`.
 - Timezone standard: `Asia/Saigon` (`UTC+07:00`).
-- Markdown/JSON/YAML must be UTF-8.
+- Markdown/JSON/YAML must be UTF-8 không BOM. Nội dung gen ra viết Tiếng Việt có dấu (xem `05-language-and-encoding.md`).
 - Do not trust memory over live files; files on disk are source of truth.
 - Update propagation is mandatory when requirement/test scope changes.
 - Rule precedence:

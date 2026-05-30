@@ -23,7 +23,31 @@ TOLERATED_RE = re.compile(r"^([A-Za-z0-9_.]+)#(\d+)(?:-(\d+))?$")
 MULTI_RANGE_SPLIT_RE = re.compile(r",\s*")
 
 # Heading-ish lines we DON'T want a #L pointing to (PHANTOM_EVIDENCE).
-HEADING_RE = re.compile(r"^\s*(#{1,6}\s|[\d\.]+\s+[A-ZĐĂÂÊÔƠƯ])")
+# `#` markdown headings always flag. Numbered lines (`1 ...`, `2.3 ...`) get the
+# heading check, but if the line clearly contains body content (':' for key:value,
+# multiple sentence words, '-' for bullets) we treat it as PDF table row content
+# rather than a TOC heading. Hard cap at 80 chars catches very long PDF rows; the
+# content-marker check rescues shorter PDF rows that mash step+title+description.
+MD_HEADING_RE = re.compile(r"^\s*#{1,6}\s")
+NUMBERED_HEADING_RE = re.compile(r"^\s*[\d\.]+\s+[A-ZĐĂÂÊÔƠƯ]")
+NUMBERED_HEADING_MAX_LEN = 80
+# Markers that indicate body/table content rather than a heading.
+CONTENT_MARKERS_RE = re.compile(r":\s\S|\s-\s|/ ")
+
+
+def _looks_like_heading(line: str) -> bool:
+    if MD_HEADING_RE.match(line):
+        return True
+    if NUMBERED_HEADING_RE.match(line):
+        stripped = line.strip()
+        # Long → almost certainly PDF table row content.
+        if len(stripped) >= NUMBERED_HEADING_MAX_LEN:
+            return False
+        # Short but contains content markers → still PDF table row content.
+        if CONTENT_MARKERS_RE.search(stripped):
+            return False
+        return True
+    return False
 
 
 def now_iso() -> str:
@@ -136,7 +160,7 @@ def classify_ref(cell: str, raw_root: Path, spec_source_version: str) -> list[di
         if not first_line.strip():
             result["verdict"] = "PHANTOM_EVIDENCE"
             result["reason"] = f"L{start_line} is empty"
-        elif HEADING_RE.match(first_line):
+        elif _looks_like_heading(first_line):
             result["verdict"] = "PHANTOM_EVIDENCE"
             result["reason"] = f"L{start_line} looks like a heading (`{first_line.strip()[:60]}`)"
         else:
@@ -152,6 +176,16 @@ SECTION_REQUIREMENT_RE = re.compile(r"^##\s*Phân rã Requirement", re.IGNORECAS
 SECTION_API_LIST_RE = re.compile(r"^##\s*API\s*/?\s*Interface\s*List", re.IGNORECASE)
 
 
+_ESCAPED_PIPE_PLACEHOLDER = "\x00PIPE\x00"
+
+
+def _split_table_row(line: str) -> list[str]:
+    """Split a markdown table row on `|`, honoring `\\|` escape inside cells."""
+    protected = line.replace("\\|", _ESCAPED_PIPE_PLACEHOLDER)
+    parts = protected.strip().split("|")[1:-1]
+    return [cell.strip().replace(_ESCAPED_PIPE_PLACEHOLDER, "|") for cell in parts]
+
+
 def parse_table_rows(lines: list[str], start_idx: int) -> tuple[list[tuple[int, list[str]]], int]:
     """Return rows with (line_no_in_file, cells)."""
     rows = []
@@ -163,8 +197,7 @@ def parse_table_rows(lines: list[str], start_idx: int) -> tuple[list[tuple[int, 
         if set(line.replace("|", "").replace(":", "").replace("-", "").strip()) == set():
             i += 1
             continue
-        cells = [cell.strip() for cell in line.strip().split("|")[1:-1]]
-        rows.append((i + 1, cells))  # 1-based line in spec
+        rows.append((i + 1, _split_table_row(line)))  # 1-based line in spec
         i += 1
     return rows, i
 

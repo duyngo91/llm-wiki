@@ -1,0 +1,1835 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-05-30 14:29:55",
+  "project": "project_hasaki",
+  "max_group_size": 6,
+  "summary": {
+    "total_docs": 2,
+    "total_sections": 98,
+    "total_groups": 68,
+    "pending": 0,
+    "in_progress": 0,
+    "done": 98,
+    "skipped": 0
+  },
+  "docs": [
+    {
+      "doc_short": "07062",
+      "source_file": "07062_Receiving_PO_Docs_ver2.17.md",
+      "source_version": "2.17",
+      "total_sections": 62,
+      "group_count": 38,
+      "counts": {
+        "pending": 0,
+        "in_progress": 0,
+        "done": 62,
+        "skipped": 0
+      },
+      "groups": [
+        {
+          "group_id": "G-01",
+          "label": "TỔNG QUAN",
+          "anchor_section_id": "S-00",
+          "rationale": "standalone parent",
+          "section_count": 1,
+          "tasks": [
+            {
+              "task_id": "T-07062-S-00",
+              "section_id": "S-00",
+              "title": "[07062 G-01] S-00 — TỔNG QUAN [L188-L197]",
+              "source_ref": "07062_Receiving_PO_Docs_ver2.17.md#L188-L197",
+              "topic_types": [],
+              "flags_active": [],
+              "line_count": 10,
+              "depth": 1,
+              "current_status": "done",
+              "done_criteria_short": "read_log filled + coverage_status in {full|partial|stub} + check_ingest passes (no SUSPECT_UNREAD / UNDERREPORTED_COVERAGE)"
+            }
+          ]
+        },
+        {
+          "group_id": "G-02",
+          "label": "THUẬT NGỮ & VIẾT TẮT",
+          "anchor_section_id": "S-01",
+          "rationale": "standalone parent",
+          "section_count": 1,
+          "tasks": [
+            {
+              "task_id": "T-07062-S-01",
+              "section_id": "S-01",
+              "title": "[07062 G-02] S-01 — THUẬT NGỮ & VIẾT TẮT [L198-L207]",
+              "source_ref": "07062_Receiving_PO_Docs_ver2.17.md#L198-L207",
+              "topic_types": [],
+              "flags_active": [],
+              "line_count": 10,
+              "depth": 1,
+              "current_status": "done",
+              "done_criteria_short": "read_log filled + coverage_status in {full|partial|stub} + check_ingest passes (no SUSPECT_UNREAD / UNDERREPORTED_COVERAGE)"
+            }
+          ]
+        },
+        {
+          "group_id": "G-03",
+          "label": "QUY TRÌNH (WORKFLOW)",
+          "anchor_section_id": "S-02",
+          "rationale": "standalone parent",
+          "section_count": 1,
+          "tasks": [
+            {
+              "task_id": "T-07062-S-02",
+              "section_id": "S-02",
+              "title": "[07062 G-03] S-02 — QUY TRÌNH (WORKFLOW) [L208-L210]",
+              "source_ref": "07062_Receiving_PO_Docs_ver2.17.md#L208-L210",
+              "topic_types": [],
+              "flags_active": [],
+              "line_count": 3,
+              "depth": 1,
+              "current_status": "done",
+              "done_criteria_short": "read_log filled + coverage_status in {full|partial|stub} + check_ingest passes (no SUSPECT_UNREAD / UNDERREPORTED_COVERAGE)"
+            }
+          ]
+        },
+        {
+          "group_id": "G-04",
+          "label": "GIAO DIỆN (WIREFRAME)",
+          "anchor_section_id": "S-03",
+          "rationale": "standalone parent",
+          "section_count": 1,
+          "tasks": [
+            {
+              "task_id": "T-07062-S-03",
+              "section_id": "S-03",
+              "title": "[07062 G-04] S-03 — GIAO DIỆN (WIREFRAME) [L211-L222]",
+              "source_ref": "07062_Receiving_PO_Docs_ver2.17.md#L211-L222",
+              "topic_types": [],
+              "flags_active": [],
+              "line_count": 12,
+              "depth": 1,
+              "current_status": "done",
+              "done_criteria_short": "read_log filled + coverage_status in {full|partial|stub} + check_ingest passes (no SUSPECT_UNREAD / UNDERREPORTED_COVERAGE)"
+            }
+          ]
+        },
+        {
+          "group_id": "G-05",
+          "label": "YÊU CẦU CHỨC NĂNG",
+          "anchor_section_id": "S-04",
+          "rationale": "standalone parent",
+          "section_count": 1,
+          "tasks": [
+            {
+              "task_id": "T-07062-S-04",
+              "section_id": "S-04",
+              "title": "[07062 G-05] S-04 — YÊU CẦU CHỨC NĂNG [L223-L223]",
+              "source_ref": "07062_Receiving_PO_Docs_ver2.17.md#L223-L223",
+              "topic_types": [],
+              "flags_active": [],
+              "line_count": 1,
+              "depth": 1,
+              "current_status": "done",
+              "done_criteria_short": "read_log filled + coverage_status in {full|partial|stub} + check_ingest passes (no SUSPECT_UNREAD / UNDERREPORTED_COVERAGE)"
+            }
+          ]
+        },
+        {
+          "group_id": "G-06",
+          "label": "Inbound Shipment – Updated",
+          "anchor_section_id": "S-05",
+          "rationale": "standalone parent",
+          "section_count": 1,
+          "tasks": [
+            {
+              "task_id": "T-07062-S-05",
+              "section_id": "S-05",
+              "title": "[07062 G-06] S-05 — Inbound Shipment – Updated [L224-L301]",
+              "source_ref": "07062_Receiving_PO_Docs_ver2.17.md#L224-L301",
+              "topic_types": [],
+              "flags_active": [],
+              "line_count": 78,
+              "depth": 1,
+              "current_status": "done",
+              "done_criteria_short": "read_log filled + coverage_status in {full|partial|stub} + check_ingest passes (no SUSPECT_UNREAD / UNDERREPORTED_COVERAGE)"
+            }
+          ]
+        },
+        {
+          "group_id": "G-07",
+          "label": "Inbound shipment detail – Update",
+          "anchor_section_id": "S-06",
+          "rationale": "standalone parent",
+          "section_count": 1,
+          "tasks": [
+            {
+              "task_id": "T-07062-S-06",
+              "section_id": "S-06",
+              "title": "[07062 G-07] S-06 — Inbound shipment detail – Update [L302-L348]",
+              "source_ref": "07062_Receiving_PO_Docs_ver2.17.md#L302-L348",
+              "topic_types": [],
+              "flags_active": [],
+              "line_count": 47,
+              "depth": 1,
+              "current_status": "done",
+              "done_criteria_short": "read_log filled + coverage_status in {full|partial|stub} + check_ingest passes (no SUSPECT_UNREAD / UNDERREPORTED_COVERAGE)"
+            }
+          ]
+        },
+        {
+          "group_id": "G-08",
+          "label": "ASN – Updated",
+          "anchor_section_id": "S-07",
+          "rationale": "standalone parent",
+          "section_count": 1,
+          "tasks": [
+            {
+              "task_id": "T-07062-S-07",
+              "section_id": "S-07",
+              "title": "[07062 G-08] S-07 — ASN – Updated [L349-L467]",
+              "source_ref": "07062_Receiving_PO_Docs_ver2.17.md#L349-L467",
+              "topic_types": [],
+              "flags_active": [],
+              "line_count": 119,
+              "depth": 1,
+              "current_status": "done",
+              "done_criteria_short": "read_log filled + coverage_status in {full|partial|stub} + check_ingest passes (no SUSPECT_UNREAD / UNDERREPORTED_COVERAGE)"
+            }
+          ]
+        },
+        {
+          "group_id": "G-09",
+          "label": "ASN detail – Updated",
+          "anchor_section_id": "S-08",
+          "rationale": "standalone parent",
+          "section_count": 1,
+          "tasks": [
+            {
+              "task_id": "T-07062-S-08",
+              "section_id": "S-08",
+              "title": "[07062 G-09] S-08 — ASN detail – Updated [L468-L511]",
+              "source_ref": "07062_Receiving_PO_Docs_ver2.17.md#L468-L511",
+              "topic_types": [],
+              "flags_active": [],
+              "line_count": 44,
+              "depth": 1,
+              "current_status": "done",
+              "done_criteria_short": "read_log filled + coverage_status in {full|partial|stub} + check_ingest passes (no SUSPECT_UNREAD / UNDERREPORTED_COVERAGE)"
+            }
+          ]
+        },
+        {
+          "group_id": "G-10",
+          "label": "16-09-2025: update xem chi tiết sản phẩm trong ASN",
+          "anchor_section_id": "S-09",
+          "rationale": "standalone parent",
+          "section_count": 1,
+          "tasks": [
+            {
+              "task_id": "T-07062-S-09",
+              "section_id": "S-09",
+              "title": "[07062 G-10] S-09 — 16-09-2025: update xem chi tiết sản phẩm trong ASN [L512-L521]",
+              "source_ref": "07062_Receiving_PO_Docs_ver2.17.md#L512-L521",
+              "topic_types": [],
+              "flags_active": [],
+              "line_count": 10,
+              "depth": 1,
+              "current_status": "done",
+              "done_criteria_short": "read_log filled + coverage_status in {full|partial|stub} + check_ingest passes (no SUSPECT_UNREAD / UNDERREPORTED_COVERAGE)"
+            }
+          ]
+        },
+        {
+          "group_id": "G-11",
+          "label": "VAS – Updated",
+          "anchor_section_id": "S-10",
+          "rationale": "standalone parent",
+          "section_count": 1,
+          "tasks": [
+            {
+              "task_id": "T-07062-S-10",
+              "section_id": "S-10",
+              "title": "[07062 G-11] S-10 — VAS – Updated [L522-L628]",
+              "source_ref": "07062_Receiving_PO_Docs_ver2.17.md#L522-L628",
+              "topic_types": [],
+              "flags_active": [],
+              "line_count": 107,
+              "depth": 1,
+              "current_status": "done",
+              "done_criteria_short": "read_log filled + coverage_status in {full|partial|stub} + check_ingest passes (no SUSPECT_UNREAD / UNDERREPORTED_COVERAGE)"
+            }
+          ]
+        },
+        {
+          "group_id": "G-12",
+          "label": "VAS detail – Updated",
+          "anchor_section_id": "S-11",
+          "rationale": "standalone parent",
+          "section_count": 1,
+          "tasks": [
+            {
+              "task_id": "T-07062-S-11",
+              "section_id": "S-11",
+              "title": "[07062 G-12] S-11 — VAS detail – Updated [L629-L672]",
+              "source_ref": "07062_Receiving_PO_Docs_ver2.17.md#L629-L672",
+              "topic_types": [],
+              "flags_active": [],
+              "line_count": 44,
+              "depth": 1,
+              "current_status": "done",
+              "done_criteria_short": "read_log filled + coverage_status in {full|partial|stub} + check_ingest passes (no SUSPECT_UNREAD / UNDERREPORTED_COVERAGE)"
+            }
+          ]
+        },
+        {
+          "group_id": "G-13",
+          "label": "Cập nhật thông tin Serial/Imei/Label code cho SKU",
+          "anchor_section_id": "S-12",
+          "rationale": "standalone parent",
+          "section_count": 1,
+          "tasks": [
+            {
+              "task_id": "T-07062-S-12",
+              "section_id": "S-12",
+              "title": "[07062 G-13] S-12 — Cập nhật thông tin Serial/Imei/Label code cho SKU [L673-L735]",
+              "source_ref": "07062_Receiving_PO_Docs_ver2.17.md#L673-L735",
+              "topic_types": [],
+              "flags_active": [],
+              "line_count": 63,
+              "depth": 1,
+              "current_status": "done",
+              "done_criteria_short": "read_log filled + coverage_status in {full|partial|stub} + check_ingest passes (no SUSPECT_UNREAD / UNDERREPORTED_COVERAGE)"
+            }
+          ]
+        },
+        {
+          "group_id": "G-14",
+          "label": "16-09-2025: update rules VAS và bổ sung group UID",
+          "anchor_section_id": "S-13",
+          "rationale": "standalone parent",
+          "section_count": 1,
+          "tasks": [
+            {
+              "task_id": "T-07062-S-13",
+              "section_id": "S-13",
+              "title": "[07062 G-14] S-13 — 16-09-2025: update rules VAS và bổ sung group UID [L736-L750]",
+              "source_ref": "07062_Receiving_PO_Docs_ver2.17.md#L736-L750",
+              "topic_types": [],
+              "flags_active": [],
+              "line_count": 15,
+              "depth": 1,
+              "current_status": "done",
+              "done_criteria_short": "read_log filled + coverage_status in {full|partial|stub} + check_ingest passes (no SUSPECT_UNREAD / UNDERREPORTED_COVERAGE)"
+            }
+          ]
+        },
+        {
+          "group_id": "G-15",
+          "label": "05-03.2025- Luồng nhận PO khồng đồng kiểm có khai báo SPKPH",
+          "anchor_section_id": "S-14",
+          "rationale": "standalone parent",
+          "section_count": 1,
+          "tasks": [
+            {
+              "task_id": "T-07062-S-14",
+              "section_id": "S-14",
+              "title": "[07062 G-15] S-14 — 05-03.2025- Luồng nhận PO khồng đồng kiểm có khai báo SPKPH [L751-L783]",
+              "source_ref": "07062_Receiving_PO_Docs_ver2.17.md#L751-L783",
+              "topic_types": [],
+              "flags_active": [],
+              "line_count": 33,
+              "depth": 1,
+              "current_status": "done",
+              "done_criteria_short": "read_log filled + coverage_status in {full|partial|stub} + check_ingest passes (no SUSPECT_UNREAD / UNDERREPORTED_COVERAGE)"
+            }
+          ]
+        },
+        {
+          "group_id": "G-16",
+          "label": "App – Confirm Unsuitable Product",
+          "anchor_section_id": "S-15",
+          "rationale": "standalone parent",
+          "section_count": 1,
+          "tasks": [
+            {
+              "task_id": "T-07062-S-15",
+              "section_id": "S-15",
+              "title": "[07062 G-16] S-15 — App – Confirm Unsuitable Product [L784-L833]",
+              "source_ref": "07062_Receiving_PO_Docs_ver2.17.md#L784-L833",
+              "topic_types": [],
+              "flags_active": [],
+              "line_count": 50,
+              "depth": 1,
+              "current_status": "done",
+              "done_criteria_short": "read_log filled + coverage_status in {full|partial|stub} + check_ingest passes (no SUSPECT_UNREAD / UNDERREPORTED_COVERAGE)"
+            }
+          ]
+        },
+        {
+          "group_id": "G-17",
+          "label": "Receiving PO (App)",
+          "anchor_section_id": "S-16",
+          "rationale": "standalone parent",
+          "section_count": 1,
+          "tasks": [
+            {
+              "task_id": "T-07062-S-16",
+              "section_id": "S-16",
+              "title": "[07062 G-17] S-16 — Receiving PO (App) [L834-L882]",
+              "source_ref": "07062_Receiving_PO_Docs_ver2.17.md#L834-L882",
+              "topic_types": [],
+              "flags_active": [],
+              "line_count": 49,
+              "depth": 1,
+              "current_status": "done",
+              "done_criteria_short": "read_log filled + coverage_status in {full|partial|stub} + check_ingest passes (no SUSPECT_UNREAD / UNDERREPORTED_COVERAGE)"
+            }
+          ]
+        },
+        {
+          "group_id": "G-18",
+          "label": "05-01-2026: update rules scan nhận PO",
+          "anchor_section_id": "S-17",
+          "rationale": "top-level ancestor",
+          "section_count": 4,
+          "tasks": [
+            {
+              "task_id": "T-07062-S-17",
+              "section_id": "S-17",
+              "title": "[07062 G-18] S-17 — 05-01-2026: update rules scan nhận PO [L883-L935]",
+              "source_ref": "07062_Receiving_PO_Docs_ver2.17.md#L883-L935",
+              "topic_types": [],
+              "flags_active": [],
+              "line_count": 53,
+              "depth": 1,
+              "current_status": "done",
+              "done_criteria_short": "read_log filled + coverage_status in {full|partial|stub} + check_ingest passes (no SUSPECT_UNREAD / UNDERREPORTED_COVERAGE)"
+            },
+            {
+              "task_id": "T-07062-S-18",
+              "section_id": "S-18",
+              "title": "[07062 G-18] S-18 — Update chức năng Receiving PO trên App [L936-L1026]",
+              "source_ref": "07062_Receiving_PO_Docs_ver2.17.md#L936-L1026",
+              "topic_types": [],
+              "flags_active": [],
+              "line_count": 91,
+              "depth": 2,
+              "current_status": "done",
+              "done_criteria_short": "read_log filled + coverage_status in {full|partial|stub} + check_ingest passes (no SUSPECT_UNREAD / UNDERREPORTED_COVERAGE)"
+            },
+            {
+              "task_id": "T-07062-S-19",
+              "section_id": "S-19",
+              "title": "[07062 G-18] S-19 — Update rules khi nhận hàng PO vào Bin di động (Pallet) [L1027-L1038]",
+              "source_ref": "07062_Receiving_PO_Docs_ver2.17.md#L1027-L1038",
+              "topic_types": [],
+              "flags_active": [],
+              "line_count": 12,
+              "depth": 2,
+              "current_status": "done",
+              "done_criteria_short": "read_log filled + coverage_status in {full|partial|stub} + check_ingest passes (no SUSPECT_UNREAD / UNDERREPORTED_COVERAGE)"
+            },
+            {
+              "task_id": "T-07062-S-20",
+              "section_id": "S-20",
+              "title": "[07062 G-18] S-20 — Case 1 : Chỉ nhận riêng PO thường (không có PO Gift đi kèm) [L1039-L1069]",
+              "source_ref": "07062_Receiving_PO_Docs_ver2.17.md#L1039-L1069",
+              "topic_types": [],
+              "flags_active": [],
+              "line_count": 31,
+              "depth": 2,
+              "current_status": "done",
+              "done_criteria_short": "read_log filled + coverage_status in {full|partial|stub} + check_ingest passes (no SUSPECT_UNREAD / UNDERREPORTED_COVERAGE)"
+            }
+          ]
+        },
+        {
+          "group_id": "G-19",
+          "label": "06-01-2025: cập nhật rules tính ngày nhận",
+          "anchor_section_id": "S-21",
+          "rationale": "top-level ancestor",
+          "section_count": 2,
+          "tasks": [
+            {
+              "task_id": "T-07062-S-21",
+              "section_id": "S-21",
+              "title": "[07062 G-19] S-21 — 06-01-2025: cập nhật rules tính ngày nhận [L1070-L1098]",
+              "source_ref": "07062_Receiving_PO_Docs_ver2.17.md#L1070-L1098",
+              "topic_types": [],
+              "flags_active": [],
+              "line_count": 29,
+              "depth": 1,
+              "current_status": "done",
+              "done_criteria_short": "read_log filled + coverage_status in {full|partial|stub} + check_ingest passes (no SUSPECT_UNREAD / UNDERREPORTED_COVERAGE)"
+            },
+            {
+              "task_id": "T-07062-S-22",
+              "section_id": "S-22",
+              "title": "[07062 G-19] S-22 — Update 02-11-2024 tháng). [L1099-L1166]",
+              "source_ref": "07062_Receiving_PO_Docs_ver2.17.md#L1099-L1166",
+              "topic_types": [],
+              "flags_active": [],
+              "line_count": 68,
+              "depth": 2,
+              "current_status": "done",
+              "done_criteria_short": "read_log filled + coverage_status in {full|partial|stub} + check_ingest passes (no SUSPECT_UNREAD / UNDERREPORTED_COVERAGE)"
+            }
+          ]
+        },
+        {
+          "group_id": "G-20",
+          "label": "05-01-2025",
+          "anchor_section_id": "S-23",
+          "rationale": "top-level ancestor",
+          "section_count": 5,
+          "tasks": [
+            {
+              "task_id": "T-07062-S-23",
+              "section_id": "S-23",
+              "title": "[07062 G-20] S-23 — 05-01-2025 [L1167-L1181]",
+              "source_ref": "07062_Receiving_PO_Docs_ver2.17.md#L1167-L1181",
+              "topic_types": [],
+              "flags_active": [],
+              "line_count": 15,
+              "depth": 1,
+              "current_status": "done",
+              "done_criteria_short": "read_log filled + coverage_status in {full|partial|stub} + check_ingest passes (no SUSPECT_UNREAD / UNDERREPORTED_COVERAGE)"
+            },
+            {
+              "task_id": "T-07062-S-24",
+              "section_id": "S-24",
+              "title": "[07062 G-20] S-24 — Update 30-05-2025 [L1182-L1191]",
+              "source_ref": "07062_Receiving_PO_Docs_ver2.17.md#L1182-L1191",
+              "topic_types": [],
+              "flags_active": [],
+              "line_count": 10,
+              "depth": 2,
+              "current_status": "done",
+              "done_criteria_short": "read_log filled + coverage_status in {full|partial|stub} + check_ingest passes (no SUSPECT_UNREAD / UNDERREPORTED_COVERAGE)"
+            },
+            {
+              "task_id": "T-07062-S-25",
+              "section_id": "S-25",
+              "title": "[07062 G-20] S-25 — Update 04-06-2025 [L1192-L1486]",
+              "source_ref": "07062_Receiving_PO_Docs_ver2.17.md#L1192-L1486",
+              "topic_types": [],
+              "flags_active": [],
+              "line_count": 295,
+              "depth": 2,
+              "current_status": "done",
+              "done_criteria_short": "read_log filled + coverage_status in {full|partial|stub} + check_ingest passes (no SUSPECT_UNREAD / UNDERREPORTED_COVERAGE)"
+            },
+            {
+              "task_id": "T-07062-S-26",
+              "section_id": "S-26",
+              "title": "[07062 G-20] S-26 — Update status cho ASN (phiên nhận [L1487-L1489]",
+              "source_ref": "07062_Receiving_PO_Docs_ver2.17.md#L1487-L1489",
+              "topic_types": [],
+              "flags_active": [],
+              "line_count": 3,
+              "depth": 2,
+              "current_status": "done",
+              "done_criteria_short": "read_log filled + coverage_status in {full|partial|stub} + check_ingest passes (no SUSPECT_UNREAD / UNDERREPORTED_COVERAGE)"
+            },
+            {
+              "task_id": "T-07062-S-27",
+              "section_id": "S-27",
+              "title": "[07062 G-20] S-27 — Update tồn kho tương ứng với số [L1490-L1496]",
+              "source_ref": "07062_Receiving_PO_Docs_ver2.17.md#L1490-L1496",
+              "topic_types": [],
+              "flags_active": [],
+              "line_count": 7,
+              "depth": 2,
+              "current_status": "done",
+              "done_criteria_short": "read_log filled + coverage_status in {full|partial|stub} + check_ingest passes (no SUSPECT_UNREAD / UNDERREPORTED_COVERAGE)"
+            }
+          ]
+        },
+        {
+          "group_id": "G-21",
+          "label": "Thêm hoá đơn cho PO",
+          "anchor_section_id": "S-28",
+          "rationale": "top-level ancestor",
+          "section_count": 3,
+          "tasks": [
+            {
+              "task_id": "T-07062-S-28",
+              "section_id": "S-28",
+              "title": "[07062 G-21] S-28 — Thêm hoá đơn cho PO [L1497-L1595]",
+              "source_ref": "07062_Receiving_PO_Docs_ver2.17.md#L1497-L1595",
+              "topic_types": [],
+              "flags_active": [],
+              "line_count": 99,
+              "depth": 1,
+              "current_status": "done",
+              "done_criteria_short": "read_log filled + coverage_status in {full|partial|stub} + check_ingest passes (no SUSPECT_UNREAD / UNDERREPORTED_COVERAGE)"
+            },
+            {
+              "task_id": "T-07062-S-29",
+              "section_id": "S-29",
+              "title": "[07062 G-21] S-29 — Case 2 : Nhận PO Gift chung với PO thường [L1596-L1656]",
+              "source_ref": "07062_Receiving_PO_Docs_ver2.17.md#L1596-L1656",
+              "topic_types": [],
+              "flags_active": [],
+              "line_count": 61,
+              "depth": 2,
+              "current_status": "done",
+              "done_criteria_short": "read_log filled + coverage_status in {full|partial|stub} + check_ingest passes (no SUSPECT_UNREAD / UNDERREPORTED_COVERAGE)"
+            },
+            {
+              "task_id": "T-07062-S-30",
+              "section_id": "S-30",
+              "title": "[07062 G-21] S-30 — Update 20-11-2024 [L1657-L1675]",
+              "source_ref": "07062_Receiving_PO_Docs_ver2.17.md#L1657-L1675",
+              "topic_types": [],
+              "flags_active": [],
+              "line_count": 19,
+              "depth": 2,
+              "current_status": "done",
+              "done_criteria_short": "read_log filled + coverage_status in {full|partial|stub} + check_ingest passes (no SUSPECT_UNREAD / UNDERREPORTED_COVERAGE)"
+            }
+          ]
+        },
+        {
+          "group_id": "G-22",
+          "label": "Nhận hàng Vải khai báo Group UID",
+          "anchor_section_id": "S-31",
+          "rationale": "top-level ancestor",
+          "section_count": 3,
+          "tasks": [
+            {
+              "task_id": "T-07062-S-31",
+              "section_id": "S-31",
+              "title": "[07062 G-22] S-31 — Nhận hàng Vải khai báo Group UID [L1676-L1721]",
+              "source_ref": "07062_Receiving_PO_Docs_ver2.17.md#L1676-L1721",
+              "topic_types": [],
+              "flags_active": [],
+              "line_count": 46,
+              "depth": 1,
+              "current_status": "done",
+              "done_criteria_short": "read_log filled + coverage_status in {full|partial|stub} + check_ingest passes (no SUSPECT_UNREAD / UNDERREPORTED_COVERAGE)"
+            },
+            {
+              "task_id": "T-07062-S-32",
+              "section_id": "S-32",
+              "title": "[07062 G-22] S-32 — Update màn hình chi tiết sản phẩm của các sản phẩm đã nhận đ [L1722-L1725]",
+              "source_ref": "07062_Receiving_PO_Docs_ver2.17.md#L1722-L1725",
+              "topic_types": [],
+              "flags_active": [],
+              "line_count": 4,
+              "depth": 2,
+              "current_status": "done",
+              "done_criteria_short": "read_log filled + coverage_status in {full|partial|stub} + check_ingest passes (no SUSPECT_UNREAD / UNDERREPORTED_COVERAGE)"
+            },
+            {
+              "task_id": "T-07062-S-33",
+              "section_id": "S-33",
+              "title": "[07062 G-22] S-33 — Update 10-12-2025 [L1726-L1737]",
+              "source_ref": "07062_Receiving_PO_Docs_ver2.17.md#L1726-L1737",
+              "topic_types": [],
+              "flags_active": [],
+              "line_count": 12,
+              "depth": 2,
+              "current_status": "done",
+              "done_criteria_short": "read_log filled + coverage_status in {full|partial|stub} + check_ingest passes (no SUSPECT_UNREAD / UNDERREPORTED_COVERAGE)"
+            }
+          ]
+        },
+        {
+          "group_id": "G-23",
+          "label": "Bổ sung rules nhận PO gift riêng",
+          "anchor_section_id": "S-34",
+          "rationale": "top-level ancestor",
+          "section_count": 2,
+          "tasks": [
+            {
+              "task_id": "T-07062-S-34",
+              "section_id": "S-34",
+              "title": "[07062 G-23] S-34 — Bổ sung rules nhận PO gift riêng [L1738-L1753]",
+              "source_ref": "07062_Receiving_PO_Docs_ver2.17.md#L1738-L1753",
+              "topic_types": [],
+              "flags_active": [],
+              "line_count": 16,
+              "depth": 1,
+              "current_status": "done",
+              "done_criteria_short": "read_log filled + coverage_status in {full|partial|stub} + check_ingest passes (no SUSPECT_UNREAD / UNDERREPORTED_COVERAGE)"
+            },
+            {
+              "task_id": "T-07062-S-35",
+              "section_id": "S-35",
+              "title": "[07062 G-23] S-35 — Update 22-01-2025 [L1754-L1761]",
+              "source_ref": "07062_Receiving_PO_Docs_ver2.17.md#L1754-L1761",
+              "topic_types": [],
+              "flags_active": [],
+              "line_count": 8,
+              "depth": 2,
+              "current_status": "done",
+              "done_criteria_short": "read_log filled + coverage_status in {full|partial|stub} + check_ingest passes (no SUSPECT_UNREAD / UNDERREPORTED_COVERAGE)"
+            }
+          ]
+        },
+        {
+          "group_id": "G-24",
+          "label": "Nhận hàng SKU không barcode (update 22-05-2025)",
+          "anchor_section_id": "S-36",
+          "rationale": "top-level ancestor",
+          "section_count": 2,
+          "tasks": [
+            {
+              "task_id": "T-07062-S-36",
+              "section_id": "S-36",
+              "title": "[07062 G-24] S-36 — Nhận hàng SKU không barcode (update 22-05-2025) [L1762-L1793]",
+              "source_ref": "07062_Receiving_PO_Docs_ver2.17.md#L1762-L1793",
+              "topic_types": [],
+              "flags_active": [],
+              "line_count": 32,
+              "depth": 1,
+              "current_status": "done",
+              "done_criteria_short": "read_log filled + coverage_status in {full|partial|stub} + check_ingest passes (no SUSPECT_UNREAD / UNDERREPORTED_COVERAGE)"
+            },
+            {
+              "task_id": "T-07062-S-37",
+              "section_id": "S-37",
+              "title": "[07062 G-24] S-37 — Update 31-07-2025 [L1794-L1807]",
+              "source_ref": "07062_Receiving_PO_Docs_ver2.17.md#L1794-L1807",
+              "topic_types": [],
+              "flags_active": [],
+              "line_count": 14,
+              "depth": 2,
+              "current_status": "done",
+              "done_criteria_short": "read_log filled + coverage_status in {full|partial|stub} + check_ingest passes (no SUSPECT_UNREAD / UNDERREPORTED_COVERAGE)"
+            }
+          ]
+        },
+        {
+          "group_id": "G-25",
+          "label": "Confirm paste ID (App)",
+          "anchor_section_id": "S-38",
+          "rationale": "standalone parent",
+          "section_count": 1,
+          "tasks": [
+            {
+              "task_id": "T-07062-S-38",
+              "section_id": "S-38",
+              "title": "[07062 G-25] S-38 — Confirm paste ID (App) [L1808-L1865]",
+              "source_ref": "07062_Receiving_PO_Docs_ver2.17.md#L1808-L1865",
+              "topic_types": [],
+              "flags_active": [],
+              "line_count": 58,
+              "depth": 1,
+              "current_status": "done",
+              "done_criteria_short": "read_log filled + coverage_status in {full|partial|stub} + check_ingest passes (no SUSPECT_UNREAD / UNDERREPORTED_COVERAGE)"
+            }
+          ]
+        },
+        {
+          "group_id": "G-26",
+          "label": "24-12-2024: bổ sung rules khi hiển thị phiên dán VAS",
+          "anchor_section_id": "S-39",
+          "rationale": "top-level ancestor",
+          "section_count": 5,
+          "tasks": [
+            {
+              "task_id": "T-07062-S-39",
+              "section_id": "S-39",
+              "title": "[07062 G-26] S-39 — 24-12-2024: bổ sung rules khi hiển thị phiên dán VAS [L1866-L1886]",
+              "source_ref": "07062_Receiving_PO_Docs_ver2.17.md#L1866-L1886",
+              "topic_types": [],
+              "flags_active": [],
+              "line_count": 21,
+              "depth": 1,
+              "current_status": "done",
+              "done_criteria_short": "read_log filled + coverage_status in {full|partial|stub} + check_ingest passes (no SUSPECT_UNREAD / UNDERREPORTED_COVERAGE)"
+            },
+            {
+              "task_id": "T-07062-S-40",
+              "section_id": "S-40",
+              "title": "[07062 G-26] S-40 — Update 09-07-2025 [L1887-L1900]",
+              "source_ref": "07062_Receiving_PO_Docs_ver2.17.md#L1887-L1900",
+              "topic_types": [],
+              "flags_active": [],
+              "line_count": 14,
+              "depth": 2,
+              "current_status": "done",
+              "done_criteria_short": "read_log filled + coverage_status in {full|partial|stub} + check_ingest passes (no SUSPECT_UNREAD / UNDERREPORTED_COVERAGE)"
+            },
+            {
+              "task_id": "T-07062-S-41",
+              "section_id": "S-41",
+              "title": "[07062 G-26] S-41 — Update 23-04-2025 [L1901-L2022]",
+              "source_ref": "07062_Receiving_PO_Docs_ver2.17.md#L1901-L2022",
+              "topic_types": [],
+              "flags_active": [],
+              "line_count": 122,
+              "depth": 2,
+              "current_status": "done",
+              "done_criteria_short": "read_log filled + coverage_status in {full|partial|stub} + check_ingest passes (no SUSPECT_UNREAD / UNDERREPORTED_COVERAGE)"
+            },
+            {
+              "task_id": "T-07062-S-42",
+              "section_id": "S-42",
+              "title": "[07062 G-26] S-42 — Case 1: nhận RFID đã define trên hệ thống, tức hàng [L2023-L2038]",
+              "source_ref": "07062_Receiving_PO_Docs_ver2.17.md#L2023-L2038",
+              "topic_types": [],
+              "flags_active": [],
+              "line_count": 16,
+              "depth": 2,
+              "current_status": "done",
+              "done_criteria_short": "read_log filled + coverage_status in {full|partial|stub} + check_ingest passes (no SUSPECT_UNREAD / UNDERREPORTED_COVERAGE)"
+            },
+            {
+              "task_id": "T-07062-S-43",
+              "section_id": "S-43",
+              "title": "[07062 G-26] S-43 — Case 2: nhận hàng từ vendor bên ngoài, khi này mới [L2039-L2070]",
+              "source_ref": "07062_Receiving_PO_Docs_ver2.17.md#L2039-L2070",
+              "topic_types": [],
+              "flags_active": [],
+              "line_count": 32,
+              "depth": 2,
+              "current_status": "done",
+              "done_criteria_short": "read_log filled + coverage_status in {full|partial|stub} + check_ingest passes (no SUSPECT_UNREAD / UNDERREPORTED_COVERAGE)"
+            }
+          ]
+        },
+        {
+          "group_id": "G-27",
+          "label": "01-12-2025: Create/Update VAS manual",
+          "anchor_section_id": "S-44",
+          "rationale": "top-level ancestor",
+          "section_count": 2,
+          "tasks": [
+            {
+              "task_id": "T-07062-S-44",
+              "section_id": "S-44",
+              "title": "[07062 G-27] S-44 — 01-12-2025: Create/Update VAS manual [L2071-L2074]",
+              "source_ref": "07062_Receiving_PO_Docs_ver2.17.md#L2071-L2074",
+              "topic_types": [],
+              "flags_active": [],
+              "line_count": 4,
+              "depth": 1,
+              "current_status": "done",
+              "done_criteria_short": "read_log filled + coverage_status in {full|partial|stub} + check_ingest passes (no SUSPECT_UNREAD / UNDERREPORTED_COVERAGE)"
+            },
+            {
+              "task_id": "T-07062-S-45",
+              "section_id": "S-45",
+              "title": "[07062 G-27] S-45 — Web: Update màn hình quản lý VAS [L2075-L2077]",
+              "source_ref": "07062_Receiving_PO_Docs_ver2.17.md#L2075-L2077",
+              "topic_types": [],
+              "flags_active": [],
+              "line_count": 3,
+              "depth": 2,
+              "current_status": "done",
+              "done_criteria_short": "read_log filled + coverage_status in {full|partial|stub} + check_ingest passes (no SUSPECT_UNREAD / UNDERREPORTED_COVERAGE)"
+            }
+          ]
+        },
+        {
+          "group_id": "G-28",
+          "label": "Nhận hàng PO SKU có RFID của vendor ngoài",
+          "anchor_section_id": "S-46",
+          "rationale": "standalone parent",
+          "section_count": 1,
+          "tasks": [
+            {
+              "task_id": "T-07062-S-46",
+              "section_id": "S-46",
+              "title": "[07062 G-28] S-46 — Nhận hàng PO SKU có RFID của vendor ngoài [L2078-L2122]",
+              "source_ref": "07062_Receiving_PO_Docs_ver2.17.md#L2078-L2122",
+              "topic_types": [],
+              "flags_active": [],
+              "line_count": 45,
+              "depth": 1,
+              "current_status": "done",
+              "done_criteria_short": "read_log filled + coverage_status in {full|partial|stub} + check_ingest passes (no SUSPECT_UNREAD / UNDERREPORTED_COVERAGE)"
+            }
+          ]
+        },
+        {
+          "group_id": "G-29",
+          "label": "Tạo thủ công VAS",
+          "anchor_section_id": "S-47",
+          "rationale": "standalone parent",
+          "section_count": 1,
+          "tasks": [
+            {
+              "task_id": "T-07062-S-47",
+              "section_id": "S-47",
+              "title": "[07062 G-29] S-47 — Tạo thủ công VAS [L2123-L2181]",
+              "source_ref": "07062_Receiving_PO_Docs_ver2.17.md#L2123-L2181",
+              "topic_types": [],
+              "flags_active": [],
+              "line_count": 59,
+              "depth": 1,
+              "current_status": "done",
+              "done_criteria_short": "read_log filled + coverage_status in {full|partial|stub} + check_ingest passes (no SUSPECT_UNREAD / UNDERREPORTED_COVERAGE)"
+            }
+          ]
+        },
+        {
+          "group_id": "G-30",
+          "label": "Import packing list",
+          "anchor_section_id": "S-48",
+          "rationale": "top-level ancestor",
+          "section_count": 2,
+          "tasks": [
+            {
+              "task_id": "T-07062-S-48",
+              "section_id": "S-48",
+              "title": "[07062 G-30] S-48 — Import packing list [L2182-L2231]",
+              "source_ref": "07062_Receiving_PO_Docs_ver2.17.md#L2182-L2231",
+              "topic_types": [],
+              "flags_active": [],
+              "line_count": 50,
+              "depth": 1,
+              "current_status": "done",
+              "done_criteria_short": "read_log filled + coverage_status in {full|partial|stub} + check_ingest passes (no SUSPECT_UNREAD / UNDERREPORTED_COVERAGE)"
+            },
+            {
+              "task_id": "T-07062-S-49",
+              "section_id": "S-49",
+              "title": "[07062 G-30] S-49 — Update 29-01-2026 [L2232-L2304]",
+              "source_ref": "07062_Receiving_PO_Docs_ver2.17.md#L2232-L2304",
+              "topic_types": [],
+              "flags_active": [],
+              "line_count": 73,
+              "depth": 2,
+              "current_status": "done",
+              "done_criteria_short": "read_log filled + coverage_status in {full|partial|stub} + check_ingest passes (no SUSPECT_UNREAD / UNDERREPORTED_COVERAGE)"
+            }
+          ]
+        },
+        {
+          "group_id": "G-31",
+          "label": "Nhận hàng PO cho SKU vải theo packing list",
+          "anchor_section_id": "S-50",
+          "rationale": "standalone parent",
+          "section_count": 1,
+          "tasks": [
+            {
+              "task_id": "T-07062-S-50",
+              "section_id": "S-50",
+              "title": "[07062 G-31] S-50 — Nhận hàng PO cho SKU vải theo packing list [L2305-L2305]",
+              "source_ref": "07062_Receiving_PO_Docs_ver2.17.md#L2305-L2305",
+              "topic_types": [],
+              "flags_active": [],
+              "line_count": 1,
+              "depth": 1,
+              "current_status": "done",
+              "done_criteria_short": "read_log filled + coverage_status in {full|partial|stub} + check_ingest passes (no SUSPECT_UNREAD / UNDERREPORTED_COVERAGE)"
+            }
+          ]
+        },
+        {
+          "group_id": "G-32",
+          "label": "SKU vải là con lẻ",
+          "anchor_section_id": "S-51",
+          "rationale": "standalone parent",
+          "section_count": 1,
+          "tasks": [
+            {
+              "task_id": "T-07062-S-51",
+              "section_id": "S-51",
+              "title": "[07062 G-32] S-51 — SKU vải là con lẻ [L2306-L2347]",
+              "source_ref": "07062_Receiving_PO_Docs_ver2.17.md#L2306-L2347",
+              "topic_types": [],
+              "flags_active": [],
+              "line_count": 42,
+              "depth": 1,
+              "current_status": "done",
+              "done_criteria_short": "read_log filled + coverage_status in {full|partial|stub} + check_ingest passes (no SUSPECT_UNREAD / UNDERREPORTED_COVERAGE)"
+            }
+          ]
+        },
+        {
+          "group_id": "G-33",
+          "label": "SKU vải là combo",
+          "anchor_section_id": "S-52",
+          "rationale": "standalone parent",
+          "section_count": 1,
+          "tasks": [
+            {
+              "task_id": "T-07062-S-52",
+              "section_id": "S-52",
+              "title": "[07062 G-33] S-52 — SKU vải là combo [L2348-L2388]",
+              "source_ref": "07062_Receiving_PO_Docs_ver2.17.md#L2348-L2388",
+              "topic_types": [],
+              "flags_active": [],
+              "line_count": 41,
+              "depth": 1,
+              "current_status": "done",
+              "done_criteria_short": "read_log filled + coverage_status in {full|partial|stub} + check_ingest passes (no SUSPECT_UNREAD / UNDERREPORTED_COVERAGE)"
+            }
+          ]
+        },
+        {
+          "group_id": "G-34",
+          "label": "02-04-2026: Bổ sung thông tin “Trừ lõi”",
+          "anchor_section_id": "S-53",
+          "rationale": "top-level ancestor",
+          "section_count": 2,
+          "tasks": [
+            {
+              "task_id": "T-07062-S-53",
+              "section_id": "S-53",
+              "title": "[07062 G-34] S-53 — 02-04-2026: Bổ sung thông tin “Trừ lõi” [L2389-L2414]",
+              "source_ref": "07062_Receiving_PO_Docs_ver2.17.md#L2389-L2414",
+              "topic_types": [],
+              "flags_active": [],
+              "line_count": 26,
+              "depth": 1,
+              "current_status": "done",
+              "done_criteria_short": "read_log filled + coverage_status in {full|partial|stub} + check_ingest passes (no SUSPECT_UNREAD / UNDERREPORTED_COVERAGE)"
+            },
+            {
+              "task_id": "T-07062-S-54",
+              "section_id": "S-54",
+              "title": "[07062 G-34] S-54 — Update 16-04-2026 [L2415-L2417]",
+              "source_ref": "07062_Receiving_PO_Docs_ver2.17.md#L2415-L2417",
+              "topic_types": [],
+              "flags_active": [],
+              "line_count": 3,
+              "depth": 2,
+              "current_status": "done",
+              "done_criteria_short": "read_log filled + coverage_status in {full|partial|stub} + check_ingest passes (no SUSPECT_UNREAD / UNDERREPORTED_COVERAGE)"
+            }
+          ]
+        },
+        {
+          "group_id": "G-35",
+          "label": "Import Packing list",
+          "anchor_section_id": "S-55",
+          "rationale": "standalone parent",
+          "section_count": 1,
+          "tasks": [
+            {
+              "task_id": "T-07062-S-55",
+              "section_id": "S-55",
+              "title": "[07062 G-35] S-55 — Import Packing list [L2418-L2455]",
+              "source_ref": "07062_Receiving_PO_Docs_ver2.17.md#L2418-L2455",
+              "topic_types": [],
+              "flags_active": [],
+              "line_count": 38,
+              "depth": 1,
+              "current_status": "done",
+              "done_criteria_short": "read_log filled + coverage_status in {full|partial|stub} + check_ingest passes (no SUSPECT_UNREAD / UNDERREPORTED_COVERAGE)"
+            }
+          ]
+        },
+        {
+          "group_id": "G-36",
+          "label": "Page quản lý Packing list",
+          "anchor_section_id": "S-56",
+          "rationale": "top-level ancestor",
+          "section_count": 4,
+          "tasks": [
+            {
+              "task_id": "T-07062-S-56",
+              "section_id": "S-56",
+              "title": "[07062 G-36] S-56 — Page quản lý Packing list [L2456-L2464]",
+              "source_ref": "07062_Receiving_PO_Docs_ver2.17.md#L2456-L2464",
+              "topic_types": [],
+              "flags_active": [],
+              "line_count": 9,
+              "depth": 1,
+              "current_status": "done",
+              "done_criteria_short": "read_log filled + coverage_status in {full|partial|stub} + check_ingest passes (no SUSPECT_UNREAD / UNDERREPORTED_COVERAGE)"
+            },
+            {
+              "task_id": "T-07062-S-57",
+              "section_id": "S-57",
+              "title": "[07062 G-36] S-57 — Update UI nhận SKU có UID group [L2465-L2514]",
+              "source_ref": "07062_Receiving_PO_Docs_ver2.17.md#L2465-L2514",
+              "topic_types": [],
+              "flags_active": [],
+              "line_count": 50,
+              "depth": 2,
+              "current_status": "done",
+              "done_criteria_short": "read_log filled + coverage_status in {full|partial|stub} + check_ingest passes (no SUSPECT_UNREAD / UNDERREPORTED_COVERAGE)"
+            },
+            {
+              "task_id": "T-07062-S-58",
+              "section_id": "S-58",
+              "title": "[07062 G-36] S-58 — Update rules nhận dư cho PO vải (20-04-2026) [L2515-L2579]",
+              "source_ref": "07062_Receiving_PO_Docs_ver2.17.md#L2515-L2579",
+              "topic_types": [],
+              "flags_active": [],
+              "line_count": 65,
+              "depth": 2,
+              "current_status": "done",
+              "done_criteria_short": "read_log filled + coverage_status in {full|partial|stub} + check_ingest passes (no SUSPECT_UNREAD / UNDERREPORTED_COVERAGE)"
+            },
+            {
+              "task_id": "T-07062-S-59",
+              "section_id": "S-59",
+              "title": "[07062 G-36] S-59 — Update 17-05-2026 [L2580-L2580]",
+              "source_ref": "07062_Receiving_PO_Docs_ver2.17.md#L2580-L2580",
+              "topic_types": [],
+              "flags_active": [],
+              "line_count": 1,
+              "depth": 2,
+              "current_status": "done",
+              "done_criteria_short": "read_log filled + coverage_status in {full|partial|stub} + check_ingest passes (no SUSPECT_UNREAD / UNDERREPORTED_COVERAGE)"
+            }
+          ]
+        },
+        {
+          "group_id": "G-37",
+          "label": "PO sample & PO chính",
+          "anchor_section_id": "S-60",
+          "rationale": "standalone parent",
+          "section_count": 1,
+          "tasks": [
+            {
+              "task_id": "T-07062-S-60",
+              "section_id": "S-60",
+              "title": "[07062 G-37] S-60 — PO sample & PO chính [L2581-L2628]",
+              "source_ref": "07062_Receiving_PO_Docs_ver2.17.md#L2581-L2628",
+              "topic_types": [],
+              "flags_active": [],
+              "line_count": 48,
+              "depth": 1,
+              "current_status": "done",
+              "done_criteria_short": "read_log filled + coverage_status in {full|partial|stub} + check_ingest passes (no SUSPECT_UNREAD / UNDERREPORTED_COVERAGE)"
+            }
+          ]
+        },
+        {
+          "group_id": "G-38",
+          "label": "Cho nhiều user cùng nhận cùng lúc",
+          "anchor_section_id": "S-61",
+          "rationale": "standalone parent",
+          "section_count": 1,
+          "tasks": [
+            {
+              "task_id": "T-07062-S-61",
+              "section_id": "S-61",
+              "title": "[07062 G-38] S-61 — Cho nhiều user cùng nhận cùng lúc [L2629-L2667]",
+              "source_ref": "07062_Receiving_PO_Docs_ver2.17.md#L2629-L2667",
+              "topic_types": [],
+              "flags_active": [],
+              "line_count": 39,
+              "depth": 1,
+              "current_status": "done",
+              "done_criteria_short": "read_log filled + coverage_status in {full|partial|stub} + check_ingest passes (no SUSPECT_UNREAD / UNDERREPORTED_COVERAGE)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "doc_short": "07105",
+      "source_file": "07105_Quality_Control_Docs_ver1.5.md",
+      "source_version": "1.5",
+      "total_sections": 36,
+      "group_count": 30,
+      "counts": {
+        "pending": 0,
+        "in_progress": 0,
+        "done": 36,
+        "skipped": 0
+      },
+      "groups": [
+        {
+          "group_id": "G-01",
+          "label": "THUẬT NGỮ & VIẾT TẮT",
+          "anchor_section_id": "S-00",
+          "rationale": "standalone parent",
+          "section_count": 1,
+          "tasks": [
+            {
+              "task_id": "T-07105-S-00",
+              "section_id": "S-00",
+              "title": "[07105 G-01] S-00 — THUẬT NGỮ & VIẾT TẮT [L102-L111]",
+              "source_ref": "07105_Quality_Control_Docs_ver1.5.md#L102-L111",
+              "topic_types": [],
+              "flags_active": [],
+              "line_count": 10,
+              "depth": 1,
+              "current_status": "done",
+              "done_criteria_short": "read_log filled + coverage_status in {full|partial|stub} + check_ingest passes (no SUSPECT_UNREAD / UNDERREPORTED_COVERAGE)"
+            }
+          ]
+        },
+        {
+          "group_id": "G-02",
+          "label": "QUY TRÌNH (WORKFLOW)",
+          "anchor_section_id": "S-01",
+          "rationale": "standalone parent",
+          "section_count": 1,
+          "tasks": [
+            {
+              "task_id": "T-07105-S-01",
+              "section_id": "S-01",
+              "title": "[07105 G-02] S-01 — QUY TRÌNH (WORKFLOW) [L112-L114]",
+              "source_ref": "07105_Quality_Control_Docs_ver1.5.md#L112-L114",
+              "topic_types": [],
+              "flags_active": [],
+              "line_count": 3,
+              "depth": 1,
+              "current_status": "done",
+              "done_criteria_short": "read_log filled + coverage_status in {full|partial|stub} + check_ingest passes (no SUSPECT_UNREAD / UNDERREPORTED_COVERAGE)"
+            }
+          ]
+        },
+        {
+          "group_id": "G-03",
+          "label": "GIAO DIỆN (WIREFRAME)",
+          "anchor_section_id": "S-02",
+          "rationale": "standalone parent",
+          "section_count": 1,
+          "tasks": [
+            {
+              "task_id": "T-07105-S-02",
+              "section_id": "S-02",
+              "title": "[07105 G-03] S-02 — GIAO DIỆN (WIREFRAME) [L115-L123]",
+              "source_ref": "07105_Quality_Control_Docs_ver1.5.md#L115-L123",
+              "topic_types": [],
+              "flags_active": [],
+              "line_count": 9,
+              "depth": 1,
+              "current_status": "done",
+              "done_criteria_short": "read_log filled + coverage_status in {full|partial|stub} + check_ingest passes (no SUSPECT_UNREAD / UNDERREPORTED_COVERAGE)"
+            }
+          ]
+        },
+        {
+          "group_id": "G-04",
+          "label": "YÊU CẦU CHỨC NĂNG",
+          "anchor_section_id": "S-03",
+          "rationale": "standalone parent",
+          "section_count": 1,
+          "tasks": [
+            {
+              "task_id": "T-07105-S-03",
+              "section_id": "S-03",
+              "title": "[07105 G-04] S-03 — YÊU CẦU CHỨC NĂNG [L124-L124]",
+              "source_ref": "07105_Quality_Control_Docs_ver1.5.md#L124-L124",
+              "topic_types": [],
+              "flags_active": [],
+              "line_count": 1,
+              "depth": 1,
+              "current_status": "done",
+              "done_criteria_short": "read_log filled + coverage_status in {full|partial|stub} + check_ingest passes (no SUSPECT_UNREAD / UNDERREPORTED_COVERAGE)"
+            }
+          ]
+        },
+        {
+          "group_id": "G-05",
+          "label": "Thiết lập tiêu chí",
+          "anchor_section_id": "S-04",
+          "rationale": "standalone parent",
+          "section_count": 1,
+          "tasks": [
+            {
+              "task_id": "T-07105-S-04",
+              "section_id": "S-04",
+              "title": "[07105 G-05] S-04 — Thiết lập tiêu chí [L125-L170]",
+              "source_ref": "07105_Quality_Control_Docs_ver1.5.md#L125-L170",
+              "topic_types": [],
+              "flags_active": [],
+              "line_count": 46,
+              "depth": 1,
+              "current_status": "done",
+              "done_criteria_short": "read_log filled + coverage_status in {full|partial|stub} + check_ingest passes (no SUSPECT_UNREAD / UNDERREPORTED_COVERAGE)"
+            }
+          ]
+        },
+        {
+          "group_id": "G-06",
+          "label": "Tạo tiêu chí",
+          "anchor_section_id": "S-05",
+          "rationale": "standalone parent",
+          "section_count": 1,
+          "tasks": [
+            {
+              "task_id": "T-07105-S-05",
+              "section_id": "S-05",
+              "title": "[07105 G-06] S-05 — Tạo tiêu chí [L171-L174]",
+              "source_ref": "07105_Quality_Control_Docs_ver1.5.md#L171-L174",
+              "topic_types": [],
+              "flags_active": [],
+              "line_count": 4,
+              "depth": 1,
+              "current_status": "done",
+              "done_criteria_short": "read_log filled + coverage_status in {full|partial|stub} + check_ingest passes (no SUSPECT_UNREAD / UNDERREPORTED_COVERAGE)"
+            }
+          ]
+        },
+        {
+          "group_id": "G-07",
+          "label": "Import tiêu chí",
+          "anchor_section_id": "S-06",
+          "rationale": "standalone parent",
+          "section_count": 1,
+          "tasks": [
+            {
+              "task_id": "T-07105-S-06",
+              "section_id": "S-06",
+              "title": "[07105 G-07] S-06 — Import tiêu chí [L175-L191]",
+              "source_ref": "07105_Quality_Control_Docs_ver1.5.md#L175-L191",
+              "topic_types": [],
+              "flags_active": [],
+              "line_count": 17,
+              "depth": 1,
+              "current_status": "done",
+              "done_criteria_short": "read_log filled + coverage_status in {full|partial|stub} + check_ingest passes (no SUSPECT_UNREAD / UNDERREPORTED_COVERAGE)"
+            }
+          ]
+        },
+        {
+          "group_id": "G-08",
+          "label": "Thiết lập tiêu chí cho SKU",
+          "anchor_section_id": "S-07",
+          "rationale": "standalone parent",
+          "section_count": 1,
+          "tasks": [
+            {
+              "task_id": "T-07105-S-07",
+              "section_id": "S-07",
+              "title": "[07105 G-08] S-07 — Thiết lập tiêu chí cho SKU [L192-L219]",
+              "source_ref": "07105_Quality_Control_Docs_ver1.5.md#L192-L219",
+              "topic_types": [],
+              "flags_active": [],
+              "line_count": 28,
+              "depth": 1,
+              "current_status": "done",
+              "done_criteria_short": "read_log filled + coverage_status in {full|partial|stub} + check_ingest passes (no SUSPECT_UNREAD / UNDERREPORTED_COVERAGE)"
+            }
+          ]
+        },
+        {
+          "group_id": "G-09",
+          "label": "Tạo tiêu chí cho SKU",
+          "anchor_section_id": "S-08",
+          "rationale": "standalone parent",
+          "section_count": 1,
+          "tasks": [
+            {
+              "task_id": "T-07105-S-08",
+              "section_id": "S-08",
+              "title": "[07105 G-09] S-08 — Tạo tiêu chí cho SKU [L220-L400]",
+              "source_ref": "07105_Quality_Control_Docs_ver1.5.md#L220-L400",
+              "topic_types": [],
+              "flags_active": [],
+              "line_count": 181,
+              "depth": 1,
+              "current_status": "done",
+              "done_criteria_short": "read_log filled + coverage_status in {full|partial|stub} + check_ingest passes (no SUSPECT_UNREAD / UNDERREPORTED_COVERAGE)"
+            }
+          ]
+        },
+        {
+          "group_id": "G-10",
+          "label": "17-09-2025: thiết lập đánh giá từng bước cho tiêu chí",
+          "anchor_section_id": "S-09",
+          "rationale": "top-level ancestor",
+          "section_count": 2,
+          "tasks": [
+            {
+              "task_id": "T-07105-S-09",
+              "section_id": "S-09",
+              "title": "[07105 G-10] S-09 — 17-09-2025: thiết lập đánh giá từng bước cho tiêu chí [L401-L432]",
+              "source_ref": "07105_Quality_Control_Docs_ver1.5.md#L401-L432",
+              "topic_types": [],
+              "flags_active": [],
+              "line_count": 32,
+              "depth": 1,
+              "current_status": "done",
+              "done_criteria_short": "read_log filled + coverage_status in {full|partial|stub} + check_ingest passes (no SUSPECT_UNREAD / UNDERREPORTED_COVERAGE)"
+            },
+            {
+              "task_id": "T-07105-S-10",
+              "section_id": "S-10",
+              "title": "[07105 G-10] S-10 — Update 05-08-2025 [L433-L442]",
+              "source_ref": "07105_Quality_Control_Docs_ver1.5.md#L433-L442",
+              "topic_types": [],
+              "flags_active": [],
+              "line_count": 10,
+              "depth": 2,
+              "current_status": "done",
+              "done_criteria_short": "read_log filled + coverage_status in {full|partial|stub} + check_ingest passes (no SUSPECT_UNREAD / UNDERREPORTED_COVERAGE)"
+            }
+          ]
+        },
+        {
+          "group_id": "G-11",
+          "label": "17-09-2025: thiết lập đánh giá từng bước cho tiêu chí",
+          "anchor_section_id": "S-11",
+          "rationale": "standalone parent",
+          "section_count": 1,
+          "tasks": [
+            {
+              "task_id": "T-07105-S-11",
+              "section_id": "S-11",
+              "title": "[07105 G-11] S-11 — 17-09-2025: thiết lập đánh giá từng bước cho tiêu chí [L443-L492]",
+              "source_ref": "07105_Quality_Control_Docs_ver1.5.md#L443-L492",
+              "topic_types": [],
+              "flags_active": [],
+              "line_count": 50,
+              "depth": 1,
+              "current_status": "done",
+              "done_criteria_short": "read_log filled + coverage_status in {full|partial|stub} + check_ingest passes (no SUSPECT_UNREAD / UNDERREPORTED_COVERAGE)"
+            }
+          ]
+        },
+        {
+          "group_id": "G-12",
+          "label": "27-09-2025: thiết lập nội dung đánh giá cho tiêu chí lỗi 4 điểm",
+          "anchor_section_id": "S-12",
+          "rationale": "standalone parent",
+          "section_count": 1,
+          "tasks": [
+            {
+              "task_id": "T-07105-S-12",
+              "section_id": "S-12",
+              "title": "[07105 G-12] S-12 — 27-09-2025: thiết lập nội dung đánh giá cho tiêu chí lỗi 4 đ [L493-L532]",
+              "source_ref": "07105_Quality_Control_Docs_ver1.5.md#L493-L532",
+              "topic_types": [],
+              "flags_active": [],
+              "line_count": 40,
+              "depth": 1,
+              "current_status": "done",
+              "done_criteria_short": "read_log filled + coverage_status in {full|partial|stub} + check_ingest passes (no SUSPECT_UNREAD / UNDERREPORTED_COVERAGE)"
+            }
+          ]
+        },
+        {
+          "group_id": "G-13",
+          "label": "Duyệt/Từ chối",
+          "anchor_section_id": "S-13",
+          "rationale": "standalone parent",
+          "section_count": 1,
+          "tasks": [
+            {
+              "task_id": "T-07105-S-13",
+              "section_id": "S-13",
+              "title": "[07105 G-13] S-13 — Duyệt/Từ chối [L533-L569]",
+              "source_ref": "07105_Quality_Control_Docs_ver1.5.md#L533-L569",
+              "topic_types": [],
+              "flags_active": [],
+              "line_count": 37,
+              "depth": 1,
+              "current_status": "done",
+              "done_criteria_short": "read_log filled + coverage_status in {full|partial|stub} + check_ingest passes (no SUSPECT_UNREAD / UNDERREPORTED_COVERAGE)"
+            }
+          ]
+        },
+        {
+          "group_id": "G-14",
+          "label": "Kết quả đánh giá",
+          "anchor_section_id": "S-14",
+          "rationale": "standalone parent",
+          "section_count": 1,
+          "tasks": [
+            {
+              "task_id": "T-07105-S-14",
+              "section_id": "S-14",
+              "title": "[07105 G-14] S-14 — Kết quả đánh giá [L570-L569]",
+              "source_ref": "07105_Quality_Control_Docs_ver1.5.md#L570-L569",
+              "topic_types": [],
+              "flags_active": [],
+              "line_count": 0,
+              "depth": 1,
+              "current_status": "done",
+              "done_criteria_short": "read_log filled + coverage_status in {full|partial|stub} + check_ingest passes (no SUSPECT_UNREAD / UNDERREPORTED_COVERAGE)"
+            }
+          ]
+        },
+        {
+          "group_id": "G-15",
+          "label": "18-09-2025: Chi tiết kết quả đánh giá",
+          "anchor_section_id": "S-15",
+          "rationale": "standalone parent",
+          "section_count": 1,
+          "tasks": [
+            {
+              "task_id": "T-07105-S-15",
+              "section_id": "S-15",
+              "title": "[07105 G-15] S-15 — 18-09-2025: Chi tiết kết quả đánh giá [L570-L658]",
+              "source_ref": "07105_Quality_Control_Docs_ver1.5.md#L570-L658",
+              "topic_types": [],
+              "flags_active": [],
+              "line_count": 89,
+              "depth": 1,
+              "current_status": "done",
+              "done_criteria_short": "read_log filled + coverage_status in {full|partial|stub} + check_ingest passes (no SUSPECT_UNREAD / UNDERREPORTED_COVERAGE)"
+            }
+          ]
+        },
+        {
+          "group_id": "G-16",
+          "label": "18-09-2025: Chi tiết kết quả đánh giá",
+          "anchor_section_id": "S-16",
+          "rationale": "standalone parent",
+          "section_count": 1,
+          "tasks": [
+            {
+              "task_id": "T-07105-S-16",
+              "section_id": "S-16",
+              "title": "[07105 G-16] S-16 — 18-09-2025: Chi tiết kết quả đánh giá [L659-L695]",
+              "source_ref": "07105_Quality_Control_Docs_ver1.5.md#L659-L695",
+              "topic_types": [],
+              "flags_active": [],
+              "line_count": 37,
+              "depth": 1,
+              "current_status": "done",
+              "done_criteria_short": "read_log filled + coverage_status in {full|partial|stub} + check_ingest passes (no SUSPECT_UNREAD / UNDERREPORTED_COVERAGE)"
+            }
+          ]
+        },
+        {
+          "group_id": "G-17",
+          "label": "VAS updated",
+          "anchor_section_id": "S-17",
+          "rationale": "top-level ancestor",
+          "section_count": 2,
+          "tasks": [
+            {
+              "task_id": "T-07105-S-17",
+              "section_id": "S-17",
+              "title": "[07105 G-17] S-17 — VAS updated [L696-L774]",
+              "source_ref": "07105_Quality_Control_Docs_ver1.5.md#L696-L774",
+              "topic_types": [],
+              "flags_active": [],
+              "line_count": 79,
+              "depth": 1,
+              "current_status": "done",
+              "done_criteria_short": "read_log filled + coverage_status in {full|partial|stub} + check_ingest passes (no SUSPECT_UNREAD / UNDERREPORTED_COVERAGE)"
+            },
+            {
+              "task_id": "T-07105-S-18",
+              "section_id": "S-18",
+              "title": "[07105 G-17] S-18 — Update 18-09-2025 [L775-L778]",
+              "source_ref": "07105_Quality_Control_Docs_ver1.5.md#L775-L778",
+              "topic_types": [],
+              "flags_active": [],
+              "line_count": 4,
+              "depth": 2,
+              "current_status": "done",
+              "done_criteria_short": "read_log filled + coverage_status in {full|partial|stub} + check_ingest passes (no SUSPECT_UNREAD / UNDERREPORTED_COVERAGE)"
+            }
+          ]
+        },
+        {
+          "group_id": "G-18",
+          "label": "Đánh giá chất lượng sản phẩm - Mobile",
+          "anchor_section_id": "S-19",
+          "rationale": "top-level ancestor",
+          "section_count": 2,
+          "tasks": [
+            {
+              "task_id": "T-07105-S-19",
+              "section_id": "S-19",
+              "title": "[07105 G-18] S-19 — Đánh giá chất lượng sản phẩm - Mobile [L779-L871]",
+              "source_ref": "07105_Quality_Control_Docs_ver1.5.md#L779-L871",
+              "topic_types": [],
+              "flags_active": [],
+              "line_count": 93,
+              "depth": 1,
+              "current_status": "done",
+              "done_criteria_short": "read_log filled + coverage_status in {full|partial|stub} + check_ingest passes (no SUSPECT_UNREAD / UNDERREPORTED_COVERAGE)"
+            },
+            {
+              "task_id": "T-07105-S-20",
+              "section_id": "S-20",
+              "title": "[07105 G-18] S-20 — Update 18-09-2025 – Đánh giá chất lượng vải [L872-L1022]",
+              "source_ref": "07105_Quality_Control_Docs_ver1.5.md#L872-L1022",
+              "topic_types": [],
+              "flags_active": [],
+              "line_count": 151,
+              "depth": 2,
+              "current_status": "done",
+              "done_criteria_short": "read_log filled + coverage_status in {full|partial|stub} + check_ingest passes (no SUSPECT_UNREAD / UNDERREPORTED_COVERAGE)"
+            }
+          ]
+        },
+        {
+          "group_id": "G-19",
+          "label": "Tạo mới đánh giá – Manual (bỏ)",
+          "anchor_section_id": "S-21",
+          "rationale": "top-level ancestor",
+          "section_count": 2,
+          "tasks": [
+            {
+              "task_id": "T-07105-S-21",
+              "section_id": "S-21",
+              "title": "[07105 G-19] S-21 — Tạo mới đánh giá – Manual (bỏ) [L1023-L1077]",
+              "source_ref": "07105_Quality_Control_Docs_ver1.5.md#L1023-L1077",
+              "topic_types": [],
+              "flags_active": [],
+              "line_count": 55,
+              "depth": 1,
+              "current_status": "done",
+              "done_criteria_short": "read_log filled + coverage_status in {full|partial|stub} + check_ingest passes (no SUSPECT_UNREAD / UNDERREPORTED_COVERAGE)"
+            },
+            {
+              "task_id": "T-07105-S-22",
+              "section_id": "S-22",
+              "title": "[07105 G-19] S-22 — Update 11-02-2026 [L1078-L1080]",
+              "source_ref": "07105_Quality_Control_Docs_ver1.5.md#L1078-L1080",
+              "topic_types": [],
+              "flags_active": [],
+              "line_count": 3,
+              "depth": 2,
+              "current_status": "done",
+              "done_criteria_short": "read_log filled + coverage_status in {full|partial|stub} + check_ingest passes (no SUSPECT_UNREAD / UNDERREPORTED_COVERAGE)"
+            }
+          ]
+        },
+        {
+          "group_id": "G-20",
+          "label": "Thêm cột khi thiết lập tiêu chí (Web)",
+          "anchor_section_id": "S-23",
+          "rationale": "standalone parent",
+          "section_count": 1,
+          "tasks": [
+            {
+              "task_id": "T-07105-S-23",
+              "section_id": "S-23",
+              "title": "[07105 G-20] S-23 — Thêm cột khi thiết lập tiêu chí (Web) [L1081-L1083]",
+              "source_ref": "07105_Quality_Control_Docs_ver1.5.md#L1081-L1083",
+              "topic_types": [],
+              "flags_active": [],
+              "line_count": 3,
+              "depth": 1,
+              "current_status": "done",
+              "done_criteria_short": "read_log filled + coverage_status in {full|partial|stub} + check_ingest passes (no SUSPECT_UNREAD / UNDERREPORTED_COVERAGE)"
+            }
+          ]
+        },
+        {
+          "group_id": "G-21",
+          "label": "UID group (Web)",
+          "anchor_section_id": "S-24",
+          "rationale": "standalone parent",
+          "section_count": 1,
+          "tasks": [
+            {
+              "task_id": "T-07105-S-24",
+              "section_id": "S-24",
+              "title": "[07105 G-21] S-24 — UID group (Web) [L1084-L1100]",
+              "source_ref": "07105_Quality_Control_Docs_ver1.5.md#L1084-L1100",
+              "topic_types": [],
+              "flags_active": [],
+              "line_count": 17,
+              "depth": 1,
+              "current_status": "done",
+              "done_criteria_short": "read_log filled + coverage_status in {full|partial|stub} + check_ingest passes (no SUSPECT_UNREAD / UNDERREPORTED_COVERAGE)"
+            }
+          ]
+        },
+        {
+          "group_id": "G-22",
+          "label": "Kết quả đánh giá (Web)",
+          "anchor_section_id": "S-25",
+          "rationale": "standalone parent",
+          "section_count": 1,
+          "tasks": [
+            {
+              "task_id": "T-07105-S-25",
+              "section_id": "S-25",
+              "title": "[07105 G-22] S-25 — Kết quả đánh giá (Web) [L1101-L1127]",
+              "source_ref": "07105_Quality_Control_Docs_ver1.5.md#L1101-L1127",
+              "topic_types": [],
+              "flags_active": [],
+              "line_count": 27,
+              "depth": 1,
+              "current_status": "done",
+              "done_criteria_short": "read_log filled + coverage_status in {full|partial|stub} + check_ingest passes (no SUSPECT_UNREAD / UNDERREPORTED_COVERAGE)"
+            }
+          ]
+        },
+        {
+          "group_id": "G-23",
+          "label": "Khai báo số lượng cần đánh giá cho UID group (App)",
+          "anchor_section_id": "S-26",
+          "rationale": "standalone parent",
+          "section_count": 1,
+          "tasks": [
+            {
+              "task_id": "T-07105-S-26",
+              "section_id": "S-26",
+              "title": "[07105 G-23] S-26 — Khai báo số lượng cần đánh giá cho UID group (App) [L1128-L1140]",
+              "source_ref": "07105_Quality_Control_Docs_ver1.5.md#L1128-L1140",
+              "topic_types": [],
+              "flags_active": [],
+              "line_count": 13,
+              "depth": 1,
+              "current_status": "done",
+              "done_criteria_short": "read_log filled + coverage_status in {full|partial|stub} + check_ingest passes (no SUSPECT_UNREAD / UNDERREPORTED_COVERAGE)"
+            }
+          ]
+        },
+        {
+          "group_id": "G-24",
+          "label": "Chụp hình tem QC",
+          "anchor_section_id": "S-27",
+          "rationale": "standalone parent",
+          "section_count": 1,
+          "tasks": [
+            {
+              "task_id": "T-07105-S-27",
+              "section_id": "S-27",
+              "title": "[07105 G-24] S-27 — Chụp hình tem QC [L1141-L1151]",
+              "source_ref": "07105_Quality_Control_Docs_ver1.5.md#L1141-L1151",
+              "topic_types": [],
+              "flags_active": [],
+              "line_count": 11,
+              "depth": 1,
+              "current_status": "done",
+              "done_criteria_short": "read_log filled + coverage_status in {full|partial|stub} + check_ingest passes (no SUSPECT_UNREAD / UNDERREPORTED_COVERAGE)"
+            }
+          ]
+        },
+        {
+          "group_id": "G-25",
+          "label": "Một số lưu ý cho luồng đánh giá mới",
+          "anchor_section_id": "S-28",
+          "rationale": "standalone parent",
+          "section_count": 1,
+          "tasks": [
+            {
+              "task_id": "T-07105-S-28",
+              "section_id": "S-28",
+              "title": "[07105 G-25] S-28 — Một số lưu ý cho luồng đánh giá mới [L1152-L1172]",
+              "source_ref": "07105_Quality_Control_Docs_ver1.5.md#L1152-L1172",
+              "topic_types": [],
+              "flags_active": [],
+              "line_count": 21,
+              "depth": 1,
+              "current_status": "done",
+              "done_criteria_short": "read_log filled + coverage_status in {full|partial|stub} + check_ingest passes (no SUSPECT_UNREAD / UNDERREPORTED_COVERAGE)"
+            }
+          ]
+        },
+        {
+          "group_id": "G-26",
+          "label": "Tạo mới đánh giá – Manual",
+          "anchor_section_id": "S-29",
+          "rationale": "top-level ancestor",
+          "section_count": 2,
+          "tasks": [
+            {
+              "task_id": "T-07105-S-29",
+              "section_id": "S-29",
+              "title": "[07105 G-26] S-29 — Tạo mới đánh giá – Manual [L1173-L1241]",
+              "source_ref": "07105_Quality_Control_Docs_ver1.5.md#L1173-L1241",
+              "topic_types": [],
+              "flags_active": [],
+              "line_count": 69,
+              "depth": 1,
+              "current_status": "done",
+              "done_criteria_short": "read_log filled + coverage_status in {full|partial|stub} + check_ingest passes (no SUSPECT_UNREAD / UNDERREPORTED_COVERAGE)"
+            },
+            {
+              "task_id": "T-07105-S-30",
+              "section_id": "S-30",
+              "title": "[07105 G-26] S-30 — Update 20-04-2026 [L1242-L1242]",
+              "source_ref": "07105_Quality_Control_Docs_ver1.5.md#L1242-L1242",
+              "topic_types": [],
+              "flags_active": [],
+              "line_count": 1,
+              "depth": 2,
+              "current_status": "done",
+              "done_criteria_short": "read_log filled + coverage_status in {full|partial|stub} + check_ingest passes (no SUSPECT_UNREAD / UNDERREPORTED_COVERAGE)"
+            }
+          ]
+        },
+        {
+          "group_id": "G-27",
+          "label": "Đánh giá SKU phụ liệu (SKU thường)",
+          "anchor_section_id": "S-31",
+          "rationale": "standalone parent",
+          "section_count": 1,
+          "tasks": [
+            {
+              "task_id": "T-07105-S-31",
+              "section_id": "S-31",
+              "title": "[07105 G-27] S-31 — Đánh giá SKU phụ liệu (SKU thường) [L1243-L1250]",
+              "source_ref": "07105_Quality_Control_Docs_ver1.5.md#L1243-L1250",
+              "topic_types": [],
+              "flags_active": [],
+              "line_count": 8,
+              "depth": 1,
+              "current_status": "done",
+              "done_criteria_short": "read_log filled + coverage_status in {full|partial|stub} + check_ingest passes (no SUSPECT_UNREAD / UNDERREPORTED_COVERAGE)"
+            }
+          ]
+        },
+        {
+          "group_id": "G-28",
+          "label": "Blocked UID group và chuyển Damaged",
+          "anchor_section_id": "S-32",
+          "rationale": "top-level ancestor",
+          "section_count": 2,
+          "tasks": [
+            {
+              "task_id": "T-07105-S-32",
+              "section_id": "S-32",
+              "title": "[07105 G-28] S-32 — Blocked UID group và chuyển Damaged [L1251-L1303]",
+              "source_ref": "07105_Quality_Control_Docs_ver1.5.md#L1251-L1303",
+              "topic_types": [],
+              "flags_active": [],
+              "line_count": 53,
+              "depth": 1,
+              "current_status": "done",
+              "done_criteria_short": "read_log filled + coverage_status in {full|partial|stub} + check_ingest passes (no SUSPECT_UNREAD / UNDERREPORTED_COVERAGE)"
+            },
+            {
+              "task_id": "T-07105-S-33",
+              "section_id": "S-33",
+              "title": "[07105 G-28] S-33 — Update 10-05-2026 [L1304-L1304]",
+              "source_ref": "07105_Quality_Control_Docs_ver1.5.md#L1304-L1304",
+              "topic_types": [],
+              "flags_active": [],
+              "line_count": 1,
+              "depth": 2,
+              "current_status": "done",
+              "done_criteria_short": "read_log filled + coverage_status in {full|partial|stub} + check_ingest passes (no SUSPECT_UNREAD / UNDERREPORTED_COVERAGE)"
+            }
+          ]
+        },
+        {
+          "group_id": "G-29",
+          "label": "Thiết lập tiêu chí 4 điểm khi thiết lập tiêu chí",
+          "anchor_section_id": "S-34",
+          "rationale": "standalone parent",
+          "section_count": 1,
+          "tasks": [
+            {
+              "task_id": "T-07105-S-34",
+              "section_id": "S-34",
+              "title": "[07105 G-29] S-34 — Thiết lập tiêu chí 4 điểm khi thiết lập tiêu chí [L1305-L1309]",
+              "source_ref": "07105_Quality_Control_Docs_ver1.5.md#L1305-L1309",
+              "topic_types": [],
+              "flags_active": [],
+              "line_count": 5,
+              "depth": 1,
+              "current_status": "done",
+              "done_criteria_short": "read_log filled + coverage_status in {full|partial|stub} + check_ingest passes (no SUSPECT_UNREAD / UNDERREPORTED_COVERAGE)"
+            }
+          ]
+        },
+        {
+          "group_id": "G-30",
+          "label": "Thiết lập đánh giá từng bước khi thiết lập tiêu chí",
+          "anchor_section_id": "S-35",
+          "rationale": "standalone parent",
+          "section_count": 1,
+          "tasks": [
+            {
+              "task_id": "T-07105-S-35",
+              "section_id": "S-35",
+              "title": "[07105 G-30] S-35 — Thiết lập đánh giá từng bước khi thiết lập tiêu chí [L1310-L1323]",
+              "source_ref": "07105_Quality_Control_Docs_ver1.5.md#L1310-L1323",
+              "topic_types": [],
+              "flags_active": [],
+              "line_count": 14,
+              "depth": 1,
+              "current_status": "done",
+              "done_criteria_short": "read_log filled + coverage_status in {full|partial|stub} + check_ingest passes (no SUSPECT_UNREAD / UNDERREPORTED_COVERAGE)"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

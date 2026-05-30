@@ -80,6 +80,16 @@ def parse_source_refs(cell: str) -> list[dict]:
     return refs
 
 
+_ESCAPED_PIPE_PLACEHOLDER = "\x00PIPE\x00"
+
+
+def _split_table_row(line: str) -> list[str]:
+    """Split a markdown table row on `|`, honoring `\\|` escape inside cells."""
+    protected = line.replace("\\|", _ESCAPED_PIPE_PLACEHOLDER)
+    parts = protected.strip().split("|")[1:-1]
+    return [cell.strip().replace(_ESCAPED_PIPE_PLACEHOLDER, "|") for cell in parts]
+
+
 def parse_table_rows(lines: list[str], start_idx: int) -> tuple[list[list[str]], int]:
     """Parse a markdown table starting at start_idx. Returns (rows, next_idx)."""
     rows: list[list[str]] = []
@@ -92,8 +102,7 @@ def parse_table_rows(lines: list[str], start_idx: int) -> tuple[list[list[str]],
         if set(line.replace("|", "").replace(":", "").replace("-", "").strip()) == set():
             i += 1
             continue
-        cells = [cell.strip() for cell in line.strip().split("|")[1:-1]]
-        rows.append(cells)
+        rows.append(_split_table_row(line))
         i += 1
     return rows, i
 
