@@ -218,6 +218,7 @@ Wiki impact check và KANBAN card dùng HSK code (không phải TBB2 code).
 | `py .claude/scripts/wiki_sync.py daily-sync --project <p> --date <YYYY-MM-DD>` | Sync daily note |
 | `py .claude/scripts/wiki_sync.py sync-my-open-tasks [--limit N] [--images] [--dry-run]` | Sync open tasks từ Hasaki Workplace |
 | `py .claude/scripts/index_skeleton.py <converted.md> --version <ver>` | Tạo skeleton index JSON từ converted PDF MD |
+| `py .claude/scripts/plan_ingest_tasks.py --project <p> [--max-group 6]` | Sinh `wiki/<p>/refiner/ingest_plan.json` từ `*_index.json` — cluster sections theo `parent_id` thành groups, mỗi section = 1 task cho `TaskCreate`. Status derive từ `coverage_status`+`read_log`, idempotent. Dùng ở Bước 1.5 của Workflow 2.1 |
 | `py .claude/scripts/evidence_index.py --project <p>` | Build evidence index (R-ID + AC + API + Business Rule → doc#line). Schema v2.0 — hỗ trợ multi-range, `coverage_class` |
 | `py .claude/scripts/verify_source_refs.py --project <p>` | Validate cột Source vs raw thật. Flag `INVALID_FORMAT` / `OUT_OF_RANGE` / `STALE` / `PHANTOM_EVIDENCE` / `MISSING_SOURCE` / `RAW_NOT_FOUND`. Exit 2 nếu có critical |
 | `py .claude/scripts/coverage_gap_estimator.py --project <p> [--threshold 0.5]` | Per section: count modal/action/conditional/constraint signals, compare evidence count. Flag `UNDERREPORTED_COVERAGE` / `UNMAPPED` / `NO_SIGNALS`. Exit 2 nếu có critical |

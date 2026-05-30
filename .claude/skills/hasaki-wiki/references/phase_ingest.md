@@ -39,7 +39,7 @@ Trạng thái: `Open` / `Answered` / `Deferred`.
 
 ---
 
-## Workflow 2.1: Ingest PDF (4 bước)
+## Workflow 2.1: Ingest PDF (4 bước + Bước 1.5 plan)
 
 **Kích hoạt:** File PDF mới trong `raw_sources/[project]/requirements/`.
 
@@ -70,7 +70,37 @@ Không sửa raw PDF, không ghi đè file raw đã lưu.
 
 ---
 
+### Bước 1.5 — Plan ingest tasks (sinh task list từ index)
+
+```
+py .claude/scripts/plan_ingest_tasks.py --project project_hasaki
+```
+
+Đọc tất cả `raw_sources/<project>/requirements/*_index.json` đã hoàn thiện ở Bước 1 → xuất `wiki/<project>/refiner/ingest_plan.json`. Mỗi section trong index trở thành **1 task** (`T-<doc>-<section_id>`); tasks được cluster vào **group** dựa trên `parent_id` chain (sections chia sẻ top-level ancestor cùng group). Cap `--max-group=6`; group dài hơn được chia thành `(part 1)`, `(part 2)`, ... giữ nguyên thứ tự section.
+
+Sau khi script chạy xong, AI **bắt buộc** invoke `TaskCreate` mỗi task trong plan trước khi bắt đầu Bước 2:
+
+- **Title:** lấy nguyên từ `tasks[].title` (đã có prefix `[<doc> <group_id>] <section_id> — <title> [Lx-Ly]`).
+- **Status ban đầu:** map từ `tasks[].current_status`:
+  - `pending` → `TaskCreate` status `pending`
+  - `in_progress` → `pending` (sẽ chuyển `in_progress` ngay khi mở section), hoặc skip TaskCreate nếu đã có task cũ — re-sinh plan không tạo trùng nếu AI check title trước
+  - `done` → bỏ qua TaskCreate (đã xong từ session trước)
+  - `skipped` → bỏ qua (section deleted)
+- **Acceptance criteria:** `read_log` filled + `coverage_status ∈ {full, partial, stub}` + section không bị `check_ingest.py` flag `SUSPECT_UNREAD` hoặc `UNDERREPORTED_COVERAGE`.
+
+**Re-sinh plan:** Script idempotent. Chạy lại bất cứ lúc nào (đầu session mới, sau khi đọc dở, sau khi raw có version mới) — status được derive trực tiếp từ `coverage_status` + `read_log` hiện tại của index, không cần xoá file output.
+
+**Khi nào skip Bước 1.5:**
+- Index có ≤ 3 sections → có thể skip, mỗi section vẫn phải tuân thủ Bước 2 micro-cycle.
+- Workflow 2.1b (incremental update) → re-sinh plan để task list phản ánh sections có `change_history` chứa version mới (chúng sẽ về `in_progress`/`pending`).
+
+**Output reference:** plan JSON là execution-tracking layer, KHÔNG phải normative source. Source of truth vẫn là `index.json` + `read_log` per section. Field ownership: plan = read-only của `index.json`, không ghi ngược.
+
+---
+
 ### Bước 2 — Read & Extract loop (per section)
+
+> **Trước khi bắt đầu:** mở `wiki/<project>/refiner/ingest_plan.json` (sinh ở Bước 1.5). Xử lý sections **theo thứ tự group** (G-01 → G-02 → ...) và trong group theo thứ tự `tasks[]`. Trước khi mở section, invoke `TaskUpdate` đổi task `pending` → `in_progress`. Sau khi hoàn thành 2.4, đổi `in_progress` → `done` (nếu `coverage_status: full|stub`) hoặc giữ `in_progress` (nếu `partial` — chờ session sau đọc tiếp).
 
 ISTQB Test Analysis. **Mỗi section trong index được xử lý theo cùng 1 micro-cycle** — không bay qua. Cycle:
 
@@ -147,8 +177,9 @@ Sau khi `check_ingest.py` exit 0, chạy `hasaki-skill-refiner` (mode `Full`). V
 
 ### Bước 4 — Gate 1 + Kanban + log
 
+- **Verify tasks closed:** Re-run `plan_ingest_tasks.py` → đảm bảo `pending == 0` và `in_progress` chỉ còn các sections cố ý để STUB (do question Open). Section còn `in_progress` không thuộc diện STUB → quay lại Bước 2 trước khi trình Gate.
 - **Gate 1A:** Trình Feature Spec `partial_read: false` cho PO/QA Lead. Specs đầy đủ tiến sang Test Design — không cần chờ STUB.
-- **Gate 1B:** Khi hoàn thiện từng STUB spec → Gate 1 riêng. Không gộp với Gate 1A.
+- **Gate 1B:** Khi hoàn thiện từng STUB spec → Gate 1 riêng. Không gộp với Gate 1A. Re-sinh plan sau khi STUB done để task tracking đồng bộ.
 - Thêm card Kanban `## TODO`, ghi log `[ingest]`.
 
 ---
@@ -175,6 +206,7 @@ Sau khi `check_ingest.py` exit 0, chạy `hasaki-skill-refiner` (mode `Full`). V
 - `last_full_index_version` = version cũ (giữ lại để biết base).
 - Sections không bị ảnh hưởng: giữ nguyên `last_verified_version` và `coverage_status`.
 - Sections bị ảnh hưởng: `last_verified_version: null`, thêm version mới vào `change_history`.
+- **Re-sinh plan:** `py .claude/scripts/plan_ingest_tasks.py --project <p>` → task list sẽ thấy sections delta về `in_progress`/`pending`. Invoke `TaskCreate` chỉ cho task có `task_id` chưa tồn tại trong session task list — tránh duplicate.
 
 **Bước 3b — Migrate Source references trong Feature Spec (bắt buộc khi line offset ≠ 0):**
 

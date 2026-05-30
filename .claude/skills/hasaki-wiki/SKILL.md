@@ -32,7 +32,7 @@ allowed-tools:
 
 - **Timezone:** `UTC+07:00` (`Asia/Ho_Chi_Minh`), format `YYYY-MM-DD HH:mm:ss`.
 - **No-Inference:** Requirement/AC/API/testcase phải explicit từ nguồn duyệt. Chưa rõ → `## ❓ Câu hỏi chưa rõ` + `Blocked Coverage`.
-- **Large doc strategy:** Doc >50 trang → đọc TOC trước, lập section list, đọc hết section trước khi viết spec. Feature chưa đọc đủ → `partial_read: true`, tạo stub, ghi Blocked Coverage.
+- **Large doc strategy:** Doc >50 trang (hoặc index có >5 sections) → chạy `plan_ingest_tasks.py` sinh task list per section, ép TaskCreate/TaskUpdate cho mỗi section trước khi viết spec. Feature chưa đọc đủ → `partial_read: true`, tạo stub, ghi Blocked Coverage.
 - **Enum verify:** Mọi claim về list values → grep raw đếm đủ + ghi `#line`. Filter table và mapping table cùng feature có thể khác nhau — verify riêng.
 - **SSOT:** File trên đĩa là nguồn thật. Đọc trực tiếp trước mỗi thao tác.
 - **Test Case:** Chỉ tạo từ R/AC explicit đã duyệt (Gate 1). R/AC có question `Open` → `Blocked Coverage`.
