@@ -11,11 +11,13 @@ source_doc: 07105_Quality_Control_Docs_ver1.5.md
 source_range: 07105#L696-L780
 partial_read: false
 partial_read_note: ""
-last_verified_at: "2026-05-30 16:30:00"
-verification_status: Pending
+last_verified_at: "2026-05-30 21:51:42"
+verification_status: Verified
 approved_by:
 approved_at:
 approval_note:
+last_verified_source_version: 1.5
+
 ---
 
 # REQ: stub_qc_vas

@@ -1,3 +1,23 @@
+"""Core library cho `wiki_sync.py` — implementation của 4 subcommand (sync / daily-sync / verify / repair).
+
+`WikiSyncCore` class operates trên vault root, exposes:
+
+- `run_sync()` — re-link Kanban ↔ specs ↔ test suites, recompute coverage counts, refresh changelog
+- `run_verify()` — lint format, broken wikilinks, encoding (BOM/mojibake), frontmatter compliance
+- `run_repair()` — auto-fix common verify findings (broken wikilinks, missing frontmatter fields)
+- `run_daily_sync(project, date_str)` — append daily activity note
+
+Plus shared utilities:
+- `safe_filename(text)` — slugify Vietnamese → ASCII
+- `clean_link_path(link)` — normalize Obsidian wikilink path
+- `log_activity(action_type, message)` — append vào `log.md` với UTC+07 timestamp
+
+Tách khỏi `wiki_sync.py` để CLI dispatcher mỏng + tách import dependency
+(network-heavy `hasaki_client.py` không bị load khi chỉ chạy verify offline).
+
+KHÔNG chạy trực tiếp — gọi qua `wiki_sync.py <subcommand>`.
+"""
+
 import os
 import re
 import sys

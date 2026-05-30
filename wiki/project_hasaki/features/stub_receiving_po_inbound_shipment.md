@@ -11,11 +11,13 @@ source_doc: 07062_Receiving_PO_Docs_ver2.17.md
 source_range: 07062#L224-L347
 partial_read: false
 partial_read_note: ""
-last_verified_at: "2026-05-30 16:05:00"
-verification_status: Pending
+last_verified_at: "2026-05-30 21:52:17"
+verification_status: Verified
 approved_by:
 approved_at:
 approval_note:
+last_verified_source_version: 2.17
+
 ---
 
 # REQ: stub_receiving_po_inbound_shipment

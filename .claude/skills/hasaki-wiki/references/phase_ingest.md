@@ -171,7 +171,7 @@ Critical fail cases:
 - `source_refs_report.json` có `INVALID_FORMAT` / `OUT_OF_RANGE` / `PHANTOM_EVIDENCE` / `STALE` / `RAW_NOT_FOUND` / `MISSING_SOURCE`.
 - `coverage_gap_report.json` có `UNDERREPORTED_COVERAGE` (section `full` mà gap_ratio < 0.5) → quay lại Bước 2 đọc thêm.
 
-Sau khi `check_ingest.py` exit 0, chạy `hasaki-skill-refiner` (mode `Full`). Verdict ≠ `FAIL` → trình Gate 1.
+Sau khi `check_ingest.py` exit 0, chạy `hasaki-spec-verifier` (mode `Full`). Verdict ≠ `FAIL` → trình Gate 1.
 
 ---
 
@@ -228,7 +228,7 @@ Khi raw có content được chèn/xoá làm dịch chuyển line, cột `Source
 - **Gate 1:** Chờ PO/QA Lead duyệt lại chỉ phần thay đổi.
 
 **Bước 5 — Refiner pre-gate (delta mode):**
-- Trigger `hasaki-skill-refiner` mode `Delta` — chỉ verify sections có `change_history` chứa version mới, plus claims có `🔄 cần re-verify` từ Bước 3b.
+- Trigger `hasaki-spec-verifier` mode `Delta` — chỉ verify sections có `change_history` chứa version mới, plus claims có `🔄 cần re-verify` từ Bước 3b.
 - Verdict ≠ FAIL → trình Gate 1.
 
 ---

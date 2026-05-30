@@ -73,7 +73,7 @@ Mỗi `features/` phải có test suite tương ứng. Có API explicit → tạ
 
 | Gate | Điều kiện tiếp |
 |:-----|:---------------|
-| **Pre-Gate** — Refiner Verify | Chạy `hasaki-skill-refiner` chỉ sau khi sinh/cập nhật claim từ raw: ingest PDF (2.1), ingest version mới (2.1b), task change (2.2), stub→full promotion. Verdict ≠ `FAIL` mới trình Gate 1. **Không áp dụng cho Test Design / daily sync / state transition / CR Go-Live.** |
+| **Pre-Gate** — Spec Verify | Chạy `hasaki-spec-verifier` chỉ sau khi sinh/cập nhật claim từ raw: ingest PDF (2.1), ingest version mới (2.1b), task change (2.2), stub→full promotion. Verdict ≠ `FAIL` mới trình Gate 1. **Không áp dụng cho Test Design / daily sync / state transition / CR Go-Live.** |
 | **Gate 1A** — Feature Spec Approval cho specs đầy đủ | Spec `partial_read: false`, `Draft` → `Done` · tiến sang Test Design không cần chờ STUB |
 | **Gate 1B** — Feature Spec Approval cho STUB | Từng STUB khi hoàn thiện → Gate riêng · không gộp với Gate 1A |
 | **Gate 2** — Test Cases Review (QA Lead) | Suite `Draft` → `Testing` · xong mới chạy test |
@@ -225,5 +225,10 @@ Wiki impact check và KANBAN card dùng HSK code (không phải TBB2 code).
 | `py .claude/scripts/check_ingest.py --project <p>` | **Wrapper one-shot** chạy 4 script trên (verify + evidence_index + verify_source_refs + coverage_gap_estimator). Exit = max severity. Dùng ở Bước 3 của Workflow 2.1 |
 | `py .claude/scripts/change_impact.py --project <p>` | Tính change-impact report |
 | `py .claude/scripts/generate_stub_features_from_index.py` | Sinh stub Feature Spec từ index sections |
+| `py .claude/scripts/spec_status_dashboard.py --project <p> [--json]` | **Dashboard:** đếm specs theo status (stub / refined_pending / verified / stale) per feature group. Markdown bảng + per-spec listing. Dùng để overview tiến độ refine + verify. |
+| `py .claude/scripts/refiner_writeback.py --project <p> --specs s1,s2 --verdict PASS [--approval-note "..."]` | **Spec-verifier:** sau verify, update spec frontmatter (`last_verified_at`, `verification_status`) + raw `*_index.json` sections (`range_status`, `last_verified_version`). Idempotent. Verdict PASS/CONDITIONAL → Verified; FAIL → Stale. |
+| `py .claude/scripts/index_flag_updater.py --project <p> [--specs s1,s2] [--apply]` | **Spec-verifier:** scan spec content → auto-detect critical flags (enum / error_messages / business_rule / validation_rule / formula / state_transition) → propagate vào `index.json` sections. Default dry-run. |
+| `py .claude/scripts/refiner_findings_diag.py --project <p> [--json]` | **Spec-verifier:** pretty-print non-OK findings từ `source_refs_report.json` (PHANTOM_EVIDENCE / STALE / INVALID_FORMAT) — debug phantom nhanh. |
+| `py .claude/scripts/index_diff_patch.py <old.md> <new.md> [--index <index.json>]` | Diff 2 version raw MD → output line-offset patches + apply vào index sections start_line/end_line. Dùng khi ingest version mới (PDF 2.17 → 2.18). |
 
 Windows: luôn set `$env:PYTHONUTF8 = "1"` trước khi chạy.

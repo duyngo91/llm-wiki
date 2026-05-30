@@ -1,4 +1,31 @@
-﻿import argparse
+"""Sync Hasaki open tasks → snapshot raw + upsert task_spec + update Kanban/traceability/registry.
+
+WRITE side của task workflow (đối trọng với `hasaki_my_tasks.py` — READ side).
+Được gọi qua `wiki_sync.py sync-my-open-tasks` (NOT trực tiếp).
+
+`MyOpenTaskSync.run()` pipeline:
+1. Fetch open tasks (status `_00_01`) qua `hasaki_client.HasakiClient.get_my_tasks`
+2. Cho mỗi task → fetch subtasks + comments + (optional) images
+3. Append snapshot block vào `raw_sources/project_hasaki/tasks/<CODE>.md` (idempotent — chỉ append)
+4. Upsert task_spec `wiki/project_hasaki/task_specs/task_<tbb2>.md` (overwrite)
+5. Update `traceability.json` (task_spec_links), `project_registry.json` (task_spec_registry)
+6. Append Kanban card vào `KANBAN.md` `## TODO` section (skip nếu đã có)
+7. Log mọi action vào `log.md` (skip khi dry-run)
+
+Heuristics:
+- HSK resolution: code starts với `HSK-` → tự nó là HSK; code `TBB2-*` → parse `note` cho HSK refs; fallback fetch `parent_id`
+- Feature link discovery: token-overlap giữa task text + feature filename stems (top 3 score)
+- Group link: derived từ feature stem prefix; fallback `receiving_po` nếu task mention "receiving"/"po"
+
+Phụ thuộc: `hasaki_client.py` (network). Có `--dry-run` để preview thay đổi.
+
+Usage (qua wiki_sync):
+    py .claude/scripts/wiki_sync.py sync-my-open-tasks --limit 20 [--images] [--dry-run]
+
+KHÔNG nhầm với `hasaki_my_tasks.py` — script kia là READ side (scan + diff + download HSK-centric).
+"""
+
+import argparse
 import json
 import re
 from datetime import datetime

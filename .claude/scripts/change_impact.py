@@ -1,3 +1,23 @@
+"""Generate change-impact report comparing Feature Specs vs latest raw versions.
+
+Scan each Feature Spec frontmatter (`source_version`, `partial_read`, `verification_status`)
+và đối chiếu với `source_version` của file raw mới nhất (lấy từ `*_index.json` hoặc
+filename convention `_verX.Y`). Output báo cáo specs:
+
+- `Stale`: spec `source_version` lệch so với raw mới nhất
+- `partial_read=true`: spec chưa đọc xong raw (cần refine)
+- `has_open_question`: spec có Q-ID ở trạng thái Open
+- `changed_features`: tổng số features có thay đổi (cần re-verify)
+
+Output: `wiki/<project>/change_impact_report.json`.
+
+Đọc bởi `phase_sync.md` step "regression candidate detection" — nếu spec `Stale` hoặc
+`has_open_question=true` → cần ưu tiên refiner re-run hoặc question follow-up.
+
+Usage:
+    py .claude/scripts/change_impact.py --project project_hasaki
+"""
+
 import argparse
 import json
 import re

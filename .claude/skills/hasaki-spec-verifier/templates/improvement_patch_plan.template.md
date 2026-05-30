@@ -21,8 +21,8 @@ updated: YYYY-MM-DD
 - **Trạng thái:** Pending
 
 ## Checklist gates sau khi apply
-- [ ] L_STRUCTURAL_PASS
-- [ ] L_INFERENCE_PASS
-- [ ] VERIFY_SCRIPT_PASS
-- [ ] L_FIX_COMPLETE
-- [ ] L_ROOT_CAUSE_COMPLETE
+- [ ] `L_STRUCTURAL_PASS`
+- [ ] `L_INFERENCE_PASS`
+- [ ] `VERIFY_SCRIPT_PASS`
+- [ ] `L_FIX_COMPLETE`
+- [ ] `L_ROOT_CAUSE_COMPLETE`

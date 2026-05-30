@@ -15,7 +15,7 @@ updated: 2026-05-30
 
 **Phải có Gate 1 trước:** Feature Spec status `Done` với đủ `approved_by`, `approved_at`, `approval_note` trong frontmatter.
 
-**Lint test suite:** Format/structure check qua `py .claude/scripts/wiki_sync.py verify`. **Không** chạy `hasaki-skill-refiner` — test case trace về R/AC đã được Gate 1 duyệt, không phải claim mới về raw.
+**Lint test suite:** Format/structure check qua `py .claude/scripts/wiki_sync.py verify`. **Không** chạy `hasaki-spec-verifier` — test case trace về R/AC đã được Gate 1 duyệt, không phải claim mới về raw.
 
 ---
 

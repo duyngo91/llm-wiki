@@ -100,7 +100,7 @@ Obsidian Search có thể được gọi **trước** các skill sau để tìm 
 | `wiki-requirement-analyzer` | Feature Spec draft cần update |
 | `wiki-test-designer` | Spec đã Gate 1, cần thiết kế test |
 | `wiki-sync-helper` | Task Spec, suite cần sync |
-| `hasaki-skill-refiner` | Raw source + wiki artifact để đối soát |
+| `hasaki-spec-verifier` | Raw source + wiki artifact để đối soát |
 
 **Pattern gọi chuỗi:**
 ```

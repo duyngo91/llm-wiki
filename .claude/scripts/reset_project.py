@@ -1,4 +1,26 @@
-﻿import argparse
+"""DANGEROUS: Reset vault state — wipe project data + runtime cache + rebuildable docs.
+
+KHÔNG chạy trừ khi user explicit ask "reset project" / "wipe vault". Mặc định dry-run;
+yêu cầu `--apply` mới xóa thật.
+
+Wiped targets:
+- Runtime cache: `.smart-env/`, `.karate_cache/`, `.obsidian/cache/`, `.obsidian/workspace.json`
+- Rebuildable aggregates: `log.md`, `KANBAN.md`, `index.md`
+- Project data: `wiki/project_*/` (toàn bộ subdirs)
+- (Optional via flag) raw_sources, templates
+
+Preserved (CORE_KEEP_HINT):
+- `.claude/rules/`, `.claude/skills/`, `.claude/commands/`, `.claude/manifests/`
+- `CLAUDE.md`, `README.md`, `.mcp.json`
+
+Use cases: bootstrap fresh project, recover từ corrupted state. KHÔNG dùng cho daily cleanup.
+
+Usage:
+    py .claude/scripts/reset_project.py                # dry-run, list targets
+    py .claude/scripts/reset_project.py --apply        # actually delete
+"""
+
+import argparse
 import shutil
 from pathlib import Path
 

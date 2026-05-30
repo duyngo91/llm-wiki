@@ -241,15 +241,16 @@
       "parent_id": null,
       "topic_types": [],
       "flags": {
-        "has_enum": false,
-        "has_state_transition": false,
-        "has_formula": false,
-        "has_error_messages": false,
-        "has_validation_rule": false
+        "has_enum": true,
+        "has_state_transition": true,
+        "has_formula": true,
+        "has_error_messages": true,
+        "has_validation_rule": true,
+        "has_business_rule": true
       },
       "mapped_feature": "stub_qc_criteria_sku.md",
       "coverage_status": "full",
-      "last_verified_version": null,
+      "last_verified_version": "1.5",
       "change_history": [],
       "read_log": {
         "claims_extracted": 18,
@@ -261,7 +262,7 @@
       "_source": "toc",
       "source_page": 9,
       "source_type": "toc",
-      "range_status": "needs_review",
+      "range_status": "verified",
       "source_ref": "07105_Quality_Control_Docs_ver1.5.md#L192-L219"
     },
     {
@@ -273,15 +274,16 @@
       "parent_id": null,
       "topic_types": [],
       "flags": {
-        "has_enum": false,
-        "has_state_transition": false,
-        "has_formula": false,
-        "has_error_messages": false,
-        "has_validation_rule": false
+        "has_enum": true,
+        "has_state_transition": true,
+        "has_formula": true,
+        "has_error_messages": true,
+        "has_validation_rule": true,
+        "has_business_rule": true
       },
       "mapped_feature": "stub_qc_criteria_sku.md",
       "coverage_status": "full",
-      "last_verified_version": null,
+      "last_verified_version": "1.5",
       "change_history": [],
       "read_log": {
         "claims_extracted": 18,
@@ -293,7 +295,7 @@
       "_source": "toc",
       "source_page": 10,
       "source_type": "toc",
-      "range_status": "needs_review",
+      "range_status": "verified",
       "source_ref": "07105_Quality_Control_Docs_ver1.5.md#L220-L400"
     },
     {
@@ -433,11 +435,12 @@
       "parent_id": null,
       "topic_types": [],
       "flags": {
-        "has_enum": false,
-        "has_state_transition": false,
+        "has_enum": true,
+        "has_state_transition": true,
         "has_formula": false,
-        "has_error_messages": false,
-        "has_validation_rule": false
+        "has_error_messages": true,
+        "has_validation_rule": true,
+        "has_business_rule": true
       },
       "mapped_feature": "stub_qc_criteria_approval.md",
       "coverage_status": "full",
@@ -561,15 +564,16 @@
       "parent_id": null,
       "topic_types": [],
       "flags": {
-        "has_enum": false,
-        "has_state_transition": false,
-        "has_formula": false,
-        "has_error_messages": false,
-        "has_validation_rule": false
+        "has_enum": true,
+        "has_state_transition": true,
+        "has_formula": true,
+        "has_error_messages": true,
+        "has_validation_rule": true,
+        "has_business_rule": true
       },
       "mapped_feature": "stub_qc_vas.md",
       "coverage_status": "full",
-      "last_verified_version": null,
+      "last_verified_version": "1.5",
       "change_history": [],
       "read_log": {
         "claims_extracted": 14,
@@ -581,7 +585,7 @@
       "_source": "toc",
       "source_page": 27,
       "source_type": "toc",
-      "range_status": "needs_review",
+      "range_status": "verified",
       "source_ref": "07105_Quality_Control_Docs_ver1.5.md#L696-L774"
     },
     {
@@ -593,15 +597,16 @@
       "parent_id": "S-17",
       "topic_types": [],
       "flags": {
-        "has_enum": false,
-        "has_state_transition": false,
-        "has_formula": false,
-        "has_error_messages": false,
-        "has_validation_rule": false
+        "has_enum": true,
+        "has_state_transition": true,
+        "has_formula": true,
+        "has_error_messages": true,
+        "has_validation_rule": true,
+        "has_business_rule": true
       },
       "mapped_feature": "stub_qc_vas.md",
       "coverage_status": "full",
-      "last_verified_version": null,
+      "last_verified_version": "1.5",
       "change_history": [],
       "read_log": {
         "claims_extracted": 4,
@@ -613,7 +618,7 @@
       "_source": "toc",
       "source_page": 30,
       "source_type": "toc",
-      "range_status": "needs_review",
+      "range_status": "verified",
       "source_ref": "07105_Quality_Control_Docs_ver1.5.md#L775-L778"
     },
     {

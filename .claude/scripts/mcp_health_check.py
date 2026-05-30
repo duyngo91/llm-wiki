@@ -1,3 +1,21 @@
+"""Probe MCP server configurations and report connectivity status.
+
+Đọc MCP configs từ Claude Code (`.claude/settings.local.json`) và Codex
+(`~/.codex/config.toml`, dạng TOML), check mỗi server:
+
+- Command/path tồn tại (PATH lookup)
+- TCP reachable nếu config có URL
+- Env vars cần thiết được set
+
+Output: human-readable report — list mỗi MCP server kèm ✅/❌ + lý do.
+
+Trigger: command `/mcp-health-check`. Đọc khi nghi ngờ MCP đứt
+(vd Obsidian Omnisearch không trả kết quả, GitLab MCP timeout).
+
+Usage:
+    py .claude/scripts/mcp_health_check.py
+"""
+
 import json
 import os
 import re

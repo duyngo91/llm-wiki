@@ -11,11 +11,13 @@ source_doc: 07105_Quality_Control_Docs_ver1.5.md
 source_range: 07105#L217-L432
 partial_read: false
 partial_read_note: ""
-last_verified_at: "2026-05-30 16:20:00"
-verification_status: Pending
+last_verified_at: "2026-05-30 21:52:17"
+verification_status: Verified
 approved_by:
 approved_at:
-approval_note:
+approval_note: "FIX-002 + FIX-003 applied (Q-011, Q-012 added). Awaits PO Gate 1B answer for Q-001..Q-012."
+last_verified_source_version: 1.5
+
 ---
 
 # REQ: stub_qc_criteria_sku
@@ -52,7 +54,7 @@ approval_note:
 | R005 | Filter `Đang hoạt động` (Active): mặc định không chọn; values `Đang hoạt động/Active`, `Ngưng hoạt động/Inactive` | UI filter | High | ✅ | 07105#L233-L236 |
 | R006 | Filter `Thời điểm đánh giá` (Assessment time): mặc định không chọn; values `Khi nhận PO/Receiving PO`, `Sau khi nhận PO/After receive of PO` | UI filter | High | ✅ | 07105#L239-L242 |
 | R007 | Filter `Tần suất đánh giá` (Assessment frequency): mặc định không chọn; values `Tất cả PO/All PO`, `Ngẫu nhiên/Random` | UI filter | High | ✅ | 07105#L243-L247 |
-| R008 | Filter `Từ ngày…đến ngày` (From date…to date): tìm theo ngày tạo; `Đến ngày` phải ≥ `Từ ngày`; mặc định không chọn ngày | UI filter | High | ✅ | 07105#L248-L250 |
+| R008 | Filter `Từ ngày…đến ngày` (From date…to date): tìm theo ngày tạo; `Đến ngày` phải ≥ `Từ ngày` (spec interpretation — raw L249 có raw typo, chờ Q-011); mặc định không chọn ngày | UI filter | High | ⚠️ | 07105#L248-L250 |
 | R009 | Listing column `Sản phẩm` (Product): hiển thị `SKU – Tên sản phẩm` | UI | High | ✅ | 07105#L256 |
 | R010 | Listing column `Đang hoạt động` (Active): mặc định Active khi SKU mới được setup; user toggle Active/Inactive → hiện confirm dialog | Functional | High | ✅ | 07105#L267-L269 |
 | R011 | 1 SKU không thể cùng active 2 thiết lập; phải inactive cái cũ trước khi muốn active cái mới | Business rule | High | ✅ | 07105#L272-L273 |
@@ -71,7 +73,7 @@ approval_note:
 | R024 | Màn thiết lập tiêu chí — field `Hình chụp mẫu` (Sample image): không bắt buộc; upload tối đa 3 hình | UI | High | ✅ | 07105#L372-L374 |
 | R025 | Màn thiết lập tiêu chí — field `Loại đánh giá` (Assessment type): default `Đạt/Không đạt` (Phân loại = `Bình thường`, không cho chỉnh sửa) | Functional | High | ✅ | 07105#L375-L379 |
 | R026 | `Loại đánh giá = Theo điều kiện`: 6 toán tử `=`, `>`, `>=`, `<`, `<=`, `Trong khoảng (between)` | Enum | High | ✅ | 07105#L380-L406 |
-| R027 | Validation cho điều kiện `=`, `>`, `>=`, `<`, `<=`: `Giá trị` bắt buộc, số > 0; `Đơn vị tính` bắt buộc, text; `Sai số cho phép` không bắt buộc, số > 0 | Validation rule | High | ✅ | 07105#L383-L396 |
+| R027 | Validation cho điều kiện `=`, `>`, `>=`, `<`, `<=`: `Giá trị` bắt buộc, số > 0; `Đơn vị tính` bắt buộc, text; `Sai số cho phép` không bắt buộc, số > 0 (raw chỉ explicit Sai số ở `=`, scope cho 4 toán tử còn lại chờ Q-012) | Validation rule | High | ⚠️ | 07105#L383-L396 |
 | R028 | Validation cho điều kiện `Trong khoảng`: `Giá trị từ…đến` bắt buộc, số > 0; `Đơn vị tính` bắt buộc, text | Validation rule | High | ✅ | 07105#L402-L405 |
 | R029 | `Loại đánh giá = Công thức`: dùng setup công thức, trả kết quả và so sánh với điều kiện thiết lập (rules chi tiết sẽ bổ sung sau khi trao đổi với Dev — pending) | Functional | Medium | ⚠️ | 07105#L407-L409 |
 | R030 | 1 tiêu chí chỉ hỗ trợ 1 điều kiện duy nhất; nút `Thêm (+)` disable khi đã thêm 1 điều kiện; chỉ enable lại khi xoá điều kiện đã thêm | Business rule | High | ✅ | 07105#L411-L413 |
@@ -227,6 +229,8 @@ approval_note:
 | Q-008 | R010, MSG-CSKU-005 | Verbatim message VN cho confirm `DEACTIVATE` và `ACTIVATE` — raw chỉ cung cấp EN. | PO | Open | | | |
 | Q-009 | R031 | Khi `Phân loại = Lỗi 4 điểm` hoặc `Theo từng bước` — UI thay đổi thế nào so với `Bình thường`? Có thêm field gì không? | UX/PO | Open | | | |
 | Q-010 | R030 | "1 tiêu chí 1 điều kiện" — `1 tiêu chí` ở đây nghĩa là 1 dòng `Tiêu chí đánh giá` chọn trong dropdown, hay 1 row tiêu chí trong danh sách thiết lập của SKU? | PO | Open | | | |
+| Q-011 | R008 | Raw `07105#L249` ghi `Đến ngày phải lớn hơn hoặc bằng đến ngày` — typo của "Từ ngày" hay intentional? Spec đang interpret là `Đến ngày ≥ Từ ngày` (business-logic standard). Cần PO confirm raw text. | PO/Dev | Open | | | |
+| Q-012 | R027 | Raw chỉ explicit `Sai số cho phép` cho toán tử `=` (`07105#L387-L388`); với `>`, `>=`, `<`, `<=` (`07105#L395-L401`) raw không nhắc Sai số. Field `Sai số cho phép` có áp dụng cho cả 5 toán tử so sánh hay chỉ `=`? | PO/UX | Open | | | |
 
 ## 📝 Thay đổi so với version cũ
 
@@ -238,13 +242,13 @@ approval_note:
 
 | Change ID | Affected Feature(s) | Affected Test Suite(s) | Test Case action | Regression candidates | Open questions / Gate |
 |:----------|:--------------------|:-----------------------|:-----------------|:----------------------|:----------------------|
-| CHG-001 | stub_qc_criteria_sku | test_stub_qc_criteria_sku | Add (chờ Gate 1B) | [[stub_qc_criteria_approval]] (status `Chờ duyệt` sink), [[stub_qc_criteria_setup]] (danh sách tiêu chí load) | Q-001..Q-010 Open; Gate 1B pending |
+| CHG-001 | stub_qc_criteria_sku | test_stub_qc_criteria_sku | Add (chờ Gate 1B) | [[stub_qc_criteria_approval]] (status `Chờ duyệt` sink), [[stub_qc_criteria_setup]] (danh sách tiêu chí load) | Q-001..Q-012 Open; Gate 1B pending |
 
 ## Test Coverage
 
 | Requirement/AC | Test Case(s) | Status | Ghi chú |
 |:---------------|:-------------|:-------|:-------|
-| R001..R036, AC-01..AC-14 | | ⏳ Chưa thiết kế | Chờ Gate 1B + answer Q-001..Q-010 |
+| R001..R036, AC-01..AC-14 | | ⏳ Chưa thiết kế | Chờ Gate 1B + answer Q-001..Q-012 |
 
 ## 🚧 Blocked Coverage
 
@@ -257,6 +261,8 @@ approval_note:
 - R010, MSG-CSKU-005/006 — chờ Q-008 (verbatim VN)
 - R031, A3 — chờ Q-009 (UI cho 4-point và step-by-step)
 - R030 — chờ Q-010 (semantics "1 tiêu chí")
+- R008 — chờ Q-011 (raw typo `Đến ngày phải ≥ đến ngày` cần PO confirm — spec đang interpret là `Đến ngày ≥ Từ ngày`)
+- R027, AC-08 — chờ Q-012 (Sai số cho phép có áp dụng cho `>`, `>=`, `<`, `<=` hay chỉ `=`?)
 
 Test cases liên quan tới các R-ID trên bị block đến khi câu hỏi `Answered`.
 
@@ -266,3 +272,4 @@ Test cases liên quan tới các R-ID trên bị block đến khi câu hỏi `An
 |:----------|:--------|:------------------|:------|
 | 2026-05-30 14:36:55 | v1.0 | Tách từ monster stub thành per-feature stub | split-stubs-2026-05-30 |
 | 2026-05-30 16:20:00 | v1.1 | Refine stub → full spec: 36 R-ID, 14 AC, 16 BR, 6 messages (4 verbatim VN+EN), 10 questions Open. `partial_read: false`. | refine-batch-2-2026-05-30 |
+| 2026-05-30 21:30:00 | v1.2 | Apply FIX-002 + FIX-003 từ refiner spec-scoped-batch-2: thêm Q-011 (R008 raw typo `Đến ngày phải ≥ đến ngày`) + Q-012 (R027 Sai số applicability cho `>`, `>=`, `<`, `<=`). R008 + R027 Testable đổi từ ✅ → ⚠️. Blocked Coverage thêm 2 dòng. Q range 10 → 12. | refiner-spec-scoped-batch-2 |

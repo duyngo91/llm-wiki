@@ -1,3 +1,24 @@
+"""Bootstrap stub Feature Specs từ raw `*_index.json` sections.
+
+Đọc tất cả `raw_sources/project_hasaki/requirements/*_index.json`, sinh 1 stub
+`wiki/project_hasaki/features/stub_<doc>.md` cho mỗi raw doc với:
+
+- Frontmatter: `partial_read: true`, `verification_status: Pending`
+- R-table 1 row / section (R001..RNNN với title từ index `title` + source ref)
+- Placeholder sections (Tổng quan, Câu hỏi chưa rõ, Blocked Coverage, Changelog)
+
+Mục đích: nhanh chóng có spec scaffold để refiner đọc raw từng section và refine
+stub → full spec qua process Gate 1B.
+
+KHÔNG tự overwrite stub đã tồn tại — chỉ tạo mới.
+
+Usage:
+    py .claude/scripts/generate_stub_features_from_index.py
+
+Hardcoded project_hasaki path. Để extend multi-project, refactor REQ_DIR/WIKI_DIR thành
+CLI args.
+"""
+
 import json
 from datetime import datetime
 from pathlib import Path

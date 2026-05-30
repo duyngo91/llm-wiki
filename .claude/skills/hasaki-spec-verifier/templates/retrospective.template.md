@@ -1,4 +1,10 @@
-﻿# Retrospective - Hasaki Skill Refiner
+# Retrospective — Hasaki Spec Verifier
+
+> Append-only. Mỗi entry là 1 lesson hoặc skill patch.
+>
+> Format mỗi entry: `## YYYY-MM-DD / batch-name` rồi mô tả ngắn pattern phát hiện + decision. Nếu không có pattern → ghi `no new patterns` 1 dòng và skip toàn bộ Bước 0-5 trong L_root_cause.
+
+---
 
 ## Phạm vi
 - Batch/Task IDs:

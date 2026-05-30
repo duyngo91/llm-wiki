@@ -1,0 +1,49 @@
+{
+  "schema_version": "3.0",
+  "gate_decision_source": "wiki/<project>/refiner/quality_gates.json",
+  "sessions": [
+    {
+      "session": "YYYY-MM-DD",
+      "batch": "batch-name",
+      "schema_version": "3.0",
+      "mode": "Full | Delta | Spec-scoped",
+      "trigger": "Sau ingest PDF fresh | Sau ingest version mới | Sau task change | Sau refine stub→full spec",
+      "specs_in_scope": [],
+      "score_before": 0,
+      "score_after": 0,
+      "gates": {
+        "L_STRUCTURAL_PASS": false,
+        "L_INFERENCE_PASS": false,
+        "VERIFY_SCRIPT_PASS": false,
+        "L_FIX_COMPLETE": false,
+        "L_ROOT_CAUSE_COMPLETE": false
+      },
+      "violations": {
+        "format_violation": 0,
+        "coverage_gap": 0,
+        "suspect_unread": 0,
+        "underreported_coverage": 0,
+        "inferred": 0,
+        "logic_inferred": 0,
+        "stripped_condition": 0,
+        "negation_flip": 0,
+        "phantom_evidence": 0,
+        "potential_omission": 0,
+        "missing_detail": 0,
+        "unclear": 0
+      },
+      "totals": {
+        "claims_verified": 0,
+        "requirements": 0,
+        "acceptance_criteria": 0,
+        "business_rules": 0,
+        "messages": 0,
+        "questions_open": 0
+      },
+      "verdict": "FAIL",
+      "verdict_per_spec": {},
+      "fix_suggestions": [],
+      "output_folder": "wiki/<project>/refiner/YYYY-MM-DD_batch-name/"
+    }
+  ]
+}

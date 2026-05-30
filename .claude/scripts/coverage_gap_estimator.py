@@ -13,7 +13,7 @@ For each section in `<raw>_index.json`:
 
 Output: `wiki/[project]/refiner/coverage_gap_report.json`.
 
-See `.claude/skills/hasaki-skill-refiner/SKILL.md` (Tầng L_structural).
+See `.claude/skills/hasaki-spec-verifier/SKILL.md` (Tầng L_structural).
 """
 
 import argparse

@@ -1,3 +1,25 @@
+"""CLI entry point cho wiki maintenance — dispatcher mỏng, logic ở `wiki_sync_core.py`.
+
+Subcommands:
+
+| Command | Mục đích | Output |
+|:--------|:---------|:-------|
+| `sync` | Re-link Kanban ↔ specs ↔ test suites, recompute coverage counts, refresh changelog | KANBAN.md, daily index |
+| `daily-sync` | Append daily activity note (cần `--project` + `--date`) | `wiki/<p>/daily-notes/YYYY-MM-DD.md` |
+| `verify` | Lint format, broken wikilinks, encoding (BOM/mojibake), frontmatter compliance. Exit 2 on fail. | stdout report |
+| `repair` | Auto-fix common verify findings | stdout summary |
+| `sync-my-open-tasks` | Delegate sang `sync_my_open_tasks.py` — fetch Hasaki open tasks, snapshot raw, upsert task_spec, update Kanban | raw_sources/.../tasks/, task_specs/, KANBAN.md, traceability.json, project_registry.json |
+
+Core logic trong `wiki_sync_core.py:WikiSyncCore`. Subcommand `sync-my-open-tasks`
+dùng lazy import vì `sync_my_open_tasks.py` cần `hasaki_client.py` (mạng), tách
+để verify/repair chạy được offline.
+
+Usage:
+    py .claude/scripts/wiki_sync.py verify
+    py .claude/scripts/wiki_sync.py daily-sync --project project_hasaki --date 2026-05-30
+    py .claude/scripts/wiki_sync.py sync-my-open-tasks --limit 20 [--dry-run]
+"""
+
 import sys
 from pathlib import Path
 

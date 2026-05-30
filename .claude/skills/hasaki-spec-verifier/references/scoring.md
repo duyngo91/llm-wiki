@@ -25,17 +25,25 @@ Chạy sau khi hoàn thành L_structural + L_inference. Gate 🔴 fail → ghi `
 
 ## Penalty
 
-- Mỗi `NEGATION_FLIP` còn sót: **−8** (đảo nghĩa — nguy hiểm nhất)
-- Mỗi `LOGIC_INFERRED` còn sót: **−8**
-- Mỗi `INFERRED` còn sót: **−5**
-- Mỗi `STRIPPED_CONDITION` còn sót: **−5**
-- Mỗi `PHANTOM_EVIDENCE` chưa fix: **−3**
-- Mỗi section `unmapped` / `SUSPECT_UNREAD` không có ghi chú: **−3**
-- Mỗi `UNDERREPORTED_COVERAGE` chưa resolve: **−4**
+| Vi phạm | Penalty | Lý do |
+|:--------|:-------:|:------|
+| `NEGATION_FLIP` còn sót | **−8** | Đảo nghĩa — nguy hiểm nhất |
+| `LOGIC_INFERRED` còn sót | **−8** | Spec tự ghép kết luận không có raw |
+| `INFERRED` còn sót | **−5** | Generalize / rephrase không bằng chứng |
+| `STRIPPED_CONDITION` còn sót | **−5** | Drop modifier (Khi/Nếu/actor) |
+| `UNDERREPORTED_COVERAGE` chưa resolve | **−4** | Section gap_ratio < 0.5 |
+| `PHANTOM_EVIDENCE` chưa fix | **−3** | `#line` không match content |
+| `POTENTIAL_OMISSION` chưa add | **−3** | Raw có claim mà spec miss (silent gap, severity tương đương PHANTOM) |
+| Section `unmapped` / `SUSPECT_UNREAD` không ghi chú | **−3** | Coverage gap không document |
+| `MISSING_DETAIL` chưa bổ sung | **−2** | Spec thiếu side-effect / note phụ |
+| `UNCLEAR` không có Q-ID kèm | **−1** | UNCLEAR phải có entry trong `## ❓ Câu hỏi chưa rõ` + Blocked Coverage |
 
 ## Bonus
 
-- Mỗi `MISSING_DETAIL` đã bổ sung: **+1** (tối đa +5)
+- Mỗi `MISSING_DETAIL` đã bổ sung trong cùng session: **+1** (tối đa +5)
+- Mỗi `POTENTIAL_OMISSION` đã add R-ID trong cùng session: **+1** (tối đa +5)
+
+**Note:** Bonus chỉ áp dụng khi violation được fix TRONG CÙNG session (không phải session sau). Mục đích khuyến khích close loop ngay.
 
 ---
 
