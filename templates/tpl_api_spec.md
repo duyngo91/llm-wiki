@@ -23,9 +23,11 @@ approval_note:
 - **Ghi chú no-inference:** Chỉ ghi contract explicit. Endpoint/method/payload/status/error chưa rõ phải đưa xuống `## ❓ Câu hỏi API chưa rõ`.
 
 ## API / Interface List
+*Cột Source dùng canonical `{doc_short}#L{start}-L{end}` (xem `shared.md#source-reference-format-ssot`). Multi-range: ngăn cách bằng `, `.*
+
 | API ID | Method | Endpoint | Mục đích | Feature R/AC | Source | Status |
 |:-------|:-------|:---------|:---------|:-------------|:-------|:-------|
-| API-001 | | | | R1 / AC-01 | Explicit từ ... | Draft |
+| API-001 | | | | R1 / AC-01 | 07062#L600-L612 | Draft |
 | API-002 | | | | R2 / AC-02 | Chờ câu trả lời | Blocked |
 
 ## API Detail

@@ -405,6 +405,7 @@ def make_section(sid: str, title: str, start: int, end: int, depth: int, parent_
         "coverage_status": "unmapped",
         "last_verified_version": None,
         "change_history": [],
+        "read_log": None,
     }
 
 

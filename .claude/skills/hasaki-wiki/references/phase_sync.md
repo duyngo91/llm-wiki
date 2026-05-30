@@ -1,12 +1,13 @@
 ---
 tags: [wiki-rules, reference]
 status: Done
-updated: 2026-05-24
+updated: 2026-05-30
 ---
 
 # Phase: Sync, Lint & State Control
 
 > Dùng bởi: `/wiki-sync-helper` — daily sync, lint/verify, Kanban management, state transitions, bug lifecycle.
+> Naming/Tags/Status/Gates: [`shared.md`](shared.md).
 
 ---
 
@@ -74,13 +75,13 @@ Khi có thay đổi requirement/task/TC, cập nhật đủ:
 **Kích hoạt:** User yêu cầu sync Daily Note hoặc Meeting Note.
 
 ```
-python .claude/scripts/wiki_sync.py daily-sync --project <project> --date <YYYY-MM-DD>
+py .claude/scripts/wiki_sync.py daily-sync --project <project> --date <YYYY-MM-DD>
 ```
 
 1. Đọc `wiki/[project]/operations/daily_notes/YYYY-MM-DD.md`.
 2. Script cập nhật trạng thái task trong `KANBAN.md`.
 3. "Khó khăn/Blocked" → tạo `bug_[mota_ngan].md` trong `bugs_knowledge/` (status `Open`, dùng `tpl_bug_rca.md`), gắn `🔴` link vào Kanban card.
-4. **🤝 Gate 3:** Thông báo QA Lead + Tech Lead triage: xác nhận tái hiện, điền RCA, Severity (Blocker/Critical/Major/Minor).
+4. **Gate 3:** Thông báo QA Lead + Tech Lead triage: xác nhận tái hiện, điền RCA, Severity (Blocker/Critical/Major/Minor).
 5. Thay đổi requirement từ daily → AI đề xuất Impact Analysis → **HITL Gate** (QA Lead + PO xác nhận) trước khi sửa file.
 6. Đổi Daily Note status → `Synced`. Ghi log `[sync-daily]`.
 
@@ -91,26 +92,10 @@ python .claude/scripts/wiki_sync.py daily-sync --project <project> --date <YYYY-
 **Kích hoạt:** User yêu cầu "lint & sync". Mặc định chạy `verify` (audit-only). Chỉ `sync` khi có Gate 4.
 
 ```
-python .claude/scripts/wiki_sync.py verify
+py .claude/scripts/wiki_sync.py verify
 ```
 
-**Tags hợp lệ theo thư mục** (dùng khi lint):
-
-| Tag | Thư mục |
-|:----|:--------|
-| `#qa/requirement` | `features/` |
-| `#qa/api-spec` | `api_specs/` |
-| `#qa/test-suite` | `test_suites/` |
-| `#qa/test-plan` | `test_plans/` |
-| `#qa/release` | `releases/` |
-| `#qa/bug/open` | `bugs_knowledge/` (Open/Fixed/Retest) |
-| `#qa/bug/fixed` | `bugs_knowledge/` (Closed) |
-| `#qa/daily` | `operations/daily_notes/` |
-| `#qa/operations` | `operations/` (non-daily) |
-| `#qa/feature-group/[slug]` | feature/api spec/test suite thuộc group |
-| `#qa/feature-group-index` | trang group MOC (`feature_groups/`) |
-
-Kiểm tra:
+Kiểm tra (xem `shared.md#tags-chuẩn` cho tag → folder mapping):
 - Tag phân cấp chuẩn, Feature Group page tương ứng
 - Broken links, orphan notes
 - Mỗi Feature có Test Suite, API Spec có tag bắt buộc
@@ -119,6 +104,10 @@ Kiểm tra:
 - Governance: Kanban TC count, Changelog, Blocked Coverage, Regression Impact, secret/token, UTF-8/mojibake, status frontmatter
 
 Báo cáo kết quả. Ghi log `[lint-sync]`.
+
+Nếu `change_impact_report.json` có feature `Stale` hoặc `has_open_question=true`:
+- Phải cập nhật Impact Analysis trước.
+- Testcase liên quan phải giữ Blocked cho đến khi câu hỏi được đóng.
 
 ---
 
@@ -136,35 +125,3 @@ Báo cáo kết quả. Ghi log `[lint-sync]`.
 - Tạo bug RCA (`tpl_bug_rca.md`) trong `bugs_knowledge/`, gắn `🔴` link vào card.
 - Ghi log `[test-blocked]`.
 - **Bug lifecycle:** `Open → Fixed → Retest → Closed`. Dev fix → `Fixed` (ghi bằng chứng build/PR). QA retest pass → `Closed`. Fail → `Open`, cập nhật RCA/Changelog.
-
----
-
-## Status Reference (tóm tắt)
-
-| Loại file | Status hợp lệ |
-|:----------|:-------------|
-| Feature Spec | `Draft` → `Done` (Gate 1) |
-| API Spec | `Draft` → `Done` (Gate 1) |
-| Test Suite | `Draft` → `Testing` (Gate 2) → `Passed` / `Failed` (Gate 4) |
-| Test Plan | `Draft` → `Testing` → `Passed` / `Outdated` |
-| CR / Release | `Draft` → `Testing` → `Done` (Gate 5) |
-| Bug | `Open` → `Fixed` → `Retest` → `Closed` |
-| Feature Group | `Draft` → `Done` |
-| Test Case (icon) | `⏳` / `✅` / `❌` / `🚫 Blocked` |
-| Question | `Open` / `Answered` / `Deferred` |
-| KANBAN | `## TODO` / `## InProgress` / `## Done` |
-
-**Không được dùng:** `Approved`, `Active`, `Review`, `Final` cho Feature/API Spec.
-
----
-
-## Reset-Ready Sync Addendum (2026-05-27)
-
-- Baseline sau reset:
-  1. `verify`
-  2. `evidence-index`
-  3. `change-impact`
-- Nếu `change_impact_report.json` có feature `Stale` hoặc `has_open_question=true`:
-  - phải cập nhật Impact Analysis trước
-  - testcase liên quan phải giữ Blocked cho đến khi câu hỏi được đóng.
-- Mismatch giữa báo cáo retrospective và gate runtime: luôn theo gate runtime.

@@ -44,11 +44,13 @@ approval_note:
 | N/A | | | Không có API/interface explicit | N/A |
 
 ## Phân rã Requirement
+*Cột Source dùng canonical format `{doc_short}#L{start}-L{end}` (xem `shared.md#source-reference-format-ssot`). Multi-range: ngăn cách bằng `, `.*
+
 | ID | Requirement | Loại | Priority | Testable? | Source |
 |:---|:-----------|:-----|:---------|:----------|:-------|
-| R1 | | Functional | High | ✅ | PDF v2.1, mục 3.1 |
-| R2 | | Functional | High | ✅ | Link Figma |
-| R3 | | Security | Medium | ✅ | PDF v2.1, mục 4.2 |
+| R1 | | Functional | High | ✅ | 07062#L234-L239 |
+| R2 | | Functional | High | ✅ | 07062#L300-L302, 07062#L500-L502 |
+| R3 | | Security | Medium | ✅ | 07062#L450 |
 
 ## 🔄 Luồng Nghiệp Vụ Chi Tiết (User Flows)
 
@@ -79,15 +81,19 @@ approval_note:
 
 ## 🏁 Tiêu Chí Nghiệm Thu (Acceptance Criteria — BDD)
 
-- **Scenario 1: [Tên kịch bản]**
-  - **Given:** 
-  - **When:** 
-  - **Then:** 
+*Mỗi scenario phải có ID format `AC-NN` (không dùng `Scenario N`) để evidence_index và refiner trace được. Source dùng canonical `doc#L{start}-L{end}` (xem `shared.md#source-reference-format-ssot`).*
 
-- **Scenario 2: [Tên kịch bản]**
+- **AC-01: [Tên kịch bản]**
   - **Given:** 
   - **When:** 
   - **Then:** 
+  - **Source:** `07062#L234-L239`
+
+- **AC-02: [Tên kịch bản]**
+  - **Given:** 
+  - **When:** 
+  - **Then:** 
+  - **Source:** 
 
 ## ❓ Câu hỏi chưa rõ
 | Q-ID | Liên kết R/AC | Câu hỏi | Hỏi ai | Trạng thái | Câu trả lời | Nguồn trả lời | Ngày trả lời |

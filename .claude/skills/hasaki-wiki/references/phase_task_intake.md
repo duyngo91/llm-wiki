@@ -1,23 +1,13 @@
 ---
 tags: [wiki-rules, reference]
 status: Done
-updated: 2026-05-24
+updated: 2026-05-30
 ---
 
 # Phase: Task Intake — Hasaki Workplace
 
 > Dùng bởi: `/get-my-tasks`, `/import-hasaki-task`, `/get-hasaki-task`, `/sync-my-open-tasks`.
-
----
-
-## Phân loại task Hasaki
-
-| Code | Vai trò | Xử lý |
-|:-----|:--------|:------|
-| `HSK-xxxxx` | Task cha: chứa requirement/implementation detail | Nguồn chính để phân tích Feature Spec |
-| `TBB2-xxxxx` | Test request liên kết HSK cha qua `parent_id` | Trigger QA nhận việc test |
-
-**Lưu raw:** `raw_sources/project_hasaki/tasks/HSK-xxxxx.md`. TBB2 embed vào `## Test Requests (TBB2)` bên trong — không tạo file TBB2 riêng. Wiki impact check và KANBAN card dùng HSK code.
+> Phân loại HSK/TBB2, raw file status, naming: [`shared.md`](shared.md).
 
 ---
 
@@ -29,7 +19,7 @@ updated: 2026-05-24
    - 🆕 **NEW** — task chưa có raw file
    - 🔄 **UPDATED** — `updated_at` thay đổi, kèm wiki impact analysis
    - ✅ **CURRENT** — không thay đổi
-4. **🤝 HITL Gate:** Hiển thị kết quả, hỏi user xác nhận trước khi download.
+4. **HITL Gate:** Hiển thị kết quả, hỏi user xác nhận trước khi download.
 5. Sau download: ghi log `[ingest]`.
    - **NEW task:** Tạo KANBAN card `## TODO` với HSK code. Sau đó dùng `/import-hasaki-task` hoặc `/wiki-requirement-analyzer`.
    - **UPDATED task có wiki impact:** Gợi ý chạy Workflow 2.2 (Task Change) với raw file mới — xem `phase_ingest.md`.
@@ -59,23 +49,8 @@ Thêm vào `## TODO`. Chờ user confirm trước khi chạy `/wiki-requirement-
 
 ---
 
-## Raw file status (phản ánh Hasaki Workplace)
+## Task Spec stub
 
-| Frontmatter `status` | Nguồn |
-|:---------------------|:------|
-| `Todo` | API status = 0 |
-| `Processing` | API status = 1 |
-| `Done` | API status = 2 |
+Khi task chưa đủ source để viết task_spec đầy đủ, cho phép tạo stub để giữ traceability ngay. Stub bắt buộc tối thiểu: `tbb2_code`, `hsk_parent`, link raw HSK source, link feature specs liên quan (nếu có), trạng thái blocked rõ ràng nếu chưa đủ source.
 
-Raw file chỉ đọc từ góc nhìn wiki. Cập nhật qua script `hasaki_my_tasks.py`, không sửa tay.
-
-## Task Spec Stub Rule (2026-05-27d)
-
-- Sau reset, cho phép tạo `task_spec` dạng stub để giữ traceability ngay lập tức.
-- Stub task_spec bắt buộc có tối thiểu:
-  - `tbb2_code`, `hsk_parent`
-  - link raw HSK source
-  - link feature specs liên quan (nếu đã có)
-  - trạng thái blocked rõ ràng nếu chưa đủ source
-- Stub task_spec không được coi là hoàn tất workflow task intake.
-- Trước khi đưa task vào execution-ready, phải refine task_spec thành bản đầy đủ theo rule no-inference.
+Stub task_spec là `trace-ready`, **không** hoàn tất workflow task intake. Trước khi đưa task vào execution-ready, phải refine thành bản đầy đủ theo rule no-inference.

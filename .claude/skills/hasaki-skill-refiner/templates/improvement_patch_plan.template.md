@@ -7,7 +7,7 @@ updated: YYYY-MM-DD
 
 | Patch | File | Loại | Root cause nhóm | Expected impact | Trạng thái |
 |:------|:-----|:-----|:----------------|:----------------|:-----------|
-| PATCH-001 | ... | Add | Rule thiếu | L1_FORMAT_PASS | Pending |
+| PATCH-001 | ... | Add | Rule thiếu | L_STRUCTURAL_PASS | Pending |
 
 ## Chi tiết
 
@@ -17,12 +17,12 @@ updated: YYYY-MM-DD
 - **Nội dung:** mô tả cụ thể sẽ thêm/sửa gì
 - **Lý do:** root cause dẫn đến lỗi
 - **Expected impact:** gate nào sẽ cải thiện
+- **Counterfactual:** [mô tả ngắn cơ chế ngăn chặn]
 - **Trạng thái:** Pending
 
 ## Checklist gates sau khi apply
-- [ ] L1_FORMAT_PASS
-- [ ] L2_COVERAGE_PASS
-- [ ] L3_NO_INFERENCE_PASS
+- [ ] L_STRUCTURAL_PASS
+- [ ] L_INFERENCE_PASS
 - [ ] VERIFY_SCRIPT_PASS
-- [ ] L4_SUGGESTIONS_COMPLETE
-- [ ] L5_ROOT_CAUSE_COMPLETE
+- [ ] L_FIX_COMPLETE
+- [ ] L_ROOT_CAUSE_COMPLETE
