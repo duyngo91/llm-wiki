@@ -1113,7 +1113,7 @@
       },
       "mapped_feature": "stub_receiving_po_gift.md",
       "coverage_status": "full",
-      "last_verified_version": null,
+      "last_verified_version": "2.17",
       "change_history": [],
       "read_log": {
         "claims_extracted": 4,
@@ -1125,7 +1125,7 @@
       "_source": "toc",
       "source_page": 79,
       "source_type": "toc",
-      "range_status": "needs_review",
+      "range_status": "verified",
       "source_ref": "07062_Receiving_PO_Docs_ver2.17.md#L1738-L1753"
     },
     {
@@ -1145,7 +1145,7 @@
       },
       "mapped_feature": "stub_receiving_po_gift.md",
       "coverage_status": "full",
-      "last_verified_version": null,
+      "last_verified_version": "2.17",
       "change_history": [],
       "read_log": {
         "claims_extracted": 2,
@@ -1157,7 +1157,7 @@
       "_source": "body_heading",
       "source_page": 79,
       "source_type": "body_heading",
-      "range_status": "needs_review",
+      "range_status": "verified",
       "source_ref": "07062_Receiving_PO_Docs_ver2.17.md#L1754-L1761"
     },
     {
@@ -1177,7 +1177,7 @@
       },
       "mapped_feature": "stub_receiving_po_no_barcode.md",
       "coverage_status": "full",
-      "last_verified_version": null,
+      "last_verified_version": "2.17",
       "change_history": [],
       "read_log": {
         "claims_extracted": 7,
@@ -1189,7 +1189,7 @@
       "_source": "toc",
       "source_page": 80,
       "source_type": "toc",
-      "range_status": "needs_review",
+      "range_status": "verified",
       "source_ref": "07062_Receiving_PO_Docs_ver2.17.md#L1762-L1793"
     },
     {
@@ -1209,7 +1209,7 @@
       },
       "mapped_feature": "stub_receiving_po_no_barcode.md",
       "coverage_status": "full",
-      "last_verified_version": null,
+      "last_verified_version": "2.17",
       "change_history": [],
       "read_log": {
         "claims_extracted": 4,
@@ -1221,7 +1221,7 @@
       "_source": "body_heading",
       "source_page": 82,
       "source_type": "body_heading",
-      "range_status": "needs_review",
+      "range_status": "verified",
       "source_ref": "07062_Receiving_PO_Docs_ver2.17.md#L1794-L1807"
     },
     {
@@ -1945,7 +1945,7 @@
       },
       "mapped_feature": "stub_receiving_po_po_sample.md",
       "coverage_status": "full",
-      "last_verified_version": null,
+      "last_verified_version": "2.17",
       "change_history": [],
       "read_log": {
         "claims_extracted": 12,
@@ -1957,7 +1957,7 @@
       "_source": "toc",
       "source_page": 118,
       "source_type": "toc",
-      "range_status": "needs_review",
+      "range_status": "verified",
       "source_ref": "07062_Receiving_PO_Docs_ver2.17.md#L2581-L2628"
     },
     {
@@ -1977,7 +1977,7 @@
       },
       "mapped_feature": "stub_receiving_po_concurrent.md",
       "coverage_status": "full",
-      "last_verified_version": null,
+      "last_verified_version": "2.17",
       "change_history": [],
       "read_log": {
         "claims_extracted": 11,
@@ -1989,7 +1989,7 @@
       "_source": "toc",
       "source_page": 119,
       "source_type": "toc",
-      "range_status": "needs_review",
+      "range_status": "verified",
       "source_ref": "07062_Receiving_PO_Docs_ver2.17.md#L2629-L2667"
     }
   ]

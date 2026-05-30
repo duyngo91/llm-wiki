@@ -441,7 +441,7 @@
       },
       "mapped_feature": "stub_qc_criteria_approval.md",
       "coverage_status": "full",
-      "last_verified_version": null,
+      "last_verified_version": "1.5",
       "change_history": [],
       "read_log": {
         "claims_extracted": 7,
@@ -453,7 +453,7 @@
       "_source": "toc",
       "source_page": 19,
       "source_type": "toc",
-      "range_status": "needs_review",
+      "range_status": "verified",
       "source_ref": "07105_Quality_Control_Docs_ver1.5.md#L533-L569"
     },
     {

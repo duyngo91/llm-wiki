@@ -11,8 +11,8 @@ source_doc: 07062_Receiving_PO_Docs_ver2.17.md
 source_range: 07062#L2629-L2665
 partial_read: false
 partial_read_note: ""
-last_verified_at: "2026-05-30 15:35:00"
-verification_status: Pending
+last_verified_at: "2026-05-30 22:50:00"
+verification_status: Verified
 approved_by:
 approved_at:
 approval_note:

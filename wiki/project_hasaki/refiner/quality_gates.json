@@ -1,0 +1,61 @@
+{
+  "schema_version": "3.0",
+  "gate_decision_source": "wiki/project_hasaki/refiner/quality_gates.json",
+  "sessions": [
+    {
+      "session": "2026-05-30",
+      "batch": "pilot-batch-1",
+      "schema_version": "3.0",
+      "mode": "Spec-scoped",
+      "trigger": "Sau refine stub → full spec (Gate 1B promotion)",
+      "specs_in_scope": [
+        "stub_receiving_po_po_sample",
+        "stub_receiving_po_concurrent",
+        "stub_qc_criteria_approval",
+        "stub_receiving_po_gift",
+        "stub_receiving_po_no_barcode"
+      ],
+      "score_before": 0,
+      "score_after": 100,
+      "gates": {
+        "L_STRUCTURAL_PASS": true,
+        "L_INFERENCE_PASS": true,
+        "VERIFY_SCRIPT_PASS": true,
+        "L_FIX_COMPLETE": true,
+        "L_ROOT_CAUSE_COMPLETE": true
+      },
+      "violations": {
+        "format_violation": 0,
+        "coverage_gap": 0,
+        "suspect_unread": 0,
+        "underreported_coverage": 0,
+        "inferred": 0,
+        "logic_inferred": 0,
+        "stripped_condition": 0,
+        "negation_flip": 0,
+        "phantom_evidence": 0,
+        "potential_omission": 0,
+        "missing_detail": 0,
+        "unclear": 1
+      },
+      "totals": {
+        "claims_verified": 128,
+        "requirements": 47,
+        "acceptance_criteria": 36,
+        "business_rules": 32,
+        "messages": 13,
+        "questions_open": 29
+      },
+      "verdict": "PASS",
+      "verdict_per_spec": {
+        "stub_receiving_po_po_sample": "PASS",
+        "stub_receiving_po_concurrent": "PASS",
+        "stub_qc_criteria_approval": "PASS",
+        "stub_receiving_po_gift": "PASS",
+        "stub_receiving_po_no_barcode": "PASS"
+      },
+      "fix_suggestions": ["FIX-001"],
+      "output_folder": "wiki/project_hasaki/refiner/2026-05-30_pilot-batch-1/"
+    }
+  ]
+}

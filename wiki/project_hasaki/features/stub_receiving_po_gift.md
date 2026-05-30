@@ -11,8 +11,9 @@ source_doc: 07062_Receiving_PO_Docs_ver2.17.md
 source_range: 07062#L1738-L1758
 partial_read: false
 partial_read_note: ""
-last_verified_at: "2026-05-30 15:45:00"
-verification_status: Pending
+last_verified_at: "2026-05-30 23:00:00"
+verification_status: Verified
+approval_note: "PASS. FIX-001 applied 2026-05-30 — Q-007 captures UNCLEAR R005 (raw typo gift→gốc). Awaits PO Gate 1B answer."
 approved_by:
 approved_at:
 approval_note:
@@ -48,7 +49,7 @@ approval_note:
 | R002 | Case 1 PO gốc có 1 PO gift: cho phép nhận riêng PO gift (không qua PO gốc) | Functional | High | ✅ | 07062#L1743-L1744 |
 | R003 | Case 1 PO gốc có nhiều PO gift: hiển thị thông báo song ngữ VN/EN yêu cầu hoàn thành tất cả PO gift trước khi nhận PO gốc | Functional | High | ✅ | 07062#L1745-L1751 |
 | R004 | Case 1 PO gốc có nhiều PO gift: user scan nhận từng PO gift đến khi hoàn thành, sau đó mới scan PO gốc để nhận | Functional | High | ✅ | 07062#L1752-L1753 |
-| R005 | Override (Update 22-01-2025): nếu tại thời điểm scan nhận PO gốc mà PO gift chưa đủ điều kiện nhận (vd chưa verify invoice), hệ thống không hiện thông báo R003 và cho nhận PO gốc; PO gift sẽ scan nhận sau khi đủ điều kiện | Business rule | High | ✅ | 07062#L1755-L1756 |
+| R005 | Override (Update 22-01-2025): nếu tại thời điểm scan nhận PO gốc mà PO gift chưa đủ điều kiện nhận (vd chưa verify invoice), hệ thống không hiện thông báo R003 và cho nhận PO gốc; PO gift sẽ scan nhận sau khi đủ điều kiện. **Lưu ý:** raw L1755-L1756 ghi "cho nhận PO gift" — spec interpret là "cho nhận PO gốc" do context (trigger = scan PO gốc; PO gift chưa đủ điều kiện thì không thể "cho nhận PO gift"); cần PO confirm raw typo gift→gốc — xem Q-007 | Business rule | High | ⚠️ | 07062#L1755-L1756 |
 | R006 | Update 22-01-2025: nếu PO gift thiếu hàng → lần đầu được nhận chung với PO gốc (cả PO có thể nhận thiếu hoặc không); **lần sau** khi NCC giao lại thì phải nhận riêng cho cả Gift và gốc | Business rule | High | ✅ | 07062#L1757-L1758 |
 
 ## 🔄 Luồng Nghiệp Vụ Chi Tiết (User Flows)
@@ -142,6 +143,7 @@ approval_note:
 | Q-003 | R006 | "Lần sau" được detect thế nào? Flag riêng, đếm số session nhận đã có, hay logic timeline khác? | Dev Lead | Open | | | |
 | Q-004 | R001-R002 | Khi user chọn "nhận riêng PO gift" (R002), hệ thống có hỏi confirm hay mở phiên trực tiếp? Raw không mô tả UI confirm. | UX | Open | | | |
 | Q-005 | R003, R004 | "Hoàn thành" PO gift là status `Completed` hay khái niệm khác? Có ràng buộc PO gift phải có ≥ X% hàng nhận mới được tính `Completed` không? | PO | Open | | | |
+| Q-007 | R005, AC-05 | Raw 07062#L1755-L1756 ghi "thì sẽ không hiện thông báo và cho nhận PO gift" — trong context "scan nhận PO gốc" + "PO gift chưa đủ điều kiện", spec interpret là "cho nhận PO gốc". Đây là typo của raw (gift → gốc) đúng không? Refiner UNCLEAR finding pilot-batch-1 FIX-001. | PO | Open | | | |
 
 ## 📝 Thay đổi so với version cũ
 
@@ -167,6 +169,7 @@ approval_note:
 - R006, AC-07 — chờ Q-003 (cách detect "lần sau")
 - R002 — chờ Q-004 (UI confirm khi nhận riêng PO gift)
 - R003, R004 — chờ Q-005 (định nghĩa "hoàn thành" PO gift)
+- R005, AC-05 — chờ Q-007 (raw typo gift → gốc — refiner UNCLEAR FIX-001)
 
 Test cases liên quan tới các R-ID trên bị block đến khi câu hỏi `Answered`.
 
@@ -176,3 +179,4 @@ Test cases liên quan tới các R-ID trên bị block đến khi câu hỏi `An
 |:----------|:--------|:------------------|:------|
 | 2026-05-30 14:36:55 | v1.0 | Tách từ monster stub thành per-feature stub | split-stubs-2026-05-30 |
 | 2026-05-30 15:45:00 | v1.1 | Refine stub → full spec: 6 R-ID, 7 AC, 6 BR, 1 error message verbatim VN/EN, 5 questions Open. `partial_read: false`. | refine-batch-1-2026-05-30 |
+| 2026-05-30 23:00:00 | v1.2 | Apply refiner FIX-001 — thêm Q-007 cho UNCLEAR R005 (raw typo gift→gốc), inline note trong R005 claim text, link Blocked Coverage. | refiner-pilot-batch-1 |

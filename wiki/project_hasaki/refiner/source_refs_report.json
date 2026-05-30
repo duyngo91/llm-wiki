@@ -1,6 +1,6 @@
 {
   "project_id": "project_hasaki",
-  "generated_at": "2026-05-30T19:27:44+07:00",
+  "generated_at": "2026-05-30T19:59:38+07:00",
   "schema_version": "1.0",
   "summary": {
     "OK_CANONICAL": 528
@@ -7309,7 +7309,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_gift.md",
-      "spec_line": 47,
+      "spec_line": 48,
       "claim_id": "R001",
       "section": "requirement",
       "raw_cell": "07062#L1740-L1742",
@@ -7327,7 +7327,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_gift.md",
-      "spec_line": 48,
+      "spec_line": 49,
       "claim_id": "R002",
       "section": "requirement",
       "raw_cell": "07062#L1743-L1744",
@@ -7344,7 +7344,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_gift.md",
-      "spec_line": 49,
+      "spec_line": 50,
       "claim_id": "R003",
       "section": "requirement",
       "raw_cell": "07062#L1745-L1751",
@@ -7366,7 +7366,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_gift.md",
-      "spec_line": 50,
+      "spec_line": 51,
       "claim_id": "R004",
       "section": "requirement",
       "raw_cell": "07062#L1752-L1753",
@@ -7383,7 +7383,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_gift.md",
-      "spec_line": 51,
+      "spec_line": 52,
       "claim_id": "R005",
       "section": "requirement",
       "raw_cell": "07062#L1755-L1756",
@@ -7400,7 +7400,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_gift.md",
-      "spec_line": 52,
+      "spec_line": 53,
       "claim_id": "R006",
       "section": "requirement",
       "raw_cell": "07062#L1757-L1758",
