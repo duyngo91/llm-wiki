@@ -29,7 +29,7 @@ last_verified_source_version: 2.17
 - **Source chính:** 07062_Receiving_PO_Docs_ver2.17.md (v2.17)
 - **Đối tượng sử dụng (Actors):** Quản lý kho (xem listing + detail), User scan nhận (giải trình trong detail).
 - **Feature Group:** [[wiki/project_hasaki/feature_groups/receiving_po|receiving_po]]
-- **Test Suite tương ứng:** [[test_stub_receiving_po_inbound_shipment]]
+- **Test Suite tương ứng:** [[ts_receiving_po_inbound_shipment]]
 - **API Spec liên quan:** N/A — raw không mô tả API endpoint explicit.
 - **Mối quan hệ:** ➡️ feed [[stub_receiving_po_asn]] (filter `Đồng kiểm` move qua ASN). ⬅️ phụ thuộc Inside (mapping status), [[stub_receiving_po_invoice]] (PO chưa xác nhận hoá đơn).
 

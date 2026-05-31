@@ -59,7 +59,20 @@
       "PowerShell($env:PYTHONUTF8=\"1\"; py .claude/scripts/index_flag_updater.py --project project_hasaki --specs stub_receiving_po_inbound_shipment,stub_qc_criteria_sku,stub_qc_vas)",
       "PowerShell($env:PYTHONUTF8=\"1\"; py .claude/scripts/index_flag_updater.py --project project_hasaki --specs stub_receiving_po_inbound_shipment,stub_qc_criteria_sku,stub_qc_vas --apply)",
       "Bash(set PYTHONUTF8=1)",
-      "Bash(set PYTHONIOENCODING=utf-8)"
+      "Bash(set PYTHONIOENCODING=utf-8)",
+      "Bash(git merge *)",
+      "Bash(export PYTHONUTF8=1)",
+      "Bash(PYTHONUTF8=1 py *)",
+      "Bash(iconv -f UTF-8 -t UTF-8 -c)",
+      "Bash(chcp 65001)",
+      "Bash(export PYTHONIOENCODING=utf-8)",
+      "Bash(Get-Command python *)",
+      "Bash(\"C:\\\\Users\\\\HASAKI\\\\AppData\\\\Local\\\\Python\\\\bin\\\\python.exe\" .claude/scripts/check_ingest.py --project project_hasaki)",
+      "Bash(export PYTHONIOENCODING=utf-8 PYTHONUTF8=1)",
+      "Bash(not exist *)",
+      "Bash(get-item wiki/project_hasaki/test_suites/test_stub_qc_overview.md)",
+      "Bash(select-object LastWriteTime)",
+      "Bash(Get-ChildItem *)"
     ]
   },
   "enabledMcpjsonServers": [

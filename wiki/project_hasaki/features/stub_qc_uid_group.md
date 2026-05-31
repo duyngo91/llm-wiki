@@ -29,7 +29,7 @@ last_verified_source_version: 1.5
 - **Source chính:** 07105_Quality_Control_Docs_ver1.5.md (v1.5)
 - **Đối tượng sử dụng (Actors):** QC team, kho, BOD (approve case PO sample).
 - **Feature Group:** [[wiki/project_hasaki/feature_groups/quality_control|quality_control]]
-- **Test Suite tương ứng:** [[test_stub_qc_uid_group]]
+- **Test Suite tương ứng:** [[ts_qc_uid_group]]
 - **API Spec liên quan:** N/A — raw không mô tả API endpoint explicit.
 - **Mối quan hệ:** ⬅️ phụ thuộc [[stub_qc_criteria_setup]] (thiết lập tiêu chí + QC xã vải), [[stub_qc_criteria_sku]] (tiêu chí SKU). ↔️ liên quan [[stub_qc_evaluation_result]] (field `Đánh giá đạt`, tổng hợp kết quả), [[stub_qc_evaluation_mobile]] (App flow đánh giá), [[stub_receiving_po_fabric]] (UID group cho SKU vải).
 

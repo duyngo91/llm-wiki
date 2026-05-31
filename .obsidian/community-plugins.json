@@ -1,6 +1,5 @@
 [
   "obsidian-kanban",
-  "omnisearch",
   "embedded-omnisearch",
   "dataview",
   "smart-connections",
@@ -8,5 +7,8 @@
   "templater-obsidian",
   "obsidian-local-rest-api",
   "obsidian-git",
-  "mcp-tools-istefox"
+  "mcp-tools-istefox",
+  "smart-lookup",
+  "realclaudian",
+  "omnisearch"
 ]

@@ -47,8 +47,17 @@ Sau khi có paths → đọc từng file để lấy excerpt/context nếu cần
 #### Phương thức B: Omnisearch HTTP API (fallback khi MCP lỗi)
 
 ```bash
-curl -s "http://localhost:51361/search?q=QUERY_ENCODED"
+curl -s "http://localhost:51361/search?q=QUERY_ENCODED" -o /tmp/omni.json && py -c "
+import json; data=json.load(open('/tmp/omni.json'))
+[print(f'{i+1}. [{r[\"score\"]:.1f}] {r[\"path\"]}\n   {r[\"excerpt\"][:200]}') for i,r in enumerate(data[:8])]
+"
 ```
+
+**Windows notes:**
+- Dùng `py` (không phải `python`) — alias `python` không tồn tại trên máy này
+- Không pipe curl thẳng vào `py -c` — dễ bị empty stdin khi API trả rỗng; luôn save ra file `-o /tmp/omni.json` rồi đọc file
+- Query nên dùng ASCII/English — Vietnamese URL-encoded có thể trả về empty response từ Omnisearch
+- Nếu API trả về empty (`[]` hoặc `""`): fallback sang Grep
 
 Response là JSON array `ResultNoteApi[]`:
 ```json
@@ -133,6 +142,8 @@ Excluded (theo AI Knowledge Scope): `.obsidian/`, `.git/`, `*.sqlite*`
 |---|---|
 | MCP tool không available | Thử HTTP API |
 | HTTP API trả về `connection refused` | Obsidian chưa chạy hoặc HTTP server chưa bật → fallback Grep, thông báo user |
+| HTTP API trả về empty / `JSONDecodeError` | Lưu ra file trước (`-o /tmp/omni.json`), thử query ASCII, nếu vẫn rỗng → fallback Grep |
+| `python` command not found | Dùng `py` thay thế (Windows alias) |
 | Query không có kết quả | Thử broad query (bỏ bớt từ), gợi ý từ khóa thay thế |
 | Kết quả quá nhiều (>20) | Yêu cầu user thu hẹp query hoặc chỉ định loại file |
 

@@ -22,6 +22,7 @@ updated: 2026-05-31
    - `has_error_messages: true` → toàn bộ Error Messages
    - `has_business_rule` / `has_validation_rule: true` → toàn bộ Business Rules
    - `has_formula` / `has_state_transition: true` → toàn bộ Formula/State Transition
+   - `has_api_contract: true` → toàn bộ API endpoint/payload/contract (đối chiếu từng field request/response với raw); nếu raw có API mà spec ghi "N/A" → `POTENTIAL_OMISSION`
 2. **Sampling 1/5 cho claims còn lại** mapped đến section không có flag critical.
 3. **Pre-flagged từ `source_refs_report.json`:**
    - Verdict `PHANTOM_EVIDENCE` → label trực tiếp `PHANTOM_EVIDENCE`, không spot-check.

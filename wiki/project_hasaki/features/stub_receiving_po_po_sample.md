@@ -27,7 +27,7 @@ approval_note:
 - **Source chính:** 07062_Receiving_PO_Docs_ver2.17.md (v2.17)
 - **Đối tượng sử dụng (Actors):** Nhân viên kho (User scan nhận hàng), hệ thống Inside (master data PO), hệ thống WMS.
 - **Feature Group:** [[wiki/project_hasaki/feature_groups/receiving_po|receiving_po]]
-- **Test Suite tương ứng:** [[test_stub_receiving_po_po_sample]]
+- **Test Suite tương ứng:** [[ts_receiving_po_po_sample]]
 - **API Spec liên quan:** N/A — raw không mô tả API endpoint explicit.
 - **Mối quan hệ:** ⬅️ phụ thuộc [[stub_qc_evaluation_result]] (kết quả QC quyết định nhận PO gốc). ➡️ block luồng nhận PO gốc thông thường khi có Sample.
 

@@ -30,11 +30,13 @@ approval_note:
   - ⬅️ feature_a — *(mô tả quan hệ và link thật nếu đã có file)*
 
 ## Nguồn tài liệu
+*Status: `✅ Đã đọc / Hiện hành` · `⚠️ Outdated` · `⏳ Chưa đọc (pending)` · `❓ Không đọc được`. Nguồn `⏳`/`❓` phải roll-up lên Feature Group `## 📎 Nguồn chưa ingest` + có Open question (xem `phase_ingest.md#external-source-rule`).*
+
 | # | Loại | Tên / Link | Version | Status |
 |:--|:-----|:-----------|:--------|:-------|
 | 1 | PDF | | v1.0 | ⚠️ Outdated |
 | 2 | PDF | | v2.1 | ✅ Hiện hành |
-| 3 | Link | [tên](url) | | ✅ Hiện hành |
+| 3 | Link | [tên](url) | | ⏳ Chưa đọc (pending) |
 
 ## API / Interface liên quan
 *Feature Spec chỉ tham chiếu API/interface. Contract chi tiết phải nằm ở `wiki/[project]/api_specs/`; nếu endpoint/method/payload/status chưa rõ thì ghi vào câu hỏi thay vì mô tả suy diễn.*

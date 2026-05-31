@@ -29,7 +29,7 @@ last_verified_source_version: 2.17
 - **Source chính:** 07062_Receiving_PO_Docs_ver2.17.md (v2.17)
 - **Đối tượng sử dụng (Actors):** Shop/Nhân viên kho (App), Quản lý (cấu hình Warehouse).
 - **Feature Group:** [[wiki/project_hasaki/feature_groups/receiving_po|receiving_po]]
-- **Test Suite tương ứng:** [[test_stub_receiving_po_app]]
+- **Test Suite tương ứng:** [[ts_receiving_po_app]]
 - **API Spec liên quan:** N/A — raw không mô tả API explicit, chỉ mention "API update status PO trên Inside" (Q-001).
 - **Mối quan hệ:** ⬅️ phụ thuộc [[stub_receiving_po_vas]] (SPKPH ASN status `Chờ NCC đến lấy`), [[stub_receiving_po_inbound_shipment]] (PO/Inbound Shipment), [[stub_receiving_po_invoice]] (verify invoice). ↔️ liên quan [[stub_receiving_po_date_rules]] (HSD rules), [[stub_receiving_po_confirm_paste_id]] (post-scan flow). ➡️ feed [[stub_receiving_po_asn]] (sinh ASN), [[stub_receiving_po_fabric]] (scan Vải step).
 

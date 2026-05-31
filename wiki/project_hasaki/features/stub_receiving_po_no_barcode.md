@@ -27,7 +27,7 @@ approval_note:
 - **Source chính:** 07062_Receiving_PO_Docs_ver2.17.md (v2.17)
 - **Đối tượng sử dụng (Actors):** Nhân viên kho dùng App nhận hàng.
 - **Feature Group:** [[wiki/project_hasaki/feature_groups/receiving_po|receiving_po]]
-- **Test Suite tương ứng:** [[test_stub_receiving_po_no_barcode]]
+- **Test Suite tương ứng:** [[ts_receiving_po_no_barcode]]
 - **API Spec liên quan:** N/A — raw không mô tả API endpoint explicit.
 - **Mối quan hệ:** ⬅️ phụ thuộc [[stub_receiving_po_app]] (UI scan PO trên App). ℹ️ liên quan [[stub_receiving_po_date_rules]] (rules HSD/số lô).
 

@@ -29,7 +29,7 @@ last_verified_source_version: 2.17
 - **Source chính:** 07062_Receiving_PO_Docs_ver2.17.md (v2.17)
 - **Đối tượng sử dụng (Actors):** Nhân viên kho (Confirm Paste ID trên App).
 - **Feature Group:** [[wiki/project_hasaki/feature_groups/receiving_po|receiving_po]]
-- **Test Suite tương ứng:** [[test_stub_receiving_po_confirm_paste_id]]
+- **Test Suite tương ứng:** [[ts_receiving_po_confirm_paste_id]]
 - **API Spec liên quan:** N/A — raw không mô tả API explicit, mention "khi cập nhật 1 thông tin hệ thống sẽ gọi API để validation" (R013).
 - **Mối quan hệ:** ⬅️ phụ thuộc [[stub_receiving_po_app]] (Receiving PO flow), [[stub_receiving_po_vas]] (VAS sinh ra từ ASN), [[stub_qc_evaluation_result]] (Đánh giá chất lượng required). ↔️ liên quan [[stub_receiving_po_vas_manual]] (Create/Update VAS manual).
 

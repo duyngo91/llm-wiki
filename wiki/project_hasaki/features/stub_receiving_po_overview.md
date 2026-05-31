@@ -29,7 +29,7 @@ last_verified_source_version: 2.17
 - **Source chính:** 07062_Receiving_PO_Docs_ver2.17.md (v2.17)
 - **Đối tượng sử dụng (Actors):** N/A — section header/metadata.
 - **Feature Group:** [[wiki/project_hasaki/feature_groups/receiving_po|receiving_po]]
-- **Test Suite tương ứng:** [[test_stub_receiving_po_overview]]
+- **Test Suite tương ứng:** [[ts_receiving_po_overview]]
 - **API Spec liên quan:** N/A — section overview không mô tả API.
 - **Mối quan hệ:** Đây là section gateway cho toàn bộ feature group [[wiki/project_hasaki/feature_groups/receiving_po|receiving_po]]. Wireframe Figma cover wireframes các features. Mục tiêu migration App HSK Work → WMS là driver kiến trúc của tất cả features con.
 

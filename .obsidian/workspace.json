@@ -4,17 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "7ffeb84a3f624991",
+        "id": "62b122599e62fc87",
         "type": "tabs",
         "children": [
           {
-            "id": "328699f15966c13f",
+            "id": "195f1d8b9c55fb0f",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "wiki/project_hasaki/test_suites/ts_receiving_po_inbound_shipment.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "ts_receiving_po_inbound_shipment"
             }
           }
         ]
@@ -74,7 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 516.5
+    "width": 541.5
   },
   "right": {
     "id": "b22c030da320f8f9",
@@ -90,6 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "wiki/project_hasaki/features/stub_qc_vas.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -99,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks"
+              "title": "Backlinks for stub_qc_vas"
             }
           },
           {
@@ -150,67 +155,81 @@
             "state": {
               "type": "outline",
               "state": {
+                "file": "wiki/project_hasaki/test_suites/test_stub_receiving_po_overview.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline"
+              "title": "Outline of test_stub_receiving_po_overview"
             }
           }
-        ]
+        ],
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
-    "width": 300,
+    "width": 374.5,
     "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
+      "obsidian-kanban:Create new board": false,
+      "omnisearch:Omnisearch": false,
+      "smart-connections:Smart Connections: Open connections view": false,
+      "smart-connections:Toggle Footer Connections": false,
+      "smart-connections:Smart Connections: Open random connection": false,
+      "smart-connections-visualizer:Open smart connections visualizer": false,
+      "templater-obsidian:Templater": false,
+      "obsidian-git:Open Git source control": false,
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
       "canvas:Create new canvas": false,
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
-      "bases:Create new base": false
+      "bases:Create new base": false,
+      "smart-lookup:Smart Lookup: Open lookup view": false,
+      "realclaudian:Open Claudian": false
     }
   },
-  "active": "328699f15966c13f",
+  "active": "195f1d8b9c55fb0f",
   "lastOpenFiles": [
-    "wiki/project_hasaki/refiner/2026-05-27_reset-rebootstrap-07062-07105/evidence_matrix.md",
-    "wiki/project_hasaki/refiner/quality_gates.json",
-    "wiki/project_hasaki/test_suites/test_stub_07105_quality_control_docs_ver1_5.md",
-    "wiki/project_hasaki/test_suites/test_stub_07062_receiving_po_docs_ver2_17.md",
-    "wiki/project_hasaki/feature_groups/reset_bootstrap.md",
-    "wiki/project_hasaki/features/stub_07105_quality_control_docs_ver1_5.md",
-    "wiki/project_hasaki/refiner/2026-05-27_reset-rebootstrap-07062-07105/refiner_report.md",
-    "wiki/project_hasaki/refiner/2026-05-27_reset-rebootstrap-07062-07105",
-    "wiki/project_hasaki/features/stub_07062_receiving_po_docs_ver2_17.md",
-    "raw_sources/project_hasaki/requirements/07105_Quality_Control_Docs_ver1.5.pdf",
-    "wiki/project_hasaki/change_impact_report.json",
-    "wiki/project_hasaki/bugs_knowledge",
-    "wiki/project_hasaki/test_suites",
-    "wiki/project_hasaki/test_plans",
-    "wiki/project_hasaki/task_specs",
-    "wiki/project_hasaki/releases",
-    "wiki/project_hasaki/refiner",
-    "raw_sources/project_hasaki/requirements/07105_Quality_Control_Docs_ver1.5.md",
-    "wiki/project_hasaki/refiner/retrospective.md",
-    "wiki/project_hasaki/refiner/improvement_patch_plan.md",
-    "wiki/project_hasaki/refiner/2026-05-27_reset-reingest-07062-07105/evidence_matrix.md",
-    "wiki/project_hasaki/refiner/2026-05-27_reset-reingest-07062-07105/refiner_report.md",
-    "wiki/project_hasaki/refiner/2026-05-27_reindex-07062-07105/refiner_report.md",
-    "wiki/project_hasaki/refiner/2026-05-27_reindex-07062-07105/evidence_matrix.md",
-    "wiki/project_hasaki/operations/environments.md",
-    "wiki/project_hasaki/operations/team_contacts.md",
-    "wiki/project_hasaki/features/quality_control_assessment_result.md",
-    "wiki/project_hasaki/refiner/2026-05-26_batch-07062-07105/refiner_report.md",
-    "wiki/project_hasaki/refiner/2026-05-26_batch-07062-07105/evidence_matrix.md",
-    "wiki/project_hasaki/features/quality_control_approval.md",
-    "wiki/project_hasaki/features/quality_control_fabric_mobile.md",
-    "wiki/project_hasaki/features/quality_control_sku_setup.md",
-    "wiki/project_hasaki/features/quality_control_vas_update.md",
-    "wiki/project_hasaki/features/receiving_po_app.md"
+    "wiki/project_hasaki/test_suites/test_stub_receiving_po_overview.md",
+    "wiki/project_hasaki/test_suites/ts_receiving_po_inbound_shipment.md",
+    "KANBAN.md",
+    "log.md.tmp.22224.0909aa243708",
+    "wiki/project_hasaki/test_suites/ts_qc_criteria_setup.md",
+    "log.md.tmp.22224.dd8af0746ae0",
+    "KANBAN.md.tmp.22224.1b545bb538e7",
+    "wiki/project_hasaki/test_suites/test_stub_receiving_po_vas.md",
+    "wiki/project_hasaki/test_suites/test_stub_receiving_po_app.md",
+    "wiki/project_hasaki/test_suites/ts_qc_evaluation_mobile.md",
+    "wiki/project_hasaki/test_suites/ts_receiving_po_app.md",
+    "wiki/project_hasaki/test_suites/ts_receiving_po_fabric.md",
+    "wiki/project_hasaki/test_suites/ts_receiving_po_fabric.md.tmp.22224.97c55772ff42",
+    "wiki/project_hasaki/test_suites/test_stub_qc_criteria_setup.md",
+    "wiki/project_hasaki/test_suites/ts_qc_criteria_sku.md",
+    "wiki/project_hasaki/test_suites/ts_receiving_po_vas.md",
+    "wiki/project_hasaki/test_suites/ts_receiving_po_vas.md.tmp.22224.fd93b93d6968",
+    "wiki/project_hasaki/test_suites/ts_qc_evaluation_manual.md",
+    "wiki/project_hasaki/test_suites/ts_qc_evaluation_manual.md.tmp.22224.7bc4e06dfd4e",
+    "wiki/project_hasaki/test_suites/ts_receiving_po_packing_list.md",
+    "wiki/project_hasaki/test_suites/ts_receiving_po_packing_list.md.tmp.22224.5661c96377f6",
+    "wiki/project_hasaki/test_suites/ts_qc_criteria_approval.md",
+    "wiki/project_hasaki/test_suites/test_stub_receiving_po_vas_manual.md",
+    "wiki/project_hasaki/test_suites/ts_receiving_po_date_rules.md",
+    "wiki/project_hasaki/test_suites/ts_receiving_po_date_rules.md.tmp.22224.e35d423b2ce1",
+    "wiki/project_hasaki/test_suites/ts_qc_evaluation_mobile.md.tmp.22224.63628c01588c",
+    "wiki/project_hasaki/test_suites/test_stub_receiving_po_confirm_paste_id.md",
+    "wiki/project_hasaki/test_suites/ts_receiving_po_overview.md",
+    "wiki/project_hasaki/test_suites/ts_qc_evaluation_result.md",
+    "wiki/project_hasaki/test_suites/ts_receiving_po_gift.md",
+    "wiki/project_hasaki/test_suites/ts_receiving_po_vas_manual.md",
+    "wiki/project_hasaki/test_suites/ts_receiving_po_vas_manual.md.tmp.22224.a0007f4e60d3",
+    "wiki/project_hasaki/test_suites/test_stub_qc_vas.md",
+    "wiki/project_hasaki/test_suites/ts_receiving_po_confirm_paste_id.md",
+    "wiki/project_hasaki/test_suites/ts_qc_uid_group.md",
+    "wiki/project_hasaki/test_suites/ts_receiving_po_invoice.md"
   ]
 }

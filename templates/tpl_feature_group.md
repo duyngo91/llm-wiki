@@ -36,6 +36,13 @@ updated: {{date:YYYY-MM-DD}}
 |:-------------------|:----------------------|:------|:-----------|:-------|
 | [[...]] | | PO/BA/Dev | Open | |
 
+## 📎 Nguồn chưa ingest
+*Roll-up các nguồn `⏳ Chưa đọc` / `❓ Không đọc được` từ `## Nguồn tài liệu` của các spec trong group. SSOT ở từng spec — bảng này chỉ tổng hợp để review & bổ sung sau. Regenerate mỗi lần ingest.*
+
+| Nguồn (Figma/Drive/URL/PDF) | Spec liên quan | Trạng thái | Open question | Ghi chú |
+|:----------------------------|:---------------|:-----------|:--------------|:-------|
+| [tên](url) | [[...]] | ⏳ / ❓ | Q-0xx | |
+
 ## Impact & Regression Notes
 | Change ID / Source | Feature(s) ảnh hưởng | Regression candidate | Trạng thái |
 |:-------------------|:---------------------|:---------------------|:-----------|

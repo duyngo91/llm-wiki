@@ -8,6 +8,16 @@ updated: 2026-05-31
 
 # Activity Log — project_hasaki
 
+## 2026-05-31
+
+### Wave 1: Fix backlink spec → test suite
+- **Task:** Sửa 24 file `features/stub_*.md`, dòng `**Test Suite tương ứng:** [[test_stub_<x>]]` → `[[ts_<x>]]`
+- **Thực hiện:** Python script `Path.replace()`, 23/24 file (1 file không chứa `[[test_stub_`)
+- **Verify:** `py wiki_sync.py verify` → ✅ "No broken links found!", mục "no incoming links" biến mất
+- **Status:** DONE — dứt điểm warning
+- **Ghi chú:** Đã confirm KHÔNG sửa field `spec: stub_*` và `Source spec: [[stub_*]]` trong `ts_*.md` (chúng đúng)
+
+
 > Timezone: UTC+07:00 (Asia/Ho_Chi_Minh). Format: `YYYY-MM-DD HH:mm:ss`.
 
 ## 2026-05-31

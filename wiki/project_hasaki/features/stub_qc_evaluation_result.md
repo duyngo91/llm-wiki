@@ -29,7 +29,7 @@ last_verified_source_version: 1.5
 - **Source chính:** 07105_Quality_Control_Docs_ver1.5.md (v1.5)
 - **Đối tượng sử dụng (Actors):** QC team, kho.
 - **Feature Group:** [[wiki/project_hasaki/feature_groups/quality_control|quality_control]]
-- **Test Suite tương ứng:** [[test_stub_qc_evaluation_result]]
+- **Test Suite tương ứng:** [[ts_qc_evaluation_result]]
 - **API Spec liên quan:** N/A — raw không mô tả API endpoint explicit (chỉ mention "Dựng 1 service" — Q-001).
 - **Mối quan hệ:** ⬅️ phụ thuộc [[stub_qc_criteria_setup]] (tiêu chí thiết lập), [[stub_qc_criteria_sku]] (tiêu chí SKU), [[stub_qc_evaluation_mobile]] (input đánh giá từ App), [[stub_qc_evaluation_manual]] (input đánh giá Manual). ➡️ feed [[stub_qc_vas]] (kết quả tổng hợp cho VAS), [[stub_qc_uid_group]] (kết quả tổng hợp cho group UID).
 

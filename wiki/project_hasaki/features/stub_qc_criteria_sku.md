@@ -29,7 +29,7 @@ last_verified_source_version: 1.5
 - **Source chính:** 07105_Quality_Control_Docs_ver1.5.md (v1.5)
 - **Đối tượng sử dụng (Actors):** QC Setup user (tạo + chỉnh sửa tiêu chí), QC Manager (Duyệt/Từ chối).
 - **Feature Group:** [[wiki/project_hasaki/feature_groups/quality_control|quality_control]]
-- **Test Suite tương ứng:** [[test_stub_qc_criteria_sku]]
+- **Test Suite tương ứng:** [[ts_qc_criteria_sku]]
 - **API Spec liên quan:** N/A — raw không mô tả API endpoint explicit.
 - **Mối quan hệ:** ➡️ feed [[stub_qc_criteria_approval]] (status `Chờ duyệt` xử lý ở đó). ⬅️ phụ thuộc [[stub_qc_criteria_setup]] (danh sách tiêu chí load).
 

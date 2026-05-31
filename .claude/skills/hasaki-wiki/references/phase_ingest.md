@@ -11,12 +11,28 @@ updated: 2026-05-30
 
 ---
 
-## Unreadable Source Rule
+## External Source Rule
 
-Khi raw source đề cập link/tài nguyên (Figma, URL, PDF phụ) **không thể truy cập**:
-1. Ghi vào `## Nguồn tài liệu` với `Status = ❓ Chưa đọc được`.
-2. Tạo câu hỏi `Open`: `"Link/file [X] được đề cập nhưng chưa đọc được — cần cung cấp [file/quyền]"`.
-3. Không suy diễn nội dung từ link chưa đọc.
+Khi raw source đề cập link/tài nguyên ngoài (Figma, Google Drive, URL, PDF phụ, Visily):
+
+**Bước 0 — Thử fetch TRƯỚC (không bỏ qua âm thầm):**
+- Figma → Figma MCP · Google Drive → Google Drive MCP · URL thường → WebFetch · PDF phụ → markitdown.
+- Fetch OK → ingest như raw thường, ghi `## Nguồn tài liệu` `Status = ✅ Đã đọc`.
+
+**Bước 1 — Nếu fetch fail / không có tool / chưa kịp đọc:**
+1. Ghi `## Nguồn tài liệu` 1 dòng mỗi nguồn với `Status`:
+   - `⏳ Chưa đọc (pending)` — đọc được nhưng chưa làm.
+   - `❓ Không đọc được` — thiếu quyền/file/tool.
+2. Tạo câu hỏi `Open`: `"Nguồn [X] được đề cập nhưng [chưa đọc / không truy cập được] — cần [cung cấp file/quyền / ưu tiên đọc]"`.
+3. Không suy diễn nội dung từ nguồn chưa đọc.
+
+**Bước 2 — Roll-up (review surface):** mọi nguồn `⏳`/`❓` phải xuất hiện ở section `## 📎 Nguồn chưa ingest` của Feature Group tương ứng để reviewer thấy 1 chỗ + biết bổ sung gì khi quay lại. SSOT vẫn là `## Nguồn tài liệu` của từng spec — group chỉ tổng hợp, regenerate mỗi lần ingest, không thêm thông tin mới.
+
+## Glossary Rule
+
+Khi raw có section "Thuật ngữ & viết tắt" / "Glossary":
+- **Có entry** → trích vào `operations/glossary.md` (term verbatim + định nghĩa verbatim + `#line`).
+- **Rỗng / chỉ placeholder** (chỉ số thứ tự, không nội dung) → tạo `operations/glossary.md` liệt kê các thuật ngữ được DÙNG trong doc nhưng chưa định nghĩa (vd SKU, VAS, UID group, ASN), mỗi term mark `[cần PO confirm]` + 1 Open question `"Glossary raw trống — cần PO cung cấp định nghĩa: [danh sách term]"`. Không tự bịa định nghĩa; nghĩa suy từ ngữ cảnh phải mark rõ `[suy từ ngữ cảnh — cần confirm]`.
 
 ## Question Lifecycle
 
@@ -34,7 +50,7 @@ Trạng thái: `Open` / `Answered` / `Deferred`.
 **Kích hoạt:** Project chưa tồn tại hoặc user yêu cầu.
 
 1. Tạo cấu trúc thư mục đầy đủ (xem `shared.md#cấu-trúc-thư-mục-chuẩn`).
-2. Khởi tạo 3 file operations: `environments.md`, `test_data.md`, `team_contacts.md`.
+2. Khởi tạo 4 file operations: `environments.md`, `test_data.md`, `team_contacts.md`, `glossary.md`.
 3. Cập nhật `index.md`, tạo Kanban cards khởi tạo Sprint, ghi log `[create]`.
 
 ---
@@ -58,7 +74,7 @@ py .claude/scripts/index_skeleton.py <path_to_converted.md> --version <ver>
 
 Script ghi `{tên_file}_index.json` với `id`, `title`, `start_line`, `end_line`, `read_log: null`. AI hoàn thiện trước khi sang Bước 2 (đây là semantic markup, vẫn ở phase chuẩn bị):
 - `topic_types`: chọn từ `[ui_filter, ui_listing, business_rule, state_transition, validation_rule, error_messages, formula, enum_values, api_contract, actor_flow]`
-- `flags`: set `true` nếu section có enum / state transition / formula / error messages / validation rule
+- `flags`: set `true` nếu section có enum / state transition / formula / error messages / validation rule / **api_contract** (gặp keyword `gọi API`, `endpoint`, `payload`, request/response body, JSON `{key:...}` → set `has_api_contract: true`)
 - `mapped_feature`: để `null` — sẽ điền ở Bước 2
 - `coverage_status`: `unmapped` — sẽ điền ở Bước 2
 
@@ -107,7 +123,7 @@ ISTQB Test Analysis. **Mỗi section trong index được xử lý theo cùng 1 
 **2.1 — Read section (must-read-to-end):**
 - Dùng Read tool với `offset = section.start_line + 1`, `limit = (end_line - start_line) + 10` (10 dòng context buffer cho rule trải dài).
 - Section >150 dòng: chia chunks, đọc tuần tự, không skip.
-- Section có flag `has_enum / has_state_transition / has_formula / has_error_messages / has_validation_rule` → đọc **toàn bộ** section, không sampling.
+- Section có flag `has_enum / has_state_transition / has_formula / has_error_messages / has_validation_rule / has_api_contract` → đọc **toàn bộ** section, không sampling.
 
 **2.2 — Enumerate candidates (output trong cùng response trước khi viết spec):**
 
@@ -123,6 +139,8 @@ Section S-NN candidates:
 ```
 
 Mỗi candidate phải có **decision**: → R-ID / → AC-ID / → BR-ID / → API-ID / → Question / → Skip + reason. Không được "quên" sau enumeration. Đây là bằng chứng AI đã đọc hết section.
+
+- **API không được mark "N/A" âm thầm:** nếu section chứa API signal (payload JSON, `check_issue`, endpoint, `gọi API ... lên [hệ thống]`) → bắt buộc enumerate thành API-ID candidate + tạo `api_specs/api_[feature].md`. Chỉ ghi "API: N/A" sau khi đã đọc hết section và xác nhận raw KHÔNG đề cập API nào — không phải giá trị mặc định.
 
 **2.3 — Write spec (chỉ từ candidates đã enumerate):**
 - Trùng cũ → Diff, cập nhật Spec, ghi Changelog.

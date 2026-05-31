@@ -29,7 +29,7 @@ last_verified_source_version: 1.5
 - **Source chính:** 07105_Quality_Control_Docs_ver1.5.md (v1.5)
 - **Đối tượng sử dụng (Actors):** N/A — đây là phần header/metadata của doc, không phải feature có actor cụ thể.
 - **Feature Group:** [[wiki/project_hasaki/feature_groups/quality_control|quality_control]]
-- **Test Suite tương ứng:** [[test_stub_qc_overview]]
+- **Test Suite tương ứng:** [[ts_qc_overview]]
 - **API Spec liên quan:** N/A — section này không mô tả API.
 - **Mối quan hệ:** Đây là section header gateway cho toàn bộ feature group [[wiki/project_hasaki/feature_groups/quality_control|quality_control]]. Wireframe link cover tất cả features.
 
