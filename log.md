@@ -24,6 +24,18 @@ updated: 2026-05-31
 - **Verify:** ✅ UTF-8 no BOM/mojibake, wiki_sync.py compliant
 - **Status:** DONE — nền tảng glossary tạo xong
 
+### Wave 3: API Specs + bịt orphan
+- **Task:** Tạo 3 api_specs stub + bịt orphan payload L1458-1469 ở `stub_receiving_po_app`
+- **Files tạo:**
+  - `api_receiving_po_issue_report.md` (payload 2 case: SPKPH + missing qty từ raw L1458-L1469)
+  - `api_receiving_po_update_status.md` (status sync L880-881, L1447)
+  - `api_qc_assessment_result_service.md` (QC result service architectural concept L649-658)
+- **Bịt orphan:** Update bảng API trong `stub_receiving_po_app.md` + link 2 chiều từ api_specs trỏ feature
+- **Status:** BLOCKED (chờ Inside API doc + BA confirm) — governance error expected vì raw chưa đủ endpoint/method/response
+- **Link:** spec ↔ api_spec đã tạo, feature_group roll-up cập nhật
+- **Verify:** ✅ UTF-8 ok; governance error expected (raw incomplete)
+- **Status:** DONE — 3 stubs tạo xong + orphan bịt
+
 
 > Timezone: UTC+07:00 (Asia/Ho_Chi_Minh). Format: `YYYY-MM-DD HH:mm:ss`.
 

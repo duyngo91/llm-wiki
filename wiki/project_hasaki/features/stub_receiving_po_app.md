@@ -41,8 +41,9 @@ last_verified_source_version: 2.17
 ## API / Interface liên quan
 | API Spec | API/Interface | Requirement/AC liên quan | Source | Trạng thái |
 |:---------|:--------------|:-------------------------|:-------|:-----------|
-| N/A | API update status PO trên Inside thành `Receiving` — raw mention "Lưu ý khi này chưa gọi API" | R009 | 07062#L880-L881 | TBD — Q-001 |
-| N/A | Warehouse config endpoint `Configuration / General / Required camera` | R017 | 07062#L921-L935 | Internal — Q-002 |
+| [[api_receiving_po_update_status]] | Inside PO Status Update (Receiving → Received) | R009 | 07062#L880-L881, L1447 | Draft — 7 open questions |
+| [[api_receiving_po_issue_report]] | Inside Issue Report (unsuitable items + missing qty) | R008 (SPKPH), R012 (missing qty) | 07062#L1458-L1469 | Draft — 7 open questions |
+| N/A | Warehouse config `Configuration / General / Required camera` | R017 | 07062#L921-L935 | Internal config (không phải integration API) |
 
 ## Phân rã Requirement
 
