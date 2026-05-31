@@ -17,6 +17,13 @@ updated: 2026-05-31
 - **Status:** DONE — dứt điểm warning
 - **Ghi chú:** Đã confirm KHÔNG sửa field `spec: stub_*` và `Source spec: [[stub_*]]` trong `ts_*.md` (chúng đúng)
 
+### Wave 2: Glossary (operations/glossary.md)
+- **Task:** Tạo thư mục `operations/` + file `glossary.md` gom 21 thuật ngữ
+- **Nội dung:** 3 term rõ từ raw (Group UID, HSD, WMS) + 18 term suy từ ngữ cảnh (VAS, ASN, SKU, PO, UID, etc.) mark [cần PO confirm]
+- **Bảng:** 2 bảng riêng (rõ vs suy từ ngữ cảnh) + 1 Open question chung
+- **Verify:** ✅ UTF-8 no BOM/mojibake, wiki_sync.py compliant
+- **Status:** DONE — nền tảng glossary tạo xong
+
 
 > Timezone: UTC+07:00 (Asia/Ho_Chi_Minh). Format: `YYYY-MM-DD HH:mm:ss`.
 
