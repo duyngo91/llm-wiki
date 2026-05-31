@@ -11,11 +11,13 @@ source_doc: 07105_Quality_Control_Docs_ver1.5.md
 source_range: 07105#L1023-L1304
 partial_read: false
 partial_read_note: ""
-last_verified_at: "2026-05-30 21:30:00"
-verification_status: Pending
+last_verified_at: "2026-05-31 17:50:34"
+verification_status: Verified
 approved_by:
 approved_at:
 approval_note:
+last_verified_source_version: 1.5
+
 ---
 
 # REQ: stub_qc_evaluation_manual
@@ -308,6 +310,8 @@ approval_note:
 | Q-014 | R021, R023 | Auto inherit thiết lập tiêu chí — sau khi inherit, user có thể override per SKU không (vd 1 SKU cần điều chỉnh điều kiện đạt)? | PO | Open | | | |
 | Q-015 | R007 | Step 3 thông tin `Số lô` và `HSD` lấy từ đâu (UID group hay SKU master)? Validation gì? | PO/Dev | Open | | | |
 | Q-016 | R001-R002 | Phần "(Bỏ)" flow cũ — vẫn giữ trong doc cho reference, hay sẽ remove ở v2.0? | PO | Open | | | |
+| Q-017 | L1128-L1147 | App-side behavior trong range source: `Khai báo SL cần đánh giá cho UID group (App)` (bắt buộc, số nguyên dương, sau xác nhận tự động trừ SL đã khai báo khỏi UID group) + `Chụp hình tem QC (App)` (bắt buộc, chỉ 1 hình QC Pass/Fail khi nhấn Hoàn thành). Các behavior này chưa có R-ID. Ownership thuộc manual flow, mobile flow hay feature riêng? | PO | Open | | | |
+| Q-018 | L1152-L1168 | L1152-L1168 "Một số lưu ý luồng mới": transfer UID group vào F0-XV tự sinh yêu cầu đánh giá Xã vải; tiêu chí PO sample → PO chính (BOD duyệt 4/5 → PO chính dùng điều kiện PO sample). Nội dung này thuộc spec nào (xã vải / PO sample / manual) và có cần tạo R-ID ở spec manual không? | PO | Open | | | |
 
 ## 📝 Thay đổi so với version cũ
 
@@ -342,6 +346,8 @@ approval_note:
 - R019 — chờ Q-007 (Un-Blocked sau vendor return)
 - R001, R002 — chờ Q-008, Q-016 (legacy data + remove plan)
 - R011 — chờ Q-009 (định nghĩa SKU phụ liệu)
+- L1128-L1147 (App-side UID SL auto-deduct + chụp tem QC) — POTENTIAL_OMISSION chưa có R-ID, chờ Q-017 xác nhận ownership
+- L1152-L1168 (lưu ý xã vải + tiêu chí PO sample) — MISSING_DETAIL, xem [[stub_receiving_po_fabric]] + [[stub_receiving_po_po_sample]]; chờ Q-018
 - R012 — chờ Q-010 (threshold Failed)
 - R015 — chờ Q-011 (rules ADJ)
 - R017 — chờ Q-012 (định nghĩa LOT)
@@ -357,3 +363,4 @@ Test cases liên quan tới các R-ID trên bị block đến khi câu hỏi `An
 |:----------|:--------|:------------------|:------|
 | 2026-05-30 14:45:51 | v1.0 | Tách từ monster stub thành per-feature stub | split-stubs-2026-05-30 |
 | 2026-05-30 21:30:00 | v1.1 | Refine stub → full spec: 23 R-ID (2 deprecated), 25 AC, 22 BR, 5 messages (3 partial verbatim, 2 missing), 16 questions Open. `partial_read: false`. | refine-batch-5-2026-05-30 |
+| 2026-05-31 17:00:00 | v1.2 | FIX-005 + FIX-006 (refiner batch-3): thêm Q-017 (POTENTIAL_OMISSION L1128-L1147 App-side UID SL + tem QC) + Q-018 (MISSING_DETAIL L1152-L1168 xã vải/PO sample cross-ref) + Blocked Coverage tương ứng. | refiner-spec-scoped-batch-3 |

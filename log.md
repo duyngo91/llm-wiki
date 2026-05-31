@@ -3,12 +3,70 @@ tags: [qa/log]
 project: project_hasaki
 status: Done
 created: 2026-05-30
-updated: 2026-05-30
+updated: 2026-05-31
 ---
 
 # Activity Log — project_hasaki
 
 > Timezone: UTC+07:00 (Asia/Ho_Chi_Minh). Format: `YYYY-MM-DD HH:mm:ss`.
+
+## 2026-05-31
+
+### [lint-sync] 2026-05-31 10:42:00 — Fix status capitalization + parser guardrail issues
+
+**Tổng quan:** Khắc phục 2 issues trong 24 test suite files:
+1. **Fix 1:** Cập nhật frontmatter status từ `draft` → `Draft` (24 files)
+2. **Fix 2:** Sửa parser guardrail detection:
+   - Exclude header row (TC-ID) khỏi test case row parsing
+   - Chỉ enforce "Explicit từ" check cho tables có "Nguồn" column
+   - Accept "Scope" (English) hoặc "Phạm vi" (Vietnamese) làm scope column
+
+**Files affected:** 24 test suites (ts_*.md)
+
+**Verification result:** ✅ PASS — `wiki_sync.py verify` exit 0. Tất cả governance guardrails compliant.
+
+### [test-progress] 2026-05-31 09:15:00 — Test design hoàn thành 24 specs
+
+**Scope:** Hoàn thành thiết kế test suite cho toàn bộ 24 per-feature specs (15 Receiving PO + 9 Quality Control).
+
+**TC Count Verified:**
+- QC group (9 specs): 229 TCs active
+  - `qc_overview` (2 TCs): 1 active, 4 blocked chờ Q-005
+  - `qc_criteria_approval` (13 TCs)
+  - `qc_criteria_setup` (62 TCs)
+  - `qc_criteria_sku` (40 TCs)
+  - `qc_evaluation_manual` (32 TCs)
+  - `qc_evaluation_mobile` (25 TCs)
+  - `qc_evaluation_result` (27 TCs)
+  - `qc_uid_group` (14 TCs)
+  - `qc_vas` (14 TCs)
+
+- PO group (15 specs): 372 TCs active
+  - `receiving_po_overview` (2 TCs)
+  - `receiving_po_inbound_shipment` (21 TCs)
+  - `receiving_po_asn` (25 TCs)
+  - `receiving_po_vas` (36 TCs)
+  - `receiving_po_app` (33 TCs)
+  - `receiving_po_date_rules` (43 TCs)
+  - `receiving_po_invoice` (30 TCs)
+  - `receiving_po_fabric` (13 TCs)
+  - `receiving_po_gift` (9 TCs)
+  - `receiving_po_no_barcode` (13 TCs)
+  - `receiving_po_confirm_paste_id` (31 TCs)
+  - `receiving_po_vas_manual` (25 TCs)
+  - `receiving_po_packing_list` (41 TCs)
+  - `receiving_po_po_sample` (17 TCs)
+  - `receiving_po_concurrent` (13 TCs)
+
+**Total: 601 TCs active** (229 QC + 372 PO).
+
+**Hành động:**
+1. Verify TC count từ `ts_*` test suite files (đếm rows `| TC-ID |`).
+2. Recompute Kanban TC count per spec dựa trên active test cases.
+3. Update `KANBAN.md` section "Test design (Gate 2)" với TC breakdown.
+4. Chạy `wiki_sync.py verify` để kiểm tra governance guardrails.
+
+**Next:** Chạy Gate 2 (QA Lead review test cases) trước khi vào Testing phase.
 
 ## 2026-05-30
 

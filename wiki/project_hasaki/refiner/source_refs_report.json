@@ -1,6 +1,6 @@
 {
   "project_id": "project_hasaki",
-  "generated_at": "2026-05-30T21:52:46+07:00",
+  "generated_at": "2026-05-31T19:34:39+07:00",
   "schema_version": "1.0",
   "summary": {
     "OK_CANONICAL": 528
@@ -149,7 +149,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_qc_criteria_setup.md",
-      "spec_line": 48,
+      "spec_line": 50,
       "claim_id": "R001",
       "section": "requirement",
       "raw_cell": "07105#L126-L128",
@@ -167,7 +167,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_qc_criteria_setup.md",
-      "spec_line": 49,
+      "spec_line": 51,
       "claim_id": "R002",
       "section": "requirement",
       "raw_cell": "07105#L131-L143",
@@ -189,7 +189,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_qc_criteria_setup.md",
-      "spec_line": 50,
+      "spec_line": 52,
       "claim_id": "R003",
       "section": "requirement",
       "raw_cell": "07105#L144-L170",
@@ -211,7 +211,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_qc_criteria_setup.md",
-      "spec_line": 51,
+      "spec_line": 53,
       "claim_id": "R004",
       "section": "requirement",
       "raw_cell": "07105#L152-L160",
@@ -233,7 +233,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_qc_criteria_setup.md",
-      "spec_line": 52,
+      "spec_line": 54,
       "claim_id": "R005",
       "section": "requirement",
       "raw_cell": "07105#L167-L170",
@@ -255,7 +255,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_qc_criteria_setup.md",
-      "spec_line": 53,
+      "spec_line": 55,
       "claim_id": "R006",
       "section": "requirement",
       "raw_cell": "07105#L171-L179",
@@ -277,7 +277,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_qc_criteria_setup.md",
-      "spec_line": 54,
+      "spec_line": 56,
       "claim_id": "R007",
       "section": "requirement",
       "raw_cell": "07105#L180-L189",
@@ -299,7 +299,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_qc_criteria_setup.md",
-      "spec_line": 55,
+      "spec_line": 57,
       "claim_id": "R008",
       "section": "requirement",
       "raw_cell": "07105#L190-L198",
@@ -321,7 +321,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_qc_criteria_setup.md",
-      "spec_line": 56,
+      "spec_line": 58,
       "claim_id": "R009",
       "section": "requirement",
       "raw_cell": "07105#L199-L211",
@@ -343,7 +343,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_qc_criteria_setup.md",
-      "spec_line": 57,
+      "spec_line": 59,
       "claim_id": "R010",
       "section": "requirement",
       "raw_cell": "07105#L217-L220",
@@ -365,7 +365,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_qc_criteria_setup.md",
-      "spec_line": 58,
+      "spec_line": 60,
       "claim_id": "R011",
       "section": "requirement",
       "raw_cell": "07105#L226-L250",
@@ -387,7 +387,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_qc_criteria_setup.md",
-      "spec_line": 59,
+      "spec_line": 61,
       "claim_id": "R012",
       "section": "requirement",
       "raw_cell": "07105#L253-L283",
@@ -409,7 +409,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_qc_criteria_setup.md",
-      "spec_line": 60,
+      "spec_line": 62,
       "claim_id": "R013",
       "section": "requirement",
       "raw_cell": "07105#L267-L274",
@@ -431,7 +431,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_qc_criteria_setup.md",
-      "spec_line": 61,
+      "spec_line": 63,
       "claim_id": "R014",
       "section": "requirement",
       "raw_cell": "07105#L281-L288",
@@ -453,7 +453,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_qc_criteria_setup.md",
-      "spec_line": 62,
+      "spec_line": 64,
       "claim_id": "R015",
       "section": "requirement",
       "raw_cell": "07105#L289-L311",
@@ -475,7 +475,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_qc_criteria_setup.md",
-      "spec_line": 63,
+      "spec_line": 65,
       "claim_id": "R016",
       "section": "requirement",
       "raw_cell": "07105#L312-L323",
@@ -497,7 +497,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_qc_criteria_setup.md",
-      "spec_line": 64,
+      "spec_line": 66,
       "claim_id": "R017",
       "section": "requirement",
       "raw_cell": "07105#L324-L338",
@@ -519,7 +519,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_qc_criteria_setup.md",
-      "spec_line": 65,
+      "spec_line": 67,
       "claim_id": "R018",
       "section": "requirement",
       "raw_cell": "07105#L339-L344",
@@ -541,7 +541,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_qc_criteria_setup.md",
-      "spec_line": 66,
+      "spec_line": 68,
       "claim_id": "R019",
       "section": "requirement",
       "raw_cell": "07105#L345-L348",
@@ -563,7 +563,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_qc_criteria_setup.md",
-      "spec_line": 67,
+      "spec_line": 69,
       "claim_id": "R020",
       "section": "requirement",
       "raw_cell": "07105#L357-L368",
@@ -585,7 +585,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_qc_criteria_setup.md",
-      "spec_line": 68,
+      "spec_line": 70,
       "claim_id": "R021",
       "section": "requirement",
       "raw_cell": "07105#L369-L374",
@@ -607,7 +607,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_qc_criteria_setup.md",
-      "spec_line": 69,
+      "spec_line": 71,
       "claim_id": "R022",
       "section": "requirement",
       "raw_cell": "07105#L375-L380",
@@ -629,7 +629,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_qc_criteria_setup.md",
-      "spec_line": 70,
+      "spec_line": 72,
       "claim_id": "R023",
       "section": "requirement",
       "raw_cell": "07105#L380-L406",
@@ -651,7 +651,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_qc_criteria_setup.md",
-      "spec_line": 71,
+      "spec_line": 73,
       "claim_id": "R024",
       "section": "requirement",
       "raw_cell": "07105#L407-L409",
@@ -669,7 +669,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_qc_criteria_setup.md",
-      "spec_line": 72,
+      "spec_line": 74,
       "claim_id": "R025",
       "section": "requirement",
       "raw_cell": "07105#L410-L413",
@@ -691,7 +691,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_qc_criteria_setup.md",
-      "spec_line": 73,
+      "spec_line": 75,
       "claim_id": "R026",
       "section": "requirement",
       "raw_cell": "07105#L414-L420",
@@ -713,7 +713,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_qc_criteria_setup.md",
-      "spec_line": 74,
+      "spec_line": 76,
       "claim_id": "R027",
       "section": "requirement",
       "raw_cell": "07105#L421-L427",
@@ -735,7 +735,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_qc_criteria_setup.md",
-      "spec_line": 75,
+      "spec_line": 77,
       "claim_id": "R028",
       "section": "requirement",
       "raw_cell": "07105#L428-L432",
@@ -757,7 +757,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_qc_criteria_setup.md",
-      "spec_line": 76,
+      "spec_line": 78,
       "claim_id": "R029",
       "section": "requirement",
       "raw_cell": "07105#L433-L437",
@@ -779,7 +779,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_qc_criteria_setup.md",
-      "spec_line": 77,
+      "spec_line": 79,
       "claim_id": "R030",
       "section": "requirement",
       "raw_cell": "07105#L443-L450",
@@ -801,7 +801,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_qc_criteria_setup.md",
-      "spec_line": 78,
+      "spec_line": 80,
       "claim_id": "R031",
       "section": "requirement",
       "raw_cell": "07105#L451-L467",
@@ -823,7 +823,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_qc_criteria_setup.md",
-      "spec_line": 79,
+      "spec_line": 81,
       "claim_id": "R032",
       "section": "requirement",
       "raw_cell": "07105#L468-L475",
@@ -845,7 +845,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_qc_criteria_setup.md",
-      "spec_line": 80,
+      "spec_line": 82,
       "claim_id": "R033",
       "section": "requirement",
       "raw_cell": "07105#L476-L488",
@@ -867,7 +867,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_qc_criteria_setup.md",
-      "spec_line": 81,
+      "spec_line": 83,
       "claim_id": "R034",
       "section": "requirement",
       "raw_cell": "07105#L493-L499",
@@ -889,7 +889,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_qc_criteria_setup.md",
-      "spec_line": 82,
+      "spec_line": 84,
       "claim_id": "R035",
       "section": "requirement",
       "raw_cell": "07105#L500-L525",
@@ -911,7 +911,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_qc_criteria_setup.md",
-      "spec_line": 83,
+      "spec_line": 85,
       "claim_id": "R036",
       "section": "requirement",
       "raw_cell": "07105#L1081-L1097",
@@ -933,7 +933,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_qc_criteria_setup.md",
-      "spec_line": 84,
+      "spec_line": 86,
       "claim_id": "R037",
       "section": "requirement",
       "raw_cell": "07105#L1304-L1311",
@@ -955,7 +955,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_qc_criteria_setup.md",
-      "spec_line": 85,
+      "spec_line": 87,
       "claim_id": "R038",
       "section": "requirement",
       "raw_cell": "07105#L1312-L1321",
@@ -1666,7 +1666,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_qc_evaluation_manual.md",
-      "spec_line": 51,
+      "spec_line": 53,
       "claim_id": "R001",
       "section": "requirement",
       "raw_cell": "07105#L1023-L1038",
@@ -1688,7 +1688,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_qc_evaluation_manual.md",
-      "spec_line": 52,
+      "spec_line": 54,
       "claim_id": "R002",
       "section": "requirement",
       "raw_cell": "07105#L1040-L1077",
@@ -1710,7 +1710,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_qc_evaluation_manual.md",
-      "spec_line": 53,
+      "spec_line": 55,
       "claim_id": "R003",
       "section": "requirement",
       "raw_cell": "07105#L1078-L1080",
@@ -1728,7 +1728,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_qc_evaluation_manual.md",
-      "spec_line": 54,
+      "spec_line": 56,
       "claim_id": "R004",
       "section": "requirement",
       "raw_cell": "07105#L1176-L1187",
@@ -1750,7 +1750,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_qc_evaluation_manual.md",
-      "spec_line": 55,
+      "spec_line": 57,
       "claim_id": "R005",
       "section": "requirement",
       "raw_cell": "07105#L1190-L1206",
@@ -1772,7 +1772,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_qc_evaluation_manual.md",
-      "spec_line": 56,
+      "spec_line": 58,
       "claim_id": "R006",
       "section": "requirement",
       "raw_cell": "07105#L1201-L1205",
@@ -1794,7 +1794,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_qc_evaluation_manual.md",
-      "spec_line": 57,
+      "spec_line": 59,
       "claim_id": "R007",
       "section": "requirement",
       "raw_cell": "07105#L1210-L1222",
@@ -1816,7 +1816,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_qc_evaluation_manual.md",
-      "spec_line": 58,
+      "spec_line": 60,
       "claim_id": "R008",
       "section": "requirement",
       "raw_cell": "07105#L1223-L1235",
@@ -1838,7 +1838,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_qc_evaluation_manual.md",
-      "spec_line": 59,
+      "spec_line": 61,
       "claim_id": "R009",
       "section": "requirement",
       "raw_cell": "07105#L1237-L1238",
@@ -1855,7 +1855,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_qc_evaluation_manual.md",
-      "spec_line": 60,
+      "spec_line": 62,
       "claim_id": "R010",
       "section": "requirement",
       "raw_cell": "07105#L1242-L1242",
@@ -1871,7 +1871,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_qc_evaluation_manual.md",
-      "spec_line": 61,
+      "spec_line": 63,
       "claim_id": "R011",
       "section": "requirement",
       "raw_cell": "07105#L1243-L1246",
@@ -1893,7 +1893,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_qc_evaluation_manual.md",
-      "spec_line": 62,
+      "spec_line": 64,
       "claim_id": "R012",
       "section": "requirement",
       "raw_cell": "07105#L1247-L1249",
@@ -1911,7 +1911,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_qc_evaluation_manual.md",
-      "spec_line": 63,
+      "spec_line": 65,
       "claim_id": "R013",
       "section": "requirement",
       "raw_cell": "07105#L1250-L1255",
@@ -1933,7 +1933,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_qc_evaluation_manual.md",
-      "spec_line": 64,
+      "spec_line": 66,
       "claim_id": "R014",
       "section": "requirement",
       "raw_cell": "07105#L1256-L1262",
@@ -1955,7 +1955,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_qc_evaluation_manual.md",
-      "spec_line": 65,
+      "spec_line": 67,
       "claim_id": "R015",
       "section": "requirement",
       "raw_cell": "07105#L1263-L1284",
@@ -1977,7 +1977,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_qc_evaluation_manual.md",
-      "spec_line": 66,
+      "spec_line": 68,
       "claim_id": "R016",
       "section": "requirement",
       "raw_cell": "07105#L1285-L1291",
@@ -1999,7 +1999,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_qc_evaluation_manual.md",
-      "spec_line": 67,
+      "spec_line": 69,
       "claim_id": "R017",
       "section": "requirement",
       "raw_cell": "07105#L1292-L1294",
@@ -2017,7 +2017,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_qc_evaluation_manual.md",
-      "spec_line": 68,
+      "spec_line": 70,
       "claim_id": "R018",
       "section": "requirement",
       "raw_cell": "07105#L1295-L1297",
@@ -2035,7 +2035,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_qc_evaluation_manual.md",
-      "spec_line": 69,
+      "spec_line": 71,
       "claim_id": "R019",
       "section": "requirement",
       "raw_cell": "07105#L1298-L1300",
@@ -2053,7 +2053,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_qc_evaluation_manual.md",
-      "spec_line": 70,
+      "spec_line": 72,
       "claim_id": "R020",
       "section": "requirement",
       "raw_cell": "07105#L1304-L1308",
@@ -2075,7 +2075,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_qc_evaluation_manual.md",
-      "spec_line": 71,
+      "spec_line": 73,
       "claim_id": "R021",
       "section": "requirement",
       "raw_cell": "07105#L1309-L1311",
@@ -2093,7 +2093,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_qc_evaluation_manual.md",
-      "spec_line": 72,
+      "spec_line": 74,
       "claim_id": "R022",
       "section": "requirement",
       "raw_cell": "07105#L1312-L1315",
@@ -2115,7 +2115,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_qc_evaluation_manual.md",
-      "spec_line": 73,
+      "spec_line": 75,
       "claim_id": "R023",
       "section": "requirement",
       "raw_cell": "07105#L1320-L1321",
@@ -2132,7 +2132,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_qc_evaluation_mobile.md",
-      "spec_line": 48,
+      "spec_line": 50,
       "claim_id": "R001",
       "section": "requirement",
       "raw_cell": "07105#L790-L795",
@@ -2154,7 +2154,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_qc_evaluation_mobile.md",
-      "spec_line": 49,
+      "spec_line": 51,
       "claim_id": "R002",
       "section": "requirement",
       "raw_cell": "07105#L797-L799",
@@ -2172,7 +2172,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_qc_evaluation_mobile.md",
-      "spec_line": 50,
+      "spec_line": 52,
       "claim_id": "R003",
       "section": "requirement",
       "raw_cell": "07105#L800",
@@ -2188,7 +2188,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_qc_evaluation_mobile.md",
-      "spec_line": 51,
+      "spec_line": 53,
       "claim_id": "R004",
       "section": "requirement",
       "raw_cell": "07105#L803-L808",
@@ -2210,7 +2210,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_qc_evaluation_mobile.md",
-      "spec_line": 52,
+      "spec_line": 54,
       "claim_id": "R005",
       "section": "requirement",
       "raw_cell": "07105#L809-L810",
@@ -2227,7 +2227,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_qc_evaluation_mobile.md",
-      "spec_line": 53,
+      "spec_line": 55,
       "claim_id": "R006",
       "section": "requirement",
       "raw_cell": "07105#L811-L815",
@@ -2249,7 +2249,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_qc_evaluation_mobile.md",
-      "spec_line": 54,
+      "spec_line": 56,
       "claim_id": "R007",
       "section": "requirement",
       "raw_cell": "07105#L816-L820",
@@ -2271,7 +2271,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_qc_evaluation_mobile.md",
-      "spec_line": 54,
+      "spec_line": 56,
       "claim_id": "R007",
       "section": "requirement",
       "raw_cell": "07105#L893-L900",
@@ -2293,7 +2293,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_qc_evaluation_mobile.md",
-      "spec_line": 55,
+      "spec_line": 57,
       "claim_id": "R008",
       "section": "requirement",
       "raw_cell": "07105#L824-L830",
@@ -2315,7 +2315,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_qc_evaluation_mobile.md",
-      "spec_line": 56,
+      "spec_line": 58,
       "claim_id": "R009",
       "section": "requirement",
       "raw_cell": "07105#L831-L840",
@@ -2337,7 +2337,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_qc_evaluation_mobile.md",
-      "spec_line": 57,
+      "spec_line": 59,
       "claim_id": "R010",
       "section": "requirement",
       "raw_cell": "07105#L841-L846",
@@ -2359,7 +2359,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_qc_evaluation_mobile.md",
-      "spec_line": 58,
+      "spec_line": 60,
       "claim_id": "R011",
       "section": "requirement",
       "raw_cell": "07105#L847-L853",
@@ -2381,7 +2381,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_qc_evaluation_mobile.md",
-      "spec_line": 59,
+      "spec_line": 61,
       "claim_id": "R012",
       "section": "requirement",
       "raw_cell": "07105#L854-L861",
@@ -2403,7 +2403,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_qc_evaluation_mobile.md",
-      "spec_line": 60,
+      "spec_line": 62,
       "claim_id": "R013",
       "section": "requirement",
       "raw_cell": "07105#L862-L863",
@@ -2420,7 +2420,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_qc_evaluation_mobile.md",
-      "spec_line": 61,
+      "spec_line": 63,
       "claim_id": "R014",
       "section": "requirement",
       "raw_cell": "07105#L865-L868",
@@ -2442,7 +2442,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_qc_evaluation_mobile.md",
-      "spec_line": 62,
+      "spec_line": 64,
       "claim_id": "R015",
       "section": "requirement",
       "raw_cell": "07105#L888-L892",
@@ -2464,7 +2464,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_qc_evaluation_mobile.md",
-      "spec_line": 63,
+      "spec_line": 65,
       "claim_id": "R016",
       "section": "requirement",
       "raw_cell": "07105#L902-L904",
@@ -2482,7 +2482,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_qc_evaluation_mobile.md",
-      "spec_line": 64,
+      "spec_line": 66,
       "claim_id": "R017",
       "section": "requirement",
       "raw_cell": "07105#L909-L909",
@@ -2498,7 +2498,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_qc_evaluation_mobile.md",
-      "spec_line": 65,
+      "spec_line": 67,
       "claim_id": "R018",
       "section": "requirement",
       "raw_cell": "07105#L910-L911",
@@ -2515,7 +2515,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_qc_evaluation_mobile.md",
-      "spec_line": 66,
+      "spec_line": 68,
       "claim_id": "R019",
       "section": "requirement",
       "raw_cell": "07105#L912-L913",
@@ -2532,7 +2532,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_qc_evaluation_mobile.md",
-      "spec_line": 67,
+      "spec_line": 69,
       "claim_id": "R020",
       "section": "requirement",
       "raw_cell": "07105#L914-L915",
@@ -2549,7 +2549,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_qc_evaluation_mobile.md",
-      "spec_line": 68,
+      "spec_line": 70,
       "claim_id": "R021",
       "section": "requirement",
       "raw_cell": "07105#L918-L928",
@@ -2571,7 +2571,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_qc_evaluation_mobile.md",
-      "spec_line": 69,
+      "spec_line": 71,
       "claim_id": "R022",
       "section": "requirement",
       "raw_cell": "07105#L930-L934",
@@ -2593,7 +2593,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_qc_evaluation_mobile.md",
-      "spec_line": 70,
+      "spec_line": 72,
       "claim_id": "R023",
       "section": "requirement",
       "raw_cell": "07105#L935-L960",
@@ -2615,7 +2615,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_qc_evaluation_mobile.md",
-      "spec_line": 71,
+      "spec_line": 73,
       "claim_id": "R024",
       "section": "requirement",
       "raw_cell": "07105#L961-L966",
@@ -2637,7 +2637,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_qc_evaluation_mobile.md",
-      "spec_line": 72,
+      "spec_line": 74,
       "claim_id": "R025",
       "section": "requirement",
       "raw_cell": "07105#L967-L973",
@@ -2659,7 +2659,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_qc_evaluation_mobile.md",
-      "spec_line": 73,
+      "spec_line": 75,
       "claim_id": "R026",
       "section": "requirement",
       "raw_cell": "07105#L974",
@@ -2675,7 +2675,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_qc_evaluation_mobile.md",
-      "spec_line": 74,
+      "spec_line": 76,
       "claim_id": "R027",
       "section": "requirement",
       "raw_cell": "07105#L975-L982",
@@ -2697,7 +2697,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_qc_evaluation_mobile.md",
-      "spec_line": 75,
+      "spec_line": 77,
       "claim_id": "R028",
       "section": "requirement",
       "raw_cell": "07105#L985-L1003",
@@ -2719,7 +2719,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_qc_evaluation_mobile.md",
-      "spec_line": 76,
+      "spec_line": 78,
       "claim_id": "R029",
       "section": "requirement",
       "raw_cell": "07105#L1005-L1012",
@@ -2741,7 +2741,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_qc_evaluation_mobile.md",
-      "spec_line": 77,
+      "spec_line": 79,
       "claim_id": "R030",
       "section": "requirement",
       "raw_cell": "07105#L1014-L1014",
@@ -2757,7 +2757,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_qc_evaluation_mobile.md",
-      "spec_line": 78,
+      "spec_line": 80,
       "claim_id": "R031",
       "section": "requirement",
       "raw_cell": "07105#L1016-L1016",
@@ -2773,7 +2773,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_qc_evaluation_mobile.md",
-      "spec_line": 79,
+      "spec_line": 81,
       "claim_id": "R032",
       "section": "requirement",
       "raw_cell": "07105#L1017-L1018",
@@ -2790,7 +2790,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_qc_evaluation_mobile.md",
-      "spec_line": 80,
+      "spec_line": 82,
       "claim_id": "R033",
       "section": "requirement",
       "raw_cell": "07105#L1019",
@@ -2806,7 +2806,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_qc_evaluation_result.md",
-      "spec_line": 48,
+      "spec_line": 50,
       "claim_id": "R001",
       "section": "requirement",
       "raw_cell": "07105#L571-L573",
@@ -2824,7 +2824,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_qc_evaluation_result.md",
-      "spec_line": 49,
+      "spec_line": 51,
       "claim_id": "R002",
       "section": "requirement",
       "raw_cell": "07105#L578-L579",
@@ -2841,7 +2841,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_qc_evaluation_result.md",
-      "spec_line": 50,
+      "spec_line": 52,
       "claim_id": "R003",
       "section": "requirement",
       "raw_cell": "07105#L580-L582",
@@ -2859,7 +2859,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_qc_evaluation_result.md",
-      "spec_line": 51,
+      "spec_line": 53,
       "claim_id": "R004",
       "section": "requirement",
       "raw_cell": "07105#L583-L585",
@@ -2877,7 +2877,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_qc_evaluation_result.md",
-      "spec_line": 52,
+      "spec_line": 54,
       "claim_id": "R005",
       "section": "requirement",
       "raw_cell": "07105#L586-L588",
@@ -2895,7 +2895,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_qc_evaluation_result.md",
-      "spec_line": 53,
+      "spec_line": 55,
       "claim_id": "R006",
       "section": "requirement",
       "raw_cell": "07105#L589-L595",
@@ -2917,7 +2917,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_qc_evaluation_result.md",
-      "spec_line": 54,
+      "spec_line": 56,
       "claim_id": "R007",
       "section": "requirement",
       "raw_cell": "07105#L596-L606",
@@ -2939,7 +2939,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_qc_evaluation_result.md",
-      "spec_line": 55,
+      "spec_line": 57,
       "claim_id": "R008",
       "section": "requirement",
       "raw_cell": "07105#L607-L611",
@@ -2961,7 +2961,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_qc_evaluation_result.md",
-      "spec_line": 56,
+      "spec_line": 58,
       "claim_id": "R009",
       "section": "requirement",
       "raw_cell": "07105#L612-L616",
@@ -2983,7 +2983,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_qc_evaluation_result.md",
-      "spec_line": 57,
+      "spec_line": 59,
       "claim_id": "R010",
       "section": "requirement",
       "raw_cell": "07105#L617-L624",
@@ -3005,7 +3005,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_qc_evaluation_result.md",
-      "spec_line": 58,
+      "spec_line": 60,
       "claim_id": "R011",
       "section": "requirement",
       "raw_cell": "07105#L629",
@@ -3021,7 +3021,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_qc_evaluation_result.md",
-      "spec_line": 59,
+      "spec_line": 61,
       "claim_id": "R012",
       "section": "requirement",
       "raw_cell": "07105#L630",
@@ -3037,7 +3037,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_qc_evaluation_result.md",
-      "spec_line": 60,
+      "spec_line": 62,
       "claim_id": "R013",
       "section": "requirement",
       "raw_cell": "07105#L632",
@@ -3053,7 +3053,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_qc_evaluation_result.md",
-      "spec_line": 61,
+      "spec_line": 63,
       "claim_id": "R014",
       "section": "requirement",
       "raw_cell": "07105#L633",
@@ -3069,7 +3069,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_qc_evaluation_result.md",
-      "spec_line": 62,
+      "spec_line": 64,
       "claim_id": "R015",
       "section": "requirement",
       "raw_cell": "07105#L634",
@@ -3085,7 +3085,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_qc_evaluation_result.md",
-      "spec_line": 63,
+      "spec_line": 65,
       "claim_id": "R016",
       "section": "requirement",
       "raw_cell": "07105#L635-L636",
@@ -3102,7 +3102,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_qc_evaluation_result.md",
-      "spec_line": 64,
+      "spec_line": 66,
       "claim_id": "R017",
       "section": "requirement",
       "raw_cell": "07105#L637",
@@ -3118,7 +3118,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_qc_evaluation_result.md",
-      "spec_line": 65,
+      "spec_line": 67,
       "claim_id": "R018",
       "section": "requirement",
       "raw_cell": "07105#L638-L645",
@@ -3140,7 +3140,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_qc_evaluation_result.md",
-      "spec_line": 66,
+      "spec_line": 68,
       "claim_id": "R019",
       "section": "requirement",
       "raw_cell": "07105#L646-L647",
@@ -3157,7 +3157,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_qc_evaluation_result.md",
-      "spec_line": 67,
+      "spec_line": 69,
       "claim_id": "R020",
       "section": "requirement",
       "raw_cell": "07105#L649-L658",
@@ -3179,7 +3179,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_qc_evaluation_result.md",
-      "spec_line": 68,
+      "spec_line": 70,
       "claim_id": "R021",
       "section": "requirement",
       "raw_cell": "07105#L659-L662",
@@ -3201,7 +3201,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_qc_evaluation_result.md",
-      "spec_line": 69,
+      "spec_line": 71,
       "claim_id": "R022",
       "section": "requirement",
       "raw_cell": "07105#L665-L666",
@@ -3218,7 +3218,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_qc_evaluation_result.md",
-      "spec_line": 70,
+      "spec_line": 72,
       "claim_id": "R023",
       "section": "requirement",
       "raw_cell": "07105#L667-L668",
@@ -3235,7 +3235,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_qc_evaluation_result.md",
-      "spec_line": 71,
+      "spec_line": 73,
       "claim_id": "R024",
       "section": "requirement",
       "raw_cell": "07105#L672",
@@ -3251,7 +3251,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_qc_evaluation_result.md",
-      "spec_line": 72,
+      "spec_line": 74,
       "claim_id": "R025",
       "section": "requirement",
       "raw_cell": "07105#L674-L675",
@@ -3268,7 +3268,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_qc_evaluation_result.md",
-      "spec_line": 73,
+      "spec_line": 75,
       "claim_id": "R026",
       "section": "requirement",
       "raw_cell": "07105#L676-L684",
@@ -3290,7 +3290,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_qc_evaluation_result.md",
-      "spec_line": 74,
+      "spec_line": 76,
       "claim_id": "R027",
       "section": "requirement",
       "raw_cell": "07105#L685-L689",
@@ -3312,7 +3312,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_qc_evaluation_result.md",
-      "spec_line": 75,
+      "spec_line": 77,
       "claim_id": "R028",
       "section": "requirement",
       "raw_cell": "07105#L1103-L1106",
@@ -3334,7 +3334,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_qc_evaluation_result.md",
-      "spec_line": 76,
+      "spec_line": 78,
       "claim_id": "R029",
       "section": "requirement",
       "raw_cell": "07105#L1108-L1111",
@@ -3356,7 +3356,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_qc_evaluation_result.md",
-      "spec_line": 77,
+      "spec_line": 79,
       "claim_id": "R030",
       "section": "requirement",
       "raw_cell": "07105#L1112-L1123",
@@ -3378,7 +3378,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_qc_overview.md",
-      "spec_line": 50,
+      "spec_line": 52,
       "claim_id": "R001",
       "section": "requirement",
       "raw_cell": "07105#L102-L110",
@@ -3400,7 +3400,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_qc_overview.md",
-      "spec_line": 51,
+      "spec_line": 53,
       "claim_id": "R002",
       "section": "requirement",
       "raw_cell": "07105#L112-L113",
@@ -3417,7 +3417,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_qc_overview.md",
-      "spec_line": 52,
+      "spec_line": 54,
       "claim_id": "R003",
       "section": "requirement",
       "raw_cell": "07105#L115-L118",
@@ -3439,7 +3439,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_qc_overview.md",
-      "spec_line": 53,
+      "spec_line": 55,
       "claim_id": "R004",
       "section": "requirement",
       "raw_cell": "07105#L124-L124",
@@ -3455,7 +3455,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_qc_uid_group.md",
-      "spec_line": 48,
+      "spec_line": 50,
       "claim_id": "R001",
       "section": "requirement",
       "raw_cell": "07105#L1083-L1085",
@@ -3473,7 +3473,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_qc_uid_group.md",
-      "spec_line": 49,
+      "spec_line": 51,
       "claim_id": "R002",
       "section": "requirement",
       "raw_cell": "07105#L1086-L1093",
@@ -3495,7 +3495,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_qc_uid_group.md",
-      "spec_line": 50,
+      "spec_line": 52,
       "claim_id": "R003",
       "section": "requirement",
       "raw_cell": "07105#L1090-L1093",
@@ -3517,7 +3517,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_qc_uid_group.md",
-      "spec_line": 51,
+      "spec_line": 53,
       "claim_id": "R004",
       "section": "requirement",
       "raw_cell": "07105#L1094-L1096",
@@ -3535,7 +3535,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_qc_uid_group.md",
-      "spec_line": 52,
+      "spec_line": 54,
       "claim_id": "R005",
       "section": "requirement",
       "raw_cell": "07105#L1128-L1132",
@@ -3557,7 +3557,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_qc_uid_group.md",
-      "spec_line": 53,
+      "spec_line": 55,
       "claim_id": "R006",
       "section": "requirement",
       "raw_cell": "07105#L1133-L1134",
@@ -3574,7 +3574,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_qc_uid_group.md",
-      "spec_line": 54,
+      "spec_line": 56,
       "claim_id": "R007",
       "section": "requirement",
       "raw_cell": "07105#L1135-L1139",
@@ -3596,7 +3596,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_qc_uid_group.md",
-      "spec_line": 55,
+      "spec_line": 57,
       "claim_id": "R008",
       "section": "requirement",
       "raw_cell": "07105#L1140",
@@ -3612,7 +3612,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_qc_uid_group.md",
-      "spec_line": 56,
+      "spec_line": 58,
       "claim_id": "R009",
       "section": "requirement",
       "raw_cell": "07105#L1141-L1145",
@@ -3634,7 +3634,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_qc_uid_group.md",
-      "spec_line": 57,
+      "spec_line": 59,
       "claim_id": "R010",
       "section": "requirement",
       "raw_cell": "07105#L1146-L1147",
@@ -3651,7 +3651,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_qc_uid_group.md",
-      "spec_line": 58,
+      "spec_line": 60,
       "claim_id": "R011",
       "section": "requirement",
       "raw_cell": "07105#L1153-L1158",
@@ -3673,7 +3673,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_qc_uid_group.md",
-      "spec_line": 59,
+      "spec_line": 61,
       "claim_id": "R012",
       "section": "requirement",
       "raw_cell": "07105#L1160-L1165",
@@ -3695,7 +3695,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_qc_uid_group.md",
-      "spec_line": 60,
+      "spec_line": 62,
       "claim_id": "R013",
       "section": "requirement",
       "raw_cell": "07105#L1166-L1168",
@@ -4070,7 +4070,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_app.md",
-      "spec_line": 49,
+      "spec_line": 51,
       "claim_id": "R001",
       "section": "requirement",
       "raw_cell": "07062#L787",
@@ -4086,7 +4086,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_app.md",
-      "spec_line": 50,
+      "spec_line": 52,
       "claim_id": "R002",
       "section": "requirement",
       "raw_cell": "07062#L788-L798",
@@ -4108,7 +4108,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_app.md",
-      "spec_line": 51,
+      "spec_line": 53,
       "claim_id": "R003",
       "section": "requirement",
       "raw_cell": "07062#L799-L823",
@@ -4130,7 +4130,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_app.md",
-      "spec_line": 52,
+      "spec_line": 54,
       "claim_id": "R004",
       "section": "requirement",
       "raw_cell": "07062#L824-L826",
@@ -4148,7 +4148,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_app.md",
-      "spec_line": 53,
+      "spec_line": 55,
       "claim_id": "R005",
       "section": "requirement",
       "raw_cell": "07062#L834-L838",
@@ -4170,7 +4170,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_app.md",
-      "spec_line": 54,
+      "spec_line": 56,
       "claim_id": "R006",
       "section": "requirement",
       "raw_cell": "07062#L842-L843",
@@ -4187,7 +4187,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_app.md",
-      "spec_line": 55,
+      "spec_line": 57,
       "claim_id": "R007",
       "section": "requirement",
       "raw_cell": "07062#L847-L854",
@@ -4209,7 +4209,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_app.md",
-      "spec_line": 56,
+      "spec_line": 58,
       "claim_id": "R008",
       "section": "requirement",
       "raw_cell": "07062#L855-L860",
@@ -4231,7 +4231,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_app.md",
-      "spec_line": 57,
+      "spec_line": 59,
       "claim_id": "R009",
       "section": "requirement",
       "raw_cell": "07062#L861-L882",
@@ -4253,7 +4253,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_app.md",
-      "spec_line": 58,
+      "spec_line": 60,
       "claim_id": "R010",
       "section": "requirement",
       "raw_cell": "07062#L883-L886",
@@ -4275,7 +4275,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_app.md",
-      "spec_line": 59,
+      "spec_line": 61,
       "claim_id": "R011",
       "section": "requirement",
       "raw_cell": "07062#L888-L889",
@@ -4292,7 +4292,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_app.md",
-      "spec_line": 60,
+      "spec_line": 62,
       "claim_id": "R012",
       "section": "requirement",
       "raw_cell": "07062#L890-L893",
@@ -4314,7 +4314,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_app.md",
-      "spec_line": 61,
+      "spec_line": 63,
       "claim_id": "R013",
       "section": "requirement",
       "raw_cell": "07062#L885-L895",
@@ -4336,7 +4336,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_app.md",
-      "spec_line": 62,
+      "spec_line": 64,
       "claim_id": "R014",
       "section": "requirement",
       "raw_cell": "07062#L904-L914",
@@ -4358,7 +4358,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_app.md",
-      "spec_line": 63,
+      "spec_line": 65,
       "claim_id": "R015",
       "section": "requirement",
       "raw_cell": "07062#L915-L916",
@@ -4375,7 +4375,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_app.md",
-      "spec_line": 64,
+      "spec_line": 66,
       "claim_id": "R016",
       "section": "requirement",
       "raw_cell": "07062#L919-L923",
@@ -4397,7 +4397,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_app.md",
-      "spec_line": 65,
+      "spec_line": 67,
       "claim_id": "R017",
       "section": "requirement",
       "raw_cell": "07062#L921-L935",
@@ -4419,7 +4419,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_app.md",
-      "spec_line": 66,
+      "spec_line": 68,
       "claim_id": "R018",
       "section": "requirement",
       "raw_cell": "07062#L936-L940",
@@ -4441,7 +4441,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_app.md",
-      "spec_line": 67,
+      "spec_line": 69,
       "claim_id": "R019",
       "section": "requirement",
       "raw_cell": "07062#L945-L950",
@@ -4463,7 +4463,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_app.md",
-      "spec_line": 68,
+      "spec_line": 70,
       "claim_id": "R020",
       "section": "requirement",
       "raw_cell": "07062#L951-L956",
@@ -4485,7 +4485,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_app.md",
-      "spec_line": 69,
+      "spec_line": 71,
       "claim_id": "R021",
       "section": "requirement",
       "raw_cell": "07062#L958-L960",
@@ -4503,7 +4503,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_app.md",
-      "spec_line": 70,
+      "spec_line": 72,
       "claim_id": "R022",
       "section": "requirement",
       "raw_cell": "07062#L961-L966",
@@ -4525,7 +4525,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_app.md",
-      "spec_line": 71,
+      "spec_line": 73,
       "claim_id": "R023",
       "section": "requirement",
       "raw_cell": "07062#L970-L981",
@@ -4547,7 +4547,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_app.md",
-      "spec_line": 72,
+      "spec_line": 74,
       "claim_id": "R024",
       "section": "requirement",
       "raw_cell": "07062#L982-L984",
@@ -4565,7 +4565,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_app.md",
-      "spec_line": 73,
+      "spec_line": 75,
       "claim_id": "R025",
       "section": "requirement",
       "raw_cell": "07062#L985-L994",
@@ -4587,7 +4587,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_app.md",
-      "spec_line": 74,
+      "spec_line": 76,
       "claim_id": "R026",
       "section": "requirement",
       "raw_cell": "07062#L997-L1004",
@@ -4609,7 +4609,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_app.md",
-      "spec_line": 75,
+      "spec_line": 77,
       "claim_id": "R027",
       "section": "requirement",
       "raw_cell": "07062#L1005-L1018",
@@ -4631,7 +4631,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_app.md",
-      "spec_line": 76,
+      "spec_line": 78,
       "claim_id": "R028",
       "section": "requirement",
       "raw_cell": "07062#L1019-L1026",
@@ -4653,7 +4653,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_app.md",
-      "spec_line": 77,
+      "spec_line": 79,
       "claim_id": "R029",
       "section": "requirement",
       "raw_cell": "07062#L1027-L1035",
@@ -4675,7 +4675,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_app.md",
-      "spec_line": 78,
+      "spec_line": 80,
       "claim_id": "R030",
       "section": "requirement",
       "raw_cell": "07062#L1038-L1044",
@@ -4697,7 +4697,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_app.md",
-      "spec_line": 79,
+      "spec_line": 81,
       "claim_id": "R031",
       "section": "requirement",
       "raw_cell": "07062#L1045-L1050",
@@ -4719,7 +4719,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_app.md",
-      "spec_line": 80,
+      "spec_line": 82,
       "claim_id": "R032",
       "section": "requirement",
       "raw_cell": "07062#L1051-L1057",
@@ -4741,7 +4741,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_app.md",
-      "spec_line": 81,
+      "spec_line": 83,
       "claim_id": "R033",
       "section": "requirement",
       "raw_cell": "07062#L1061-L1069",
@@ -4763,7 +4763,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_asn.md",
-      "spec_line": 48,
+      "spec_line": 50,
       "claim_id": "R001",
       "section": "requirement",
       "raw_cell": "07062#L349-L351",
@@ -4781,7 +4781,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_asn.md",
-      "spec_line": 49,
+      "spec_line": 51,
       "claim_id": "R002",
       "section": "requirement",
       "raw_cell": "07062#L358",
@@ -4797,7 +4797,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_asn.md",
-      "spec_line": 50,
+      "spec_line": 52,
       "claim_id": "R003",
       "section": "requirement",
       "raw_cell": "07062#L359-L365",
@@ -4819,7 +4819,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_asn.md",
-      "spec_line": 51,
+      "spec_line": 53,
       "claim_id": "R004",
       "section": "requirement",
       "raw_cell": "07062#L366-L368",
@@ -4837,7 +4837,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_asn.md",
-      "spec_line": 52,
+      "spec_line": 54,
       "claim_id": "R005",
       "section": "requirement",
       "raw_cell": "07062#L369-L370",
@@ -4854,7 +4854,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_asn.md",
-      "spec_line": 53,
+      "spec_line": 55,
       "claim_id": "R006",
       "section": "requirement",
       "raw_cell": "07062#L371-L377",
@@ -4876,7 +4876,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_asn.md",
-      "spec_line": 54,
+      "spec_line": 56,
       "claim_id": "R007",
       "section": "requirement",
       "raw_cell": "07062#L378-L383",
@@ -4898,7 +4898,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_asn.md",
-      "spec_line": 55,
+      "spec_line": 57,
       "claim_id": "R008",
       "section": "requirement",
       "raw_cell": "07062#L384-L395",
@@ -4920,7 +4920,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_asn.md",
-      "spec_line": 56,
+      "spec_line": 58,
       "claim_id": "R009",
       "section": "requirement",
       "raw_cell": "07062#L396",
@@ -4936,7 +4936,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_asn.md",
-      "spec_line": 57,
+      "spec_line": 59,
       "claim_id": "R010",
       "section": "requirement",
       "raw_cell": "07062#L398",
@@ -4952,7 +4952,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_asn.md",
-      "spec_line": 58,
+      "spec_line": 60,
       "claim_id": "R011",
       "section": "requirement",
       "raw_cell": "07062#L402-L406",
@@ -4974,7 +4974,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_asn.md",
-      "spec_line": 59,
+      "spec_line": 61,
       "claim_id": "R012",
       "section": "requirement",
       "raw_cell": "07062#L407-L414",
@@ -4996,7 +4996,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_asn.md",
-      "spec_line": 60,
+      "spec_line": 62,
       "claim_id": "R013",
       "section": "requirement",
       "raw_cell": "07062#L415-L416",
@@ -5013,7 +5013,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_asn.md",
-      "spec_line": 61,
+      "spec_line": 63,
       "claim_id": "R014",
       "section": "requirement",
       "raw_cell": "07062#L417-L443",
@@ -5035,7 +5035,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_asn.md",
-      "spec_line": 62,
+      "spec_line": 64,
       "claim_id": "R015",
       "section": "requirement",
       "raw_cell": "07062#L441-L449",
@@ -5057,7 +5057,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_asn.md",
-      "spec_line": 63,
+      "spec_line": 65,
       "claim_id": "R016",
       "section": "requirement",
       "raw_cell": "07062#L450-L452",
@@ -5075,7 +5075,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_asn.md",
-      "spec_line": 64,
+      "spec_line": 66,
       "claim_id": "R017",
       "section": "requirement",
       "raw_cell": "07062#L453-L454",
@@ -5092,7 +5092,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_asn.md",
-      "spec_line": 65,
+      "spec_line": 67,
       "claim_id": "R018",
       "section": "requirement",
       "raw_cell": "07062#L455-L465",
@@ -5114,7 +5114,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_asn.md",
-      "spec_line": 66,
+      "spec_line": 68,
       "claim_id": "R019",
       "section": "requirement",
       "raw_cell": "07062#L468-L476",
@@ -5136,7 +5136,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_asn.md",
-      "spec_line": 67,
+      "spec_line": 69,
       "claim_id": "R020",
       "section": "requirement",
       "raw_cell": "07062#L477-L510",
@@ -5158,7 +5158,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_asn.md",
-      "spec_line": 68,
+      "spec_line": 70,
       "claim_id": "R021",
       "section": "requirement",
       "raw_cell": "07062#L482-L484",
@@ -5176,7 +5176,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_asn.md",
-      "spec_line": 69,
+      "spec_line": 71,
       "claim_id": "R022",
       "section": "requirement",
       "raw_cell": "07062#L485-L487",
@@ -5194,7 +5194,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_asn.md",
-      "spec_line": 70,
+      "spec_line": 72,
       "claim_id": "R023",
       "section": "requirement",
       "raw_cell": "07062#L488-L495",
@@ -5216,7 +5216,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_asn.md",
-      "spec_line": 71,
+      "spec_line": 73,
       "claim_id": "R024",
       "section": "requirement",
       "raw_cell": "07062#L496-L498",
@@ -5234,7 +5234,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_asn.md",
-      "spec_line": 72,
+      "spec_line": 74,
       "claim_id": "R025",
       "section": "requirement",
       "raw_cell": "07062#L499-L508",
@@ -5256,7 +5256,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_asn.md",
-      "spec_line": 73,
+      "spec_line": 75,
       "claim_id": "R026",
       "section": "requirement",
       "raw_cell": "07062#L512-L513",
@@ -5467,7 +5467,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_confirm_paste_id.md",
-      "spec_line": 49,
+      "spec_line": 51,
       "claim_id": "R001",
       "section": "requirement",
       "raw_cell": "07062#L1809-L1810",
@@ -5484,7 +5484,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_confirm_paste_id.md",
-      "spec_line": 50,
+      "spec_line": 52,
       "claim_id": "R002",
       "section": "requirement",
       "raw_cell": "07062#L1813-L1816",
@@ -5506,7 +5506,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_confirm_paste_id.md",
-      "spec_line": 51,
+      "spec_line": 53,
       "claim_id": "R003",
       "section": "requirement",
       "raw_cell": "07062#L1817-L1819",
@@ -5524,7 +5524,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_confirm_paste_id.md",
-      "spec_line": 52,
+      "spec_line": 54,
       "claim_id": "R004",
       "section": "requirement",
       "raw_cell": "07062#L1820-L1823",
@@ -5546,7 +5546,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_confirm_paste_id.md",
-      "spec_line": 53,
+      "spec_line": 55,
       "claim_id": "R005",
       "section": "requirement",
       "raw_cell": "07062#L1824-L1830",
@@ -5568,7 +5568,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_confirm_paste_id.md",
-      "spec_line": 54,
+      "spec_line": 56,
       "claim_id": "R006",
       "section": "requirement",
       "raw_cell": "07062#L1836-L1852",
@@ -5590,7 +5590,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_confirm_paste_id.md",
-      "spec_line": 55,
+      "spec_line": 57,
       "claim_id": "R007",
       "section": "requirement",
       "raw_cell": "07062#L1853-L1858",
@@ -5612,7 +5612,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_confirm_paste_id.md",
-      "spec_line": 56,
+      "spec_line": 58,
       "claim_id": "R008",
       "section": "requirement",
       "raw_cell": "07062#L1859-L1864",
@@ -5634,7 +5634,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_confirm_paste_id.md",
-      "spec_line": 57,
+      "spec_line": 59,
       "claim_id": "R009",
       "section": "requirement",
       "raw_cell": "07062#L1866-L1868",
@@ -5652,7 +5652,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_confirm_paste_id.md",
-      "spec_line": 58,
+      "spec_line": 60,
       "claim_id": "R010",
       "section": "requirement",
       "raw_cell": "07062#L1872-L1876",
@@ -5674,7 +5674,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_confirm_paste_id.md",
-      "spec_line": 59,
+      "spec_line": 61,
       "claim_id": "R011",
       "section": "requirement",
       "raw_cell": "07062#L1877-L1880",
@@ -5696,7 +5696,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_confirm_paste_id.md",
-      "spec_line": 60,
+      "spec_line": 62,
       "claim_id": "R012",
       "section": "requirement",
       "raw_cell": "07062#L1881-L1886",
@@ -5718,7 +5718,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_confirm_paste_id.md",
-      "spec_line": 61,
+      "spec_line": 63,
       "claim_id": "R013",
       "section": "requirement",
       "raw_cell": "07062#L1887-L1891",
@@ -5740,7 +5740,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_confirm_paste_id.md",
-      "spec_line": 62,
+      "spec_line": 64,
       "claim_id": "R014",
       "section": "requirement",
       "raw_cell": "07062#L1895-L1900",
@@ -5762,7 +5762,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_confirm_paste_id.md",
-      "spec_line": 63,
+      "spec_line": 65,
       "claim_id": "R015",
       "section": "requirement",
       "raw_cell": "07062#L1901-L1904",
@@ -5784,7 +5784,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_confirm_paste_id.md",
-      "spec_line": 64,
+      "spec_line": 66,
       "claim_id": "R016",
       "section": "requirement",
       "raw_cell": "07062#L1905-L1916",
@@ -5806,7 +5806,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_confirm_paste_id.md",
-      "spec_line": 65,
+      "spec_line": 67,
       "claim_id": "R017",
       "section": "requirement",
       "raw_cell": "07062#L1917-L1922",
@@ -5828,7 +5828,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_confirm_paste_id.md",
-      "spec_line": 66,
+      "spec_line": 68,
       "claim_id": "R018",
       "section": "requirement",
       "raw_cell": "07062#L1925-L1931",
@@ -5850,7 +5850,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_confirm_paste_id.md",
-      "spec_line": 67,
+      "spec_line": 69,
       "claim_id": "R019",
       "section": "requirement",
       "raw_cell": "07062#L1932-L1938",
@@ -5872,7 +5872,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_confirm_paste_id.md",
-      "spec_line": 68,
+      "spec_line": 70,
       "claim_id": "R020",
       "section": "requirement",
       "raw_cell": "07062#L1940-L1947",
@@ -5894,7 +5894,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_confirm_paste_id.md",
-      "spec_line": 69,
+      "spec_line": 71,
       "claim_id": "R021",
       "section": "requirement",
       "raw_cell": "07062#L1948-L1956",
@@ -5916,7 +5916,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_confirm_paste_id.md",
-      "spec_line": 70,
+      "spec_line": 72,
       "claim_id": "R022",
       "section": "requirement",
       "raw_cell": "07062#L1959-L1977",
@@ -5938,7 +5938,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_confirm_paste_id.md",
-      "spec_line": 71,
+      "spec_line": 73,
       "claim_id": "R023",
       "section": "requirement",
       "raw_cell": "07062#L1978-L1982",
@@ -5960,7 +5960,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_confirm_paste_id.md",
-      "spec_line": 72,
+      "spec_line": 74,
       "claim_id": "R024",
       "section": "requirement",
       "raw_cell": "07062#L1983-L1984",
@@ -5977,7 +5977,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_confirm_paste_id.md",
-      "spec_line": 73,
+      "spec_line": 75,
       "claim_id": "R025",
       "section": "requirement",
       "raw_cell": "07062#L1985-L1988",
@@ -5999,7 +5999,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_confirm_paste_id.md",
-      "spec_line": 74,
+      "spec_line": 76,
       "claim_id": "R026",
       "section": "requirement",
       "raw_cell": "07062#L1992-L2000",
@@ -6021,7 +6021,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_confirm_paste_id.md",
-      "spec_line": 75,
+      "spec_line": 77,
       "claim_id": "R027",
       "section": "requirement",
       "raw_cell": "07062#L1957-L2009",
@@ -6043,7 +6043,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_confirm_paste_id.md",
-      "spec_line": 76,
+      "spec_line": 78,
       "claim_id": "R028",
       "section": "requirement",
       "raw_cell": "07062#L2010-L2015",
@@ -6065,7 +6065,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_confirm_paste_id.md",
-      "spec_line": 77,
+      "spec_line": 79,
       "claim_id": "R029",
       "section": "requirement",
       "raw_cell": "07062#L2017-L2020",
@@ -6087,7 +6087,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_confirm_paste_id.md",
-      "spec_line": 78,
+      "spec_line": 80,
       "claim_id": "R030",
       "section": "requirement",
       "raw_cell": "07062#L2021-L2035",
@@ -6109,7 +6109,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_confirm_paste_id.md",
-      "spec_line": 79,
+      "spec_line": 81,
       "claim_id": "R031",
       "section": "requirement",
       "raw_cell": "07062#L2039-L2044",
@@ -6131,7 +6131,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_confirm_paste_id.md",
-      "spec_line": 80,
+      "spec_line": 82,
       "claim_id": "R032",
       "section": "requirement",
       "raw_cell": "07062#L2045-L2046",
@@ -6148,7 +6148,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_confirm_paste_id.md",
-      "spec_line": 81,
+      "spec_line": 83,
       "claim_id": "R033",
       "section": "requirement",
       "raw_cell": "07062#L2051-L2057",
@@ -6170,7 +6170,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_confirm_paste_id.md",
-      "spec_line": 82,
+      "spec_line": 84,
       "claim_id": "R034",
       "section": "requirement",
       "raw_cell": "07062#L2058-L2065",
@@ -6192,7 +6192,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_date_rules.md",
-      "spec_line": 50,
+      "spec_line": 52,
       "claim_id": "R001",
       "section": "requirement",
       "raw_cell": "07062#L1070-L1077",
@@ -6214,7 +6214,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_date_rules.md",
-      "spec_line": 51,
+      "spec_line": 53,
       "claim_id": "R002",
       "section": "requirement",
       "raw_cell": "07062#L1078-L1085",
@@ -6236,7 +6236,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_date_rules.md",
-      "spec_line": 52,
+      "spec_line": 54,
       "claim_id": "R003",
       "section": "requirement",
       "raw_cell": "07062#L1086-L1090",
@@ -6258,7 +6258,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_date_rules.md",
-      "spec_line": 53,
+      "spec_line": 55,
       "claim_id": "R004",
       "section": "requirement",
       "raw_cell": "07062#L1091-L1102",
@@ -6280,7 +6280,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_date_rules.md",
-      "spec_line": 54,
+      "spec_line": 56,
       "claim_id": "R005",
       "section": "requirement",
       "raw_cell": "07062#L1099-L1100",
@@ -6297,7 +6297,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_date_rules.md",
-      "spec_line": 55,
+      "spec_line": 57,
       "claim_id": "R006",
       "section": "requirement",
       "raw_cell": "07062#L1103-L1105",
@@ -6315,7 +6315,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_date_rules.md",
-      "spec_line": 56,
+      "spec_line": 58,
       "claim_id": "R007",
       "section": "requirement",
       "raw_cell": "07062#L1106-L1114",
@@ -6337,7 +6337,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_date_rules.md",
-      "spec_line": 57,
+      "spec_line": 59,
       "claim_id": "R008",
       "section": "requirement",
       "raw_cell": "07062#L1115-L1137",
@@ -6359,7 +6359,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_date_rules.md",
-      "spec_line": 58,
+      "spec_line": 60,
       "claim_id": "R009",
       "section": "requirement",
       "raw_cell": "07062#L1138-L1159",
@@ -6381,7 +6381,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_date_rules.md",
-      "spec_line": 59,
+      "spec_line": 61,
       "claim_id": "R010",
       "section": "requirement",
       "raw_cell": "07062#L1160-L1162",
@@ -6399,7 +6399,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_date_rules.md",
-      "spec_line": 60,
+      "spec_line": 62,
       "claim_id": "R011",
       "section": "requirement",
       "raw_cell": "07062#L1163-L1166",
@@ -6421,7 +6421,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_date_rules.md",
-      "spec_line": 61,
+      "spec_line": 63,
       "claim_id": "R012",
       "section": "requirement",
       "raw_cell": "07062#L1168-L1175",
@@ -6443,7 +6443,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_date_rules.md",
-      "spec_line": 62,
+      "spec_line": 64,
       "claim_id": "R013",
       "section": "requirement",
       "raw_cell": "07062#L1176-L1181",
@@ -6465,7 +6465,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_date_rules.md",
-      "spec_line": 63,
+      "spec_line": 65,
       "claim_id": "R014",
       "section": "requirement",
       "raw_cell": "07062#L1182-L1190",
@@ -6487,7 +6487,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_date_rules.md",
-      "spec_line": 64,
+      "spec_line": 66,
       "claim_id": "R015",
       "section": "requirement",
       "raw_cell": "07062#L1192-L1203",
@@ -6509,7 +6509,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_date_rules.md",
-      "spec_line": 65,
+      "spec_line": 67,
       "claim_id": "R016",
       "section": "requirement",
       "raw_cell": "07062#L1208-L1212",
@@ -6531,7 +6531,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_date_rules.md",
-      "spec_line": 66,
+      "spec_line": 68,
       "claim_id": "R017",
       "section": "requirement",
       "raw_cell": "07062#L1216-L1224",
@@ -6553,7 +6553,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_date_rules.md",
-      "spec_line": 67,
+      "spec_line": 69,
       "claim_id": "R018",
       "section": "requirement",
       "raw_cell": "07062#L1225-L1232",
@@ -6575,7 +6575,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_date_rules.md",
-      "spec_line": 68,
+      "spec_line": 70,
       "claim_id": "R019",
       "section": "requirement",
       "raw_cell": "07062#L1233-L1256",
@@ -6597,7 +6597,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_date_rules.md",
-      "spec_line": 69,
+      "spec_line": 71,
       "claim_id": "R020",
       "section": "requirement",
       "raw_cell": "07062#L1257-L1264",
@@ -6619,7 +6619,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_date_rules.md",
-      "spec_line": 70,
+      "spec_line": 72,
       "claim_id": "R021",
       "section": "requirement",
       "raw_cell": "07062#L1268-L1287",
@@ -6641,7 +6641,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_date_rules.md",
-      "spec_line": 71,
+      "spec_line": 73,
       "claim_id": "R022",
       "section": "requirement",
       "raw_cell": "07062#L1268-L1300",
@@ -6663,7 +6663,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_date_rules.md",
-      "spec_line": 72,
+      "spec_line": 74,
       "claim_id": "R023",
       "section": "requirement",
       "raw_cell": "07062#L1306-L1320",
@@ -6685,7 +6685,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_date_rules.md",
-      "spec_line": 73,
+      "spec_line": 75,
       "claim_id": "R024",
       "section": "requirement",
       "raw_cell": "07062#L1321-L1334",
@@ -6707,7 +6707,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_date_rules.md",
-      "spec_line": 74,
+      "spec_line": 76,
       "claim_id": "R025",
       "section": "requirement",
       "raw_cell": "07062#L1333-L1338",
@@ -6729,7 +6729,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_date_rules.md",
-      "spec_line": 75,
+      "spec_line": 77,
       "claim_id": "R026",
       "section": "requirement",
       "raw_cell": "07062#L1339-L1352",
@@ -6751,7 +6751,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_date_rules.md",
-      "spec_line": 76,
+      "spec_line": 78,
       "claim_id": "R027",
       "section": "requirement",
       "raw_cell": "07062#L1353-L1358",
@@ -6773,7 +6773,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_date_rules.md",
-      "spec_line": 77,
+      "spec_line": 79,
       "claim_id": "R028",
       "section": "requirement",
       "raw_cell": "07062#L1363-L1367",
@@ -6795,7 +6795,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_date_rules.md",
-      "spec_line": 78,
+      "spec_line": 80,
       "claim_id": "R029",
       "section": "requirement",
       "raw_cell": "07062#L1368-L1380",
@@ -6817,7 +6817,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_date_rules.md",
-      "spec_line": 79,
+      "spec_line": 81,
       "claim_id": "R030",
       "section": "requirement",
       "raw_cell": "07062#L1457-L1463",
@@ -6839,7 +6839,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_date_rules.md",
-      "spec_line": 80,
+      "spec_line": 82,
       "claim_id": "R031",
       "section": "requirement",
       "raw_cell": "07062#L1464-L1469",
@@ -6861,7 +6861,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_date_rules.md",
-      "spec_line": 81,
+      "spec_line": 83,
       "claim_id": "R032",
       "section": "requirement",
       "raw_cell": "07062#L1381-L1395",
@@ -6883,7 +6883,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_date_rules.md",
-      "spec_line": 82,
+      "spec_line": 84,
       "claim_id": "R033",
       "section": "requirement",
       "raw_cell": "07062#L1383-L1395",
@@ -6905,7 +6905,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_date_rules.md",
-      "spec_line": 83,
+      "spec_line": 85,
       "claim_id": "R034",
       "section": "requirement",
       "raw_cell": "07062#L1397-L1416",
@@ -6927,7 +6927,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_date_rules.md",
-      "spec_line": 84,
+      "spec_line": 86,
       "claim_id": "R035",
       "section": "requirement",
       "raw_cell": "07062#L1419-L1430",
@@ -6949,7 +6949,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_date_rules.md",
-      "spec_line": 85,
+      "spec_line": 87,
       "claim_id": "R036",
       "section": "requirement",
       "raw_cell": "07062#L1419-L1434",
@@ -6971,7 +6971,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_date_rules.md",
-      "spec_line": 86,
+      "spec_line": 88,
       "claim_id": "R037",
       "section": "requirement",
       "raw_cell": "07062#L1435-L1448",
@@ -6993,7 +6993,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_date_rules.md",
-      "spec_line": 87,
+      "spec_line": 89,
       "claim_id": "R038",
       "section": "requirement",
       "raw_cell": "07062#L1449-L1456",
@@ -7015,7 +7015,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_date_rules.md",
-      "spec_line": 88,
+      "spec_line": 90,
       "claim_id": "R039",
       "section": "requirement",
       "raw_cell": "07062#L1473-L1479",
@@ -7037,7 +7037,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_date_rules.md",
-      "spec_line": 89,
+      "spec_line": 91,
       "claim_id": "R040",
       "section": "requirement",
       "raw_cell": "07062#L1480-L1495",
@@ -7059,7 +7059,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_fabric.md",
-      "spec_line": 48,
+      "spec_line": 50,
       "claim_id": "R001",
       "section": "requirement",
       "raw_cell": "07062#L1679-L1686",
@@ -7081,7 +7081,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_fabric.md",
-      "spec_line": 49,
+      "spec_line": 51,
       "claim_id": "R002",
       "section": "requirement",
       "raw_cell": "07062#L1688-L1705",
@@ -7103,7 +7103,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_fabric.md",
-      "spec_line": 50,
+      "spec_line": 52,
       "claim_id": "R003",
       "section": "requirement",
       "raw_cell": "07062#L1692-L1695",
@@ -7125,7 +7125,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_fabric.md",
-      "spec_line": 51,
+      "spec_line": 53,
       "claim_id": "R004",
       "section": "requirement",
       "raw_cell": "07062#L1696-L1697",
@@ -7142,7 +7142,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_fabric.md",
-      "spec_line": 52,
+      "spec_line": 54,
       "claim_id": "R005",
       "section": "requirement",
       "raw_cell": "07062#L1698",
@@ -7158,7 +7158,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_fabric.md",
-      "spec_line": 53,
+      "spec_line": 55,
       "claim_id": "R006",
       "section": "requirement",
       "raw_cell": "07062#L1699-L1701",
@@ -7176,7 +7176,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_fabric.md",
-      "spec_line": 54,
+      "spec_line": 56,
       "claim_id": "R007",
       "section": "requirement",
       "raw_cell": "07062#L1702-L1705",
@@ -7198,7 +7198,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_fabric.md",
-      "spec_line": 55,
+      "spec_line": 57,
       "claim_id": "R008",
       "section": "requirement",
       "raw_cell": "07062#L1705",
@@ -7214,7 +7214,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_fabric.md",
-      "spec_line": 56,
+      "spec_line": 58,
       "claim_id": "R009",
       "section": "requirement",
       "raw_cell": "07062#L1709-L1717",
@@ -7236,7 +7236,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_fabric.md",
-      "spec_line": 57,
+      "spec_line": 59,
       "claim_id": "R010",
       "section": "requirement",
       "raw_cell": "07062#L1722",
@@ -7252,7 +7252,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_fabric.md",
-      "spec_line": 58,
+      "spec_line": 60,
       "claim_id": "R011",
       "section": "requirement",
       "raw_cell": "07062#L1726-L1727",
@@ -7269,7 +7269,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_fabric.md",
-      "spec_line": 59,
+      "spec_line": 61,
       "claim_id": "R012",
       "section": "requirement",
       "raw_cell": "07062#L1728-L1730",
@@ -7287,7 +7287,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_fabric.md",
-      "spec_line": 60,
+      "spec_line": 62,
       "claim_id": "R013",
       "section": "requirement",
       "raw_cell": "07062#L1731-L1734",
@@ -7831,7 +7831,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_invoice.md",
-      "spec_line": 48,
+      "spec_line": 50,
       "claim_id": "R001",
       "section": "requirement",
       "raw_cell": "07062#L1500-L1502",
@@ -7849,7 +7849,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_invoice.md",
-      "spec_line": 49,
+      "spec_line": 51,
       "claim_id": "R002",
       "section": "requirement",
       "raw_cell": "07062#L1503-L1512",
@@ -7871,7 +7871,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_invoice.md",
-      "spec_line": 50,
+      "spec_line": 52,
       "claim_id": "R003",
       "section": "requirement",
       "raw_cell": "07062#L1516-L1527",
@@ -7893,7 +7893,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_invoice.md",
-      "spec_line": 51,
+      "spec_line": 53,
       "claim_id": "R004",
       "section": "requirement",
       "raw_cell": "07062#L1528-L1538",
@@ -7915,7 +7915,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_invoice.md",
-      "spec_line": 52,
+      "spec_line": 54,
       "claim_id": "R005",
       "section": "requirement",
       "raw_cell": "07062#L1539-L1543",
@@ -7937,7 +7937,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_invoice.md",
-      "spec_line": 53,
+      "spec_line": 55,
       "claim_id": "R006",
       "section": "requirement",
       "raw_cell": "07062#L1544-L1553",
@@ -7959,7 +7959,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_invoice.md",
-      "spec_line": 54,
+      "spec_line": 56,
       "claim_id": "R007",
       "section": "requirement",
       "raw_cell": "07062#L1554-L1561",
@@ -7981,7 +7981,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_invoice.md",
-      "spec_line": 55,
+      "spec_line": 57,
       "claim_id": "R008",
       "section": "requirement",
       "raw_cell": "07062#L1562-L1564",
@@ -7999,7 +7999,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_invoice.md",
-      "spec_line": 56,
+      "spec_line": 58,
       "claim_id": "R009",
       "section": "requirement",
       "raw_cell": "07062#L1565",
@@ -8015,7 +8015,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_invoice.md",
-      "spec_line": 57,
+      "spec_line": 59,
       "claim_id": "R010",
       "section": "requirement",
       "raw_cell": "07062#L1566-L1568",
@@ -8033,7 +8033,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_invoice.md",
-      "spec_line": 58,
+      "spec_line": 60,
       "claim_id": "R011",
       "section": "requirement",
       "raw_cell": "07062#L1569",
@@ -8049,7 +8049,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_invoice.md",
-      "spec_line": 59,
+      "spec_line": 61,
       "claim_id": "R012",
       "section": "requirement",
       "raw_cell": "07062#L1570-L1572",
@@ -8067,7 +8067,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_invoice.md",
-      "spec_line": 60,
+      "spec_line": 62,
       "claim_id": "R013",
       "section": "requirement",
       "raw_cell": "07062#L1573",
@@ -8083,7 +8083,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_invoice.md",
-      "spec_line": 61,
+      "spec_line": 63,
       "claim_id": "R014",
       "section": "requirement",
       "raw_cell": "07062#L1579-L1583",
@@ -8105,7 +8105,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_invoice.md",
-      "spec_line": 62,
+      "spec_line": 64,
       "claim_id": "R015",
       "section": "requirement",
       "raw_cell": "07062#L1587-L1589",
@@ -8123,7 +8123,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_invoice.md",
-      "spec_line": 63,
+      "spec_line": 65,
       "claim_id": "R016",
       "section": "requirement",
       "raw_cell": "07062#L1599-L1601",
@@ -8141,7 +8141,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_invoice.md",
-      "spec_line": 64,
+      "spec_line": 66,
       "claim_id": "R017",
       "section": "requirement",
       "raw_cell": "07062#L1602-L1609",
@@ -8163,7 +8163,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_invoice.md",
-      "spec_line": 65,
+      "spec_line": 67,
       "claim_id": "R018",
       "section": "requirement",
       "raw_cell": "07062#L1610-L1611",
@@ -8180,7 +8180,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_invoice.md",
-      "spec_line": 66,
+      "spec_line": 68,
       "claim_id": "R019",
       "section": "requirement",
       "raw_cell": "07062#L1613-L1613",
@@ -8196,7 +8196,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_invoice.md",
-      "spec_line": 67,
+      "spec_line": 69,
       "claim_id": "R020",
       "section": "requirement",
       "raw_cell": "07062#L1618-L1621",
@@ -8218,7 +8218,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_invoice.md",
-      "spec_line": 68,
+      "spec_line": 70,
       "claim_id": "R021",
       "section": "requirement",
       "raw_cell": "07062#L1623-L1631",
@@ -8240,7 +8240,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_invoice.md",
-      "spec_line": 69,
+      "spec_line": 71,
       "claim_id": "R022",
       "section": "requirement",
       "raw_cell": "07062#L1636-L1636",
@@ -8256,7 +8256,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_invoice.md",
-      "spec_line": 70,
+      "spec_line": 72,
       "claim_id": "R023",
       "section": "requirement",
       "raw_cell": "07062#L1642-L1647",
@@ -8278,7 +8278,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_invoice.md",
-      "spec_line": 71,
+      "spec_line": 73,
       "claim_id": "R024",
       "section": "requirement",
       "raw_cell": "07062#L1644-L1655",
@@ -8300,7 +8300,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_invoice.md",
-      "spec_line": 72,
+      "spec_line": 74,
       "claim_id": "R025",
       "section": "requirement",
       "raw_cell": "07062#L1649-L1655",
@@ -8322,7 +8322,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_invoice.md",
-      "spec_line": 73,
+      "spec_line": 75,
       "claim_id": "R026",
       "section": "requirement",
       "raw_cell": "07062#L1657-L1662",
@@ -8344,7 +8344,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_invoice.md",
-      "spec_line": 74,
+      "spec_line": 76,
       "claim_id": "R027",
       "section": "requirement",
       "raw_cell": "07062#L1663-L1666",
@@ -8366,7 +8366,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_invoice.md",
-      "spec_line": 75,
+      "spec_line": 77,
       "claim_id": "R028",
       "section": "requirement",
       "raw_cell": "07062#L1667-L1668",
@@ -8590,7 +8590,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_overview.md",
-      "spec_line": 51,
+      "spec_line": 53,
       "claim_id": "R001",
       "section": "requirement",
       "raw_cell": "07062#L189-L190",
@@ -8607,7 +8607,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_overview.md",
-      "spec_line": 52,
+      "spec_line": 54,
       "claim_id": "R002",
       "section": "requirement",
       "raw_cell": "07062#L191-L192",
@@ -8624,7 +8624,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_overview.md",
-      "spec_line": 53,
+      "spec_line": 55,
       "claim_id": "R003",
       "section": "requirement",
       "raw_cell": "07062#L198-L207",
@@ -8646,7 +8646,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_overview.md",
-      "spec_line": 54,
+      "spec_line": 56,
       "claim_id": "R004",
       "section": "requirement",
       "raw_cell": "07062#L208-L209",
@@ -8663,7 +8663,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_overview.md",
-      "spec_line": 55,
+      "spec_line": 57,
       "claim_id": "R005",
       "section": "requirement",
       "raw_cell": "07062#L211-L216",
@@ -8685,7 +8685,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_overview.md",
-      "spec_line": 56,
+      "spec_line": 58,
       "claim_id": "R006",
       "section": "requirement",
       "raw_cell": "07062#L223-L224",
@@ -8702,7 +8702,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_packing_list.md",
-      "spec_line": 51,
+      "spec_line": 53,
       "claim_id": "R001",
       "section": "requirement",
       "raw_cell": "07062#L2182-L2186",
@@ -8724,7 +8724,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_packing_list.md",
-      "spec_line": 52,
+      "spec_line": 54,
       "claim_id": "R002",
       "section": "requirement",
       "raw_cell": "07062#L2188-L2195",
@@ -8746,7 +8746,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_packing_list.md",
-      "spec_line": 53,
+      "spec_line": 55,
       "claim_id": "R003",
       "section": "requirement",
       "raw_cell": "07062#L2196-L2203",
@@ -8768,7 +8768,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_packing_list.md",
-      "spec_line": 54,
+      "spec_line": 56,
       "claim_id": "R004",
       "section": "requirement",
       "raw_cell": "07062#L2204-L2218",
@@ -8790,7 +8790,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_packing_list.md",
-      "spec_line": 55,
+      "spec_line": 57,
       "claim_id": "R005",
       "section": "requirement",
       "raw_cell": "07062#L2220-L2231",
@@ -8812,7 +8812,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_packing_list.md",
-      "spec_line": 56,
+      "spec_line": 58,
       "claim_id": "R006",
       "section": "requirement",
       "raw_cell": "07062#L2233-L2252",
@@ -8834,7 +8834,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_packing_list.md",
-      "spec_line": 57,
+      "spec_line": 59,
       "claim_id": "R007",
       "section": "requirement",
       "raw_cell": "07062#L2253-L2255",
@@ -8852,7 +8852,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_packing_list.md",
-      "spec_line": 58,
+      "spec_line": 60,
       "claim_id": "R008",
       "section": "requirement",
       "raw_cell": "07062#L2256-L2269",
@@ -8874,7 +8874,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_packing_list.md",
-      "spec_line": 59,
+      "spec_line": 61,
       "claim_id": "R009",
       "section": "requirement",
       "raw_cell": "07062#L2262-L2266",
@@ -8896,7 +8896,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_packing_list.md",
-      "spec_line": 60,
+      "spec_line": 62,
       "claim_id": "R010",
       "section": "requirement",
       "raw_cell": "07062#L2270-L2276",
@@ -8918,7 +8918,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_packing_list.md",
-      "spec_line": 61,
+      "spec_line": 63,
       "claim_id": "R011",
       "section": "requirement",
       "raw_cell": "07062#L2277-L2289",
@@ -8940,7 +8940,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_packing_list.md",
-      "spec_line": 62,
+      "spec_line": 64,
       "claim_id": "R012",
       "section": "requirement",
       "raw_cell": "07062#L2290-L2300",
@@ -8962,7 +8962,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_packing_list.md",
-      "spec_line": 63,
+      "spec_line": 65,
       "claim_id": "R013",
       "section": "requirement",
       "raw_cell": "07062#L2305-L2313",
@@ -8984,7 +8984,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_packing_list.md",
-      "spec_line": 64,
+      "spec_line": 66,
       "claim_id": "R014",
       "section": "requirement",
       "raw_cell": "07062#L2314-L2327",
@@ -9006,7 +9006,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_packing_list.md",
-      "spec_line": 65,
+      "spec_line": 67,
       "claim_id": "R015",
       "section": "requirement",
       "raw_cell": "07062#L2329-L2346",
@@ -9028,7 +9028,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_packing_list.md",
-      "spec_line": 66,
+      "spec_line": 68,
       "claim_id": "R016",
       "section": "requirement",
       "raw_cell": "07062#L2348-L2363",
@@ -9050,7 +9050,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_packing_list.md",
-      "spec_line": 67,
+      "spec_line": 69,
       "claim_id": "R017",
       "section": "requirement",
       "raw_cell": "07062#L2366-L2388",
@@ -9072,7 +9072,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_packing_list.md",
-      "spec_line": 68,
+      "spec_line": 70,
       "claim_id": "R018",
       "section": "requirement",
       "raw_cell": "07062#L2389-L2412",
@@ -9094,7 +9094,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_packing_list.md",
-      "spec_line": 69,
+      "spec_line": 71,
       "claim_id": "R019",
       "section": "requirement",
       "raw_cell": "07062#L2415-L2429",
@@ -9116,7 +9116,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_packing_list.md",
-      "spec_line": 70,
+      "spec_line": 72,
       "claim_id": "R020",
       "section": "requirement",
       "raw_cell": "07062#L2430-L2434",
@@ -9138,7 +9138,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_packing_list.md",
-      "spec_line": 71,
+      "spec_line": 73,
       "claim_id": "R021",
       "section": "requirement",
       "raw_cell": "07062#L2435-L2439",
@@ -9160,7 +9160,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_packing_list.md",
-      "spec_line": 72,
+      "spec_line": 74,
       "claim_id": "R022",
       "section": "requirement",
       "raw_cell": "07062#L2440-L2451",
@@ -9182,7 +9182,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_packing_list.md",
-      "spec_line": 73,
+      "spec_line": 75,
       "claim_id": "R023",
       "section": "requirement",
       "raw_cell": "07062#L2456-L2462",
@@ -9204,7 +9204,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_packing_list.md",
-      "spec_line": 74,
+      "spec_line": 76,
       "claim_id": "R024",
       "section": "requirement",
       "raw_cell": "07062#L2465-L2477",
@@ -9226,7 +9226,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_packing_list.md",
-      "spec_line": 75,
+      "spec_line": 77,
       "claim_id": "R025",
       "section": "requirement",
       "raw_cell": "07062#L2478-L2491",
@@ -9248,7 +9248,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_packing_list.md",
-      "spec_line": 76,
+      "spec_line": 78,
       "claim_id": "R026",
       "section": "requirement",
       "raw_cell": "07062#L2517-L2524",
@@ -9270,7 +9270,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_packing_list.md",
-      "spec_line": 77,
+      "spec_line": 79,
       "claim_id": "R027",
       "section": "requirement",
       "raw_cell": "07062#L2525-L2530",
@@ -9292,7 +9292,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_packing_list.md",
-      "spec_line": 78,
+      "spec_line": 80,
       "claim_id": "R028",
       "section": "requirement",
       "raw_cell": "07062#L2531-L2545",
@@ -9314,7 +9314,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_packing_list.md",
-      "spec_line": 79,
+      "spec_line": 81,
       "claim_id": "R029",
       "section": "requirement",
       "raw_cell": "07062#L2546-L2555",
@@ -9336,7 +9336,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_packing_list.md",
-      "spec_line": 80,
+      "spec_line": 82,
       "claim_id": "R030",
       "section": "requirement",
       "raw_cell": "07062#L2557-L2569",
@@ -9358,7 +9358,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_packing_list.md",
-      "spec_line": 81,
+      "spec_line": 83,
       "claim_id": "R031",
       "section": "requirement",
       "raw_cell": "07062#L2570-L2575",
@@ -9604,7 +9604,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_vas.md",
-      "spec_line": 50,
+      "spec_line": 52,
       "claim_id": "R001",
       "section": "requirement",
       "raw_cell": "07062#L523",
@@ -9620,7 +9620,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_vas.md",
-      "spec_line": 51,
+      "spec_line": 53,
       "claim_id": "R002",
       "section": "requirement",
       "raw_cell": "07062#L524-L528",
@@ -9642,7 +9642,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_vas.md",
-      "spec_line": 52,
+      "spec_line": 54,
       "claim_id": "R003",
       "section": "requirement",
       "raw_cell": "07062#L530-L533",
@@ -9664,7 +9664,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_vas.md",
-      "spec_line": 53,
+      "spec_line": 55,
       "claim_id": "R004",
       "section": "requirement",
       "raw_cell": "07062#L534-L536",
@@ -9682,7 +9682,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_vas.md",
-      "spec_line": 54,
+      "spec_line": 56,
       "claim_id": "R005",
       "section": "requirement",
       "raw_cell": "07062#L537-L544",
@@ -9704,7 +9704,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_vas.md",
-      "spec_line": 55,
+      "spec_line": 57,
       "claim_id": "R006",
       "section": "requirement",
       "raw_cell": "07062#L545-L577",
@@ -9726,7 +9726,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_vas.md",
-      "spec_line": 56,
+      "spec_line": 58,
       "claim_id": "R007",
       "section": "requirement",
       "raw_cell": "07062#L564-L575",
@@ -9748,7 +9748,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_vas.md",
-      "spec_line": 57,
+      "spec_line": 59,
       "claim_id": "R008",
       "section": "requirement",
       "raw_cell": "07062#L580-L621",
@@ -9770,7 +9770,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_vas.md",
-      "spec_line": 58,
+      "spec_line": 60,
       "claim_id": "R009",
       "section": "requirement",
       "raw_cell": "07062#L594-L601",
@@ -9792,7 +9792,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_vas.md",
-      "spec_line": 59,
+      "spec_line": 61,
       "claim_id": "R010",
       "section": "requirement",
       "raw_cell": "07062#L607-L614",
@@ -9814,7 +9814,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_vas.md",
-      "spec_line": 60,
+      "spec_line": 62,
       "claim_id": "R011",
       "section": "requirement",
       "raw_cell": "07062#L615-L621",
@@ -9836,7 +9836,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_vas.md",
-      "spec_line": 61,
+      "spec_line": 63,
       "claim_id": "R012",
       "section": "requirement",
       "raw_cell": "07062#L630-L653",
@@ -9858,7 +9858,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_vas.md",
-      "spec_line": 62,
+      "spec_line": 64,
       "claim_id": "R013",
       "section": "requirement",
       "raw_cell": "07062#L654-L673",
@@ -9880,7 +9880,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_vas.md",
-      "spec_line": 63,
+      "spec_line": 65,
       "claim_id": "R014",
       "section": "requirement",
       "raw_cell": "07062#L664-L673",
@@ -9902,7 +9902,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_vas.md",
-      "spec_line": 64,
+      "spec_line": 66,
       "claim_id": "R015",
       "section": "requirement",
       "raw_cell": "07062#L674-L678",
@@ -9924,7 +9924,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_vas.md",
-      "spec_line": 65,
+      "spec_line": 67,
       "claim_id": "R016",
       "section": "requirement",
       "raw_cell": "07062#L678-L681",
@@ -9946,7 +9946,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_vas.md",
-      "spec_line": 66,
+      "spec_line": 68,
       "claim_id": "R017",
       "section": "requirement",
       "raw_cell": "07062#L682-L685",
@@ -9968,7 +9968,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_vas.md",
-      "spec_line": 67,
+      "spec_line": 69,
       "claim_id": "R018",
       "section": "requirement",
       "raw_cell": "07062#L686-L689",
@@ -9990,7 +9990,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_vas.md",
-      "spec_line": 68,
+      "spec_line": 70,
       "claim_id": "R019",
       "section": "requirement",
       "raw_cell": "07062#L690-L691",
@@ -10007,7 +10007,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_vas.md",
-      "spec_line": 69,
+      "spec_line": 71,
       "claim_id": "R020",
       "section": "requirement",
       "raw_cell": "07062#L692-L694",
@@ -10025,7 +10025,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_vas.md",
-      "spec_line": 70,
+      "spec_line": 72,
       "claim_id": "R021",
       "section": "requirement",
       "raw_cell": "07062#L698-L703",
@@ -10047,7 +10047,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_vas.md",
-      "spec_line": 71,
+      "spec_line": 73,
       "claim_id": "R022",
       "section": "requirement",
       "raw_cell": "07062#L704-L711",
@@ -10069,7 +10069,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_vas.md",
-      "spec_line": 72,
+      "spec_line": 74,
       "claim_id": "R023",
       "section": "requirement",
       "raw_cell": "07062#L712-L717",
@@ -10091,7 +10091,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_vas.md",
-      "spec_line": 73,
+      "spec_line": 75,
       "claim_id": "R024",
       "section": "requirement",
       "raw_cell": "07062#L722-L724",
@@ -10109,7 +10109,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_vas.md",
-      "spec_line": 74,
+      "spec_line": 76,
       "claim_id": "R025",
       "section": "requirement",
       "raw_cell": "07062#L725-L731",
@@ -10131,7 +10131,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_vas.md",
-      "spec_line": 75,
+      "spec_line": 77,
       "claim_id": "R026",
       "section": "requirement",
       "raw_cell": "07062#L736-L739",
@@ -10153,7 +10153,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_vas.md",
-      "spec_line": 76,
+      "spec_line": 78,
       "claim_id": "R027",
       "section": "requirement",
       "raw_cell": "07062#L740-L742",
@@ -10171,7 +10171,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_vas.md",
-      "spec_line": 77,
+      "spec_line": 79,
       "claim_id": "R028",
       "section": "requirement",
       "raw_cell": "07062#L743-L745",
@@ -10189,7 +10189,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_vas.md",
-      "spec_line": 78,
+      "spec_line": 80,
       "claim_id": "R029",
       "section": "requirement",
       "raw_cell": "07062#L746-L747",
@@ -10206,7 +10206,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_vas.md",
-      "spec_line": 79,
+      "spec_line": 81,
       "claim_id": "R030",
       "section": "requirement",
       "raw_cell": "07062#L751-L754",
@@ -10228,7 +10228,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_vas.md",
-      "spec_line": 80,
+      "spec_line": 82,
       "claim_id": "R031",
       "section": "requirement",
       "raw_cell": "07062#L757-L766",
@@ -10250,7 +10250,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_vas.md",
-      "spec_line": 81,
+      "spec_line": 83,
       "claim_id": "R032",
       "section": "requirement",
       "raw_cell": "07062#L770-L773",
@@ -10272,7 +10272,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_vas.md",
-      "spec_line": 82,
+      "spec_line": 84,
       "claim_id": "R033",
       "section": "requirement",
       "raw_cell": "07062#L774-L777",
@@ -10294,7 +10294,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_vas.md",
-      "spec_line": 83,
+      "spec_line": 85,
       "claim_id": "R034",
       "section": "requirement",
       "raw_cell": "07062#L778-L783",
@@ -10316,7 +10316,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_vas_manual.md",
-      "spec_line": 50,
+      "spec_line": 52,
       "claim_id": "R001",
       "section": "requirement",
       "raw_cell": "07062#L2076-L2079",
@@ -10338,7 +10338,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_vas_manual.md",
-      "spec_line": 51,
+      "spec_line": 53,
       "claim_id": "R002",
       "section": "requirement",
       "raw_cell": "07062#L2080-L2085",
@@ -10360,7 +10360,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_vas_manual.md",
-      "spec_line": 52,
+      "spec_line": 54,
       "claim_id": "R003",
       "section": "requirement",
       "raw_cell": "07062#L2088-L2091",
@@ -10382,7 +10382,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_vas_manual.md",
-      "spec_line": 53,
+      "spec_line": 55,
       "claim_id": "R004",
       "section": "requirement",
       "raw_cell": "07062#L2092-L2103",
@@ -10404,7 +10404,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_vas_manual.md",
-      "spec_line": 54,
+      "spec_line": 56,
       "claim_id": "R005",
       "section": "requirement",
       "raw_cell": "07062#L2104-L2107",
@@ -10426,7 +10426,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_vas_manual.md",
-      "spec_line": 55,
+      "spec_line": 57,
       "claim_id": "R006",
       "section": "requirement",
       "raw_cell": "07062#L2108-L2110",
@@ -10444,7 +10444,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_vas_manual.md",
-      "spec_line": 56,
+      "spec_line": 58,
       "claim_id": "R007",
       "section": "requirement",
       "raw_cell": "07062#L2111-L2117",
@@ -10466,7 +10466,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_vas_manual.md",
-      "spec_line": 57,
+      "spec_line": 59,
       "claim_id": "R008",
       "section": "requirement",
       "raw_cell": "07062#L2118-L2122",
@@ -10488,7 +10488,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_vas_manual.md",
-      "spec_line": 58,
+      "spec_line": 60,
       "claim_id": "R009",
       "section": "requirement",
       "raw_cell": "07062#L2123-L2125",
@@ -10506,7 +10506,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_vas_manual.md",
-      "spec_line": 59,
+      "spec_line": 61,
       "claim_id": "R010",
       "section": "requirement",
       "raw_cell": "07062#L2126-L2130",
@@ -10528,7 +10528,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_vas_manual.md",
-      "spec_line": 60,
+      "spec_line": 62,
       "claim_id": "R011",
       "section": "requirement",
       "raw_cell": "07062#L2131-L2137",
@@ -10550,7 +10550,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_vas_manual.md",
-      "spec_line": 61,
+      "spec_line": 63,
       "claim_id": "R012",
       "section": "requirement",
       "raw_cell": "07062#L2138-L2144",
@@ -10572,7 +10572,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_vas_manual.md",
-      "spec_line": 62,
+      "spec_line": 64,
       "claim_id": "R013",
       "section": "requirement",
       "raw_cell": "07062#L2145-L2152",
@@ -10594,7 +10594,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_vas_manual.md",
-      "spec_line": 63,
+      "spec_line": 65,
       "claim_id": "R014",
       "section": "requirement",
       "raw_cell": "07062#L2153-L2156",
@@ -10616,7 +10616,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_vas_manual.md",
-      "spec_line": 64,
+      "spec_line": 66,
       "claim_id": "R015",
       "section": "requirement",
       "raw_cell": "07062#L2157-L2163",
@@ -10638,7 +10638,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_vas_manual.md",
-      "spec_line": 65,
+      "spec_line": 67,
       "claim_id": "R016",
       "section": "requirement",
       "raw_cell": "07062#L2164-L2165",
@@ -10655,7 +10655,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_vas_manual.md",
-      "spec_line": 66,
+      "spec_line": 68,
       "claim_id": "R017",
       "section": "requirement",
       "raw_cell": "07062#L2166-L2168",
@@ -10673,7 +10673,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_vas_manual.md",
-      "spec_line": 67,
+      "spec_line": 69,
       "claim_id": "R018",
       "section": "requirement",
       "raw_cell": "07062#L2169-L2171",
@@ -10691,7 +10691,7 @@
     },
     {
       "spec_file": "wiki/project_hasaki/features/stub_receiving_po_vas_manual.md",
-      "spec_line": 68,
+      "spec_line": 70,
       "claim_id": "R019",
       "section": "requirement",
       "raw_cell": "07062#L2176-L2176",

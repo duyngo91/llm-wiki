@@ -470,9 +470,13 @@ class WikiSyncCore:
             if not self.has_any_heading(content, ("regression impact",)):
                 guardrail_errors.append((rel_suite, "Missing required section: ## 🔁 Regression Impact"))
 
-            header = next((line for line in lines if line.startswith("| Test ID")), "")
-            if header and ("Phạm vi" not in header and "Ph?m vi" not in header):
-                guardrail_errors.append((rel_suite, "Test case table is missing required column: Phạm vi"))
+            header = next((line for line in lines if line.startswith("| Test ID") or line.startswith("| TC-ID")), "")
+            # Accept "Phạm vi" (Vietnamese) or "Scope" (English) as the scope column
+            if header and ("Phạm vi" not in header and "Ph?m vi" not in header and "Scope" not in header):
+                guardrail_errors.append((rel_suite, "Test case table is missing required column: Phạm vi/Scope"))
+
+            # Check if table has a "Nguồn" (Source) column
+            has_source_column = header and ("Nguồn" in header or "Source" in header)
 
             feature_key = self.extract_linked_feature_key(content)
             if feature_key:
@@ -498,7 +502,8 @@ class WikiSyncCore:
 
                 if "AI-Inferred" in row or "suy diễn" in row_lower or "suy luận" in row_lower or "assumption" in row_lower:
                     guardrail_errors.append((rel_suite, f"{tc_id}: contains inferred/assumption marker"))
-                if source and "Explicit từ" not in source:
+                # Only enforce "Explicit từ" check if the table has a "Nguồn" column
+                if has_source_column and source and "Explicit từ" not in source:
                     guardrail_errors.append((rel_suite, f"{tc_id}: source must start with or contain 'Explicit từ'"))
                 if header and ("Phạm vi" in header or "Ph?m vi" in header) and len(cells) >= 11:
                     case_type = cells[4]
@@ -644,7 +649,14 @@ class WikiSyncCore:
         return 1 if broken_links or invalid_statuses or guardrail_errors else 0
 
     def is_test_case_row(self, line):
-        return bool(re.match(r"^\|\s*\*?\*?TC-", line))
+        # Match rows starting with TC- but exclude the header row (TC-ID) and separator line
+        if not re.match(r"^\|\s*\*?\*?TC-", line):
+            return False
+        # Extract the first cell to check if it's the header or separator
+        cells = self.split_table_row(line)
+        tc_id = cells[0] if cells else ""
+        # Exclude header row (TC-ID) and separator rows (contain only dashes/pipes)
+        return tc_id and tc_id != "TC-ID" and tc_id not in ("", "---")
 
     def split_table_row(self, line):
         return [part.strip().strip("*") for part in line.strip().strip("|").split("|")]

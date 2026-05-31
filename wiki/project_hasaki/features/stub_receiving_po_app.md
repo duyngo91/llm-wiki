@@ -11,11 +11,13 @@ source_doc: 07062_Receiving_PO_Docs_ver2.17.md
 source_range: 07062#L784-L1069
 partial_read: false
 partial_read_note: ""
-last_verified_at: "2026-05-30 19:50:00"
-verification_status: Pending
+last_verified_at: "2026-05-31 19:12:50"
+verification_status: Verified
 approved_by:
 approved_at:
 approval_note:
+last_verified_source_version: 2.17
+
 ---
 
 # REQ: stub_receiving_po_app

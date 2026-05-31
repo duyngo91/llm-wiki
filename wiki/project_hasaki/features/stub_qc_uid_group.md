@@ -11,11 +11,13 @@ source_doc: 07105_Quality_Control_Docs_ver1.5.md
 source_range: 07105#L1084-L1172
 partial_read: false
 partial_read_note: ""
-last_verified_at: "2026-05-30 18:30:00"
-verification_status: Pending
+last_verified_at: "2026-05-31 18:36:07"
+verification_status: Verified
 approved_by:
 approved_at:
-approval_note:
+approval_note: "FIX-001: xóa inferred 'thấp nhất' khỏi BR + Q-006 trace; FIX-002: thêm Q-016 typo L141 + R002 ⚠️"
+last_verified_source_version: 1.5
+
 ---
 
 # REQ: stub_qc_uid_group
@@ -121,7 +123,7 @@ approval_note:
 | `Số lượng cần đánh giá` (App) | integer | ✅ | Bắt buộc; số nguyên dương; sau Xác nhận hệ thống auto trừ SL khỏi UID group |
 | Vị trí hiển thị SL cần đánh giá | UI rule | ✅ | Phần thông tin chung của UID group |
 | Hình tem QC Pass/Fail | image | ✅ | Bắt buộc; chỉ chụp 1 hình; sau khi hoàn thành đánh giá tất cả tiêu chí; nhấn `Hoàn thành` trigger bước chụp |
-| Tiêu chí PO chính map PO sample | rule | ✅ | Khi BOD approve PO sample không đạt 100% tiêu chí thiết lập → điều kiện đạt tiêu chí trên PO chính dùng giá trị PO sample đạt thấp nhất đã được approve |
+| Tiêu chí PO chính map PO sample | rule | ✅ | Khi BOD approve PO sample không đạt 100% tiêu chí thiết lập → điều kiện đạt tiêu chí trên PO chính **dựa vào điều kiện của tiêu chí của SKU trên PO sample** (cách tổng hợp khi nhiều Lot sample khác nhau chưa rõ — Q-006) |
 
 ## 🚨 Đặc Tả Thông Điệp Báo Lỗi (Error Messages Map)
 
@@ -235,6 +237,7 @@ approval_note:
 - R009 — chờ Q-005 (tem Pass vs Fail)
 - R013 — chờ Q-006, Q-007 (nhiều Lot BOD approve + carryover)
 - R001 — chờ Q-009 (scope flag QC xã vải)
+- R012, R013, BR "Tiêu chí PO chính" — chờ Q-006 (cách tổng hợp điều kiện khi nhiều Lot sample BOD approve khác nhau)
 
 Test cases liên quan tới các R-ID trên bị block đến khi câu hỏi `Answered`.
 
@@ -244,3 +247,4 @@ Test cases liên quan tới các R-ID trên bị block đến khi câu hỏi `An
 |:----------|:--------|:------------------|:------|
 | 2026-05-30 14:45:51 | v1.0 | Tách từ monster stub thành per-feature stub | split-stubs-2026-05-30 |
 | 2026-05-30 18:30:00 | v1.1 | Refine stub → full spec: 13 R-ID, 15 AC, 9 BR, 2 messages (verbatim missing — Q-002), 9 questions Open. `partial_read: false`. | refine-batch-3-2026-05-30 |
+| 2026-05-31 17:30:00 | v1.2 | FIX-001 (refiner batch-4): xóa "thấp nhất" INFERRED khỏi BR "Tiêu chí PO chính map PO sample"; giữ verbatim raw "dựa vào điều kiện của tiêu chí của SKU trên PO sample"; thêm Q-006 trace + Blocked Coverage. | refiner-spec-scoped-batch-4 |

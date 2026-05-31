@@ -1,16 +1,16 @@
-"""Bootstrap stub Feature Specs từ raw `*_index.json` sections.
+"""Bootstrap Feature Specs từ raw `*_index.json` sections.
 
-Đọc tất cả `raw_sources/project_hasaki/requirements/*_index.json`, sinh 1 stub
-`wiki/project_hasaki/features/stub_<doc>.md` cho mỗi raw doc với:
+Đọc tất cả `raw_sources/project_hasaki/requirements/*_index.json`, sinh 1 file
+`wiki/project_hasaki/features/feature_<doc>.md` cho mỗi raw doc với:
 
 - Frontmatter: `partial_read: true`, `verification_status: Pending`
 - R-table 1 row / section (R001..RNNN với title từ index `title` + source ref)
 - Placeholder sections (Tổng quan, Câu hỏi chưa rõ, Blocked Coverage, Changelog)
 
 Mục đích: nhanh chóng có spec scaffold để refiner đọc raw từng section và refine
-stub → full spec qua process Gate 1B.
+thành full spec qua process Gate 1B.
 
-KHÔNG tự overwrite stub đã tồn tại — chỉ tạo mới.
+KHÔNG tự overwrite file đã tồn tại — chỉ tạo mới.
 
 Usage:
     py .claude/scripts/generate_stub_features_from_index.py
@@ -46,7 +46,7 @@ def build_stub(index_path: Path) -> tuple[str, str]:
     source_name = payload.get("source_file", index_path.name.replace("_index.json", ".md"))
     source_version = payload.get("source_version", "unknown")
     stem = index_path.stem.replace("_index", "")
-    feature_slug = f"stub_{slugify(stem)}"
+    feature_slug = f"feature_{slugify(stem)}"
 
     rows = []
     for i, sec in enumerate(payload.get("sections", []), start=1):

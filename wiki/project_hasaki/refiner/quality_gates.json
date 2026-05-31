@@ -107,6 +107,271 @@
       },
       "fix_suggestions": ["FIX-002", "FIX-003"],
       "output_folder": "wiki/project_hasaki/refiner/2026-05-30_spec-scoped-batch-2/"
+    },
+    {
+      "session": "2026-05-31",
+      "batch": "spec-scoped-batch-3",
+      "schema_version": "3.0",
+      "mode": "Spec-scoped",
+      "trigger": "Sau refine stub → full spec (Gate 1B promotion)",
+      "specs_in_scope": [
+        "stub_qc_evaluation_manual",
+        "stub_qc_evaluation_mobile",
+        "stub_qc_evaluation_result"
+      ],
+      "score_before": 0,
+      "score_after": 90,
+      "gates": {
+        "L_STRUCTURAL_PASS": true,
+        "L_INFERENCE_PASS": false,
+        "VERIFY_SCRIPT_PASS": true,
+        "L_FIX_COMPLETE": true,
+        "L_ROOT_CAUSE_COMPLETE": true
+      },
+      "violations": {
+        "format_violation": 0,
+        "coverage_gap": 0,
+        "suspect_unread": 0,
+        "underreported_coverage": 0,
+        "inferred": 1,
+        "logic_inferred": 0,
+        "stripped_condition": 0,
+        "negation_flip": 0,
+        "phantom_evidence": 0,
+        "potential_omission": 1,
+        "missing_detail": 1,
+        "unclear": 0
+      },
+      "totals": {
+        "claims_verified": 208,
+        "requirements": 86,
+        "acceptance_criteria": 65,
+        "business_rules": 50,
+        "messages": 7,
+        "questions_open": 37
+      },
+      "verdict": "CONDITIONAL",
+      "verdict_per_spec": {
+        "stub_qc_evaluation_manual": "CONDITIONAL",
+        "stub_qc_evaluation_mobile": "CONDITIONAL",
+        "stub_qc_evaluation_result": "PASS"
+      },
+      "fix_suggestions": ["FIX-004", "FIX-005", "FIX-006"],
+      "patch_suggestions": ["PATCH-001"],
+      "output_folder": "wiki/project_hasaki/refiner/2026-05-31_spec-scoped-batch-3/"
+    },
+    {
+      "session": "2026-05-31",
+      "batch": "spec-scoped-batch-4",
+      "schema_version": "3.0",
+      "mode": "Spec-scoped",
+      "trigger": "Sau refine stub → full spec (Gate 1B promotion)",
+      "specs_in_scope": [
+        "stub_qc_overview",
+        "stub_qc_criteria_setup",
+        "stub_qc_uid_group"
+      ],
+      "score_before": 0,
+      "score_after": 87,
+      "gates": {
+        "L_STRUCTURAL_PASS": true,
+        "L_INFERENCE_PASS": false,
+        "VERIFY_SCRIPT_PASS": null,
+        "L_FIX_COMPLETE": true,
+        "L_ROOT_CAUSE_COMPLETE": true
+      },
+      "violations": {
+        "format_violation": 0,
+        "coverage_gap": 0,
+        "suspect_unread": 0,
+        "underreported_coverage": 0,
+        "inferred": 1,
+        "logic_inferred": 0,
+        "stripped_condition": 0,
+        "negation_flip": 0,
+        "phantom_evidence": 0,
+        "potential_omission": 0,
+        "missing_detail": 0,
+        "unclear": 3
+      },
+      "totals": {
+        "claims_verified": 180,
+        "requirements": 55,
+        "acceptance_criteria": 49,
+        "business_rules": 30,
+        "messages": 16,
+        "questions_open": 40
+      },
+      "verdict": "CONDITIONAL",
+      "verdict_per_spec": {
+        "stub_qc_overview": "PASS",
+        "stub_qc_criteria_setup": "CONDITIONAL",
+        "stub_qc_uid_group": "CONDITIONAL"
+      },
+      "fix_suggestions": ["FIX-001", "FIX-002"],
+      "l_inference_notes": "83 critical claim SUPPORTED. 1 INFERRED (uid_group BR 'thấp nhất' generalize beyond raw L1160-1168 → FIX-001). 1 UNCLEAR-deviation (criteria_setup R002 date-typo interpret thiếu Q-ID, PATCH-001 → FIX-002). 2 UNCLEAR pending-source hợp lệ (ERR-UIG-001/002 verbatim, Q-002). PATCH-001 (batch-3) bắt đúng 2 deviation — no new patterns.",
+      "output_folder": "wiki/project_hasaki/refiner/2026-05-31_spec-scoped-batch-4/"
+    },
+    {
+      "session": "2026-05-31",
+      "batch": "spec-scoped-batch-5",
+      "schema_version": "3.0",
+      "mode": "Spec-scoped",
+      "trigger": "Sau refine stub → full spec (Gate 1B promotion)",
+      "specs_in_scope": [
+        "stub_receiving_po_overview",
+        "stub_receiving_po_asn",
+        "stub_receiving_po_invoice"
+      ],
+      "score_before": 0,
+      "score_after": 94,
+      "gates": {
+        "L_STRUCTURAL_PASS": true,
+        "L_INFERENCE_PASS": true,
+        "VERIFY_SCRIPT_PASS": null,
+        "L_FIX_COMPLETE": true,
+        "L_ROOT_CAUSE_COMPLETE": true
+      },
+      "violations": {
+        "format_violation": 0,
+        "coverage_gap": 0,
+        "suspect_unread": 0,
+        "underreported_coverage": 0,
+        "inferred": 0,
+        "logic_inferred": 0,
+        "stripped_condition": 0,
+        "negation_flip": 0,
+        "phantom_evidence": 0,
+        "potential_omission": 0,
+        "missing_detail": 3,
+        "unclear": 5
+      },
+      "totals": {
+        "claims_verified": 164,
+        "requirements": 60,
+        "acceptance_criteria": 45,
+        "business_rules": 30,
+        "messages": 9,
+        "questions_open": 29
+      },
+      "verdict": "PASS",
+      "verdict_per_spec": {
+        "stub_receiving_po_overview": "PASS",
+        "stub_receiving_po_asn": "PASS",
+        "stub_receiving_po_invoice": "PASS"
+      },
+      "fix_suggestions": ["FIX-001", "FIX-002", "FIX-003"],
+      "l_inference_notes": "71 critical claim SUPPORTED (raw-first 07062 v2.17). 0 INFERRED/LOGIC_INFERRED/STRIPPED/NEGATION/PHANTOM/POTENTIAL_OMISSION. Enum completeness all PASS (ASN Loại 4/4, Owner 3/3, Status 4/4, paper size 2/2). State-transition R015 ReOpen + formula R023 SL thiếu khớp raw verbatim. 5 UNCLEAR hợp lệ (invoice R028 raw truncated Q-010; MSG-INV-005..008 verbatim missing Q-009 — pending-source). 3 MISSING_DETAIL low-severity (FIX-001 ASN dialog sample ID template-hoá; FIX-002 SL thiếu formula derive từ VD; FIX-003 raw-internal inconsistency Tax code/Serial 'chữ số' vs 'chữ và số' chưa có Q-ID). PATCH-001 (batch-3) hoạt động đúng — mọi deviation interpretive đều có Q-ID. Watch-item mới: raw-internal rule/message inconsistency (chưa đủ ngưỡng patch).",
+      "output_folder": "wiki/project_hasaki/refiner/2026-05-31_spec-scoped-batch-5/"
+    },
+    {
+      "session": "2026-05-31",
+      "batch": "spec-scoped-batch-6",
+      "schema_version": "3.0",
+      "mode": "Spec-scoped",
+      "trigger": "Sau refine stub → full spec (Gate 1B promotion)",
+      "specs_in_scope": [
+        "stub_receiving_po_vas",
+        "stub_receiving_po_fabric",
+        "stub_receiving_po_app"
+      ],
+      "score_before": 0,
+      "score_after": 96,
+      "gates": {
+        "L_STRUCTURAL_PASS": true,
+        "L_INFERENCE_PASS": true,
+        "VERIFY_SCRIPT_PASS": null,
+        "L_FIX_COMPLETE": true,
+        "L_ROOT_CAUSE_COMPLETE": true
+      },
+      "violations": {
+        "format_violation": 3,
+        "coverage_gap": 0,
+        "suspect_unread": 0,
+        "underreported_coverage": 0,
+        "inferred": 0,
+        "logic_inferred": 0,
+        "stripped_condition": 0,
+        "negation_flip": 0,
+        "phantom_evidence": 0,
+        "potential_omission": 0,
+        "missing_detail": 1,
+        "unclear": 6
+      },
+      "totals": {
+        "claims_verified": 231,
+        "requirements": 80,
+        "acceptance_criteria": 64,
+        "business_rules": 53,
+        "messages": 19,
+        "questions_open": 35
+      },
+      "verdict": "CONDITIONAL",
+      "verdict_per_spec": {
+        "stub_receiving_po_vas": "PASS",
+        "stub_receiving_po_fabric": "CONDITIONAL",
+        "stub_receiving_po_app": "CONDITIONAL"
+      },
+      "fix_suggestions": ["FIX-001", "FIX-002", "FIX-003", "FIX-004"],
+      "l_structural_notes": "L_structural PASS: VAS (0 violation). FORMAT_VIOLATION: FABRIC (ERR-FAB-001/002 missing VN — Q-001, Q-002), APP (ERR-APP-004 typo inconsistency VN vs EN location code — Q-004). Source refs: 100% OK_CANONICAL. Coverage gaps: 0. Defer message text verification + Q answer to L_inference.",
+      "l_inference_notes": "104 critical claim verified (raw-first 07062 v2.17, L522-783 VAS / L784-1069 APP / L1676-1737 FABRIC). 0 INFERRED/LOGIC_INFERRED/STRIPPED/NEGATION/PHANTOM/POTENTIAL_OMISSION cho cả 3 specs. Enum completeness 6/6 PASS (VAS Filter+Listing Trạng thái 4/4, APP Loại nhận 2/2, Phương án SPKPH 2/2, giỏ status 2/2, Required camera 2/2). Formula VAS Group UID ceil(SL×10%)=làm tròn lên verbatim khớp raw L738+VD (KHÔNG phải INFERRED — khác batch-3 mobile). 6 UNCLEAR pending-source HỢP LỆ: VAS MSG-VAS-007 (raw chỉ EN, Q-001); FABRIC ERR-FAB-001/002 (raw không verbatim, Q-001/Q-002), R010 heading-only (Q-005); APP R024 (raw chỉ 'hiện thông báo', Q-003), ERR-APP-004 (raw self-contradiction VN≠EN, Q-004). 1 MISSING_DETAIL low (FABRIC AC-12 interpret phân biệt Update 10-11 vs 10-12, đã trace Q-003 → FIX-002). FORMAT_VIOLATION (FABRIC+APP) confirm là pending-source/raw-contradiction, KHÔNG phải spec defect → CONDITIONAL (Verified + note), nhất quán batch-4/batch-5. PATCH-001 compliance 100% (batch thứ 3 liên tiếp đúng). Watch-item raw self-contradiction đạt instance thứ 2 liên tiếp (batch-5 invoice 'chữ và số' vs 'chữ số' + batch-6 ERR-APP-004 VN≠EN) — defer (spec xử lý đúng cả 2, PATCH-001 đã cover).",
+      "patch_suggestions": [],
+      "output_folder": "wiki/project_hasaki/refiner/2026-05-31_spec-scoped-batch-6/"
+    },
+    {
+      "session": "2026-05-31",
+      "batch": "spec-scoped-batch-7",
+      "schema_version": "3.0",
+      "mode": "Spec-scoped",
+      "trigger": "Sau refine stub → full spec (Gate 1B promotion)",
+      "specs_in_scope": [
+        "stub_receiving_po_confirm_paste_id",
+        "stub_receiving_po_vas_manual",
+        "stub_receiving_po_date_rules",
+        "stub_receiving_po_packing_list"
+      ],
+      "score_before": 0,
+      "score_after": 98,
+      "gates": {
+        "L_STRUCTURAL_PASS": true,
+        "L_INFERENCE_PASS": true,
+        "VERIFY_SCRIPT_PASS": null,
+        "L_FIX_COMPLETE": true,
+        "L_ROOT_CAUSE_COMPLETE": true
+      },
+      "violations": {
+        "format_violation": 0,
+        "coverage_gap": 0,
+        "suspect_unread": 0,
+        "underreported_coverage": 0,
+        "inferred": 0,
+        "logic_inferred": 0,
+        "stripped_condition": 0,
+        "negation_flip": 0,
+        "phantom_evidence": 0,
+        "potential_omission": 0,
+        "missing_detail": 2,
+        "unclear": 18
+      },
+      "totals": {
+        "claims_verified": 244,
+        "requirements": 124,
+        "acceptance_criteria": 120,
+        "business_rules": 106,
+        "messages": 39,
+        "questions_open": 60
+      },
+      "verdict": "PASS",
+      "verdict_per_spec": {
+        "stub_receiving_po_confirm_paste_id": "PASS",
+        "stub_receiving_po_vas_manual": "PASS",
+        "stub_receiving_po_date_rules": "PASS",
+        "stub_receiving_po_packing_list": "PASS"
+      },
+      "fix_suggestions": ["FIX-001", "FIX-002"],
+      "patch_suggestions": ["PATCH-002 (candidate, not applied)"],
+      "l_inference_notes": "244 critical claim verified raw-first (07062 v2.17, L1070-1496 date_rules / L1808-2070 confirm_paste_id / L2071-2181 vas_manual / L2182-2580 packing_list). 0 INFERRED/LOGIC_INFERRED/STRIPPED/NEGATION/PHANTOM/POTENTIAL_OMISSION cho cả 4 specs. Enum completeness 10/10 PASS (VAS màu 3/3 x2, category excl 3/3, Loại VAS 2/2, Qty status 2/2, UID status 2/2, Lý do thiếu 2/2, Tình trạng 4/4, PKL status 2/2, Delivery method 2/2). Formula 6/6 verbatim PASS (HSD min %×ShelfLife không làm tròn; Serial [1023][YYMMDD][6 số]; Trừ lõi SL−lõi & ×hệ số; Trừ lõi tự tính Gross−Net; quy đổi Yard/Mét ×0.9144; hệ số x1). API payload check_issue/unsuitable verbatim. State transition PASS. 39 message: verbatim đều khớp (raw typo prodcut/tronng/nhân giữ verbatim + Q-ID đúng PATCH-001); 18 UNCLEAR pending-source hợp lệ (message missing VN hoặc EN, đều có Q-ID + Blocked Coverage). 2 MISSING_DETAIL Low (FIX-001 date_rules R001 silent typo-fix 'tối thiếu'→'tối thiểu' thiếu Q-ID; FIX-002 packing_list AC-20 raw VD L2506 dùng 180 ≠ formula Width=1.5, spec resolve im lặng → 54.69 Yard, Q-010 chỉ cover 0.9144). Cả 2 là PATCH-001 compliance gap (spec quên Q-ID), không phải suy diễn → giữ PASS. Watch-item raw-internal inconsistency đạt instance #3+#4 liên tiếp (batch-3→7) → PATCH-002 candidate (mở rộng PATCH-001 sang phase ingest cho VD/example số học mâu thuẫn formula/rule cùng raw) — chưa apply, chờ user review.",
+      "output_folder": "wiki/project_hasaki/refiner/2026-05-31_spec-scoped-batch-7/"
     }
   ]
 }

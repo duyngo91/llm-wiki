@@ -21,11 +21,12 @@
         "has_state_transition": false,
         "has_formula": false,
         "has_error_messages": false,
-        "has_validation_rule": false
+        "has_validation_rule": true,
+        "has_business_rule": true
       },
       "mapped_feature": "stub_receiving_po_overview.md",
       "coverage_status": "stub",
-      "last_verified_version": null,
+      "last_verified_version": "2.17",
       "change_history": [],
       "read_log": {
         "claims_extracted": 0,
@@ -37,7 +38,7 @@
       "_source": "toc",
       "source_page": 7,
       "source_type": "toc",
-      "range_status": "needs_review",
+      "range_status": "verified",
       "source_ref": "07062_Receiving_PO_Docs_ver2.17.md#L188-L197"
     },
     {
@@ -53,11 +54,12 @@
         "has_state_transition": false,
         "has_formula": false,
         "has_error_messages": false,
-        "has_validation_rule": false
+        "has_validation_rule": true,
+        "has_business_rule": true
       },
       "mapped_feature": "stub_receiving_po_overview.md",
       "coverage_status": "stub",
-      "last_verified_version": null,
+      "last_verified_version": "2.17",
       "change_history": [],
       "read_log": {
         "claims_extracted": 0,
@@ -69,7 +71,7 @@
       "_source": "toc",
       "source_page": 8,
       "source_type": "toc",
-      "range_status": "needs_review",
+      "range_status": "verified",
       "source_ref": "07062_Receiving_PO_Docs_ver2.17.md#L198-L207"
     },
     {
@@ -85,11 +87,12 @@
         "has_state_transition": false,
         "has_formula": false,
         "has_error_messages": false,
-        "has_validation_rule": false
+        "has_validation_rule": true,
+        "has_business_rule": true
       },
       "mapped_feature": "stub_receiving_po_overview.md",
       "coverage_status": "stub",
-      "last_verified_version": null,
+      "last_verified_version": "2.17",
       "change_history": [],
       "read_log": {
         "claims_extracted": 0,
@@ -101,7 +104,7 @@
       "_source": "toc",
       "source_page": 8,
       "source_type": "toc",
-      "range_status": "needs_review",
+      "range_status": "verified",
       "source_ref": "07062_Receiving_PO_Docs_ver2.17.md#L208-L210"
     },
     {
@@ -117,11 +120,12 @@
         "has_state_transition": false,
         "has_formula": false,
         "has_error_messages": false,
-        "has_validation_rule": false
+        "has_validation_rule": true,
+        "has_business_rule": true
       },
       "mapped_feature": "stub_receiving_po_overview.md",
       "coverage_status": "stub",
-      "last_verified_version": null,
+      "last_verified_version": "2.17",
       "change_history": [],
       "read_log": {
         "claims_extracted": 0,
@@ -133,7 +137,7 @@
       "_source": "toc",
       "source_page": 8,
       "source_type": "toc",
-      "range_status": "needs_review",
+      "range_status": "verified",
       "source_ref": "07062_Receiving_PO_Docs_ver2.17.md#L211-L222"
     },
     {
@@ -149,11 +153,12 @@
         "has_state_transition": false,
         "has_formula": false,
         "has_error_messages": false,
-        "has_validation_rule": false
+        "has_validation_rule": true,
+        "has_business_rule": true
       },
       "mapped_feature": "stub_receiving_po_overview.md",
       "coverage_status": "stub",
-      "last_verified_version": null,
+      "last_verified_version": "2.17",
       "change_history": [],
       "read_log": {
         "claims_extracted": 0,
@@ -165,7 +170,7 @@
       "_source": "toc",
       "source_page": 9,
       "source_type": "toc",
-      "range_status": "needs_review",
+      "range_status": "verified",
       "source_ref": "07062_Receiving_PO_Docs_ver2.17.md#L223-L223"
     },
     {
@@ -243,15 +248,16 @@
       "parent_id": null,
       "topic_types": [],
       "flags": {
-        "has_enum": false,
+        "has_enum": true,
         "has_state_transition": false,
-        "has_formula": false,
-        "has_error_messages": false,
-        "has_validation_rule": false
+        "has_formula": true,
+        "has_error_messages": true,
+        "has_validation_rule": true,
+        "has_business_rule": true
       },
       "mapped_feature": "stub_receiving_po_asn.md",
       "coverage_status": "full",
-      "last_verified_version": null,
+      "last_verified_version": "2.17",
       "change_history": [],
       "read_log": {
         "claims_extracted": 18,
@@ -263,7 +269,7 @@
       "_source": "toc",
       "source_page": 13,
       "source_type": "toc",
-      "range_status": "needs_review",
+      "range_status": "verified",
       "source_ref": "07062_Receiving_PO_Docs_ver2.17.md#L349-L467"
     },
     {
@@ -275,15 +281,16 @@
       "parent_id": null,
       "topic_types": [],
       "flags": {
-        "has_enum": false,
+        "has_enum": true,
         "has_state_transition": false,
-        "has_formula": false,
-        "has_error_messages": false,
-        "has_validation_rule": false
+        "has_formula": true,
+        "has_error_messages": true,
+        "has_validation_rule": true,
+        "has_business_rule": true
       },
       "mapped_feature": "stub_receiving_po_asn.md",
       "coverage_status": "full",
-      "last_verified_version": null,
+      "last_verified_version": "2.17",
       "change_history": [],
       "read_log": {
         "claims_extracted": 7,
@@ -295,7 +302,7 @@
       "_source": "toc",
       "source_page": 18,
       "source_type": "toc",
-      "range_status": "needs_review",
+      "range_status": "verified",
       "source_ref": "07062_Receiving_PO_Docs_ver2.17.md#L468-L511"
     },
     {
@@ -307,15 +314,16 @@
       "parent_id": null,
       "topic_types": [],
       "flags": {
-        "has_enum": false,
+        "has_enum": true,
         "has_state_transition": false,
-        "has_formula": false,
-        "has_error_messages": false,
-        "has_validation_rule": false
+        "has_formula": true,
+        "has_error_messages": true,
+        "has_validation_rule": true,
+        "has_business_rule": true
       },
       "mapped_feature": "stub_receiving_po_asn.md",
       "coverage_status": "full",
-      "last_verified_version": null,
+      "last_verified_version": "2.17",
       "change_history": [],
       "read_log": {
         "claims_extracted": 1,
@@ -327,7 +335,7 @@
       "_source": "toc",
       "source_page": 19,
       "source_type": "toc",
-      "range_status": "needs_review",
+      "range_status": "verified",
       "source_ref": "07062_Receiving_PO_Docs_ver2.17.md#L512-L521"
     },
     {
@@ -339,15 +347,16 @@
       "parent_id": null,
       "topic_types": [],
       "flags": {
-        "has_enum": false,
-        "has_state_transition": false,
-        "has_formula": false,
-        "has_error_messages": false,
-        "has_validation_rule": false
+        "has_enum": true,
+        "has_state_transition": true,
+        "has_formula": true,
+        "has_error_messages": true,
+        "has_validation_rule": true,
+        "has_business_rule": true
       },
       "mapped_feature": "stub_receiving_po_vas.md",
       "coverage_status": "stub",
-      "last_verified_version": null,
+      "last_verified_version": "2.17",
       "change_history": [],
       "read_log": {
         "claims_extracted": 0,
@@ -359,7 +368,7 @@
       "_source": "toc",
       "source_page": 20,
       "source_type": "toc",
-      "range_status": "needs_review",
+      "range_status": "verified",
       "source_ref": "07062_Receiving_PO_Docs_ver2.17.md#L522-L628"
     },
     {
@@ -371,15 +380,16 @@
       "parent_id": null,
       "topic_types": [],
       "flags": {
-        "has_enum": false,
-        "has_state_transition": false,
-        "has_formula": false,
-        "has_error_messages": false,
-        "has_validation_rule": false
+        "has_enum": true,
+        "has_state_transition": true,
+        "has_formula": true,
+        "has_error_messages": true,
+        "has_validation_rule": true,
+        "has_business_rule": true
       },
       "mapped_feature": "stub_receiving_po_vas.md",
       "coverage_status": "stub",
-      "last_verified_version": null,
+      "last_verified_version": "2.17",
       "change_history": [],
       "read_log": {
         "claims_extracted": 0,
@@ -391,7 +401,7 @@
       "_source": "toc",
       "source_page": 23,
       "source_type": "toc",
-      "range_status": "needs_review",
+      "range_status": "verified",
       "source_ref": "07062_Receiving_PO_Docs_ver2.17.md#L629-L672"
     },
     {
@@ -403,15 +413,16 @@
       "parent_id": null,
       "topic_types": [],
       "flags": {
-        "has_enum": false,
-        "has_state_transition": false,
-        "has_formula": false,
-        "has_error_messages": false,
-        "has_validation_rule": false
+        "has_enum": true,
+        "has_state_transition": true,
+        "has_formula": true,
+        "has_error_messages": true,
+        "has_validation_rule": true,
+        "has_business_rule": true
       },
       "mapped_feature": "stub_receiving_po_vas.md",
       "coverage_status": "stub",
-      "last_verified_version": null,
+      "last_verified_version": "2.17",
       "change_history": [],
       "read_log": {
         "claims_extracted": 0,
@@ -423,7 +434,7 @@
       "_source": "toc",
       "source_page": 24,
       "source_type": "toc",
-      "range_status": "needs_review",
+      "range_status": "verified",
       "source_ref": "07062_Receiving_PO_Docs_ver2.17.md#L673-L735"
     },
     {
@@ -435,15 +446,16 @@
       "parent_id": null,
       "topic_types": [],
       "flags": {
-        "has_enum": false,
-        "has_state_transition": false,
-        "has_formula": false,
-        "has_error_messages": false,
-        "has_validation_rule": false
+        "has_enum": true,
+        "has_state_transition": true,
+        "has_formula": true,
+        "has_error_messages": true,
+        "has_validation_rule": true,
+        "has_business_rule": true
       },
       "mapped_feature": "stub_receiving_po_vas.md",
       "coverage_status": "stub",
-      "last_verified_version": null,
+      "last_verified_version": "2.17",
       "change_history": [],
       "read_log": {
         "claims_extracted": 0,
@@ -455,7 +467,7 @@
       "_source": "toc",
       "source_page": 27,
       "source_type": "toc",
-      "range_status": "needs_review",
+      "range_status": "verified",
       "source_ref": "07062_Receiving_PO_Docs_ver2.17.md#L736-L750"
     },
     {
@@ -467,15 +479,16 @@
       "parent_id": null,
       "topic_types": [],
       "flags": {
-        "has_enum": false,
-        "has_state_transition": false,
-        "has_formula": false,
-        "has_error_messages": false,
-        "has_validation_rule": false
+        "has_enum": true,
+        "has_state_transition": true,
+        "has_formula": true,
+        "has_error_messages": true,
+        "has_validation_rule": true,
+        "has_business_rule": true
       },
       "mapped_feature": "stub_receiving_po_vas.md",
       "coverage_status": "stub",
-      "last_verified_version": null,
+      "last_verified_version": "2.17",
       "change_history": [],
       "read_log": {
         "claims_extracted": 0,
@@ -487,7 +500,7 @@
       "_source": "toc",
       "source_page": 28,
       "source_type": "toc",
-      "range_status": "needs_review",
+      "range_status": "verified",
       "source_ref": "07062_Receiving_PO_Docs_ver2.17.md#L751-L783"
     },
     {
@@ -499,15 +512,16 @@
       "parent_id": null,
       "topic_types": [],
       "flags": {
-        "has_enum": false,
-        "has_state_transition": false,
+        "has_enum": true,
+        "has_state_transition": true,
         "has_formula": false,
-        "has_error_messages": false,
-        "has_validation_rule": false
+        "has_error_messages": true,
+        "has_validation_rule": true,
+        "has_business_rule": true
       },
       "mapped_feature": "stub_receiving_po_app.md",
       "coverage_status": "stub",
-      "last_verified_version": null,
+      "last_verified_version": "2.17",
       "change_history": [],
       "read_log": {
         "claims_extracted": 0,
@@ -519,7 +533,7 @@
       "_source": "toc",
       "source_page": 29,
       "source_type": "toc",
-      "range_status": "needs_review",
+      "range_status": "verified",
       "source_ref": "07062_Receiving_PO_Docs_ver2.17.md#L784-L833"
     },
     {
@@ -531,15 +545,16 @@
       "parent_id": null,
       "topic_types": [],
       "flags": {
-        "has_enum": false,
-        "has_state_transition": false,
+        "has_enum": true,
+        "has_state_transition": true,
         "has_formula": false,
-        "has_error_messages": false,
-        "has_validation_rule": false
+        "has_error_messages": true,
+        "has_validation_rule": true,
+        "has_business_rule": true
       },
       "mapped_feature": "stub_receiving_po_app.md",
       "coverage_status": "stub",
-      "last_verified_version": null,
+      "last_verified_version": "2.17",
       "change_history": [],
       "read_log": {
         "claims_extracted": 0,
@@ -551,7 +566,7 @@
       "_source": "toc",
       "source_page": 32,
       "source_type": "toc",
-      "range_status": "needs_review",
+      "range_status": "verified",
       "source_ref": "07062_Receiving_PO_Docs_ver2.17.md#L834-L882"
     },
     {
@@ -563,15 +578,16 @@
       "parent_id": null,
       "topic_types": [],
       "flags": {
-        "has_enum": false,
-        "has_state_transition": false,
+        "has_enum": true,
+        "has_state_transition": true,
         "has_formula": false,
-        "has_error_messages": false,
-        "has_validation_rule": false
+        "has_error_messages": true,
+        "has_validation_rule": true,
+        "has_business_rule": true
       },
       "mapped_feature": "stub_receiving_po_app.md",
       "coverage_status": "stub",
-      "last_verified_version": null,
+      "last_verified_version": "2.17",
       "change_history": [],
       "read_log": {
         "claims_extracted": 0,
@@ -583,7 +599,7 @@
       "_source": "body_heading",
       "source_page": 34,
       "source_type": "body_heading",
-      "range_status": "needs_review",
+      "range_status": "verified",
       "source_ref": "07062_Receiving_PO_Docs_ver2.17.md#L883-L935"
     },
     {
@@ -595,15 +611,16 @@
       "parent_id": "S-17",
       "topic_types": [],
       "flags": {
-        "has_enum": false,
-        "has_state_transition": false,
+        "has_enum": true,
+        "has_state_transition": true,
         "has_formula": false,
-        "has_error_messages": false,
-        "has_validation_rule": false
+        "has_error_messages": true,
+        "has_validation_rule": true,
+        "has_business_rule": true
       },
       "mapped_feature": "stub_receiving_po_app.md",
       "coverage_status": "stub",
-      "last_verified_version": null,
+      "last_verified_version": "2.17",
       "change_history": [],
       "read_log": {
         "claims_extracted": 0,
@@ -615,7 +632,7 @@
       "_source": "body_heading",
       "source_page": 36,
       "source_type": "body_heading",
-      "range_status": "needs_review",
+      "range_status": "verified",
       "source_ref": "07062_Receiving_PO_Docs_ver2.17.md#L936-L1026"
     },
     {
@@ -627,15 +644,16 @@
       "parent_id": "S-17",
       "topic_types": [],
       "flags": {
-        "has_enum": false,
-        "has_state_transition": false,
+        "has_enum": true,
+        "has_state_transition": true,
         "has_formula": false,
-        "has_error_messages": false,
-        "has_validation_rule": false
+        "has_error_messages": true,
+        "has_validation_rule": true,
+        "has_business_rule": true
       },
       "mapped_feature": "stub_receiving_po_app.md",
       "coverage_status": "stub",
-      "last_verified_version": null,
+      "last_verified_version": "2.17",
       "change_history": [],
       "read_log": {
         "claims_extracted": 0,
@@ -647,7 +665,7 @@
       "_source": "body_heading",
       "source_page": 40,
       "source_type": "body_heading",
-      "range_status": "needs_review",
+      "range_status": "verified",
       "source_ref": "07062_Receiving_PO_Docs_ver2.17.md#L1027-L1038"
     },
     {
@@ -659,15 +677,16 @@
       "parent_id": "S-17",
       "topic_types": [],
       "flags": {
-        "has_enum": false,
-        "has_state_transition": false,
+        "has_enum": true,
+        "has_state_transition": true,
         "has_formula": false,
-        "has_error_messages": false,
-        "has_validation_rule": false
+        "has_error_messages": true,
+        "has_validation_rule": true,
+        "has_business_rule": true
       },
       "mapped_feature": "stub_receiving_po_app.md",
       "coverage_status": "stub",
-      "last_verified_version": null,
+      "last_verified_version": "2.17",
       "change_history": [],
       "read_log": {
         "claims_extracted": 0,
@@ -679,7 +698,7 @@
       "_source": "toc",
       "source_page": 41,
       "source_type": "toc",
-      "range_status": "needs_review",
+      "range_status": "verified",
       "source_ref": "07062_Receiving_PO_Docs_ver2.17.md#L1039-L1069"
     },
     {
@@ -691,15 +710,16 @@
       "parent_id": null,
       "topic_types": [],
       "flags": {
-        "has_enum": false,
-        "has_state_transition": false,
-        "has_formula": false,
-        "has_error_messages": false,
-        "has_validation_rule": false
+        "has_enum": true,
+        "has_state_transition": true,
+        "has_formula": true,
+        "has_error_messages": true,
+        "has_validation_rule": true,
+        "has_business_rule": true
       },
       "mapped_feature": "stub_receiving_po_date_rules.md",
       "coverage_status": "stub",
-      "last_verified_version": null,
+      "last_verified_version": "2.17",
       "change_history": [],
       "read_log": {
         "claims_extracted": 0,
@@ -711,7 +731,7 @@
       "_source": "body_heading",
       "source_page": 42,
       "source_type": "body_heading",
-      "range_status": "needs_review",
+      "range_status": "verified",
       "source_ref": "07062_Receiving_PO_Docs_ver2.17.md#L1070-L1098"
     },
     {
@@ -723,15 +743,16 @@
       "parent_id": "S-21",
       "topic_types": [],
       "flags": {
-        "has_enum": false,
-        "has_state_transition": false,
-        "has_formula": false,
-        "has_error_messages": false,
-        "has_validation_rule": false
+        "has_enum": true,
+        "has_state_transition": true,
+        "has_formula": true,
+        "has_error_messages": true,
+        "has_validation_rule": true,
+        "has_business_rule": true
       },
       "mapped_feature": "stub_receiving_po_date_rules.md",
       "coverage_status": "stub",
-      "last_verified_version": null,
+      "last_verified_version": "2.17",
       "change_history": [],
       "read_log": {
         "claims_extracted": 0,
@@ -743,7 +764,7 @@
       "_source": "body_heading",
       "source_page": 43,
       "source_type": "body_heading",
-      "range_status": "needs_review",
+      "range_status": "verified",
       "source_ref": "07062_Receiving_PO_Docs_ver2.17.md#L1099-L1166"
     },
     {
@@ -755,15 +776,16 @@
       "parent_id": null,
       "topic_types": [],
       "flags": {
-        "has_enum": false,
-        "has_state_transition": false,
-        "has_formula": false,
-        "has_error_messages": false,
-        "has_validation_rule": false
+        "has_enum": true,
+        "has_state_transition": true,
+        "has_formula": true,
+        "has_error_messages": true,
+        "has_validation_rule": true,
+        "has_business_rule": true
       },
       "mapped_feature": "stub_receiving_po_date_rules.md",
       "coverage_status": "stub",
-      "last_verified_version": null,
+      "last_verified_version": "2.17",
       "change_history": [],
       "read_log": {
         "claims_extracted": 0,
@@ -775,7 +797,7 @@
       "_source": "body_heading",
       "source_page": 45,
       "source_type": "body_heading",
-      "range_status": "needs_review",
+      "range_status": "verified",
       "source_ref": "07062_Receiving_PO_Docs_ver2.17.md#L1167-L1181"
     },
     {
@@ -787,15 +809,16 @@
       "parent_id": "S-23",
       "topic_types": [],
       "flags": {
-        "has_enum": false,
-        "has_state_transition": false,
-        "has_formula": false,
-        "has_error_messages": false,
-        "has_validation_rule": false
+        "has_enum": true,
+        "has_state_transition": true,
+        "has_formula": true,
+        "has_error_messages": true,
+        "has_validation_rule": true,
+        "has_business_rule": true
       },
       "mapped_feature": "stub_receiving_po_date_rules.md",
       "coverage_status": "stub",
-      "last_verified_version": null,
+      "last_verified_version": "2.17",
       "change_history": [],
       "read_log": {
         "claims_extracted": 0,
@@ -807,7 +830,7 @@
       "_source": "body_heading",
       "source_page": 46,
       "source_type": "body_heading",
-      "range_status": "needs_review",
+      "range_status": "verified",
       "source_ref": "07062_Receiving_PO_Docs_ver2.17.md#L1182-L1191"
     },
     {
@@ -819,15 +842,16 @@
       "parent_id": "S-23",
       "topic_types": [],
       "flags": {
-        "has_enum": false,
-        "has_state_transition": false,
-        "has_formula": false,
-        "has_error_messages": false,
-        "has_validation_rule": false
+        "has_enum": true,
+        "has_state_transition": true,
+        "has_formula": true,
+        "has_error_messages": true,
+        "has_validation_rule": true,
+        "has_business_rule": true
       },
       "mapped_feature": "stub_receiving_po_date_rules.md",
       "coverage_status": "stub",
-      "last_verified_version": null,
+      "last_verified_version": "2.17",
       "change_history": [],
       "read_log": {
         "claims_extracted": 0,
@@ -839,7 +863,7 @@
       "_source": "body_heading",
       "source_page": 46,
       "source_type": "body_heading",
-      "range_status": "needs_review",
+      "range_status": "verified",
       "source_ref": "07062_Receiving_PO_Docs_ver2.17.md#L1192-L1486"
     },
     {
@@ -851,15 +875,16 @@
       "parent_id": "S-23",
       "topic_types": [],
       "flags": {
-        "has_enum": false,
-        "has_state_transition": false,
-        "has_formula": false,
-        "has_error_messages": false,
-        "has_validation_rule": false
+        "has_enum": true,
+        "has_state_transition": true,
+        "has_formula": true,
+        "has_error_messages": true,
+        "has_validation_rule": true,
+        "has_business_rule": true
       },
       "mapped_feature": "stub_receiving_po_date_rules.md",
       "coverage_status": "stub",
-      "last_verified_version": null,
+      "last_verified_version": "2.17",
       "change_history": [],
       "read_log": {
         "claims_extracted": 0,
@@ -871,7 +896,7 @@
       "_source": "body_heading",
       "source_page": 61,
       "source_type": "body_heading",
-      "range_status": "needs_review",
+      "range_status": "verified",
       "source_ref": "07062_Receiving_PO_Docs_ver2.17.md#L1487-L1489"
     },
     {
@@ -883,15 +908,16 @@
       "parent_id": "S-23",
       "topic_types": [],
       "flags": {
-        "has_enum": false,
-        "has_state_transition": false,
-        "has_formula": false,
-        "has_error_messages": false,
-        "has_validation_rule": false
+        "has_enum": true,
+        "has_state_transition": true,
+        "has_formula": true,
+        "has_error_messages": true,
+        "has_validation_rule": true,
+        "has_business_rule": true
       },
       "mapped_feature": "stub_receiving_po_date_rules.md",
       "coverage_status": "stub",
-      "last_verified_version": null,
+      "last_verified_version": "2.17",
       "change_history": [],
       "read_log": {
         "claims_extracted": 0,
@@ -903,7 +929,7 @@
       "_source": "body_heading",
       "source_page": 61,
       "source_type": "body_heading",
-      "range_status": "needs_review",
+      "range_status": "verified",
       "source_ref": "07062_Receiving_PO_Docs_ver2.17.md#L1490-L1496"
     },
     {
@@ -916,14 +942,15 @@
       "topic_types": [],
       "flags": {
         "has_enum": false,
-        "has_state_transition": false,
+        "has_state_transition": true,
         "has_formula": false,
-        "has_error_messages": false,
-        "has_validation_rule": false
+        "has_error_messages": true,
+        "has_validation_rule": true,
+        "has_business_rule": true
       },
       "mapped_feature": "stub_receiving_po_invoice.md",
       "coverage_status": "full",
-      "last_verified_version": null,
+      "last_verified_version": "2.17",
       "change_history": [],
       "read_log": {
         "claims_extracted": 15,
@@ -935,7 +962,7 @@
       "_source": "toc",
       "source_page": 62,
       "source_type": "toc",
-      "range_status": "needs_review",
+      "range_status": "verified",
       "source_ref": "07062_Receiving_PO_Docs_ver2.17.md#L1497-L1595"
     },
     {
@@ -948,14 +975,15 @@
       "topic_types": [],
       "flags": {
         "has_enum": false,
-        "has_state_transition": false,
+        "has_state_transition": true,
         "has_formula": false,
-        "has_error_messages": false,
-        "has_validation_rule": false
+        "has_error_messages": true,
+        "has_validation_rule": true,
+        "has_business_rule": true
       },
       "mapped_feature": "stub_receiving_po_invoice.md",
       "coverage_status": "full",
-      "last_verified_version": null,
+      "last_verified_version": "2.17",
       "change_history": [],
       "read_log": {
         "claims_extracted": 9,
@@ -967,7 +995,7 @@
       "_source": "toc",
       "source_page": 68,
       "source_type": "toc",
-      "range_status": "needs_review",
+      "range_status": "verified",
       "source_ref": "07062_Receiving_PO_Docs_ver2.17.md#L1596-L1656"
     },
     {
@@ -980,14 +1008,15 @@
       "topic_types": [],
       "flags": {
         "has_enum": false,
-        "has_state_transition": false,
+        "has_state_transition": true,
         "has_formula": false,
-        "has_error_messages": false,
-        "has_validation_rule": false
+        "has_error_messages": true,
+        "has_validation_rule": true,
+        "has_business_rule": true
       },
       "mapped_feature": "stub_receiving_po_invoice.md",
       "coverage_status": "full",
-      "last_verified_version": null,
+      "last_verified_version": "2.17",
       "change_history": [],
       "read_log": {
         "claims_extracted": 4,
@@ -999,7 +1028,7 @@
       "_source": "body_heading",
       "source_page": 72,
       "source_type": "body_heading",
-      "range_status": "needs_review",
+      "range_status": "verified",
       "source_ref": "07062_Receiving_PO_Docs_ver2.17.md#L1657-L1675"
     },
     {
@@ -1011,15 +1040,16 @@
       "parent_id": null,
       "topic_types": [],
       "flags": {
-        "has_enum": false,
+        "has_enum": true,
         "has_state_transition": false,
-        "has_formula": false,
-        "has_error_messages": false,
-        "has_validation_rule": false
+        "has_formula": true,
+        "has_error_messages": true,
+        "has_validation_rule": true,
+        "has_business_rule": true
       },
       "mapped_feature": "stub_receiving_po_fabric.md",
       "coverage_status": "stub",
-      "last_verified_version": null,
+      "last_verified_version": "2.17",
       "change_history": [],
       "read_log": {
         "claims_extracted": 0,
@@ -1031,7 +1061,7 @@
       "_source": "toc",
       "source_page": 74,
       "source_type": "toc",
-      "range_status": "needs_review",
+      "range_status": "verified",
       "source_ref": "07062_Receiving_PO_Docs_ver2.17.md#L1676-L1721"
     },
     {
@@ -1043,15 +1073,16 @@
       "parent_id": "S-31",
       "topic_types": [],
       "flags": {
-        "has_enum": false,
+        "has_enum": true,
         "has_state_transition": false,
-        "has_formula": false,
-        "has_error_messages": false,
-        "has_validation_rule": false
+        "has_formula": true,
+        "has_error_messages": true,
+        "has_validation_rule": true,
+        "has_business_rule": true
       },
       "mapped_feature": "stub_receiving_po_fabric.md",
       "coverage_status": "stub",
-      "last_verified_version": null,
+      "last_verified_version": "2.17",
       "change_history": [],
       "read_log": {
         "claims_extracted": 0,
@@ -1063,7 +1094,7 @@
       "_source": "body_heading",
       "source_page": 77,
       "source_type": "body_heading",
-      "range_status": "needs_review",
+      "range_status": "verified",
       "source_ref": "07062_Receiving_PO_Docs_ver2.17.md#L1722-L1725"
     },
     {
@@ -1075,15 +1106,16 @@
       "parent_id": "S-31",
       "topic_types": [],
       "flags": {
-        "has_enum": false,
+        "has_enum": true,
         "has_state_transition": false,
-        "has_formula": false,
-        "has_error_messages": false,
-        "has_validation_rule": false
+        "has_formula": true,
+        "has_error_messages": true,
+        "has_validation_rule": true,
+        "has_business_rule": true
       },
       "mapped_feature": "stub_receiving_po_fabric.md",
       "coverage_status": "stub",
-      "last_verified_version": null,
+      "last_verified_version": "2.17",
       "change_history": [],
       "read_log": {
         "claims_extracted": 0,
@@ -1095,7 +1127,7 @@
       "_source": "body_heading",
       "source_page": 78,
       "source_type": "body_heading",
-      "range_status": "needs_review",
+      "range_status": "verified",
       "source_ref": "07062_Receiving_PO_Docs_ver2.17.md#L1726-L1737"
     },
     {
@@ -1239,15 +1271,16 @@
       "parent_id": null,
       "topic_types": [],
       "flags": {
-        "has_enum": false,
-        "has_state_transition": false,
+        "has_enum": true,
+        "has_state_transition": true,
         "has_formula": false,
-        "has_error_messages": false,
-        "has_validation_rule": false
+        "has_error_messages": true,
+        "has_validation_rule": true,
+        "has_business_rule": true
       },
       "mapped_feature": "stub_receiving_po_confirm_paste_id.md",
       "coverage_status": "stub",
-      "last_verified_version": null,
+      "last_verified_version": "2.17",
       "change_history": [],
       "read_log": {
         "claims_extracted": 0,
@@ -1259,7 +1292,7 @@
       "_source": "toc",
       "source_page": 84,
       "source_type": "toc",
-      "range_status": "needs_review",
+      "range_status": "verified",
       "source_ref": "07062_Receiving_PO_Docs_ver2.17.md#L1808-L1865"
     },
     {
@@ -1271,15 +1304,16 @@
       "parent_id": null,
       "topic_types": [],
       "flags": {
-        "has_enum": false,
-        "has_state_transition": false,
+        "has_enum": true,
+        "has_state_transition": true,
         "has_formula": false,
-        "has_error_messages": false,
-        "has_validation_rule": false
+        "has_error_messages": true,
+        "has_validation_rule": true,
+        "has_business_rule": true
       },
       "mapped_feature": "stub_receiving_po_confirm_paste_id.md",
       "coverage_status": "stub",
-      "last_verified_version": null,
+      "last_verified_version": "2.17",
       "change_history": [],
       "read_log": {
         "claims_extracted": 0,
@@ -1291,7 +1325,7 @@
       "_source": "body_heading",
       "source_page": 85,
       "source_type": "body_heading",
-      "range_status": "needs_review",
+      "range_status": "verified",
       "source_ref": "07062_Receiving_PO_Docs_ver2.17.md#L1866-L1886"
     },
     {
@@ -1303,15 +1337,16 @@
       "parent_id": "S-39",
       "topic_types": [],
       "flags": {
-        "has_enum": false,
-        "has_state_transition": false,
+        "has_enum": true,
+        "has_state_transition": true,
         "has_formula": false,
-        "has_error_messages": false,
-        "has_validation_rule": false
+        "has_error_messages": true,
+        "has_validation_rule": true,
+        "has_business_rule": true
       },
       "mapped_feature": "stub_receiving_po_confirm_paste_id.md",
       "coverage_status": "stub",
-      "last_verified_version": null,
+      "last_verified_version": "2.17",
       "change_history": [],
       "read_log": {
         "claims_extracted": 0,
@@ -1323,7 +1358,7 @@
       "_source": "body_heading",
       "source_page": 86,
       "source_type": "body_heading",
-      "range_status": "needs_review",
+      "range_status": "verified",
       "source_ref": "07062_Receiving_PO_Docs_ver2.17.md#L1887-L1900"
     },
     {
@@ -1335,15 +1370,16 @@
       "parent_id": "S-39",
       "topic_types": [],
       "flags": {
-        "has_enum": false,
-        "has_state_transition": false,
+        "has_enum": true,
+        "has_state_transition": true,
         "has_formula": false,
-        "has_error_messages": false,
-        "has_validation_rule": false
+        "has_error_messages": true,
+        "has_validation_rule": true,
+        "has_business_rule": true
       },
       "mapped_feature": "stub_receiving_po_confirm_paste_id.md",
       "coverage_status": "stub",
-      "last_verified_version": null,
+      "last_verified_version": "2.17",
       "change_history": [],
       "read_log": {
         "claims_extracted": 0,
@@ -1355,7 +1391,7 @@
       "_source": "body_heading",
       "source_page": 87,
       "source_type": "body_heading",
-      "range_status": "needs_review",
+      "range_status": "verified",
       "source_ref": "07062_Receiving_PO_Docs_ver2.17.md#L1901-L2022"
     },
     {
@@ -1367,15 +1403,16 @@
       "parent_id": "S-39",
       "topic_types": [],
       "flags": {
-        "has_enum": false,
-        "has_state_transition": false,
+        "has_enum": true,
+        "has_state_transition": true,
         "has_formula": false,
-        "has_error_messages": false,
-        "has_validation_rule": false
+        "has_error_messages": true,
+        "has_validation_rule": true,
+        "has_business_rule": true
       },
       "mapped_feature": "stub_receiving_po_confirm_paste_id.md",
       "coverage_status": "stub",
-      "last_verified_version": null,
+      "last_verified_version": "2.17",
       "change_history": [],
       "read_log": {
         "claims_extracted": 0,
@@ -1387,7 +1424,7 @@
       "_source": "body_heading",
       "source_page": 91,
       "source_type": "body_heading",
-      "range_status": "needs_review",
+      "range_status": "verified",
       "source_ref": "07062_Receiving_PO_Docs_ver2.17.md#L2023-L2038"
     },
     {
@@ -1399,15 +1436,16 @@
       "parent_id": "S-39",
       "topic_types": [],
       "flags": {
-        "has_enum": false,
-        "has_state_transition": false,
+        "has_enum": true,
+        "has_state_transition": true,
         "has_formula": false,
-        "has_error_messages": false,
-        "has_validation_rule": false
+        "has_error_messages": true,
+        "has_validation_rule": true,
+        "has_business_rule": true
       },
       "mapped_feature": "stub_receiving_po_confirm_paste_id.md",
       "coverage_status": "stub",
-      "last_verified_version": null,
+      "last_verified_version": "2.17",
       "change_history": [],
       "read_log": {
         "claims_extracted": 0,
@@ -1419,7 +1457,7 @@
       "_source": "body_heading",
       "source_page": 93,
       "source_type": "body_heading",
-      "range_status": "needs_review",
+      "range_status": "verified",
       "source_ref": "07062_Receiving_PO_Docs_ver2.17.md#L2039-L2070"
     },
     {
@@ -1431,15 +1469,16 @@
       "parent_id": null,
       "topic_types": [],
       "flags": {
-        "has_enum": false,
-        "has_state_transition": false,
+        "has_enum": true,
+        "has_state_transition": true,
         "has_formula": false,
-        "has_error_messages": false,
-        "has_validation_rule": false
+        "has_error_messages": true,
+        "has_validation_rule": true,
+        "has_business_rule": true
       },
       "mapped_feature": "stub_receiving_po_vas_manual.md",
       "coverage_status": "stub",
-      "last_verified_version": null,
+      "last_verified_version": "2.17",
       "change_history": [],
       "read_log": {
         "claims_extracted": 0,
@@ -1451,7 +1490,7 @@
       "_source": "toc",
       "source_page": 96,
       "source_type": "toc",
-      "range_status": "needs_review",
+      "range_status": "verified",
       "source_ref": "07062_Receiving_PO_Docs_ver2.17.md#L2071-L2074"
     },
     {
@@ -1463,15 +1502,16 @@
       "parent_id": "S-44",
       "topic_types": [],
       "flags": {
-        "has_enum": false,
-        "has_state_transition": false,
+        "has_enum": true,
+        "has_state_transition": true,
         "has_formula": false,
-        "has_error_messages": false,
-        "has_validation_rule": false
+        "has_error_messages": true,
+        "has_validation_rule": true,
+        "has_business_rule": true
       },
       "mapped_feature": "stub_receiving_po_vas_manual.md",
       "coverage_status": "stub",
-      "last_verified_version": null,
+      "last_verified_version": "2.17",
       "change_history": [],
       "read_log": {
         "claims_extracted": 0,
@@ -1483,7 +1523,7 @@
       "_source": "toc",
       "source_page": 96,
       "source_type": "toc",
-      "range_status": "needs_review",
+      "range_status": "verified",
       "source_ref": "07062_Receiving_PO_Docs_ver2.17.md#L2075-L2077"
     },
     {
@@ -1495,15 +1535,16 @@
       "parent_id": null,
       "topic_types": [],
       "flags": {
-        "has_enum": false,
-        "has_state_transition": false,
+        "has_enum": true,
+        "has_state_transition": true,
         "has_formula": false,
-        "has_error_messages": false,
-        "has_validation_rule": false
+        "has_error_messages": true,
+        "has_validation_rule": true,
+        "has_business_rule": true
       },
       "mapped_feature": "stub_receiving_po_vas_manual.md",
       "coverage_status": "stub",
-      "last_verified_version": null,
+      "last_verified_version": "2.17",
       "change_history": [],
       "read_log": {
         "claims_extracted": 0,
@@ -1515,7 +1556,7 @@
       "_source": "toc",
       "source_page": 97,
       "source_type": "toc",
-      "range_status": "needs_review",
+      "range_status": "verified",
       "source_ref": "07062_Receiving_PO_Docs_ver2.17.md#L2078-L2122"
     },
     {
@@ -1527,15 +1568,16 @@
       "parent_id": null,
       "topic_types": [],
       "flags": {
-        "has_enum": false,
-        "has_state_transition": false,
+        "has_enum": true,
+        "has_state_transition": true,
         "has_formula": false,
-        "has_error_messages": false,
-        "has_validation_rule": false
+        "has_error_messages": true,
+        "has_validation_rule": true,
+        "has_business_rule": true
       },
       "mapped_feature": "stub_receiving_po_vas_manual.md",
       "coverage_status": "stub",
-      "last_verified_version": null,
+      "last_verified_version": "2.17",
       "change_history": [],
       "read_log": {
         "claims_extracted": 0,
@@ -1547,7 +1589,7 @@
       "_source": "toc",
       "source_page": 99,
       "source_type": "toc",
-      "range_status": "needs_review",
+      "range_status": "verified",
       "source_ref": "07062_Receiving_PO_Docs_ver2.17.md#L2123-L2181"
     },
     {
@@ -1559,15 +1601,16 @@
       "parent_id": null,
       "topic_types": [],
       "flags": {
-        "has_enum": false,
-        "has_state_transition": false,
-        "has_formula": false,
-        "has_error_messages": false,
-        "has_validation_rule": false
+        "has_enum": true,
+        "has_state_transition": true,
+        "has_formula": true,
+        "has_error_messages": true,
+        "has_validation_rule": true,
+        "has_business_rule": true
       },
       "mapped_feature": "stub_receiving_po_packing_list.md",
       "coverage_status": "stub",
-      "last_verified_version": null,
+      "last_verified_version": "2.17",
       "change_history": [],
       "read_log": {
         "claims_extracted": 0,
@@ -1579,7 +1622,7 @@
       "_source": "toc",
       "source_page": 102,
       "source_type": "toc",
-      "range_status": "needs_review",
+      "range_status": "verified",
       "source_ref": "07062_Receiving_PO_Docs_ver2.17.md#L2182-L2231"
     },
     {
@@ -1591,15 +1634,16 @@
       "parent_id": "S-48",
       "topic_types": [],
       "flags": {
-        "has_enum": false,
-        "has_state_transition": false,
-        "has_formula": false,
-        "has_error_messages": false,
-        "has_validation_rule": false
+        "has_enum": true,
+        "has_state_transition": true,
+        "has_formula": true,
+        "has_error_messages": true,
+        "has_validation_rule": true,
+        "has_business_rule": true
       },
       "mapped_feature": "stub_receiving_po_packing_list.md",
       "coverage_status": "stub",
-      "last_verified_version": null,
+      "last_verified_version": "2.17",
       "change_history": [],
       "read_log": {
         "claims_extracted": 0,
@@ -1611,7 +1655,7 @@
       "_source": "toc",
       "source_page": 103,
       "source_type": "toc",
-      "range_status": "needs_review",
+      "range_status": "verified",
       "source_ref": "07062_Receiving_PO_Docs_ver2.17.md#L2232-L2304"
     },
     {
@@ -1623,15 +1667,16 @@
       "parent_id": null,
       "topic_types": [],
       "flags": {
-        "has_enum": false,
-        "has_state_transition": false,
-        "has_formula": false,
-        "has_error_messages": false,
-        "has_validation_rule": false
+        "has_enum": true,
+        "has_state_transition": true,
+        "has_formula": true,
+        "has_error_messages": true,
+        "has_validation_rule": true,
+        "has_business_rule": true
       },
       "mapped_feature": "stub_receiving_po_packing_list.md",
       "coverage_status": "stub",
-      "last_verified_version": null,
+      "last_verified_version": "2.17",
       "change_history": [],
       "read_log": {
         "claims_extracted": 0,
@@ -1643,7 +1688,7 @@
       "_source": "toc",
       "source_page": 106,
       "source_type": "toc",
-      "range_status": "needs_review",
+      "range_status": "verified",
       "source_ref": "07062_Receiving_PO_Docs_ver2.17.md#L2305-L2305"
     },
     {
@@ -1655,15 +1700,16 @@
       "parent_id": null,
       "topic_types": [],
       "flags": {
-        "has_enum": false,
-        "has_state_transition": false,
-        "has_formula": false,
-        "has_error_messages": false,
-        "has_validation_rule": false
+        "has_enum": true,
+        "has_state_transition": true,
+        "has_formula": true,
+        "has_error_messages": true,
+        "has_validation_rule": true,
+        "has_business_rule": true
       },
       "mapped_feature": "stub_receiving_po_packing_list.md",
       "coverage_status": "stub",
-      "last_verified_version": null,
+      "last_verified_version": "2.17",
       "change_history": [],
       "read_log": {
         "claims_extracted": 0,
@@ -1675,7 +1721,7 @@
       "_source": "toc",
       "source_page": 106,
       "source_type": "toc",
-      "range_status": "needs_review",
+      "range_status": "verified",
       "source_ref": "07062_Receiving_PO_Docs_ver2.17.md#L2306-L2347"
     },
     {
@@ -1687,15 +1733,16 @@
       "parent_id": null,
       "topic_types": [],
       "flags": {
-        "has_enum": false,
-        "has_state_transition": false,
-        "has_formula": false,
-        "has_error_messages": false,
-        "has_validation_rule": false
+        "has_enum": true,
+        "has_state_transition": true,
+        "has_formula": true,
+        "has_error_messages": true,
+        "has_validation_rule": true,
+        "has_business_rule": true
       },
       "mapped_feature": "stub_receiving_po_packing_list.md",
       "coverage_status": "stub",
-      "last_verified_version": null,
+      "last_verified_version": "2.17",
       "change_history": [],
       "read_log": {
         "claims_extracted": 0,
@@ -1707,7 +1754,7 @@
       "_source": "toc",
       "source_page": 108,
       "source_type": "toc",
-      "range_status": "needs_review",
+      "range_status": "verified",
       "source_ref": "07062_Receiving_PO_Docs_ver2.17.md#L2348-L2388"
     },
     {
@@ -1719,15 +1766,16 @@
       "parent_id": null,
       "topic_types": [],
       "flags": {
-        "has_enum": false,
-        "has_state_transition": false,
-        "has_formula": false,
-        "has_error_messages": false,
-        "has_validation_rule": false
+        "has_enum": true,
+        "has_state_transition": true,
+        "has_formula": true,
+        "has_error_messages": true,
+        "has_validation_rule": true,
+        "has_business_rule": true
       },
       "mapped_feature": "stub_receiving_po_packing_list.md",
       "coverage_status": "stub",
-      "last_verified_version": null,
+      "last_verified_version": "2.17",
       "change_history": [],
       "read_log": {
         "claims_extracted": 0,
@@ -1739,7 +1787,7 @@
       "_source": "toc",
       "source_page": 109,
       "source_type": "toc",
-      "range_status": "needs_review",
+      "range_status": "verified",
       "source_ref": "07062_Receiving_PO_Docs_ver2.17.md#L2389-L2414"
     },
     {
@@ -1751,15 +1799,16 @@
       "parent_id": "S-53",
       "topic_types": [],
       "flags": {
-        "has_enum": false,
-        "has_state_transition": false,
-        "has_formula": false,
-        "has_error_messages": false,
-        "has_validation_rule": false
+        "has_enum": true,
+        "has_state_transition": true,
+        "has_formula": true,
+        "has_error_messages": true,
+        "has_validation_rule": true,
+        "has_business_rule": true
       },
       "mapped_feature": "stub_receiving_po_packing_list.md",
       "coverage_status": "stub",
-      "last_verified_version": null,
+      "last_verified_version": "2.17",
       "change_history": [],
       "read_log": {
         "claims_extracted": 0,
@@ -1771,7 +1820,7 @@
       "_source": "toc",
       "source_page": 111,
       "source_type": "toc",
-      "range_status": "needs_review",
+      "range_status": "verified",
       "source_ref": "07062_Receiving_PO_Docs_ver2.17.md#L2415-L2417"
     },
     {
@@ -1783,15 +1832,16 @@
       "parent_id": null,
       "topic_types": [],
       "flags": {
-        "has_enum": false,
-        "has_state_transition": false,
-        "has_formula": false,
-        "has_error_messages": false,
-        "has_validation_rule": false
+        "has_enum": true,
+        "has_state_transition": true,
+        "has_formula": true,
+        "has_error_messages": true,
+        "has_validation_rule": true,
+        "has_business_rule": true
       },
       "mapped_feature": "stub_receiving_po_packing_list.md",
       "coverage_status": "stub",
-      "last_verified_version": null,
+      "last_verified_version": "2.17",
       "change_history": [],
       "read_log": {
         "claims_extracted": 0,
@@ -1803,7 +1853,7 @@
       "_source": "toc",
       "source_page": 111,
       "source_type": "toc",
-      "range_status": "needs_review",
+      "range_status": "verified",
       "source_ref": "07062_Receiving_PO_Docs_ver2.17.md#L2418-L2455"
     },
     {
@@ -1815,15 +1865,16 @@
       "parent_id": null,
       "topic_types": [],
       "flags": {
-        "has_enum": false,
-        "has_state_transition": false,
-        "has_formula": false,
-        "has_error_messages": false,
-        "has_validation_rule": false
+        "has_enum": true,
+        "has_state_transition": true,
+        "has_formula": true,
+        "has_error_messages": true,
+        "has_validation_rule": true,
+        "has_business_rule": true
       },
       "mapped_feature": "stub_receiving_po_packing_list.md",
       "coverage_status": "stub",
-      "last_verified_version": null,
+      "last_verified_version": "2.17",
       "change_history": [],
       "read_log": {
         "claims_extracted": 0,
@@ -1835,7 +1886,7 @@
       "_source": "toc",
       "source_page": 112,
       "source_type": "toc",
-      "range_status": "needs_review",
+      "range_status": "verified",
       "source_ref": "07062_Receiving_PO_Docs_ver2.17.md#L2456-L2464"
     },
     {
@@ -1847,15 +1898,16 @@
       "parent_id": "S-56",
       "topic_types": [],
       "flags": {
-        "has_enum": false,
-        "has_state_transition": false,
-        "has_formula": false,
-        "has_error_messages": false,
-        "has_validation_rule": false
+        "has_enum": true,
+        "has_state_transition": true,
+        "has_formula": true,
+        "has_error_messages": true,
+        "has_validation_rule": true,
+        "has_business_rule": true
       },
       "mapped_feature": "stub_receiving_po_packing_list.md",
       "coverage_status": "stub",
-      "last_verified_version": null,
+      "last_verified_version": "2.17",
       "change_history": [],
       "read_log": {
         "claims_extracted": 0,
@@ -1867,7 +1919,7 @@
       "_source": "toc",
       "source_page": 113,
       "source_type": "toc",
-      "range_status": "needs_review",
+      "range_status": "verified",
       "source_ref": "07062_Receiving_PO_Docs_ver2.17.md#L2465-L2514"
     },
     {
@@ -1879,15 +1931,16 @@
       "parent_id": "S-56",
       "topic_types": [],
       "flags": {
-        "has_enum": false,
-        "has_state_transition": false,
-        "has_formula": false,
-        "has_error_messages": false,
-        "has_validation_rule": false
+        "has_enum": true,
+        "has_state_transition": true,
+        "has_formula": true,
+        "has_error_messages": true,
+        "has_validation_rule": true,
+        "has_business_rule": true
       },
       "mapped_feature": "stub_receiving_po_packing_list.md",
       "coverage_status": "stub",
-      "last_verified_version": null,
+      "last_verified_version": "2.17",
       "change_history": [],
       "read_log": {
         "claims_extracted": 0,
@@ -1899,7 +1952,7 @@
       "_source": "toc",
       "source_page": 115,
       "source_type": "toc",
-      "range_status": "needs_review",
+      "range_status": "verified",
       "source_ref": "07062_Receiving_PO_Docs_ver2.17.md#L2515-L2579"
     },
     {
@@ -1911,15 +1964,16 @@
       "parent_id": "S-56",
       "topic_types": [],
       "flags": {
-        "has_enum": false,
-        "has_state_transition": false,
-        "has_formula": false,
-        "has_error_messages": false,
-        "has_validation_rule": false
+        "has_enum": true,
+        "has_state_transition": true,
+        "has_formula": true,
+        "has_error_messages": true,
+        "has_validation_rule": true,
+        "has_business_rule": true
       },
       "mapped_feature": "stub_receiving_po_packing_list.md",
       "coverage_status": "stub",
-      "last_verified_version": null,
+      "last_verified_version": "2.17",
       "change_history": [],
       "read_log": {
         "claims_extracted": 0,
@@ -1931,7 +1985,7 @@
       "_source": "toc",
       "source_page": 118,
       "source_type": "toc",
-      "range_status": "needs_review",
+      "range_status": "verified",
       "source_ref": "07062_Receiving_PO_Docs_ver2.17.md#L2580-L2580"
     },
     {

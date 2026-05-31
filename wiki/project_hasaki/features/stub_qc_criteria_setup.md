@@ -11,11 +11,13 @@ source_doc: 07105_Quality_Control_Docs_ver1.5.md
 source_range: 07105#L125-L1323
 partial_read: false
 partial_read_note: ""
-last_verified_at: "2026-05-30 22:00:00"
-verification_status: Pending
+last_verified_at: "2026-05-31 18:36:07"
+verification_status: Verified
 approved_by:
 approved_at:
-approval_note:
+approval_note: "FIX-001: xóa inferred 'thấp nhất' khỏi BR + Q-006 trace; FIX-002: thêm Q-016 typo L141 + R002 ⚠️"
+last_verified_source_version: 1.5
+
 ---
 
 # REQ: stub_qc_criteria_setup
@@ -46,7 +48,7 @@ approval_note:
 | ID | Requirement | Loại | Priority | Testable? | Source |
 |:---|:-----------|:-----|:---------|:----------|:-------|
 | R001 | Thiết lập tiêu chí — `Menu: Inbound / Quality control / Tab Thiết lập tiêu chí (Setup criteria)` | UI + Navigation | High | ✅ | 07105#L126-L128 |
-| R002 | Filter listing tiêu chí — `Mã, tên tiêu chí` (Code, Criteria name): tìm gần đúng, nhập từ 3 ký tự; `Đang hoạt động` (Active); `Từ ngày…đến ngày` (From date…to date): tìm theo ngày tạo, `Đến ngày` ≥ `Từ ngày`, default không chọn | Filter + Validation | High | ✅ | 07105#L131-L143 |
+| R002 | Filter listing tiêu chí — `Mã, tên tiêu chí` (Code, Criteria name): tìm gần đúng, nhập từ 3 ký tự; `Đang hoạt động` (Active); `Từ ngày…đến ngày` (From date…to date): tìm theo ngày tạo, `Đến ngày` ≥ `Từ ngày` (raw L141 có typo — Q-016), default không chọn | Filter + Validation | High | ⚠️ | 07105#L131-L143 |
 | R003 | Listing tiêu chí — cột: `TT` (tăng dần), `Mã tiêu chí` (theo user nhập), `Tên tiêu chí`, `Mô tả`, `Hướng dẫn`, `Đang hoạt động` (default `Active` khi tạo mới), `Người tạo` (email + thời gian `YYYY-MM-DD HH:SS`), `Người cập nhật`, `Thao tác` | UI + Functional | High | ✅ | 07105#L144-L170 |
 | R004 | Active/Inactive tiêu chí — khi muốn Active/Inactive thiết lập cho SKU thì **hiện thông báo xác nhận**: `Do you want to DEACTIVATE criterion 1001?` / `Do you want to ACTIVATE criterion 1001?` | Confirm + State transition | High | ✅ | 07105#L152-L160 |
 | R005 | Thao tác — chọn để cập nhật thông tin cho tiêu chí. **Không cho cập nhật mã tiêu chí**, các thông tin còn lại được phép cập nhật | Functional + Validation | High | ✅ | 07105#L167-L170 |
@@ -180,7 +182,7 @@ approval_note:
 
 | Tên trường / Rule | Định dạng | Bắt buộc? | Ràng buộc (Validation & Logic) |
 |:-----------------|:---------|:----------|:-------------------------------|
-| Filter `Đến ngày` | date | ❌ | ≥ `Từ ngày` |
+| Filter `Đến ngày` | date | ❌ | ≥ `Từ ngày` (raw L141 typo "đến ngày ≥ đến ngày" → spec interpret là "đến ngày ≥ từ ngày" — Q-016) |
 | `Mã tiêu chí` | string | ✅ | Unique trên hệ thống; không sửa được sau khi tạo |
 | `Tên tiêu chí` | string | ✅ | Unique trên hệ thống |
 | Active default | rule | ✅ | Tiêu chí mới tạo / SKU setup mới → status `Active` |
@@ -368,6 +370,7 @@ approval_note:
 | Q-013 | R029 | Khi tiêu chí inactive → tự xoá khỏi SKU `Open/Waiting for Approval`. Sau khi user reactivate tiêu chí → có tự thêm lại vào SKU không, hay user phải add manual? | PO | Open | | | |
 | Q-014 | R013 | "1 thời điểm 1 SKU không thể cùng active 2 thiết lập" — có ngoại lệ nào không (vd 2 thiết lập cho 2 phase khác nhau)? | PO | Open | | | |
 | Q-015 | R028 | Sau khi `Yêu cầu duyệt` → status Chờ duyệt, ai có quyền approve/reject? (xem [[stub_qc_criteria_approval]]). | PO | Open | | | |
+| Q-016 | R002, BR | Raw L141 có typo `"Đến ngày phải lớn hơn hoặc bằng đến ngày"` (lặp "đến ngày"). Spec interpret là `Đến ngày ≥ Từ ngày` (hợp lý về nghiệp vụ), nhưng cần PO confirm ý định đúng là `Đến ngày ≥ Từ ngày` hay logic khác? | PO/UX | Open | | | |
 
 ## 📝 Thay đổi so với version cũ
 
@@ -408,6 +411,7 @@ approval_note:
 - R037 — chờ Q-012 (override per SKU)
 - R013 — chờ Q-014 (mutex active 2 setup edge)
 - R028 — chờ Q-015 (approval flow scope)
+- R002, BR `Filter Đến ngày` — chờ Q-016 (raw typo L141 interpretation: `Đến ngày ≥ Từ ngày` hay logic khác)
 
 Test cases liên quan tới các R-ID trên bị block đến khi câu hỏi `Answered`.
 
@@ -417,3 +421,4 @@ Test cases liên quan tới các R-ID trên bị block đến khi câu hỏi `An
 |:----------|:--------|:------------------|:------|
 | 2026-05-30 14:45:51 | v1.0 | Tách từ monster stub thành per-feature stub | split-stubs-2026-05-30 |
 | 2026-05-30 22:00:00 | v1.1 | Refine stub → full spec: 38 R-ID, 30 AC, 26 BR, 14 messages (10 verbatim VN+EN, 4 verbatim EN only), 15 questions Open. `partial_read: false`. | refine-batch-5-2026-05-30 |
+| 2026-05-31 17:30:00 | v1.2 | FIX-002 (refiner batch-4): R002 Testable ✅→⚠️; thêm Q-016 trace raw typo L141 `Đến ngày ≥ Từ ngày`; cập nhật BR Filter + Blocked Coverage. | refiner-spec-scoped-batch-4 |

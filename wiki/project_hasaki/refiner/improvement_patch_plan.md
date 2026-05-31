@@ -81,3 +81,50 @@ Review 23 scripts trong `.claude/scripts/` phát hiện gap visibility:
 ### Pending observations (continued from pilot-batch-1)
 
 3. **Index flags=[] cho mọi sections trong batch-2** (S-05, S-06, S-07, S-08, S-17, S-18) — cùng pattern observation #1 từ pilot-batch-1. ~~Defer auto-flag-update script.~~ **RESOLVED 2026-05-30 21:35** — `.claude/scripts/index_flag_updater.py` đã tồn tại sẵn (AI session này mới phát hiện). Applied cho 6 sections của 3 specs batch-2: tất cả 6 flags → True. `check_ingest.py` exit 0 sau apply. Legacy fix cho ~18 sections của pilot-batch-1 + chưa-verify specs còn pending — chạy `py .claude/scripts/index_flag_updater.py --project project_hasaki --apply` (không filter specs) khi sẵn sàng.
+
+---
+
+## 2026-05-31 / spec-scoped-batch-3
+
+**3 FIX suggestions** (FIX-004 mobile INF-01, FIX-005 OMIT-01 App SL/tem QC, FIX-006 MISS-01 cross-ref xã vải/PO sample) — xem `2026-05-31_spec-scoped-batch-3/refiner_report.md`. Pending user confirm, chưa apply.
+
+### PATCH-001 — Cross-session pattern reached threshold (≥3 sessions) — Pending
+
+- **File:** `.claude/rules/20-no-inference.md`
+- **Loại:** Add (strengthen existing no-inference policy)
+- **Nội dung:** Thêm rule item:
+  > **Verbatim-deviation trace:** Khi spec text của một R-ID / Business Rule / AC **khác raw verbatim** (do correction typo, generalization, đặt placeholder, suy công thức, hoặc assumption về scope), BẮT BUỘC kèm theo: (1) một `Q-ID` trong `## ❓ Câu hỏi chưa rõ` cùng raw quote nguyên văn, và (2) dòng tương ứng trong `## 🚧 Blocked Coverage`. Không được điền vào khoảng trống của raw bằng giá trị/công thức cụ thể (vd raw "10%" → KHÔNG tự viết `ceil(n × 0.10)`; raw typo → KHÔNG silently sửa rồi mark SUPPORTED). Giữ verbatim raw + đẩy phần suy diễn sang Q.
+- **Lý do (root cause theo decision tree):** Giai đoạn = "AI đọc raw và VIẾT spec" (refinement). Trạng thái instruction = "có nhưng không đủ rõ" — `20-no-inference.md` cấm suy diễn requirement + có Enum-completeness rule, nhưng chưa explicit cho lớp "verbatim deviation phải kèm Q-ID + raw quote". Clarify/strengthen.
+- **Expected impact:** Cải thiện `L_INFERENCE_PASS` — giảm INFERRED/UNCLEAR sót ở batch sau; mọi deviation đều có audit trail (Q-ID + raw quote) để reviewer trace, không cần refiner phát hiện lại.
+- **Counterfactual:** Nếu patch tồn tại trước batch-3 → INF-01 không xảy ra (AI buộc giữ "10% số lượng cây vải của lô" verbatim + Q-ID thay vì tự suy `ceil()`). Nhắm đúng giai đoạn VIẾT, không phải verify. PASS.
+- **Pattern history (4 instances / 3 sessions):** pilot-batch-1 FIX-001 (gift→gốc typo); batch-2 FIX-002 (Đến ngày ≥ typo) + FIX-003 (Sai số scope); batch-3 FIX-004 (10% → ceil formula).
+- **Trạng thái:** ✅ Applied 2026-05-31 — thêm vào `.claude/rules/20-no-inference.md` dòng "Verbatim-deviation trace".
+
+### Pending observations (continued)
+
+4. **Out-of-feature content lẫn trong line-range của spec khác** — raw `07105#L1128-L1147` (App UID SL + tem QC) và `L1152-L1168` (xã vải transfer + PO sample mapping) nằm trong line-range manual (L1023-L1304) nhưng nội dung thuộc feature App / xã vải / PO sample. Hiện tượng: range-based splitting cắt theo line, không theo semantic boundary → content có thể bị orphan (không spec nào own) hoặc bị gán nhầm spec. Observation — nếu lặp ≥2 session, considera patch quy trình split-stubs để align section boundary với heading nghiệp vụ thay vì line cứng.
+
+---
+
+## 2026-05-31 / spec-scoped-batch-7
+
+**2 FIX suggestions** (FIX-001 date_rules typo VN "tối thiếu" silent-fix thiếu Q-ID; FIX-002 packing_list AC-20 raw VD 180-vs-formula-Width-1.5 silent resolution) — cả 2 mức Low (MISSING_DETAIL), xem `2026-05-31_spec-scoped-batch-7/refiner_report.md`. Pending user confirm, chưa apply. **Không block verdict PASS 4/4.**
+
+### PATCH-002 — Candidate (NOT applied) — raw-internal inconsistency silent-resolution
+
+- **File (target):** `.claude/rules/20-no-inference.md` (mở rộng PATCH-001) HOẶC checklist phase ingest `.claude/skills/hasaki-wiki/references/phase_*.md`
+- **Loại:** Add example/clarification (strengthen PATCH-001, KHÔNG tạo rule mới độc lập)
+- **Nội dung đề xuất:**
+  > **Raw-internal inconsistency:** Khi cùng một tài liệu raw có 2 chỗ mâu thuẫn nhau (vd formula dùng `Width=1.5m` nhưng VD tính plug `180`; VN ghi "chữ và số" nhưng message ghi "chữ số"; VN≠EN về mã/nội dung; typo cần sửa), KHÔNG được resolve im lặng bằng cách chọn 1 nhánh rồi mark SUPPORTED. Bắt buộc: (1) giữ verbatim CẢ HAI nhánh raw; (2) thêm `Q-ID` raw-internal-inconsistency nêu rõ 2 chỗ mâu thuẫn + line; (3) dòng Blocked Coverage. AC illustration không được tính giá trị cụ thể từ nhánh chọn mà không trace Q-ID.
+- **Lý do (decision tree):** Giai đoạn = "AI đọc raw + VIẾT spec" (refinement). PATCH-001 đã cover "spec text ≠ raw verbatim → Q-ID" nhưng chưa explicit cho trường hợp **raw tự mâu thuẫn** và spec phải chọn nhánh. Clarify/strengthen, không phải gap policy mới.
+- **Pattern history (4 instances liên tiếp / batch-3→7):**
+  - batch-5 (#1): invoice "chữ và số" L1521 vs message "chữ số" L1525 → FIX-003 + Q-013 (spec xử lý ĐÚNG, có Q-ID).
+  - batch-6 (#2): APP ERR-APP-004 VN≠EN L997-1002 → Q-004 (spec xử lý ĐÚNG, có Q-ID).
+  - batch-7 (#3): packing_list AC-20 raw VD `180` ≠ formula Width `1.5` → spec resolve IM LẶNG → 54.69 Yard (KHÔNG Q-ID) → FIX-002.
+  - batch-7 (#4): date_rules R001 raw VN typo "tối thiếu" → spec silent fix "tối thiểu" (KHÔNG Q-ID) → FIX-001.
+- **Counterfactual:** Nếu PATCH-002 tồn tại trước batch-7 → 2 instance #3/#4 đã đính Q-ID raw-internal-inconsistency thay vì silent resolution → FIX-001/002 không phát sinh. Nhắm đúng giai đoạn VIẾT. PASS.
+- **Trạng thái:** Candidate — **chờ user confirm + pass quality gates.** Lưu ý: batch-5/6 spec đã xử lý đúng (có Q-ID) → pattern này một phần đã được PATCH-001 cover; PATCH-002 chỉ là làm rõ phạm vi + cấm silent resolution. Cân nhắc apply nhẹ (thêm 1 dòng ví dụ vào PATCH-001) thay vì rule riêng.
+
+### Pending observations (continued)
+
+5. **Index flags={} cho 4 specs batch-7** — confirm_paste_id, vas_manual, date_rules, packing_list trong raw `*_index.json` đều `flags={}` dù content có enum (10 enum)/error_messages (39)/business_rule (106)/formula (6)/state_transition. Cùng observation #1/#3 (đã có script `index_flag_updater.py`). → chạy `index_flag_updater.py --specs <4 specs> --apply` ở write-back. Read-only dry-run đã verify cần apply.

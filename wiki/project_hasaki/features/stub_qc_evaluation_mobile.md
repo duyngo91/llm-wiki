@@ -11,11 +11,13 @@ source_doc: 07105_Quality_Control_Docs_ver1.5.md
 source_range: 07105#L790-L1021
 partial_read: false
 partial_read_note: ""
-last_verified_at: "2026-05-30 16:50:00"
-verification_status: Pending
+last_verified_at: "2026-05-31 17:50:34"
+verification_status: Verified
 approved_by:
 approved_at:
 approval_note:
+last_verified_source_version: 1.5
+
 ---
 
 # REQ: stub_qc_evaluation_mobile
@@ -128,7 +130,7 @@ approval_note:
 | Chụp hình (Lỗi 4 điểm — Update vải) | rule | ✅ | Bắt buộc, max 3 hình |
 | Lỗi 4 điểm — phân loại lỗi | enum | ✅ | 19 values (R023) |
 | Lỗi 4 điểm — formula | rule | ✅ | Tổng điểm đã nhân hệ số; hệ số / weight chưa rõ — Q-004 |
-| 10% group UID cho vải | formula | ✅ | `ceil(lot_uid_count × 0.10)` dòng UID group cần đánh giá |
+| 10% group UID cho vải | rule | ✅ | Đánh giá 10% số lượng cây vải của từng lô; công thức tính số dòng UID group (làm tròn lên/xuống/thường) chưa rõ — Q-012 |
 | Kết quả UID group (vải) | rule | ✅ | ≥ 1 tiêu chí Không Đạt → UID group Không Đạt |
 | Edit kết quả audit | rule | ⚠️ | Có audit log không — Q-009 |
 
@@ -238,6 +240,7 @@ approval_note:
 | Q-009 | R011 | Khi user edit kết quả đánh giá, có audit log lưu lịch sử input cũ + người edit + thời gian không? | PO/Compliance | Open | | | |
 | Q-010 | R013, R014, E2 | User cố click `Hoàn thành` khi chưa đánh giá hết tiêu chí — App block hay nhắc nhở rồi cho phép submit Pending? | UX | Open | | | |
 | Q-011 | R002 | Spelling `Pruchase Order` (raw) — typo của `Purchase Order` ảnh hưởng tới UI key không? | PO/Dev | Open | | | |
+| Q-012 | R016, BR | Công thức tính số dòng UID group từ "10% số lượng cây vải của từng lô" — raw nêu "10%" và ví dụ "3 cây vải = 3 dòng" nhưng không đặc tả cách làm tròn (`ceil`/`floor`/`round`) khi kết quả lẻ. | PO/Dev | Open | | | |
 
 ## 📝 Thay đổi so với version cũ
 
@@ -271,6 +274,7 @@ approval_note:
 - R011, AC-06 — chờ Q-009 (audit log edit)
 - R013, R014 — chờ Q-010 (Hoàn thành validation)
 - R002 — chờ Q-011 (`Pruchase` typo)
+- R016, BR "10% group UID" — chờ Q-012 (công thức làm tròn số dòng UID group)
 
 Test cases liên quan tới các R-ID trên bị block đến khi câu hỏi `Answered`.
 
@@ -280,3 +284,4 @@ Test cases liên quan tới các R-ID trên bị block đến khi câu hỏi `An
 |:----------|:--------|:------------------|:------|
 | 2026-05-30 14:36:55 | v1.0 | Tách từ monster stub thành per-feature stub | split-stubs-2026-05-30 |
 | 2026-05-30 16:50:00 | v1.1 | Refine stub → full spec: 33 R-ID, 20 AC, 12 BR, 1 placeholder error message, 11 questions Open. `partial_read: false`. | refine-batch-2-2026-05-30 |
+| 2026-05-31 17:00:00 | v1.2 | FIX-004 (refiner batch-3): xóa formula INFERRED `ceil(lot_uid_count × 0.10)` khỏi BR "10% group UID"; giữ verbatim "10%"; thêm Q-012 + Blocked Coverage. | refiner-spec-scoped-batch-3 |

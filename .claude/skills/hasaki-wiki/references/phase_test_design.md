@@ -24,7 +24,7 @@ updated: 2026-05-30
 **Kích hoạt:** Feature Spec đã Gate 1 (status `Done`).
 
 1. Đọc Feature Spec đã duyệt + `test_data.md` + `environments.md` + bugs liên quan.
-2. Tạo/cập nhật `test_[feature]_[mucnho].md` trong `test_suites/`, status `Draft`, TC ký hiệu `⏳`.
+2. Tạo/cập nhật `ts_[feature_slug].md` trong `test_suites/`, status `Draft`, TC ký hiệu `⏳`. (Không dùng prefix `test_` hay `test_stub_` — naming convention chuẩn là `ts_`.)
 3. Tạo Task Spec `task_[tbb2_code].md` nếu có TBB2 liên kết — link đến HSK cha, feature group, feature specs, test suites. Traceability machine-readable: `TBB2 → HSK → Task Spec → Feature Group → Feature → R/AC → Testcase`.
 4. **Gate 2:** Dừng, trình bày Test Suite cho QA Lead. Chờ duyệt (`status: Testing`) trước khi đưa vào hàng đợi test.
 

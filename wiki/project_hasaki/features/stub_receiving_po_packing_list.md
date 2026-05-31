@@ -11,11 +11,13 @@ source_doc: 07062_Receiving_PO_Docs_ver2.17.md
 source_range: 07062#L2182-L2580
 partial_read: false
 partial_read_note: ""
-last_verified_at: "2026-05-30 22:30:00"
-verification_status: Pending
+last_verified_at: "2026-05-31 19:34:33"
+verification_status: Verified
 approved_by:
 approved_at:
-approval_note:
+approval_note: FIX-002 applied
+last_verified_source_version: 2.17
+
 ---
 
 # REQ: stub_receiving_po_packing_list
@@ -304,7 +306,7 @@ approval_note:
   - **Given:** Gross = Net = 50.
   - **When:** User xem.
   - **Then:** Trừ lõi = 0, disable edit (R024).
-- **AC-20 — Update 16-04-2026 quy đổi Yard**
+- **AC-20 — Update 16-04-2026 quy đổi Yard (Q-017 pending: raw-internal inconsistency L2479 vs L2506)**
   - **Given:** Width = 1.5m, GSM = 200, Weight cân = 15kg, SKU đơn vị Inside = Yard.
   - **When:** Tính SL.
   - **Then:** Yard = `(15 × 1000) / (1.5 × 200 × 0.9144)` ≈ 54.69 Yard (R025).
@@ -369,6 +371,7 @@ approval_note:
 | Q-014 | R015 | "Nếu SL thực nhận > SL packing list → ghi nhận theo packing list" (R015) vs Update 20-04-2026 ghi nhận dư + ADJ (R028) — conflict? 2 rule cho 2 case khác nhau? | PO | Open | | | |
 | Q-015 | R007 | "PO Receiving + import bổ sung → SKU bổ sung auto approved" — auto approved bất kể ±5% hay vẫn validate? | PO | Open | | | |
 | Q-016 | R026, R027 | `Qty per ADJ` ở ASN detail và UID group detail — số ADJ này hiển thị theo cái nào (cuộn / UID / SKU)? | PO | Open | | | |
+| Q-017 | R025, AC-20 | Raw L2479 formula dùng Width=1.5m nhưng L2506 VD số học plug giá trị khác (180?) → kết quả "54.69 Yard" được tính từ giá trị nào? PO confirm formula chính thức. | PO | Open | | | |
 
 ## 📝 Thay đổi so với version cũ
 
@@ -397,6 +400,7 @@ approval_note:
 
 ## 🚧 Blocked Coverage
 
+- R025, AC-20 — chờ Q-017 (raw L2479 vs L2506 inconsistency)
 - R028, R031 — chờ Q-002 (API endpoints)
 - ERR-PKL-005 — chờ Q-003 (typo `tronng`)
 - ERR-PKL-007, ERR-PKL-008 — chờ Q-004 (verbatim EN)
@@ -420,3 +424,4 @@ Test cases liên quan tới các R-ID trên bị block đến khi câu hỏi `An
 |:----------|:--------|:------------------|:------|
 | 2026-05-30 14:45:51 | v1.0 | Tách từ monster stub thành per-feature stub | split-stubs-2026-05-30 |
 | 2026-05-30 22:30:00 | v1.1 | Refine stub → full spec: 31 R-ID, 30 AC, 30 BR, 13 messages (10 verbatim VN+EN, 3 missing EN — Q-004), 16 questions Open. R019-R025 marked Pending từ 12-05-2026. `partial_read: false`. | refine-batch-5-2026-05-30 |
+| 2026-05-31 20:00:00 | v1.2 | FIX-002: AC-20 thêm Q-017 cho raw-internal inconsistency formula vs VD số học (PATCH-001 compliance) | batch-7-fix-session |

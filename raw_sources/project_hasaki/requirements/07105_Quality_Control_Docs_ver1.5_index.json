@@ -18,14 +18,15 @@
       "topic_types": [],
       "flags": {
         "has_enum": false,
-        "has_state_transition": false,
+        "has_state_transition": true,
         "has_formula": false,
         "has_error_messages": false,
-        "has_validation_rule": false
+        "has_validation_rule": true,
+        "has_business_rule": true
       },
       "mapped_feature": "stub_qc_overview.md",
       "coverage_status": "stub",
-      "last_verified_version": null,
+      "last_verified_version": "1.5",
       "change_history": [],
       "read_log": {
         "claims_extracted": 0,
@@ -37,7 +38,7 @@
       "_source": "toc",
       "source_page": 5,
       "source_type": "toc",
-      "range_status": "needs_review",
+      "range_status": "verified",
       "source_ref": "07105_Quality_Control_Docs_ver1.5.md#L102-L111"
     },
     {
@@ -50,14 +51,15 @@
       "topic_types": [],
       "flags": {
         "has_enum": false,
-        "has_state_transition": false,
+        "has_state_transition": true,
         "has_formula": false,
         "has_error_messages": false,
-        "has_validation_rule": false
+        "has_validation_rule": true,
+        "has_business_rule": true
       },
       "mapped_feature": "stub_qc_overview.md",
       "coverage_status": "stub",
-      "last_verified_version": null,
+      "last_verified_version": "1.5",
       "change_history": [],
       "read_log": {
         "claims_extracted": 0,
@@ -69,7 +71,7 @@
       "_source": "toc",
       "source_page": 5,
       "source_type": "toc",
-      "range_status": "needs_review",
+      "range_status": "verified",
       "source_ref": "07105_Quality_Control_Docs_ver1.5.md#L112-L114"
     },
     {
@@ -82,14 +84,15 @@
       "topic_types": [],
       "flags": {
         "has_enum": false,
-        "has_state_transition": false,
+        "has_state_transition": true,
         "has_formula": false,
         "has_error_messages": false,
-        "has_validation_rule": false
+        "has_validation_rule": true,
+        "has_business_rule": true
       },
       "mapped_feature": "stub_qc_overview.md",
       "coverage_status": "stub",
-      "last_verified_version": null,
+      "last_verified_version": "1.5",
       "change_history": [],
       "read_log": {
         "claims_extracted": 0,
@@ -101,7 +104,7 @@
       "_source": "toc",
       "source_page": 5,
       "source_type": "toc",
-      "range_status": "needs_review",
+      "range_status": "verified",
       "source_ref": "07105_Quality_Control_Docs_ver1.5.md#L115-L123"
     },
     {
@@ -114,14 +117,15 @@
       "topic_types": [],
       "flags": {
         "has_enum": false,
-        "has_state_transition": false,
+        "has_state_transition": true,
         "has_formula": false,
         "has_error_messages": false,
-        "has_validation_rule": false
+        "has_validation_rule": true,
+        "has_business_rule": true
       },
       "mapped_feature": "stub_qc_overview.md",
       "coverage_status": "stub",
-      "last_verified_version": null,
+      "last_verified_version": "1.5",
       "change_history": [],
       "read_log": {
         "claims_extracted": 0,
@@ -133,7 +137,7 @@
       "_source": "toc",
       "source_page": 6,
       "source_type": "toc",
-      "range_status": "needs_review",
+      "range_status": "verified",
       "source_ref": "07105_Quality_Control_Docs_ver1.5.md#L124-L124"
     },
     {
@@ -145,15 +149,16 @@
       "parent_id": null,
       "topic_types": [],
       "flags": {
-        "has_enum": false,
-        "has_state_transition": false,
-        "has_formula": false,
-        "has_error_messages": false,
-        "has_validation_rule": false
+        "has_enum": true,
+        "has_state_transition": true,
+        "has_formula": true,
+        "has_error_messages": true,
+        "has_validation_rule": true,
+        "has_business_rule": true
       },
       "mapped_feature": "stub_qc_criteria_setup.md",
       "coverage_status": "stub",
-      "last_verified_version": null,
+      "last_verified_version": "1.5",
       "change_history": [],
       "read_log": {
         "claims_extracted": 0,
@@ -165,7 +170,7 @@
       "_source": "toc",
       "source_page": 6,
       "source_type": "toc",
-      "range_status": "needs_review",
+      "range_status": "verified",
       "source_ref": "07105_Quality_Control_Docs_ver1.5.md#L125-L170"
     },
     {
@@ -177,15 +182,16 @@
       "parent_id": null,
       "topic_types": [],
       "flags": {
-        "has_enum": false,
-        "has_state_transition": false,
-        "has_formula": false,
-        "has_error_messages": false,
-        "has_validation_rule": false
+        "has_enum": true,
+        "has_state_transition": true,
+        "has_formula": true,
+        "has_error_messages": true,
+        "has_validation_rule": true,
+        "has_business_rule": true
       },
       "mapped_feature": "stub_qc_criteria_setup.md",
       "coverage_status": "stub",
-      "last_verified_version": null,
+      "last_verified_version": "1.5",
       "change_history": [],
       "read_log": {
         "claims_extracted": 0,
@@ -197,7 +203,7 @@
       "_source": "toc",
       "source_page": 7,
       "source_type": "toc",
-      "range_status": "needs_review",
+      "range_status": "verified",
       "source_ref": "07105_Quality_Control_Docs_ver1.5.md#L171-L174"
     },
     {
@@ -209,15 +215,16 @@
       "parent_id": null,
       "topic_types": [],
       "flags": {
-        "has_enum": false,
-        "has_state_transition": false,
-        "has_formula": false,
-        "has_error_messages": false,
-        "has_validation_rule": false
+        "has_enum": true,
+        "has_state_transition": true,
+        "has_formula": true,
+        "has_error_messages": true,
+        "has_validation_rule": true,
+        "has_business_rule": true
       },
       "mapped_feature": "stub_qc_criteria_setup.md",
       "coverage_status": "stub",
-      "last_verified_version": null,
+      "last_verified_version": "1.5",
       "change_history": [],
       "read_log": {
         "claims_extracted": 0,
@@ -229,7 +236,7 @@
       "_source": "toc",
       "source_page": 8,
       "source_type": "toc",
-      "range_status": "needs_review",
+      "range_status": "verified",
       "source_ref": "07105_Quality_Control_Docs_ver1.5.md#L175-L191"
     },
     {
@@ -307,15 +314,16 @@
       "parent_id": null,
       "topic_types": [],
       "flags": {
-        "has_enum": false,
-        "has_state_transition": false,
-        "has_formula": false,
-        "has_error_messages": false,
-        "has_validation_rule": false
+        "has_enum": true,
+        "has_state_transition": true,
+        "has_formula": true,
+        "has_error_messages": true,
+        "has_validation_rule": true,
+        "has_business_rule": true
       },
       "mapped_feature": "stub_qc_criteria_setup.md",
       "coverage_status": "stub",
-      "last_verified_version": null,
+      "last_verified_version": "1.5",
       "change_history": [],
       "read_log": {
         "claims_extracted": 0,
@@ -327,7 +335,7 @@
       "_source": "toc",
       "source_page": 15,
       "source_type": "toc",
-      "range_status": "needs_review",
+      "range_status": "verified",
       "source_ref": "07105_Quality_Control_Docs_ver1.5.md#L401-L432"
     },
     {
@@ -339,15 +347,16 @@
       "parent_id": "S-09",
       "topic_types": [],
       "flags": {
-        "has_enum": false,
-        "has_state_transition": false,
-        "has_formula": false,
-        "has_error_messages": false,
-        "has_validation_rule": false
+        "has_enum": true,
+        "has_state_transition": true,
+        "has_formula": true,
+        "has_error_messages": true,
+        "has_validation_rule": true,
+        "has_business_rule": true
       },
       "mapped_feature": "stub_qc_criteria_setup.md",
       "coverage_status": "stub",
-      "last_verified_version": null,
+      "last_verified_version": "1.5",
       "change_history": [],
       "read_log": {
         "claims_extracted": 0,
@@ -359,7 +368,7 @@
       "_source": "body_heading",
       "source_page": 15,
       "source_type": "body_heading",
-      "range_status": "needs_review",
+      "range_status": "verified",
       "source_ref": "07105_Quality_Control_Docs_ver1.5.md#L433-L442"
     },
     {
@@ -371,15 +380,16 @@
       "parent_id": null,
       "topic_types": [],
       "flags": {
-        "has_enum": false,
-        "has_state_transition": false,
-        "has_formula": false,
-        "has_error_messages": false,
-        "has_validation_rule": false
+        "has_enum": true,
+        "has_state_transition": true,
+        "has_formula": true,
+        "has_error_messages": true,
+        "has_validation_rule": true,
+        "has_business_rule": true
       },
       "mapped_feature": "stub_qc_criteria_setup.md",
       "coverage_status": "stub",
-      "last_verified_version": null,
+      "last_verified_version": "1.5",
       "change_history": [],
       "read_log": {
         "claims_extracted": 0,
@@ -391,7 +401,7 @@
       "_source": "body_heading",
       "source_page": 16,
       "source_type": "body_heading",
-      "range_status": "needs_review",
+      "range_status": "verified",
       "source_ref": "07105_Quality_Control_Docs_ver1.5.md#L443-L492"
     },
     {
@@ -403,15 +413,16 @@
       "parent_id": null,
       "topic_types": [],
       "flags": {
-        "has_enum": false,
-        "has_state_transition": false,
-        "has_formula": false,
-        "has_error_messages": false,
-        "has_validation_rule": false
+        "has_enum": true,
+        "has_state_transition": true,
+        "has_formula": true,
+        "has_error_messages": true,
+        "has_validation_rule": true,
+        "has_business_rule": true
       },
       "mapped_feature": "stub_qc_criteria_setup.md",
       "coverage_status": "stub",
-      "last_verified_version": null,
+      "last_verified_version": "1.5",
       "change_history": [],
       "read_log": {
         "claims_extracted": 0,
@@ -423,7 +434,7 @@
       "_source": "toc",
       "source_page": 17,
       "source_type": "toc",
-      "range_status": "needs_review",
+      "range_status": "verified",
       "source_ref": "07105_Quality_Control_Docs_ver1.5.md#L493-L532"
     },
     {
@@ -468,15 +479,16 @@
       "parent_id": null,
       "topic_types": [],
       "flags": {
-        "has_enum": false,
-        "has_state_transition": false,
-        "has_formula": false,
-        "has_error_messages": false,
-        "has_validation_rule": false
+        "has_enum": true,
+        "has_state_transition": true,
+        "has_formula": true,
+        "has_error_messages": true,
+        "has_validation_rule": true,
+        "has_business_rule": true
       },
       "mapped_feature": "stub_qc_evaluation_result.md",
       "coverage_status": "stub",
-      "last_verified_version": null,
+      "last_verified_version": "1.5",
       "change_history": [],
       "read_log": {
         "claims_extracted": 0,
@@ -488,7 +500,7 @@
       "_source": "toc",
       "source_page": 22,
       "source_type": "toc",
-      "range_status": "needs_review",
+      "range_status": "verified",
       "source_ref": "07105_Quality_Control_Docs_ver1.5.md#L570-L569"
     },
     {
@@ -500,15 +512,16 @@
       "parent_id": null,
       "topic_types": [],
       "flags": {
-        "has_enum": false,
-        "has_state_transition": false,
-        "has_formula": false,
-        "has_error_messages": false,
-        "has_validation_rule": false
+        "has_enum": true,
+        "has_state_transition": true,
+        "has_formula": true,
+        "has_error_messages": true,
+        "has_validation_rule": true,
+        "has_business_rule": true
       },
       "mapped_feature": "stub_qc_evaluation_result.md",
       "coverage_status": "stub",
-      "last_verified_version": null,
+      "last_verified_version": "1.5",
       "change_history": [],
       "read_log": {
         "claims_extracted": 0,
@@ -520,7 +533,7 @@
       "_source": "toc",
       "source_page": 23,
       "source_type": "toc",
-      "range_status": "needs_review",
+      "range_status": "verified",
       "source_ref": "07105_Quality_Control_Docs_ver1.5.md#L570-L658"
     },
     {
@@ -532,15 +545,16 @@
       "parent_id": null,
       "topic_types": [],
       "flags": {
-        "has_enum": false,
-        "has_state_transition": false,
-        "has_formula": false,
-        "has_error_messages": false,
-        "has_validation_rule": false
+        "has_enum": true,
+        "has_state_transition": true,
+        "has_formula": true,
+        "has_error_messages": true,
+        "has_validation_rule": true,
+        "has_business_rule": true
       },
       "mapped_feature": "stub_qc_evaluation_result.md",
       "coverage_status": "stub",
-      "last_verified_version": null,
+      "last_verified_version": "1.5",
       "change_history": [],
       "read_log": {
         "claims_extracted": 0,
@@ -552,7 +566,7 @@
       "_source": "body_heading",
       "source_page": 24,
       "source_type": "body_heading",
-      "range_status": "needs_review",
+      "range_status": "verified",
       "source_ref": "07105_Quality_Control_Docs_ver1.5.md#L659-L695"
     },
     {
@@ -630,15 +644,16 @@
       "parent_id": null,
       "topic_types": [],
       "flags": {
-        "has_enum": false,
+        "has_enum": true,
         "has_state_transition": false,
-        "has_formula": false,
-        "has_error_messages": false,
-        "has_validation_rule": false
+        "has_formula": true,
+        "has_error_messages": true,
+        "has_validation_rule": true,
+        "has_business_rule": true
       },
       "mapped_feature": "stub_qc_evaluation_mobile.md",
       "coverage_status": "full",
-      "last_verified_version": null,
+      "last_verified_version": "1.5",
       "change_history": [],
       "read_log": {
         "claims_extracted": 14,
@@ -650,7 +665,7 @@
       "_source": "toc",
       "source_page": 31,
       "source_type": "toc",
-      "range_status": "needs_review",
+      "range_status": "verified",
       "source_ref": "07105_Quality_Control_Docs_ver1.5.md#L779-L871"
     },
     {
@@ -662,15 +677,16 @@
       "parent_id": "S-19",
       "topic_types": [],
       "flags": {
-        "has_enum": false,
+        "has_enum": true,
         "has_state_transition": false,
-        "has_formula": false,
-        "has_error_messages": false,
-        "has_validation_rule": false
+        "has_formula": true,
+        "has_error_messages": true,
+        "has_validation_rule": true,
+        "has_business_rule": true
       },
       "mapped_feature": "stub_qc_evaluation_mobile.md",
       "coverage_status": "full",
-      "last_verified_version": null,
+      "last_verified_version": "1.5",
       "change_history": [],
       "read_log": {
         "claims_extracted": 19,
@@ -682,7 +698,7 @@
       "_source": "toc",
       "source_page": 34,
       "source_type": "toc",
-      "range_status": "needs_review",
+      "range_status": "verified",
       "source_ref": "07105_Quality_Control_Docs_ver1.5.md#L872-L1022"
     },
     {
@@ -694,15 +710,16 @@
       "parent_id": null,
       "topic_types": [],
       "flags": {
-        "has_enum": false,
-        "has_state_transition": false,
+        "has_enum": true,
+        "has_state_transition": true,
         "has_formula": false,
-        "has_error_messages": false,
-        "has_validation_rule": false
+        "has_error_messages": true,
+        "has_validation_rule": true,
+        "has_business_rule": true
       },
       "mapped_feature": "stub_qc_evaluation_manual.md",
       "coverage_status": "stub",
-      "last_verified_version": null,
+      "last_verified_version": "1.5",
       "change_history": [],
       "read_log": {
         "claims_extracted": 0,
@@ -714,7 +731,7 @@
       "_source": "toc",
       "source_page": 39,
       "source_type": "toc",
-      "range_status": "needs_review",
+      "range_status": "verified",
       "source_ref": "07105_Quality_Control_Docs_ver1.5.md#L1023-L1077"
     },
     {
@@ -726,15 +743,16 @@
       "parent_id": "S-21",
       "topic_types": [],
       "flags": {
-        "has_enum": false,
-        "has_state_transition": false,
+        "has_enum": true,
+        "has_state_transition": true,
         "has_formula": false,
-        "has_error_messages": false,
-        "has_validation_rule": false
+        "has_error_messages": true,
+        "has_validation_rule": true,
+        "has_business_rule": true
       },
       "mapped_feature": "stub_qc_evaluation_manual.md",
       "coverage_status": "stub",
-      "last_verified_version": null,
+      "last_verified_version": "1.5",
       "change_history": [],
       "read_log": {
         "claims_extracted": 0,
@@ -746,7 +764,7 @@
       "_source": "toc",
       "source_page": 42,
       "source_type": "toc",
-      "range_status": "needs_review",
+      "range_status": "verified",
       "source_ref": "07105_Quality_Control_Docs_ver1.5.md#L1078-L1080"
     },
     {
@@ -758,15 +776,16 @@
       "parent_id": null,
       "topic_types": [],
       "flags": {
-        "has_enum": false,
-        "has_state_transition": false,
-        "has_formula": false,
-        "has_error_messages": false,
-        "has_validation_rule": false
+        "has_enum": true,
+        "has_state_transition": true,
+        "has_formula": true,
+        "has_error_messages": true,
+        "has_validation_rule": true,
+        "has_business_rule": true
       },
       "mapped_feature": "stub_qc_criteria_setup.md",
       "coverage_status": "stub",
-      "last_verified_version": null,
+      "last_verified_version": "1.5",
       "change_history": [],
       "read_log": {
         "claims_extracted": 0,
@@ -778,7 +797,7 @@
       "_source": "toc",
       "source_page": 42,
       "source_type": "toc",
-      "range_status": "needs_review",
+      "range_status": "verified",
       "source_ref": "07105_Quality_Control_Docs_ver1.5.md#L1081-L1083"
     },
     {
@@ -791,14 +810,15 @@
       "topic_types": [],
       "flags": {
         "has_enum": false,
-        "has_state_transition": false,
+        "has_state_transition": true,
         "has_formula": false,
-        "has_error_messages": false,
-        "has_validation_rule": false
+        "has_error_messages": true,
+        "has_validation_rule": true,
+        "has_business_rule": true
       },
       "mapped_feature": "stub_qc_uid_group.md",
       "coverage_status": "stub",
-      "last_verified_version": null,
+      "last_verified_version": "1.5",
       "change_history": [],
       "read_log": {
         "claims_extracted": 0,
@@ -810,7 +830,7 @@
       "_source": "toc",
       "source_page": 43,
       "source_type": "toc",
-      "range_status": "needs_review",
+      "range_status": "verified",
       "source_ref": "07105_Quality_Control_Docs_ver1.5.md#L1084-L1100"
     },
     {
@@ -822,15 +842,16 @@
       "parent_id": null,
       "topic_types": [],
       "flags": {
-        "has_enum": false,
-        "has_state_transition": false,
-        "has_formula": false,
-        "has_error_messages": false,
-        "has_validation_rule": false
+        "has_enum": true,
+        "has_state_transition": true,
+        "has_formula": true,
+        "has_error_messages": true,
+        "has_validation_rule": true,
+        "has_business_rule": true
       },
       "mapped_feature": "stub_qc_evaluation_result.md",
       "coverage_status": "stub",
-      "last_verified_version": null,
+      "last_verified_version": "1.5",
       "change_history": [],
       "read_log": {
         "claims_extracted": 0,
@@ -842,7 +863,7 @@
       "_source": "toc",
       "source_page": 43,
       "source_type": "toc",
-      "range_status": "needs_review",
+      "range_status": "verified",
       "source_ref": "07105_Quality_Control_Docs_ver1.5.md#L1101-L1127"
     },
     {
@@ -855,14 +876,15 @@
       "topic_types": [],
       "flags": {
         "has_enum": false,
-        "has_state_transition": false,
+        "has_state_transition": true,
         "has_formula": false,
-        "has_error_messages": false,
-        "has_validation_rule": false
+        "has_error_messages": true,
+        "has_validation_rule": true,
+        "has_business_rule": true
       },
       "mapped_feature": "stub_qc_uid_group.md",
       "coverage_status": "stub",
-      "last_verified_version": null,
+      "last_verified_version": "1.5",
       "change_history": [],
       "read_log": {
         "claims_extracted": 0,
@@ -874,7 +896,7 @@
       "_source": "toc",
       "source_page": 44,
       "source_type": "toc",
-      "range_status": "needs_review",
+      "range_status": "verified",
       "source_ref": "07105_Quality_Control_Docs_ver1.5.md#L1128-L1140"
     },
     {
@@ -887,14 +909,15 @@
       "topic_types": [],
       "flags": {
         "has_enum": false,
-        "has_state_transition": false,
+        "has_state_transition": true,
         "has_formula": false,
-        "has_error_messages": false,
-        "has_validation_rule": false
+        "has_error_messages": true,
+        "has_validation_rule": true,
+        "has_business_rule": true
       },
       "mapped_feature": "stub_qc_uid_group.md",
       "coverage_status": "stub",
-      "last_verified_version": null,
+      "last_verified_version": "1.5",
       "change_history": [],
       "read_log": {
         "claims_extracted": 0,
@@ -906,7 +929,7 @@
       "_source": "toc",
       "source_page": 44,
       "source_type": "toc",
-      "range_status": "needs_review",
+      "range_status": "verified",
       "source_ref": "07105_Quality_Control_Docs_ver1.5.md#L1141-L1151"
     },
     {
@@ -919,14 +942,15 @@
       "topic_types": [],
       "flags": {
         "has_enum": false,
-        "has_state_transition": false,
+        "has_state_transition": true,
         "has_formula": false,
-        "has_error_messages": false,
-        "has_validation_rule": false
+        "has_error_messages": true,
+        "has_validation_rule": true,
+        "has_business_rule": true
       },
       "mapped_feature": "stub_qc_uid_group.md",
       "coverage_status": "stub",
-      "last_verified_version": null,
+      "last_verified_version": "1.5",
       "change_history": [],
       "read_log": {
         "claims_extracted": 0,
@@ -938,7 +962,7 @@
       "_source": "toc",
       "source_page": 45,
       "source_type": "toc",
-      "range_status": "needs_review",
+      "range_status": "verified",
       "source_ref": "07105_Quality_Control_Docs_ver1.5.md#L1152-L1172"
     },
     {
@@ -950,15 +974,16 @@
       "parent_id": null,
       "topic_types": [],
       "flags": {
-        "has_enum": false,
-        "has_state_transition": false,
+        "has_enum": true,
+        "has_state_transition": true,
         "has_formula": false,
-        "has_error_messages": false,
-        "has_validation_rule": false
+        "has_error_messages": true,
+        "has_validation_rule": true,
+        "has_business_rule": true
       },
       "mapped_feature": "stub_qc_evaluation_manual.md",
       "coverage_status": "stub",
-      "last_verified_version": null,
+      "last_verified_version": "1.5",
       "change_history": [],
       "read_log": {
         "claims_extracted": 0,
@@ -970,7 +995,7 @@
       "_source": "toc",
       "source_page": 46,
       "source_type": "toc",
-      "range_status": "needs_review",
+      "range_status": "verified",
       "source_ref": "07105_Quality_Control_Docs_ver1.5.md#L1173-L1241"
     },
     {
@@ -982,15 +1007,16 @@
       "parent_id": "S-29",
       "topic_types": [],
       "flags": {
-        "has_enum": false,
-        "has_state_transition": false,
+        "has_enum": true,
+        "has_state_transition": true,
         "has_formula": false,
-        "has_error_messages": false,
-        "has_validation_rule": false
+        "has_error_messages": true,
+        "has_validation_rule": true,
+        "has_business_rule": true
       },
       "mapped_feature": "stub_qc_evaluation_manual.md",
       "coverage_status": "stub",
-      "last_verified_version": null,
+      "last_verified_version": "1.5",
       "change_history": [],
       "read_log": {
         "claims_extracted": 0,
@@ -1002,7 +1028,7 @@
       "_source": "toc",
       "source_page": 50,
       "source_type": "toc",
-      "range_status": "needs_review",
+      "range_status": "verified",
       "source_ref": "07105_Quality_Control_Docs_ver1.5.md#L1242-L1242"
     },
     {
@@ -1014,15 +1040,16 @@
       "parent_id": null,
       "topic_types": [],
       "flags": {
-        "has_enum": false,
-        "has_state_transition": false,
+        "has_enum": true,
+        "has_state_transition": true,
         "has_formula": false,
-        "has_error_messages": false,
-        "has_validation_rule": false
+        "has_error_messages": true,
+        "has_validation_rule": true,
+        "has_business_rule": true
       },
       "mapped_feature": "stub_qc_evaluation_manual.md",
       "coverage_status": "stub",
-      "last_verified_version": null,
+      "last_verified_version": "1.5",
       "change_history": [],
       "read_log": {
         "claims_extracted": 0,
@@ -1034,7 +1061,7 @@
       "_source": "toc",
       "source_page": 50,
       "source_type": "toc",
-      "range_status": "needs_review",
+      "range_status": "verified",
       "source_ref": "07105_Quality_Control_Docs_ver1.5.md#L1243-L1250"
     },
     {
@@ -1046,15 +1073,16 @@
       "parent_id": null,
       "topic_types": [],
       "flags": {
-        "has_enum": false,
-        "has_state_transition": false,
+        "has_enum": true,
+        "has_state_transition": true,
         "has_formula": false,
-        "has_error_messages": false,
-        "has_validation_rule": false
+        "has_error_messages": true,
+        "has_validation_rule": true,
+        "has_business_rule": true
       },
       "mapped_feature": "stub_qc_evaluation_manual.md",
       "coverage_status": "stub",
-      "last_verified_version": null,
+      "last_verified_version": "1.5",
       "change_history": [],
       "read_log": {
         "claims_extracted": 0,
@@ -1066,7 +1094,7 @@
       "_source": "toc",
       "source_page": 51,
       "source_type": "toc",
-      "range_status": "needs_review",
+      "range_status": "verified",
       "source_ref": "07105_Quality_Control_Docs_ver1.5.md#L1251-L1303"
     },
     {
@@ -1078,15 +1106,16 @@
       "parent_id": "S-32",
       "topic_types": [],
       "flags": {
-        "has_enum": false,
-        "has_state_transition": false,
+        "has_enum": true,
+        "has_state_transition": true,
         "has_formula": false,
-        "has_error_messages": false,
-        "has_validation_rule": false
+        "has_error_messages": true,
+        "has_validation_rule": true,
+        "has_business_rule": true
       },
       "mapped_feature": "stub_qc_evaluation_manual.md",
       "coverage_status": "stub",
-      "last_verified_version": null,
+      "last_verified_version": "1.5",
       "change_history": [],
       "read_log": {
         "claims_extracted": 0,
@@ -1098,7 +1127,7 @@
       "_source": "toc",
       "source_page": 52,
       "source_type": "toc",
-      "range_status": "needs_review",
+      "range_status": "verified",
       "source_ref": "07105_Quality_Control_Docs_ver1.5.md#L1304-L1304"
     },
     {
@@ -1110,15 +1139,16 @@
       "parent_id": null,
       "topic_types": [],
       "flags": {
-        "has_enum": false,
-        "has_state_transition": false,
-        "has_formula": false,
-        "has_error_messages": false,
-        "has_validation_rule": false
+        "has_enum": true,
+        "has_state_transition": true,
+        "has_formula": true,
+        "has_error_messages": true,
+        "has_validation_rule": true,
+        "has_business_rule": true
       },
       "mapped_feature": "stub_qc_criteria_setup.md",
       "coverage_status": "stub",
-      "last_verified_version": null,
+      "last_verified_version": "1.5",
       "change_history": [],
       "read_log": {
         "claims_extracted": 0,
@@ -1130,7 +1160,7 @@
       "_source": "toc",
       "source_page": 52,
       "source_type": "toc",
-      "range_status": "needs_review",
+      "range_status": "verified",
       "source_ref": "07105_Quality_Control_Docs_ver1.5.md#L1305-L1309"
     },
     {
@@ -1142,15 +1172,16 @@
       "parent_id": null,
       "topic_types": [],
       "flags": {
-        "has_enum": false,
-        "has_state_transition": false,
-        "has_formula": false,
-        "has_error_messages": false,
-        "has_validation_rule": false
+        "has_enum": true,
+        "has_state_transition": true,
+        "has_formula": true,
+        "has_error_messages": true,
+        "has_validation_rule": true,
+        "has_business_rule": true
       },
       "mapped_feature": "stub_qc_criteria_setup.md",
       "coverage_status": "stub",
-      "last_verified_version": null,
+      "last_verified_version": "1.5",
       "change_history": [],
       "read_log": {
         "claims_extracted": 0,
@@ -1162,7 +1193,7 @@
       "_source": "toc",
       "source_page": 52,
       "source_type": "toc",
-      "range_status": "needs_review",
+      "range_status": "verified",
       "source_ref": "07105_Quality_Control_Docs_ver1.5.md#L1310-L1323"
     }
   ]

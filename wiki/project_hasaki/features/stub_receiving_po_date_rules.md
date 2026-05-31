@@ -11,11 +11,13 @@ source_doc: 07062_Receiving_PO_Docs_ver2.17.md
 source_range: 07062#L1070-L1496
 partial_read: false
 partial_read_note: ""
-last_verified_at: "2026-05-30 21:00:00"
-verification_status: Pending
+last_verified_at: "2026-05-31 19:34:33"
+verification_status: Verified
 approved_by:
 approved_at:
-approval_note:
+approval_note: FIX-001 applied
+last_verified_source_version: 2.17
+
 ---
 
 # REQ: stub_receiving_po_date_rules
@@ -47,7 +49,7 @@ approval_note:
 
 | ID | Requirement | Loại | Priority | Testable? | Source |
 |:---|:-----------|:-----|:---------|:----------|:-------|
-| R001 | Update 06-01-2025 — Rules tính ngày nhận hàng tối thiểu của PO cho SKU. Thông báo cập nhật: `Hạn sử dụng nhỏ hơn yêu cầu được phép nhận hàng của PO (HSD tối thiểu [Ngày hệ thống tính toán])` | Business rule + Validation | High | ✅ | 07062#L1070-L1077 |
+| R001 | Update 06-01-2025 — Rules tính ngày nhận hàng tối thiểu của PO cho SKU. Thông báo cập nhật: `Hạn sử dụng nhỏ hơn yêu cầu được phép nhận hàng của PO (HSD tối thiểu [Ngày hệ thống tính toán])` | Business rule + Validation | High | ⚠️ (raw L1076 typo 'tối thiếu' — chờ Q-017) | 07062#L1070-L1077 |
 | R002 | Rules tính HSD tối thiểu — Formula: `[% Allowed Shelf Life PO] * [Product's Shelf Life]` → tính ra số tháng tương ứng (**không làm tròn**, vd 20.16 tháng). Từ số tháng tính được **cộng với ngày nhận hàng** để ra HSD tối thiểu có thể nhận | Business rule + Formula | High | ✅ | 07062#L1078-L1085 |
 | R003 | Lưu ý HSD — khi nhận hàng nếu HSD của sản phẩm **trùng với tháng trong HSD tối thiểu thì vẫn cho nhận** (do HSD của sản phẩm sẽ tính về **ngày cuối tháng**) | Business rule + Edge case | High | ✅ | 07062#L1086-L1090 |
 | R004 | Validation HSD upper bound — nếu HSD nhập vào **lớn hơn vòng đời của sản phẩm** → thông báo `Hạn sử dụng lớn hơn vòng đời được thiết lập của sản phẩm (24 tháng).` / `Expiration date is greater than the product shelf life (24 months).` | Validation | High | ✅ | 07062#L1091-L1102 |
@@ -415,6 +417,7 @@ approval_note:
 | Q-014 | R035 | "Tất cả SL thiếu đều có cùng reason NCC giao bù = No" — vậy nếu 1 SKU `NCC giao bù = Yes` thì button "Hoàn thành PO" KHÔNG show? Edge case. | PO | Open | | | |
 | Q-015 | R038 | `Waiting Adj Invoice` và `Receiving Issue` — PO config có thể có cả 2 cùng lúc (nhận thiếu + SP không phù hợp) không? | PO/Dev | Open | | | |
 | Q-016 | R039 | "Product status = Damaged" — đây là UID-level status hay SKU-level? Có flow recovery để chuyển Damaged → Available không? | PO/Dev | Open | | | |
+| Q-017 | R001, ERR-DTR-001 | Raw L1076 viết "HSD tối **thiếu**" — spec interpret thành "tối thiểu"; đây là typo hay business rule khác? | PO | Open | | | |
 
 ## 📝 Thay đổi so với version cũ
 
@@ -444,6 +447,7 @@ approval_note:
 
 ## 🚧 Blocked Coverage
 
+- R001, ERR-DTR-001 — chờ Q-017 (raw typo 'tối thiếu')
 - R029, R030, R031, R037 — chờ Q-001 (API Inside endpoint + schema)
 - R009 — chờ Q-002 (typo `prodcut` fix)
 - R010, MSG-DTR-006 — chờ Q-003 (verbatim message)
@@ -468,3 +472,4 @@ Test cases liên quan tới các R-ID trên bị block đến khi câu hỏi `An
 |:----------|:--------|:------------------|:------|
 | 2026-05-30 14:45:51 | v1.0 | Tách từ monster stub thành per-feature stub | split-stubs-2026-05-30 |
 | 2026-05-30 21:00:00 | v1.1 | Refine stub → full spec: 40 R-ID, 39 AC, 36 BR, 12 messages (6 verbatim VN+EN, 6 missing — Q-003 Q-005), 16 questions Open. `partial_read: false`. | refine-batch-5-2026-05-30 |
+| 2026-05-31 20:00:00 | v1.2 | FIX-001: R001 thêm Q-017 cho raw typo 'tối thiếu' (PATCH-001 compliance) | batch-7-fix-session |
