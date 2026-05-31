@@ -1,41 +1,12 @@
-﻿---
-description: "Sync batch my open tasks from Hasaki and propagate raw/task-spec/traceability"
+---
+description: "Sync hàng loạt open tasks từ Hasaki + propagate raw/task-spec/traceability. Delegate sang @hasaki-task-intake (haiku)."
 allowed-tools: Read, Write, Edit, Glob, Grep, Bash
 ---
 
-# Command: Sync My Open Tasks
+# Sync My Open Tasks (router)
 
-Use this command for on-demand batch synchronization of open tasks assigned to the current user.
+Delegate sang sub-agent **`hasaki-task-intake`** (model haiku).
 
-## Trigger
+Input từ user: $ARGUMENTS
 
-- `sync my open tasks`
-- `sync my open tasks --limit 20`
-- `sync my open tasks --images`
-- `sync my open tasks --dry-run`
-
-## Execution
-
-```powershell
-$env:PYTHONUTF8 = "1"
-$env:PYTHONIOENCODING = "utf-8"
-python .claude/scripts/wiki_sync.py sync-my-open-tasks --limit 20 --dry-run
-```
-
-Apply mode:
-
-```powershell
-$env:PYTHONUTF8 = "1"
-$env:PYTHONIOENCODING = "utf-8"
-python .claude/scripts/wiki_sync.py sync-my-open-tasks --limit 20 --images
-```
-
-## Behavior
-
-- Fetch `my-task` with status `_00_01` (Todo/Processing).
-- Resolve relation `TBB2 <-> HSK` when possible.
-- Append raw snapshot to `raw_sources/project_hasaki/tasks/<TASK_CODE>.md`.
-- Upsert task spec for each `TBB2` under `wiki/project_hasaki/task_specs/`.
-- Update machine-readable links in `traceability.json` and `project_registry.json`.
-- Add Kanban TODO card for each `TBB2` when missing.
-- Respect no-inference policy: unclear behavior stays in Questions/Blocked Coverage.
+Worker đọc `.claude/skills/hasaki-wiki/references/phase_task_intake.md` → **Workflow D** và chạy `wiki_sync.py sync-my-open-tasks` (mặc định `--dry-run` để preview; `--images` để apply): fetch open tasks `_00_01`, resolve TBB2↔HSK, append raw snapshot, upsert task_spec, update `traceability.json` + `project_registry.json`, thêm Kanban TODO. No-inference: behavior chưa rõ → Questions/Blocked Coverage.

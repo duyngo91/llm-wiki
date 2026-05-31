@@ -1,59 +1,12 @@
-﻿---
-description: "Lay thong tin task tu Hasaki Workplace (work.hasaki.vn) bang task code, numeric ID hoac URL"
+---
+description: "Tra cứu (lookup-only) 1 task Hasaki Workplace bằng task code, numeric ID hoặc URL — hiển thị, không lưu markdown. Delegate sang @hasaki-task-intake (haiku)."
 allowed-tools: Read, Bash
 ---
 
-# Skill: Get Hasaki Task
+# Get Hasaki Task (router)
 
-Fetch thong tin mot task tu Hasaki Workplace.
-Mac dinh chi hien thi, khong luu task markdown vao vault.
-Neu dung `--images` thi se tai anh ve `raw_sources/project_hasaki/assets/` (co ghi file vao vault).
-Dung `/import-hasaki-task` neu muon phan tich va luu day du vao workflow wiki.
+Delegate sang sub-agent **`hasaki-task-intake`** (model haiku), chế độ **lookup-only**.
 
-## Input
+Input từ user: $ARGUMENTS
 
-- **Task code**: `HSK-40187ZYO`
-- **Numeric ID**: `12032444`
-- **URL**: `https://work.hasaki.vn/tasks?...&task_id=12032444&...`
-- **Kem `--images`**: download anh ve `raw_sources/project_hasaki/assets/`
-
-## Thuc hien
-
-### Buoc 1 - Kiem tra token
-
-Token luu tai `token.txt` (root vault). Neu het han, thong bao cach lay lai token.
-
-### Buoc 2 - Chay script
-
-```powershell
-$env:PYTHONUTF8 = "1"
-python ".claude/scripts/hasaki_task.py" <TASK_CODE_OR_ID>
-```
-
-Neu muon tai anh:
-
-```powershell
-$env:PYTHONUTF8 = "1"
-python ".claude/scripts/hasaki_task.py" <TASK_CODE_OR_ID> --images --output "raw_sources/project_hasaki/assets"
-```
-
-Lay JSON de xu ly tiep:
-
-```powershell
-$env:PYTHONUTF8 = "1"
-python ".claude/scripts/hasaki_task.py" <TASK_CODE_OR_ID> --json
-```
-
-### Buoc 3 - Xu ly loi
-
-| Loi | Nguyen nhan | Xu ly |
-|-----|-------------|-------|
-| `401 Unauthorized` | Token het han (>48h) | Yeu cau user cap nhat `token.txt` |
-| `Task '...' not found` | Task khong trong my-task list | Thu numeric ID truc tiep |
-| `UnicodeEncodeError` | Thieu `PYTHONUTF8=1` | Them `$env:PYTHONUTF8 = "1"` |
-
-### Buoc 4 - Hien thi ket qua
-
-Hien thi output truc tiep.
-Neu user muon phan tich + luu + cap nhat kanban/suite thi goi y `/import-hasaki-task`.
-Cac cau noi tu nhien nhu `get my task HSK-XXXXX` duoc map vao skill nay (che do tra cuu).
+Worker đọc `.claude/skills/hasaki-wiki/references/phase_task_intake.md` → **Workflow A** (script `hasaki_task.py`, token check, error handling) và hiển thị task. Không lưu markdown vào vault (chỉ `--images` mới tải ảnh về `raw_sources/project_hasaki/assets/`). Muốn phân tích + lưu đầy đủ → `/import-hasaki-task`.
