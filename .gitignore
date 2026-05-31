@@ -7,3 +7,8 @@
 # Ignore Smart Environment folder
 .smart-env
 /.obsidian/workspace.json
+
+# Secrets — KHONG commit token/cookie/API key (xem .claude/rules/00-core.md)
+/token.txt
+*.token
+*.secret

@@ -29,8 +29,8 @@ last_verified_source_version: 1.5
 - **Source chính:** 07105_Quality_Control_Docs_ver1.5.md (v1.5)
 - **Đối tượng sử dụng (Actors):** QC team, kho.
 - **Feature Group:** [[wiki/project_hasaki/feature_groups/quality_control|quality_control]]
-- **Test Suite tương ứng:** [[test_stub_qc_evaluation_result]]
-- **API Spec liên quan:** N/A — raw không mô tả API endpoint explicit (chỉ mention "Dựng 1 service" — Q-001).
+- **Test Suite tương ứng:** [[ts_qc_evaluation_result]]
+- **API Spec liên quan:** [[api_qc_assessment_result_service]] — raw mô tả architectural service (conceptual; chi tiết kỹ thuật cần confirm).
 - **Mối quan hệ:** ⬅️ phụ thuộc [[stub_qc_criteria_setup]] (tiêu chí thiết lập), [[stub_qc_criteria_sku]] (tiêu chí SKU), [[stub_qc_evaluation_mobile]] (input đánh giá từ App), [[stub_qc_evaluation_manual]] (input đánh giá Manual). ➡️ feed [[stub_qc_vas]] (kết quả tổng hợp cho VAS), [[stub_qc_uid_group]] (kết quả tổng hợp cho group UID).
 
 ## Nguồn tài liệu
@@ -41,7 +41,7 @@ last_verified_source_version: 1.5
 ## API / Interface liên quan
 | API Spec | API/Interface | Requirement/AC liên quan | Source | Trạng thái |
 |:---------|:--------------|:-------------------------|:-------|:-----------|
-| N/A | Service ghi nhận kết quả đánh giá (raw chỉ mô tả khái niệm: VAS_ID + Group UID gắn với từng service, mỗi service gồm Group UID + Mã tiêu chí + Kết quả) | R009 | 07105#L649-L658 | TBD — Q-001 |
+| [[api_qc_assessment_result_service]] | WMS Internal QC Result Service (aggregate multi-source evaluations per VAS + Group UID) | R009 (result persistence) | 07105#L649-L658 | Draft — 10 open questions |
 
 ## Phân rã Requirement
 

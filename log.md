@@ -8,6 +8,35 @@ updated: 2026-05-31
 
 # Activity Log — project_hasaki
 
+## 2026-05-31
+
+### Wave 1: Fix backlink spec → test suite
+- **Task:** Sửa 24 file `features/stub_*.md`, dòng `**Test Suite tương ứng:** [[test_stub_<x>]]` → `[[ts_<x>]]`
+- **Thực hiện:** Python script `Path.replace()`, 23/24 file (1 file không chứa `[[test_stub_`)
+- **Verify:** `py wiki_sync.py verify` → ✅ "No broken links found!", mục "no incoming links" biến mất
+- **Status:** DONE — dứt điểm warning
+- **Ghi chú:** Đã confirm KHÔNG sửa field `spec: stub_*` và `Source spec: [[stub_*]]` trong `ts_*.md` (chúng đúng)
+
+### Wave 2: Glossary (operations/glossary.md)
+- **Task:** Tạo thư mục `operations/` + file `glossary.md` gom 21 thuật ngữ
+- **Nội dung:** 3 term rõ từ raw (Group UID, HSD, WMS) + 18 term suy từ ngữ cảnh (VAS, ASN, SKU, PO, UID, etc.) mark [cần PO confirm]
+- **Bảng:** 2 bảng riêng (rõ vs suy từ ngữ cảnh) + 1 Open question chung
+- **Verify:** ✅ UTF-8 no BOM/mojibake, wiki_sync.py compliant
+- **Status:** DONE — nền tảng glossary tạo xong
+
+### Wave 3: API Specs + bịt orphan
+- **Task:** Tạo 3 api_specs stub + bịt orphan payload L1458-1469 ở `stub_receiving_po_app`
+- **Files tạo:**
+  - `api_receiving_po_issue_report.md` (payload 2 case: SPKPH + missing qty từ raw L1458-L1469)
+  - `api_receiving_po_update_status.md` (status sync L880-881, L1447)
+  - `api_qc_assessment_result_service.md` (QC result service architectural concept L649-658)
+- **Bịt orphan:** Update bảng API trong `stub_receiving_po_app.md` + link 2 chiều từ api_specs trỏ feature
+- **Status:** BLOCKED (chờ Inside API doc + BA confirm) — governance error expected vì raw chưa đủ endpoint/method/response
+- **Link:** spec ↔ api_spec đã tạo, feature_group roll-up cập nhật
+- **Verify:** ✅ UTF-8 ok; governance error expected (raw incomplete)
+- **Status:** DONE — 3 stubs tạo xong + orphan bịt
+
+
 > Timezone: UTC+07:00 (Asia/Ho_Chi_Minh). Format: `YYYY-MM-DD HH:mm:ss`.
 
 ## 2026-05-31

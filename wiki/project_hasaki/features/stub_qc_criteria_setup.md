@@ -29,7 +29,7 @@ last_verified_source_version: 1.5
 - **Source chính:** 07105_Quality_Control_Docs_ver1.5.md (v1.5)
 - **Đối tượng sử dụng (Actors):** QC team, BOD (duyệt SKU setup).
 - **Feature Group:** [[wiki/project_hasaki/feature_groups/quality_control|quality_control]]
-- **Test Suite tương ứng:** [[test_stub_qc_criteria_setup]]
+- **Test Suite tương ứng:** [[ts_qc_criteria_setup]]
 - **API Spec liên quan:** N/A — raw không nêu API; mention "công thức (sẽ bổ sung rules sau khi trao đổi với Dev)".
 - **Mối quan hệ:** ⬅️ phụ thuộc master data SKU + Category + Brand. ↔️ liên quan [[stub_qc_criteria_sku]] (Setup SKU detail), [[stub_qc_criteria_approval]] (Duyệt thiết lập). ➡️ feed [[stub_qc_evaluation_mobile]] / [[stub_qc_evaluation_manual]] (tiêu chí dùng đánh giá), [[stub_qc_uid_group]] (QC xã vải).
 

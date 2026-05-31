@@ -29,7 +29,7 @@ last_verified_source_version: 2.17
 - **Source chính:** 07062_Receiving_PO_Docs_ver2.17.md (v2.17)
 - **Đối tượng sử dụng (Actors):** Operations (import packing list), Nhân viên kho (scan nhận PO vải), BOD (approve packing list > ±5%).
 - **Feature Group:** [[wiki/project_hasaki/feature_groups/receiving_po|receiving_po]]
-- **Test Suite tương ứng:** [[test_stub_receiving_po_packing_list]]
+- **Test Suite tương ứng:** [[ts_receiving_po_packing_list]]
 - **API Spec liên quan:** N/A — raw không nêu endpoint cụ thể; mention "push lên Inside" cho số dư ADJ.
 - **Mối quan hệ:** ⬅️ phụ thuộc [[stub_receiving_po_fabric]] (nhận hàng Vải khai báo Group UID), [[stub_receiving_po_inbound_shipment]] (Inbound listing), [[stub_receiving_po_app]] (Receiving PO App). ↔️ liên quan [[stub_receiving_po_date_rules]] (HSD validation), [[stub_receiving_po_po_sample]] (PO sample). ➡️ feed Adjustment system (ADJ cho số dư), Inside (sync stock).
 

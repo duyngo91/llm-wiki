@@ -29,7 +29,7 @@ last_verified_source_version: 2.17
 - **Source chính:** 07062_Receiving_PO_Docs_ver2.17.md (v2.17)
 - **Đối tượng sử dụng (Actors):** Nhân viên kho (user scan nhận hàng Vải).
 - **Feature Group:** [[wiki/project_hasaki/feature_groups/receiving_po|receiving_po]]
-- **Test Suite tương ứng:** [[test_stub_receiving_po_fabric]]
+- **Test Suite tương ứng:** [[ts_receiving_po_fabric]]
 - **API Spec liên quan:** N/A — raw không mô tả API endpoint explicit.
 - **Mối quan hệ:** ⬅️ phụ thuộc [[stub_receiving_po_app]] (flow scan nhận trên App), [[stub_receiving_po_inbound_shipment]] (SL confirm PO). ↔️ liên quan [[stub_receiving_po_vas]] (UID group, Serial/Imei concepts).
 

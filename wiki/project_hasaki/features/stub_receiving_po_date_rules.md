@@ -29,7 +29,7 @@ last_verified_source_version: 2.17
 - **Source chính:** 07062_Receiving_PO_Docs_ver2.17.md (v2.17)
 - **Đối tượng sử dụng (Actors):** Shop, Nhân viên kho (App), Quản lý.
 - **Feature Group:** [[wiki/project_hasaki/feature_groups/receiving_po|receiving_po]]
-- **Test Suite tương ứng:** [[test_stub_receiving_po_date_rules]]
+- **Test Suite tương ứng:** [[ts_receiving_po_date_rules]]
 - **API Spec liên quan:** API receiving item PO bên Inside (`check_issue`/`issue` payload) — raw L1457-L1469.
 - **Mối quan hệ:** ⬅️ phụ thuộc [[stub_receiving_po_app]] (Step 1-5 flow), [[stub_receiving_po_inbound_shipment]] (PO/ASN), [[stub_receiving_po_invoice]] (Thêm hoá đơn cuối flow). ↔️ liên quan [[stub_receiving_po_vas]] (SPKPH Damaged), [[stub_receiving_po_confirm_paste_id]] (post Kết thúc PO), [[stub_receiving_po_packing_list]] (returns/Vendor return flow).
 

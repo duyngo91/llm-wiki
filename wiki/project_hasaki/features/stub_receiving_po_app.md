@@ -29,7 +29,7 @@ last_verified_source_version: 2.17
 - **Source chính:** 07062_Receiving_PO_Docs_ver2.17.md (v2.17)
 - **Đối tượng sử dụng (Actors):** Shop/Nhân viên kho (App), Quản lý (cấu hình Warehouse).
 - **Feature Group:** [[wiki/project_hasaki/feature_groups/receiving_po|receiving_po]]
-- **Test Suite tương ứng:** [[test_stub_receiving_po_app]]
+- **Test Suite tương ứng:** [[ts_receiving_po_app]]
 - **API Spec liên quan:** N/A — raw không mô tả API explicit, chỉ mention "API update status PO trên Inside" (Q-001).
 - **Mối quan hệ:** ⬅️ phụ thuộc [[stub_receiving_po_vas]] (SPKPH ASN status `Chờ NCC đến lấy`), [[stub_receiving_po_inbound_shipment]] (PO/Inbound Shipment), [[stub_receiving_po_invoice]] (verify invoice). ↔️ liên quan [[stub_receiving_po_date_rules]] (HSD rules), [[stub_receiving_po_confirm_paste_id]] (post-scan flow). ➡️ feed [[stub_receiving_po_asn]] (sinh ASN), [[stub_receiving_po_fabric]] (scan Vải step).
 
@@ -41,8 +41,9 @@ last_verified_source_version: 2.17
 ## API / Interface liên quan
 | API Spec | API/Interface | Requirement/AC liên quan | Source | Trạng thái |
 |:---------|:--------------|:-------------------------|:-------|:-----------|
-| N/A | API update status PO trên Inside thành `Receiving` — raw mention "Lưu ý khi này chưa gọi API" | R009 | 07062#L880-L881 | TBD — Q-001 |
-| N/A | Warehouse config endpoint `Configuration / General / Required camera` | R017 | 07062#L921-L935 | Internal — Q-002 |
+| [[api_receiving_po_update_status]] | Inside PO Status Update (Receiving → Received) | R009 | 07062#L880-L881, L1447 | Draft — 7 open questions |
+| [[api_receiving_po_issue_report]] | Inside Issue Report (unsuitable items + missing qty) | R008 (SPKPH), R012 (missing qty) | 07062#L1458-L1469 | Draft — 7 open questions |
+| N/A | Warehouse config `Configuration / General / Required camera` | R017 | 07062#L921-L935 | Internal config (không phải integration API) |
 
 ## Phân rã Requirement
 

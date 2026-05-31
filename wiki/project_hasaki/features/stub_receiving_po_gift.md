@@ -28,7 +28,7 @@ approval_note:
 - **Source chính:** 07062_Receiving_PO_Docs_ver2.17.md (v2.17)
 - **Đối tượng sử dụng (Actors):** Nhân viên kho (User scan nhận hàng).
 - **Feature Group:** [[wiki/project_hasaki/feature_groups/receiving_po|receiving_po]]
-- **Test Suite tương ứng:** [[test_stub_receiving_po_gift]]
+- **Test Suite tương ứng:** [[ts_receiving_po_gift]]
 - **API Spec liên quan:** N/A — raw không mô tả API endpoint explicit.
 - **Mối quan hệ:** ⬅️ phụ thuộc [[stub_receiving_po_invoice]] (điều kiện verify invoice cho PO gift). ℹ️ Liên quan [[stub_receiving_po_inbound_shipment]] (status `Completed` PO gift).
 

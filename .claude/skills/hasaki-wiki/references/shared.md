@@ -23,7 +23,7 @@ llm-wiki/
     ├── task_specs/
     ├── bugs_knowledge/
     ├── refiner/
-    └── operations/{environments.md · test_data.md · team_contacts.md · daily_notes/}
+    └── operations/{environments.md · test_data.md · team_contacts.md · glossary.md · daily_notes/}
 ```
 
 Project active: `project_hasaki`.
@@ -40,7 +40,7 @@ Tên file viết **thường, không dấu**, nối bằng `_`.
 | `api_specs/` | `api_[feature]_[mucnho].md` | `api_auth_login.md` |
 | `feature_groups/` | `[feature_group].md` | `receiving_po.md` |
 | `task_specs/` | `task_[tbb2_code].md` | `task_TBB2-12345.md` |
-| `test_suites/` | `test_[feature]_[mucnho].md` | `test_auth_login.md` |
+| `test_suites/` | `ts_[feature_slug].md` | `ts_auth_login.md` |
 | `test_plans/` | `testplan_cr_[project]_[id].md` | `testplan_cr_hasaki_200.md` |
 | `releases/` | `cr_[cr_id]_golive_[ddMMyyyy].md` | `cr_hasaki_golive_30052026.md` |
 | `raw_sources/.../tasks/` | `HSK-xxxxx.md` | `HSK-12345.md` |

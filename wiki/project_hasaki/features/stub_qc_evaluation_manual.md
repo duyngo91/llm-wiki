@@ -29,7 +29,7 @@ last_verified_source_version: 1.5
 - **Source chính:** 07105_Quality_Control_Docs_ver1.5.md (v1.5)
 - **Đối tượng sử dụng (Actors):** QC team, BOD (approve Adjustment), Quản lý stock.
 - **Feature Group:** [[wiki/project_hasaki/feature_groups/quality_control|quality_control]]
-- **Test Suite tương ứng:** [[test_stub_qc_evaluation_manual]]
+- **Test Suite tương ứng:** [[ts_qc_evaluation_manual]]
 - **API Spec liên quan:** N/A — raw không mô tả API explicit; mention "load 3 option khi tạo Adjustment" và "rules của Adjustment hiện tại".
 - **Mối quan hệ:** ⬅️ phụ thuộc [[stub_qc_criteria_setup]] (thiết lập tiêu chí), [[stub_qc_criteria_sku]] (tiêu chí SKU), [[stub_qc_uid_group]] (UID group khai báo SL). ↔️ liên quan [[stub_qc_evaluation_mobile]] (Mobile evaluation flow), [[stub_qc_evaluation_result]] (kết quả tổng hợp). ➡️ feed Adjustment system (Return to vendor) + Inventory system (UID Damaged state).
 

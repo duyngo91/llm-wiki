@@ -29,7 +29,7 @@ last_verified_source_version: 2.17
 - **Source chính:** 07062_Receiving_PO_Docs_ver2.17.md (v2.17)
 - **Đối tượng sử dụng (Actors):** Nhân viên kho (dán ID), QC (đánh giá group UID), Quản lý (action Cancel/Reject/Approve SPKPH), Shop, NCC.
 - **Feature Group:** [[wiki/project_hasaki/feature_groups/receiving_po|receiving_po]]
-- **Test Suite tương ứng:** [[test_stub_receiving_po_vas]]
+- **Test Suite tương ứng:** [[ts_receiving_po_vas]]
 - **API Spec liên quan:** N/A — raw không mô tả API explicit (chỉ mention WMS BE config flags).
 - **Mối quan hệ:** ⬅️ phụ thuộc [[stub_receiving_po_asn]] (ASN status Received trigger sinh VAS), [[stub_receiving_po_inbound_shipment]] (SL thực nhận). ↔️ liên quan [[stub_qc_uid_group]] (Group UID), [[stub_qc_evaluation_result]] (VAS Quality control results), [[stub_receiving_po_confirm_paste_id]] (xác nhận dán ID), [[stub_receiving_po_vas_manual]] (Create/Update VAS manual). ➡️ feed [[stub_receiving_po_app]] (App Confirm Unsuitable Product cho SPKPH).
 
