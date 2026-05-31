@@ -3,7 +3,7 @@ name: hasaki-wiki
 description: QA wiki orchestrator for project_hasaki — manages the full SDLC documentation cycle: requirement ingestion → Feature Spec → Test Suite → Kanban sync → CR go-live. Enforces HITL gates, no-inference policy, and traceability chain (TBB2 → HSK → Task Spec → Feature → R/AC → Testcase). Use when ingesting PDFs or Hasaki tasks (HSK/TBB2), creating or updating Feature Specs or API Specs, designing test suites from approved specs, running daily sync or lint/verify, managing bugs, or packaging CR go-live docs. Trigger phrases: "ingest file", "phân tích task", "import task HSK-", "tạo test suite", "lint và sync", "daily sync", "tạo CR golive", "chốt task", "chuyển sang Done", "sync my open tasks", "get my tasks".
 metadata:
   author: Yen Ngo
-  version: "3.1"
+  version: "3.2"
 allowed-tools:
   - Read
   - Write
@@ -19,23 +19,30 @@ allowed-tools:
 
 ## Workflow Routing
 
-| Intent | Command | Đọc trước khi thực hiện |
-|:-------|:--------|:------------------------|
-| Phân tích requirement / ingest PDF / task HSK | `/wiki-requirement-analyzer` | `references/phase_ingest.md` |
-| Thiết kế test suite từ Spec đã duyệt (Gate 1 xong) | `/wiki-test-designer` | `references/phase_test_design.md` |
-| Daily sync, lint, Kanban, verify, state transition | `/wiki-sync-helper` | `references/phase_sync.md` |
-| Scan / import / xem task Hasaki | `/get-my-tasks` · `/import-hasaki-task` · `/get-hasaki-task` · `/sync-my-open-tasks` | `references/phase_task_intake.md` |
-| Tạo CR Go-Live, Test Plan, Smoke Test Production | (via `/wiki-sync-helper` hoặc trực tiếp) | `references/phase_golive.md` |
-| Kiểm tra MCP health | `/mcp-health-check` | — |
+**Pattern:** Skill này là **playbook orchestrator** chạy trong main session. Mỗi phase có 1 worker sub-agent (`.claude/agents/hasaki-*.md`) tự gán model riêng. Việc route dựa trên cơ chế **auto-delegation native của Claude** (Claude chọn agent theo field `description`) — bảng dưới chỉ là bản đồ tường minh để main session/người dùng biết phase nào → agent nào → đọc reference nào. Mục tiêu: việc nặng chạy ở worker đúng model (haiku/sonnet/opus), không dồn mọi phase vào model đắt ở main session.
 
-## Core Rules (tóm tắt — full ở `shared.md#core-rules-quick-reference`)
+| Intent | Command | Worker sub-agent | Model | Đọc trước khi thực hiện |
+|:-------|:--------|:-----------------|:-----:|:------------------------|
+| Phân tích requirement / ingest PDF / task HSK | `/wiki-requirement-analyzer` | `@hasaki-ingest` | opus | `references/phase_ingest.md` |
+| Thiết kế test suite từ Spec đã duyệt (Gate 1 xong) | `/wiki-test-designer` | `@hasaki-test-design` | sonnet | `references/phase_test_design.md` |
+| Daily sync, lint, Kanban, verify, state transition | `/wiki-sync-helper` | `@hasaki-sync` | haiku | `references/phase_sync.md` |
+| Scan / import / xem task Hasaki | `/get-my-tasks` · `/import-hasaki-task` · `/get-hasaki-task` · `/sync-my-open-tasks` | `@hasaki-task-intake` | haiku | `references/phase_task_intake.md` |
+| Tạo CR Go-Live, Test Plan, Smoke Test Production | (via `/wiki-sync-helper` hoặc trực tiếp) | `@hasaki-golive` | sonnet | `references/phase_golive.md` |
+| Kiểm tra MCP health | `/mcp-health-check` | (main session) | — | — |
 
-- **Timezone:** `UTC+07:00` (`Asia/Ho_Chi_Minh`), format `YYYY-MM-DD HH:mm:ss`.
-- **No-Inference:** Requirement/AC/API/testcase phải explicit từ nguồn duyệt. Chưa rõ → `## ❓ Câu hỏi chưa rõ` + `Blocked Coverage`.
+**Quy tắc delegation:**
+
+1. **Main session là orchestrator** — đọc intent, xác định phase, spawn đúng worker sub-agent qua Agent tool. Không tự làm phase công việc khi đã có worker tương ứng.
+2. **Trừ khi user explicit override** ("không delegate", "tự làm đi"), main session **phải** route sang worker để khớp model phase.
+3. **Worker sub-agents độc lập** — không spawn sub-agent khác. Khi worker cần phase khác (vd ingest xong cần verify), nó **suggest** main session gọi worker tiếp theo, không tự gọi.
+4. **Chain workflow tiêu biểu:** `@hasaki-task-intake` (haiku, fetch raw) → `@hasaki-ingest` (opus, parse spec) → `@hasaki-verify-structural` → `@hasaki-verify-inference` → `@hasaki-test-design` (sonnet, sinh testcase) → `@hasaki-sync` (haiku, lint + Kanban) → `@hasaki-golive` (sonnet, CR package).
+
+## Core Rules
+
+> **Policy chuẩn = [`.claude/rules/*.md`](../../rules/)** (no-inference, encoding, timezone, SSOT, testcase, secret) + domain knowledge ở [`references/shared.md`](references/shared.md). Không lặp lại. Hai policy **riêng của wiki phase** (không có trong `rules/`) cần nhớ:
+
 - **Large doc strategy:** Doc >50 trang (hoặc index có >5 sections) → chạy `plan_ingest_tasks.py` sinh task list per section, ép TaskCreate/TaskUpdate cho mỗi section trước khi viết spec. Feature chưa đọc đủ → `partial_read: true`, tạo stub, ghi Blocked Coverage.
 - **Enum verify:** Mọi claim về list values → grep raw đếm đủ + ghi `#line`. Filter table và mapping table cùng feature có thể khác nhau — verify riêng.
-- **SSOT:** File trên đĩa là nguồn thật. Đọc trực tiếp trước mỗi thao tác.
-- **Test Case:** Chỉ tạo từ R/AC explicit đã duyệt (Gate 1). R/AC có question `Open` → `Blocked Coverage`.
 
 ## Traceability Chain
 

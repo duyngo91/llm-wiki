@@ -3,7 +3,7 @@ name: hasaki-spec-verifier
 description: QA verifier kiểm chứng ngược claim wiki → raw evidence. Chạy sau ingest fresh / ingest version mới / task change update spec / refine stub→full. 3 tầng L_structural → L_inference → L_root_cause. Output `wiki/<project>/refiner/`.
 metadata:
   author: Yen Ngo
-  version: "3.2"
+  version: "3.3"
   renamed_from: hasaki-skill-refiner
 allowed-tools:
   - Read
@@ -23,6 +23,37 @@ allowed-tools:
 Kiểm chứng ngược từng claim trong wiki so với raw source, phát hiện gap coverage, lỗi suy diễn, và đề xuất patch có kiểm soát.
 
 **3 tầng tuần tự — `L_structural` → `L_inference` → `L_root_cause`.** L_root_cause có **short-circuit**: skip khi không có pattern lặp.
+
+---
+
+## Delegation Routing (orchestrator pattern)
+
+Skill này là **orchestrator** chạy trong main session. **Main session phải delegate** từng tầng sang worker sub-agent đúng model — KHÔNG tự chạy cả 3 tầng bằng main session model (lãng phí Opus cho L_structural).
+
+| Tầng / Phase | Worker sub-agent | Model | Lý do model |
+|:-------------|:-----------------|:-----:|:------------|
+| Pre-scan delta + Pre-requisite refresh (`check_ingest.py` nếu thiếu) | `@hasaki-verify-structural` | haiku | Script-driven, lookup `quality_gates.json` |
+| **L_structural** — Format & Coverage check từ 4 reports pre-computed | `@hasaki-verify-structural` | haiku | Lookup verdict table, không reasoning sâu |
+| **L_inference** — Verify claim→raw, decision tree Q1-Q4, 9 labels | `@hasaki-verify-inference` | opus | Phase AI work chính, anti-confirmation-bias, đọc raw cẩn thận |
+| **L_fix** (substep, chung pass với L_inference) | `@hasaki-verify-inference` | opus | Same context với L_inference |
+| **L_root_cause** (khi không short-circuit) | `@hasaki-verify-inference` | opus | Meta-reasoning về pattern lặp |
+| Write-back cuối session (`refiner_writeback.py`, `index_flag_updater.py --apply`, `check_ingest.py`) | `@hasaki-verify-structural` | haiku | Chạy scripts, không reasoning |
+
+**Workflow chuẩn 1 session refiner (cost-optimized):**
+
+```
+1. @hasaki-verify-structural   → Pre-scan + L_structural   (haiku)
+2. @hasaki-verify-inference    → L_inference + L_fix       (opus)  ← AI work chính
+   [user review verdict, confirm PASS/CONDITIONAL/FAIL]
+3. @hasaki-verify-structural   → Write-back 3 scripts       (haiku)
+```
+
+**Quy tắc delegation:**
+
+1. **Main session không tự chạy L_inference** khi đã có `@hasaki-verify-inference` worker. Đây là điểm tiết kiệm cost lớn nhất — L_inference đòi Opus, nhưng nếu chạy ở main session cũng tốn Opus → có vẻ giống nhau, nhưng worker có context riêng, không pollute main session với evidence_matrix khổng lồ.
+2. **Main session không tự chạy L_structural / write-back bằng Opus.** Đây là chỗ tiết kiệm rõ nhất — `@hasaki-verify-structural` chạy haiku ~5% cost.
+3. **State-changing scripts** (`refiner_writeback.py`, `index_flag_updater.py --apply`) — worker chỉ chạy khi user explicit confirm verdict.
+4. **Workers không spawn worker khác** — sau khi `@hasaki-verify-structural` xong L_structural, nó **suggest** main session gọi `@hasaki-verify-inference`, không tự gọi.
 
 ---
 
@@ -193,141 +224,13 @@ Verdict `STALE` và `PHANTOM_EVIDENCE` từ `source_refs_report.json` → defer 
 
 ---
 
-## Tầng L_inference — Content Verification
+## Tầng L_inference + L_fix + L_root_cause
 
-**Mục tiêu:** Verify từng claim trong spec có bằng chứng explicit trong raw. Đây là tầng AI work chính — đọc raw, so nội dung.
+> **Chi tiết đầy đủ ở [`references/l_inference.md`](references/l_inference.md)** — decision tree Q1–Q4, 9 label + severity, tie-breaker, UNCLEAR rule, L_fix skeleton, L_root_cause short-circuit. **`@hasaki-verify-inference` (opus) BẮT BUỘC Read file đó trước khi label claim.** Tách ra để `@hasaki-verify-structural` (haiku) không gánh ~150 dòng decision tree mỗi spawn.
 
-### Phạm vi verify (filter theo flag để giảm IO)
-
-**Spec `partial_read: false`:** verify theo priority:
-
-1. **Bắt buộc verify 100%** (claims mapped đến section có flag critical):
-   - `has_enum: true` → toàn bộ enum/list values
-   - `has_error_messages: true` → toàn bộ Error Messages
-   - `has_business_rule` / `has_validation_rule: true` → toàn bộ Business Rules
-   - `has_formula` / `has_state_transition: true` → toàn bộ Formula/State Transition
-2. **Sampling 1/5 cho claims còn lại** mapped đến section không có flag critical.
-3. **Pre-flagged từ `source_refs_report.json`:**
-   - Verdict `PHANTOM_EVIDENCE` → label trực tiếp `PHANTOM_EVIDENCE`, không spot-check.
-   - Verdict `STALE` → re-verify content (raw có thể đã thay đổi nhưng spec chưa update).
-
-**Stub (`partial_read: true`):** Chỉ verify phần đã đọc. Ghi `[STUB — section chưa đọc]` trong evidence_matrix.
-
-### Quy trình verify
-
-**Bước 1 — Liệt kê claims:** đọc `evidence_index.json`, lấy claims theo priority. Ghi nhận danh sách, chưa phân tích.
-
-**Bước 2 — Đọc raw theo flag:**
-- **Claim mapped đến section có flag critical (raw-first):** đọc raw range trước, viết ra những gì raw nói bằng lời của raw, không dùng ngôn ngữ của spec. Chống confirmation bias.
-- **Claim trivial:** đã được L_structural cover. Skip read.
-
-**Bước 3 — Label claim theo decision tree (single source of truth):**
-
-Đi qua các nhánh theo thứ tự — dừng ở match đầu tiên. Decision tree này thay thế bảng "5 checks" + bảng "Labels" + heuristic "3 câu hỏi" cũ.
-
-```
-─ Q1. #line tham chiếu đúng format. Mở raw tại #line đó.
-  Nội dung TẠI dòng đó có đề cập đến chủ đề của claim không?
-  ├── KHÔNG (line nói chuyện khác / blank / heading khác)
-  │   → PHANTOM_EVIDENCE  (Action: fix reference hoặc reclassify)
-  └── CÓ → tiếp Q2.
-
-─ Q2. Raw (tại range mapped) có statement support claim không?
-  ├── KHÔNG có statement nào liên quan
-  │   ├── Raw có statement TƯỚNG TỰ nhưng spec MISS (chưa add R-ID)
-  │   │   → POTENTIAL_OMISSION  (Action: review + thêm vào spec)
-  │   └── Hoàn toàn không có
-  │       → INFERRED  (Action: remove khỏi mô tả chính)
-  └── CÓ → tiếp Q3.
-
-─ Q3. Spec rephrase / generalize / drop info gì từ raw không?
-  ├── Raw có numerical/enum value cụ thể; spec generalize thành placeholder
-  │   (vd raw "SKU 422280022", spec "{sku_code}"; raw "5 values", spec "4 values")
-  │   → INFERRED  (Action: remove generalization, dùng verbatim)
-  │
-  ├── Raw có components A + B riêng; spec tự ghép thành behavior/formula
-  │   (vd raw "field X bắt buộc", "field Y bắt buộc"; spec "X và Y validate cùng lúc")
-  │   → LOGIC_INFERRED  (Action: remove conclusion không có raw)
-  │
-  ├── Raw có modifier (Khi/Nếu/Chỉ khi/Trừ khi/actor) mà spec DROP
-  │   (vd raw "Khi user là Admin, được sửa"; spec "Được sửa")
-  │   → STRIPPED_CONDITION  (Action: add modifier back)
-  │
-  ├── Raw phủ định (không/chưa/KHÔNG); spec đảo logic
-  │   (vd raw "không cho sửa sau khi approve"; spec "cho sửa sau khi approve")
-  │   → NEGATION_FLIP  (Action: reverse claim)
-  │
-  ├── Raw + spec match content; nhưng spec thiếu side-effect / note phụ
-  │   (vd raw "submit + gửi email + ghi audit log"; spec "submit + gửi email")
-  │   → MISSING_DETAIL  (Action: add detail vào spec)
-  │
-  └── Match verbatim, không rephrase → tiếp Q4.
-
-─ Q4. Raw có ambiguous / typo / boundary không rõ?
-  ├── Raw có typo / từ ngữ mâu thuẫn / boundary không rõ; spec làm rõ
-  │   (vd raw "Đến ngày phải ≥ đến ngày" — typo; spec interpret "Đến ngày ≥ Từ ngày")
-  │   → UNCLEAR  (Action: add Q-ID vào "Câu hỏi chưa rõ" + Blocked Coverage)
-  └── Raw rõ ràng, spec rõ ràng, match
-      → SUPPORTED  (Action: keep)
-```
-
-**Tie-breaker:** Nếu claim hit ≥ 2 nhánh, pick label có severity cao nhất (NEGATION_FLIP > STRIPPED_CONDITION > LOGIC_INFERRED > INFERRED > PHANTOM_EVIDENCE > POTENTIAL_OMISSION > MISSING_DETAIL > UNCLEAR > SUPPORTED).
-
-**UNCLEAR boundary rule (quan trọng):** UNCLEAR CHỈ áp dụng khi **raw bất thường** (typo, ambiguous). Nếu **spec interpret/generalize** từ raw rõ ràng → label thành INFERRED hoặc LOGIC_INFERRED, KHÔNG phải UNCLEAR. Tránh dùng UNCLEAR làm "no penalty escape hatch".
-
-### Labels summary
-
-| Label | Severity (penalty/bonus) | Trigger nhánh | Action |
-|:------|:------------------------:|:--------------|:-------|
-| `SUPPORTED` | 0 | Q4 → match | Keep |
-| `UNCLEAR` | 0 | Q4 → raw bất thường | Move to `## ❓ Câu hỏi chưa rõ` + Blocked Coverage |
-| `MISSING_DETAIL` | -2 (chưa fix) / +1 (đã fix) | Q3 → spec thiếu detail | Add detail vào spec |
-| `POTENTIAL_OMISSION` | -3 | Q2 → raw có claim mà spec miss | Review + thêm R-ID |
-| `PHANTOM_EVIDENCE` | -3 | Q1 → #line không match content | Fix reference |
-| `INFERRED` | -5 | Q2 / Q3 generalize | Remove khỏi mô tả |
-| `STRIPPED_CONDITION` | -5 | Q3 modifier dropped | Add modifier back |
-| `LOGIC_INFERRED` | -8 | Q3 spec tự ghép | Remove conclusion |
-| `NEGATION_FLIP` | -8 | Q3 logic đảo | Reverse claim |
-
-### Output L_inference
-
-Cập nhật `evidence_matrix.md` theo template `templates/evidence_matrix.template.md`. Mỗi row: `Raw Evidence (path#line) | Wiki Claim (path#line) | Status (label từ decision tree) | Action`.
-
----
-
-## L_fix — Fix Suggestions (auto-template)
-
-**Skip khi:** `L_structural.violations + L_inference.violations = 0`. Ghi `## L_fix: none required`.
-
-### Quy trình
-
-1. Tổng hợp tất cả violations từ L_structural + L_inference.
-2. Với mỗi violation, generate suggestion theo skeleton:
-
-```
-### FIX-NNN: [Mô tả ngắn]
-- **File:** wiki/project_hasaki/features/xxx.md
-- **Vùng:** dòng hoặc section cụ thể
-- **Vấn đề:** [L_structural/L_inference] — mô tả vi phạm + link đến report finding
-- **Gợi ý:** nội dung cụ thể cần thêm/sửa/xóa
-- **Ưu tiên:** Critical / High / Medium (Critical = gate bắt buộc fail)
-```
-
-3. **Không tự apply** — chỉ suggest, chờ user confirm.
-
-### Output L_fix
-
-Ghi vào `refiner_report.md`, mục `## L_fix — Suggestions`.
-
-L_fix là **substep của L_inference output**, không phải tầng riêng. Có thể chạy chung pass với L_inference.
-
----
-
-## Tầng L_root_cause — Skill Patch Analysis (short-circuit)
-
-**Skip toàn bộ L_root_cause khi:** không có `cùng-loại-violation ≥ 2` trong batch **và** không có pattern lặp giữa session này với session trước trong `quality_gates.json`. Ghi `no new patterns` 1 dòng vào `retrospective.md`.
-
-**Khi không skip:** load `references/l5_root_cause.md` để thực hiện Bước 0-5 (Generalization check, Decision Tree, Counterfactual test, Apply patch).
+- **L_inference:** verify từng claim có evidence explicit trong raw (tầng AI work chính). Output → `evidence_matrix.md`.
+- **L_fix:** substep chung pass với L_inference — tổng hợp violations → `FIX-NNN` suggestions, không tự apply.
+- **L_root_cause:** short-circuit (skip khi không có pattern lặp ≥2); khi chạy load `references/l5_root_cause.md`.
 
 ---
 
@@ -415,10 +318,8 @@ Session hoàn thành khi:
 
 ## Hard Guardrails
 
-- Không suy diễn requirement, AC, API contract, testcase.
-- Không tự apply fix vào feature/task files — chỉ suggest, chờ user confirm.
-- Không tự apply patch vào skill/rule/template khi chưa pass quality gates.
-- Read-only scripts (`check_ingest.py`, `refiner_findings_diag.py`, `spec_status_dashboard.py`, `index_flag_updater.py` dry-run) — AI tự chạy không cần confirm.
-- State-changing scripts (`refiner_writeback.py`, `index_flag_updater.py --apply`) — yêu cầu user confirm verdict + scope trước khi chạy.
-- Testcase chỉ sinh từ R/AC explicit đã được Gate 1 duyệt.
-- Nội dung dựa trên Open question phải nằm ở `Blocked Coverage`.
+> No-inference / testcase / blocked-coverage / encoding: theo [`.claude/rules/*.md`](../../rules/). Dưới đây chỉ là guardrail **riêng của verifier**:
+
+- **Không tự apply fix** vào feature/task/test files — chỉ emit `FIX-NNN`, chờ user confirm.
+- **Không tự apply patch** skill/rule/template khi chưa pass quality gates (L_root_cause).
+- **Auto vs ask scripts:** read-only (`check_ingest.py`, `refiner_findings_diag.py`, `spec_status_dashboard.py`, `index_flag_updater.py` dry-run) → AI tự chạy. State-changing (`refiner_writeback.py`, `index_flag_updater.py --apply`) → chỉ chạy khi user confirm verdict + scope. (Chi tiết ở mục Tooling.)
