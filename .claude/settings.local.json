@@ -1,10 +1,6 @@
 {
   "permissions": {
     "allow": [
-      "Bash(Remove-Item \"C:\\\\project\\\\QA-Vault\\\\QA\\\\.claude\\\\commands\\\\get-hasaki-task.md\" -Force)",
-      "Bash(Remove-Item \"C:\\\\project\\\\QA-Vault\\\\QA\\\\.claude\\\\commands\\\\import-hasaki-task.md\" -Force)",
-      "Bash(Write-Output \"Deleted source files\")",
-      "Bash(Remove-Item *)",
       "Skill(wiki-requirement-analyzer)",
       "mcp__markitdown__convert_to_markdown",
       "Skill(wiki-test-designer)",
@@ -45,7 +41,25 @@
       "PowerShell(obsidian help *)",
       "PowerShell(uv run *)",
       "WebFetch(domain:github.com)",
-      "Skill(obsidian-search)"
+      "Skill(obsidian-search)",
+      "Bash(python .claude/scripts/wiki_sync.py verify)",
+      "PowerShell(cd \"C:\\\\project\\\\NB_Hasaki\\\\llm-wiki\"; \\(Get-Content \"raw_sources/project_hasaki/requirements/07062_Receiving_PO_Docs_ver2.17.md\" | Measure-Object -Line\\).Lines; \\(Get-Content \"raw_sources/project_hasaki/requirements/07105_Quality_Control_Docs_ver1.5.md\" | Measure-Object -Line\\).Lines)",
+      "PowerShell(New-Item *)",
+      "Bash(py *)",
+      "Bash(python .claude/scripts/wiki_sync.py --help)",
+      "Bash(mkdir -p /tmp/evidence_test/wiki/project_hasaki/features /tmp/evidence_test/wiki/project_hasaki/api_specs)",
+      "Bash(cp .claude/scripts/evidence_index.py /tmp/evidence_test/.claude_scripts.py)",
+      "Bash(echo \"exit=$?\")",
+      "Bash(git check-ignore *)",
+      "Bash(git restore *)",
+      "Bash(powershell *)",
+      "PowerShell($env:PYTHONUTF8=\"1\"; py .claude/scripts/index_flag_updater.py --project project_hasaki --specs stub_receiving_po_po_sample,stub_qc_criteria_approval 2>&1 | Select-Object -First 50)",
+      "Skill(hasaki-spec-verifier)",
+      "PowerShell($env:PYTHONUTF8=\"1\"; py .claude/scripts/refiner_writeback.py --project project_hasaki --specs stub_receiving_po_inbound_shipment,stub_qc_criteria_sku,stub_qc_vas --verdict PASS --dry-run)",
+      "PowerShell($env:PYTHONUTF8=\"1\"; py .claude/scripts/index_flag_updater.py --project project_hasaki --specs stub_receiving_po_inbound_shipment,stub_qc_criteria_sku,stub_qc_vas)",
+      "PowerShell($env:PYTHONUTF8=\"1\"; py .claude/scripts/index_flag_updater.py --project project_hasaki --specs stub_receiving_po_inbound_shipment,stub_qc_criteria_sku,stub_qc_vas --apply)",
+      "Bash(set PYTHONUTF8=1)",
+      "Bash(set PYTHONIOENCODING=utf-8)"
     ]
   },
   "enabledMcpjsonServers": [
