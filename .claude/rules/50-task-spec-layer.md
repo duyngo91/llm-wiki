@@ -1,4 +1,4 @@
-﻿# Task Spec Layer Policy
+# Task Spec Layer Policy
 
 - Use two-layer model: Task Spec (execution layer) + Feature Spec (domain layer).
 - Task Spec path: `wiki/project_hasaki/task_specs/task_<tbb2_code>.md`.

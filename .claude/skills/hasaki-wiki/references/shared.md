@@ -114,14 +114,11 @@ Excluded scope chỉ dùng khi task explicitly nhắm tool/config troubleshootin
 
 ---
 
-## Core Rules (quick reference)
+## Core Rules
 
-- **Timezone:** `UTC+07:00` (`Asia/Ho_Chi_Minh`), format `YYYY-MM-DD HH:mm:ss`.
-- **Encoding:** UTF-8 cho mọi file Markdown. Windows: `$env:PYTHONUTF8 = "1"` trước khi chạy Python.
-- **No-Inference:** R/AC/API/testcase phải explicit từ nguồn đã duyệt. Chưa rõ → ghi `## ❓ Câu hỏi chưa rõ` + `Blocked Coverage`. Không dùng `AI-Inferred`, `Assumption`, `Suy diễn`.
-- **SSOT:** File trên đĩa là nguồn thật. Đọc trực tiếp trước mỗi thao tác.
-- **Test Case:** Chỉ tạo từ R/AC explicit đã duyệt (Gate 1). R/AC có question `Open` → `Blocked Coverage`, không sinh TC.
-- **Secret:** Không commit token/cookie/API key/password. Phát hiện → dừng, báo user rotate & clean history.
+> **Normative source = [`.claude/rules/*.md`](../../../rules/)** (no-inference, encoding, timezone, SSOT, testcase, secret). Không lặp lại ở đây — đọc trực tiếp `rules/`. Chỉ giữ 2 nhắc vận hành:
+> - **Timestamp format:** `YYYY-MM-DD HH:mm:ss` theo `UTC+07:00` (`Asia/Ho_Chi_Minh`).
+> - **Windows Python:** set `$env:PYTHONUTF8 = "1"` trước khi chạy mọi script `.py`.
 
 ---
 
