@@ -41,9 +41,33 @@ updated: 2026-05-30
 
 ### Test design (Gate 2)
 
-- [ ] Chờ Gate 1B pass cho từng stub trên trước khi gọi `/wiki-test-designer`.
-
-**24/24 stubs đã refine** ✅ — sẵn sàng cho Gate 1B review (PO + answer questions Q-001..Q-016 per spec). Sau Gate 1B → mới chạy `/wiki-test-designer`.
+- [x] Test design hoàn thành cho 24 specs ✅ **2026-05-31**: 601 TC active (229 QC + 372 PO)
+  - QC group (9 specs): 229 TCs
+    - `qc_overview`: 2 TCs (1 active, 4 blocked chờ Q-005)
+    - `qc_criteria_approval`: 13 TCs
+    - `qc_criteria_setup`: 62 TCs
+    - `qc_criteria_sku`: 40 TCs
+    - `qc_evaluation_manual`: 32 TCs
+    - `qc_evaluation_mobile`: 25 TCs
+    - `qc_evaluation_result`: 27 TCs
+    - `qc_uid_group`: 14 TCs
+    - `qc_vas`: 14 TCs
+  - PO group (15 specs): 372 TCs
+    - `receiving_po_overview`: 2 TCs
+    - `receiving_po_inbound_shipment`: 21 TCs
+    - `receiving_po_asn`: 25 TCs
+    - `receiving_po_vas`: 36 TCs
+    - `receiving_po_app`: 33 TCs
+    - `receiving_po_date_rules`: 43 TCs
+    - `receiving_po_invoice`: 30 TCs
+    - `receiving_po_fabric`: 13 TCs
+    - `receiving_po_gift`: 9 TCs
+    - `receiving_po_no_barcode`: 13 TCs
+    - `receiving_po_confirm_paste_id`: 31 TCs
+    - `receiving_po_vas_manual`: 25 TCs
+    - `receiving_po_packing_list`: 41 TCs
+    - `receiving_po_po_sample`: 17 TCs
+    - `receiving_po_concurrent`: 13 TCs
 
 ## InProgress
 

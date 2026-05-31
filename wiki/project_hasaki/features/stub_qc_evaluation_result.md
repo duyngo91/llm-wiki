@@ -11,11 +11,13 @@ source_doc: 07105_Quality_Control_Docs_ver1.5.md
 source_range: 07105#L570-L1127
 partial_read: false
 partial_read_note: ""
-last_verified_at: "2026-05-30 18:15:00"
-verification_status: Pending
+last_verified_at: "2026-05-31 17:50:34"
+verification_status: Verified
 approved_by:
 approved_at:
 approval_note:
+last_verified_source_version: 1.5
+
 ---
 
 # REQ: stub_qc_evaluation_result

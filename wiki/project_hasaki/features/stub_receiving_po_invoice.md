@@ -11,11 +11,13 @@ source_doc: 07062_Receiving_PO_Docs_ver2.17.md
 source_range: 07062#L1497-L1674
 partial_read: false
 partial_read_note: ""
-last_verified_at: "2026-05-30 17:15:00"
-verification_status: Pending
+last_verified_at: "2026-05-31 19:00:33"
+verification_status: Verified
 approved_by:
 approved_at:
 approval_note:
+last_verified_source_version: 2.17
+
 ---
 
 # REQ: stub_receiving_po_invoice
@@ -142,8 +144,8 @@ approval_note:
 | Mã lỗi | Loại | Trigger | Message VN | Message EN | Source |
 |:-------|:-----|:--------|:-----------|:-----------|:-------|
 | ERR-INV-001 | Validation | Field bắt buộc trống (Tax code/Serial/Form) | `Thông tin là bắt buộc` | `Information is required.` | 07062#L1519-L1520, L1531-L1532, L1542-L1543 |
-| ERR-INV-002 | Validation | Tax code không đủ 1-8 ký tự hoặc có ký tự đặc biệt | `Mã số thuế phải từ 1 đến 8 chữ số` | `Tax code must be from 1 to 8 digits` | 07062#L1525-L1527 |
-| ERR-INV-003 | Validation | Serial không đủ 1-8 ký tự hoặc có ký tự đặc biệt | `Ký hiệu phải từ 1 đến 8 chữ số` | `Serial must be from 1 to 8 digits` | 07062#L1537-L1538 |
+| ERR-INV-002 | Validation | Tax code không đủ 1-8 ký tự hoặc có ký tự đặc biệt | `Mã số thuế phải từ 1 đến 8 chữ số` (raw rule L1516 ghi "chữ + số" nhưng message L1527 ghi "chữ số" — Q-013) | `Tax code must be from 1 to 8 digits` | 07062#L1525-L1527 |
+| ERR-INV-003 | Validation | Serial không đủ 1-8 ký tự hoặc có ký tự đặc biệt | `Ký hiệu phải từ 1 đến 8 chữ số` (raw rule L1528 ghi "chữ + số" nhưng message L1538 ghi "chữ số" — Q-013) | `Serial must be from 1 to 8 digits` | 07062#L1537-L1538 |
 | ERR-INV-004 | Validation | Total chênh PO > 1.000 đồng (single hoặc multi-invoice) | `Tổng số tiền tren hoá đơn không hợp lệ` (lưu ý typo `tren` — Q-004) | `Total amount on invoice is invalid` | 07062#L1551-L1553, L1559-L1561 |
 | MSG-INV-005 | Warning | Sau scan PO thường có PO gift đi kèm | (chưa có verbatim — Q-009) | (chưa có verbatim — Q-009) | 07062#L1599-L1601 |
 | MSG-INV-006 | Validation | Case 2 scan PO Gift không thuộc PO đang nhận | (chưa có verbatim — Q-009) | (chưa có verbatim — Q-009) | 07062#L1602 |
@@ -257,6 +259,7 @@ approval_note:
 | Q-010 | R028 | Update 20-11-2024 thông báo xác nhận đổi thành ... (raw bị cắt). Verbatim VN+EN là gì? | PO | Open | | | |
 | Q-011 | R007 | Nếu user nhập thừa 1 hoá đơn khiến sum vượt > 1.000đ — hệ thống block ngay khi nhập hoá đơn cuối hay khi user thử Hoàn thành PO? | UX | Open | | | |
 | Q-012 | R005 | Field `Form` (mẫu số) — có format validation (vd length, alphanumeric) không? Raw không nêu rule. | PO/Dev | Open | | | |
+| Q-013 | R003, R004, ERR-INV-002, ERR-INV-003 | Raw-internal inconsistency: rule nêu "1-8 ký tự **chữ + số**" (alphanumeric) nhưng message nêu "1 đến 8 **chữ số**" (có thể hiểu là chỉ digit). Thực tế Tax code và Serial có cho phép ký tự chữ cái không? Confirm ý định đúng. | PO/Dev | Open | | | |
 
 ## 📝 Thay đổi so với version cũ
 
@@ -291,6 +294,7 @@ approval_note:
 - R028 — chờ Q-010 (verbatim confirmation message)
 - R007 — chờ Q-011 (timing block validation)
 - R005 — chờ Q-012 (Form format)
+- R003, R004, ERR-INV-002, ERR-INV-003 — chờ Q-013 (raw-internal inconsistency: "chữ + số" vs "chữ số")
 
 Test cases liên quan tới các R-ID trên bị block đến khi câu hỏi `Answered`.
 
@@ -300,3 +304,4 @@ Test cases liên quan tới các R-ID trên bị block đến khi câu hỏi `An
 |:----------|:--------|:------------------|:------|
 | 2026-05-30 14:36:55 | v1.0 | Tách từ monster stub thành per-feature stub | split-stubs-2026-05-30 |
 | 2026-05-30 17:15:00 | v1.1 | Refine stub → full spec: 28 R-ID, 22 AC, 13 BR, 8 messages (4 verbatim VN+EN, 4 missing), 12 questions Open. `partial_read: false`. | refine-batch-2-2026-05-30 |
+| 2026-05-31 18:50:00 | v1.2 | FIX-003 (refiner batch-5): thêm Q-013 raw-internal inconsistency "chữ + số" vs "chữ số" cho ERR-INV-002/003 + R003/R004; cập nhật Error Messages Map + Blocked Coverage. | refiner-spec-scoped-batch-5 |

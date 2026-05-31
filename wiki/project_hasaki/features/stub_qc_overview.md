@@ -11,11 +11,13 @@ source_doc: 07105_Quality_Control_Docs_ver1.5.md
 source_range: 07105#L102-L124
 partial_read: false
 partial_read_note: ""
-last_verified_at: "2026-05-30 18:45:00"
-verification_status: Pending
+last_verified_at: "2026-05-31 18:36:07"
+verification_status: Verified
 approved_by:
 approved_at:
-approval_note:
+approval_note: "FIX-001: xóa inferred 'thấp nhất' khỏi BR + Q-006 trace; FIX-002: thêm Q-016 typo L141 + R002 ⚠️"
+last_verified_source_version: 1.5
+
 ---
 
 # REQ: stub_qc_overview
